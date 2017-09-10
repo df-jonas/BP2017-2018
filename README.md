@@ -20,7 +20,7 @@ You can find the installation guide [here](https://github.com/df-jonas/BP2017-20
 
 ## Technical Description
 
-You can find the technical description [here](https://github.com/df-jonas/BP2017-2018/wiki/Technical-Description).
+You can find the technical description [here](https://github.com/df-jonas/BP2017-2018/wiki/Technical-description).
 
 ## Documentation
 
