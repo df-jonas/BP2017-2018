@@ -16,7 +16,12 @@ based on grades can be provided with thanks to the Canvas platform.
 
 ## Installation
 
-You can find the installation guide [here](https://github.com/df-jonas/BP2017-2018/wiki/Installation).
+1. [Download](https://getcomposer.org/download/) and install Composer, the dependency manager for PHP.  
+2. [Download](https://github.com/df-jonas/BP2017-2018/releases) and unzip the latest release of `title`.  
+3. Rename `.env.example` to `.env`.  
+4. Issue `composer install` in the project root.
+
+You can find the full installation guide [here](https://github.com/df-jonas/BP2017-2018/wiki/Installation).
 
 ## Technical Description
 
