@@ -1,6 +1,6 @@
 # `title` 
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/UniHelp.svg?style=social&label=Follow)](https://twitter.com/UniHelp)
+[![Twitter Follow](https://img.shields.io/twitter/follow/UniHelp_BE.svg?style=social&label=Follow)](https://twitter.com/UniHelp_BE)
 
 This thesis project ([UniHelp](https://unihelp.be/)) is the result of a unique 
 collaboration between two students of the courses Dig-X and Multec of the 
@@ -37,7 +37,7 @@ For technical questions and bugs feel free to open an issue.
 
 ## Stay In Touch
 
-For latest releases and announcements, follow [@UniHelp](https://twitter.com/UniHelp) on Twitter.
+For latest releases and announcements, follow [@UniHelp_BE](https://twitter.com/UniHelp_BE) on Twitter.
 
 ## License
 
