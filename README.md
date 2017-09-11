@@ -17,7 +17,7 @@ based on grades can be provided with thanks to the Canvas platform.
 ## Installation
 
 1. [Download](https://getcomposer.org/download/) and install Composer, the dependency manager for PHP.  
-2. [Download](https://github.com/df-jonas/BP2017-2018/releases) and unzip the latest release of [UniHelp](https://github.com/df-jonas/UniHelp/releases).  
+2. [Download](https://github.com/df-jonas/UniHelp/releases) and unzip the latest release of [UniHelp](https://github.com/df-jonas/UniHelp/releases).  
 3. Rename `.env.example` to `.env`.  
 4. Issue `composer install` in the project root.
 
