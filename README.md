@@ -1,13 +1,13 @@
 # `title` 
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?style=social&label=Follow)](https://twitter.com/title)
+[![Twitter Follow](https://img.shields.io/twitter/follow/UniHelp.svg?style=social&label=Follow)](https://twitter.com/UniHelp)
 
-This thesis project ([`title`](https://title.com/)) is the result of a unique 
+This thesis project ([UniHelp](https://unihelp.be/)) is the result of a unique 
 collaboration between two students of the courses Dig-X and Multec of the 
 Erasmus University College Brussels and has been realized in the academic 
 year 2017-2018.
 
-[`title`](https://title.com/) is a platform developed by students for students 
+[UniHelp](https://unihelp.be/) is a platform developed by students for students 
 to help them better understand their curriculum, this by enabling them to get 
 summaries of courses, easily sharing their interests and get tutoring if needed.
 The tutorship-system will be our main focus in this platform, to make it easy
@@ -17,19 +17,19 @@ based on grades can be provided with thanks to the Canvas platform.
 ## Installation
 
 1. [Download](https://getcomposer.org/download/) and install Composer, the dependency manager for PHP.  
-2. [Download](https://github.com/df-jonas/BP2017-2018/releases) and unzip the latest release of `title`.  
+2. [Download](https://github.com/df-jonas/BP2017-2018/releases) and unzip the latest release of [UniHelp](https://github.com/df-jonas/UniHelp/releases).  
 3. Rename `.env.example` to `.env`.  
 4. Issue `composer install` in the project root.
 
-You can find the full installation guide [here](https://github.com/df-jonas/BP2017-2018/wiki/Installation).
+You can find the full installation guide [here](https://github.com/df-jonas/UniHelp/wiki/Installation).
 
 ## Technical Description
 
-You can find the technical description [here](https://github.com/df-jonas/BP2017-2018/wiki/Technical-description).
+You can find the technical description [here](https://github.com/df-jonas/UniHelp/wiki/Technical-description).
 
 ## Documentation
 
-You can find the documentation [here](https://github.com/df-jonas/BP2017-2018/wiki).
+You can find the documentation [here](https://github.com/df-jonas/UniHelp/wiki).
 
 ## Issues
 
@@ -37,8 +37,8 @@ For technical questions and bugs feel free to open an issue.
 
 ## Stay In Touch
 
-For latest releases and announcements, follow [@title](https://twitter.com/) on Twitter.
+For latest releases and announcements, follow [@UniHelp](https://twitter.com/UniHelp) on Twitter.
 
 ## License
 
-`title` is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[UniHelp](https://unihelp.be/) is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
