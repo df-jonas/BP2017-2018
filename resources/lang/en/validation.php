@@ -87,6 +87,7 @@ return [
     'unique'               => 'The :attribute has already been taken.',
     'uploaded'             => 'The :attribute failed to upload.',
     'url'                  => 'The :attribute format is invalid.',
+    'older_than'           => 'You must be older than 12 years to use this app.',
 
     /*
     |--------------------------------------------------------------------------

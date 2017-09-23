@@ -13,6 +13,18 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/', function () {
+    return response(json_encode(
+			array(
+				"name" => "UniHelp",
+				"creators" => array("Jonas De Frere", "Arno Stalpaert"),
+				"status" => "green"
+			)
+    ))->header('Content-Type', 'application/json');
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
