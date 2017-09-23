@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -56,6 +57,15 @@ class RegisterController extends Controller
         ]);
     }
 
+    protected function registered(Request $request, $user)
+    {
+        if ($request->wantsJson()) {
+            return $user;
+        }
+
+        return redirect($this->redirectPath());
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -69,6 +79,7 @@ class RegisterController extends Controller
             'last_name' => $data['last_name'],
             'birthdate' => $data['birthdate'],
             'email' => $data['email'],
+            'api_token' => SecurityFactory::generateApiToken(),
             'password' => bcrypt($data['password']),
         ]);
     }
