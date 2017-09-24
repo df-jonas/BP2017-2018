@@ -8,7 +8,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-
 class SecurityFactory
 {
     static public function generateApiToken()
