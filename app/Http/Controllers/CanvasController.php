@@ -8,7 +8,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\HttpRequestHelper;
+use App\Helpers\HttpHelper as Http;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -46,7 +46,6 @@ class CanvasController extends Controller
             return Redirect::to('/test_canvas/login');
 
         try {
-
             $params = [
                 'grant_type' => "authorization_code",
                 'client_id' => env('CANVAS_CLIENT_ID', ""),
@@ -56,7 +55,7 @@ class CanvasController extends Controller
                 'refresh_token' => ""
             ];
 
-            $response = HttpRequestHelper::HttpRequest(
+            $response = Http::request(
                 env('CANVAS_URL', "") . "login/oauth2/token",
                 "POST",
                 null,
@@ -83,11 +82,16 @@ class CanvasController extends Controller
         $auth = Auth::user()->getCanvasAuth();
 
         if ($auth === false)
-            return response()->json(array("error" => "you are not authenticated through canvas yet."), 404);
+            return response()->json(array("error" => "You are not authenticated through canvas."), 400);
 
-        $request = HttpRequestHelper::HttpRequest(
-            env('CANVAS_URL', "") . "/api/v1/users/self", "GET", ['Authorization' => 'Bearer ' . $auth['canvas_key']], null, false
+        $request = Http::request(
+            env('CANVAS_URL', "") . "/api/v1/users/self",
+            "GET",
+            ['Authorization' => 'Bearer ' . $auth['canvas_key']],
+            null,
+            false
         );
+
         return response()->json(json_decode($request->getBody(), true), $request->getStatusCode());
     }
 }
