@@ -20,10 +20,11 @@ class HttpRequestHelper
             [
                 'form_params' => $params,
                 'headers' => $headers,
-                'verify' => $verify_ssl
+                'verify' => $verify_ssl,
+                'exceptions' => false
             ]
         );
 
-        return $response->getBody();
+        return $response;
     }
 }

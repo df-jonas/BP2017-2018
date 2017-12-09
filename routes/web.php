@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/canvas/me', 'CanvasController@testUser')->name('canvas_me');;
+Route::get('/canvas/me', 'CanvasController@me')->name('canvas_me');;
 Route::get('/canvas/login', 'CanvasController@index')->name('canvas_login');
 Route::get('/canvas/oauth_complete', 'CanvasController@oauth_complete')->name('canvas_oauth_complete');
 

@@ -62,7 +62,7 @@ class CanvasController extends Controller
                         null,
                         $params,
                         false
-                    );
+                    )->getBody();
 
                     $response = json_decode($response, true);
 
@@ -82,8 +82,13 @@ class CanvasController extends Controller
         }
     }
 
-    public function testUser()
+    public function me()
     {
-        return json_decode(HttpRequestHelper::HttpRequest(env('CANVAS_URL', "") . "api/v1/users/self", "GET", ['Authorization' => 'Bearer ' . self::getCanvasAuth()['canvas_key']], null, false), true);
+        $canvasauth = Auth::user()->getCanvasAuth();
+        if ($canvasauth !== false) {
+            $request = HttpRequestHelper::HttpRequest(env('CANVAS_URL', "") . "/api/v1/users/self", "GET", ['Authorization' => 'Bearer ' . Auth::user()->getCanvasAuth()['canvas_key']], null, false);
+            return response()->json(json_decode($request->getBody(), true), $request->getStatusCode());
+        }
+        return response()->json(array("error" => "you are not authenticated through canvas yet."),404);
     }
 }
