@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    U bent ingelogd, {{$firstName}}!
                 </div>
             </div>
         </div>

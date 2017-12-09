@@ -228,4 +228,17 @@ return [
 
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Canvas parameters
+    |--------------------------------------------------------------------------
+    |
+    | Parameters to be initialized for canvas usage
+    |
+    */
+
+    'canvas_url' => env('CANVAS_URL', ""),
+    'canvas_client_id' => env('CANVAS_CLIENT_ID', ""),
+    'canvas_secret' => env('CANVAS_SECRET', ""),
+
 ];

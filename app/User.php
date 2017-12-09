@@ -26,4 +26,24 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token', 'role', 'canvas_key', 'created_at', 'updated_at',
     ];
+
+    public function hasCanvasAuth()
+    {
+        if (isset($this->canvas_key) && $this->canvas_key !== null && $this->canvas_key !== "") {
+            return true;
+        }
+        return false;
+    }
+
+    public function getCanvasAuth()
+    {
+        if (!$this->hasCanvasAuth()) {
+            return false;
+        } else {
+            return array(
+                "canvas_key" => $this->canvas_key,
+                "canvas_refresh" => $this->canvas_refresh,
+            );
+        }
+    }
 }
