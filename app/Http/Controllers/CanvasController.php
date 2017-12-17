@@ -9,7 +9,6 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\HttpHelper as Http;
-use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -45,36 +44,24 @@ class CanvasController extends Controller
         if (!isset($request->code))
             return Redirect::to('/test_canvas/login');
 
-        try {
-            $params = [
-                'grant_type' => "authorization_code",
-                'client_id' => env('CANVAS_CLIENT_ID', ""),
-                'client_secret' => env('CANVAS_SECRET', ""),
-                'redirect_url' => route('canvas_oauth_complete'),
-                'code' => "$request->code",
-                'refresh_token' => ""
-            ];
+        $params = [
+            'grant_type' => "authorization_code",
+            'client_id' => env('CANVAS_CLIENT_ID', ""),
+            'client_secret' => env('CANVAS_SECRET', ""),
+            'redirect_url' => route('canvas_oauth_complete'),
+            'code' => "$request->code"
+        ];
 
-            $response = Http::request(
-                env('CANVAS_URL', "") . "login/oauth2/token",
-                "POST",
-                null,
-                $params,
-                false
-            )->getBody();
+        $response = $this->request("login/oauth2/token", "POST", null, $params)->getBody();
 
-            $response = json_decode($response, true);
+        $response = json_decode($response, true);
 
-            $user = Auth::user();
-            $user->canvas_key = $response['access_token'];
-            $user->canvas_refresh = $response['refresh_token'];
-            $user->save();
+        $user = Auth::user();
+        $user->canvas_key = $response['access_token'];
+        $user->canvas_refresh = $response['refresh_token'];
+        $user->save();
 
-            return Redirect::to('/home');
-
-        } catch (ClientException $exception) {
-            return Redirect::to('/test_canvas/login');
-        }
+        return Redirect::to('/home');
     }
 
     public function me()
@@ -84,14 +71,55 @@ class CanvasController extends Controller
         if ($auth === false)
             return response()->json(array("error" => "You are not authenticated through canvas."), 400);
 
+        $headers = [
+            'Authorization' => 'Bearer ' . $auth['canvas_key']
+        ];
+
+        $request = $this->request("/api/v1/users/self", "GET", $headers, null);
+
+        return response()->json(json_decode($request->getBody(), true), $request->getStatusCode());
+    }
+
+    public function request($path, $verb, $headers, $params)
+    {
         $request = Http::request(
-            env('CANVAS_URL', "") . "/api/v1/users/self",
-            "GET",
-            ['Authorization' => 'Bearer ' . $auth['canvas_key']],
-            null,
+            env('CANVAS_URL', "") . $path,
+            $verb,
+            $headers,
+            $params,
             false
         );
 
-        return response()->json(json_decode($request->getBody(), true), $request->getStatusCode());
+        if ($request->getStatusCode() == 401) {
+
+            $this->refreshToken();
+
+            $request = Http::request(
+                env('CANVAS_URL', "") . $path,
+                $verb,
+                $headers,
+                $params,
+                false
+            );
+        }
+
+        return $request;
+    }
+
+    public function refreshToken(){
+        $params = [
+            'grant_type' => "refresh_token",
+            'client_id' => env('CANVAS_CLIENT_ID', ""),
+            'client_secret' => env('CANVAS_SECRET', ""),
+            'refresh_token' => Auth::user()->canvas_refresh
+        ];
+
+        $response = $this->request("login/oauth2/token", "POST", null, $params)->getBody();
+
+        $response = json_decode($response, true);
+
+        $user = Auth::user();
+        $user->canvas_key = $response['access_token'];
+        $user->save();
     }
 }
