@@ -15,3 +15,5 @@ Route::get('/canvas/oauth_complete', 'CanvasRegisterController@oauth_complete')-
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+//test
