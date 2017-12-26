@@ -14,13 +14,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-	Validator::extend('olderThan', function($attribute, $value, $parameters)
-	{
-		$minAge = ( ! empty($parameters)) ? (int) $parameters[0] : 13;
-		return (new \DateTime)->diff(new \DateTime($value))->y >= $minAge;
-	});
+        Validator::extend('olderThan', function ($attribute, $value, $parameters) {
+            $minAge = (!empty($parameters)) ? (int)$parameters[0] : 13;
+            return (new \DateTime)->diff(new \DateTime($value))->y >= $minAge;
+        });
 
-        //
+        /*$this->bootCanvasSocialite();*/
     }
 
     /**
@@ -31,5 +30,17 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    private function bootCanvasSocialite()
+    {
+        $socialite = $this->app->make('Laravel\Socialite\Contracts\Factory');
+        $socialite->extend(
+            'canvas',
+            function ($app) use ($socialite) {
+                $config = $app['config']['services.canvas'];
+                return $socialite->buildProvider(CanvasLoginServiceProvider::class, $config);
+            }
+        );
     }
 }

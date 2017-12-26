@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'canvas' => [
+        'client_id' => env('CANVAS_CLIENT_ID'),
+        'client_secret' => env('CANVAS_SECRET'),
+        'redirect' => env('APP_URL') . '/register/callback'
+    ],
+
 ];

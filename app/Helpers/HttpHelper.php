@@ -27,4 +27,30 @@ class HttpHelper
 
         return $response;
     }
+
+    static public function canvasRequest($path, $verb, $headers, $params)
+    {
+        $request = self::request(
+            env('CANVAS_URL', "") . $path,
+            $verb,
+            $headers,
+            $params,
+            false
+        );
+
+        if ($request->getStatusCode() == 401) {
+
+            CanvasHelper::refreshToken();
+
+            $request = self::request(
+                env('CANVAS_URL', "") . $path,
+                $verb,
+                $headers,
+                $params,
+                false
+            );
+        }
+
+        return $request;
+    }
 }

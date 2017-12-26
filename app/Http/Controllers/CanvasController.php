@@ -12,13 +12,25 @@ use App\Helpers\HttpHelper as Http;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Laravel\Socialite\Facades\Socialite;
 
 class CanvasController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
     }
+
+    /*public function provide()
+    {
+        return Socialite::with('canvas')->redirect();
+    }
+
+    public function callback()
+    {
+        $user = Socialite::with('canvas')->user();
+
+        // $user->token;
+    }*/
 
     public function index()
     {
@@ -80,31 +92,7 @@ class CanvasController extends Controller
         return response()->json(json_decode($request->getBody(), true), $request->getStatusCode());
     }
 
-    public function request($path, $verb, $headers, $params)
-    {
-        $request = Http::request(
-            env('CANVAS_URL', "") . $path,
-            $verb,
-            $headers,
-            $params,
-            false
-        );
 
-        if ($request->getStatusCode() == 401) {
-
-            $this->refreshToken();
-
-            $request = Http::request(
-                env('CANVAS_URL', "") . $path,
-                $verb,
-                $headers,
-                $params,
-                false
-            );
-        }
-
-        return $request;
-    }
 
     public function refreshToken(){
         $params = [

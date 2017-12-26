@@ -10,8 +10,8 @@ Route::get('/privacy', 'WebsiteController@privacy')->name('website-privacy');
 
 // Platform routes
 Route::get('/canvas/me', 'CanvasController@me')->name('canvas_me');
-Route::get('/canvas/login', 'CanvasController@index')->name('canvas_login');
-Route::get('/canvas/oauth_complete', 'CanvasController@oauth_complete')->name('canvas_oauth_complete');
+Route::get('/canvas/login', 'CanvasRegisterController@index')->name('canvas_login');
+Route::get('/canvas/oauth_complete', 'CanvasRegisterController@oauth_complete')->name('canvas_oauth_complete');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
