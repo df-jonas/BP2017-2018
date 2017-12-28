@@ -1,31 +1,37 @@
-.bg.col-xs-12{
-    padding: 0;
-    margin: 0;
-    background-color: hsla(125, 27%, 77%, 0.14);
+body.platform {
+    background-color: rgba(181, 212, 183, 0.14);
 }
-.account{
+
+*{
+    box-sizing:border-box;
+}
+
+/*Menu*/
+.account {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     cursor: pointer;
-    -webkit-align-items: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-flex-direction: row;
     -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     flex-direction: row;
     float: right;
     position: relative;
 }
-.account_img{
+
+.account_img {
     width: 32px;
     height: 32px;
     border-radius: 50%;
     background-color: #FFFFFF;
+    object-fit: cover;
 }
-.account_username{
+
+.account_username {
     margin-left: 8px;
     margin-right: 6px;
     font-size: 14px;
@@ -33,14 +39,13 @@
     color: #FFFFFF;
 }
 
-.account_dropdown_btn{
+.account_dropdown_btn {
     width: 10px;
     height: 6px;
     margin-top: 2px;
     fill: #FFFFFF;
     opacity: 0.5;
 }
-
 
 .dropdown-content {
     position: absolute;
@@ -52,19 +57,16 @@
     color: #4E5C6E;
     width: 100%;
     z-index: 1;
-
-
 }
 
-
-.dropdown-content ul{
+.dropdown-content ul {
     list-style-type: none;
     padding-left: 0;
     border: 1px solid #4D6A50;
     margin-left: -2%;
 }
 
-.dropdown-content ul li{
+.dropdown-content ul li {
     background: #FFFFFF;
     border-bottom: 1px solid #4D6A50;
     padding: 2%;
@@ -72,73 +74,233 @@
     display: block;
     height: 3em;
     line-height: 3em;
-
 }
 
 
-
-
-/*SIDEBAR*/
-
-.sidebar{
-    height: 80em;
-    margin-top: 5em;
-
-}
-
-.content{
-    height: 80em;
-    margin-top: 5em;
-}
-
-.sidebar_item, .content_files article{
+/*Subheader*/
+.subheader {
     background: #FFFFFF;
-    margin-bottom: 3.5em;
-    height: auto;
+    box-shadow: 0px 1px 5px #4D6A50;
+    height: 3em;
 }
 
-.sidebar_item header, .content_files article header{
-    background: #4D6A50;
-    padding: 4%;
-    color: #FFFFFF;
-}
-
-.content_files article header{
-    padding: 2%;
-}
-
-
-.sidebar_item .sidebar_favorites{
+.subheader ul {
     list-style-type: none;
+    height: 3em;
     padding-left: 0;
 }
 
-.sidebar_item .sidebar_favorites li{
-   display: block;
-    margin:2% 0 2% 0;
+.subheader ul li {
+    display: inline-block;
+    margin-right: 3%;
+    line-height: 3em;
+    cursor: pointer;
+}
+
+.subheader ul li:hover {
+    border-bottom: 1px solid #4D6A50;
+}
+
+.subheader ul li span {
+    display: inline-block;
+    padding-right: 0.85em;
+}
+
+
+/*table*/
+div.table{
+    table-layout: fixed;
+    margin-top: 5em;
+    display: table;
+    padding: 0;
+}
+
+
+/*SIDEBAR*/
+.sidebar {
+    display: table-cell;
+    margin-top: 5em;
+    width: 20%;
+    vertical-align: top;
+    padding-right: 10px;
+}
+
+.content {
+    display: table-cell;
+    height: 70em;
+    margin-top: 5em;
+    left: 10px;
+    width: 80%;
+    padding-left: 10px;
+}
+
+
+
+.sidebar .item, .content .file{
+    background: #FFFFFF;
+    margin-bottom: 3em;
+}
+
+.sidebar .item header, .content .file header{
+    background: #4D6A50;
+    height: 2em;
+    color: #FFFFFF;
+    line-height: 1.75em;
+    padding: 2px 10px;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px solid #dfdfdf;
+
+}
+
+.content .file header i{
+    padding-right: 1%;
+    padding-left: 1%;
+}
+/*mijn bestanden ul*/
+.sidebar .item .highlight{
+    width: 100%;
+    padding-left: 0;
+    background: #FFFFFF;
     padding: 2%;
 }
 
 
-.sidebar_item .sidebar_favorites li .left{
-    padding: 0;
 
-
+.sidebar .item .highlight li{
+   display: block;
+    margin-bottom: 2%;
+    width: 100%;
 }
 
-.sidebar_item .sidebar_favorites li .left img{
-    object-fit: contain;
-    width: 32x;
+
+.sidebar .item .highlight li .left, .content .file .left{
+    width: 20%;
+    float: left;
+    padding: 2%;
+    height: 5em;
+}
+
+
+.sidebar .item li .left{
+    display: inline-block;
+    vertical-align: top; /*not required*/
+    position: relative;
+}
+
+
+.sidebar .item .highlight li .left img, .content .file .left img{
+    width: 32px;
     height: 32px;
-    margin-left: 15%;
-
-
+    object-fit: contain;
 }
 
-.sidebar_item .sidebar_favorites li .right{
+
+.content .file .left img{
+    height: 64px;
+    width: 64px;
+    vertical-align: middle;
 }
 
-.sidebar_item .sidebar_favorites li h4{
-    margin-top: 0;
-    margin-bottom: 0;
+.sidebar .item li .left img{
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+.sidebar .item .highlight li .right, .content .file .right{
+    width: 80%;
+    float: right;
+}
+
+.content .file .left{
+    width: 10%;
+}
+
+
+.content .file .right{
+    width: 90%;
+}
+
+
+/*star rating*/
+
+.content .file .right .rating{
+    padding: 2%;
+    float: right;
+    font-size: 1.5em;
+}
+
+.rating .checked {
+    color: orange;
+}
+
+
+
+
+
+/* search input */
+.inner-addon {
+    position: relative;
+    border: none;
+}
+
+.inner-addon input {
+    border: none;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon {
+    left: 0px;
+}
+
+.right-addon .glyphicon {
+    right: 0px;
+}
+
+/* add padding  */
+.left-addon input {
+    padding-left: 30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+
+@media screen and (max-width: 480px) {
+
+
+
+    div.table{
+        margin-top: 1em;
+    }
+    /*SIDEBAR*/
+    .sidebar {
+        display: block;
+        padding: 0;
+        width: 100%;
+
+    }
+
+    .content {
+        display: block;
+        padding: 0;
+        width: 100%;
+
+    }
 }

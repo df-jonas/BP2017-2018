@@ -2,6 +2,7 @@
 
 @section('content')
     @include('partials.platform.header')
+    @include('partials.platform.subheader')
 
 
     <div class="container">
@@ -81,6 +82,8 @@
 
             <div class="right content col-lg-9 col-lg-push-1">
                 <div class="content_files">
+                
+
                     <article>
                         <header>Mijn bestanden</header>
                         <div class="row">
@@ -102,14 +105,7 @@
         </div>
     </div>
 
-    <footer class="col-xs-12">
-        <div class="top">
-
-        </div>
-
-        <div class="bottom">
-
-        </div>
+    
 </div>
 
     @include('partials.platform.footer')

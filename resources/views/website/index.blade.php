@@ -9,8 +9,8 @@
         <h1>Welkom bij UniHelp</h1>
         <h4>Het slimme leerplatform om studenten altijd en overal te helpen.</h4>
         <section class="buttons col-lg-6 col-lg-push-3 col-md-10 col-md-push-1 col-xs-12">
-            <a href="login.html"><button type="button" class="action-button">Inloggen</button></a>
-            <a href="login.html"><button type="button" class="action-button register">Registreren</button></a>
+            <a href="{{ route('website-login')}}"><button type="button" class="action-button">Inloggen</button></a>
+            <a href="{{ route('website-login')}}"><button type="button" class="action-button register">Registreren</button></a>
         </section>
     </div>
     <div class="scroll">
@@ -93,8 +93,8 @@
 <section class="call-to-action col-xs-12">
     <h3>Wordt nu lid, geniet van tal van voordelen!</h3>
     <section class="buttons col-lg-6 col-lg-push-3 col-xs-12">
-        <button type="button" class="action-button">Inloggen</button>
-        <button type="button" class="action-button">Registreren</button>
+        <a href="{{ route('website-login') }}"><button type="button" class="action-button">Inloggen</button></a>
+        <a href="{{ route('website-login')}}" ><button type="button" class="action-button">Registreren</button></a>
     </section>
 </section>
 

@@ -8,6 +8,6 @@ class SharingController extends Controller
 {
     public function sharingIndex()
     {
-        return view("platform.sharing.index");
+        return view("platform.sharing.test");
     }
 }

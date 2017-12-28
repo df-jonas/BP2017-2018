@@ -16,6 +16,7 @@ Route::get('/canvas/oauth_complete', 'CanvasRegisterController@oauth_complete')-
 
 
 
+
 // Platform routes
 Route::group(['prefix' => 'platform'], function () {
 
@@ -30,3 +31,13 @@ Route::group(['prefix' => 'platform'], function () {
 //Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+
+
+
+//om te testen
+Route::get('/sharing', [
+    'uses' => 'SharingController@sharingIndex',
+    'as' => 'sharing-index'
+]);

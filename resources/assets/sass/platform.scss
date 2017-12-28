@@ -1,0 +1,144 @@
+.bg.col-xs-12{
+  padding: 0;
+  margin: 0;
+  background-color: hsla(125, 27%, 77%, 0.14);
+}
+.account{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  float: right;
+  position: relative;
+}
+.account_img{
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+.account_username{
+  margin-left: 8px;
+  margin-right: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.account_dropdown_btn{
+  width: 10px;
+  height: 6px;
+  margin-top: 2px;
+  fill: #FFFFFF;
+  opacity: 0.5;
+}
+
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  top: 35px;
+  right: 0px;
+  padding: 20px 50px;
+  font-weight: 500;
+  color: #4E5C6E;
+  width: 100%;
+  z-index: 1;
+
+
+}
+
+
+.dropdown-content ul{
+  list-style-type: none;
+  padding-left: 0;
+  border: 1px solid #4D6A50;
+  margin-left: -2%;
+}
+
+.dropdown-content ul li{
+  background: #FFFFFF;
+  border-bottom: 1px solid #4D6A50;
+  padding: 2%;
+  padding-left: 5%;
+  display: block;
+  height: 3em;
+  line-height: 3em;
+
+}
+
+
+
+
+/*SIDEBAR*/
+
+.sidebar{
+  height: 80em;
+  margin-top: 5em;
+
+}
+
+.content{
+  height: 80em;
+  margin-top: 5em;
+}
+
+.sidebar_item, .content_files article{
+  background: #FFFFFF;
+  margin-bottom: 3.5em;
+  height: auto;
+}
+
+.sidebar_item header, .content_files article header{
+  background: #4D6A50;
+  padding: 4%;
+  color: #FFFFFF;
+}
+
+.content_files article header{
+  padding: 2%;
+}
+
+
+.sidebar_item .sidebar_favorites{
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar_item .sidebar_favorites li{
+  display: block;
+  margin:2% 0 2% 0;
+  padding: 2%;
+}
+
+
+.sidebar_item .sidebar_favorites li .left{
+  padding: 0;
+
+
+}
+
+.sidebar_item .sidebar_favorites li .left img{
+  object-fit: contain;
+  width: 32px;
+  height: 32px;
+  margin-left: 15%;
+
+
+}
+
+.sidebar_item .sidebar_favorites li .right{
+}
+
+.sidebar_item .sidebar_favorites li h4{
+  margin-top: 0;
+  margin-bottom: 0;
+}

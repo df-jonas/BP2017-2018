@@ -2,12 +2,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-1 col-xs-3" style="padding:0">
-                <a href="index.html"><img class="logo" src="img/logo/favicon_white.png"></a>
+                <a href="{{ route('website-index') }}"><img class="logo"
+                                                            src="{{ URL::asset('img/logo/favicon_white.png') }}"></a>
             </div>
 
             <div class="account">
 
-                <img src="img/team/arno.png" class="account_img">
+                <img src="{{ URL::asset('img/team/arno.png') }}" class="account_img">
                 <div class="account_username">Arno Stalpaert</div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 9 6"
                      class="account_dropdown_btn">
