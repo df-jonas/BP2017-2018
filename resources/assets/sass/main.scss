@@ -129,8 +129,8 @@ form input{
 
 #page_banner {
   height: 92.5vh;
-  /*background-image: url("../img/backgrounds/imgix-404314.jpg");*/
-  background: url('#{$assetPath}/backgrounds/imgix-404314.jpg');
+  background-image: url("/img/backgrounds/imgix-404314.jpg");
+  /*background: url('#{$assetPath}/backgrounds/imgix-404314.jpg');*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
