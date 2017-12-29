@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>UniHelp | Home</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{{asset('img/logo/favicon.png')}}"/>
     <!-- bootstrap -->
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-theme.css') }}">

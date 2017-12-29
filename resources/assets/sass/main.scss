@@ -308,22 +308,37 @@ form input{
 
 /*FOOTER*/
 
+
+
 footer{
+  color: #FFFFFF;
   clear: both;
+
+  .top{
+    height: 12em;
+    background: #333A40;
+  }
+  //vertical align
+  .bottom{
+    height: 7em;
+    background: #2B2F33;
+    position: relative;
+    .container{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
 }
+
+
+
 footer.col-xs-12 {
   padding: 0;
 }
 
-footer .top {
-  height: 15em;
-  background: #333A40;
-}
-
-footer .bottom {
-  height: 7em;
-  background: #2B2F33;
-}
 
 .hamburger{
   background:none;
@@ -378,8 +393,7 @@ footer .bottom {
 
   .container{
     width: 95%;
-    margin-left:2.5%;
-    margin-right: 2.5%;
+   margin: 0 auto;
   }
   /*responsive menu*/
   #page_header{
@@ -430,5 +444,19 @@ footer .bottom {
   #how-it-works .item p{
     text-align: justify;
     word-wrap:break-word;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+
+  footer{
+    .top {
+      height: auto;
+    }
+
+    .bottom{
+      height: 12em;
+    }
   }
 }

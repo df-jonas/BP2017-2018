@@ -20,10 +20,24 @@ Route::get('/canvas/oauth_complete', 'CanvasRegisterController@oauth_complete')-
 // Platform routes
 Route::group(['prefix' => 'platform'], function () {
 
+    Route::get('/', [
+        'uses' => 'SharingController@sharingIndex',
+        'as' => 'sharing-index'
+    ]);
 
     Route::get('/sharing', [
         'uses' => 'SharingController@sharingIndex',
         'as' => 'sharing-index'
+    ]);
+
+    Route::get('/sharing/detail', [
+        'uses' => 'SharingController@sharingDetail',
+        'as' => 'sharing-detail'
+    ]);
+
+    Route::get('/sharing/new', [
+        'uses' => 'SharingController@sharingNew',
+        'as' => 'sharing-new'
     ]);
 
 
@@ -36,8 +50,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-//om te testen
-Route::get('/sharing', [
-    'uses' => 'SharingController@sharingIndex',
-    'as' => 'sharing-index'
-]);

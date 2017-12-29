@@ -19,5 +19,5 @@
         </div>
     </div>
 
-    @include('partials.website.footer')
+    @include('partials.footer')
 @endsection
