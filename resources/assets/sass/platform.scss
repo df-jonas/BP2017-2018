@@ -11,7 +11,7 @@ body.platform {
   box-sizing: border-box;
 }
 
-#mceu_31{
+#mceu_31, #mceu_33{
   display: none;
 }
 
@@ -21,6 +21,7 @@ body.platform {
   color: #FFFFFF;
   border:none;
   float: right;
+  margin-left: 2%;
 }
 
 button.download{
@@ -249,6 +250,8 @@ div.table {
   input{
     margin-bottom: 2em;
     padding: 0.5%;
+    border: 1px solid $download-button;
+
   }
 }
 
@@ -335,6 +338,31 @@ div.table {
 
 
 
+
+/*Custom checkboxes*/
+
+.checkbox-label{
+  margin-bottom: 2%;
+}
+.checkbox-label input {
+  display: none;
+}
+.checkbox-label span {
+  height: 12px;
+  width: 12px;
+  padding: 2%;
+  border: 1px solid grey;
+  display: inline-block;
+  position: relative;
+}
+.checkbox-label [type=checkbox]:checked + span:before {
+  content: '\f00c';
+  font-family: FontAwesome;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  color: $download-button;
+}
 
 @media screen and (max-width: 480px) {
 
