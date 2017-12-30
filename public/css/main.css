@@ -124,7 +124,6 @@ form input {
 #page_banner {
   height: 92.5vh;
   background-image: url("/img/backgrounds/imgix-404314.jpg");
-  /*background: url('../img/backgrounds/imgix-404314.jpg');*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -166,7 +165,7 @@ form input {
   padding: 4%;
   margin-top: 35%;
   color: #FFFFFF;
-  /*background-image: url("../img/logo/canvas-logo.png");*/
+  background-image: url("/img/logo/canvas-logo.png");
   background-position: 16px center;
   background-size: 32px;
   background-repeat: no-repeat;
@@ -250,7 +249,7 @@ form input {
 
 #about_quote {
   height: 30em;
-  /*background-image: url("../img/backgrounds/rawpixel-com-250087.jpg");*/
+  background-image: url("/img/backgrounds/rawpixel-com-250087.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -286,7 +285,7 @@ form input {
 
 #login_page {
   height: 80vh;
-  /*background: url("../img/backgrounds/alexis-brown-82988.jpg");*/
+  background: url("/img/backgrounds/alexis-brown-82988.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -312,21 +311,31 @@ form input {
 /*FOOTER*/
 
 footer {
+  color: #FFFFFF;
   clear: both;
 }
 
-footer.col-xs-12 {
-  padding: 0;
-}
-
 footer .top {
-  height: 15em;
+  height: 12em;
   background: #333A40;
 }
 
 footer .bottom {
   height: 7em;
   background: #2B2F33;
+  position: relative;
+}
+
+footer .bottom .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+footer.col-xs-12 {
+  padding: 0;
 }
 
 .hamburger {
@@ -380,8 +389,7 @@ footer .bottom {
 @media only screen and (max-width: 768px) {
   .container {
     width: 95%;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
+    margin: 0 auto;
   }
 
   /*responsive menu*/
@@ -436,6 +444,16 @@ footer .bottom {
   #how-it-works .item p {
     text-align: justify;
     word-wrap: break-word;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  footer .top {
+    height: auto;
+  }
+
+  footer .bottom {
+    height: 12em;
   }
 }
 
