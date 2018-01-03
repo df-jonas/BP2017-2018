@@ -11,12 +11,10 @@ class SharingController extends Controller
         return view("platform.sharing.index");
     }
 
-
     public function sharingDetail()
     {
         return view("platform.sharing.detail");
     }
-
 
     public function sharingNew()
     {
