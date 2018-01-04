@@ -25,7 +25,7 @@ body.platform {
 }
 
 button.download{
-    @extend .download-button;
+  @extend .download-button;
   margin-top: 3.5em;
   margin-bottom: 3.5em;
 }
@@ -251,7 +251,6 @@ div.table {
     margin-bottom: 2em;
     padding: 0.5%;
     border: 1px solid $download-button;
-
   }
 }
 

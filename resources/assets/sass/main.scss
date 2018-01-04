@@ -1,5 +1,8 @@
 /*FONTS*/
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+@import "mixin/link";
+
+@import "variables/colors";
 
 $assetPath : "../img";
 * {
@@ -28,8 +31,61 @@ $assetPath : "../img";
   height: 1%;
 }
 
+/*table*/
+div.table {
+  table-layout: fixed;
+  display: table;
+  padding: 0;
+}
+
+.account_img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  object-fit: cover;
+}
+
+.account_username {
+  margin-left: 16px;
+  margin-right: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
 .clearfix {
   display: block;
+}
+/*custom select box*/
+select {
+  border: 1px solid #111;
+  background: transparent;
+  padding: 5px 35px 5px 5px;
+  border: 1px solid #ccc;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.selectdiv{
+  position: relative;
+
+}
+
+.selectdiv:after{
+  content: "\f078";
+  font: 17px FontAwesome;
+  color: #333;
+  right: 11px;
+  /*Adjust for position however you want*/
+  top: 32px;
+  padding: 0 0 2px;
+  /*left line */
+
+  position: absolute;
+  pointer-events: none;
 }
 
 .round_img{
@@ -41,6 +97,10 @@ header a, header a:hover{
   text-decoration: none;
 }
 
+a:hover, a:visited, a:link, a:active
+{
+  text-decoration: none;
+}
 
 
 form input{
@@ -160,6 +220,14 @@ form input{
 .action-button.register{
   background: #4D6A50;
   color: #FFFFFF;
+}
+
+form.register .form-group{
+  margin-bottom: 3.5em;
+}
+.action-button.long{
+  @extend .action-button;
+  width: 100%;
 }
 
 .action-button.canvas{
@@ -330,6 +398,11 @@ footer{
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
     }
+  }
+
+  a{
+    cursor: pointer;
+    @include link(white, white, white, white);
   }
 }
 

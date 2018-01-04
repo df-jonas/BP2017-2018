@@ -8,36 +8,56 @@
                 <div class="col-lg-8">
                     <h1>Registreren</h1>
 
-                    <form action="{{ route('sharing-index') }}">
+                    <form class="register" action="{{ route('sharing-index') }}">
 
-                        <div class="form-group col-lg-6" style="padding-left: 0;">
-                            <label for="exampleInputEmail1">Voornaam</label>
-                            <input type="email" class="form-control col-lg-6" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Arno" disabled>
+
+                        <div class="table" style="display: table">
+                            <div style="display: table-cell; width: 32px">
+                                <img src="{{ URL::asset('img/team/arno.png') }}" class="account_img">
+                            </div>
+                            <div style="display: table-cell; padding-left: 32px; vertical-align: middle">
+                                <h6 style="margin: 0">Arno Stalpaert</h6>
+                                <h6 style="margin: 5px 0">arno.stalpaert@student.ehb.be</h6>
+                            </div>
                         </div>
 
-
-                        <div class="form-group col-lg-6" style="padding-right: 0;">
-                            <label for="exampleInputEmail1">Achternaam</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Stalpaert" disabled>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Kies een gebruikersnaam</label>
+                            <input type="email" class="form-control col-lg-6" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="Arno">
                         </div>
 
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="arno.stalpaert@student.ehb.be" disabled>
-                            <small id="emailHelp" class="form-text text-muted">Dit is uw Canvas e-mailadres.</small>
+                            <div class="selectdiv">
+                                <label for="exampleInputPassword1">Aan welke campus studeert u?</label>
+
+                                <select class="select col-xs-12">
+                                    <option selected>Design &amp; Technology</option>
+                                    <option>Dansaert</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Gebruikersnaam</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Gebruikersnaam">
+
+                            <div class="selectdiv">
+                                <label for="exampleInputPassword1">Welke studierichting volgt u?</label>
+
+                                <select class="select col-xs-12">
+                                    <option selected>Multimedia &amp; Communicatie Technologie</option>
+                                    <option>Dig-X</option>
+                                </select>
+                            </div>
+
                         </div>
+
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input type="checkbox" class="form-check-input">
                                 Ik aanvaard de algemene voorwaarden.
                             </label>
                         </div>
-                        <button type="submit" class="action-button register">Registreren</button>
+                        <button type="submit" class="action-button register long col-lg-12">Registreren</button>
                     </form>
                 </div>
 
