@@ -1,12 +1,12 @@
 /*FONTS*/
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import "mixin/link";
-
 @import "variables/colors";
 
-$assetPath : "../img";
+$assetPath: "../img";
 * {
   font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
 }
 
 /*GENERAL*/
@@ -27,6 +27,7 @@ $assetPath : "../img";
 .clearfix {
   display: inline-block;
 }
+
 * html .clearfix {
   height: 1%;
 }
@@ -46,6 +47,21 @@ div.table {
   object-fit: cover;
 }
 
+
+.account_img.edit{
+  position:absolute;
+  top: -4px;
+  right: -16px;
+  background: $unihelp-green;
+  color: #FFFFFF;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+
 .account_username {
   margin-left: 16px;
   margin-right: 6px;
@@ -57,56 +73,52 @@ div.table {
 .clearfix {
   display: block;
 }
+
 /*custom select box*/
-select {
-  border: 1px solid #111;
-  background: transparent;
-  padding: 5px 35px 5px 5px;
-  border: 1px solid #ccc;
-  height: 34px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
 
-.selectdiv{
+.selectdiv {
   position: relative;
+  select {
+    border: 1px solid #111;
+    background: transparent;
+    padding: 5px 35px 5px 5px;
+    border: 1px solid #ccc;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
 
+  &::after{
+    content: "\f078";
+    font: 17px FontAwesome;
+    color: #333;
+    right: 11px;
+    top: 32px;
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
+  }
 }
 
-.selectdiv:after{
-  content: "\f078";
-  font: 17px FontAwesome;
-  color: #333;
-  right: 11px;
-  /*Adjust for position however you want*/
-  top: 32px;
-  padding: 0 0 2px;
-  /*left line */
 
-  position: absolute;
-  pointer-events: none;
-}
 
-.round_img{
+.round_img {
   border-radius: 100%;
 }
 
-header a, header a:hover{
+header a, header a:hover {
   color: #000000;
   text-decoration: none;
 }
 
-a:hover, a:visited, a:link, a:active
-{
+a:hover, a:visited, a:link, a:active {
   text-decoration: none;
 }
 
-
-form input{
-  border-radius: 0!important;
+form input {
+  border-radius: 0 !important;
 }
-
 
 /*Header*/
 #page_header, #platform_header {
@@ -116,35 +128,28 @@ form input{
   position: relative;
 }
 
-
-#platform_header{
+#platform_header {
   background-color: #4D6A50;
 }
 
-
-
-#platform_menu{
+#platform_menu {
   height: 3em;
   background: #FFFFFF;
   box-shadow: 2px 1px 5px #888888;
 }
 
-
-#platform_menu .pages{
+#platform_menu .pages {
   padding-left: 1%;
   display: inline-block;
   height: 3em;
 
 }
 
-
-#platform_menu .pages li{
+#platform_menu .pages li {
   display: inline-block;
   line-height: 3em;
   margin-right: 2%;
 }
-
-
 
 #page_header img.logo, #platform_header img.logo {
   width: 36px;
@@ -167,7 +172,6 @@ form input{
   line-height: .5em;
 }
 
-
 #page_header .links li:hover, #page_header .links li.register:hover {
   background: lightgray;
   cursor: pointer;
@@ -182,7 +186,6 @@ form input{
   color: #FFFFFF;
   margin-left: 4%;
 }
-
 
 /*HOME*/
 /*Banner*/
@@ -217,20 +220,21 @@ form input{
   color: #000000;
 }
 
-.action-button.register{
+.action-button.register {
   background: #4D6A50;
   color: #FFFFFF;
 }
 
-form.register .form-group{
-  margin-bottom: 3.5em;
+form.register .form-group {
+  margin-bottom: 7.5%;
 }
-.action-button.long{
+
+.action-button.long {
   @extend .action-button;
   width: 100%;
 }
 
-.action-button.canvas{
+.action-button.canvas {
   background: #333A40;
   display: block;
   width: 80%;
@@ -241,8 +245,9 @@ form.register .form-group{
   background-image: url("/img/logo/canvas-logo.png");
   background-position: 16px center;
   background-size: 32px;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 }
+
 #page_banner .scroll {
   position: absolute;
   top: 97.5%;
@@ -275,7 +280,6 @@ form.register .form-group{
   margin-bottom: 5%;
 }
 
-
 .what .items .item .left img, .what .items .item .right img {
   width: 50%;
   object-fit: cover;
@@ -290,9 +294,10 @@ form.register .form-group{
   padding: 1%;
 }
 
-.call-to-action .buttons{
+.call-to-action .buttons {
   margin-top: 2%;
 }
+
 .call-to-action .buttons button {
   background: #FFFFFF;
   color: #4D6A50;
@@ -334,14 +339,15 @@ form.register .form-group{
   text-shadow: 1px 1px #4D6A50;
 }
 
-.about_person{
+.about_person {
   margin: 5% 0;
 }
+
 .about_person .left {
   text-align: right;
 }
 
-.about_person img{
+.about_person img {
   width: 10em;
   height: 10em;
   object-fit: cover;
@@ -358,14 +364,14 @@ form.register .form-group{
   padding: 0;
 }
 
-.login_box{
+.login_box {
   background: hsla(360, 100%, 100%, 0.97);
   position: absolute;
   top: 10vh;
   min-height: 60vh;
 }
 
-.login_box .info{
+.login_box .info {
   background: #4D6A50;
   color: #FFFFFF;
   height: 100%;
@@ -376,22 +382,20 @@ form.register .form-group{
 
 /*FOOTER*/
 
-
-
-footer{
+footer {
   color: #FFFFFF;
   clear: both;
 
-  .top{
+  .top {
     height: 12em;
     background: #333A40;
   }
   //vertical align
-  .bottom{
+  .bottom {
     height: 7em;
     background: #2B2F33;
     position: relative;
-    .container{
+    .container {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -400,50 +404,47 @@ footer{
     }
   }
 
-  a{
+  a {
     cursor: pointer;
     @include link(white, white, white, white);
   }
 }
 
-
-
 footer.col-xs-12 {
   padding: 0;
 }
 
-
-.hamburger{
-  background:none;
-  position:absolute;
-  top:0;
-  right:0;
-  line-height:1.25em;
-  padding:5px 15px 0px 15px;
-  color:#4D6A50;
-  border:0;
-  font-size:2em;
-  font-weight:bold;
-  cursor:pointer;
-  outline:none;
-  z-index:10000000000000;
+.hamburger {
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 1.25em;
+  padding: 5px 15px 0px 15px;
+  color: #4D6A50;
+  border: 0;
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 10000000000000;
   display: none;
 }
 
-.cross{
-  background:none;
-  position:absolute;
-  top:0;
-  right:0;
-  padding:5px 15px 0px 15px;
-  color:#4D6A50;
-  border:0;
-  font-size:3em;
-  line-height:1.2em;
-  font-weight:bold;
-  cursor:pointer;
-  outline:none;
-  z-index:10000000000000;
+.cross {
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 15px 0px 15px;
+  color: #4D6A50;
+  border: 0;
+  font-size: 3em;
+  line-height: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 10000000000000;
   display: none;
 }
 
@@ -462,12 +463,11 @@ footer.col-xs-12 {
   user-select: none;
 
   /* Hide the browser's default checkbox */
-  input{
+  input {
     position: absolute;
     opacity: 0;
   }
 }
-
 
 /* Create a custom checkbox */
 .checkmark {
@@ -515,11 +515,11 @@ footer.col-xs-12 {
 }
 
 @media only screen and (max-width: 1500px) {
-  #page_header .links{
+  #page_header .links {
     padding-top: 0.5%;
   }
 
-  #page_banner{
+  #page_banner {
     height: 90vh;
   }
 
@@ -530,36 +530,35 @@ footer.col-xs-12 {
 
 @media only screen and (max-width: 768px) {
 
-  .container{
+  .container {
     width: 95%;
-   margin: 0 auto;
+    margin: 0 auto;
   }
   /*responsive menu*/
-  #page_header{
+  #page_header {
     height: auto;
   }
 
-  #page_header .hamburger{
+  #page_header .hamburger {
     display: block;
   }
-  #page_header .links{
+  #page_header .links {
     display: none;
     margin-top: 2%;
-    width: 100%!important;
+    width: 100% !important;
     padding-left: 0;
   }
 
-  #page_header .links li{
+  #page_header .links li {
     width: 100%;
     height: 3em;
-    margin: 0!important;
+    margin: 0 !important;
     text-align: center;
     line-height: 2em;
 
   }
 
-
-  #page_banner{
+  #page_banner {
     height: 50vh;
   }
 
@@ -567,34 +566,33 @@ footer.col-xs-12 {
     left: 42.5%
   }
 
-  #how-it-works .item .left,  #how-it-works .item .right{
+  #how-it-works .item .left, #how-it-works .item .right {
     padding: 0;
   }
 
-  .what .items .item .left img, .what .items .item .right img{
+  .what .items .item .left img, .what .items .item .right img {
     width: 100%;
     margin-left: 0;
   }
-  #how-it-works .item h1{
+  #how-it-works .item h1 {
     text-align: center;
-    word-wrap:break-word;
+    word-wrap: break-word;
   }
 
-  #how-it-works .item p{
+  #how-it-works .item p {
     text-align: justify;
-    word-wrap:break-word;
+    word-wrap: break-word;
   }
 }
 
-
 @media screen and (max-width: 480px) {
 
-  footer{
+  footer {
     .top {
       height: auto;
     }
 
-    .bottom{
+    .bottom {
       height: 12em;
     }
   }

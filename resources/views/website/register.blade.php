@@ -12,8 +12,10 @@
 
 
                         <div class="table" style="display: table">
-                            <div style="display: table-cell; width: 32px">
+                            <div style="display: table-cell; width: 32px; position:relative;">
                                 <img src="{{ URL::asset('img/team/arno.png') }}" class="account_img">
+                                <div class="account_img edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                </div>
                             </div>
                             <div style="display: table-cell; padding-left: 32px; vertical-align: middle">
                                 <h6 style="margin: 0">Arno Stalpaert</h6>
@@ -21,14 +23,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group clearfix">
                             <label for="exampleInputEmail1">Kies een gebruikersnaam</label>
                             <input type="email" class="form-control col-lg-6" id="exampleInputEmail1"
                                    aria-describedby="emailHelp" placeholder="Arno">
                         </div>
 
 
-                        <div class="form-group">
+                        <div class="form-group clearfix">
                             <div class="selectdiv">
                                 <label for="exampleInputPassword1">Aan welke campus studeert u?</label>
 
@@ -38,17 +40,17 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
+
+
+                        <div class="form-group clearfix">
 
                             <div class="selectdiv">
                                 <label for="exampleInputPassword1">Welke studierichting volgt u?</label>
-
                                 <select class="select col-xs-12">
                                     <option selected>Multimedia &amp; Communicatie Technologie</option>
                                     <option>Dig-X</option>
                                 </select>
                             </div>
-
                         </div>
 
                         <div class="form-check">

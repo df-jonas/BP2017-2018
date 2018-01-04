@@ -2,6 +2,8 @@
 
 * {
   font-family: 'Raleway', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /*GENERAL*/
@@ -45,6 +47,18 @@ div.table {
      object-fit: cover;
 }
 
+.account_img.edit {
+  position: absolute;
+  top: -4px;
+  right: -16px;
+  background: #4D6A50;
+  color: #FFFFFF;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
 .account_username {
   margin-left: 16px;
   margin-right: 6px;
@@ -59,7 +73,11 @@ div.table {
 
 /*custom select box*/
 
-select {
+.selectdiv {
+  position: relative;
+}
+
+.selectdiv select {
   border: 1px solid #111;
   background: transparent;
   padding: 5px 35px 5px 5px;
@@ -70,19 +88,13 @@ select {
   appearance: none;
 }
 
-.selectdiv {
-  position: relative;
-}
-
-.selectdiv:after {
+.selectdiv::after {
   content: "\F078";
   font: 17px FontAwesome;
   color: #333;
   right: 11px;
-  /*Adjust for position however you want*/
   top: 32px;
   padding: 0 0 2px;
-  /*left line */
   position: absolute;
   pointer-events: none;
 }
@@ -221,7 +233,7 @@ form input {
 }
 
 form.register .form-group {
-  margin-bottom: 3.5em;
+  margin-bottom: 7.5%;
 }
 
 .long.action-button {
