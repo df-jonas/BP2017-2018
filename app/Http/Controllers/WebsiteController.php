@@ -31,11 +31,6 @@ class WebsiteController extends Controller
         return view("website.login");
     }
 
-    public function register()
-    {
-        return view("website.register");
-    }
-
     public function cookies()
     {
         return view("website.cookies");

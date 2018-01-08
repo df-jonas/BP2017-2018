@@ -27,6 +27,11 @@ class User extends Authenticatable
         'password', 'remember_token', 'role', 'canvas_key', 'created_at', 'updated_at',
     ];
 
+    public function files()
+    {
+        return $this->hasMany('app\File');
+    }
+
     public function hasCanvasAuth()
     {
         if (isset($this->canvas_key) && $this->canvas_key !== null && $this->canvas_key !== "") {

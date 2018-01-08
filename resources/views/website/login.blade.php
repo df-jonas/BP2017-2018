@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <h1>Inloggen</h1>
-                    <a href="{{ route('website-register') }}">
+                    <a href="{{ route('canvas-login') }}">
                         <button type="button" class="action-button canvas">Inloggen met Canvas</button>
                     </a>
                 </div>
