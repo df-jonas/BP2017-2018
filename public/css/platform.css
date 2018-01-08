@@ -4,6 +4,7 @@
 
 body.platform {
   background-color: rgba(181, 212, 183, 0.14);
+  /*Buttons*/
 }
 
 body.platform * {
@@ -188,7 +189,7 @@ div.table {
   padding: 0;
 }
 
-/*SIDEBAR*/
+/*table layout*/
 
 .sidebar {
   display: table-cell;
@@ -207,6 +208,8 @@ div.table {
   padding-left: 10px;
 }
 
+/*Sidebar*/
+
 .sidebar .item,
 .content .file {
   background: #FFFFFF;
@@ -224,6 +227,10 @@ div.table {
   text-decoration: none;
   font-size: 16px;
   border-bottom: 1px solid #dfdfdf;
+}
+
+.sidebar .item span {
+  margin-left: 8px;
 }
 
 .content .file header i {
@@ -312,7 +319,6 @@ div.table {
 .content .file.new input {
   margin-bottom: 2em;
   padding: 0.5%;
-  border: 1px solid #505457;
 }
 
 .padding {
@@ -429,6 +435,31 @@ div.table {
   color: #505457;
 }
 
+/*Forms*/
+
+form input,
+form textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 13px;
+}
+
+form label {
+  float: left;
+}
+
+form .mce-tinymce {
+  clear: both;
+}
+
+form .form-group {
+  margin: 2.5% 0 2.5% 0;
+}
+
 /*Multistep forms*/
 
 #msform {
@@ -450,17 +481,6 @@ div.table {
 
 #msform fieldset:not(:first-of-type) {
   display: none;
-}
-
-#msform input,
-#msform textarea {
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 13px;
 }
 
 /*steps bar*/

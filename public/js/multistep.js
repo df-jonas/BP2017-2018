@@ -1,4 +1,8 @@
+
 $(document).ready(function () {
+
+
+
     console.log('Multistep script ready');
 
     //jQuery time

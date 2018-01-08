@@ -76,10 +76,18 @@ div.table {
 
 /*custom select box*/
 
-.selectdiv {
+.textdiv{
+  input {
+    background: transparent;
+    padding: 5px 35px 5px 5px;
+    border: 1px solid #ccc;
+    height: 34px;
+    width: 100%;
+  }
+}
+.selectdiv{
   position: relative;
-  select {
-    border: 1px solid #111;
+  select, input {
     background: transparent;
     padding: 5px 35px 5px 5px;
     border: 1px solid #ccc;

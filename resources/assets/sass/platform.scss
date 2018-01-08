@@ -19,6 +19,7 @@ body.platform {
   display: none;
 }
 
+  /*Buttons*/
 .download-button{
   padding: 1%;
   background: $download-button;
@@ -147,7 +148,7 @@ div.table {
   padding: 0;
 }
 
-/*SIDEBAR*/
+/*table layout*/
 .sidebar {
   display: table-cell;
   margin-top: 5em;
@@ -165,6 +166,7 @@ div.table {
   padding-left: 10px;
 }
 
+/*Sidebar*/
 .sidebar .item, .content .file {
   background: #FFFFFF;
   margin-bottom: 3em;
@@ -180,9 +182,11 @@ div.table {
   text-decoration: none;
   font-size: 16px;
   border-bottom: 1px solid #dfdfdf;
-
 }
 
+.sidebar .item span{
+  margin-left: 8px;
+}
 .content .file header i {
   padding-right: 1%;
   padding-left: 1%;
@@ -261,7 +265,6 @@ div.table {
   input{
     margin-bottom: 2em;
     padding: 0.5%;
-    border: 1px solid $download-button;
   }
 }
 
@@ -301,7 +304,6 @@ div.table {
 }
 
 /*star rating*/
-
 .content .file .right .rating {
   float: right;
   font-size: 1.5em;
@@ -374,7 +376,28 @@ div.table {
   color: $download-button;
 }
 
+/*Forms*/
+form input, form textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+}
 
+form label{
+  float: left;
+}
+
+
+form .mce-tinymce{
+  clear: both;
+}
+
+form  .form-group{
+  margin: 2.5% 0 2.5% 0;
+}
 /*Multistep forms*/
 #msform {
   width:100%;
@@ -394,14 +417,6 @@ div.table {
   display: none;
 }
 
-#msform input, #msform textarea {
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  font-size: 13px;
-}
 
 /*steps bar*/
 #progressbar {
@@ -421,6 +436,7 @@ div.table {
   float: left;
   position: relative;
 }
+
 //box with title*/
 #progressbar li:before {
   position: relative;
