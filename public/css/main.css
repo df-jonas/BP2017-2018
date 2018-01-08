@@ -2,6 +2,8 @@
 
 * {
   font-family: 'Raleway', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /*GENERAL*/
@@ -28,8 +30,81 @@
   height: 1%;
 }
 
+/*table*/
+
+div.table {
+  table-layout: fixed;
+  display: table;
+  padding: 0;
+}
+
+.account_img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.account_img.edit {
+  position: absolute;
+  top: -4px;
+  right: -16px;
+  background: #4D6A50;
+  color: #FFFFFF;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.account_username {
+  margin-left: 16px;
+  margin-right: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
 .clearfix {
   display: block;
+}
+
+/*custom select box*/
+
+.textdiv input {
+  background: transparent;
+  padding: 5px 35px 5px 5px;
+  border: 1px solid #ccc;
+  height: 34px;
+  width: 100%;
+}
+
+.selectdiv {
+  position: relative;
+}
+
+.selectdiv select,
+.selectdiv input {
+  background: transparent;
+  padding: 5px 35px 5px 5px;
+  border: 1px solid #ccc;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.selectdiv::after {
+  content: "\F078";
+  font: 17px FontAwesome;
+  color: #333;
+  right: 11px;
+  top: 32px;
+  padding: 0 0 2px;
+  position: absolute;
+  pointer-events: none;
 }
 
 .round_img {
@@ -39,6 +114,13 @@
 header a,
 header a:hover {
   color: #000000;
+  text-decoration: none;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
   text-decoration: none;
 }
 
@@ -139,7 +221,8 @@ form input {
           transform: translateY(-75%);
 }
 
-.action-button {
+.action-button,
+.action-button.long {
   background: #FFFFFF;
   display: inline-block;
   border: none;
@@ -155,6 +238,14 @@ form input {
 .action-button.register {
   background: #4D6A50;
   color: #FFFFFF;
+}
+
+form.register .form-group {
+  margin-bottom: 7.5%;
+}
+
+.long.action-button {
+  width: 100%;
 }
 
 .action-button.canvas {
@@ -332,6 +423,27 @@ footer .bottom .container {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+footer a {
+  cursor: pointer;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:visited {
+  color: white;
+}
+
+footer a:hover {
+  color: white;
+}
+
+footer a:active,
+footer a:focus {
+  color: white;
 }
 
 footer.col-xs-12 {

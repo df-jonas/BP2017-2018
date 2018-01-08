@@ -1,20 +1,25 @@
 /*Imports*/
 
 @import "variables/colors";
+@import "mixin/link";
 
 /*General css*/
 body.platform {
   background-color: $background-color;
-}
+
 
 * {
   box-sizing: border-box;
+
 }
 
-#mceu_31, #mceu_33{
+
+
+#mceu_31, #mceu_33, #mceu_62, .mce-notification{
   display: none;
 }
 
+  /*Buttons*/
 .download-button{
   padding: 1%;
   background: $download-button;
@@ -22,13 +27,20 @@ body.platform {
   border:none;
   float: right;
   margin-left: 2%;
+  a {
+    cursor: pointer;
+    @include link(white, white, white, white);
+  }
+}
 }
 
-button.download{
-    @extend .download-button;
+button.download, input.next, input.previous{
+  @extend .download-button;
   margin-top: 3.5em;
   margin-bottom: 3.5em;
 }
+
+
 /*Menu*/
 .account {
   display: -webkit-box;
@@ -136,7 +148,7 @@ div.table {
   padding: 0;
 }
 
-/*SIDEBAR*/
+/*table layout*/
 .sidebar {
   display: table-cell;
   margin-top: 5em;
@@ -154,6 +166,7 @@ div.table {
   padding-left: 10px;
 }
 
+/*Sidebar*/
 .sidebar .item, .content .file {
   background: #FFFFFF;
   margin-bottom: 3em;
@@ -169,9 +182,11 @@ div.table {
   text-decoration: none;
   font-size: 16px;
   border-bottom: 1px solid #dfdfdf;
-
 }
 
+.sidebar .item span{
+  margin-left: 8px;
+}
 .content .file header i {
   padding-right: 1%;
   padding-left: 1%;
@@ -250,8 +265,6 @@ div.table {
   input{
     margin-bottom: 2em;
     padding: 0.5%;
-    border: 1px solid $download-button;
-
   }
 }
 
@@ -291,7 +304,6 @@ div.table {
 }
 
 /*star rating*/
-
 .content .file .right .rating {
   float: right;
   font-size: 1.5em;
@@ -364,6 +376,117 @@ div.table {
   color: $download-button;
 }
 
+/*Forms*/
+form input, form textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+form label{
+  float: left;
+}
+
+
+form .mce-tinymce{
+  clear: both;
+}
+
+form  .form-group{
+  margin: 2.5% 0 2.5% 0;
+}
+/*Multistep forms*/
+#msform {
+  width:100%;
+  text-align: center;
+  position: relative;
+
+}
+#msform fieldset{
+  border: 0 none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  /*fieldsets op elkaar stacken*/
+  position: relative;
+}
+/*Alle steps hiden, behalve de eerste*/
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+
+
+/*steps bar*/
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+  padding-left: 0;
+}
+
+#progressbar li {
+  list-style-type: none;
+  color: red;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 25%;
+  float: left;
+  position: relative;
+}
+
+//box with title*/
+#progressbar li:before {
+  position: relative;
+  /*html data-title*/
+  content: attr(data-title);
+  counter-increment: step;
+  line-height: 60px;
+  display: block;
+  font-size: 10px;
+  color: white;
+  margin: 0 auto 5px auto;
+  background: $grey;
+  height: 60px;
+  width: 75%;
+  z-index: 10;
+}
+
+/*lijn tussen boxes*/
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 10px;
+  background: $grey;
+  position: absolute;
+  left: -50%;
+  top: 35%;
+  z-index: 1; /*put it behind the numbers*/
+}
+
+/*Geen connector nodig voor stap 1*/
+#progressbar li:first-child:after {
+  content: none;
+}
+
+/*Actieve en voltooide stappen groen kleuren*/
+#progressbar li.active:before,  #progressbar li.active:after{
+  background: $unihelp-green;
+  color: white;
+}
+
+.upload-zone{
+  background: $unihelp-green;
+  color: white;
+  padding: 2%;
+  width: 100%;
+  height: 10em;
+}
+
+
+/*Mediaqueries*/
 @media screen and (max-width: 480px) {
 
   div.table {

@@ -24,19 +24,19 @@
     <div class="bottom">
         <div class="container">
             <div class="col-lg-3 col-xs-12">
-                <h6>&copy; 2017-2018 UniHelp</h6>
+                <a><h6>&copy; 2017-2018 UniHelp</h6></a>
             </div>
 
             <div class="col-lg-3 col-xs-12">
-                <h6>Cookie policy</h6>
+                <a><h6>Cookie policy</h6></a>
             </div>
 
             <div class="col-lg-3 col-xs-12">
-                <h6>Privacy policy</h6>
+                <a><h6>Privacy policy</h6></a>
             </div>
 
             <div class="col-lg-3 col-xs-12">
-                <h6>Test</h6>
+                <a href="https://blog.unihelp.be" target="_blank"><h6>Blog</h6></a>
             </div>
         </div>
     </div>
