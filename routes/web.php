@@ -1,14 +1,22 @@
 <?php
 
+Route::get('/testing', function () {
+    return view('testing.fileupload');
+});
+
 /**
  * EXTERIOR DOMAIN ROUTES
  */
 
-Route::domain('static-unihelp.eu')->group(function () {
+$exterior = function () {
     Route::get('/', function () {
-        return "UniHelp fileshare // Unauthorized access is strictly prohibited, this incident will be reported.";
+        return "Local UniHelp fileshare // Unauthorized access is strictly prohibited, this incident will be reported.";
     })->name('static-index');
-});
+    Route::get('/{fileid}', 'StaticDataController@find')->name('static-find');
+};
+
+Route::domain('static-unihelp.eu')->group($exterior);
+Route::domain('test.dev')->group($exterior);
 
 /**
  * UNSAFE ROUTES
@@ -40,6 +48,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/sharing', 'SharingController@sharingIndex')->name('sharing-index');
         Route::get('/sharing/detail', 'SharingController@sharingDetail')->name('sharing-detail');
         Route::get('/sharing/new', 'SharingController@sharingNew')->name('sharing-new');
+        Route::post('/sharing/new', 'SharingController@newFile')->name('sharing-new');
     });
 
 
