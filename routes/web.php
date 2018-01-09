@@ -53,7 +53,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/sharing', 'SharingController@sharingIndex')->name('sharing-index');
         Route::get('/sharing/detail', 'SharingController@sharingDetail')->name('sharing-detail');
         Route::get('/sharing/new', 'SharingController@sharingNew')->name('sharing-new');
-        Route::post('/sharing/new', 'SharingController@newFile')->name('sharing-new');
+        Route::post('/sharing/new', 'SharingController@newFile');
     });
 
 
