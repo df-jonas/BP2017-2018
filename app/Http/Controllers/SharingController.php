@@ -46,6 +46,6 @@ class SharingController extends Controller
         $file->user_id = Auth::user()->id;
         $file->save();
 
-        return $path;
+        return "<a href='https://static-unihelp.eu/$publicResourceId'>https://static-unihelp.eu/$publicResourceId</a>";
     }
 }

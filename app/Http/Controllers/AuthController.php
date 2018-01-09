@@ -10,13 +10,11 @@ namespace App\Http\Controllers;
 
 use App\Helpers\HttpHelper;
 use App\User;
-use Illuminate\Auth\Authenticatable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 
-class RegisterController extends Controller
+class AuthController extends Controller
 {
     public function index()
     {
@@ -53,9 +51,8 @@ class RegisterController extends Controller
         $client = json_decode($client->getBody(), true);
 
         // Decide whether or not a user is new and/or has completed registration & reroute
-        if (isset($client['login_id']) && isset($client['id'])) {
+        if (isset($client['id'])) {
             $user = User::query()
-                ->where("canvas_email", "=", $client['login_id'])
                 ->where("canvas_id", "=", $client['id'])
                 ->first();
 
@@ -68,29 +65,29 @@ class RegisterController extends Controller
                 if (isset(Auth::user()->email) && isset(Auth::user()->name) && isset(Auth::user()->username)) {
                     return Redirect::to(route('sharing-index'));
                 } else {
-                    return Redirect::to(route('website-register'));
+                    return Redirect::to(route('register'));
                 }
             } else {
                 $user = new User();
                 $user->canvas_key = $access_token;
                 $user->canvas_refresh = $refresh_token;
-                $user->canvas_email = $client['login_id'];
                 $user->name = $client['name'];
                 $user->canvas_id = $client['id'];
                 $user->save();
-                Auth::login($user);
+                Auth::login($user, true);
 
                 return Redirect::to("/register");
             }
         } else {
             return Redirect::to("/");
         }
-
-        return Redirect::to('/home');
     }
 
     public function register()
     {
+        if (Auth::check() && Auth::user()->isValid())
+            return Redirect::to(route('sharing-index'));
+
         $params = [
             'name' => Auth::user()->name,
             'email' => Auth::user()->canvas_email
@@ -98,16 +95,35 @@ class RegisterController extends Controller
         return view("website.register", $params);
     }
 
+    public function login()
+    {
+        if (Auth::check() && Auth::user()->isValid()) {
+            return Redirect::to(route('sharing-index'));
+        }
+        return view("website.login");
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return Redirect::to(route('website-index'));
+    }
+
     public function registerPost(Request $request)
     {
         if (isset($request->username) && isset($request->tnc)) {
+
+            //TODO validation
+
             $user = Auth::user();
-            $user->email = $user->canvas_email;
+            $user->fosid = $request->fos;
+            $user->campusid = $request->campus;
+            $user->email = $request->email;
             $user->username = $request->username;
             $user->save();
 
             return Redirect::to(route('sharing-index'));
         }
-        return Redirect::to(route('website-register'));
+        return Redirect::to(route('register'));
     }
 }
