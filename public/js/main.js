@@ -8,6 +8,7 @@ $(document).ready(function () {
 function initDropZones() {
     //Sharing upload dropzone
     $("#sharingDropZone").dropzone({
-        url: "/file/post"
+        url: "/p/sharing/new",
+        autoProcessQueue: false
     });
 }

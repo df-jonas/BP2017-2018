@@ -27,7 +27,7 @@ class SharingController extends Controller
 
     public function newFile(Request $request)
     {
-        $request->validate([
+        /*$request->validate([
             'file' => 'required|mimes:pdf|max:10240'
         ]);
 
@@ -46,6 +46,8 @@ class SharingController extends Controller
         $file->user_id = Auth::user()->id;
         $file->save();
 
-        return "<a href='https://static-unihelp.eu/$publicResourceId'>https://static-unihelp.eu/$publicResourceId</a>";
+        return "<a href='https://static-unihelp.eu/$publicResourceId'>https://static-unihelp.eu/$publicResourceId</a>";*/
+
+        return $request;
     }
 }

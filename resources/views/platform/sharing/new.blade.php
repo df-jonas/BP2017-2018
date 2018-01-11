@@ -57,10 +57,11 @@
             <div class="files">
 
                 <!-- multistep form -->
-                <form id="msform" class="clearfix" method="post" enctype="multipart/form-data" action="/file/post">
+                <form id="msform" class="clearfix" method="post" enctype="multipart/form-data" action="{{route('sharing-new')}}">
 
+                {{ csrf_field() }}
 
-                    <!-- progressbar -->
+                <!-- progressbar -->
                     <article class="file new clearfix">
                         <div class="padding">
                             <ul id="progressbar">
@@ -73,7 +74,6 @@
                     </article>
                     <!-- progressbar -->
 
-
                     <!-- step 1 -->
                     <fieldset>
 
@@ -81,19 +81,18 @@
                             <div class="padding">
                                 <div class="form-group clearfix">
                                     <div class="selectdiv">
-                                        <label>Voor welk vak wil je een bestand uploaden?</label>
-                                        <select class="select col-xs-12">
-                                            <option selected>Advanced Web Development</option>
-                                            <option>Cross Media Design</option>
-                                            <option>Data Visualisation</option>
-                                            <option>Mobile Game Development</option>
-                                            <option>Enterpreneurship</option>
+                                        <label for="course">Voor welk vak wil je een bestand uploaden?</label>
+                                        <select id="course" class="select col-xs-12" name="course">
+                                            <option value="1" selected>Advanced Web Development</option>
+                                            <option value="2">Cross Media Design</option>
+                                            <option value="3">Data Visualisation</option>
+                                            <option value="4">Mobile Game Development</option>
+                                            <option value="5">Enterpreneurship</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                         </article>
-
 
                         <article class="file new clearfix">
                             <div class="padding">
@@ -106,14 +105,16 @@
                                 Dropzone.autoDiscover = false;
                             </script>
 
-                            <div class="clsbox-1" runat="server"  style="margin-top: 2em">
+                            <div class="clsbox-1" style="margin-top: 2em">
+                                <!--
                                 <div class="dropzone clsbox" id="sharingDropZone">
                                 </div>
+                                -->
+                                <input type="file" name="file">
                             </div>
 
-
                             <div class="padding">
-                                <input type="button" name="next" class="next col-lg-2" value="Volgende"/>
+                                <input type="button" class="next col-lg-2" value="Volgende"/>
                             </div>
                         </article>
 
@@ -126,19 +127,19 @@
                             <div class="padding">
 
                                 <div class="form-group clearfix">
-                                    <label>Omschrijving bestand</label>
-                                    <textarea></textarea>
+                                    <label for="filedesc">Omschrijving bestand</label>
+                                    <textarea id="filedesc" name="filedescription"></textarea>
                                 </div>
 
 
                                 <div class="form-group clearfix">
 
                                     <div class="selectdiv">
-                                        <label>Type document</label>
-                                        <select class="select col-xs-12">
-                                            <option selected>Samenvatting</option>
-                                            <option>Notities</option>
-                                            <option>Oefeningen</option>
+                                        <label for="doctype">Type document</label>
+                                        <select id="doctype" name="documenttype" class="select col-xs-12">
+                                            <option value="1" selected>Samenvatting</option>
+                                            <option value="2">Notities</option>
+                                            <option value="3">Oefeningen</option>
                                         </select>
                                     </div>
                                 </div>
@@ -147,13 +148,13 @@
                                 <div class="form-group clearfix">
 
                                     <div class="selectdiv">
-                                        <label>Studiejaar</label>
-                                        <select class="select col-xs-12">
-                                            <option selected>3 bachelor</option>
-                                            <option>2 bachelor</option>
-                                            <option>1 bachelor</option>
-                                            <option>1 master</option>
-                                            <option>2 master</option>
+                                        <label for="degree">Studiejaar</label>
+                                        <select id="degree" name="degree" class="select col-xs-12">
+                                            <option value="1" selected>3 bachelor</option>
+                                            <option value="2">2 bachelor</option>
+                                            <option value="3">1 bachelor</option>
+                                            <option value="4">1 master</option>
+                                            <option value="5">2 master</option>
                                         </select>
                                     </div>
                                 </div>
@@ -162,17 +163,14 @@
                                 <div class="form-group clearfix">
 
                                     <div class="selectdiv">
-                                        <label>Geschreven in</label>
-                                        <select class="select col-xs-12">
-                                            <option selected>2017-2018</option>
-                                            <option>2016-2017</option>
-                                            <option>2015-2016</option>
+                                        <label for="originaldate">Geschreven in</label>
+                                        <select id="originaldate" name="originaldate" class="select col-xs-12">
+                                            <option value="1" selected>2017-2018</option>
+                                            <option value="2">2016-2017</option>
+                                            <option value="3">2015-2016</option>
                                         </select>
                                     </div>
                                 </div>
-
-
-
 
 
                                 <input type="button" name="next" class="next col-lg-2" value="Volgende"/>
@@ -192,18 +190,18 @@
                                 <div class="form-group clearfix">
 
                                     <div class="selectdiv">
-                                        <label>Is er een boek gekoppeld aan dit vak?</label>
-                                        <select class="select col-xs-12">
-                                            <option selected>Neen</option>
-                                            <option>Ja</option>
+                                        <label for="book">Is er een boek gekoppeld aan dit vak?</label>
+                                        <select id="book" name="hasbook" class="select col-xs-12">
+                                            <option value="0" selected>Neen</option>
+                                            <option value="1">Ja</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group clearfix">
                                     <div class="textdiv">
-                                        <label>Welk boek?</label>
-                                        <input type="text">
+                                        <label for="booktitle">Welk boek?</label>
+                                        <input id="booktitle" name="booktitle" type="text">
                                     </div>
 
                                 </div>
@@ -223,12 +221,9 @@
 
                                 <label>Document eigenschappen</label>
 
-
-                                <!-- post csrf token -->
-                                {{ csrf_field() }}
-
                                 <input type="submit" name="submit" class="next col-lg-2" value="Versturen"/>
-                                <input type="button" name="previous" class="previous col-lg-2" value="Vorige"/>
+                                <input type="button" id="submitall" name="previous" class="previous col-lg-2"
+                                       value="Vorige"/>
 
 
                             </div>
