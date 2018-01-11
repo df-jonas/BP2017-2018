@@ -20,7 +20,7 @@
                     <ul>
                         <li><a href="#">Instellingen</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="#">Uitloggen</a></li>
+                        <li><a href="{{route('logout')}}">Uitloggen</a></li>
                     </ul>
 
                 </div>

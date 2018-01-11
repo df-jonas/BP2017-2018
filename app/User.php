@@ -32,23 +32,22 @@ class User extends Authenticatable
         return $this->hasMany('app\File');
     }
 
-    public function hasCanvasAuth()
+    public function isValid()
     {
-        if (isset($this->canvas_key) && $this->canvas_key !== null && $this->canvas_key !== "") {
+        if (
+            !empty($this->id) &&
+            !empty($this->username) &&
+            !empty($this->name) &&
+            !empty($this->email) &&
+            !empty($this->campusid) &&
+            !empty($this->fosid) &&
+            !empty($this->role) &&
+            !empty($this->canvas_key) &&
+            !empty($this->canvas_refresh) &&
+            !empty($this->canvas_id)
+        ) {
             return true;
         }
         return false;
-    }
-
-    public function getCanvasAuth()
-    {
-        if (!$this->hasCanvasAuth()) {
-            return false;
-        } else {
-            return array(
-                "canvas_key" => $this->canvas_key,
-                "canvas_refresh" => $this->canvas_refresh,
-            );
-        }
     }
 }

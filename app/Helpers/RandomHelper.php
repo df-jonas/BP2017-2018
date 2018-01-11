@@ -17,7 +17,6 @@ class RandomHelper
         return str_random($length);
     }
 
-
     static public function getRandomPublicId()
     {
         $length = 32;

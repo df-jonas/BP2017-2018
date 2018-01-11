@@ -8,6 +8,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class WebsiteController extends Controller
 {
@@ -24,11 +26,6 @@ class WebsiteController extends Controller
     public function how()
     {
         return view("website.index");
-    }
-
-    public function login()
-    {
-        return view("website.login");
     }
 
     public function cookies()

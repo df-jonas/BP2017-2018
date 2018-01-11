@@ -9,10 +9,10 @@
         <a href="{{ route('website-how') }}">
             <li>Hoe werkt het?</li>
         </a>
-        <a href="{{ route('website-login') }}">
+        <a href="{{ route('login') }}">
             <li>Inloggen</li>
         </a>
-        <a href="{{ route('website-login') }}">
+        <a href="{{ route('login') }}">
             <li class="register">Registreren</li>
         </a>
     </ul>

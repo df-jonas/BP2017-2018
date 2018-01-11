@@ -8,27 +8,30 @@
                 <div class="col-lg-8">
                     <h1>Registreren</h1>
 
-                    <form class="register" action="{{ route('website-register') }}" method="post">
+                    <form class="register" action="{{ route('register') }}" method="post">
                     
                         {{csrf_field()}}
                         
                         <div class="table" style="display: table">
                             <div style="display: table-cell; width: 32px; position:relative;">
-                                <img src="{{ URL::asset('img/team/arno.png') }}" class="account_img">
+                                <img src="{{ URL::asset('img/avatars/empty.png') }}" class="account_img">
                                 <div class="account_img edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </div>
                             </div>
                             <div style="display: table-cell; padding-left: 32px; vertical-align: middle">
                                 <h6 style="margin: 0">{{$name}}</h6>
-                                <h6 style="margin: 5px 0">{{$email}}</h6>
                             </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label for="email">Uw e-mailadres</label>
+                            <input type="email" class="form-control col-lg-6" id="email" name="email" aria-describedby="emailHelp">
                         </div>
 
                         <div class="form-group clearfix">
                             <label for="username">Kies een gebruikersnaam</label>
                             <input type="text" class="form-control col-lg-6" id="username" name="username" aria-describedby="usernameHelp">
                         </div>
-
 
                         <div class="form-group clearfix">
                             <div class="selectdiv">
@@ -44,8 +47,8 @@
                         <div class="form-group clearfix">
 
                             <div class="selectdiv">
-                                <label for="course">Welke studierichting volgt u?</label>
-                                <select class="select col-xs-12" id="course" name="course">
+                                <label for="fos">Welke studierichting volgt u?</label>
+                                <select class="select col-xs-12" id="fos" name="fos">
                                     <option value="1" selected>Multimedia &amp; Communicatie Technologie</option>
                                     <option value="2">Dig-X</option>
                                 </select>

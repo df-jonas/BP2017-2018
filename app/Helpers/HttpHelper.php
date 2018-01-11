@@ -12,7 +12,8 @@ use GuzzleHttp\Client;
 
 class HttpHelper
 {
-    static public function request($url, $requesttype, $headers, $params, $verify_ssl){
+    static public function request($url, $requesttype, $headers, $params, $verify_ssl)
+    {
         $client = new Client();
         $response = $client->request(
             $requesttype,
