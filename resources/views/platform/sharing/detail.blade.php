@@ -19,7 +19,7 @@
 
 
             <article class="item">
-                <header>Mijn bestanden</header>
+                <header>Mijn downloads</header>
                 <ul class="highlight">
 
                     <li class="clearfix">
@@ -79,66 +79,7 @@
                 </ul>
             </article>
 
-            <article class="item">
-                <header>Gerelateerde bestanden</header>
-                <ul class="highlight">
 
-                    <li class="clearfix">
-                        <div class="left col-xs-3 clearfix">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Project</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-
-                    <li class="clearfix">
-                        <div class="left col-xs-3">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Titel</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-                    <li class="clearfix">
-                        <div class="left col-xs-3">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Titel</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-                    <li class="clearfix">
-                        <div class="left col-xs-3">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Titel</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-
-                    <li class="clearfix">
-                        <div class="left col-xs-3">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Titel</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-
-
-                </ul>
-            </article>
 
 
         </div>
@@ -149,7 +90,7 @@
 
 
                 <article class="file detail clearfix">
-                    <header>Project Management Hoorcollege 1</header>
+                    <header>Project Management > Hoorcollege 1</header>
 
                     <div class="padding">
 
@@ -197,19 +138,39 @@
                                 semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
                         </div>
 
-                        <div class="previews clearfix">
-                            <h4>Voorbeelden</h4>
+                        <div class="details clearfix">
+
+                            <div class="detail">
+                                <h4>Type document</h4>
+                                <i class="glyphicon glyphicon-search"><span>Lalaa</span></i>
+                            </div>
 
 
-                            <img src="{{asset('img/team/arno.png')}}" class="col-lg-2 col-xs-12 preview">
+
+                            <div class="detail">
+                                <h4>Studierichting</h4>
+                                <i class="glyphicon glyphicon-search"><span>Lalaa</span></i>
+                            </div>
 
 
-                            <img src="{{asset('img/team/arno.png')}}" class="col-lg-2 col-xs-6 preview">
+
+                            <div class="detail">
+                                <h4>Studiejaar</h4>
+                                <i class="glyphicon glyphicon-search"><span>Lalaa</span></i>
+                            </div>
 
 
-                            <img src="{{asset('img/team/arno.png')}}" class="col-lg-2 col-xs-6 preview">
+                            <div class="detail">
+                                <h4>Datum bestand</h4>
+                                <i class="glyphicon glyphicon-search"><span>Lalaa</span></i>
+                            </div>
 
-                            <img src="{{asset('img/team/arno.png')}}" class="col-lg-2 col-xs-6 preview">
+
+                            <div class="detail">
+                                <h4>Aantal pagina's</h4>
+                                <i class="glyphicon glyphicon-search"><span>Lalaa</span></i>
+                            </div>
+
                         </div>
 
 

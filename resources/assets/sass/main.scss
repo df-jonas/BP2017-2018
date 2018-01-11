@@ -28,6 +28,14 @@ $assetPath: "../img";
   display: inline-block;
 }
 
+.bold{
+  font-weight: bold;
+}
+
+.small{
+  font-size: 12px;
+  color: $grey;
+}
 * html .clearfix {
   height: 1%;
 }

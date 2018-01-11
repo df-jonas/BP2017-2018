@@ -26,6 +26,15 @@
   display: inline-block;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.small {
+  font-size: 12px;
+  color: #505457;
+}
+
 * html .clearfix {
   height: 1%;
 }
