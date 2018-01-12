@@ -102,6 +102,7 @@
                                 <input type="file" id="file" name="file" class="inputFile"
                                        data-multiple-caption="{count} files selected">
                                 <label for="file"><span>Kies een bestand</span></label>
+                                <h5>Of sleep uw bestand hier</h5>
                             </div>
 
                             <div class="padding">
