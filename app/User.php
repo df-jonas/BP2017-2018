@@ -29,7 +29,15 @@ class User extends Authenticatable
 
     public function files()
     {
-        return $this->hasMany('app\File');
+        return $this->hasMany('App\File');
+    }
+
+    public function field() {
+        return $this->belongsTo('App\Fos', 'fosid');
+    }
+
+    public function campus() {
+        return $this->belongsTo('App\Campus', 'campusid');
     }
 
     public function isValid()

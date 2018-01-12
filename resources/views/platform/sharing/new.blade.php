@@ -57,7 +57,8 @@
             <div class="files">
 
                 <!-- multistep form -->
-                <form id="msform" class="clearfix" method="post" enctype="multipart/form-data" action="{{route('sharing-new')}}">
+                <form id="msform" class="clearfix" method="post" enctype="multipart/form-data"
+                      action="{{route('sharing-new')}}">
 
                 {{ csrf_field() }}
 
@@ -83,11 +84,9 @@
                                     <div class="selectdiv">
                                         <label for="course">Voor welk vak wil je een bestand uploaden?</label>
                                         <select id="course" class="select col-xs-12" name="course">
-                                            <option value="1" selected>Advanced Web Development</option>
-                                            <option value="2">Cross Media Design</option>
-                                            <option value="3">Data Visualisation</option>
-                                            <option value="4">Mobile Game Development</option>
-                                            <option value="5">Enterpreneurship</option>
+                                            @foreach ($courses as $course)
+                                                <option value="{{$course->id}}">{{$course->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -99,13 +98,11 @@
                                 <label>Bestanden uploaden</label>
                             </div>
 
-
-
                             <div class="dropzone clearfix" style="margin-top: 2em">
-                                <input type="file" id="file" name="file" class="inputFile" data-multiple-caption="{count} files selected">
+                                <input type="file" id="file" name="file" class="inputFile"
+                                       data-multiple-caption="{count} files selected">
                                 <label for="file"><span>Kies een bestand</span></label>
                                 <h5>Of sleep uw bestand hier</h5>
-
                             </div>
 
                             <div class="padding">
@@ -122,51 +119,52 @@
                             <div class="padding">
 
                                 <div class="form-group clearfix">
+                                    <div class="textdiv">
+                                        <label for="title">Titel</label>
+                                        <input id="title" name="title" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="form-group clearfix">
                                     <label for="filedesc">Omschrijving bestand</label>
                                     <textarea id="filedesc" name="filedescription"></textarea>
                                 </div>
-
 
                                 <div class="form-group clearfix">
 
                                     <div class="selectdiv">
                                         <label for="doctype">Type document</label>
                                         <select id="doctype" name="documenttype" class="select col-xs-12">
-                                            <option value="1" selected>Samenvatting</option>
-                                            <option value="2">Notities</option>
-                                            <option value="3">Oefeningen</option>
+                                            @foreach($doctypes as $doctype)
+                                                <option value="{{$doctype->id}}">{{$doctype->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
-
 
                                 <div class="form-group clearfix">
 
                                     <div class="selectdiv">
                                         <label for="degree">Studiejaar</label>
                                         <select id="degree" name="degree" class="select col-xs-12">
-                                            <option value="1" selected>3 bachelor</option>
-                                            <option value="2">2 bachelor</option>
-                                            <option value="3">1 bachelor</option>
-                                            <option value="4">1 master</option>
-                                            <option value="5">2 master</option>
+                                            @foreach($degrees as $degree)
+                                                <option value="{{$degree->id}}">{{$degree->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
-
 
                                 <div class="form-group clearfix">
 
                                     <div class="selectdiv">
                                         <label for="originaldate">Geschreven in</label>
                                         <select id="originaldate" name="originaldate" class="select col-xs-12">
-                                            <option value="1" selected>2017-2018</option>
-                                            <option value="2">2016-2017</option>
-                                            <option value="3">2015-2016</option>
+                                            @foreach($pubyears as $pubyear)
+                                                <option value="{{$pubyear->id}}">{{$pubyear->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
-
 
                                 <input type="button" name="next" class="next col-lg-2" value="Volgende"/>
                                 <input type="button" name="previous" class="previous col-lg-2" value="Vorige"/>
@@ -175,7 +173,6 @@
                         </article>
                     </fieldset>
                     <!-- step 2 -->
-
 
                     <!-- step 3 -->
                     <fieldset>
@@ -217,7 +214,9 @@
                                 <label>Document eigenschappen</label>
 
                                 <table class="file-overview">
-                                    <tr class="spacer" style="height: 2em;"><td></td></tr>
+                                    <tr class="spacer" style="height: 2em;">
+                                        <td></td>
+                                    </tr>
                                     <tr style="margin-bottom: 2em">
                                         <td class="bold">Campus</td>
                                         <td>Design &amp; technology</td>
@@ -226,21 +225,27 @@
 
                                     </tr>
 
-                                    <tr class="spacer"><td></td></tr>
+                                    <tr class="spacer">
+                                        <td></td>
+                                    </tr>
 
                                     <tr>
                                         <td class="bold">Richting</td>
                                         <td>Multec</td>
                                         <td class="small">Bewerken</td>
                                     </tr>
-                                    <tr class="spacer"><td></td></tr>
+                                    <tr class="spacer">
+                                        <td></td>
+                                    </tr>
                                     <tr>
                                         <td class="bold">Vak</td>
                                         <td>Project management</td>
                                         <td class="small">Bewerken</td>
                                     </tr>
 
-                                    <tr class="spacer"><td></td></tr>
+                                    <tr class="spacer">
+                                        <td></td>
+                                    </tr>
                                     <tr>
                                         <td class="bold">Titel bestand</td>
                                         <td>Hoorcollege 1</td>
@@ -248,14 +253,18 @@
                                     </tr>
 
 
-                                    <tr class="spacer" style="height: 2em;"><td></td></tr>
+                                    <tr class="spacer" style="height: 2em;">
+                                        <td></td>
+                                    </tr>
                                     <tr>
                                         <td class="bold">Titel boek</td>
                                         <td>Onbekend</td>
                                         <td></td>
                                     </tr>
 
-                                    <tr class="spacer" style="height: 2em;"><td></td></tr>
+                                    <tr class="spacer" style="height: 2em;">
+                                        <td></td>
+                                    </tr>
                                 </table>
 
                                 <input type="submit" name="submit" class="next col-lg-2" value="Versturen"/>
