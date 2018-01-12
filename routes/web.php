@@ -16,7 +16,7 @@ $exterior = function () {
 };
 
 Route::domain('static-unihelp.eu')->group($exterior);
-//Route::domain('test.dev')->group($exterior);
+Route::domain('test.dev')->group($exterior);
 
 /**
  * UNSAFE ROUTES
@@ -55,6 +55,5 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/sharing/new', 'SharingController@sharingNew')->name('sharing-new');
         Route::post('/sharing/new', 'SharingController@newFile');
     });
-
 
 });

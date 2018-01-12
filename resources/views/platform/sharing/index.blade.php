@@ -18,71 +18,26 @@
 
 
             <article class="item">
-                <header>Mijn bestanden</header>
+                <header>Mijn laatste bestanden</header>
                 <ul class="highlight">
 
-                    <li class="clearfix">
-                        <div class="left col-xs-3 clearfix">
+                    @foreach($userfiles as $userfile)
+                        <li class="clearfix">
+                        <!--<div class="left col-xs-3 clearfix">
                             <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Project</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-
-                    <li class="clearfix">
-                        <div class="left col-xs-3">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Titel</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-                    <li class="clearfix">
-                        <div class="left col-xs-3">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Titel</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-                    <li class="clearfix">
-                        <div class="left col-xs-3">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Titel</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-
-                    <li class="clearfix">
-                        <div class="left col-xs-3">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Titel</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-
-
+                        </div>-->
+                            <div class="col-xs-12">
+                                <h4>{{$userfile->title}}</h4>
+                                <p>Downloads: 0</p>
+                            </div>
+                        </li>
+                    @endforeach
                 </ul>
             </article>
-
 
             <article class="item">
                 <header>Filteren</header>
             </article>
-
 
 
         </div>
@@ -90,89 +45,28 @@
 
         <div class="content">
             <div class="files">
-
-
-                <article class="file clearfix">
-                    <header><i class="fa fa-file"></i>Multec > 1ba > Project Management</header>
-                    <div class="padding">
-                        <div class="left">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-
-                        <div class="right">
-
-                            <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
+                @foreach($files as $file)
+                    <article class="file clearfix">
+                        <header><i class="fa fa-file"></i>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}</header>
+                        <div class="padding">
+                        <!--<div class="left">
+                                <img src="{{asset('img/logo/favicon.png')}}">
+                            </div>-->
+                            <div class="right">
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <h3>{{$file->title}}</h3>
+                                <p>door {{$file->user->name}}</p>
+                                <a href="https://static-unihelp.eu/{{$file->public_id}}"><button>Download</button></a>
                             </div>
-                            <h3>Project Management hoorcollege 1</h3>
-                            <p>Erasmushogeschool - Multec</p>
-                            <p>door Arno Salpaert</p>
-
-
                         </div>
-                    </div>
-
-                </article>
-
-
-                <article class="file clearfix">
-                    <header><i class="fa fa-file"></i>Multec > 1ba > Project Management</header>
-                    <div class="padding">
-                        <div class="left">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-
-                        <div class="right">
-
-                            <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <h3>Project Management hoorcollege 1</h3>
-                            <p>Erasmushogeschool - Multec</p>
-                            <p>door Arno Salpaert</p>
-
-
-                        </div>
-                    </div>
-
-                </article>
-                </article>
-
-
-                <article class="file clearfix">
-                    <header><i class="fa fa-file"></i>Multec > 1ba > Project Management</header>
-                    <div class="padding">
-                        <div class="left">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-
-                        <div class="right">
-
-                            <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <h3>Project Management hoorcollege 1</h3>
-                            <p>Erasmushogeschool - Multec</p>
-                            <p>door Arno Salpaert</p>
-
-
-                        </div>
-                    </div>
-
-                </article>
-
+                    </article>
+                @endforeach
             </div>
         </div>
 
