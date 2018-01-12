@@ -99,18 +99,13 @@
                                 <label>Bestanden uploaden</label>
                             </div>
 
-                            <script>
-                                //do not delete
-                                //zodat dropzone deze al niet automatisch zou aanmaken
-                                Dropzone.autoDiscover = false;
-                            </script>
 
-                            <div class="clsbox-1" style="margin-top: 2em">
-                                <!--
-                                <div class="dropzone clsbox" id="sharingDropZone">
-                                </div>
-                                -->
-                                <input type="file" name="file">
+
+                            <div class="dropzone clearfix" style="margin-top: 2em">
+                                <input type="file" id="file" name="file" class="inputFile" data-multiple-caption="{count} files selected">
+                                <label for="file"><span>Kies een bestand</span></label>
+
+
                             </div>
 
                             <div class="padding">
@@ -220,6 +215,48 @@
                             <div class="padding">
 
                                 <label>Document eigenschappen</label>
+
+                                <table class="file-overview">
+                                    <tr class="spacer" style="height: 2em;"><td></td></tr>
+                                    <tr style="margin-bottom: 2em">
+                                        <td class="bold">Campus</td>
+                                        <td>Design &amp; technology</td>
+                                        <td class="small">Bewerken</td>
+
+
+                                    </tr>
+
+                                    <tr class="spacer"><td></td></tr>
+
+                                    <tr>
+                                        <td class="bold">Richting</td>
+                                        <td>Multec</td>
+                                        <td class="small">Bewerken</td>
+                                    </tr>
+                                    <tr class="spacer"><td></td></tr>
+                                    <tr>
+                                        <td class="bold">Vak</td>
+                                        <td>Project management</td>
+                                        <td class="small">Bewerken</td>
+                                    </tr>
+
+                                    <tr class="spacer"><td></td></tr>
+                                    <tr>
+                                        <td class="bold">Titel bestand</td>
+                                        <td>Hoorcollege 1</td>
+                                        <td class="small">Bewerken</td>
+                                    </tr>
+
+
+                                    <tr class="spacer" style="height: 2em;"><td></td></tr>
+                                    <tr>
+                                        <td class="bold">Titel boek</td>
+                                        <td>Onbekend</td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr class="spacer" style="height: 2em;"><td></td></tr>
+                                </table>
 
                                 <input type="submit" name="submit" class="next col-lg-2" value="Versturen"/>
                                 <input type="button" id="submitall" name="previous" class="previous col-lg-2"

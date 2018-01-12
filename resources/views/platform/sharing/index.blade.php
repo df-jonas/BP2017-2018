@@ -84,9 +84,6 @@
             </article>
 
 
-            <article class="item">
-                <header>Statistieken</header>
-            </article>
 
         </div>
 
