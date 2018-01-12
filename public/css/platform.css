@@ -21,6 +21,7 @@ body.platform .mce-notification {
 
 body.platform .download-button,
 body.platform button.download,
+body.platform a.download,
 body.platform input.next,
 body.platform input.previous {
   padding: 1%;
@@ -29,10 +30,12 @@ body.platform input.previous {
   border: none;
   float: right;
   margin-left: 2%;
+  text-align: center;
 }
 
 body.platform .download-button a,
 body.platform button.download a,
+body.platform a.download a,
 body.platform input.next a,
 body.platform input.previous a {
   cursor: pointer;
@@ -40,6 +43,7 @@ body.platform input.previous a {
 
 body.platform .download-button a,
 body.platform button.download a,
+body.platform a.download a,
 body.platform input.next a,
 body.platform input.previous a {
   color: white;
@@ -47,6 +51,7 @@ body.platform input.previous a {
 
 body.platform .download-button a:visited,
 body.platform button.download a:visited,
+body.platform a.download a:visited,
 body.platform input.next a:visited,
 body.platform input.previous a:visited {
   color: white;
@@ -54,6 +59,7 @@ body.platform input.previous a:visited {
 
 body.platform .download-button a:hover,
 body.platform button.download a:hover,
+body.platform a.download a:hover,
 body.platform input.next a:hover,
 body.platform input.previous a:hover {
   color: white;
@@ -61,16 +67,19 @@ body.platform input.previous a:hover {
 
 body.platform .download-button a:active,
 body.platform button.download a:active,
+body.platform a.download a:active,
 body.platform input.next a:active,
 body.platform input.previous a:active,
 body.platform .download-button a:focus,
 body.platform button.download a:focus,
+body.platform a.download a:focus,
 body.platform input.next a:focus,
 body.platform input.previous a:focus {
   color: white;
 }
 
 button.download,
+a.download,
 input.next,
 input.previous {
   margin-top: 3.5em;

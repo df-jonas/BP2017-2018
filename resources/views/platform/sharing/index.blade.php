@@ -18,7 +18,7 @@
 
 
             <article class="item">
-                <header>Mijn laatste bestanden</header>
+                <header>Mijn uploads</header>
                 <ul class="highlight">
 
                     @foreach($userfiles as $userfile)
@@ -49,9 +49,11 @@
                     <article class="file clearfix">
                         <header><i class="fa fa-file"></i>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}</header>
                         <div class="padding">
-                        <!--<div class="left">
+                        <!--
+                        <div class="left">
                                 <img src="{{asset('img/logo/favicon.png')}}">
-                            </div>-->
+                            </div>
+                           -->
                             <div class="right">
                                 <div class="rating">
                                     <span class="fa fa-star checked"></span>
@@ -62,7 +64,10 @@
                                 </div>
                                 <h3>{{$file->title}}</h3>
                                 <p>door {{$file->user->name}}</p>
-                                <a href="https://static-unihelp.eu/{{$file->public_id}}"><button>Download</button></a>
+
+
+
+
                             </div>
                         </div>
                     </article>
