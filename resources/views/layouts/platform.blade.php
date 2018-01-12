@@ -19,10 +19,8 @@
     <script src="{{ URL::asset('js/nav.js') }}"></script>
     <script src="{{ URL::asset('js/main.js') }}"></script>
     <script src="{{ URL::asset('js/multistep.js') }}"></script>
-    <!--<script src="{{ URL::asset('js/dropzone.js') }}"></script>-->
 
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.css') }}">
-    <!--<link rel="stylesheet" href="{{ URL::asset('css/dropzone.css') }}">-->
 
     <!-- TinyMCE editor-->
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
