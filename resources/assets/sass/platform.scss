@@ -14,7 +14,7 @@ body.platform {
 }
 
 
-
+/*tinymce ads*/
 #mceu_31, #mceu_33, #mceu_62, .mce-notification{
   display: none;
 }
@@ -93,24 +93,24 @@ button.download, a.download, input.next, input.previous{
   color: #4E5C6E;
   width: 100%;
   z-index: 1;
+  ul{
+    list-style-type: none;
+    padding-left: 0;
+    border: 1px solid $unihelp-green;
+    margin-left: -2%;
+    li{
+      background: #FFFFFF;
+      border-bottom: 1px solid $unihelp-green;
+      padding: 2%;
+      padding-left: 5%;
+      display: block;
+      height: 3em;
+      line-height: 3em;
+    }
+  }
 }
 
-.dropdown-content ul {
-  list-style-type: none;
-  padding-left: 0;
-  border: 1px solid $unihelp-green;
-  margin-left: -2%;
-}
 
-.dropdown-content ul li {
-  background: #FFFFFF;
-  border-bottom: 1px solid $unihelp-green;
-  padding: 2%;
-  padding-left: 5%;
-  display: block;
-  height: 3em;
-  line-height: 3em;
-}
 
 /*Subheader*/
 .subheader {
@@ -124,24 +124,31 @@ button.download, a.download, input.next, input.previous{
   list-style-type: none;
   height: 3em;
   padding-left: 0;
+
+  li{
+    display: inline-block;
+    margin-right: 3%;
+    line-height: 3em;
+    cursor: pointer;
+    &:hover{
+      border-bottom: 1px solid $unihelp-green;
+    }
+    span{
+      display: inline-block;
+      padding-right: 0.85em;
+    }
+  }
 }
 
-.subheader ul li {
-  display: inline-block;
-  margin-right: 3%;
-  line-height: 3em;
-  cursor: pointer;
-}
 
-.subheader ul li:hover {
-  border-bottom: 1px solid $unihelp-green;
-}
 
-.subheader ul li span {
-  display: inline-block;
-  padding-right: 0.85em;
+.subheader ul li.subheader-button{
+  float: right;
+  margin-right: 0;
+  a{
+    color:black;
+  }
 }
-
 /*table*/
 div.table {
   table-layout: fixed;

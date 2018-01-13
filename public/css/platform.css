@@ -4,6 +4,7 @@
 
 body.platform {
   background-color: rgba(181, 212, 183, 0.14);
+  /*tinymce ads*/
   /*Buttons*/
 }
 
@@ -188,6 +189,15 @@ input.previous {
 .subheader ul li span {
   display: inline-block;
   padding-right: 0.85em;
+}
+
+.subheader ul li.subheader-button {
+  float: right;
+  margin-right: 0;
+}
+
+.subheader ul li.subheader-button a {
+  color: black;
 }
 
 /*table*/
