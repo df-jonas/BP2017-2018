@@ -6,6 +6,10 @@
           box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 /*GENERAL*/
 
 .container {
@@ -231,7 +235,8 @@ form input {
 }
 
 .action-button,
-.action-button.long {
+.action-button.long,
+.action-button.login {
   background: #FFFFFF;
   display: inline-block;
   border: none;
@@ -242,6 +247,7 @@ form input {
   height: 100%;
   margin-bottom: 3.5%;
   color: #000000;
+  text-align: center;
 }
 
 .action-button.register {
@@ -257,18 +263,15 @@ form.register .form-group {
   width: 100%;
 }
 
-.action-button.canvas {
+.login.action-button {
   background: #333A40;
-  display: block;
   width: 80%;
-  margin: 0 auto;
-  padding: 4%;
-  margin-top: 35%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 2%;
+  margin-top: 15%;
+  margin-bottom: 15%;
   color: #FFFFFF;
-  background-image: url("/img/logo/canvas-logo.png");
-  background-position: 16px center;
-  background-size: 32px;
-  background-repeat: no-repeat;
 }
 
 #page_banner .scroll {
@@ -385,27 +388,40 @@ form.register .form-group {
 
 #login_page {
   height: 80vh;
-  background: url("/img/backgrounds/alexis-brown-82988.jpg");
+  background: url("/img/backgrounds/climate-kic-350836.jpg");
   background-size: cover;
   background-position: center;
-  position: relative;
   padding: 0;
 }
 
 .login_box {
+  margin: auto auto;
   background: rgba(255, 255, 255, 0.97);
-  position: absolute;
-  top: 10vh;
-  min-height: 60vh;
+  margin-top: 10%;
+  background: #4D6A50;
+}
+
+.login_box .auth {
+  background: white;
 }
 
 .login_box .info {
-  background: #4D6A50;
   color: #FFFFFF;
-  height: 100%;
   padding-top: 3%;
-  position: absolute;
-  right: 0;
+}
+
+.login_box .canvas {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 15%;
+  text-align: center;
+}
+
+.login_box .canvas img {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 5%;
 }
 
 /*FOOTER*/
@@ -619,8 +635,8 @@ footer.col-xs-12 {
     left: 42.5%;
   }
 
-  #how-it-works .item .left,
-  #how-it-works .item .right {
+  #how-it-works .item .right,
+  #how-it-works .item .left {
     padding: 0;
   }
 

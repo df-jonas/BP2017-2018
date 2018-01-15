@@ -50,17 +50,17 @@
                                 <br>
 
                                 <div class="form-group clearfix">
-                                    <label class="checkbox-container">2017-2018
+                                    <label class="checkbox-container col-xs-12">2017-2018
                                         <input type="checkbox" checked="checked">
                                         <span class="checkmark"></span>
                                     </label>
 
-                                    <label class="checkbox-container">2016 - 2017
+                                    <label class="checkbox-container col-xs-12">2016 - 2017
                                         <input type="checkbox">
                                         <span class="checkmark"></span>
                                     </label>
 
-                                    <label class="checkbox-container">2015 - 2016
+                                    <label class="checkbox-container col-xs-12">2015 - 2016
                                         <input type="checkbox">
                                         <span class="checkmark"></span>
                                     </label>
@@ -100,7 +100,7 @@
             <div class="files">
                 @foreach($files as $file)
                     <article class="file clearfix">
-                        <header><i class="fa fa-file"></i>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}</header>
+                        <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a  href="https://static-unihelp.eu/{{$file->public_id}}"><i class="fa fa-download"></i></a></header>
                         <div class="padding">
                         <!--
                         <div class="left">

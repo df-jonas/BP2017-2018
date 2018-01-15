@@ -194,10 +194,17 @@ input.previous {
 .subheader ul li.subheader-button {
   float: right;
   margin-right: 0;
+  padding: 0 1% 0 1%;
+  text-align: center;
+  background: #8A7E72;
+  height: 80%;
+  margin-top: 0.25%;
+  line-height: 2.5;
 }
 
 .subheader ul li.subheader-button a {
-  color: black;
+  color: white;
+  height: 100%;
 }
 
 /*table*/
@@ -252,9 +259,11 @@ div.table {
   margin-left: 8px;
 }
 
-.content .file header i {
+.content .file header a {
   padding-right: 1%;
   padding-left: 1%;
+  color: white;
+  float: right;
 }
 
 /*mijn bestanden ul*/
@@ -531,6 +540,8 @@ form .form-group {
   width: 25%;
   float: left;
   position: relative;
+  /*lijn tussen boxes*/
+  /*Geen connector nodig voor stap 1*/
 }
 
 #progressbar li:before {
@@ -548,8 +559,6 @@ form .form-group {
   z-index: 10;
 }
 
-/*lijn tussen boxes*/
-
 #progressbar li:after {
   content: '';
   width: 100%;
@@ -559,10 +568,7 @@ form .form-group {
   left: -50%;
   top: 35%;
   z-index: 1;
-  /*put it behind the numbers*/
 }
-
-/*Geen connector nodig voor stap 1*/
 
 #progressbar li:first-child:after {
   content: none;
@@ -663,14 +669,14 @@ form .form-group {
     position: relative;
   }
 
+  .content .file .left,
+  .content .file .right {
+    width: 100%;
+  }
+
   .content .file .left img {
     width: 48px;
     height: 48px;
-  }
-
-  .content .file .right,
-  .content .file .left {
-    width: 100%;
   }
 
   .content .file .right .rating {
@@ -681,11 +687,11 @@ form .form-group {
     top: 2%;
   }
 
-  .content .file.detail .left {
+  .content .file .detail .left {
     width: 60%;
   }
 
-  .content .file.detail .right {
+  .content .file .detail .right {
     width: 40%;
   }
 
