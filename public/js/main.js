@@ -4,6 +4,26 @@ $(document).ready(function () {
     dropzone();
 
 
+
+
+
+$("#doctype").on('change',function()
+{
+    var keyword = $(this).val();
+    $.ajax(
+        {
+            url:'/p/sharing',
+            type:'GET',
+            data: keyword,
+            success:function(data)
+            {
+                //var d = JSON.parse(data);
+                console.log("data" + data);
+            }
+        });
+
+});
+
 });
 
 

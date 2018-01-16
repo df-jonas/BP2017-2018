@@ -8,6 +8,8 @@
     <div class="container table">
         <div class="sidebar">
 
+
+
             <article class="item clearfix">
                 <header>Zoeken</header>
                 <div class="inner-addon left-addon">
@@ -17,8 +19,61 @@
             </article>
 
 
+              <article class="item" >
+                            <header>Filteren</header>
+                            <div class="padding">
+                            <form>
+
+                                <div class="form-group clearfix">
+                                    <div class="selectdiv">
+                                        <label for="doctype">Kies opleiding</label>
+                                        <select id="doctype" name="documenttype" class="select col-xs-12">
+                                                <option value="multec">Multec</option>
+                                                <option value="test">test</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <div class="selectdiv">
+                                        <label for="doctype">Kies vak</label>
+                                        <select id="doctype" name="documenttype" class="select col-xs-12">
+                                            <option value="">Project Management</option>
+                                            <option value="">test</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+
+                                <label>Geschreven in</label>
+                                <br>
+
+                                <div class="form-group clearfix">
+                                    <label class="checkbox-container col-xs-12">2017-2018
+                                        <input type="checkbox" checked="checked">
+                                        <span class="checkmark"></span>
+                                    </label>
+
+                                    <label class="checkbox-container col-xs-12">2016 - 2017
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+
+                                    <label class="checkbox-container col-xs-12">2015 - 2016
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+
+
+                            </form>
+                            </div>
+                        </article>
+
+
             <article class="item">
-                <header>Mijn laatste bestanden</header>
+                <header>Mijn uploads</header>
                 <ul class="highlight">
 
                     @foreach($userfiles as $userfile)
@@ -35,9 +90,7 @@
                 </ul>
             </article>
 
-            <article class="item">
-                <header>Filteren</header>
-            </article>
+
 
 
         </div>
@@ -47,11 +100,13 @@
             <div class="files">
                 @foreach($files as $file)
                     <article class="file clearfix">
-                        <header><i class="fa fa-file"></i>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}</header>
+                        <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a  href="https://static-unihelp.eu/{{$file->public_id}}"><i class="fa fa-download"></i></a></header>
                         <div class="padding">
-                        <!--<div class="left">
+                        <!--
+                        <div class="left">
                                 <img src="{{asset('img/logo/favicon.png')}}">
-                            </div>-->
+                            </div>
+                           -->
                             <div class="right">
                                 <div class="rating">
                                     <span class="fa fa-star checked"></span>
@@ -62,7 +117,10 @@
                                 </div>
                                 <h3>{{$file->title}}</h3>
                                 <p>door {{$file->user->name}}</p>
-                                <a href="https://static-unihelp.eu/{{$file->public_id}}"><button>Download</button></a>
+
+
+
+
                             </div>
                         </div>
                     </article>

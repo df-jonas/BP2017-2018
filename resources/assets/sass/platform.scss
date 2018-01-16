@@ -14,7 +14,7 @@ body.platform {
 }
 
 
-
+/*tinymce ads*/
 #mceu_31, #mceu_33, #mceu_62, .mce-notification{
   display: none;
 }
@@ -27,6 +27,7 @@ body.platform {
   border:none;
   float: right;
   margin-left: 2%;
+  text-align: center;
   a {
     cursor: pointer;
     @include link(white, white, white, white);
@@ -34,7 +35,7 @@ body.platform {
 }
 }
 
-button.download, input.next, input.previous{
+button.download, a.download, input.next, input.previous{
   @extend .download-button;
   margin-top: 3.5em;
   margin-bottom: 3.5em;
@@ -92,24 +93,24 @@ button.download, input.next, input.previous{
   color: #4E5C6E;
   width: 100%;
   z-index: 1;
+  ul{
+    list-style-type: none;
+    padding-left: 0;
+    border: 1px solid $unihelp-green;
+    margin-left: -2%;
+    li{
+      background: #FFFFFF;
+      border-bottom: 1px solid $unihelp-green;
+      padding: 2%;
+      padding-left: 5%;
+      display: block;
+      height: 3em;
+      line-height: 3em;
+    }
+  }
 }
 
-.dropdown-content ul {
-  list-style-type: none;
-  padding-left: 0;
-  border: 1px solid $unihelp-green;
-  margin-left: -2%;
-}
 
-.dropdown-content ul li {
-  background: #FFFFFF;
-  border-bottom: 1px solid $unihelp-green;
-  padding: 2%;
-  padding-left: 5%;
-  display: block;
-  height: 3em;
-  line-height: 3em;
-}
 
 /*Subheader*/
 .subheader {
@@ -123,24 +124,38 @@ button.download, input.next, input.previous{
   list-style-type: none;
   height: 3em;
   padding-left: 0;
+
+  li{
+    display: inline-block;
+    margin-right: 3%;
+    line-height: 3em;
+    cursor: pointer;
+    &:hover{
+      border-bottom: 1px solid $unihelp-green;
+    }
+    span{
+      display: inline-block;
+      padding-right: 0.85em;
+    }
+  }
 }
 
-.subheader ul li {
-  display: inline-block;
-  margin-right: 3%;
-  line-height: 3em;
-  cursor: pointer;
-}
 
-.subheader ul li:hover {
-  border-bottom: 1px solid $unihelp-green;
-}
 
-.subheader ul li span {
-  display: inline-block;
-  padding-right: 0.85em;
+.subheader ul li.subheader-button{
+  float: right;
+  margin-right: 0;
+  padding: 0 1% 0 1%;
+  text-align: center;
+  background: $unihelp-brown;
+  height: 80%;
+  margin-top: 0.25%;
+  line-height: 2.5;
+  a{
+    color:white;
+    height: 100%;
+  }
 }
-
 /*table*/
 div.table {
   table-layout: fixed;
@@ -187,9 +202,13 @@ div.table {
 .sidebar .item span{
   margin-left: 8px;
 }
-.content .file header i {
+
+
+.content .file header a {
   padding-right: 1%;
   padding-left: 1%;
+  color: white;
+  float: right;
 }
 
 /*mijn bestanden ul*/
@@ -439,48 +458,48 @@ form  .form-group{
   /*CSS counters to number the steps*/
   counter-reset: step;
   padding-left: 0;
+  li{
+    list-style-type: none;
+    color: red;
+    width: 25%;
+    float: left;
+    position: relative;
+    //box with title*/
+    &:before{
+      position: relative;
+      /*html data-title*/
+      content: attr(data-title);
+      counter-increment: step;
+      line-height: 60px;
+      display: block;
+      color: white;
+      margin: 0 auto 5px auto;
+      background: $grey;
+      height: 60px;
+      width: 75%;
+      z-index: 10;
+    }
+    /*lijn tussen boxes*/
+    &:after{
+      content: '';
+      width: 100%;
+      height: 10px;
+      background: $grey;
+      position: absolute;
+      left: -50%;
+      top: 35%;
+      z-index: 1;
+    }
+    /*Geen connector nodig voor stap 1*/
+
+    &:first-child:after{
+      content: none;
+    }
+
+  }
 }
 
-#progressbar li {
-  list-style-type: none;
-  color: red;
-  width: 25%;
-  float: left;
-  position: relative;
-}
 
-//box with title*/
-#progressbar li:before {
-  position: relative;
-  /*html data-title*/
-  content: attr(data-title);
-  counter-increment: step;
-  line-height: 60px;
-  display: block;
-  color: white;
-  margin: 0 auto 5px auto;
-  background: $grey;
-  height: 60px;
-  width: 75%;
-  z-index: 10;
-}
-
-/*lijn tussen boxes*/
-#progressbar li:after {
-  content: '';
-  width: 100%;
-  height: 10px;
-  background: $grey;
-  position: absolute;
-  left: -50%;
-  top: 35%;
-  z-index: 1; /*put it behind the numbers*/
-}
-
-/*Geen connector nodig voor stap 1*/
-#progressbar li:first-child:after {
-  content: none;
-}
 
 /*Actieve en voltooide stappen groen kleuren*/
 #progressbar li.active:before,  #progressbar li.active:after{
@@ -491,7 +510,6 @@ form  .form-group{
 
 
 /*dropzone*/
-
 
 .inputFile {
   width: 100%;
@@ -530,6 +548,7 @@ form  .form-group{
     font-size: 14px;
     font-family: Raleway;
     font-style: normal;
+
   }
   h5{
     clear: both;
@@ -577,34 +596,40 @@ form  .form-group{
   .padding {
     position: relative;
   }
-  .content .file .left img{
-    width: 48px;
-    height: 48px;
+
+  .content .file{
+    .left, .right{
+      width: 100%;
+    }
+    .left{
+      img{
+        width: 48px;
+        height: 48px;
+      }
+    }
+    .right{
+      .rating{
+        float: right;
+        font-size: 1.5em;
+        position: absolute;
+        right: 2%;
+        top: 2%;
+      }
+    }
+    .detail{
+      .left{
+        width: 60%;
+      }
+      .right{
+        width: 40%;
+      }
+    }
   }
 
-  .content .file .right, .content .file .left{
-    width: 100%;
-  }
-
-  .content .file .right .rating {
-    float: right;
-    font-size: 1.5em;
-    position: absolute;
-    right: 2%;
-    top: 2%;
-  }
-
-  .content .file.detail .left{
-    width: 60%;
-  }
 
 
-  .content .file.detail .right{
-    width: 40%;
-  }
 
   /*dropzone*/
-
   .inputFile + label {
     width: 80%;
     margin-left: 10%;

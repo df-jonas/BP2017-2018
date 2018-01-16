@@ -76,8 +76,13 @@
                     </li>
 
 
+
                 </ul>
             </article>
+
+
+
+
 
 
 
@@ -174,7 +179,7 @@
                         </div>
 
 
-                        <button type="submit" class="download col-lg-2">Download</button>
+                        {{-- <a class="download col-lg-2" href="https://static-unihelp.eu/{{$file->public_id}}">Download</a> --}}
 
 
                     </div>

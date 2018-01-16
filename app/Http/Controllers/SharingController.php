@@ -15,12 +15,17 @@ use Illuminate\Support\Facades\Storage;
 
 class SharingController extends Controller
 {
-    public function sharingIndex()
+    public function sharingIndex(Request $request)
     {
+        $data =  $request->all();
+        //dd($data);
+        //error_log('Some message here.');
+
         $arr = [
             'userfiles' => File::query()->where("user_id", "=", Auth::user()->id)->orderBy('id', 'desc')->take(5)->get(),
             'files' => File::query()->with('degree')->with('field')->orderBy('id', 'desc')->get()
         ];
+
 
         return view("platform.sharing.index", $arr);
     }

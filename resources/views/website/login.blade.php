@@ -2,20 +2,36 @@
 
 @section('content')
     @include('partials.website.header')
-    <div id="login_page" class="col-xs-12">
-        <div class="login_box col-lg-4 col-lg-push-4 col-xs-12">
+    <div id="login_page">
+
+        <div class="login_box col-lg-4 col-lg-push-4 col-xs-12" >
+
+
             <div class="row">
-                <div class="col-lg-8">
-                    <h1>Inloggen</h1>
-                    <a href="{{ route('canvas-login') }}">
-                        <button type="button" class="action-button canvas">Inloggen met Canvas</button>
-                    </a>
+
+
+                <div class="auth col-lg-8 col-xs-12">
+
+                        <div class="canvas">
+                            <img src="{{ URL::asset('img/logo/canvas-logo.png') }}">
+                            <h4>Canvas login</h4>
+                            <p>Als EHB student kan je veilig en snel inloggen via je Canvas Account.</p>
+                        </div>
+
+
+                        <a href="{{ route('canvas-login') }}">
+                            <button type="button" class="action-button login">Aanmelden</button>
+                        </a>
                 </div>
 
-                <div class="col-lg-4 info">
+
+                <div class="info  col-lg-4 col-xs-12">
                     <h4>Waarom UniHelp gebruiken?</h4>
                 </div>
+
+
             </div>
+
         </div>
     </div>
 
