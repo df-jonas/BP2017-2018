@@ -509,8 +509,6 @@ form .form-group {
 #progressbar li {
   list-style-type: none;
   color: red;
-  text-transform: uppercase;
-  font-size: 9px;
   width: 25%;
   float: left;
   position: relative;
@@ -523,7 +521,6 @@ form .form-group {
   counter-increment: step;
   line-height: 60px;
   display: block;
-  font-size: 10px;
   color: white;
   margin: 0 auto 5px auto;
   background: #505457;
@@ -563,9 +560,10 @@ form .form-group {
 /*dropzone*/
 
 .inputFile {
-  width: 20%;
-  margin-left: 35%;
-  height: 100px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
   opacity: 0;
   overflow: hidden;
   position: absolute;
@@ -579,7 +577,7 @@ form .form-group {
   color: black;
   padding: 1%;
   width: 20%;
-  margin-left: 37.5%;
+  margin-left: 40%;
 }
 
 .inputFile:focus + label,
@@ -591,12 +589,19 @@ form .form-group {
   width: 100%;
   padding: 2.5%;
   background: #4D6A50;
+  position: relative;
 }
 
 .dropzone label {
   font-size: 14px;
   font-family: Raleway;
   font-style: normal;
+}
+
+.dropzone h5 {
+  clear: both;
+  color: white;
+  padding-top: 2em;
 }
 
 /*file overview*/
