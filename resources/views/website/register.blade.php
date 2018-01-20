@@ -34,6 +34,11 @@
                         </div>
 
 
+                        <div class="form-group clearfix">
+                            <label for="email">Uw e-mailadres</label>
+                            <input type="email" class="form-control col-lg-6" id="email" name="email" aria-describedby="emailHelp">
+                        </div>
+
 
                         <div class="form-group clearfix">
                             <label for="username">Kies een gebruikersnaam</label>
