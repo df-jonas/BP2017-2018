@@ -91,7 +91,7 @@
 
 
 <section class="call-to-action col-xs-12">
-    <h3>Wordt nu lid, geniet van tal van voordelen!</h3>
+    <h3>Word nu lid, geniet van tal van voordelen!</h3>
     <section class="buttons col-lg-6 col-lg-push-3 col-xs-12">
         <a href="{{ route('login') }}"><button type="button" class="action-button">Inloggen</button></a>
         <a href="{{ route('login')}}" ><button type="button" class="action-button">Registreren</button></a>
