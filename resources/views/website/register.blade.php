@@ -3,16 +3,9 @@
 @section('content')
     @include('partials.website.header')
 
-
-
     <div id="login_page">
-
         <div class="login_box col-lg-4 col-lg-push-4 col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1">
-
-
             <div class="row">
-
-
                 <div class="auth col-lg-8 col-md-8 col-xs-12">
 
                     <h1>Registreren</h1>
@@ -23,7 +16,7 @@
 
                         <div class="table" style="display: table">
                             <div style="display: table-cell; width: 32px; position:relative;">
-                                <img src="{{ URL::asset('img/avatars/empty.png') }}" class="account_img">
+                                <img src="{{ asset('img/avatars/empty.png') }}" class="account_img">
                                 <div class="account_img edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </div>
                             </div>
@@ -32,7 +25,6 @@
                                 <h6> {{ $email }}</h6>
                             </div>
                         </div>
-
 
                         <div class="form-group clearfix">
                             <label for="email">Uw e-mailadres</label>
@@ -79,18 +71,12 @@
                     </form>
                 </div>
 
-
                 <div class="info col-lg-4 col-md-4 col-xs-12">
                     <h4>Waarom UniHelp gebruiken?</h4>
                 </div>
-
-
             </div>
-
         </div>
     </div>
-
-
 
     @include('partials.footer')
 @endsection
