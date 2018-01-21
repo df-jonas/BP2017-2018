@@ -387,7 +387,7 @@ form.register .form-group {
 }
 
 #login_page {
-  height: 80vh;
+  height: 100vh;
   background: url("/img/backgrounds/climate-kic-350836.jpg");
   background-size: cover;
   background-position: center;
@@ -397,7 +397,7 @@ form.register .form-group {
 .login_box {
   margin: auto auto;
   background: rgba(255, 255, 255, 0.97);
-  margin-top: 10%;
+  margin-top: 7.5%;
   background: #4D6A50;
 }
 

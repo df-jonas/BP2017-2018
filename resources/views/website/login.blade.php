@@ -4,7 +4,7 @@
     @include('partials.website.header')
     <div id="login_page">
 
-        <div class="login_box col-lg-4 col-lg-push-4 col-xs-12" >
+        <div class="login_box col-lg-4 col-lg-push-4 col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1">
 
 
             <div class="row">
