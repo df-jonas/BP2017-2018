@@ -99,7 +99,7 @@
                             </div>
 
                             <div class="dropzone clearfix" style="margin-top: 2em">
-                                <input type="file" id="file" name="file" class="inputFile"
+                                <input type="file" id="file" name="file" class="inputFile" accept="application/pdf"
                                        data-multiple-caption="{count} files selected">
                                 <label for="file"><span>Kies een bestand</span></label>
                                 <h5>Of sleep uw bestand hier</h5>

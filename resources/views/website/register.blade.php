@@ -22,7 +22,6 @@
                             </div>
                             <div style="display: table-cell; padding-left: 32px; vertical-align: middle">
                                 <h6 style="margin: 0">{{$name}}</h6>
-                                <h6> {{ $email }}</h6>
                             </div>
                         </div>
 

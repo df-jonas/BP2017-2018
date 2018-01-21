@@ -89,8 +89,7 @@ class AuthController extends Controller
             return Redirect::to(route('sharing-index'));
 
         $params = [
-            'name' => Auth::user()->name,
-            'email' => Auth::user()->canvas_email
+            'name' => Auth::user()->name
         ];
         return view("website.register", $params);
     }
