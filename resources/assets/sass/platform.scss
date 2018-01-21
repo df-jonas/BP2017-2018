@@ -1,0 +1,637 @@
+/*Imports*/
+
+@import "variables/colors";
+@import "mixin/link";
+
+/*General css*/
+body.platform {
+  background-color: $background-color;
+
+
+* {
+  box-sizing: border-box;
+
+}
+
+
+/*tinymce ads*/
+#mceu_31, #mceu_33, #mceu_62, .mce-notification{
+  display: none;
+}
+
+  /*Buttons*/
+.download-button{
+  padding: 1%;
+  background: $download-button;
+  color: #FFFFFF;
+  border:none;
+  float: right;
+  margin-left: 2%;
+  text-align: center;
+  a {
+    cursor: pointer;
+    @include link(white, white, white, white);
+  }
+}
+}
+
+button.download, a.download, input.next, input.previous{
+  @extend .download-button;
+  margin-top: 3.5em;
+  margin-bottom: 3.5em;
+}
+
+
+/*Menu*/
+.account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  float: right;
+  position: relative;
+}
+
+.account_img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  object-fit: cover;
+}
+
+.account_username {
+  margin-left: 8px;
+  margin-right: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.account_dropdown_btn {
+  width: 10px;
+  height: 6px;
+  margin-top: 2px;
+  fill: #FFFFFF;
+  opacity: 0.5;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  top: 35px;
+  right: 0px;
+  padding: 20px 50px;
+  font-weight: 500;
+  color: #4E5C6E;
+  width: 100%;
+  z-index: 1;
+  ul{
+    list-style-type: none;
+    padding-left: 0;
+    border: 1px solid $unihelp-green;
+    margin-left: -2%;
+    li{
+      background: #FFFFFF;
+      border-bottom: 1px solid $unihelp-green;
+      padding: 2%;
+      padding-left: 5%;
+      display: block;
+      height: 3em;
+      line-height: 3em;
+    }
+  }
+}
+
+
+
+/*Subheader*/
+.subheader {
+  background: #FFFFFF;
+  box-shadow: 0px 1px 5px $unihelp-green;
+  height: 3em;
+  margin-bottom: 5em;
+}
+
+.subheader ul {
+  list-style-type: none;
+  height: 3em;
+  padding-left: 0;
+
+  li{
+    display: inline-block;
+    margin-right: 3%;
+    line-height: 3em;
+    cursor: pointer;
+    &:hover{
+      border-bottom: 1px solid $unihelp-green;
+    }
+    span{
+      display: inline-block;
+      padding-right: 0.85em;
+    }
+  }
+}
+
+
+
+.subheader ul li.subheader-button{
+  float: right;
+  margin-right: 0;
+  padding: 0 1% 0 1%;
+  text-align: center;
+  background: $unihelp-brown;
+  height: 80%;
+  margin-top: 0.25%;
+  line-height: 2.5;
+  a{
+    color:white;
+    height: 100%;
+  }
+}
+/*table*/
+div.table {
+  table-layout: fixed;
+  display: table;
+  padding: 0;
+}
+
+/*table layout*/
+.sidebar {
+  display: table-cell;
+  margin-top: 5em;
+  width: 20%;
+  vertical-align: top;
+  padding-right: 10px;
+}
+
+.content {
+  display: table-cell;
+  height: 70em;
+  margin-top: 5em;
+  left: 10px;
+  width: 80%;
+  padding-left: 10px;
+}
+
+/*Sidebar*/
+.sidebar .item, .content .file {
+  background: #FFFFFF;
+  margin-bottom: 3em;
+}
+
+.sidebar .item header, .content .file header {
+  background: #4D6A50;
+  height: 2em;
+  color: #FFFFFF;
+  line-height: 1.75em;
+  padding: 2px 10px;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 16px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.sidebar .item span{
+  margin-left: 8px;
+}
+
+
+.content .file header a {
+  padding-right: 1%;
+  padding-left: 1%;
+  color: white;
+  float: right;
+}
+
+/*mijn bestanden ul*/
+.sidebar .item .highlight {
+  width: 100%;
+  padding-left: 0;
+  background: #FFFFFF;
+  padding: 2%;
+}
+
+.sidebar .item .highlight li {
+  display: block;
+  margin-bottom: 2%;
+  width: 100%;
+}
+
+.sidebar .item .highlight li .left, .content .file .left {
+  width: 20%;
+  float: left;
+  padding: 2%;
+  height: 5em;
+}
+.content .file .left, .content .file .right{
+  padding: 0;
+}
+.sidebar .item li .left {
+  display: inline-block;
+  vertical-align: top; /*not required*/
+  position: relative;
+}
+
+.sidebar .item .highlight li .left img, .content .file .left img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+
+.content .file .right h3{
+  margin-top: 0;
+}
+.content .file .left img {
+  height: 64px;
+  width: 64px;
+  vertical-align: middle;
+}
+
+.sidebar .item li .left img {
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.sidebar .item .highlight li .right, .content .file .right {
+  width: 80%;
+  float: right;
+}
+
+.content .file .left {
+  width: 10%;
+}
+
+.content .file .right {
+  width: 100%;
+}
+
+.content .file.new{
+  input{
+    margin-bottom: 2em;
+    padding: 0.5%;
+  }
+}
+
+.padding{
+  padding: 2%;
+}
+
+
+.content .file.detail .left{
+  width: 20%;
+}
+
+
+.content .file.detail .right{
+  width: 80%;
+}
+
+.content .file.detail .left, .content .file.detail .right{
+  height: 5em;
+}
+
+.content .file.detail .left img {
+  height: 32px;
+  width: 32px;
+  object-fit: cover;
+}
+
+
+.content .file.detail .notes, .content .file.detail .details{
+  display: block;
+  margin-top: 3.5em;
+}
+
+.content .file.detail .details .detail{
+  display: inline-block;
+  width: 15%;
+  margin: 0 2% 0 2%;
+}
+
+
+.content .file.detail .details .detail i{
+  font-size: 1.5em;
+  color: $unihelp-green;
+}
+.content .file.detail .details .detail i span{
+  font-family: Raleway;
+  color: black;
+  line-height: 1em;
+  padding-left: 12px;
+  font-size: 16px;
+}
+
+/*star rating*/
+.content .file .right .rating {
+  float: right;
+  font-size: 1.5em;
+}
+
+.rating .checked {
+  color: orange;
+}
+
+/* search input */
+.inner-addon {
+  position: relative;
+  border: none;
+}
+
+.inner-addon input {
+  border: none;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon {
+  left: 0px;
+}
+
+.right-addon .glyphicon {
+  right: 0px;
+}
+
+/* add padding  */
+.left-addon input {
+  padding-left: 30px;
+}
+
+.right-addon input {
+  padding-right: 30px;
+}
+
+
+
+
+/*Custom checkboxes*/
+
+.checkbox-label{
+  margin-bottom: 2%;
+}
+.checkbox-label input {
+  display: none;
+}
+.checkbox-label span {
+  height: 12px;
+  width: 12px;
+  padding: 2%;
+  border: 1px solid grey;
+  display: inline-block;
+  position: relative;
+}
+.checkbox-label [type=checkbox]:checked + span:before {
+  content: '\f00c';
+  font-family: FontAwesome;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  color: $download-button;
+}
+
+/*Forms*/
+form input, form textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+form label{
+  float: left;
+}
+
+
+form .mce-tinymce{
+  clear: both;
+}
+
+form  .form-group{
+  margin: 2.5% 0 2.5% 0;
+}
+/*Multistep forms*/
+#msform {
+  width:100%;
+  text-align: center;
+  position: relative;
+
+}
+#msform fieldset{
+  border: 0 none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  /*fieldsets op elkaar stacken*/
+  position: relative;
+}
+/*Alle steps hiden, behalve de eerste*/
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+
+
+/*steps bar*/
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+  padding-left: 0;
+  li{
+    list-style-type: none;
+    color: red;
+    width: 25%;
+    float: left;
+    position: relative;
+    //box with title*/
+    &:before{
+      position: relative;
+      /*html data-title*/
+      content: attr(data-title);
+      counter-increment: step;
+      line-height: 60px;
+      display: block;
+      color: white;
+      margin: 0 auto 5px auto;
+      background: $grey;
+      height: 60px;
+      width: 75%;
+      z-index: 10;
+    }
+    /*lijn tussen boxes*/
+    &:after{
+      content: '';
+      width: 100%;
+      height: 10px;
+      background: $grey;
+      position: absolute;
+      left: -50%;
+      top: 35%;
+      z-index: 1;
+    }
+    /*Geen connector nodig voor stap 1*/
+
+    &:first-child:after{
+      content: none;
+    }
+
+  }
+}
+
+
+
+/*Actieve en voltooide stappen groen kleuren*/
+#progressbar li.active:before,  #progressbar li.active:after{
+  background: $unihelp-green;
+  color: white;
+}
+
+
+
+/*dropzone*/
+
+.inputFile {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.inputFile + label {
+  font-size: 1.25em;
+  font-weight: 700;
+  background-color: white;
+  display: inline-block;
+  color: black;
+  padding: 1%;
+  width: 20%;
+  margin-left: 40%;
+}
+
+
+
+.inputFile:focus + label,
+.inputFile + label:hover {
+  cursor: pointer;
+}
+
+.dropzone{
+  width: 100%;
+  padding: 2.5%;
+  background: $unihelp-green;
+  position: relative;
+  label{
+    font-size: 14px;
+    font-family: Raleway;
+    font-style: normal;
+
+  }
+  h5{
+    clear: both;
+    color: white;
+    padding-top: 2em;
+  }
+}
+
+
+/*file overview*/
+
+.file-overview{
+  text-align: left;
+  width: 100%;
+}
+
+.spacer{
+  height: 2em;
+}
+
+.file-overview tr td:last-child{
+  text-align: right;
+}
+
+/*Mediaqueries*/
+@media screen and (max-width: 480px) {
+
+  div.table {
+    margin-top: 1em;
+  }
+  /*SIDEBAR*/
+  .sidebar {
+    display: block;
+    padding: 0;
+    width: 100%;
+
+  }
+
+  .content {
+    display: block;
+    padding: 0;
+    width: 100%;
+
+  }
+  .padding {
+    position: relative;
+  }
+
+  .content .file{
+    .left, .right{
+      width: 100%;
+    }
+    .left{
+      img{
+        width: 48px;
+        height: 48px;
+      }
+    }
+    .right{
+      .rating{
+        float: right;
+        font-size: 1.5em;
+        position: absolute;
+        right: 2%;
+        top: 2%;
+      }
+    }
+    .detail{
+      .left{
+        width: 60%;
+      }
+      .right{
+        width: 40%;
+      }
+    }
+  }
+
+
+
+
+  /*dropzone*/
+  .inputFile + label {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
