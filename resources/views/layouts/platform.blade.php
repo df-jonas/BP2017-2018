@@ -37,5 +37,6 @@
 <body class="platform">
 @yield('sidebar')
 @yield('content')
+@yield('scripts')
 </body>
 </html>

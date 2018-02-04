@@ -38,6 +38,8 @@ class SharingController extends Controller
     public function sharingNew()
     {
         $arr = [
+            'campus' => Auth::user()->campus->name,
+            'fos' => Auth::user()->field->name,
             'courses' => Course::query()->orderBy("name")->get(),
             'doctypes' => Doctype::query()->orderBy("name")->get(),
             'degrees' => Degree::query()->orderBy("name")->get(),

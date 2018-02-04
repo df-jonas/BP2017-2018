@@ -13,37 +13,20 @@
                 <header>Informatie</header>
                 <div class="padding">
                     <ul class="highlight">
-                        <li class="clearfix">
-                            <i class="fa fa-university" aria-hidden="true"><span>Design &amp; Technology</span></i>
-                        </li>
-
-                        <li class="clearfix">
-                            <i class="fa fa-graduation-cap" aria-hidden="true"><span>Multec</span></i>
-                        </li>
-
-                        <li class="clearfix">
-                            <i class="fa fa-graduation-cap" aria-hidden="true"><span>Advanced web development</span></i>
-                        </li>
-
-                        <li class="clearfix">
-                            <i class="fa fa-graduation-cap" aria-hidden="true"><span>Samenvatting</span></i>
-                        </li>
-
-                        <li class="clearfix">
-                            <i class="fa fa-graduation-cap" aria-hidden="true"><span>3e bachelor</span></i>
-                        </li>
-
-                        <li class="clearfix">
-                            <i class="fa fa-graduation-cap" aria-hidden="true"><span>2017 - 2018</span></i>
-                        </li>
-
-                        <li class="clearfix">
-                            <i class="fa fa-graduation-cap" aria-hidden="true"><span>33 pagina's</span></i>
-                        </li>
-
-                        <li class="clearfix">
-                            <i class="fa fa-graduation-cap" aria-hidden="true"><span>Geen boek</span></i>
-                        </li>
+                        <li class="clearfix"><i class="fa fa-university" aria-hidden="true"><span
+                                        class="static-campus">{{ $campus }}</span></i></li>
+                        <li class="clearfix"><i class="fa fa-graduation-cap" aria-hidden="true"><span
+                                        class="static-fos">{{ $fos }}</span></i></li>
+                        <li class="clearfix"><i class="fa fa-graduation-cap" aria-hidden="true"><span
+                                        class="static-course">Vak</span></i></li>
+                        <li class="clearfix"><i class="fa fa-graduation-cap" aria-hidden="true"><span
+                                        class="static-type">Type</span></i></li>
+                        <li class="clearfix"><i class="fa fa-graduation-cap" aria-hidden="true"><span
+                                        class="static-degree">Graad</span></i></li>
+                        <li class="clearfix"><i class="fa fa-graduation-cap" aria-hidden="true"><span
+                                        class="static-publicationyear">Jaar</span></i></li>
+                        <li class="clearfix"><i class="fa fa-graduation-cap" aria-hidden="true"><span
+                                        class="static-book">Boek</span></i></li>
                     </ul>
                 </div>
             </article>
@@ -214,15 +197,15 @@
                                 <label>Document eigenschappen</label>
 
                                 <table class="file-overview">
+
                                     <tr class="spacer" style="height: 2em;">
                                         <td></td>
                                     </tr>
+
                                     <tr style="margin-bottom: 2em">
                                         <td class="bold">Campus</td>
-                                        <td>Design &amp; technology</td>
+                                        <td class="static-campus">{{ $campus }}</td>
                                         <td class="small">Bewerken</td>
-
-
                                     </tr>
 
                                     <tr class="spacer">
@@ -231,40 +214,45 @@
 
                                     <tr>
                                         <td class="bold">Richting</td>
-                                        <td>Multec</td>
+                                        <td class="static-fos">{{ $fos }}</td>
                                         <td class="small">Bewerken</td>
                                     </tr>
+
                                     <tr class="spacer">
                                         <td></td>
                                     </tr>
+
                                     <tr>
                                         <td class="bold">Vak</td>
-                                        <td>Project management</td>
+                                        <td class="static-course">Project management</td>
                                         <td class="small">Bewerken</td>
                                     </tr>
 
                                     <tr class="spacer">
                                         <td></td>
                                     </tr>
+
                                     <tr>
                                         <td class="bold">Titel bestand</td>
-                                        <td>Hoorcollege 1</td>
+                                        <td class="static-title">Hoorcollege 1</td>
                                         <td class="small">Bewerken</td>
                                     </tr>
 
 
-                                    <tr class="spacer" style="height: 2em;">
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="bold">Titel boek</td>
-                                        <td>Onbekend</td>
+                                    <tr class="spacer">
                                         <td></td>
                                     </tr>
 
-                                    <tr class="spacer" style="height: 2em;">
+                                    <tr>
+                                        <td class="bold">Titel boek</td>
+                                        <td class="static-book">Onbekend</td>
                                         <td></td>
                                     </tr>
+
+                                    <tr class="spacer">
+                                        <td></td>
+                                    </tr>
+
                                 </table>
 
                                 <input type="submit" name="submit" class="next col-lg-2" value="Versturen"/>
@@ -291,4 +279,8 @@
 
     @include('partials.footer')
 
+@endsection
+
+@section("scripts")
+    <script src="{{asset("js/sharing-new.js")}}"></script>
 @endsection
