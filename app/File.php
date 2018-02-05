@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class File extends Model
 {
+    protected $hidden = ["user_id", "courseid", "documenttypeid", "degreeid", "pubyearid", "fosid"];
+
     public function user()
     {
         return $this->belongsTo('App\User', 'user_id');

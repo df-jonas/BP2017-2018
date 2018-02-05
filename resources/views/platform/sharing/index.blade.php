@@ -18,7 +18,7 @@
                 <header>Zoeken</header>
                 <div class="inner-addon left-addon">
                     <i class="glyphicon glyphicon-search"></i>
-                    <input type="text" class="form-control" placeholder="zoekterm"/>
+                    <input type="text" name="search" class="form-control filterlistener" placeholder="zoekterm"/>
                 </div>
             </article>
 
@@ -39,8 +39,8 @@
 
                     <div class="form-group clearfix">
                         <div class="selectdiv">
-                            <label for="doctype">Kies vak</label>
-                            <select id="doctype" name="documenttype" class="select col-xs-12 filterlistener">
+                            <label for="course">Kies vak</label>
+                            <select id="course" name="course" class="select col-xs-12 filterlistener">
                                 <option value="-1" selected>Geen selectie</option>
                                 @foreach($courses as $course)
                                     <option value="{{ $course->id }}">{{ $course->name }}</option>
@@ -55,11 +55,12 @@
                     <div class="form-group clearfix">
                         @foreach($pubyears as $pubyear)
                             <label class="checkbox-container col-xs-12">{{ $pubyear->name }}
-                                <input type="checkbox" value="{{ $pubyear->id }}" class="filterlistener" checked>
+                                <input type="checkbox" name="pubyear[]" value="{{ $pubyear->id }}" class="filterlistener" checked>
                                 <span class="checkmark"></span>
                             </label>
                         @endforeach
                     </div>
+                    <input type="hidden" class="filterlistener" name="_token" id="token" value="{{ csrf_token() }}">
                 </div>
             </article>
 
@@ -83,7 +84,7 @@
         </div>
 
         <div class="content">
-            <div class="files">
+            <div id="filecontainer" class="files">
                 @foreach($files as $file)
                     <article class="file clearfix">
                         <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a
@@ -109,4 +110,8 @@
     </div>
 
     @include('partials.footer')
+@endsection
+
+@section("scripts")
+    <script src="{{ asset("js/sharing-filter.js") }}"></script>
 @endsection

@@ -22,7 +22,7 @@ class SharingController extends Controller
         $arr = [
             'foses' => Fos::query()->orderBy("name")->get(),
             'courses' => Course::query()->orderBy('name')->get(),
-            'pubyears' =>PublicationYear::query()->orderBy('name')->get(),
+            'pubyears' => PublicationYear::query()->orderBy('name')->get(),
             'userfiles' => File::query()->where("user_id", "=", Auth::user()->id)->orderBy('id', 'desc')->take(5)->get(),
             'files' => File::query()->with('degree')->with('field')->orderBy('id', 'desc')->get()
         ];
@@ -80,5 +80,41 @@ class SharingController extends Controller
         $file->save();
 
         return Redirect::to(route('sharing-index'));
+    }
+
+    public function ajaxFilter(Request $request)
+    {
+        $q = File::query();
+
+        if ($request->search != "") {
+            $q->where("title", "LIKE", "%" . $request->search . "%");
+        }
+
+        if ($request->fos != -1) {
+            $q->where("fosid", "=", $request->fos);
+        }
+
+        if ($request->course != -1) {
+            $q->where("courseid", "=", $request->course);
+        }
+
+        if (!empty($request->pubyear) && sizeof($request->pubyear) > 0) {
+            $q->whereIn("pubyearid", $request->pubyear);
+        }
+
+        return $q->select(["title", "public_id", "user_id", "courseid", "documenttypeid", "degreeid", "pubyearid", "fosid"])->with([
+            'field' => function ($query) {
+                $query->select("id", "name");
+            },
+            'degree' => function ($query) {
+                $query->select("id", "name");
+            },
+            'course' => function ($query) {
+                $query->select("id", "name");
+            },
+            'user' => function ($query) {
+                $query->select("id", "name");
+            }
+        ])->get();
     }
 }
