@@ -8,6 +8,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Campus;
+use App\Fos;
 use App\Helpers\HttpHelper;
 use App\User;
 use Illuminate\Http\Request;
@@ -89,7 +91,9 @@ class AuthController extends Controller
             return Redirect::to(route('sharing-index'));
 
         $params = [
-            'name' => Auth::user()->name
+            'name' => Auth::user()->name,
+            'campuses' => Campus::query()->orderBy("name")->get(),
+            'foses' => Fos::query()->orderBy("name")->get(),
         ];
         return view("website.register", $params);
     }

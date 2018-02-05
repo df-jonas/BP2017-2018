@@ -27,7 +27,8 @@
 
                         <div class="form-group clearfix">
                             <label for="email">Uw e-mailadres</label>
-                            <input type="email" class="form-control col-lg-6" id="email" name="email" aria-describedby="emailHelp">
+                            <input type="email" class="form-control col-lg-6" id="email" name="email"
+                                   aria-describedby="emailHelp">
                         </div>
 
 
@@ -42,8 +43,9 @@
                                 <label for="campus">Aan welke campus studeert u?</label>
 
                                 <select class="select col-xs-12" id="campus" name="campus">
-                                    <option value="1" selected>Design &amp; Technology</option>
-                                    <option value="2">Dansaert</option>
+                                    @foreach($campuses as $campus)
+                                        <option value="{{ $campus->id }}">{{ $campus->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -53,8 +55,9 @@
                             <div class="selectdiv">
                                 <label for="fos">Welke studierichting volgt u?</label>
                                 <select class="select col-xs-12" id="fos" name="fos">
-                                    <option value="1" selected>Multimedia &amp; Communicatie Technologie</option>
-                                    <option value="2">Dig-X</option>
+                                    @foreach($foses as $fos)
+                                        <option value="{{ $fos->id }}">{{ $fos->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
 

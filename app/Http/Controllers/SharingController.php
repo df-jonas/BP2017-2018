@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Campus;
 use App\Course;
 use App\Degree;
 use App\Doctype;
 use App\File;
+use App\Fos;
 use App\Helpers\RandomHelper;
 use App\PublicationYear;
 use Illuminate\Http\Request;
@@ -15,27 +17,25 @@ use Illuminate\Support\Facades\Storage;
 
 class SharingController extends Controller
 {
-    public function sharingIndex(Request $request)
+    public function index(Request $request)
     {
-        $data =  $request->all();
-        //dd($data);
-        //error_log('Some message here.');
-
         $arr = [
+            'foses' => Fos::query()->orderBy("name")->get(),
+            'courses' => Course::query()->orderBy('name')->get(),
+            'pubyears' =>PublicationYear::query()->orderBy('name')->get(),
             'userfiles' => File::query()->where("user_id", "=", Auth::user()->id)->orderBy('id', 'desc')->take(5)->get(),
             'files' => File::query()->with('degree')->with('field')->orderBy('id', 'desc')->get()
         ];
 
-
         return view("platform.sharing.index", $arr);
     }
 
-    public function sharingDetail()
+    public function detail()
     {
         return view("platform.sharing.detail");
     }
 
-    public function sharingNew()
+    public function newfile()
     {
         $arr = [
             'campus' => Auth::user()->campus->name,
@@ -49,7 +49,7 @@ class SharingController extends Controller
         return view("platform.sharing.new", $arr);
     }
 
-    public function newFile(Request $request)
+    public function newfilePost(Request $request)
     {
         $request->validate([
             'file' => 'required|mimes:pdf|max:10240'
