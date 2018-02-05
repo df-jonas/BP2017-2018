@@ -115,6 +115,6 @@ class SharingController extends Controller
             'user' => function ($query) {
                 $query->select("id", "name");
             }
-        ])->get();
+        ])->orderBy('id', 'desc')->get();
     }
 }
