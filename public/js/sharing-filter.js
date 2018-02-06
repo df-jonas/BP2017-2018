@@ -15,13 +15,13 @@ $(document).ready(function () {
                         '<div class="padding">' +
                         '<div class="right">' +
                         '<div class="rating">' +
-                        '<span class="fa fa-star checked"></span> ' +
-                        '<span class="fa fa-star checked"></span> ' +
-                        '<span class="fa fa-star checked"></span> ' +
-                        '<span class="fa fa-star"></span> ' +
-                        '<span class="fa fa-star"></span> ' +
+                        '<span class="fa fa-star checked"></span>' +
+                        '<span class="fa fa-star checked"></span>' +
+                        '<span class="fa fa-star checked"></span>' +
+                        '<span class="fa fa-star"></span>' +
+                        '<span class="fa fa-star"></span>' +
                         '</div>' +
-                        '<h3>' + value.title + '</h3>' +
+                        '<h3><a href="/p/sharing/' + value.id + '">' + value.title + '</a></h3>' +
                         '<p>door ' + value.user.name+'</p>' +
                         '</div></div></article>';
 

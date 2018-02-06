@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Storage;
 
 class SharingController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $arr = [
             'foses' => Fos::query()->orderBy("name")->get(),
@@ -30,9 +30,12 @@ class SharingController extends Controller
         return view("platform.sharing.index", $arr);
     }
 
-    public function detail()
+    public function detail($id)
     {
-        return view("platform.sharing.detail");
+        $arr = [
+            'file' => File::query()->where("id", "=", $id)->first()
+        ];
+        return view("platform.sharing.detail", $arr);
     }
 
     public function newfile()
@@ -102,7 +105,7 @@ class SharingController extends Controller
             $q->whereIn("pubyearid", $request->pubyear);
         }
 
-        return $q->select(["title", "public_id", "user_id", "courseid", "documenttypeid", "degreeid", "pubyearid", "fosid"])->with([
+        return $q->select(["id", "title", "public_id", "user_id", "courseid", "documenttypeid", "degreeid", "pubyearid", "fosid"])->with([
             'field' => function ($query) {
                 $query->select("id", "name");
             },
@@ -116,5 +119,10 @@ class SharingController extends Controller
                 $query->select("id", "name");
             }
         ])->orderBy('id', 'desc')->get();
+    }
+
+    public function ajaxRate(Request $request)
+    {
+        return "[]";
     }
 }

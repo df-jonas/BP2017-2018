@@ -56,10 +56,12 @@ Route::group(['middleware' => ['auth']], function () {
          * Sharing
         */
         Route::get('/sharing', 'SharingController@index')->name('sharing-index');
-        Route::get('/sharing/detail', 'SharingController@detail')->name('sharing-detail');
         Route::get('/sharing/new', 'SharingController@newfile')->name('sharing-new');
         Route::post('/sharing/new', 'SharingController@newfilePost');
-        Route::post('/sharing/filter', 'SharingController@ajaxfilter');
+        Route::post('/sharing/filter', 'SharingController@ajaxFilter');
+        Route::post('/sharing/rate', 'SharingController@ajaxRate');
+        Route::get('/sharing/{id}', 'SharingController@detail')->name('sharing-detail');
+
 
         /**
          * Community

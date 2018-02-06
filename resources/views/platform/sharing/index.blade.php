@@ -55,7 +55,8 @@
                     <div class="form-group clearfix">
                         @foreach($pubyears as $pubyear)
                             <label class="checkbox-container col-xs-12">{{ $pubyear->name }}
-                                <input type="checkbox" name="pubyear[]" value="{{ $pubyear->id }}" class="filterlistener" checked>
+                                <input type="checkbox" name="pubyear[]" value="{{ $pubyear->id }}"
+                                       class="filterlistener" checked>
                                 <span class="checkmark"></span>
                             </label>
                         @endforeach
@@ -93,13 +94,9 @@
                         <div class="padding">
                             <div class="right">
                                 <div class="rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
                                 </div>
-                                <h3>{{$file->title}}</h3>
+                                <h3><a href="{{ route('sharing-detail', ['id' => $file->id]) }}">{{$file->title}}</a></h3>
                                 <p>door {{$file->user->name}}</p>
                             </div>
                         </div>
@@ -113,5 +110,6 @@
 @endsection
 
 @section("scripts")
+    <script src="{{ asset("js/bootstrap-rating-input.js") }}"></script>
     <script src="{{ asset("js/sharing-filter.js") }}"></script>
 @endsection

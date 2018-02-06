@@ -4,7 +4,6 @@
     @include('partials.platform.header')
     @include('partials.platform.subheader')
 
-
     <div class="container table">
         <!-- Sidebar -->
         <div class="sidebar">
@@ -66,7 +65,7 @@
                                 <div class="form-group clearfix">
                                     <div class="selectdiv">
                                         <label for="course">Voor welk vak wil je een bestand uploaden?</label>
-                                        <select id="course" class="select col-xs-12" name="course">
+                                        <select id="course" class="select col-xs-12 form-control" name="course">
                                             @foreach ($courses as $course)
                                                 <option value="{{$course->id}}">{{$course->name}}</option>
                                             @endforeach
@@ -104,20 +103,20 @@
                                 <div class="form-group clearfix">
                                     <div class="textdiv">
                                         <label for="title">Titel</label>
-                                        <input id="title" name="title" type="text">
+                                        <input id="title" name="title" type="text" class="form-control col-xs-12">
                                     </div>
                                 </div>
 
                                 <div class="form-group clearfix">
                                     <label for="filedesc">Omschrijving bestand</label>
-                                    <textarea id="filedesc" name="filedescription"></textarea>
+                                    <textarea class="form-control" rows="5" id="filedesc" name="filedescription"></textarea>
                                 </div>
 
                                 <div class="form-group clearfix">
 
                                     <div class="selectdiv">
                                         <label for="doctype">Type document</label>
-                                        <select id="doctype" name="documenttype" class="select col-xs-12">
+                                        <select id="doctype" name="documenttype" class="form-control select col-xs-12">
                                             @foreach($doctypes as $doctype)
                                                 <option value="{{$doctype->id}}">{{$doctype->name}}</option>
                                             @endforeach
@@ -129,7 +128,7 @@
 
                                     <div class="selectdiv">
                                         <label for="degree">Studiejaar</label>
-                                        <select id="degree" name="degree" class="select col-xs-12">
+                                        <select id="degree" name="degree" class="form-control select col-xs-12">
                                             @foreach($degrees as $degree)
                                                 <option value="{{$degree->id}}">{{$degree->name}}</option>
                                             @endforeach
@@ -141,7 +140,7 @@
 
                                     <div class="selectdiv">
                                         <label for="originaldate">Geschreven in</label>
-                                        <select id="originaldate" name="originaldate" class="select col-xs-12">
+                                        <select id="originaldate" name="originaldate" class="form-control select col-xs-12">
                                             @foreach($pubyears as $pubyear)
                                                 <option value="{{$pubyear->id}}">{{$pubyear->name}}</option>
                                             @endforeach
@@ -166,7 +165,7 @@
 
                                     <div class="selectdiv">
                                         <label for="book">Is er een boek gekoppeld aan dit vak?</label>
-                                        <select id="book" name="hasbook" class="select col-xs-12">
+                                        <select id="book" name="hasbook" class="select col-xs-12 form-control">
                                             <option value="0" selected>Neen</option>
                                             <option value="1">Ja</option>
                                         </select>
@@ -176,7 +175,7 @@
                                 <div class="form-group clearfix">
                                     <div class="textdiv">
                                         <label for="booktitle">Welk boek?</label>
-                                        <input id="booktitle" name="booktitle" type="text">
+                                        <input id="booktitle" name="booktitle" type="text" class="form-control">
                                     </div>
 
                                 </div>
@@ -187,7 +186,6 @@
                         </article>
                     </fieldset>
                     <!-- step 3 -->
-
 
                     <!-- step 4 -->
                     <fieldset>
@@ -267,18 +265,13 @@
                     <!-- multistep form -->
                 </form>
                 <!-- files -->
-
-
             </div>
         </div>
         <!-- content -->
     </div>
     <!-- container -->
-    </div>
-
 
     @include('partials.footer')
-
 @endsection
 
 @section("scripts")
