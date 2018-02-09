@@ -6,6 +6,7 @@ use App\Campus;
 use App\Course;
 use App\Degree;
 use App\Doctype;
+use App\Download;
 use App\File;
 use App\Fos;
 use App\Helpers\RandomHelper;
@@ -33,7 +34,8 @@ class SharingController extends Controller
     public function detail($id)
     {
         $arr = [
-            'file' => File::query()->where("id", "=", $id)->first()
+            'file' => File::query()->where("id", "=", $id)->first(),
+            'userdownloads' => Download::query()->where("user_id", "=", Auth::user()->id)->get()
         ];
         return view("platform.sharing.detail", $arr);
     }
@@ -124,5 +126,25 @@ class SharingController extends Controller
     public function ajaxRate(Request $request)
     {
         return "[]";
+    }
+
+    public function downloadproxy($public)
+    {
+        $file_id = File::query()->where("public_id", "=", $public)->first()->id;
+        $user_id = Auth::id();
+
+        $dbdl = Download::query()
+            ->where("user_id", "=", $user_id)
+            ->where("file_id", "=", $file_id)
+            ->first();
+
+        if ($dbdl == null) {
+            $dl = new Download();
+            $dl->file_id = $file_id;
+            $dl->user_id = $user_id;
+            $dl->save();
+        }
+
+        return Redirect::to(env("FILE_DOMAIN", "") . $public);
     }
 }

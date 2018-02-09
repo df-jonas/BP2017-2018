@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Coduo\PHPHumanizer\DateTimeHumanizer;
 use Illuminate\Database\Eloquent\Model;
 
 class File extends Model
@@ -36,5 +37,25 @@ class File extends Model
     public function course()
     {
         return $this->belongsTo('App\Course', 'courseid');
+    }
+
+    public function downloads()
+    {
+        return Download::query()->where("file_id", "=", $this->id)->count();
+    }
+
+    public function humantimestamp()
+    {
+        return DateTimeHumanizer::difference(new \DateTime(), new \DateTime($this->created_at), "nl");
+    }
+
+    public function downloadUrl()
+    {
+        return route('sharing-download', ["public" => $this->public_id]);
+    }
+
+    public function detailUrl()
+    {
+        return route('sharing-detail', ['id' => $this->id]);
     }
 }

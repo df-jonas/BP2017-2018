@@ -75,8 +75,8 @@
                             <img src="{{asset('img/logo/favicon.png')}}">
                         </div>-->
                             <div class="col-xs-12">
-                                <h4>{{$userfile->title}}</h4>
-                                <p>Downloads: 0</p>
+                                <h4><a href="{{ $userfile->detailUrl() }}">{{$userfile->title}}</a></h4>
+                                <p>Downloads: {{ $userfile->downloads() }}</p>
                             </div>
                         </li>
                     @endforeach
@@ -89,14 +89,14 @@
                 @foreach($files as $file)
                     <article class="file clearfix">
                         <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a
-                                    href="https://static-unihelp.eu/{{$file->public_id}}"><i class="fa fa-download"></i></a>
+                                    href="{{ $file->downloadUrl() }}"><i class="fa fa-download"></i></a>
                         </header>
                         <div class="padding">
                             <div class="right">
                                 <div class="rating">
                                     <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
                                 </div>
-                                <h3><a href="{{ route('sharing-detail', ['id' => $file->id]) }}">{{$file->title}}</a></h3>
+                                <h3><a href="{{ $file->detailUrl() }}">{{$file->title}}</a></h3>
                                 <p>door {{$file->user->name}}</p>
                             </div>
                         </div>
@@ -110,6 +110,5 @@
 @endsection
 
 @section("scripts")
-    <script src="{{ asset("js/bootstrap-rating-input.js") }}"></script>
     <script src="{{ asset("js/sharing-filter.js") }}"></script>
 @endsection

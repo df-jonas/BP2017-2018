@@ -19,15 +19,17 @@
             <article class="item">
                 <header>Mijn downloads</header>
                 <ul class="highlight">
-                <!--<li class="clearfix">
-                        <div class="left col-xs-3 clearfix">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Project</h4>
-                            <p>Downloads:</p>
-                        </div>
-                    </li>-->
+                    @foreach($userdownloads as $userdownload)
+                        <li class="clearfix">
+                            <!--<div class="left col-xs-3 clearfix">
+                                <img src="{{asset('img/logo/favicon.png')}}">
+                            </div>-->
+                            <div class="col-xs-12">
+                                <h4><a href="{{ $userdownload->file->detailUrl() }}">{{ $userdownload->file->title }}</a></h4>
+                                <small>Gedownload {{ $userdownload->humantimestamp() }}</small>
+                            </div>
+                        </li>
+                    @endforeach
                 </ul>
             </article>
         </div>
@@ -36,7 +38,7 @@
             <div class="files">
                 <article class="file detail clearfix">
                     <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a
-                                href="https://static-unihelp.eu/{{$file->public_id}}"><i class="fa fa-download"></i></a>
+                                href="{{ $file->downloadUrl() }}"><i class="fa fa-download"></i></a>
                     </header>
                     <div class="padding">
                         <div class="left">
@@ -45,7 +47,7 @@
                                             src="{{ URL::asset('img/avatars/empty.png') }}" class="account_img"></div>
                                 <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
                                     <h6 style="margin: 0">{{ $file->user->name }}</h6>
-                                    <h6 style="margin: 5px 0">{{ $file->created_at }}</h6>
+                                    <h6 style="margin: 5px 0">{{ $file->humantimestamp() }}</h6>
                                 </div>
                             </div>
                         </div>
@@ -88,8 +90,7 @@
                             </div>
                         </div>
 
-                        <a class="download col-lg-2" href="https://static-unihelp.eu/{{$file->public_id}}">Download</a>
-
+                        <a class="download col-lg-2" href="{{ $file->downloadUrl() }}">Download</a>
                     </div>
                 </article>
             </div>
@@ -97,7 +98,6 @@
     </div>
 
     @include('partials.footer')
-
 @endsection
 
 @section("scripts")

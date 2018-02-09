@@ -60,6 +60,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/sharing/new', 'SharingController@newfilePost');
         Route::post('/sharing/filter', 'SharingController@ajaxFilter');
         Route::post('/sharing/rate', 'SharingController@ajaxRate');
+        Route::get('/sharing/proxy/{public}', 'SharingController@downloadproxy')->name('sharing-download');
         Route::get('/sharing/{id}', 'SharingController@detail')->name('sharing-detail');
 
 
