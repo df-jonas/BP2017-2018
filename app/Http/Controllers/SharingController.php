@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Storage;
 class SharingController extends Controller
 {
 
-    public function groupIndex(){
-        return view('platform.community.index');
-    }
 
 
     public function sharingIndex(Request $request)
