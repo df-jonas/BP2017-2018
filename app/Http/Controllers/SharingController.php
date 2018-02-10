@@ -23,9 +23,6 @@ class SharingController extends Controller
 
     public function sharingIndex(Request $request)
     {
-        $data =  $request->all();
-        //dd($data);
-        //error_log('Some message here.');
 
 
         $arr = [

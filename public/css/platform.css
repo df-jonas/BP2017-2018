@@ -242,15 +242,6 @@ div.table {
   width: 80%;
 }
 
-.account_img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: #FFFFFF;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .account_img.edit {
   position: absolute;
   top: -4px;

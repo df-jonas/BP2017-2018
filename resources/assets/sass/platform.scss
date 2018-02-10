@@ -87,6 +87,7 @@ button.download, a.download, input.next, input.previous {
   object-fit: cover;
 }
 
+
 .account_username {
   margin-left: 8px;
   margin-right: 6px;
@@ -183,13 +184,7 @@ div.table {
   width: 80%;
 }
 
-.account_img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: #FFFFFF;
-  object-fit: cover;
-}
+
 
 .account_img.edit {
   position: absolute;

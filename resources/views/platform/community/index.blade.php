@@ -18,7 +18,7 @@
 
 
                 <article class="item">
-                    <header>Filteren</header>
+                    <header>Groepen filteren</header>
                     <div class="padding">
                         <form>
 
@@ -71,6 +71,15 @@
 
                 <article class="item">
                     <header>Mijn uploads</header>
+                    <ul class="highlight">
+
+
+                    </ul>
+                </article>
+
+
+                <article class="item">
+                    <header>Statistieken</header>
                     <ul class="highlight">
 
 
