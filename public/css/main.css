@@ -1,20 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);/*FONTS*/
 
+/*Mixins*/
+
+/*Variables*/
+
+/*General*/
+
 * {
   font-family: 'Raleway', sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
+* html .clearfix {
+  height: 1%;
+}
+
 html {
   height: 100%;
 }
 
-/*GENERAL*/
+body {
+  overflow-x: hidden;
+}
 
-.container {
-  width: 85%;
-  margin: 0 auto;
+/*Helpers*/
+
+.clearfix {
+  display: inline-block;
 }
 
 .clearfix:after {
@@ -26,10 +39,6 @@ html {
   height: 0;
 }
 
-.clearfix {
-  display: inline-block;
-}
-
 .bold {
   font-weight: bold;
 }
@@ -37,87 +46,6 @@ html {
 .small {
   font-size: 12px;
   color: #505457;
-}
-
-* html .clearfix {
-  height: 1%;
-}
-
-/*table*/
-
-div.table {
-  table-layout: fixed;
-  display: table;
-  padding: 0;
-}
-
-.account_img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: #FFFFFF;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.account_img.edit {
-  position: absolute;
-  top: -4px;
-  right: -16px;
-  background: #4D6A50;
-  color: #FFFFFF;
-  height: 20px;
-  width: 20px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.account_username {
-  margin-left: 16px;
-  margin-right: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #FFFFFF;
-}
-
-.clearfix {
-  display: block;
-}
-
-/*custom select box*/
-
-.textdiv input {
-  background: transparent;
-  padding: 5px 35px 5px 5px;
-  border: 1px solid #ccc;
-  height: 34px;
-  width: 100%;
-}
-
-.selectdiv {
-  position: relative;
-}
-
-.selectdiv select,
-.selectdiv input {
-  background: transparent;
-  padding: 5px 35px 5px 5px;
-  border: 1px solid #ccc;
-  height: 34px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.selectdiv::after {
-  content: "\F078";
-  font: 17px FontAwesome;
-  color: #333;
-  right: 11px;
-  top: 32px;
-  padding: 0 0 2px;
-  position: absolute;
-  pointer-events: none;
 }
 
 .round_img {
@@ -141,37 +69,29 @@ form input {
   border-radius: 0 !important;
 }
 
+.action-button,
+.action-button.long,
+.action-button.login {
+  background: #FFFFFF;
+  display: inline-block;
+  border: none;
+  padding: 2%;
+  padding-left: 4%;
+  padding-right: 4%;
+  height: 100%;
+  margin-bottom: 3.5%;
+  color: #000000;
+  text-align: center;
+}
+
 /*Header*/
 
 #page_header,
 #platform_header {
-  height: 5em;
+  max-height: 5.5em;
   background-color: #FFFFFF;
   padding: 1%;
   position: relative;
-}
-
-#platform_header {
-  background-color: #4D6A50;
-}
-
-#platform_menu {
-  height: 3em;
-  background: #FFFFFF;
-  -webkit-box-shadow: 2px 1px 5px #888888;
-          box-shadow: 2px 1px 5px #888888;
-}
-
-#platform_menu .pages {
-  padding-left: 1%;
-  display: inline-block;
-  height: 3em;
-}
-
-#platform_menu .pages li {
-  display: inline-block;
-  line-height: 3em;
-  margin-right: 2%;
 }
 
 #page_header img.logo,
@@ -182,8 +102,6 @@ form input {
 
 #page_header .links {
   list-style-type: none;
-  width: 40%;
-  float: right;
   text-align: right;
 }
 
@@ -192,27 +110,57 @@ form input {
   padding: 2%;
   padding-left: 4%;
   padding-right: 4%;
-  height: 100%;
   line-height: .5em;
 }
 
-#page_header .links li:hover,
-#page_header .links li.register:hover {
+#page_header .links li:hover {
   background: lightgray;
   cursor: pointer;
 }
 
-#page_header ul.links li.register:hover {
-  background: #4D6A50;
-}
-
-#page_header ul.links li.register {
+#page_header .links li.register {
   background: #4D6A50;
   color: #FFFFFF;
   margin-left: 4%;
 }
 
-/*HOME*/
+#page_header .links li.register:hover {
+  opacity: 0.9;
+}
+
+.hamburger {
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 1.25em;
+  padding: 5px 15px 0px 15px;
+  color: #4D6A50;
+  border: 0;
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 10000000000000;
+  display: none;
+}
+
+.cross {
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 15px 0px 15px;
+  color: #4D6A50;
+  border: 0;
+  font-size: 3em;
+  line-height: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 10000000000000;
+  display: none;
+}
 
 /*Banner*/
 
@@ -232,22 +180,6 @@ form input {
   top: 75%;
   -webkit-transform: translateY(-75%);
           transform: translateY(-75%);
-}
-
-.action-button,
-.action-button.long,
-.action-button.login {
-  background: #FFFFFF;
-  display: inline-block;
-  border: none;
-  width: 10em;
-  padding: 2%;
-  padding-left: 4%;
-  padding-right: 4%;
-  height: 100%;
-  margin-bottom: 3.5%;
-  color: #000000;
-  text-align: center;
 }
 
 .action-button.register {
@@ -291,6 +223,8 @@ form.register .form-group {
   cursor: pointer;
 }
 
+/*How-it-works*/
+
 .what {
   margin-bottom: 5%;
 }
@@ -316,11 +250,13 @@ form.register .form-group {
   margin-left: 20%;
 }
 
+/*call-to-action*/
+
 .call-to-action {
   background: #4D6A50;
   text-align: center;
   color: #FFFFFF;
-  padding: 1%;
+  padding: 2%;
 }
 
 .call-to-action .buttons {
@@ -333,7 +269,7 @@ form.register .form-group {
   padding: 1%;
 }
 
-/*ABOUT*/
+/*About*/
 
 #about_banner {
   background: #4D6A50;
@@ -386,18 +322,19 @@ form.register .form-group {
   display: block;
 }
 
+/*Login*/
+
 #login_page {
   height: 100vh;
   background: url("/img/backgrounds/climate-kic-350836.jpg");
   background-size: cover;
   background-position: center;
-  padding: 0;
+  background-repeat: no-repeat;
 }
 
 .login_box {
-  margin: auto auto;
   background: rgba(255, 255, 255, 0.97);
-  margin-top: 7.5%;
+  margin-top: 25vh;
   background: #4D6A50;
 }
 
@@ -424,11 +361,63 @@ form.register .form-group {
   margin-bottom: 5%;
 }
 
-/*FOOTER*/
+/*Register*/
+
+.account_img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.account_img.edit {
+  position: absolute;
+  top: -4px;
+  right: -16px;
+  background: #4D6A50;
+  color: #FFFFFF;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.account_username {
+  margin-left: 16px;
+  margin-right: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+/*Footer*/
 
 footer {
   color: #FFFFFF;
   clear: both;
+}
+
+footer.col-xs-12 {
+  padding: 0;
+}
+
+footer .top,
+footer .bottom {
+  position: relative;
+  text-align: left;
+  clear: both;
+  display: block;
+}
+
+footer .top .box,
+footer .bottom .box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 footer .top {
@@ -439,15 +428,6 @@ footer .top {
 footer .bottom {
   height: 7em;
   background: #2B2F33;
-  position: relative;
-}
-
-footer .bottom .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 
 footer a {
@@ -471,117 +451,6 @@ footer a:focus {
   color: white;
 }
 
-footer.col-xs-12 {
-  padding: 0;
-}
-
-.hamburger {
-  background: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  line-height: 1.25em;
-  padding: 5px 15px 0px 15px;
-  color: #4D6A50;
-  border: 0;
-  font-size: 2em;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
-  z-index: 10000000000000;
-  display: none;
-}
-
-.cross {
-  background: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 5px 15px 0px 15px;
-  color: #4D6A50;
-  border: 0;
-  font-size: 3em;
-  line-height: 1.2em;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
-  z-index: 10000000000000;
-  display: none;
-}
-
-/*Custom checkboxes*/
-
-/*https://www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
-
-.checkbox-container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 16px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  /* Hide the browser's default checkbox */
-}
-
-.checkbox-container input {
-  position: absolute;
-  opacity: 0;
-}
-
-/* Create a custom checkbox */
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 18px;
-  width: 18px;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-
-.checkbox-container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-
-.checkbox-container input:checked ~ .checkmark {
-  background-color: #4D6A50;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-
-.checkbox-container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-
-.checkbox-container .checkmark:after {
-  left: 7px;
-  top: 3px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
 @media only screen and (max-width: 1500px) {
   #page_header .links {
     padding-top: 0.5%;
@@ -594,14 +463,18 @@ footer.col-xs-12 {
   #page_banner .scroll {
     top: 96%;
   }
+
+  footer .top {
+    min-height: 20em;
+    height: auto;
+  }
+
+  footer .bottom {
+    height: 12em;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-  .container {
-    width: 95%;
-    margin: 0 auto;
-  }
-
   /*responsive menu*/
 
   #page_header {
@@ -635,15 +508,15 @@ footer.col-xs-12 {
     left: 42.5%;
   }
 
-  #how-it-works .item .right,
-  #how-it-works .item .left {
-    padding: 0;
-  }
-
   .what .items .item .left img,
   .what .items .item .right img {
     width: 100%;
     margin-left: 0;
+  }
+
+  #how-it-works .item .right,
+  #how-it-works .item .left {
+    padding: 0;
   }
 
   #how-it-works .item h1 {
@@ -655,10 +528,9 @@ footer.col-xs-12 {
     text-align: justify;
     word-wrap: break-word;
   }
-}
 
-@media screen and (max-width: 480px) {
   footer .top {
+    min-height: 25em;
     height: auto;
   }
 

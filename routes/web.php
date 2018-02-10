@@ -38,6 +38,9 @@ Route::get('/canvas/oauth_complete', 'AuthController@oauth_complete')->name('can
  * AUTH REQUIRED
  */
 
+
+
+
 Route::group(['middleware' => ['auth']], function () {
 
     // Auth routes
@@ -54,6 +57,14 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/sharing/detail', 'SharingController@sharingDetail')->name('sharing-detail');
         Route::get('/sharing/new', 'SharingController@sharingNew')->name('sharing-new');
         Route::post('/sharing/new', 'SharingController@newFile');
+
+
+        Route::get('/groups', 'SharingController@groupIndex')->name('groups');
     });
 
+
 });
+
+
+
+

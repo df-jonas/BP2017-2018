@@ -2,8 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-1 col-xs-3" style="padding:0">
-                <a href="{{ route('website-index') }}"><img class="logo"
-                                                            src="{{ URL::asset('img/logo/favicon_white.png') }}"></a>
+                <a href="{{ route('website-index') }}"><img class="logo" src="{{ URL::asset('img/logo/favicon_white.png') }}"></a>
             </div>
 
             <div class="account">

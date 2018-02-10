@@ -4,7 +4,6 @@
     @include('partials.platform.header')
     @include('partials.platform.subheader')
 
-
     <div class="container">
         <div class="table">
             <div class="sidebar">
@@ -74,17 +73,7 @@
                     <header>Mijn uploads</header>
                     <ul class="highlight">
 
-                        @foreach($userfiles as $userfile)
-                            <li class="clearfix">
-                            <!--<div class="left col-xs-3 clearfix">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>-->
-                                <div class="col-xs-12">
-                                    <h4>{{$userfile->title}}</h4>
-                                    <p>Downloads: 0</p>
-                                </div>
-                            </li>
-                        @endforeach
+
                     </ul>
                 </article>
 
@@ -94,40 +83,14 @@
 
             <div class="content">
                 <div class="files">
-                    @foreach($files as $file)
-                        <article class="file clearfix">
-                            <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a
-                                        href="https://static-unihelp.eu/{{$file->public_id}}"><i
-                                            class="fa fa-download"></i></a>
-                            </header>
-                            <div class="padding">
-                            <!--
-                        <div class="left">
-                                <img src="{{asset('img/logo/favicon.png')}}">
-                            </div>
-                           -->
-                                <div class="right">
-                                    <div class="rating">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                    </div>
-                                    <h3>{{$file->title}}</h3>
-                                    <p>door {{$file->user->name}}</p>
 
-
-                                </div>
-                            </div>
-                        </article>
-                    @endforeach
                 </div>
             </div>
 
         </div>
     </div>
     </div>
+
 
 
 
