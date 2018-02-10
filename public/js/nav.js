@@ -24,7 +24,7 @@ $(document).ready(function () {
             $("#page_header .cross").toggle();
             $("#page_header .hamburger").toggle();
         })
-    })
+    });
 
     //main menu cross click
     $('#page_header .cross').click(function () {
@@ -33,7 +33,7 @@ $(document).ready(function () {
             $("#page_header .cross").toggle();
             $("#page_header .hamburger").toggle();
         })
-    })
+    });
 
     //banner scroll down
     $("#page_banner .scroll").click(function () {

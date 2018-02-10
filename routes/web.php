@@ -38,6 +38,9 @@ Route::get('/canvas/oauth_complete', 'AuthController@oauth_complete')->name('can
  * AUTH REQUIRED
  */
 
+
+
+
 Route::group(['middleware' => ['auth']], function () {
 
     // Auth routes
@@ -75,4 +78,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/tutoring', 'TutoringController@index')->name('tutoring-index');
     });
 
+
 });
+
+
+
+

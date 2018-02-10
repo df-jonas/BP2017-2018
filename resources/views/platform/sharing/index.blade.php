@@ -4,7 +4,8 @@
     @include('partials.platform.header')
     @include('partials.platform.subheader')
 
-    <div class="container table">
+    <div class="container">
+        <div class="table">
         <div class="sidebar">
 
             <article class="item clearfix">
@@ -65,15 +66,16 @@
                 </div>
             </article>
 
-            <article class="item">
-                <header>Mijn uploads</header>
-                <ul class="highlight">
+                <article class="item">
+                    <header>Mijn uploads</header>
+                    <ul class="highlight">
 
-                    @foreach($userfiles as $userfile)
-                        <li class="clearfix">
-                        <!--<div class="left col-xs-3 clearfix">
+                        @foreach($userfiles as $userfile)
+                            <li class="clearfix">
+                            <!--<div class="left col-xs-3 clearfix">
                             <img src="{{asset('img/logo/favicon.png')}}">
                         </div>-->
+
                             <div class="col-xs-12">
                                 <h4><a href="{{ $userfile->detailUrl() }}">{{$userfile->title}}</a></h4>
                                 <p>Downloads: {{ $userfile->downloads() }}</p>
@@ -98,11 +100,13 @@
                                 </div>
                                 <h3><a href="{{ $file->detailUrl() }}">{{$file->title}}</a></h3>
                                 <p>door {{$file->user->name}}</p>
+
                             </div>
-                        </div>
-                    </article>
-                @endforeach
+                        </article>
+                    @endforeach
+                </div>
             </div>
+
         </div>
     </div>
 

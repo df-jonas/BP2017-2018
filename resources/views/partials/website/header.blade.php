@@ -1,19 +1,35 @@
 <header id="page_header">
-    <a href="{{ route('website-index') }}"><img class="logo" src="img/logo/favicon.png"></a>
-    <button class="hamburger">&#9776;</button>
-    <button class="cross">&#735;</button>
-    <ul class="links">
-        <a href="{{ route('website-about') }}">
-            <li>Over</li>
-        </a>
-        <a href="{{ route('website-how') }}">
-            <li>Hoe werkt het?</li>
-        </a>
-        <a href="{{ route('login') }}">
-            <li>Inloggen</li>
-        </a>
-        <a href="{{ route('login') }}">
-            <li class="register">Registreren</li>
-        </a>
-    </ul>
+    <div class="row">
+
+        <!-- logo -->
+        <div class="col-lg-6 cl-md-2 col-sm-2 col-xs-0">
+            <a href="{{ route('website-index') }}"><img class="logo" src="img/logo/favicon.png"></a>
+        </div>
+
+        <!-- menu -->
+        <div class="col-lg-6 col-md-10 col-sm-10 col-xs-12">
+            <ul class="links">
+                <a href="{{ route('website-about') }}">
+                    <li>Over</li>
+                </a>
+                <a href="{{ route('website-how') }}">
+                    <li>Hoe werkt het?</li>
+                </a>
+                <a href="{{ route('login') }}">
+                    <li>Inloggen</li>
+                </a>
+                <a href="{{ route('login') }}">
+                    <li class="register">Registreren</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <!-- responsive menu buttons -->
+    <div>
+        <button class="hamburger">&#9776;</button>
+        <button class="cross">&#735;</button>
+    </div>
+
+
 </header>

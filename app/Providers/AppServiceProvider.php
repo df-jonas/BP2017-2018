@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\Schema;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -18,6 +18,8 @@ class AppServiceProvider extends ServiceProvider
             $minAge = (!empty($parameters)) ? (int)$parameters[0] : 13;
             return (new \DateTime)->diff(new \DateTime($value))->y >= $minAge;
         });
+
+        Schema::defaultStringLength(191);
 
         /*$this->bootCanvasSocialite();*/
     }

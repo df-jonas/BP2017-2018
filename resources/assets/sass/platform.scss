@@ -1,46 +1,66 @@
 /*Imports*/
-
 @import "variables/colors";
 @import "mixin/link";
 
 /*General css*/
+
 body.platform {
   background-color: $background-color;
 
+  * {
+    box-sizing: border-box;
 
-* {
-  box-sizing: border-box;
+  }
 
-}
-
-
-/*tinymce ads*/
-#mceu_31, #mceu_33, #mceu_62, .mce-notification{
-  display: none;
-}
+  /*tinymce ads*/
+  #mceu_31, #mceu_33, #mceu_62, .mce-notification {
+    display: none;
+  }
 
   /*Buttons*/
-.download-button{
-  padding: 1%;
-  background: $download-button;
-  color: #FFFFFF;
-  border:none;
-  float: right;
-  margin-left: 2%;
-  text-align: center;
-  a {
-    cursor: pointer;
-    @include link(white, white, white, white);
+  .download-button {
+    padding: 1%;
+    background: $download-button;
+    color: #FFFFFF;
+    border: none;
+    float: right;
+    margin-left: 2%;
+    text-align: center;
+    a {
+      cursor: pointer;
+      @include link(white, white, white, white);
+    }
   }
 }
-}
 
-button.download, a.download, input.next, input.previous{
+button.download, a.download, input.next, input.previous {
   @extend .download-button;
   margin-top: 3.5em;
   margin-bottom: 3.5em;
 }
 
+#platform_header {
+  background-color: $unihelp-green;
+}
+
+#platform_menu {
+  height: 3em;
+  background: #FFFFFF;
+  box-shadow: 2px 1px 5px #888888;
+}
+
+#platform_menu .pages {
+  padding-left: 1%;
+  display: inline-block;
+  height: 3em;
+
+}
+
+#platform_menu .pages li {
+  display: inline-block;
+  line-height: 3em;
+  margin-right: 2%;
+}
 
 /*Menu*/
 .account {
@@ -66,6 +86,7 @@ button.download, a.download, input.next, input.previous{
   background-color: #FFFFFF;
   object-fit: cover;
 }
+
 
 .account_username {
   margin-left: 8px;
@@ -93,12 +114,12 @@ button.download, a.download, input.next, input.previous{
   color: #4E5C6E;
   width: 100%;
   z-index: 1;
-  ul{
+  ul {
     list-style-type: none;
     padding-left: 0;
     border: 1px solid $unihelp-green;
     margin-left: -2%;
-    li{
+    li {
       background: #FFFFFF;
       border-bottom: 1px solid $unihelp-green;
       padding: 2%;
@@ -109,8 +130,6 @@ button.download, a.download, input.next, input.previous{
     }
   }
 }
-
-
 
 /*Subheader*/
 .subheader {
@@ -125,24 +144,22 @@ button.download, a.download, input.next, input.previous{
   height: 3em;
   padding-left: 0;
 
-  li{
+  li {
     display: inline-block;
     margin-right: 3%;
     line-height: 3em;
     cursor: pointer;
-    &:hover{
+    &:hover {
       border-bottom: 1px solid $unihelp-green;
     }
-    span{
+    span {
       display: inline-block;
       padding-right: 0.85em;
     }
   }
 }
 
-
-
-.subheader ul li.subheader-button{
+.subheader ul li.subheader-button {
   float: right;
   margin-right: 0;
   padding: 0 1% 0 1%;
@@ -151,11 +168,48 @@ button.download, a.download, input.next, input.previous{
   height: 80%;
   margin-top: 0.25%;
   line-height: 2.5;
-  a{
-    color:white;
+  a {
+    color: white;
     height: 100%;
   }
 }
+
+/*table*/
+div.table {
+  table-layout: fixed;
+  display: table;
+  padding: 0;
+}
+.container{
+  width: 80%;
+}
+
+
+
+.account_img.edit {
+  position: absolute;
+  top: -4px;
+  right: -16px;
+  background: $unihelp-green;
+  color: #FFFFFF;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.account_username {
+  margin-left: 16px;
+  margin-right: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.clearfix {
+  display: block;
+}
+
 /*table*/
 div.table {
   table-layout: fixed;
@@ -199,10 +253,9 @@ div.table {
   border-bottom: 1px solid #dfdfdf;
 }
 
-.sidebar .item span{
+.sidebar .item span {
   margin-left: 8px;
 }
-
 
 .content .file header a {
   padding-right: 1%;
@@ -231,9 +284,11 @@ div.table {
   padding: 2%;
   height: 5em;
 }
-.content .file .left, .content .file .right{
+
+.content .file .left, .content .file .right {
   padding: 0;
 }
+
 .sidebar .item li .left {
   display: inline-block;
   vertical-align: top; /*not required*/
@@ -246,10 +301,10 @@ div.table {
   object-fit: contain;
 }
 
-
-.content .file .right h3{
+.content .file .right h3 {
   margin-top: 0;
 }
+
 .content .file .left img {
   height: 64px;
   width: 64px;
@@ -280,28 +335,26 @@ div.table {
   width: 100%;
 }
 
-.content .file.new{
-  input{
+.content .file.new {
+  input {
     margin-bottom: 2em;
     padding: 0.5%;
   }
 }
 
-.padding{
+.padding {
   padding: 2%;
 }
 
-
-.content .file.detail .left{
+.content .file.detail .left {
   width: 20%;
 }
 
-
-.content .file.detail .right{
+.content .file.detail .right {
   width: 80%;
 }
 
-.content .file.detail .left, .content .file.detail .right{
+.content .file.detail .left, .content .file.detail .right {
   height: 5em;
 }
 
@@ -311,24 +364,23 @@ div.table {
   object-fit: cover;
 }
 
-
-.content .file.detail .notes, .content .file.detail .details{
+.content .file.detail .notes, .content .file.detail .details {
   display: block;
   margin-top: 3.5em;
 }
 
-.content .file.detail .details .detail{
+.content .file.detail .details .detail {
   display: inline-block;
   width: 15%;
   margin: 0 2% 0 2%;
 }
 
-
-.content .file.detail .details .detail i{
+.content .file.detail .details .detail i {
   font-size: 1.5em;
   color: $unihelp-green;
 }
-.content .file.detail .details .detail i span{
+
+.content .file.detail .details .detail i span {
   font-family: Raleway;
   color: black;
   line-height: 1em;
@@ -381,17 +433,16 @@ div.table {
   padding-right: 30px;
 }
 
-
-
-
 /*Custom checkboxes*/
 
-.checkbox-label{
+.checkbox-label {
   margin-bottom: 2%;
 }
+
 .checkbox-label input {
   display: none;
 }
+
 .checkbox-label span {
   height: 12px;
   width: 12px;
@@ -400,6 +451,7 @@ div.table {
   display: inline-block;
   position: relative;
 }
+
 .checkbox-label [type=checkbox]:checked + span:before {
   content: '\f00c';
   font-family: FontAwesome;
@@ -407,6 +459,42 @@ div.table {
   top: -5px;
   left: 0;
   color: $download-button;
+}
+
+/*custom select box*/
+
+.textdiv {
+  input {
+    background: transparent;
+    padding: 5px 35px 5px 5px;
+    border: 1px solid #ccc;
+    height: 34px;
+    width: 100%;
+  }
+}
+
+.selectdiv {
+  position: relative;
+  select, input {
+    background: transparent;
+    padding: 5px 35px 5px 5px;
+    border: 1px solid #ccc;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  &::after {
+    content: "\f078";
+    font: 17px FontAwesome;
+    color: #333;
+    right: 11px;
+    top: 32px;
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
+  }
 }
 
 /*Forms*/
@@ -419,37 +507,38 @@ form input, form textarea {
   font-size: 13px;
 }
 
-form label{
+form label {
   float: left;
 }
 
-
-form .mce-tinymce{
+form .mce-tinymce {
   clear: both;
 }
 
-form  .form-group{
+form .form-group {
   margin: 2.5% 0 2.5% 0;
 }
+
 /*Multistep forms*/
 #msform {
-  width:100%;
+  width: 100%;
   text-align: center;
   position: relative;
 
 }
-#msform fieldset{
+
+#msform fieldset {
   border: 0 none;
   border-radius: 3px;
   box-sizing: border-box;
   /*fieldsets op elkaar stacken*/
   position: relative;
 }
+
 /*Alle steps hiden, behalve de eerste*/
 #msform fieldset:not(:first-of-type) {
   display: none;
 }
-
 
 /*steps bar*/
 #progressbar {
@@ -458,14 +547,14 @@ form  .form-group{
   /*CSS counters to number the steps*/
   counter-reset: step;
   padding-left: 0;
-  li{
+  li {
     list-style-type: none;
     color: red;
     width: 25%;
     float: left;
     position: relative;
     //box with title*/
-    &:before{
+    &:before {
       position: relative;
       /*html data-title*/
       content: attr(data-title);
@@ -480,7 +569,7 @@ form  .form-group{
       z-index: 10;
     }
     /*lijn tussen boxes*/
-    &:after{
+    &:after {
       content: '';
       width: 100%;
       height: 10px;
@@ -492,22 +581,18 @@ form  .form-group{
     }
     /*Geen connector nodig voor stap 1*/
 
-    &:first-child:after{
+    &:first-child:after {
       content: none;
     }
 
   }
 }
 
-
-
 /*Actieve en voltooide stappen groen kleuren*/
-#progressbar li.active:before,  #progressbar li.active:after{
+#progressbar li.active:before, #progressbar li.active:after {
   background: $unihelp-green;
   color: white;
 }
-
-
 
 /*dropzone*/
 
@@ -532,45 +617,109 @@ form  .form-group{
   margin-left: 40%;
 }
 
-
-
 .inputFile:focus + label,
 .inputFile + label:hover {
   cursor: pointer;
 }
 
-.dropzone{
+.dropzone {
   width: 100%;
   padding: 2.5%;
   background: $unihelp-green;
   position: relative;
-  label{
+  label {
     font-size: 14px;
     font-family: Raleway;
     font-style: normal;
 
   }
-  h5{
+  h5 {
     clear: both;
     color: white;
     padding-top: 2em;
   }
 }
 
-
 /*file overview*/
 
-.file-overview{
+.file-overview {
   text-align: left;
   width: 100%;
 }
 
-.spacer{
+.spacer {
   height: 2em;
 }
 
-.file-overview tr td:last-child{
+.file-overview tr td:last-child {
   text-align: right;
+}
+
+/*Custom checkboxes*/
+/*https://www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /* Hide the browser's default checkbox */
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: $unihelp-green;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 /*Mediaqueries*/
@@ -597,18 +746,18 @@ form  .form-group{
     position: relative;
   }
 
-  .content .file{
-    .left, .right{
+  .content .file {
+    .left, .right {
       width: 100%;
     }
-    .left{
-      img{
+    .left {
+      img {
         width: 48px;
         height: 48px;
       }
     }
-    .right{
-      .rating{
+    .right {
+      .rating {
         float: right;
         font-size: 1.5em;
         position: absolute;
@@ -616,18 +765,15 @@ form  .form-group{
         top: 2%;
       }
     }
-    .detail{
-      .left{
+    .detail {
+      .left {
         width: 60%;
       }
-      .right{
+      .right {
         width: 40%;
       }
     }
   }
-
-
-
 
   /*dropzone*/
   .inputFile + label {

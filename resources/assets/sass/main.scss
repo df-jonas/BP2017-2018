@@ -1,126 +1,50 @@
 /*FONTS*/
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+/*Mixins*/
 @import "mixin/link";
+/*Variables*/
 @import "variables/colors";
 
-$assetPath: "../img";
+/*General*/
 * {
   font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
 }
-html{
-  height: 100%;
-}
 
-/*GENERAL*/
-.container {
-  width: 85%;
-  margin: 0 auto;
-}
-
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-
-.clearfix {
-  display: inline-block;
-}
-
-.bold{
-  font-weight: bold;
-}
-
-.small{
-  font-size: 12px;
-  color: $grey;
-}
 * html .clearfix {
   height: 1%;
 }
 
-/*table*/
-div.table {
-  table-layout: fixed;
-  display: table;
-  padding: 0;
+html {
+  height: 100%;
 }
 
-.account_img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: #FFFFFF;
-  object-fit: cover;
+body {
+  overflow-x: hidden;
 }
 
-
-.account_img.edit{
-  position:absolute;
-  top: -4px;
-  right: -16px;
-  background: $unihelp-green;
-  color: #FFFFFF;
-  height: 20px;
-  width: 20px;
-  text-align: center;
-  cursor: pointer;
-}
-
-
-
-.account_username {
-  margin-left: 16px;
-  margin-right: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #FFFFFF;
-}
+/*Helpers*/
 
 .clearfix {
-  display: block;
-}
-
-/*custom select box*/
-
-.textdiv{
-  input {
-    background: transparent;
-    padding: 5px 35px 5px 5px;
-    border: 1px solid #ccc;
-    height: 34px;
-    width: 100%;
-  }
-}
-.selectdiv{
-  position: relative;
-  select, input {
-    background: transparent;
-    padding: 5px 35px 5px 5px;
-    border: 1px solid #ccc;
-    height: 34px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-
-  &::after{
-    content: "\f078";
-    font: 17px FontAwesome;
-    color: #333;
-    right: 11px;
-    top: 32px;
-    padding: 0 0 2px;
-    position: absolute;
-    pointer-events: none;
+  display: inline-block;
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
   }
 }
 
+.bold {
+  font-weight: bold;
+}
 
+.small {
+  font-size: 12px;
+  color: $grey;
+}
 
 .round_img {
   border-radius: 100%;
@@ -139,74 +63,92 @@ form input {
   border-radius: 0 !important;
 }
 
-/*Header*/
-#page_header, #platform_header {
-  height: 5em;
-  background-color: #FFFFFF;
-  padding: 1%;
-  position: relative;
-}
-
-#platform_header {
-  background-color: $unihelp-green;
-}
-
-#platform_menu {
-  height: 3em;
+.action-button {
   background: #FFFFFF;
-  box-shadow: 2px 1px 5px #888888;
-}
-
-#platform_menu .pages {
-  padding-left: 1%;
   display: inline-block;
-  height: 3em;
-
-}
-
-#platform_menu .pages li {
-  display: inline-block;
-  line-height: 3em;
-  margin-right: 2%;
-}
-
-#page_header img.logo, #platform_header img.logo {
-  width: 36px;
-  height: 36px;
-}
-
-#page_header .links {
-  list-style-type: none;
-  width: 40%;
-  float: right;
-  text-align: right;
-}
-
-#page_header .links li {
-  display: inline-block;
+  border: none;
   padding: 2%;
   padding-left: 4%;
   padding-right: 4%;
   height: 100%;
-  line-height: .5em;
+  margin-bottom: 3.5%;
+  color: #000000;
+  text-align: center;
 }
 
-#page_header .links li:hover, #page_header .links li.register:hover {
-  background: lightgray;
+/*Header*/
+
+#page_header, #platform_header {
+  max-height: 5.5em;
+  background-color: #FFFFFF;
+  padding: 1%;
+  position: relative;
+  img.logo {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+#page_header {
+  .links {
+    list-style-type: none;
+    text-align: right;
+    li {
+      display: inline-block;
+      padding: 2%;
+      padding-left: 4%;
+      padding-right: 4%;
+      line-height: .5em;
+      &:hover {
+        background: lightgray;
+        cursor: pointer;
+      }
+      &.register {
+        background: $unihelp-green;
+        color: #FFFFFF;
+        margin-left: 4%;
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+}
+
+.hamburger {
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 1.25em;
+  padding: 5px 15px 0px 15px;
+  color: $unihelp-green;
+  border: 0;
+  font-size: 2em;
+  font-weight: bold;
   cursor: pointer;
+  outline: none;
+  z-index: 10000000000000;
+  display: none;
 }
 
-#page_header ul.links li.register:hover {
-  background: $unihelp-green;
+.cross {
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 15px 0px 15px;
+  color: $unihelp-green;
+  border: 0;
+  font-size: 3em;
+  line-height: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 10000000000000;
+  display: none;
 }
 
-#page_header ul.links li.register {
-  background: $unihelp-green;
-  color: #FFFFFF;
-  margin-left: 4%;
-}
-
-/*HOME*/
 /*Banner*/
 
 #page_banner {
@@ -224,20 +166,6 @@ form input {
   text-align: center;
   top: 75%;
   transform: translateY(-75%);
-}
-
-.action-button {
-  background: #FFFFFF;
-  display: inline-block;
-  border: none;
-  width: 10em;
-  padding: 2%;
-  padding-left: 4%;
-  padding-right: 4%;
-  height: 100%;
-  margin-bottom: 3.5%;
-  color: #000000;
-  text-align: center;
 }
 
 .action-button.register {
@@ -282,34 +210,37 @@ form.register .form-group {
   cursor: pointer;
 }
 
+/*How-it-works*/
+
 .what {
   margin-bottom: 5%;
+  .title {
+    text-align: center;
+  }
+
+  .items {
+    margin: 2% 0 2% 0;
+    .item {
+      margin-bottom: 5%;
+      .left, .right {
+        img {
+          width: 50%;
+          object-fit: cover;
+          margin: 0 auto;
+          margin-left: 20%;
+        }
+      }
+    }
+  }
 }
 
-.what .title {
-  text-align: center;
-}
-
-.what .items {
-  margin: 2% 0 2% 0;
-}
-
-.what .items .item {
-  margin-bottom: 5%;
-}
-
-.what .items .item .left img, .what .items .item .right img {
-  width: 50%;
-  object-fit: cover;
-  margin: 0 auto;
-  margin-left: 20%;
-}
+/*call-to-action*/
 
 .call-to-action {
   background: $unihelp-green;
   text-align: center;
   color: #FFFFFF;
-  padding: 1%;
+  padding: 2%;
 }
 
 .call-to-action .buttons {
@@ -322,20 +253,19 @@ form.register .form-group {
   padding: 1%;
 }
 
-/*ABOUT*/
+/*About*/
+
 #about_banner {
   background: $unihelp-green;
   padding: 2%;
   color: #FFFFFF;
-}
-
-#about_banner h1 {
-  text-align: center;
-  margin-bottom: 2%;
-}
-
-#about_banner p {
-  text-align: justify;
+  h1 {
+    text-align: center;
+    margin-bottom: 2%;
+  }
+  p {
+    text-align: justify;
+  }
 }
 
 #about_quote {
@@ -348,59 +278,58 @@ form.register .form-group {
   color: #FFFFFF;
   position: relative;
   padding: 0;
-}
-
-#about_quote .quote {
-  position: absolute;
-  top: 45%;
-  text-align: center;
-  text-shadow: 1px 1px $unihelp-green;
+  .quote {
+    position: absolute;
+    top: 45%;
+    text-align: center;
+    text-shadow: 1px 1px $unihelp-green;
+  }
 }
 
 .about_person {
   margin: 5% 0;
+  .left {
+    text-align: right;
+  }
+
+  img {
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+    margin: 15% auto;
+    display: block;
+  }
 }
 
-.about_person .left {
-  text-align: right;
-}
-
-.about_person img {
-  width: 10em;
-  height: 10em;
-  object-fit: cover;
-  margin: 15% auto;
-  display: block;
-}
-
+/*Login*/
 #login_page {
   height: 100vh;
   background: url("/img/backgrounds/climate-kic-350836.jpg");
   background-size: cover;
   background-position: center;
-  padding: 0;
+  background-repeat: no-repeat;
 }
 
 .login_box {
-  margin: auto auto;
   background: hsla(360, 100%, 100%, 0.97);
-  margin-top: 7.5%;
+  margin-top: 25vh;
   background: $unihelp-green;
 
-.auth{
-  background: white;
-}
-  .info{
+  .auth {
+    background: white;
+  }
+  .info {
     color: #FFFFFF;
     padding-top: 3%;
   }
 
-  .canvas{
+  .canvas {
     width: 80%;
     margin: 0 auto;
     margin-top: 15%;
     text-align: center;
-    img{
+
+    img {
       display: block;
       width: 50%;
       margin: 0 auto;
@@ -409,24 +338,50 @@ form.register .form-group {
   }
 }
 
+/*Register*/
 
+.account_img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  object-fit: cover;
+  &.edit {
+    position: absolute;
+    top: -4px;
+    right: -16px;
+    background: $unihelp-green;
+    color: #FFFFFF;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
 
-/*FOOTER*/
+.account_username {
+  margin-left: 16px;
+  margin-right: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+/*Footer*/
 
 footer {
   color: #FFFFFF;
   clear: both;
-
-  .top {
-    height: 12em;
-    background: #333A40;
+  &.col-xs-12 {
+    padding: 0;
   }
-  //vertical align
-  .bottom {
-    height: 7em;
-    background: #2B2F33;
+  .top, .bottom {
     position: relative;
-    .container {
+    text-align: left;
+    clear: both;
+    display: block;
+    //vertical align
+    .box {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -435,115 +390,22 @@ footer {
     }
   }
 
+  .top {
+    height: 12em;
+    background: #333A40;
+
+  }
+
+  .bottom {
+    height: 7em;
+    background: #2B2F33;
+
+  }
+
   a {
     cursor: pointer;
     @include link(white, white, white, white);
   }
-}
-
-footer.col-xs-12 {
-  padding: 0;
-}
-
-.hamburger {
-  background: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  line-height: 1.25em;
-  padding: 5px 15px 0px 15px;
-  color: $unihelp-green;
-  border: 0;
-  font-size: 2em;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
-  z-index: 10000000000000;
-  display: none;
-}
-
-.cross {
-  background: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 5px 15px 0px 15px;
-  color: $unihelp-green ;
-  border: 0;
-  font-size: 3em;
-  line-height: 1.2em;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
-  z-index: 10000000000000;
-  display: none;
-}
-
-/*Custom checkboxes*/
-/*https://www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
-
-.checkbox-container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 16px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-  /* Hide the browser's default checkbox */
-  input {
-    position: absolute;
-    opacity: 0;
-  }
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 18px;
-  width: 18px;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.checkbox-container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.checkbox-container input:checked ~ .checkmark {
-  background-color: $unihelp-green;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.checkbox-container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.checkbox-container .checkmark:after {
-  left: 7px;
-  top: 3px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
 }
 
 @media only screen and (max-width: 1500px) {
@@ -553,31 +415,37 @@ footer.col-xs-12 {
 
   #page_banner {
     height: 90vh;
+    .scroll {
+      top: 96%
+    }
   }
 
-  #page_banner .scroll {
-    top: 96%
+  footer {
+    .top {
+      min-height: 20em;
+      height: auto;
+    }
+
+    .bottom {
+      height: 12em;
+    }
   }
 }
 
 @media only screen and (max-width: 768px) {
 
-  .container {
-    width: 95%;
-    margin: 0 auto;
-  }
   /*responsive menu*/
   #page_header {
     height: auto;
-    .hamburger{
+    .hamburger {
       display: block;
     }
-    .links{
+    .links {
       display: none;
       margin-top: 2%;
       width: 100% !important;
       padding-left: 0;
-      li{
+      li {
         width: 100%;
         height: 3em;
         margin: 0 !important;
@@ -587,48 +455,37 @@ footer.col-xs-12 {
     }
   }
 
-
-
-
   #page_banner {
     height: 50vh;
-    .scroll{
+    .scroll {
       left: 42.5%
     }
-  }
-
-
-
-  #how-it-works .item{
-    .right, .left{
-      padding: 0;
-    }
-
   }
 
   .what .items .item .left img, .what .items .item .right img {
     width: 100%;
     margin-left: 0;
   }
-  #how-it-works .item{
-    h1{
+  #how-it-works .item {
+
+    .right, .left {
+      padding: 0;
+    }
+
+    h1 {
       text-align: center;
       word-wrap: break-word;
     }
-    p{
+    p {
       text-align: justify;
       word-wrap: break-word;
     }
 
   }
 
-
-}
-
-@media screen and (max-width: 480px) {
-
   footer {
     .top {
+      min-height: 25em;
       height: auto;
     }
 
@@ -636,4 +493,6 @@ footer.col-xs-12 {
       height: 12em;
     }
   }
+
 }
+
