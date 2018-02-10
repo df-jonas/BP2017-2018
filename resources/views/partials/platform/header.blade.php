@@ -2,25 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-1 col-xs-3" style="padding:0">
-                <a href="{{ route('website-index') }}"><img class="logo"
-                                                            src="{{ URL::asset('img/logo/favicon_white.png') }}"></a>
+                <a href="{{ route('website-index') }}"><img class="logo" src="{{ URL::asset('img/logo/favicon_white.png') }}"></a>
             </div>
 
-
-        <!--
-                <div class="dropdown-content col-xs-12" style="padding: 0;">
-                    <ul>
-                        <li><a href="#">Instellingen</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="{{route('logout')}}">Uitloggen</a></li>
-                    </ul>
-
-                </div>
-                -->
-
-
             <div class="dropdown">
-
 
                 <div class="account">
 
@@ -42,12 +27,7 @@
                     </ul>
 
                 </div>
-
             </div>
-
-
         </div>
     </div>
-
-
 </header>

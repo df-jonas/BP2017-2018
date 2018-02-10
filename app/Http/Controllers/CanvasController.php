@@ -22,7 +22,7 @@ class CanvasController extends Controller
 
     public function me()
     {
-        $auth = Auth::user()->getCanvasAuth();
+        $auth = Auth::user();
 
         if ($auth === false)
             return response()->json(array("error" => "You are not authenticated through canvas."), 400);

@@ -8,6 +8,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Campus;
+use App\Fos;
 use App\Helpers\HttpHelper;
 use App\User;
 use Illuminate\Http\Request;
@@ -90,7 +92,8 @@ class AuthController extends Controller
 
         $params = [
             'name' => Auth::user()->name,
-            'email' => Auth::user()->canvas_email
+            'campuses' => Campus::query()->orderBy("name")->get(),
+            'foses' => Fos::query()->orderBy("name")->get(),
         ];
         return view("website.register", $params);
     }

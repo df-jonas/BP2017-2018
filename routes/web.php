@@ -47,16 +47,35 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/register', 'AuthController@register')->name('register');
     Route::post('/register', 'AuthController@registerPost');
     Route::get('/logout', 'AuthController@logout')->name('logout');
+    Route::post('/logout', 'AuthController@logout');
 
     // Canvas routes
     Route::get('/canvas/me', 'CanvasController@me')->name('canvas-me');
 
     // Platform routes
     Route::group(['middleware' => ['valid'], 'prefix' => 'p'], function () {
-        Route::get('/sharing', 'SharingController@sharingIndex')->name('sharing-index');
-        Route::get('/sharing/detail', 'SharingController@sharingDetail')->name('sharing-detail');
-        Route::get('/sharing/new', 'SharingController@sharingNew')->name('sharing-new');
-        Route::post('/sharing/new', 'SharingController@newFile');
+
+        /**
+         * Sharing
+        */
+        Route::get('/sharing', 'SharingController@index')->name('sharing-index');
+        Route::get('/sharing/new', 'SharingController@newfile')->name('sharing-new');
+        Route::post('/sharing/new', 'SharingController@newfilePost');
+        Route::post('/sharing/filter', 'SharingController@ajaxFilter');
+        Route::post('/sharing/rate', 'SharingController@ajaxRate');
+        Route::get('/sharing/proxy/{public}', 'SharingController@downloadproxy')->name('sharing-download');
+        Route::get('/sharing/{id}', 'SharingController@detail')->name('sharing-detail');
+
+
+        /**
+         * Community
+         */
+        Route::get('/groups', 'CommunityController@index')->name('community-index');
+
+        /**
+         * Tutoring
+         */
+        Route::get('/tutoring', 'TutoringController@index')->name('tutoring-index');
     });
 
 

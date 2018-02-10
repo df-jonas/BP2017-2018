@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Campus;
 use App\Course;
 use App\Degree;
 use App\Doctype;
+use App\Download;
 use App\File;
+use App\Fos;
 use App\Helpers\RandomHelper;
 use App\PublicationYear;
 use Illuminate\Http\Request;
@@ -15,14 +18,12 @@ use Illuminate\Support\Facades\Storage;
 
 class SharingController extends Controller
 {
-
-
-
-    public function sharingIndex(Request $request)
+    public function index()
     {
-
-
         $arr = [
+            'foses' => Fos::query()->orderBy("name")->get(),
+            'courses' => Course::query()->orderBy('name')->get(),
+            'pubyears' => PublicationYear::query()->orderBy('name')->get(),
             'userfiles' => File::query()->where("user_id", "=", Auth::user()->id)->orderBy('id', 'desc')->take(5)->get(),
             'files' => File::query()->with('degree')->with('field')->orderBy('id', 'desc')->get()
         ];
@@ -30,14 +31,20 @@ class SharingController extends Controller
         return view("platform.sharing.index", $arr);
     }
 
-    public function sharingDetail()
-    {
-        return view("platform.sharing.detail");
-    }
-
-    public function sharingNew()
+    public function detail($id)
     {
         $arr = [
+            'file' => File::query()->where("id", "=", $id)->first(),
+            'userdownloads' => Download::query()->where("user_id", "=", Auth::user()->id)->get()
+        ];
+        return view("platform.sharing.detail", $arr);
+    }
+
+    public function newfile()
+    {
+        $arr = [
+            'campus' => Auth::user()->campus->name,
+            'fos' => Auth::user()->field->name,
             'courses' => Course::query()->orderBy("name")->get(),
             'doctypes' => Doctype::query()->orderBy("name")->get(),
             'degrees' => Degree::query()->orderBy("name")->get(),
@@ -47,7 +54,7 @@ class SharingController extends Controller
         return view("platform.sharing.new", $arr);
     }
 
-    public function newFile(Request $request)
+    public function newfilePost(Request $request)
     {
         $request->validate([
             'file' => 'required|mimes:pdf|max:10240'
@@ -78,5 +85,66 @@ class SharingController extends Controller
         $file->save();
 
         return Redirect::to(route('sharing-index'));
+    }
+
+    public function ajaxFilter(Request $request)
+    {
+        $q = File::query();
+
+        if ($request->search != "") {
+            $q->where("title", "LIKE", "%" . $request->search . "%");
+        }
+
+        if ($request->fos != -1) {
+            $q->where("fosid", "=", $request->fos);
+        }
+
+        if ($request->course != -1) {
+            $q->where("courseid", "=", $request->course);
+        }
+
+        if (!empty($request->pubyear) && sizeof($request->pubyear) > 0) {
+            $q->whereIn("pubyearid", $request->pubyear);
+        }
+
+        return $q->select(["id", "title", "public_id", "user_id", "courseid", "documenttypeid", "degreeid", "pubyearid", "fosid"])->with([
+            'field' => function ($query) {
+                $query->select("id", "name");
+            },
+            'degree' => function ($query) {
+                $query->select("id", "name");
+            },
+            'course' => function ($query) {
+                $query->select("id", "name");
+            },
+            'user' => function ($query) {
+                $query->select("id", "name");
+            }
+        ])->orderBy('id', 'desc')->get();
+    }
+
+    public function ajaxRate(Request $request)
+    {
+        return "[]";
+    }
+
+    public function downloadproxy($public)
+    {
+        $file_id = File::query()->where("public_id", "=", $public)->first()->id;
+        $user_id = Auth::id();
+
+        $dbdl = Download::query()
+            ->where("user_id", "=", $user_id)
+            ->where("file_id", "=", $file_id)
+            ->first();
+
+        if ($dbdl == null) {
+            $dl = new Download();
+            $dl->file_id = $file_id;
+            $dl->user_id = $user_id;
+            $dl->save();
+        }
+
+        return Redirect::to(env("FILE_DOMAIN", "") . $public);
     }
 }
