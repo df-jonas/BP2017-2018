@@ -7,16 +7,17 @@
         <div class="login_box">
 
 
-            <form class="register" action="{{ route('register') }}" method="post">
+            <form class="register" action="{{ route('register') }}" method="post" enctype="multipart/form-data">
 
                 {{csrf_field()}}
 
 
                 <div class="form-group clearfix col-xs-12">
                     <div class="profile-img-container col-xs-12">
+                        
                         <img src="{{ asset('img/avatars/empty.png') }}" class="account_img">
                         <a href="#"><span class="fa fa-upload fa-5x"></span></a>
-                        <input id="picture-input" type="file" name="img"/>
+                        <input id="picture-input" type="file" name="avatar"/>
                     </div>
                     <h6 class="account_username">{{$name}}</h6>
                 </div>

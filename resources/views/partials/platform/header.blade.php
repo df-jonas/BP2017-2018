@@ -12,7 +12,8 @@
 
                 <div class="account">
 
-                    <img src="{{ URL::asset('img/avatars/empty.png') }}" class="account_img" data-toggle="dropdown">
+
+                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="account_img" data-toggle="dropdown">
                     <div class="account_username" data-toggle="dropdown">{{Auth::user()->name}}</div>
                     <div class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 

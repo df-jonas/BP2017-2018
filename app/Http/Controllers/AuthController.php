@@ -125,10 +125,10 @@ class AuthController extends Controller
             $user->username = $request->username;
 
             //image, gebruik van image intervention library
-            if ($request->hasFile('img')) {
-                $img = $request->file('img');
+            if ($request->hasFile('avatar')) {
+                $img = $request->file('avatar');
                 $img_name = time() . '_' . $img->getClientOriginalName();
-                $img_location = public_path('img/' . $img_name);
+                $img_location = public_path('/img/avatars/' . $img_name);
 
                 Image::make($img)->resize(64, 64, function ($image) {
                     $image->aspectRatio();
