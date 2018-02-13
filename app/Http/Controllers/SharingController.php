@@ -11,6 +11,7 @@ use App\File;
 use App\Fos;
 use App\Helpers\RandomHelper;
 use App\PublicationYear;
+use App\Rating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -35,7 +36,8 @@ class SharingController extends Controller
     {
         $arr = [
             'file' => File::query()->where("id", "=", $id)->first(),
-            'userdownloads' => Download::query()->where("user_id", "=", Auth::user()->id)->get()
+            'userdownloads' => Download::query()->where("user_id", "=", Auth::user()->id)->get(),
+            'userrating' => Rating::query()->where("fileid", "=", $id)->where("userid", "=", Auth::id())->first()
         ];
         return view("platform.sharing.detail", $arr);
     }
@@ -125,7 +127,24 @@ class SharingController extends Controller
 
     public function ajaxRate(Request $request)
     {
-        return "[]";
+        $fileid = $request->fileid;
+        $rating = $request->rating;
+        $userid = Auth::user()->id;
+
+        $r = Rating::query()->where("fileid", "=", $fileid)->where("userid", "=", $userid)->first();
+
+        if ($r == null) {
+            $r = new Rating();
+            $r->userid = $userid;
+            $r->fileid = $fileid;
+            $r->rating = $rating;
+            $r->save();
+        } else {
+            $r->rating = $rating;
+            $r->save();
+        }
+
+        return $r;
     }
 
     public function downloadproxy($public)
