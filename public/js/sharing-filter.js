@@ -14,13 +14,15 @@ $(document).ready(function () {
                             '<i class="fa fa-download"></i></a></header>' +
                             '<div class="padding">' +
                             '<div class="right">' +
-                            '<div class="rating">' +
-                            '<span class="fa fa-star checked"></span>' +
-                            '<span class="fa fa-star checked"></span>' +
-                            '<span class="fa fa-star checked"></span>' +
-                            '<span class="fa fa-star"></span>' +
-                            '<span class="fa fa-star"></span>' +
-                            '</div>' +
+                            '<div class="rating">';
+                        for (var i = 1; i <= 5; i++) {
+                            if (i <= value.averageRating) {
+                                newhtml += '<span class="fa fa-star checked"></span>';
+                            } else {
+                                newhtml += '<span class="fa fa-star"></span>';
+                            }
+                        }
+                        newhtml += '</div>' +
                             '<h3><a href="/p/sharing/' + value.id + '">' + value.title + '</a></h3>' +
                             '<p>door ' + value.user.name + '</p>' +
                             '</div></div></article>';

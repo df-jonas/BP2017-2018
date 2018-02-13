@@ -14,7 +14,7 @@ $(document).ready(function () {
                 "rating": rating.val()
             },
             success: function (json) {
-                $("#rev_stars").attr('data-readonly', 'true');
+                // TODO Confirm rating to user.
             }
         });
     });

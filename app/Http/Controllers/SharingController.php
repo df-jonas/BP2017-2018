@@ -109,7 +109,7 @@ class SharingController extends Controller
             $q->whereIn("pubyearid", $request->pubyear);
         }
 
-        return $q->select(["id", "title", "public_id", "user_id", "courseid", "documenttypeid", "degreeid", "pubyearid", "fosid"])->with([
+        $returnarr = $q->select(["id", "title", "public_id", "user_id", "courseid", "documenttypeid", "degreeid", "pubyearid", "fosid"])->with([
             'field' => function ($query) {
                 $query->select("id", "name");
             },
@@ -123,6 +123,12 @@ class SharingController extends Controller
                 $query->select("id", "name");
             }
         ])->orderBy('id', 'desc')->get();
+
+        foreach ($returnarr as $file) {
+            $file['averageRating'] = $file->averageRating();
+        }
+
+        return $returnarr;
     }
 
     public function ajaxRate(Request $request)

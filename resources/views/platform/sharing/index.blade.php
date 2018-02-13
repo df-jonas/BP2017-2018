@@ -90,7 +90,7 @@
                 <div id="filecontainer" class="files">
                     @foreach($files as $file)
                         @php
-                            $rating = $file->average()
+                            $rating = $file->averageRating()
                         @endphp
                         <article class="file clearfix">
                             <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a

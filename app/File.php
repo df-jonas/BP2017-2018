@@ -41,7 +41,7 @@ class File extends Model
 
     public function ratings()
     {
-        return $this->hasMany('App\Rating');
+        return $this->hasMany('App\Rating', 'fileid');
     }
 
     public function downloads()
@@ -49,7 +49,7 @@ class File extends Model
         return Download::query()->where("file_id", "=", $this->id)->count();
     }
 
-    public function average()
+    public function averageRating()
     {
         return round(Rating::query()->where("fileid", "=", $this->id)->avg("rating"));
     }
