@@ -23,6 +23,11 @@ body {
   overflow-x: hidden;
 }
 
+
+input:focus, .form-control:focus {
+  box-shadow: none;
+}
+
 /*Helpers*/
 
 .clearfix {
@@ -87,6 +92,10 @@ form input {
     width: 36px;
     height: 36px;
   }
+}
+
+#platform_header{
+  padding: 1% 0 1% 0;
 }
 
 #page_header {
@@ -376,7 +385,7 @@ form.register .form-group {
   display: inline-block;
   overflow: hidden;
   margin-bottom: 1%;
-  a, #picture-input{
+  a, #picture-input {
     display: block;
     position: absolute;
     top: -100%;
@@ -390,11 +399,11 @@ form.register .form-group {
     font-size: 0.5em;
     cursor: pointer;
   }
-  &:hover a{
+  &:hover a {
     opacity: 1;
     top: 0;
     z-index: 500;
-    span{
+    span {
       top: 50%;
       position: absolute;
       left: 0;
@@ -402,16 +411,11 @@ form.register .form-group {
       transform: translateY(-50%);
     }
   }
-  #picture-input{
-z-index: 999;
+  #picture-input {
+    z-index: 999;
     width: 30rem;
   }
 }
-
-
-
-
-
 
 .account_username {
   text-align: center;

@@ -5,7 +5,7 @@
     @include('partials.platform.subheader')
 
     <div class="container">
-        <div class="row">
+        <div class="table">
             <div class="sidebar">
 
                 <article class="item clearfix">

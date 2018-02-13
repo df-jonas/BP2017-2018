@@ -17,25 +17,33 @@ body.platform {
     display: none;
   }
 
-  /*Buttons*/
-  .download-button {
-    padding: 1%;
-    background: $download-button;
-    color: #FFFFFF;
-    border: none;
-    float: right;
-    margin-left: 2%;
-    text-align: center;
-    a {
-      cursor: pointer;
-      @include link(white, white, white, white);
-    }
+
+}
+
+
+
+/*Helpers*/
+
+.padding {
+  padding: 2%;
+}
+
+
+/*Buttons*/
+.download-button {
+  padding: 1%;
+  background: $download-button;
+  color: #FFFFFF;
+  border: none;
+  float: right;
+  margin-left: 2%;
+  text-align: center;
+  a {
+    cursor: pointer;
+    @include link(white, white, white, white);
   }
 }
 
-input:focus, .form-control:focus {
-  box-shadow: none;
-}
 
 button.download, a.download, input.next, input.previous {
   @extend .download-button;
@@ -43,6 +51,8 @@ button.download, a.download, input.next, input.previous {
   margin-bottom: 3.5em;
 }
 
+
+/*Header*/
 #platform_header {
   background-color: $unihelp-green;
   .sub {
@@ -72,54 +82,41 @@ button.download, a.download, input.next, input.previous {
         }
 
       }
-      a{
+      a {
         color: #ffffff;
       }
     }
   }
 }
 
-
-
-
-
 #platform_menu {
   height: 3em;
   background: #FFFFFF;
   box-shadow: 2px 1px 5px #888888;
+  .pages {
+    padding-left: 1%;
+    display: inline-block;
+    height: 3em;
+    li {
+      display: inline-block;
+      line-height: 3em;
+      margin-right: 2%;
+    }
+  }
+
 }
-
-#platform_menu .pages {
-  padding-left: 1%;
-  display: inline-block;
-  height: 3em;
-
-}
-
-#platform_menu .pages li {
-  display: inline-block;
-  line-height: 3em;
-  margin-right: 2%;
-}
-
-
 
 .hamburger {
   color: #FFFFFF;
-
   left: 0;
-
   display: none;
 }
 
 .cross {
   color: #FFFFFF;
-
   left: 0;
-
   display: none;
 }
-
 
 /*Menu*/
 .account {
@@ -136,58 +133,57 @@ button.download, a.download, input.next, input.previous {
   flex-direction: row;
   float: right;
   position: relative;
-}
+  .account_img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    object-fit: cover;
+  }
 
-.account_img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: #FFFFFF;
-  object-fit: cover;
-}
+  .account_username {
+    margin-left: 8px;
+    margin-right: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
 
+  .account_dropdown_btn {
+    width: 10px;
+    height: 6px;
+    margin-top: 2px;
+    fill: #FFFFFF;
+    opacity: 0.5;
+  }
 
-.account_username {
-  margin-left: 8px;
-  margin-right: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #FFFFFF;
-}
-
-.account_dropdown_btn {
-  width: 10px;
-  height: 6px;
-  margin-top: 2px;
-  fill: #FFFFFF;
-  opacity: 0.5;
-}
-
-.dropdown-content {
-  position: absolute;
-  display: none;
-  top: 35px;
-  right: 0px;
-  padding: 20px 50px;
-  font-weight: 500;
-  color: #4E5C6E;
-  width: 100%;
-  z-index: 1;
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-    border: 1px solid $unihelp-green;
-    margin-left: -2%;
-    li {
-      background: #FFFFFF;
-      border-bottom: 1px solid $unihelp-green;
-      padding: 2%;
-      padding-left: 5%;
-      display: block;
-      height: 3em;
-      line-height: 3em;
+  .dropdown-content {
+    position: absolute;
+    display: none;
+    top: 35px;
+    right: 0px;
+    padding: 20px 50px;
+    font-weight: 500;
+    color: #4E5C6E;
+    width: 100%;
+    z-index: 1;
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      border: 1px solid $unihelp-green;
+      margin-left: -2%;
+      li {
+        background: #FFFFFF;
+        border-bottom: 1px solid $unihelp-green;
+        padding: 2%;
+        padding-left: 5%;
+        display: block;
+        height: 3em;
+        line-height: 3em;
+      }
     }
   }
+
 }
 
 /*Subheader*/
@@ -196,54 +192,30 @@ button.download, a.download, input.next, input.previous {
   box-shadow: 0px 1px 5px $unihelp-green;
   height: 3em;
   margin-bottom: 3.5em;
-}
 
-.subheader ul {
-  list-style-type: none;
-  height: 3em;
-  padding-left: 0;
-
-  li {
-    display: inline-block;
-    margin-right: 3%;
-    line-height: 3em;
-    cursor: pointer;
-    &:hover {
-      border-bottom: 1px solid $unihelp-green;
-    }
-    span {
+  ul {
+    list-style-type: none;
+    height: 3em;
+    padding-left: 0;
+    li {
       display: inline-block;
-      padding-right: 0.85em;
+      margin-right: 3%;
+      line-height: 3em;
+      cursor: pointer;
+      &:hover {
+        border-bottom: 1px solid $unihelp-green;
+      }
+      span {
+        display: inline-block;
+        padding-right: 0.85em;
+      }
     }
   }
 }
 
-.subheader ul li.subheader-button {
-  float: right;
-  margin-right: 0;
-  padding: 0 1% 0 1%;
-  text-align: center;
-  background: $unihelp-brown;
-  height: 80%;
-  margin-top: 0.25%;
-  line-height: 2.5;
-  a {
-    color: white;
-    height: 100%;
-  }
-}
-
-/*table*/
-div.table {
-  table-layout: fixed;
-  display: table;
-  padding: 0;
-}
-.container{
+div.container {
   width: 80%;
 }
-
-
 
 .account_img.edit {
   position: absolute;
@@ -269,44 +241,67 @@ div.table {
   display: block;
 }
 
-/*table*/
-div.table {
+/*table layout*/
+.table {
   table-layout: fixed;
   display: table;
   padding: 0;
+
+  .sidebar {
+    display: table-cell;
+    margin-top: 5em;
+    width: 20%;
+    vertical-align: top;
+  }
+
+  .content{
+    display: table-cell;
+    left: 10px;
+    width: 70%;
+    padding-left: 5%;
+    .filter {
+      background: #FFFFFF;
+      clear: both;
+    }
+  }
 }
 
-/*table layout*/
-
-.sidebar {
-  display: table-cell;
-  margin-top: 5em;
-  width: 20%;
-  vertical-align: top;
-  padding-right: 2%;
+.row.flex {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.content {
-  display: table-cell;
-  height: 70em;
-  /*margin-top: 2.5em;*/
-  left: 10px;
-  width: 70%;
-  padding-left: 2%;
-}
-
-.content .filter{
-  background: #FFFFFF;
-  clear: both;
-}
 
 /*Sidebar*/
-.sidebar .item, .content .file {
+.sidebar .item, .content .file, .content .group-type {
   background: #FFFFFF;
   margin-bottom: 3em;
 }
 
-.sidebar .item header, .content .file header {
+
+
+
+.content .group-type .group {
+  border-bottom: 1px solid $unihelp-brown;
+  img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .icons{
+    span{
+      font-family: Raleway;
+      padding-left: 5px;
+    }
+  }
+  &:last-child{
+    border: none;
+  }
+}
+
+.sidebar .item header, .content .file header, .content .group-type header {
   background: #4D6A50;
   height: 2em;
   color: #FFFFFF;
@@ -322,26 +317,51 @@ div.table {
   margin-left: 8px;
 }
 
-.content .file header a {
+.content .file header a, .content .group-type header a {
   padding-right: 1%;
   padding-left: 1%;
   color: white;
   float: right;
 }
 
-/*mijn bestanden ul*/
-.sidebar .item .highlight {
-  width: 100%;
-  padding-left: 0;
-  background: #FFFFFF;
-  padding: 2%;
+.sidebar{
+  .item{
+    /*mijn bestanden ul*/
+    .highlight{
+      width: 100%;
+      padding-left: 0;
+      background: #FFFFFF;
+      padding: 2%;
+      li{
+        display: block;
+        margin-bottom: 2%;
+        width: 100%;
+      }
+    }
+    li{
+      .left{
+        display: inline-block;
+        vertical-align: top; /*not required*/
+        position: relative;
+        img{
+          max-height: 100%;
+          max-width: 100%;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+    }
+  }
 }
 
-.sidebar .item .highlight li {
-  display: block;
-  margin-bottom: 2%;
-  width: 100%;
-}
+
+
+
+
 
 .sidebar .item .highlight li .left, .content .file .left {
   width: 20%;
@@ -354,11 +374,6 @@ div.table {
   padding: 0;
 }
 
-.sidebar .item li .left {
-  display: inline-block;
-  vertical-align: top; /*not required*/
-  position: relative;
-}
 
 .sidebar .item .highlight li .left img, .content .file .left img {
   width: 32px;
@@ -366,50 +381,44 @@ div.table {
   object-fit: contain;
 }
 
-.content .file .right h3 {
-  margin-top: 0;
-}
 
-.content .file .left img {
-  height: 64px;
-  width: 64px;
-  vertical-align: middle;
-}
-
-.sidebar .item li .left img {
-  max-height: 100%;
-  max-width: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-.sidebar .item .highlight li .right, .content .file .right {
-  width: 80%;
-  float: right;
-}
-
-.content .file .left {
-  width: 10%;
-}
-
-.content .file .right {
-  width: 100%;
-}
-
-.content .file.new {
-  input {
-    margin-bottom: 2em;
-    padding: 0.5%;
+.content{
+  .file{
+    .left{
+      width: 10%;
+      img{
+        height: 64px;
+        width: 64px;
+        vertical-align: middle;
+      }
+    }
+    .right{
+      width: 100%;
+      h3{
+        margin-top: 0;
+      }
+    }
+    .new{
+      input{
+        margin-bottom: 2em;
+        padding: 0.5%;
+      }
+    }
   }
 }
 
-.padding {
-  padding: 2%;
+
+.sidebar .item .highlight li .right, .content .file .right {
+  /*width: 80%;*/
+  float: right;
 }
+
+
+
+
+
+
+
 
 .content .file.detail .left {
   width: 20%;
@@ -469,7 +478,6 @@ div.table {
   border: none;
 }
 
-
 .inner-addon input {
   border: none;
 }
@@ -498,8 +506,6 @@ div.table {
 .right-addon input {
   padding-right: 30px;
 }
-
-
 
 /*Forms*/
 form input, form textarea {
@@ -726,18 +732,16 @@ form .form-group {
   transform: rotate(45deg);
 }
 
-
 /*Mediaqueries*/
 
-
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
   /*responsive menu*/
   #platform_header {
     height: auto;
-    .logo{
+    .logo {
       display: none;
     }
-    .account_username, .account_dropdown_btn{
+    .account_username, .account_dropdown_btn {
       display: none;
     }
     .hamburger {
@@ -758,15 +762,15 @@ form .form-group {
     }
   }
 
-  .subheader{
+  .subheader {
     display: none;
   }
 
-  .container{
-    width: 95%;
+  .container {
+    width: 100%;
   }
 
-  .subheader{
+  .subheader {
     margin-bottom: 0;
   }
   div.table {
@@ -787,12 +791,13 @@ form .form-group {
 
   }
 }
-@media only screen and (max-width: 480px) {
 
+@media only screen and (max-width: 480px) {
 
   .padding {
     position: relative;
   }
+
 
   .content .file {
     .left, .right {

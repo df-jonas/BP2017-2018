@@ -24,6 +24,12 @@ body {
   overflow-x: hidden;
 }
 
+input:focus,
+.form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 /*Helpers*/
 
 .clearfix {
@@ -99,6 +105,10 @@ form input {
 #platform_header img.logo {
   width: 36px;
   height: 36px;
+}
+
+#platform_header {
+  padding: 1% 0 1% 0;
 }
 
 #page_header .links {

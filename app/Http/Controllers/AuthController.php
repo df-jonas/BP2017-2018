@@ -15,6 +15,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Image;
 
 class AuthController extends Controller
 {
@@ -117,12 +118,26 @@ class AuthController extends Controller
         if (isset($request->username) && isset($request->tnc)) {
 
             //TODO validation
-
             $user = Auth::user();
             $user->fosid = $request->fos;
             $user->campusid = $request->campus;
             $user->email = $request->email;
             $user->username = $request->username;
+
+            //image, gebruik van image intervention library
+            if ($request->hasFile('img')) {
+                $img = $request->file('img');
+                $img_name = time() . '_' . $img->getClientOriginalName();
+                $img_location = public_path('img/' . $img_name);
+
+                Image::make($img)->resize(64, 64, function ($image) {
+                    $image->aspectRatio();
+                    $image->upsize();
+                })->save($img_location);
+
+                $user->image = $img_name;
+            }
+
             $user->save();
 
             return Redirect::to(route('sharing-index'));

@@ -5,7 +5,6 @@
 body.platform {
   background-color: rgba(181, 212, 183, 0.14);
   /*tinymce ads*/
-  /*Buttons*/
 }
 
 body.platform * {
@@ -20,11 +19,19 @@ body.platform .mce-notification {
   display: none;
 }
 
-body.platform .download-button,
-body.platform button.download,
-body.platform a.download,
-body.platform input.next,
-body.platform input.previous {
+/*Helpers*/
+
+.padding {
+  padding: 2%;
+}
+
+/*Buttons*/
+
+.download-button,
+button.download,
+a.download,
+input.next,
+input.previous {
   padding: 1%;
   background: #505457;
   color: #FFFFFF;
@@ -34,55 +41,49 @@ body.platform input.previous {
   text-align: center;
 }
 
-body.platform .download-button a,
-body.platform button.download a,
-body.platform a.download a,
-body.platform input.next a,
-body.platform input.previous a {
+.download-button a,
+button.download a,
+a.download a,
+input.next a,
+input.previous a {
   cursor: pointer;
 }
 
-body.platform .download-button a,
-body.platform button.download a,
-body.platform a.download a,
-body.platform input.next a,
-body.platform input.previous a {
+.download-button a,
+button.download a,
+a.download a,
+input.next a,
+input.previous a {
   color: white;
 }
 
-body.platform .download-button a:visited,
-body.platform button.download a:visited,
-body.platform a.download a:visited,
-body.platform input.next a:visited,
-body.platform input.previous a:visited {
+.download-button a:visited,
+button.download a:visited,
+a.download a:visited,
+input.next a:visited,
+input.previous a:visited {
   color: white;
 }
 
-body.platform .download-button a:hover,
-body.platform button.download a:hover,
-body.platform a.download a:hover,
-body.platform input.next a:hover,
-body.platform input.previous a:hover {
+.download-button a:hover,
+button.download a:hover,
+a.download a:hover,
+input.next a:hover,
+input.previous a:hover {
   color: white;
 }
 
-body.platform .download-button a:active,
-body.platform button.download a:active,
-body.platform a.download a:active,
-body.platform input.next a:active,
-body.platform input.previous a:active,
-body.platform .download-button a:focus,
-body.platform button.download a:focus,
-body.platform a.download a:focus,
-body.platform input.next a:focus,
-body.platform input.previous a:focus {
+.download-button a:active,
+button.download a:active,
+a.download a:active,
+input.next a:active,
+input.previous a:active,
+.download-button a:focus,
+button.download a:focus,
+a.download a:focus,
+input.next a:focus,
+input.previous a:focus {
   color: white;
-}
-
-input:focus,
-.form-control:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
 }
 
 button.download,
@@ -92,6 +93,8 @@ input.previous {
   margin-top: 3.5em;
   margin-bottom: 3.5em;
 }
+
+/*Header*/
 
 #platform_header {
   background-color: #4D6A50;
@@ -183,7 +186,7 @@ input.previous {
   position: relative;
 }
 
-.account_img {
+.account .account_img {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -192,7 +195,7 @@ input.previous {
      object-fit: cover;
 }
 
-.account_username {
+.account .account_username {
   margin-left: 8px;
   margin-right: 6px;
   font-size: 14px;
@@ -200,7 +203,7 @@ input.previous {
   color: #FFFFFF;
 }
 
-.account_dropdown_btn {
+.account .account_dropdown_btn {
   width: 10px;
   height: 6px;
   margin-top: 2px;
@@ -208,7 +211,7 @@ input.previous {
   opacity: 0.5;
 }
 
-.dropdown-content {
+.account .dropdown-content {
   position: absolute;
   display: none;
   top: 35px;
@@ -220,14 +223,14 @@ input.previous {
   z-index: 1;
 }
 
-.dropdown-content ul {
+.account .dropdown-content ul {
   list-style-type: none;
   padding-left: 0;
   border: 1px solid #4D6A50;
   margin-left: -2%;
 }
 
-.dropdown-content ul li {
+.account .dropdown-content ul li {
   background: #FFFFFF;
   border-bottom: 1px solid #4D6A50;
   padding: 2%;
@@ -269,31 +272,7 @@ input.previous {
   padding-right: 0.85em;
 }
 
-.subheader ul li.subheader-button {
-  float: right;
-  margin-right: 0;
-  padding: 0 1% 0 1%;
-  text-align: center;
-  background: #8A7E72;
-  height: 80%;
-  margin-top: 0.25%;
-  line-height: 2.5;
-}
-
-.subheader ul li.subheader-button a {
-  color: white;
-  height: 100%;
-}
-
-/*table*/
-
-div.table {
-  table-layout: fixed;
-  display: table;
-  padding: 0;
-}
-
-.container {
+div.container {
   width: 80%;
 }
 
@@ -321,48 +300,74 @@ div.table {
   display: block;
 }
 
-/*table*/
+/*table layout*/
 
-div.table {
+.table {
   table-layout: fixed;
   display: table;
   padding: 0;
 }
 
-/*table layout*/
-
-.sidebar {
+.table .sidebar {
   display: table-cell;
   margin-top: 5em;
   width: 20%;
   vertical-align: top;
-  padding-right: 2%;
 }
 
-.content {
+.table .content {
   display: table-cell;
-  height: 70em;
-  /*margin-top: 2.5em;*/
   left: 10px;
   width: 70%;
-  padding-left: 2%;
+  padding-left: 5%;
 }
 
-.content .filter {
+.table .content .filter {
   background: #FFFFFF;
   clear: both;
+}
+
+.row.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 /*Sidebar*/
 
 .sidebar .item,
-.content .file {
+.content .file,
+.content .group-type {
   background: #FFFFFF;
   margin-bottom: 3em;
 }
 
+.content .group-type .group {
+  border-bottom: 1px solid #8A7E72;
+}
+
+.content .group-type .group img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.content .group-type .group .icons span {
+  font-family: Raleway;
+  padding-left: 5px;
+}
+
+.content .group-type .group:last-child {
+  border: none;
+}
+
 .sidebar .item header,
-.content .file header {
+.content .file header,
+.content .group-type header {
   background: #4D6A50;
   height: 2em;
   color: #FFFFFF;
@@ -378,14 +383,17 @@ div.table {
   margin-left: 8px;
 }
 
-.content .file header a {
+.content .file header a,
+.content .group-type header a {
   padding-right: 1%;
   padding-left: 1%;
   color: white;
   float: right;
 }
 
-/*mijn bestanden ul*/
+.sidebar .item {
+  /*mijn bestanden ul*/
+}
 
 .sidebar .item .highlight {
   width: 100%;
@@ -398,6 +406,24 @@ div.table {
   display: block;
   margin-bottom: 2%;
   width: 100%;
+}
+
+.sidebar .item li .left {
+  display: inline-block;
+  vertical-align: top;
+  /*not required*/
+  position: relative;
+}
+
+.sidebar .item li .left img {
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .sidebar .item .highlight li .left,
@@ -413,13 +439,6 @@ div.table {
   padding: 0;
 }
 
-.sidebar .item li .left {
-  display: inline-block;
-  vertical-align: top;
-  /*not required*/
-  position: relative;
-}
-
 .sidebar .item .highlight li .left img,
 .content .file .left img {
   width: 32px;
@@ -428,8 +447,8 @@ div.table {
      object-fit: contain;
 }
 
-.content .file .right h3 {
-  margin-top: 0;
+.content .file .left {
+  width: 10%;
 }
 
 .content .file .left img {
@@ -438,38 +457,23 @@ div.table {
   vertical-align: middle;
 }
 
-.sidebar .item li .left img {
-  max-height: 100%;
-  max-width: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-.sidebar .item .highlight li .right,
-.content .file .right {
-  width: 80%;
-  float: right;
-}
-
-.content .file .left {
-  width: 10%;
-}
-
 .content .file .right {
   width: 100%;
 }
 
-.content .file.new input {
+.content .file .right h3 {
+  margin-top: 0;
+}
+
+.content .file .new input {
   margin-bottom: 2em;
   padding: 0.5%;
 }
 
-.padding {
-  padding: 2%;
+.sidebar .item .highlight li .right,
+.content .file .right {
+  /*width: 80%;*/
+  float: right;
 }
 
 .content .file.detail .left {
@@ -850,7 +854,7 @@ form .form-group {
   }
 
   .container {
-    width: 95%;
+    width: 100%;
   }
 
   .subheader {
