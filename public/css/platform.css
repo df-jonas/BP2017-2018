@@ -79,6 +79,12 @@ body.platform input.previous a:focus {
   color: white;
 }
 
+input:focus,
+.form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 button.download,
 a.download,
 input.next,
@@ -89,6 +95,43 @@ input.previous {
 
 #platform_header {
   background-color: #4D6A50;
+}
+
+#platform_header .sub {
+  display: none;
+  list-style-type: none;
+  text-align: center;
+  background: #4D6A50;
+  padding: 0;
+  color: #ffffff;
+}
+
+#platform_header .sub li {
+  display: inline-block;
+  padding: 2%;
+  padding-left: 4%;
+  padding-right: 4%;
+  line-height: .5em;
+}
+
+#platform_header .sub li:hover {
+  background: lightgray;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+#platform_header .sub li.register {
+  background: #4D6A50;
+  color: #FFFFFF;
+  /*margin-left: 4%;*/
+}
+
+#platform_header .sub li.register:hover {
+  opacity: 0.9;
+}
+
+#platform_header .sub li a {
+  color: #ffffff;
 }
 
 #platform_menu {
@@ -108,6 +151,18 @@ input.previous {
   display: inline-block;
   line-height: 3em;
   margin-right: 2%;
+}
+
+.hamburger {
+  color: #FFFFFF;
+  left: 0;
+  display: none;
+}
+
+.cross {
+  color: #FFFFFF;
+  left: 0;
+  display: none;
 }
 
 /*Menu*/
@@ -189,7 +244,7 @@ input.previous {
   -webkit-box-shadow: 0px 1px 5px #4D6A50;
           box-shadow: 0px 1px 5px #4D6A50;
   height: 3em;
-  margin-bottom: 5em;
+  margin-bottom: 3.5em;
 }
 
 .subheader ul {
@@ -281,16 +336,21 @@ div.table {
   margin-top: 5em;
   width: 20%;
   vertical-align: top;
-  padding-right: 10px;
+  padding-right: 2%;
 }
 
 .content {
   display: table-cell;
   height: 70em;
-  margin-top: 5em;
+  /*margin-top: 2.5em;*/
   left: 10px;
-  width: 80%;
-  padding-left: 10px;
+  width: 70%;
+  padding-left: 2%;
+}
+
+.content .filter {
+  background: #FFFFFF;
+  clear: both;
 }
 
 /*Sidebar*/
@@ -505,70 +565,6 @@ div.table {
 
 .right-addon input {
   padding-right: 30px;
-}
-
-/*Custom checkboxes*/
-
-.checkbox-label {
-  margin-bottom: 2%;
-}
-
-.checkbox-label input {
-  display: none;
-}
-
-.checkbox-label span {
-  height: 12px;
-  width: 12px;
-  padding: 2%;
-  border: 1px solid grey;
-  display: inline-block;
-  position: relative;
-}
-
-.checkbox-label [type=checkbox]:checked + span:before {
-  content: '\F00C';
-  font-family: FontAwesome;
-  position: absolute;
-  top: -5px;
-  left: 0;
-  color: #505457;
-}
-
-/*custom select box*/
-
-.textdiv input {
-  background: transparent;
-  padding: 5px 35px 5px 5px;
-  border: 1px solid #ccc;
-  height: 34px;
-  width: 100%;
-}
-
-.selectdiv {
-  position: relative;
-}
-
-.selectdiv select,
-.selectdiv input {
-  background: transparent;
-  padding: 5px 35px 5px 5px;
-  border: 1px solid #ccc;
-  height: 34px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.selectdiv::after {
-  content: "\F078";
-  font: 17px FontAwesome;
-  color: #333;
-  right: 11px;
-  top: 32px;
-  padding: 0 0 2px;
-  position: absolute;
-  pointer-events: none;
 }
 
 /*Forms*/
@@ -814,7 +810,53 @@ form .form-group {
 
 /*Mediaqueries*/
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
+  /*responsive menu*/
+
+  #platform_header {
+    height: auto;
+  }
+
+  #platform_header .logo {
+    display: none;
+  }
+
+  #platform_header .account_username,
+  #platform_header .account_dropdown_btn {
+    display: none;
+  }
+
+  #platform_header .hamburger {
+    display: block;
+  }
+
+  #platform_header .sub {
+    display: none;
+    margin-top: 2%;
+    width: 100% !important;
+    padding-left: 0;
+  }
+
+  #platform_header .sub li {
+    width: 100%;
+    height: 3em;
+    margin: 0 !important;
+    text-align: center;
+    line-height: 2em;
+  }
+
+  .subheader {
+    display: none;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .subheader {
+    margin-bottom: 0;
+  }
+
   div.table {
     margin-top: 1em;
   }
@@ -832,7 +874,9 @@ form .form-group {
     padding: 0;
     width: 100%;
   }
+}
 
+@media only screen and (max-width: 480px) {
   .padding {
     position: relative;
   }

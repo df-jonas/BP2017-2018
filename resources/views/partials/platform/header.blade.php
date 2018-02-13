@@ -1,9 +1,12 @@
 <header id="platform_header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-1 col-xs-3" style="padding:0">
+            <div class="logo col-lg-1 col-xs-3" style="padding:0">
                 <a href="{{ route('website-index') }}"><img class="logo" src="{{ URL::asset('img/logo/favicon_white.png') }}"></a>
             </div>
+
+
+
 
             <div class="dropdown">
 
@@ -29,5 +32,21 @@
                 </div>
             </div>
         </div>
+
+
+
+
+        <!-- responsive menu buttons -->
+        <div>
+            <button class="hamburger">&#9776;</button>
+            <button class="cross">&#735;</button>
+        </div>
     </div>
+
+        <ul class="sub col-xs-12 clearfix">
+            <li><a href="{{ route("community-index") }}"><span><i class="fa fa-rss" aria-hidden="true"></i></span>Community</a></li>
+            <li><a href="{{ route("sharing-index") }}"><span><i class="fa fa-file-pdf-o" aria-hidden="true"></i></span>Bestanden</a></li>
+            <li><a href="{{ route("tutoring-index") }}"><span><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>Tutoring</a></li>
+        </ul>
+
 </header>

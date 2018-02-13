@@ -18,7 +18,10 @@
                 <h4>Nieuwsbrief</h4>
                 <p>ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
                     egestas.Vestibulum</p>
+
+                <input id="newsletter">
             </div>
+
             </div>
         </div>
     </div>

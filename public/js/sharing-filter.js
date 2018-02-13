@@ -7,7 +7,7 @@ $(document).ready(function () {
             success: function (json) {
                 var newhtml = "";
                 if (json.length > 0) {
-                    newhtml = '<span class="filter filter-results">Er werden ' + json.length + ' resultaten gevonden.</span><br><br>';
+                    newhtml = '<span class="filter filter-results col-xs-12">Er werden ' + json.length + ' resultaten gevonden.</span><br><br>';
                     $.each(json, function (key, value) {
                         newhtml += '<article class="file clearfix">' +
                             '<header>' + value.field.name + ' > ' + value.degree.name + ' > ' + value.course.name + '<a href="/p/sharing/proxy/' + value.public_id + '">' +
@@ -26,7 +26,7 @@ $(document).ready(function () {
                             '</div></div></article>';
                     });
                 } else {
-                    newhtml = '<span class="filter filter-noresults">Er werden geen resultaten gevonden.</span>';
+                    newhtml = '<span class="filter filter-noresults col-xs-12">Er werden geen resultaten gevonden.</span>';
                 }
                 $("#filecontainer").html(newhtml);
             }

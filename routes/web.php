@@ -71,6 +71,7 @@ Route::group(['middleware' => ['auth']], function () {
          * Community
          */
         Route::get('/groups', 'CommunityController@index')->name('community-index');
+        Route::get('/groups/new', 'CommunityController@newpost')->name('community-newPost');
 
         /**
          * Tutoring

@@ -8,6 +8,12 @@ class CommunityController extends Controller
 {
     public function index(Request $request)
     {
-        return view("home");
+        return view("platform.community.index");
+    }
+
+
+    public function newPost(Request $request)
+    {
+        return view("platform.community.new");
     }
 }
