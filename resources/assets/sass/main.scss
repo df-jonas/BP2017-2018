@@ -23,7 +23,6 @@ body {
   overflow-x: hidden;
 }
 
-
 input:focus, .form-control:focus {
   box-shadow: none;
 }
@@ -92,9 +91,32 @@ form input {
     width: 36px;
     height: 36px;
   }
+
 }
 
-#platform_header{
+.fixed-header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-duration: 0.25s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#platform_header {
   padding: 1% 0 1% 0;
 }
 

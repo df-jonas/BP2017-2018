@@ -93,7 +93,7 @@
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Enigma TD</h4>
+                                        <h4>Evenementen</h4>
                                         <div class="row icons">
                                             <div class="col-lg-2">
                                                 <i class="fa fa-comment"><span>22</span></i>
@@ -121,7 +121,7 @@
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Enigma TD</h4>
+                                        <h4>Verkiezingen</h4>
                                         <div class="row icons">
                                             <div class="col-lg-2">
                                                 <i class="fa fa-comment"><span>22</span></i>
@@ -142,33 +142,7 @@
                         </article>
 
 
-                        <article class="group">
-                            <div class="padding">
-                                <div class="row flex">
-                                    <div class="col-lg-1">
-                                        <img src="{{asset('img/logo/favicon.png')}} " style="width: 36px; height: 36px">
-                                    </div>
 
-                                    <div class="col-lg-5">
-                                        <h4>Enigma TD</h4>
-                                        <div class="row icons">
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-comment"><span>22</span></i>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-thumbs-up"><span>22</span></i>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-lg-6" style="text-align: right">
-                                        <h6>Trends over web development</h6>
-                                        <h6>Arno, donderdag om 14:33</h6>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </article>
 
 
                     </div>
@@ -186,12 +160,20 @@
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Web development</h4>
-                                        <i class="fa fa-comment"></i> 44 <i class="fa fa-thumbs-up"></i> 22
+                                        <h4>Development</h4>
+                                        <div class="row icons">
+                                            <div class="col-lg-2">
+                                                <i class="fa fa-comment"><span>22</span></i>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <i class="fa fa-thumbs-up"><span>22</span></i>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="col-lg-6" style="text-align: right">
                                         <h6>Trends over web development</h6>
-                                        <h6>Arno</h6>
+                                        <h6>Arno, donderdag om 14:33</h6>
                                     </div>
                                 </div>
                             </div>
@@ -206,12 +188,20 @@
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Web development</h4>
-                                        <i class="fa fa-comment"></i> 44 <i class="fa fa-thumbs-up"></i> 22
+                                        <h4>Communicatie wetenschappen</h4>
+                                        <div class="row icons">
+                                            <div class="col-lg-2">
+                                                <i class="fa fa-comment"><span>22</span></i>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <i class="fa fa-thumbs-up"><span>22</span></i>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="col-lg-6" style="text-align: right">
                                         <h6>Trends over web development</h6>
-                                        <h6>Arno</h6>
+                                        <h6>Arno, donderdag om 14:33</h6>
                                     </div>
                                 </div>
                             </div>
@@ -227,12 +217,20 @@
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Web development</h4>
-                                        <i class="fa fa-comment"></i> 44 <i class="fa fa-thumbs-up"></i> 22
+                                        <h4>Musical</h4>
+                                        <div class="row icons">
+                                            <div class="col-lg-2">
+                                                <i class="fa fa-comment"><span>22</span></i>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <i class="fa fa-thumbs-up"><span>22</span></i>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="col-lg-6" style="text-align: right">
                                         <h6>Trends over web development</h6>
-                                        <h6>Arno</h6>
+                                        <h6>Arno, donderdag om 14:33</h6>
                                     </div>
                                 </div>
                             </div>

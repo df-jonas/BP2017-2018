@@ -1,8 +1,19 @@
 $(document).ready(function () {
 
+
+    //sticky nav bij scroll
+    $(window).scroll(function(){
+        console.log('scroll');
+        if ($(window).scrollTop() >= 10) {
+            $('#page_header').addClass('fixed-header');
+        }
+        else {
+            $('#page_header').removeClass('fixed-header');
+        }
+    });
+
+
     //menu aanpassen bij pagina resize
-
-
     $(window).resize(function () {
         if (($(window).width() < 768 )) {
             $('#page_header .links, #platform_header .sub').css("display", "none");
