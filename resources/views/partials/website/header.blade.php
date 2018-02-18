@@ -13,7 +13,7 @@
                     <li>Home</li>
                 </a>
                 <a href="{{ route('website-about') }}">
-                    <li>Over</li>
+                    <li>Over UniHelp</li>
                 </a>
                 <a href="{{ route('website-how') }}">
                     <li>Hoe werkt het?</li>

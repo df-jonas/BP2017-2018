@@ -240,6 +240,15 @@ input.previous {
   line-height: 3em;
 }
 
+.group_img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 /*Subheader*/
 
 .subheader {
@@ -854,7 +863,7 @@ form .form-group {
   }
 
   .container {
-    width: 100%;
+    width: 100% !important;
   }
 
   .subheader {
@@ -867,16 +876,11 @@ form .form-group {
 
   /*SIDEBAR*/
 
-  .sidebar {
-    display: block;
-    padding: 0;
-    width: 100%;
-  }
-
+  .sidebar,
   .content {
-    display: block;
+    display: block !important;
     padding: 0;
-    width: 100%;
+    width: 100% !important;
   }
 }
 

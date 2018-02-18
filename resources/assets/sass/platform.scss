@@ -186,6 +186,14 @@ button.download, a.download, input.next, input.previous {
 
 }
 
+
+.group_img{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  object-fit: cover;
+}
 /*Subheader*/
 .subheader {
   background: #FFFFFF;
@@ -767,7 +775,7 @@ form .form-group {
   }
 
   .container {
-    width: 100%;
+    width: 100%!important;
   }
 
   .subheader {
@@ -777,22 +785,18 @@ form .form-group {
     margin-top: 1em;
   }
   /*SIDEBAR*/
-  .sidebar {
-    display: block;
+  .sidebar, .content {
+    display: block!important;
     padding: 0;
-    width: 100%;
+    width: 100%!important;
 
   }
 
-  .content {
-    display: block;
-    padding: 0;
-    width: 100%;
 
-  }
 }
 
 @media only screen and (max-width: 480px) {
+
 
   .padding {
     position: relative;

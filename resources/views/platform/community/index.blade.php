@@ -93,20 +93,26 @@
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Evenementen</h4>
+                                        <h4>Klachten</h4>
                                         <div class="row icons">
+                                            <!--
                                             <div class="col-lg-2">
                                                 <i class="fa fa-comment"><span>22</span></i>
                                             </div>
                                             <div class="col-lg-2">
                                                 <i class="fa fa-thumbs-up"><span>22</span></i>
                                             </div>
+                                            -->
+                                            <div class="col-lg-12">
+                                                23 posts
+                                            </div>
+
                                         </div>
 
                                     </div>
                                     <div class="col-lg-6" style="text-align: right">
-                                        <h6>Trends over web development</h6>
-                                        <h6>Arno, donderdag om 14:33</h6>
+                                        <h6>Klachten over school</h6>
+                                        <h6>Laatste update om 14:33</h6>
                                     </div>
                                 </div>
                             </div>
@@ -121,28 +127,31 @@
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Verkiezingen</h4>
+                                        <h4>Evenementen</h4>
                                         <div class="row icons">
+                                            <!--
                                             <div class="col-lg-2">
                                                 <i class="fa fa-comment"><span>22</span></i>
                                             </div>
                                             <div class="col-lg-2">
                                                 <i class="fa fa-thumbs-up"><span>22</span></i>
                                             </div>
+                                            -->
+                                            <div class="col-lg-12">
+                                                23 posts
+                                            </div>
+
                                         </div>
 
                                     </div>
                                     <div class="col-lg-6" style="text-align: right">
-                                        <h6>Trends over web development</h6>
-                                        <h6>Arno, donderdag om 14:33</h6>
+                                        <h6>Klachten over school</h6>
+                                        <h6>Laatste update om 14:33</h6>
                                     </div>
                                 </div>
                             </div>
 
                         </article>
-
-
-
 
 
                     </div>
@@ -160,20 +169,26 @@
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Development</h4>
+                                        <h4>Klachten</h4>
                                         <div class="row icons">
+                                            <!--
                                             <div class="col-lg-2">
                                                 <i class="fa fa-comment"><span>22</span></i>
                                             </div>
                                             <div class="col-lg-2">
                                                 <i class="fa fa-thumbs-up"><span>22</span></i>
                                             </div>
+                                            -->
+                                            <div class="col-lg-12">
+                                                23 posts
+                                            </div>
+
                                         </div>
 
                                     </div>
                                     <div class="col-lg-6" style="text-align: right">
-                                        <h6>Trends over web development</h6>
-                                        <h6>Arno, donderdag om 14:33</h6>
+                                        <h6>Klachten over school</h6>
+                                        <h6>Laatste update om 14:33</h6>
                                     </div>
                                 </div>
                             </div>
@@ -188,20 +203,26 @@
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Communicatie wetenschappen</h4>
+                                        <h4>Klachten</h4>
                                         <div class="row icons">
+                                            <!--
                                             <div class="col-lg-2">
                                                 <i class="fa fa-comment"><span>22</span></i>
                                             </div>
                                             <div class="col-lg-2">
                                                 <i class="fa fa-thumbs-up"><span>22</span></i>
                                             </div>
+                                            -->
+                                            <div class="col-lg-12">
+                                                23 posts
+                                            </div>
+
                                         </div>
 
                                     </div>
                                     <div class="col-lg-6" style="text-align: right">
-                                        <h6>Trends over web development</h6>
-                                        <h6>Arno, donderdag om 14:33</h6>
+                                        <h6>Klachten over school</h6>
+                                        <h6>Laatste update om 14:33</h6>
                                     </div>
                                 </div>
                             </div>
@@ -217,20 +238,26 @@
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Musical</h4>
+                                        <h4>Klachten</h4>
                                         <div class="row icons">
+                                            <!--
                                             <div class="col-lg-2">
                                                 <i class="fa fa-comment"><span>22</span></i>
                                             </div>
                                             <div class="col-lg-2">
                                                 <i class="fa fa-thumbs-up"><span>22</span></i>
                                             </div>
+                                            -->
+                                            <div class="col-lg-12">
+                                                23 posts
+                                            </div>
+
                                         </div>
 
                                     </div>
                                     <div class="col-lg-6" style="text-align: right">
-                                        <h6>Trends over web development</h6>
-                                        <h6>Arno, donderdag om 14:33</h6>
+                                        <h6>Klachten over school</h6>
+                                        <h6>Laatste update om 14:33</h6>
                                     </div>
                                 </div>
                             </div>
