@@ -74,6 +74,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/groups/new', 'CommunityController@newgroup')->name('community-newgroup');
         Route::get('/groups/group', 'CommunityController@group')->name('community-group');
         Route::get('/groups/newpost', 'CommunityController@newpost')->name('community-newpost');
+        Route::get('/groups/group/detail', 'CommunityController@groupdetail')->name('community-group-detail');
 
         /**
          * Tutoring

@@ -376,7 +376,8 @@ div.container {
 
 .sidebar .item header,
 .content .file header,
-.content .group-type header {
+.content .group-type header,
+.group-detail header {
   background: #4D6A50;
   height: 2em;
   color: #FFFFFF;
@@ -393,7 +394,8 @@ div.container {
 }
 
 .content .file header a,
-.content .group-type header a {
+.content .group-type header a,
+.content .group-detail header a {
   padding-right: 1%;
   padding-left: 1%;
   color: white;

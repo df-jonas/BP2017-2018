@@ -57,16 +57,10 @@
                 <h5>Multec student
                     <small>(Mobile App &amp; Web development)</small>
                 </h5>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                    Vestibulum
-                    tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-                    egestas
-                    semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                    Vestibulum
-                    tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-                    egestas
-                    semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <p>Hallo, ik ben Arno en ik zit in mijn laatste jaar Multimedia- en communicatie technologie aan de Erasmushogeschool Brussel. Vorig jaar koos ik er voor om mij te specialiseren in Mobile App en Web development.
+                Hier leerde ik onder andere veel over design, front-end, back-end, User Experience, website development, enzovoort. Om deze reden koos ik voor een veelzijdig project waar al deze zaken aan bod zouden komen. Tijdens dit project zal
+                    ik mij vooral focussen op het front-end, design en UX gedeelte.
+                </p>
 
             </div>
         </div>
@@ -75,7 +69,7 @@
 
     <section id="about_quote" class="col-xs-12 clearfix">
         <div class="quote col-lg-6 col-lg-push-3 col-xs-12">
-            <h1>“Als IT studenten zagen wij de komst van Canvas als een leuke uitdaging.”</h1>
+            <h1>“Als IT studenten zagen wij in studentenplatformen ruimte voor verbetering.”</h1>
         </div>
     </section>
 
@@ -85,7 +79,7 @@
 
 
             <div class="right col-lg-2 col-lg-push-8 col-xs-6 col-xs-push-3">
-                <img src="img/team/jonas.JPG" class="round_img">
+                <img src="img/team/jonas.png" class="round_img">
             </div>
 
             <div class="left col-lg-6  col-xs-12">
@@ -93,17 +87,7 @@
                 <h5>Dig-X student
                     <small>(Network &amp; Security)</small>
                 </h5>
-                <p>Pellentesque habitant mo)rbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                    Vestibulum
-                    tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-                    egestas
-                    semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                    Vestibulum
-                    tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-                    egestas
-                    semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <p>Hallo, ik ben Arno en ik zit in mijn laatste jaar Multimedia- en communicatie technologie aan de Erasmushogeschool Brussel. Vorig jaar koos ik er voor om mij te specialiseren in Mobile App en Web development. Hier leerde ik onder andere veel over design, front-end, back-end, User Experience, website development, enzovoort. Om deze reden koos ik voor een veelzijdig project waar al deze zaken aan bod zouden komen. Tijdens dit project zal ik mij vooral focussen op het front-end, design en UX gedeelte. </p>
 
             </div>
 

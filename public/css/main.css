@@ -365,7 +365,7 @@ form.register .form-group {
   height: 10em;
   -o-object-fit: cover;
      object-fit: cover;
-  margin: 15% auto;
+  margin: 5.5% auto;
   display: block;
 }
 
@@ -716,6 +716,12 @@ footer a:focus {
 
   footer .bottom {
     height: 12em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #page_banner {
+    height: 50vh;
   }
 }
 

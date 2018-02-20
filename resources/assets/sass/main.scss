@@ -326,7 +326,7 @@ form.register .form-group {
     width: 10em;
     height: 10em;
     object-fit: cover;
-    margin: 15% auto;
+    margin: 5.5% auto;
     display: block;
   }
 }
@@ -603,7 +603,6 @@ footer {
 
   #page_banner {
     height: 65vh;
-
   }
 
   .what .items .item .left img, .what .items .item .right img {
@@ -636,10 +635,14 @@ footer {
     .bottom {
       height: 12em;
     }
+
   }
 
 }
 
 @media only screen and (max-width: 480px) {
+  #page_banner {
+    height: 50vh;
+  }
 
 }

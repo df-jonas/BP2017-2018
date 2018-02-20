@@ -17,6 +17,11 @@ class CommunityController extends Controller
         return view("platform.community.groepen");
     }
 
+    public function groupdetail(Request $request)
+    {
+        return view("platform.community.detail");
+    }
+
     public function newpost(Request $request)
     {
         return view("platform.community.newpost");
