@@ -2,10 +2,13 @@
 
 namespace App;
 
+use Coduo\PHPHumanizer\DateTimeHumanizer;
 use Illuminate\Database\Eloquent\Model;
 
 class File extends Model
 {
+    protected $hidden = ["user_id", "courseid", "documenttypeid", "degreeid", "pubyearid", "fosid"];
+
     public function user()
     {
         return $this->belongsTo('App\User', 'user_id');
@@ -34,5 +37,35 @@ class File extends Model
     public function course()
     {
         return $this->belongsTo('App\Course', 'courseid');
+    }
+
+    public function ratings()
+    {
+        return $this->hasMany('App\Rating', 'fileid');
+    }
+
+    public function downloads()
+    {
+        return Download::query()->where("file_id", "=", $this->id)->count();
+    }
+
+    public function averageRating()
+    {
+        return round(Rating::query()->where("fileid", "=", $this->id)->avg("rating"));
+    }
+
+    public function humantimestamp()
+    {
+        return DateTimeHumanizer::difference(new \DateTime(), new \DateTime($this->created_at), "nl");
+    }
+
+    public function downloadUrl()
+    {
+        return route('sharing-download', ["public" => $this->public_id]);
+    }
+
+    public function detailUrl()
+    {
+        return route('sharing-detail', ['id' => $this->id]);
     }
 }

@@ -8,11 +8,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Campus;
+use App\Fos;
 use App\Helpers\HttpHelper;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Image;
 
 class AuthController extends Controller
 {
@@ -89,7 +92,9 @@ class AuthController extends Controller
             return Redirect::to(route('sharing-index'));
 
         $params = [
-            'name' => Auth::user()->name
+            'name' => Auth::user()->name,
+            'campuses' => Campus::query()->orderBy("name")->get(),
+            'foses' => Fos::query()->orderBy("name")->get(),
         ];
         return view("website.register", $params);
     }
@@ -113,12 +118,26 @@ class AuthController extends Controller
         if (isset($request->username) && isset($request->tnc)) {
 
             //TODO validation
-
             $user = Auth::user();
             $user->fosid = $request->fos;
             $user->campusid = $request->campus;
             $user->email = $request->email;
             $user->username = $request->username;
+
+            //image, gebruik van image intervention library
+            if ($request->hasFile('avatar')) {
+                $img = $request->file('avatar');
+                $img_name = time() . '_' . $img->getClientOriginalName();
+                $img_location = public_path('/img/avatars/' . $img_name);
+
+                Image::make($img)->resize(64, 64, function ($image) {
+                    $image->aspectRatio();
+                    $image->upsize();
+                })->save($img_location);
+
+                $user->image = $img_name;
+            }
+
             $user->save();
 
             return Redirect::to(route('sharing-index'));

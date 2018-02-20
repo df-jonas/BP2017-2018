@@ -19,17 +19,26 @@
     <!-- own css -->
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
 
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
-    <script src="{{ URL::asset('js/nav.js') }}"></script>
+
+
 
     <!-- fontawesome -->
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.css') }}">
 
 
+
+
+
+
 </head>
 <body>
 @yield('content')
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ URL::asset('js/bootstrap.js') }}"></script>
+<script src="{{ URL::asset('js/main.js') }}"></script>
+<script src="{{ URL::asset('js/nav.js') }}"></script>
+
 </body>
 </html>

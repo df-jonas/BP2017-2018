@@ -8,191 +8,110 @@
 
     <div class="container table">
         <div class="sidebar">
-
-            <article class="item clearfix">
+            <!--<article class="item clearfix">
                 <header>Zoeken</header>
                 <div class="inner-addon left-addon">
                     <i class="glyphicon glyphicon-search"></i>
                     <input type="text" class="form-control" placeholder="zoekterm"/>
                 </div>
-            </article>
-
+            </article>-->
 
             <article class="item">
                 <header>Mijn downloads</header>
                 <ul class="highlight">
-
-                    <li class="clearfix">
-                        <div class="left col-xs-3 clearfix">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Project</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-
-                    <li class="clearfix">
-                        <div class="left col-xs-3">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Titel</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-                    <li class="clearfix">
-                        <div class="left col-xs-3">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Titel</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-                    <li class="clearfix">
-                        <div class="left col-xs-3">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Titel</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-
-                    <li class="clearfix">
-                        <div class="left col-xs-3">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>
-                        <div class="right col-xs-9">
-                            <h4>Titel</h4>
-                            <p>Downloads:</p>
-                        </div>
-
-                    </li>
-
-
-
+                    @foreach($userdownloads as $userdownload)
+                        <li class="clearfix">
+                        <!--<div class="left col-xs-3 clearfix">
+                                <img src="{{asset('img/logo/favicon.png')}}">
+                            </div>-->
+                            <div class="col-xs-12">
+                                <h4>
+                                    <a href="{{ $userdownload->file->detailUrl() }}">{{ $userdownload->file->title }}</a>
+                                </h4>
+                                <small>Gedownload {{ $userdownload->humantimestamp() }}</small>
+                            </div>
+                        </li>
+                    @endforeach
                 </ul>
             </article>
-
-
-
-
-
-
-
-
         </div>
-
 
         <div class="content">
             <div class="files">
-
-
                 <article class="file detail clearfix">
-                    <header>Project Management > Hoorcollege 1</header>
-
+                    <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a
+                                href="{{ $file->downloadUrl() }}"><i class="fa fa-download"></i></a>
+                    </header>
                     <div class="padding">
-
                         <div class="left">
-
                             <div class="table">
                                 <div style="display: table-cell; width: 32px"><img
-                                            src="{{ URL::asset('img/team/arno.png') }}" class="account_img"></div>
+                                            src="{{ URL::asset('img/avatars/empty.png') }}" class="account_img"></div>
                                 <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                    <h6 style="margin: 0">Arno Stalpaert</h6>
-                                    <h6 style="margin: 5px 0">Donderdag om 14:43</h6>
+                                    <h6 style="margin: 0">{{ $file->user->name }}</h6>
+                                    <h6 style="margin: 5px 0">{{ $file->humantimestamp() }}</h6>
                                 </div>
                             </div>
-
-
                         </div>
 
                         <div class="right">
                             <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
+                                <input hidden type="hidden" id="csrftoken" value="{{csrf_token()}}">
+                                <input type="hidden" id="fileid" hidden name="fileid" value="{{ $file->id }}">
+                                <label for="rev_stars">Uw rating:</label>
+                                <input min="1" max="5" type="number" name="stars" id="rev_stars" class="rating"
+                                       data-active-icon="fa fa-star checked"
+                                       data-inactive-icon="fa fa-star"
+                                       data-max="5" data-min="1" data-empty-value="5" data-inline
+                                       value="
+                                            @if ($userrating == null)
+                                               0
+                                            @else
+                                       {{ $userrating->rating }}
+                                       @endif
+                                               "/>
                             </div>
-
                         </div>
+
                         <div class="notes">
-                            <h4>Notities</h4>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                egestas.
-                                Vestibulum
-                                tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
-                                amet quam
-                                egestas
-                                semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-
-
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                egestas.
-                                Vestibulum
-                                tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
-                                amet quam
-                                egestas
-                                semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                            <h4>{{ $file->doctype->name }}</h4>
+                            <p>{{ $file->filedescription }}</p>
                         </div>
 
                         <div class="details clearfix">
-
                             <div class="detail">
                                 <h4>Type document</h4>
-                                <i class="glyphicon glyphicon-search"><span>Lalaa</span></i>
+                                <i class="glyphicon glyphicon-search"><span>{{ $file->doctype->name }}</span></i>
                             </div>
-
-
-
                             <div class="detail">
-                                <h4>Studierichting</h4>
-                                <i class="glyphicon glyphicon-search"><span>Lalaa</span></i>
+                                <h4>Richting</h4>
+                                <i class="glyphicon glyphicon-search"><span>{{ $file->field->name }}</span></i>
                             </div>
-
-
-
                             <div class="detail">
                                 <h4>Studiejaar</h4>
-                                <i class="glyphicon glyphicon-search"><span>Lalaa</span></i>
+                                <i class="glyphicon glyphicon-search"><span>{{ $file->degree->name }}</span></i>
                             </div>
-
-
                             <div class="detail">
-                                <h4>Datum bestand</h4>
-                                <i class="glyphicon glyphicon-search"><span>Lalaa</span></i>
+                                <h4>Vak</h4>
+                                <i class="glyphicon glyphicon-search"><span>{{ $file->course->name }}</span></i>
                             </div>
-
-
                             <div class="detail">
-                                <h4>Aantal pagina's</h4>
-                                <i class="glyphicon glyphicon-search"><span>Lalaa</span></i>
+                                <h4>Uploaddatum</h4>
+                                <i class="glyphicon glyphicon-search"><span>{{ $file->created_at }}</span></i>
                             </div>
-
                         </div>
 
-
-                        {{-- <a class="download col-lg-2" href="https://static-unihelp.eu/{{$file->public_id}}">Download</a> --}}
-
-
+                        <a class="download col-lg-2" href="{{ $file->downloadUrl() }}">Download</a>
                     </div>
                 </article>
-
-
             </div>
         </div>
-
     </div>
-    </div>
-
 
     @include('partials.footer')
+@endsection
 
+@section("scripts")
+    <script src="{{ asset("js/bootstrap-rating-input.min.js") }}"></script>
+    <script src="{{ asset("js/sharing-detail.js") }}"></script>
 @endsection

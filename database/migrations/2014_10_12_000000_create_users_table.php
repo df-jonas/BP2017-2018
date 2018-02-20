@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
 
             $table->string('email')->unique();
             //$table->string('password');
+            $table->string('image', 191);
 
             $table->integer('campusid');
             $table->integer('fosid');
