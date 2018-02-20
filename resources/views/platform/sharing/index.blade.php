@@ -19,7 +19,7 @@
                     <header>Zoeken</header>
                     <div class="inner-addon left-addon">
                         <i class="glyphicon glyphicon-search"></i>
-                        <input type="text" name="search" class="form-control filterlistener" placeholder="zoekterm"/>
+                        <input type="text" id="search" name="search" class="form-control filterlistener" placeholder="zoekterm"/>
                     </div>
                 </article>
 
@@ -99,6 +99,7 @@
                             <div class="padding">
                                 <div class="right">
                                     <div class="rating">
+
                                         @for ($i = 1; $i <= 5; $i++)
                                             @if($i <= $rating)
                                                 <span class="fa fa-star checked"></span>

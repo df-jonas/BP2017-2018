@@ -24,6 +24,12 @@ body {
   overflow-x: hidden;
 }
 
+input:focus,
+.form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 /*Helpers*/
 
 .clearfix {
@@ -71,7 +77,8 @@ form input {
 
 .action-button,
 .action-button.long,
-.action-button.login {
+.login_box .action-button.login,
+.login_box .action-button.register {
   background: #FFFFFF;
   display: inline-block;
   border: none;
@@ -100,6 +107,47 @@ form input {
   height: 36px;
 }
 
+.fixed-header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  opacity: 1;
+  -webkit-animation-name: fadeInOpacity;
+          animation-name: fadeInOpacity;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+}
+
+@-webkit-keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#platform_header {
+  padding: 1% 0 1% 0;
+}
+
 #page_header .links {
   list-style-type: none;
   text-align: right;
@@ -115,13 +163,14 @@ form input {
 
 #page_header .links li:hover {
   background: lightgray;
+  opacity: 0.75;
   cursor: pointer;
 }
 
 #page_header .links li.register {
   background: #4D6A50;
   color: #FFFFFF;
-  margin-left: 4%;
+  /*margin-left: 4%;*/
 }
 
 #page_header .links li.register:hover {
@@ -132,8 +181,8 @@ form input {
   background: none;
   position: absolute;
   top: 0;
-  right: 0;
-  line-height: 1.25em;
+  left: 0;
+  line-height: 1em;
   padding: 5px 15px 0px 15px;
   color: #4D6A50;
   border: 0;
@@ -149,12 +198,12 @@ form input {
   background: none;
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   padding: 5px 15px 0px 15px;
   color: #4D6A50;
   border: 0;
-  font-size: 3em;
-  line-height: 1.2em;
+  font-size: 4em;
+  line-height: 1em;
   font-weight: bold;
   cursor: pointer;
   outline: none;
@@ -166,11 +215,11 @@ form input {
 
 #page_banner {
   height: 92.5vh;
-  background-image: url("/img/backgrounds/imgix-404314.jpg");
+  background-image: url("/img/backgrounds/banner.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
+  /*position: relative;*/
   margin-bottom: 5%;
 }
 
@@ -182,7 +231,8 @@ form input {
           transform: translateY(-75%);
 }
 
-.action-button.register {
+.action-button.register,
+.login_box .register.action-button {
   background: #4D6A50;
   color: #FFFFFF;
 }
@@ -191,27 +241,18 @@ form.register .form-group {
   margin-bottom: 7.5%;
 }
 
-.long.action-button {
+.long.action-button,
+.login_box .long.action-button.login,
+.login_box .long.action-button.register {
   width: 100%;
-}
-
-.login.action-button {
-  background: #333A40;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  padding: 2%;
-  margin-top: 15%;
-  margin-bottom: 15%;
-  color: #FFFFFF;
 }
 
 #page_banner .scroll {
   position: absolute;
-  top: 97.5%;
-  -webkit-transform: translateY(-0.5%);
-          transform: translateY(-0.5%);
-  left: 49%;
+  top: 102%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -105%);
+  transform: translate(-50%, -105%);
   height: 48px;
   width: 48px;
   text-align: center;
@@ -229,6 +270,10 @@ form.register .form-group {
   margin-bottom: 5%;
 }
 
+.what h1 {
+  margin-top: 0;
+}
+
 .what .title {
   text-align: center;
 }
@@ -238,16 +283,15 @@ form.register .form-group {
 }
 
 .what .items .item {
-  margin-bottom: 5%;
+  margin: 5% 0 5% 0;
 }
 
 .what .items .item .left img,
 .what .items .item .right img {
-  width: 50%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   margin: 0 auto;
-  margin-left: 20%;
 }
 
 /*call-to-action*/
@@ -300,7 +344,10 @@ form.register .form-group {
 
 #about_quote .quote {
   position: absolute;
-  top: 45%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   text-shadow: 1px 1px #4D6A50;
 }
@@ -318,78 +365,146 @@ form.register .form-group {
   height: 10em;
   -o-object-fit: cover;
      object-fit: cover;
-  margin: 15% auto;
+  margin: 5.5% auto;
   display: block;
 }
 
 /*Login*/
 
 #login_page {
-  height: 100vh;
-  background: url("/img/backgrounds/climate-kic-350836.jpg");
+  height: 85vh;
+  max-height: 100vh;
+  background: url("/img/backgrounds/login-bg.png");
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
 .login_box {
-  background: rgba(255, 255, 255, 0.97);
-  margin-top: 25vh;
-  background: #4D6A50;
-}
-
-.login_box .auth {
-  background: white;
-}
-
-.login_box .info {
-  color: #FFFFFF;
-  padding-top: 3%;
+  width: 32em;
+  max-width: 100%;
+  padding: 1%;
+  background: #FFFFFF;
+  border-radius: 3.5px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .login_box .canvas {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 15%;
   text-align: center;
+  padding-top: 10%;
 }
 
 .login_box .canvas img {
   display: block;
-  width: 50%;
+  width: 25%;
   margin: 0 auto;
+  margin-bottom: 5%;
+}
+
+.login_box .login-problem {
+  text-align: center;
+  cursor: pointer;
+}
+
+.login_box .login-problem {
+  color: black;
+}
+
+.login_box .login-problem:visited {
+  color: black;
+}
+
+.login_box .login-problem:hover {
+  color: black;
+}
+
+.login_box .login-problem:active,
+.login_box .login-problem:focus {
+  color: black;
+}
+
+.login_box .login.action-button,
+.login_box .register.action-button {
+  background: #333A40;
+  width: 100%;
+  padding: 2%;
+  margin-top: 15%;
+  margin-bottom: 10%;
+  color: #FFFFFF;
+}
+
+.login_box .register.action-button {
+  background: #4D6A50;
+  margin-top: 5%;
   margin-bottom: 5%;
 }
 
 /*Register*/
 
 .account_img {
-  width: 48px;
-  height: 48px;
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
   background-color: #FFFFFF;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.account_img.edit {
-  position: absolute;
-  top: -4px;
-  right: -16px;
-  background: #4D6A50;
-  color: #FFFFFF;
-  height: 20px;
-  width: 20px;
-  text-align: center;
+  display: block;
+  margin: 0 auto;
   cursor: pointer;
 }
 
+.account_img:hover {
+  width: 10rem;
+  height: 10rem;
+}
+
+.profile-img-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin-bottom: 1%;
+}
+
+.profile-img-container a,
+.profile-img-container #picture-input {
+  display: block;
+  position: absolute;
+  top: -100%;
+  opacity: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  color: inherit;
+  color: #4D6A50;
+  font-size: 0.5em;
+  cursor: pointer;
+}
+
+.profile-img-container:hover a {
+  opacity: 1;
+  top: 0;
+  z-index: 500;
+}
+
+.profile-img-container:hover a span {
+  top: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.profile-img-container #picture-input {
+  z-index: 999;
+  width: 30rem;
+}
+
 .account_username {
-  margin-left: 16px;
-  margin-right: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #FFFFFF;
+  text-align: center;
 }
 
 /*Footer*/
@@ -451,6 +566,71 @@ footer a:focus {
   color: white;
 }
 
+/*Custom checkboxes*/
+
+.checkbox-label {
+  margin-bottom: 2%;
+}
+
+.checkbox-label input {
+  display: none;
+}
+
+.checkbox-label span {
+  height: 12px;
+  width: 12px;
+  padding: 2%;
+  border: 1px solid grey;
+  display: inline-block;
+  position: relative;
+}
+
+.checkbox-label [type=checkbox]:checked + span:before {
+  content: '\F00C';
+  font-family: FontAwesome;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  color: #505457;
+}
+
+/*custom select box*/
+
+.textdiv input {
+  background: transparent;
+  padding: 5px 35px 5px 5px;
+  border: 1px solid #ccc;
+  height: 34px;
+  width: 100%;
+}
+
+.selectdiv {
+  position: relative;
+}
+
+.selectdiv select,
+.selectdiv input {
+  background: transparent;
+  padding: 5px 35px 5px 5px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.selectdiv::after {
+  content: "\F078";
+  font: 17px FontAwesome;
+  color: #4D6A50;
+  right: 11px;
+  top: 32px;
+  padding: 0 0 2px;
+  position: absolute;
+  pointer-events: none;
+}
+
 @media only screen and (max-width: 1500px) {
   #page_header .links {
     padding-top: 0.5%;
@@ -458,10 +638,6 @@ footer a:focus {
 
   #page_banner {
     height: 90vh;
-  }
-
-  #page_banner .scroll {
-    top: 96%;
   }
 
   footer .top {
@@ -490,6 +666,7 @@ footer a:focus {
     margin-top: 2%;
     width: 100% !important;
     padding-left: 0;
+    background: white;
   }
 
   #page_header .links li {
@@ -500,12 +677,15 @@ footer a:focus {
     line-height: 2em;
   }
 
-  #page_banner {
-    height: 50vh;
+  #page_header img.logo {
+    width: 32px;
+    height: 32px;
+    float: right;
+    padding: 5px;
   }
 
-  #page_banner .scroll {
-    left: 42.5%;
+  #page_banner {
+    height: 65vh;
   }
 
   .what .items .item .left img,
@@ -536,6 +716,12 @@ footer a:focus {
 
   footer .bottom {
     height: 12em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #page_banner {
+    height: 50vh;
   }
 }
 

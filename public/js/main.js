@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    console.log('ready');
     //referentie: https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
     $('.inputFile').each(function () {
         var $input = $(this),
@@ -10,7 +10,7 @@ $(document).ready(function () {
             var fileName = '';
 
             if (this.files && this.files.length > 1)
-                fileName = ( this.getAttribute('data-multiple-caption') || '' ).replace('{count}', this.files.length);
+                fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
             else if (e.target.value)
                 fileName = e.target.value.split('\\').pop();
 
@@ -28,5 +28,16 @@ $(document).ready(function () {
             .on('blur', function () {
                 $input.removeClass('has-focus');
             });
+    });
+
+
+    //profile pic upload on register screen
+    $(function () {
+        $('#picture-input').change(function (e) {
+            console.log('upload');
+            var img = URL.createObjectURL(e.target.files[0]);
+            $('#register-img').attr('src', img);
+
+        });
     });
 });
