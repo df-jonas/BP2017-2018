@@ -21,11 +21,13 @@
                 <ul class="highlight">
                     @foreach($userdownloads as $userdownload)
                         <li class="clearfix">
-                            <!--<div class="left col-xs-3 clearfix">
+                        <!--<div class="left col-xs-3 clearfix">
                                 <img src="{{asset('img/logo/favicon.png')}}">
                             </div>-->
                             <div class="col-xs-12">
-                                <h4><a href="{{ $userdownload->file->detailUrl() }}">{{ $userdownload->file->title }}</a></h4>
+                                <h4>
+                                    <a href="{{ $userdownload->file->detailUrl() }}">{{ $userdownload->file->title }}</a>
+                                </h4>
                                 <small>Gedownload {{ $userdownload->humantimestamp() }}</small>
                             </div>
                         </li>
@@ -55,10 +57,19 @@
                         <div class="right">
                             <div class="rating">
                                 <input hidden type="hidden" id="csrftoken" value="{{csrf_token()}}">
+                                <input type="hidden" id="fileid" hidden name="fileid" value="{{ $file->id }}">
+                                <label for="rev_stars">Uw rating:</label>
                                 <input min="1" max="5" type="number" name="stars" id="rev_stars" class="rating"
                                        data-active-icon="fa fa-star checked"
                                        data-inactive-icon="fa fa-star"
-                                       data-max="5" data-min="1" data-empty-value="5" data-inline value="3"/>
+                                       data-max="5" data-min="1" data-empty-value="5" data-inline
+                                       value="
+                                            @if ($userrating == null)
+                                               0
+                                            @else
+                                       {{ $userrating->rating }}
+                                       @endif
+                                               "/>
                             </div>
                         </div>
 

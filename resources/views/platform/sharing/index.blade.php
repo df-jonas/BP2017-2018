@@ -89,6 +89,9 @@
             <div class="content">
                 <div id="filecontainer" class="files">
                     @foreach($files as $file)
+                        @php
+                            $rating = $file->averageRating()
+                        @endphp
                         <article class="file clearfix">
                             <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a
                                         href="{{ $file->downloadUrl() }}"><i class="fa fa-download"></i></a>
@@ -96,9 +99,14 @@
                             <div class="padding">
                                 <div class="right">
                                     <div class="rating">
-                                        <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                                                class="fa fa-star checked"></span><span class="fa fa-star"></span><span
-                                                class="fa fa-star"></span>
+
+                                        @for ($i = 1; $i <= 5; $i++)
+                                            @if($i <= $rating)
+                                                <span class="fa fa-star checked"></span>
+                                            @else
+                                                <span class="fa fa-star"></span>
+                                            @endif
+                                        @endfor
                                     </div>
                                     <h3><a href="{{ $file->detailUrl() }}">{{$file->title}}</a></h3>
                                     <p>door {{$file->user->name}}</p>

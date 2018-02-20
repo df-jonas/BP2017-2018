@@ -39,9 +39,19 @@ class File extends Model
         return $this->belongsTo('App\Course', 'courseid');
     }
 
+    public function ratings()
+    {
+        return $this->hasMany('App\Rating', 'fileid');
+    }
+
     public function downloads()
     {
         return Download::query()->where("file_id", "=", $this->id)->count();
+    }
+
+    public function averageRating()
+    {
+        return round(Rating::query()->where("fileid", "=", $this->id)->avg("rating"));
     }
 
     public function humantimestamp()
