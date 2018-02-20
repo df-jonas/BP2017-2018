@@ -210,8 +210,16 @@ button.download, a.download, input.next, input.previous {
       margin-right: 3%;
       line-height: 3em;
       cursor: pointer;
+      color: $unihelp-brown;
       &:hover {
-        border-bottom: 1px solid $unihelp-green;
+        border-bottom: 1px solid $unihelp-brown;
+      }
+      a{
+        color:$grey;
+        &:hover, &:active{
+          color: $unihelp-brown;
+        }
+
       }
       span {
         display: inline-block;
@@ -281,7 +289,7 @@ div.container {
 
 
 /*Sidebar*/
-.sidebar .item, .content .file, .content .group-type {
+.sidebar .item, .content .file, .content .group-type, .content .group-detail {
   background: #FFFFFF;
   margin-bottom: 3em;
 }
@@ -299,17 +307,50 @@ div.container {
     transform: translate(-50%, -50%);
   }
   .icons{
+    i{
+      color: $unihelp-brown;
+    }
     span{
       font-family: Raleway;
       padding-left: 5px;
+      color: #0f0f0f;
+    }
+  }
+
+  .info{
+    span{
+      color: $unihelp-green;
     }
   }
   &:last-child{
     border: none;
   }
+
+  h4{
+    margin-bottom: 0;
+  }
 }
 
-.sidebar .item header, .content .file header, .content .group-type header, .group-detail header {
+.content .group-detail{
+  .info{
+    ul{
+      width: 100%;
+      list-style-type: none;
+      padding-left: 0;
+      li{
+        width: 15%;
+        display: inline-block;
+      }
+    }
+  }
+
+  .account_img{
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.sidebar .item header, .content .file header, .content .group-type header, .group-detail header, .sidebar .button {
   background: #4D6A50;
   height: 2em;
   color: #FFFFFF;
@@ -319,6 +360,20 @@ div.container {
   text-decoration: none;
   font-size: 16px;
   border-bottom: 1px solid #dfdfdf;
+}
+
+
+/*New/upload button*/
+.sidebar .button{
+  background: $unihelp-brown;
+  padding: 0;
+  button{
+    width: 100%;
+    padding: 2px 10px;
+    background: $unihelp-brown;
+    border: none;
+    color: #FFFFFF;
+  }
 }
 
 .sidebar .item span {

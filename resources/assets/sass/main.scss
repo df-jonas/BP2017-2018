@@ -473,7 +473,7 @@ footer {
   }
 
   .bottom {
-    height: 7em;
+    height: 4em;
     background: #2B2F33;
 
   }
@@ -624,6 +624,10 @@ footer {
       word-wrap: break-word;
     }
 
+  }
+
+  .about_person, .about_person .left{
+    text-align: center!important;
   }
 
   footer {

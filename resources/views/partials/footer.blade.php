@@ -4,13 +4,13 @@
         <div class="box col-lg-8 col-lg-push-2 col-xs-12">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-xs-12">
-                    <h4>Veiligheid</h4>
+                    <h4>Privacy</h4>
                     <p>Dit platform wordt op meerdere manieren beveiligd om uw data veilig te bewaren. Uw data wordt niet doorgegeven.</p>
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-xs-12">
-                    <h4>Help &amp; support</h4>
-                    <p>Bij problemen of vragen kan u steeds contact opnemen met UniHelp via <a href="mailto:info@unihelp.be">info@unihelp.be</a></p>
+                    <h4>Ondersteuning</h4>
+                    <p>Bij problemen of vragen kan u steeds terecht op onze  <a href="#"><b>Veelgestelde vragen</b> pagina</a>.</p>
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-xs-12">
@@ -46,19 +46,19 @@
     <div class="bottom clearfix">
         <div class="box col-lg-8 col-lg-push-2 col-xs-12">
             <div class="row">
-                <div class="col-lg-3 col-xs-12">
+                <div class="col-lg-3 col-xs-6">
                     <a><h6>&copy; 2017-2018 UniHelp</h6></a>
                 </div>
 
-                <div class="col-lg-3 col-xs-12">
+                <div class="col-lg-3 col-xs-6">
                     <a><h6>Cookie beleid</h6></a>
                 </div>
 
-                <div class="col-lg-3 col-xs-12">
+                <div class="col-lg-3 col-xs-6">
                     <a><h6>Privacy beleid</h6></a>
                 </div>
 
-                <div class="col-lg-3 col-xs-12">
+                <div class="col-lg-3 col-xs-6">
                     <a href="https://blog.unihelp.be" target="_blank"><h6>Project blog</h6></a>
                 </div>
             </div>

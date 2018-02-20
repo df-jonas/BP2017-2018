@@ -8,11 +8,16 @@
         <div class="table">
             <div class="sidebar">
 
-                <article class="item clearfix">
-                    <header>Nieuw bestand</header>
-                    <div>
-                        <a href="{{ route("sharing-new") }}">Nieuw bestand toevoegen.</a>
-                    </div>
+
+
+
+                <article class="item button clearfix">
+                    <a href="{{ route("sharing-new") }}">
+                        <button>
+                            Nieuw bestand toevoegen
+                        </button>
+                    </a>
+
                 </article>
 
                 <article class="item clearfix">

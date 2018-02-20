@@ -541,7 +541,7 @@ footer .top {
 }
 
 footer .bottom {
-  height: 7em;
+  height: 4em;
   background: #2B2F33;
 }
 
@@ -707,6 +707,11 @@ footer a:focus {
   #how-it-works .item p {
     text-align: justify;
     word-wrap: break-word;
+  }
+
+  .about_person,
+  .about_person .left {
+    text-align: center !important;
   }
 
   footer .top {

@@ -4,7 +4,8 @@
     @include('partials.platform.header')
     @include('partials.platform.subheader')
 
-    <div class="container table">
+    <div class="container">
+        <div class="table">
         <!-- Sidebar -->
         <div class="sidebar">
 
@@ -270,6 +271,7 @@
         <!-- content -->
     </div>
     <!-- container -->
+    </div>
 
     @include('partials.footer')
 @endsection

@@ -6,7 +6,8 @@
 
 
 
-    <div class="container table">
+    <div class="container">
+        <div class="table">
         <div class="sidebar">
             <!--<article class="item clearfix">
                 <header>Zoeken</header>
@@ -105,6 +106,7 @@
                     </div>
                 </article>
             </div>
+        </div>
         </div>
     </div>
 
