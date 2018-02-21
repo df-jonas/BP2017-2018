@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class CommunityController extends Controller
 {
     public function index()
@@ -27,5 +29,13 @@ class CommunityController extends Controller
     public function postdetail($group_id, $post_id)
     {
         return view("platform.community.postdetail");
+    }
+
+    public function newgrouppost(Request $request)
+    {
+    }
+
+    public function newpostpost(Request $request)
+    {
     }
 }

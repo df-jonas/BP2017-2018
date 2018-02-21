@@ -72,8 +72,10 @@ Route::group(['middleware' => ['auth']], function () {
          */
         Route::get('/community', 'CommunityController@index')->name('community-index');
         Route::get('/community/new', 'CommunityController@newgroup')->name('community-group-new');
+        Route::post('/community/new', 'CommunityController@newgrouppost');
         Route::get('/community/{group_id}', 'CommunityController@groupdetail')->name('community-group-detail');
         Route::get('/community/{group_id}/new', 'CommunityController@newpost')->name('community-post-new');
+        Route::post('/community/{group_id}/new', 'CommunityController@newpostpost');
         Route::get('/community/{group_id}/{post_id}', 'CommunityController@postdetail')->name('community-post-detail');
 
         /**
