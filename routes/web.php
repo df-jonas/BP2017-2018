@@ -70,11 +70,11 @@ Route::group(['middleware' => ['auth']], function () {
         /**
          * Community
          */
-        Route::get('/groups', 'CommunityController@index')->name('community-index');
-        Route::get('/groups/new', 'CommunityController@newgroup')->name('community-newgroup');
-        Route::get('/groups/group', 'CommunityController@group')->name('community-group');
-        Route::get('/groups/newpost', 'CommunityController@newpost')->name('community-newpost');
-        Route::get('/groups/group/detail', 'CommunityController@groupdetail')->name('community-group-detail');
+        Route::get('/community', 'CommunityController@index')->name('community-index');
+        Route::get('/community/new', 'CommunityController@newgroup')->name('community-group-new');
+        Route::get('/community/{group_id}', 'CommunityController@groupdetail')->name('community-group-detail');
+        Route::get('/community/{group_id}/new', 'CommunityController@newpost')->name('community-post-new');
+        Route::get('/community/{group_id}/{post_id}', 'CommunityController@postdetail')->name('community-post-detail');
 
         /**
          * Tutoring

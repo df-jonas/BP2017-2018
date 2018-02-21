@@ -12,8 +12,7 @@
                 <article class="item clearfix">
                     <header>Nieuw bestand</header>
                     <div>
-                        <a href="{{ route("sharing-new") }}">Nieuwe post maken.</a><br>
-                        <a href="{{ route("sharing-new") }}">Nieuwe groep maken.</a>
+                        <a href="{{ route("community-group-new") }}">Nieuwe groep maken.</a>
                     </div>
                 </article>
 

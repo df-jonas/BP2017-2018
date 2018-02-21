@@ -2,34 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class CommunityController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         return view("platform.community.index");
     }
 
-
-    public function group(Request $request)
+    public function newgroup()
     {
-        return view("platform.community.groepen");
+        return view("platform.community.groupnew");
     }
 
-    public function groupdetail(Request $request)
+    public function groupdetail($group_id)
     {
-        return view("platform.community.detail");
+        return view("platform.community.groupdetail");
     }
 
-    public function newpost(Request $request)
+    public function newpost($group_id)
     {
-        return view("platform.community.newpost");
+        return view("platform.community.postnew");
     }
 
-
-    public function newgroup(Request $request)
+    public function postdetail($group_id, $post_id)
     {
-        return view("platform.community.new");
+        return view("platform.community.postdetail");
     }
 }
