@@ -17,10 +17,7 @@ body.platform {
     display: none;
   }
 
-
 }
-
-
 
 /*Helpers*/
 
@@ -28,11 +25,14 @@ body.platform {
   padding: 2%;
 }
 
+.brown{
+  color: $unihelp-brown;
+}
 
 /*Buttons*/
 .download-button {
   padding: 1%;
-  background: $download-button;
+  background: $unihelp-brown;
   color: #FFFFFF;
   border: none;
   float: right;
@@ -44,13 +44,11 @@ body.platform {
   }
 }
 
-
 button.download, a.download, input.next, input.previous {
   @extend .download-button;
   margin-top: 3.5em;
   margin-bottom: 3.5em;
 }
-
 
 /*Header*/
 #platform_header {
@@ -186,14 +184,14 @@ button.download, a.download, input.next, input.previous {
 
 }
 
-
-.group_img{
+.group_img {
   width: 42px;
   height: 42px;
   border-radius: 50%;
   background-color: #FFFFFF;
   object-fit: cover;
 }
+
 /*Subheader*/
 .subheader {
   background: #FFFFFF;
@@ -214,9 +212,9 @@ button.download, a.download, input.next, input.previous {
       &:hover {
         border-bottom: 1px solid $unihelp-brown;
       }
-      a{
-        color:$grey;
-        &:hover, &:active{
+      a {
+        color: $grey;
+        &:hover, &:active {
           color: $unihelp-brown;
         }
 
@@ -270,7 +268,7 @@ div.container {
     vertical-align: top;
   }
 
-  .content{
+  .content {
     display: table-cell;
     left: 10px;
     width: 70%;
@@ -287,64 +285,60 @@ div.container {
   flex-wrap: wrap;
 }
 
-
 /*Sidebar*/
 .sidebar .item, .content .file, .content .group-type, .content .group-detail {
   background: #FFFFFF;
   margin-bottom: 3em;
 }
 
-
-
-
 .content .group-type .group {
   border-bottom: 1px solid $unihelp-brown;
-  img{
+  img {
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
-  .icons{
-    i{
+  .icons {
+    i {
       color: $unihelp-brown;
     }
-    span{
+    span {
       font-family: Raleway;
       padding-left: 5px;
       color: #0f0f0f;
     }
   }
 
-  .info{
-    span{
+  .info {
+    span {
       color: $unihelp-green;
     }
   }
-  &:last-child{
+  &:last-child {
     border: none;
   }
 
-  h4{
+  h4 {
     margin-bottom: 0;
   }
 }
 
-.content .group-detail{
-  .info{
-    ul{
+.content .group-detail {
+  .info {
+    ul {
       width: 100%;
       list-style-type: none;
       padding-left: 0;
-      li{
+      li {
         width: 15%;
         display: inline-block;
       }
     }
   }
 
-  .account_img{
+  .account_img {
     width: 32px;
     height: 32px;
   }
@@ -362,12 +356,11 @@ div.container {
   border-bottom: 1px solid #dfdfdf;
 }
 
-
 /*New/upload button*/
-.sidebar .button{
+.sidebar .button {
   background: $unihelp-brown;
   padding: 0;
-  button{
+  button {
     width: 100%;
     padding: 2px 10px;
     background: $unihelp-brown;
@@ -376,9 +369,6 @@ div.container {
   }
 }
 
-.sidebar .item span {
-  margin-left: 8px;
-}
 
 .content .file header a, .content .group-type header a, .content .group-detail header a {
   padding-right: 1%;
@@ -387,26 +377,36 @@ div.container {
   float: right;
 }
 
-.sidebar{
-  .item{
+.sidebar {
+  .item {
     /*mijn bestanden ul*/
-    .highlight{
+    .highlight {
       width: 100%;
       padding-left: 0;
       background: #FFFFFF;
       padding: 2%;
-      li{
+      li {
         display: block;
         margin-bottom: 2%;
         width: 100%;
       }
+
     }
-    li{
-      .left{
+    &.uploads{
+      h5{
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      .row{
+        margin-bottom: 20px;
+      }
+    }
+    li {
+      .left {
         display: inline-block;
         vertical-align: top; /*not required*/
         position: relative;
-        img{
+        img {
           max-height: 100%;
           max-width: 100%;
           position: absolute;
@@ -421,11 +421,6 @@ div.container {
   }
 }
 
-
-
-
-
-
 .sidebar .item .highlight li .left, .content .file .left {
   width: 20%;
   float: left;
@@ -437,32 +432,37 @@ div.container {
   padding: 0;
 }
 
-
 .sidebar .item .highlight li .left img, .content .file .left img {
   width: 32px;
   height: 32px;
   object-fit: contain;
 }
 
+.content {
+  .file {
 
-.content{
-  .file{
-    .left{
-      width: 10%;
-      img{
-        height: 64px;
-        width: 64px;
-        vertical-align: middle;
+    a {
+      cursor: pointer;
+      @include link(#000000, #000000, #000000, #000000);
+    }
+
+    header{
+      a{
+        @include link(white, white, white, white);
       }
     }
-    .right{
-      width: 100%;
-      h3{
-        margin-top: 0;
+    h3{
+      margin-top: 0;
+      /*margin-bottom: 0;*/
+    }
+    .icon {
+      img {
+        margin-top: 30%;
+        margin-left: 5%;
       }
     }
-    .new{
-      input{
+    .new {
+      input {
         margin-bottom: 2em;
         padding: 0.5%;
       }
@@ -470,18 +470,10 @@ div.container {
   }
 }
 
-
 .sidebar .item .highlight li .right, .content .file .right {
   /*width: 80%;*/
   float: right;
 }
-
-
-
-
-
-
-
 
 .content .file.detail .left {
   width: 20%;
@@ -506,11 +498,7 @@ div.container {
   margin-top: 3.5em;
 }
 
-.content .file.detail .details .detail {
-  display: inline-block;
-  width: 15%;
-  margin: 0 2% 0 2%;
-}
+
 
 .content .file.detail .details .detail i {
   font-size: 1.5em;
@@ -526,14 +514,21 @@ div.container {
 }
 
 /*star rating*/
-.content .file .right .rating {
+.content .file .rating {
   float: right;
   font-size: 1.5em;
 }
 
-.rating .checked {
-  color: orange;
+.rating{
+  &:hover{
+    cursor: pointer;
+  }
+
+  .checked{
+    color: $unihelp-brown;
+  }
 }
+
 
 /* search input */
 .inner-addon {
@@ -830,7 +825,7 @@ form .form-group {
   }
 
   .container {
-    width: 100%!important;
+    width: 100% !important;
   }
 
   .subheader {
@@ -841,22 +836,19 @@ form .form-group {
   }
   /*SIDEBAR*/
   .sidebar, .content {
-    display: block!important;
+    display: block !important;
     padding: 0;
-    width: 100%!important;
+    width: 100% !important;
 
   }
-
 
 }
 
 @media only screen and (max-width: 480px) {
 
-
   .padding {
     position: relative;
   }
-
 
   .content .file {
     .left, .right {

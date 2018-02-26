@@ -25,6 +25,10 @@ body.platform .mce-notification {
   padding: 2%;
 }
 
+.brown {
+  color: #8A7E72;
+}
+
 /*Buttons*/
 
 .download-button,
@@ -33,7 +37,7 @@ a.download,
 input.next,
 input.previous {
   padding: 1%;
-  background: #505457;
+  background: #8A7E72;
   color: #FFFFFF;
   border: none;
   float: right;
@@ -445,10 +449,6 @@ div.container {
   color: #FFFFFF;
 }
 
-.sidebar .item span {
-  margin-left: 8px;
-}
-
 .content .file header a,
 .content .group-type header a,
 .content .group-detail header a {
@@ -473,6 +473,15 @@ div.container {
   display: block;
   margin-bottom: 2%;
   width: 100%;
+}
+
+.sidebar .item.uploads h5 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.sidebar .item.uploads .row {
+  margin-bottom: 20px;
 }
 
 .sidebar .item li .left {
@@ -514,22 +523,52 @@ div.container {
      object-fit: contain;
 }
 
-.content .file .left {
-  width: 10%;
+.content .file a {
+  cursor: pointer;
 }
 
-.content .file .left img {
-  height: 64px;
-  width: 64px;
-  vertical-align: middle;
+.content .file a {
+  color: #000000;
 }
 
-.content .file .right {
-  width: 100%;
+.content .file a:visited {
+  color: #000000;
 }
 
-.content .file .right h3 {
+.content .file a:hover {
+  color: #000000;
+}
+
+.content .file a:active,
+.content .file a:focus {
+  color: #000000;
+}
+
+.content .file header a {
+  color: white;
+}
+
+.content .file header a:visited {
+  color: white;
+}
+
+.content .file header a:hover {
+  color: white;
+}
+
+.content .file header a:active,
+.content .file header a:focus {
+  color: white;
+}
+
+.content .file h3 {
   margin-top: 0;
+  /*margin-bottom: 0;*/
+}
+
+.content .file .icon img {
+  margin-top: 30%;
+  margin-left: 5%;
 }
 
 .content .file .new input {
@@ -569,12 +608,6 @@ div.container {
   margin-top: 3.5em;
 }
 
-.content .file.detail .details .detail {
-  display: inline-block;
-  width: 15%;
-  margin: 0 2% 0 2%;
-}
-
 .content .file.detail .details .detail i {
   font-size: 1.5em;
   color: #4D6A50;
@@ -590,13 +623,17 @@ div.container {
 
 /*star rating*/
 
-.content .file .right .rating {
+.content .file .rating {
   float: right;
   font-size: 1.5em;
 }
 
+.rating:hover {
+  cursor: pointer;
+}
+
 .rating .checked {
-  color: orange;
+  color: #8A7E72;
 }
 
 /* search input */

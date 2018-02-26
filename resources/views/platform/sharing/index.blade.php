@@ -71,25 +71,56 @@
                     </div>
                 </article>
 
-                <article class="item">
+                <article class="item uploads">
                     <header>Mijn uploads</header>
-                    <ul class="highlight">
 
-                        @foreach($userfiles as $userfile)
-                            <li class="clearfix">
-                            <!--<div class="left col-xs-3 clearfix">
-                            <img src="{{asset('img/logo/favicon.png')}}">
-                        </div>-->
 
-                                <div class="col-xs-12">
-                                    <h4><a href="{{ $userfile->detailUrl() }}">{{$userfile->title}}</a></h4>
-                                    <p>Downloads: {{ $userfile->downloads() }}</p>
+<div class="padding">
+
+                        @foreach($userfiles as $file)
+                            @php
+                                $rating = $file->averageRating()
+                            @endphp
+
+
+                                <div class="row flex">
+                                    <div class="icon col-md-2 col-xs-12">
+                                        <img src="{{asset('img/icons/001-file.png')}} "
+                                             style="width: 36px; height: 36px">
+                                    </div>
+
+
+                                    <div class="col-md-8 col-xs-12">
+                                        <h5><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h5>
+                                        <div class="rating">
+                                        @for ($i = 1; $i <= 5; $i++)
+                                            @if($i <= $rating)
+                                                <span class="fa fa-star checked"></span>
+                                            @else
+                                                <span class="fa fa-star"></span>
+                                            @endif
+                                        @endfor
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-2 col-xs-12">
+                                        <i class="fa fa-pencil brown"></i>
+
+
+                                    </div>
+
                                 </div>
-                            </li>
                         @endforeach
-                    </ul>
+</div>
+
                 </article>
             </div>
+
+
+
+
+
 
             <div class="content">
                 <div id="filecontainer" class="files">
@@ -102,9 +133,22 @@
                                         href="{{ $file->downloadUrl() }}"><i class="fa fa-download"></i></a>
                             </header>
                             <div class="padding">
-                                <div class="right">
-                                    <div class="rating">
 
+                                <div class="row flex">
+                                    <div class="icon col-md-1 col-xs-12">
+                                        <img src="{{asset('img/icons/001-file.png')}} "
+                                             style="width: 36px; height: 36px">
+                                    </div>
+
+                                    <div class="col-md-5 col-xs-12">
+                                        <h3><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h3>
+                                        <h6 class="brown">Erasmushogeschool - Multec</h6>
+                                        <p>door {{$file->user->name}}</p>
+
+
+                                    </div>
+                                    <div class="col-md-6 col-xs-12" style="text-align: right">
+                                        <div class="rating">
                                         @for ($i = 1; $i <= 5; $i++)
                                             @if($i <= $rating)
                                                 <span class="fa fa-star checked"></span>
@@ -112,9 +156,10 @@
                                                 <span class="fa fa-star"></span>
                                             @endif
                                         @endfor
+                                        </div>
                                     </div>
-                                    <h3><a href="{{ $file->detailUrl() }}">{{$file->title}}</a></h3>
-                                    <p>door {{$file->user->name}}</p>
+                                </div>
+
 
                                 </div>
                         </article>

@@ -98,7 +98,7 @@
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Klachten</h4>
+                                        <h3>Klachten</h3>
                                         <div class="row icons">
                                             <!--
                                             <div class="col-lg-2">

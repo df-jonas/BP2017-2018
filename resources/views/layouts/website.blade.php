@@ -25,8 +25,15 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.css') }}">
 
-
-
+    <!-- BugHerd script -->
+    <script type='text/javascript'>
+        (function (d, t) {
+            var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            bh.type = 'text/javascript';
+            bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=koh1utlymsn5ax0z3vqtia';
+            s.parentNode.insertBefore(bh, s);
+        })(document, 'script');
+    </script>
 
 
 
@@ -39,6 +46,16 @@
 <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
 <script src="{{ URL::asset('js/main.js') }}"></script>
 <script src="{{ URL::asset('js/nav.js') }}"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-47689548-7"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-47689548-7');
+</script>
+
 
 </body>
 </html>

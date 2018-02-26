@@ -388,9 +388,13 @@ form.register .form-group {
   border-radius: 3.5px;
   position: absolute;
   left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  top: 52%;
+  -webkit-transform: translate(-50%, -48%);
+  transform: translate(-50%, -48%);
+}
+
+.login_box input {
+  border-radius: 0;
 }
 
 .login_box .canvas {
@@ -429,10 +433,10 @@ form.register .form-group {
 
 .login_box .login.action-button,
 .login_box .register.action-button {
-  background: #333A40;
+  background: #4D6A50;
   width: 100%;
   padding: 2%;
-  margin-top: 15%;
+  /*margin-top: 15%;*/
   margin-bottom: 10%;
   color: #FFFFFF;
 }
@@ -641,12 +645,12 @@ footer a:focus {
   }
 
   footer .top {
-    min-height: 20em;
+    min-height: 15em;
     height: auto;
   }
 
   footer .bottom {
-    height: 12em;
+    /*height: 12em;*/
   }
 }
 
