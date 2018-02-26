@@ -10,16 +10,16 @@
         <div class="col-lg-6 col-md-10 col-sm-10 col-xs-12">
             <ul class="links">
                 <a href="{{ route('website-index') }}">
-                    <li>Home</li>
+                    <li class="hvr-shutter-out-horizontal">Home</li>
                 </a>
                 <a href="{{ route('website-about') }}">
-                    <li>Over UniHelp</li>
+                    <li class="hvr-shutter-out-horizontal">Over UniHelp</li>
                 </a>
                 <a href="{{ route('website-how') }}">
-                    <li>Hoe werkt het?</li>
+                    <li class="hvr-shutter-out-horizontal">Hoe werkt het?</li>
                 </a>
                 <a href="{{ route('login') }}">
-                    <li>Inloggen</li>
+                    <li class="hvr-shutter-out-horizontal">Inloggen</li>
                 </a>
                 <a href="{{ route('login') }}">
                     <li class="register">Registreren</li>
