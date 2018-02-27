@@ -88,7 +88,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $img_location = "empty.png";
+        $img_name = "empty.png";
 
         if (isset($data['avatar'])) {
             $img = $data['avatar'];
@@ -102,7 +102,7 @@ class RegisterController extends Controller
         }
 
         return User::create([
-            'image' => $img_location,
+            'image' => $img_name,
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],

@@ -17,18 +17,11 @@
                 </div>
             </article>-->
 
-
-
-
             <article class="item uploads">
                 <header>Mijn downloads</header>
-
-
                 <div class="padding">
 
                     @foreach($userdownloads as $userdownload)
-
-
 
                         <div class="row flex">
                             <div class="icon col-md-2 col-xs-12">
@@ -36,22 +29,16 @@
                                      style="width: 36px; height: 36px">
                             </div>
 
-
                             <div class="col-md-10 col-xs-12">
                                 <h5><a href="{{ $userdownload->file->detailUrl() }}"> {{$userdownload->file->title}}</a></h5>
 
                                 <small>Gedownload {{ $userdownload->humantimestamp() }}</small>
                             </div>
 
-
-
                         </div>
                     @endforeach
                 </div>
-
             </article>
-
-
         </div>
 
         <div class="content">
@@ -68,13 +55,11 @@
 
                                 </div>
                                 <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                    <h6 style="margin: 0">{{ $file->user->name }}</h6>
+                                    <h6 style="margin: 0">{{ $file->user->first_name }} {{ $file->user->last_name }}</h6>
                                     <h6 style="margin: 5px 0">{{ $file->humantimestamp() }}</h6>
                                 </div>
                             </div>
                         </div>
-
-
 
                         <div class="right">
                             <div class="rating">
