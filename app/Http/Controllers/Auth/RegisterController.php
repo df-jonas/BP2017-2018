@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Campus;
+use App\Fos;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Intervention\Image\Facades\Image;
 
 class RegisterController extends Controller
 {
@@ -28,7 +31,16 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/p/sharing';
+
+    public function showRegistrationForm()
+    {
+        $params = [
+            'campuses' => Campus::query()->orderBy("name")->get(),
+            'foses' => Fos::query()->orderBy("name")->get(),
+        ];
+        return view('auth.register', $params);
+    }
 
     /**
      * Create a new controller instance.
@@ -49,11 +61,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'avatar' => 'image|max:10240',
             'first_name' => 'required|string|max:191',
             'last_name' => 'required|string|max:191',
-            'birthdate' => 'required|date|olderThan:12',
             'email' => 'required|string|email|max:191|unique:users',
-            'password' => 'required|string|min:6|confirmed|max:191',
+            'password' => 'required|string|min:8|confirmed|max:191',
+            'campus' => 'required|numeric',
+            'fos' => 'required|numeric',
+            'tnc' => 'required'
         ]);
     }
 
@@ -62,7 +77,6 @@ class RegisterController extends Controller
         if ($request->wantsJson()) {
             return $user;
         }
-
         return redirect($this->redirectPath());
     }
 
@@ -74,13 +88,28 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $img_location = "empty.png";
+
+        if (isset($data['avatar'])) {
+            $img = $data['avatar'];
+            $img_name = time() . '_' . $img->getClientOriginalName();
+            $img_location = public_path('/img/avatars/' . $img_name);
+
+            Image::make($img)->resize(64, 64, function ($image) {
+                $image->aspectRatio();
+                $image->upsize();
+            })->save($img_location);
+        }
+
         return User::create([
+            'image' => $img_location,
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
-            'birthdate' => $data['birthdate'],
             'email' => $data['email'],
             'api_token' => SecurityFactory::generateApiToken(),
             'password' => bcrypt($data['password']),
+            'campusid' => $data['campus'],
+            'fosid' => $data['fos'],
         ]);
     }
 }

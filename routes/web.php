@@ -1,12 +1,6 @@
 <?php
 
-/*Route::get('/p/upload', function () {
-    return view('testing.fileupload');
-});*/
-
-/**
- * EXTERIOR DOMAIN ROUTES
- */
+/** EXTERIOR DOMAIN ROUTES */
 
 $exterior = function () {
     Route::get('/', function () {
@@ -18,46 +12,34 @@ $exterior = function () {
 Route::domain('static-unihelp.eu')->group($exterior);
 Route::domain('test.dev')->group($exterior);
 
-/**
- * UNSAFE ROUTES
- */
-
-// Website routes
+/** UNSAFE ROUTES */
 Route::get('/', 'WebsiteController@index')->name('website-index');
 Route::get('/about', 'WebsiteController@about')->name('website-about');
 Route::get('/how-it-works', 'WebsiteController@how')->name('website-how');
 Route::get('/cookies', 'WebsiteController@cookies')->name('website-cookies');
 Route::get('/privacy', 'WebsiteController@privacy')->name('website-privacy');
 
+Auth::routes();
+
 // Auth routes
-Route::get('/login', 'AuthController@login')->name('login');
-Route::get('/canvas/login', 'AuthController@index')->name('canvas-login');
-Route::get('/canvas/oauth_complete', 'AuthController@oauth_complete')->name('canvas-oauth-complete');
+// Route::get('/canvas/login', 'AuthController@index')->name('canvas-login');
+// Route::get('/canvas/oauth_complete', 'AuthController@oauth_complete')->name('canvas-oauth-complete');
+// Route::post('/logout', 'AuthController@logout');
+// Route::get('/register', 'AuthController@register')->name('register');
+// Route::post('/register', 'AuthController@registerPost');
+// Canvas routes
+// Route::get('/canvas/me', 'CanvasController@me')->name('canvas-me');
 
-/**
- * AUTH REQUIRED
- */
-
-
-
-
+/** AUTH REQUIRED */
 Route::group(['middleware' => ['auth']], function () {
 
-    // Auth routes
-    Route::get('/register', 'AuthController@register')->name('register');
-    Route::post('/register', 'AuthController@registerPost');
+    // Extra logout route
     Route::get('/logout', 'AuthController@logout')->name('logout');
-    Route::post('/logout', 'AuthController@logout');
-
-    // Canvas routes
-    Route::get('/canvas/me', 'CanvasController@me')->name('canvas-me');
 
     // Platform routes
-    Route::group(['middleware' => ['valid'], 'prefix' => 'p'], function () {
+    Route::group(['prefix' => 'p'], function () {
 
-        /**
-         * Sharing
-        */
+        /** Sharing */
         Route::get('/sharing', 'SharingController@index')->name('sharing-index');
         Route::get('/sharing/new', 'SharingController@newfile')->name('sharing-new');
         Route::post('/sharing/new', 'SharingController@newfilePost');
@@ -66,10 +48,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/sharing/proxy/{public}', 'SharingController@downloadproxy')->name('sharing-download');
         Route::get('/sharing/{id}', 'SharingController@detail')->name('sharing-detail');
 
-
-        /**
-         * Community
-         */
+        /** Community */
         Route::get('/community', 'CommunityController@index')->name('community-index');
         Route::get('/community/new', 'CommunityController@newgroup')->name('community-group-new');
         Route::post('/community/new', 'CommunityController@newgrouppost');
@@ -78,15 +57,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/community/{group_id}/new', 'CommunityController@newpostpost');
         Route::get('/community/{group_id}/{post_id}', 'CommunityController@postdetail')->name('community-post-detail');
 
-        /**
-         * Tutoring
-         */
+        /** Tutoring */
         Route::get('/tutoring', 'TutoringController@index')->name('tutoring-index');
     });
 
-
 });
-
-
-
-

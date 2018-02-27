@@ -30,7 +30,7 @@
                     <a href="{{ route('login') }}">
                         <li class="hvr-shutter-out-horizontal">Inloggen</li>
                     </a>
-                    <a href="{{ route('login') }}">
+                    <a href="{{ route('register') }}">
                         <li class="hvr-shutter-out-horizontal register">Registreren</li>
                     </a>
                 @endif
