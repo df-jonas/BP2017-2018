@@ -398,8 +398,17 @@ div.container {
   border: none;
 }
 
-.content .group-type .group h4 {
+.content .group-type .group h4,
+.content .group-type .group h3 {
   margin-bottom: 0;
+}
+
+.content .group-type .group h3 {
+  margin-top: 0;
+}
+
+.content .group-type .group .padding {
+  padding: 1.5%;
 }
 
 .content .group-detail .info ul {
@@ -482,6 +491,7 @@ div.container {
 
 .sidebar .item.uploads .row {
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .sidebar .item li .left {

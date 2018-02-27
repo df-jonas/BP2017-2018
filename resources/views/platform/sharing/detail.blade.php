@@ -106,7 +106,7 @@
                                 <h5>Type document</h5>
                                 <i class="fa fa-file"><span>{{ $file->doctype->name }}</span></i>
                             </div>
-                            <div class="detail col-lg-3 ">
+                            <div class="detail col-lg-3">
                                 <h5>Studierichting</h5>
                                 <i class="fa fa-graduation-cap"><span>{{ $file->field->name }}</span></i>
                             </div>

@@ -8,6 +8,9 @@
 
     <title>UniHelp | Home</title>
 
+
+    <script src="{{ URL::asset('js/loader.js') }}"></script>
+
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="{{asset('img/logo/favicon.png')}}"/>
 
@@ -18,8 +21,6 @@
 
     <!-- own css -->
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
-
-
 
 
     <!-- fontawesome -->
@@ -36,10 +37,15 @@
     </script>
 
 
-
 </head>
 <body>
+<!--
+preloader
+<div class="se-pre-con"></div>
+-->
+
 @yield('content')
+
 
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -50,7 +56,11 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47689548-7"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'UA-47689548-7');
