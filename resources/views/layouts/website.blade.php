@@ -15,20 +15,14 @@
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-theme.css') }}">
 
-
     <!-- own css -->
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
-
-
-
 
     <!-- fontawesome -->
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.css') }}">
 
-
-
-
-
+    <!-- mailchimp -->
+    <link rel="stylesheet" href="{{ URL::asset('css/mailchimp-horizontal-slim-10_7.css') }}">
 
 </head>
 <body>
