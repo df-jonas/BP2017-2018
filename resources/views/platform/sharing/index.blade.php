@@ -7,7 +7,6 @@
     <div class="container">
         <div class="table">
             <div class="sidebar">
-
                 <!-- Upload button -->
                 <article class="item button">
                     <a href="{{route('sharing-new')}}">
@@ -147,11 +146,8 @@
                     </div>
 
                 </article>
-                <!-- user items -->
-
+            <!-- user items -->
             </div>
-
-
             <div class="content">
                 <div id="filecontainer" class="files">
                     @foreach($files as $file)
@@ -172,10 +168,7 @@
 
                                     <div class="col-md-5 col-xs-12">
                                         <h3><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h3>
-                                        <h6 class="brown">Erasmushogeschool - Multec</h6>
-                                        <p>door {{$file->user->name}}</p>
-
-
+                                        <p>door {{$file->user->first_name}} {{$file->user->last_name}}</p>
                                     </div>
                                     <div class="col-md-6 col-xs-12" style="text-align: right">
                                         <div class="rating">
@@ -189,8 +182,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                         </article>
                     @endforeach

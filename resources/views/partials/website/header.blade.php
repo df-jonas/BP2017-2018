@@ -22,7 +22,6 @@
                     <a href="{{ route('logout') }}">
                         <li>Uitloggen</li>
                     </a>
-
                     <a href="{{ route('login') }}">
                         <li class="register">Platform</li>
                     </a>
@@ -30,7 +29,7 @@
                     <a href="{{ route('login') }}">
                         <li>Inloggen</li>
                     </a>
-                    <a href="{{ route('login') }}">
+                    <a href="{{ route('register') }}">
                         <li class="register">Registreren</li>
                     </a>
                 @endif

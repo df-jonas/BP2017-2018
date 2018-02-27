@@ -22,9 +22,6 @@
                     <!--<input id="newsletter">-->
 
                     <!-- Begin MailChimp Signup Form -->
-                    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet"
-                          type="text/css">
-
                     <div id="mc_embed_signup">
                         <form action="https://unihelp.us17.list-manage.com/subscribe/post?u=f29e41bdbbcefab7c8478106b&amp;id=d506043aaf"
                               method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"

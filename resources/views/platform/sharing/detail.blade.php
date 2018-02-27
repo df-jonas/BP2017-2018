@@ -4,13 +4,9 @@
     @include('partials.platform.header')
     @include('partials.platform.subheader')
 
-
-
     <div class="container">
         <div class="table">
         <div class="sidebar">
-
-
             <!-- Upload button -->
             <article class="item button">
                 <a href="{{route('sharing-new')}}">
@@ -18,21 +14,15 @@
                         <i class="glyphicon glyphicon-plus-sign"></i> Nieuw bestand
                     </button>
                 </a>
-
-
             </article>
             <!-- end Upload button -->
 
             <!-- user downloaded items -->
             <article class="item user-owned">
                 <header>Mijn downloads</header>
-
-
                 <div class="padding">
 
                     @foreach($userdownloads as $userdownload)
-
-
 
                         <div class="row flex">
                             <div class="icon col-md-2 col-xs-12">
@@ -40,23 +30,17 @@
                                      style="width: 36px; height: 36px">
                             </div>
 
-
                             <div class="col-md-10 col-xs-12">
                                 <h5><a href="{{ $userdownload->file->detailUrl() }}"> {{$userdownload->file->title}}</a></h5>
 
                                 <small>Gedownload {{ $userdownload->humantimestamp() }}</small>
                             </div>
 
-
-
                         </div>
                     @endforeach
                 </div>
-
             </article>
             <!-- user items -->
-
-
         </div>
 
         <div class="content">
@@ -74,8 +58,8 @@
                                                 src="{{ URL::asset('img/avatars/1518557547_bday.jpg') }}"
                                                 class="account_img"></div>
                                     <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 style="margin: 0">Arno Stalpaert</h6>
-                                        <h6 style="margin: 5px 0">Donderdag om 14:43</h6>
+                                        <h6 style="margin: 0">{{ $file->user->first_name }} {{ $file->user->last_name }}</h6>
+                                        <h6 style="margin: 5px 0">{{ $file->humantimestamp() }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -92,21 +76,14 @@
                                            value="
                                             @if ($userrating == null)
                                                    0
-@else
+                                            @else
                                            {{ $userrating->rating }}
                                            @endif
                                                    "/>
                                 </div>
 
                             </div>
-
-
-
-
-
-
-
-
+                        </div><!--TODO-->
 
                         <div class="notes col-xs-12">
                             <h3>{{ $file->title }}</h3>
