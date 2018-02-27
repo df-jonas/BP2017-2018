@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/platform.css') }}">
 
+    <!-- mailchimp -->
+    <link rel="stylesheet" href="{{ URL::asset('css/mailchimp-horizontal-slim-10_7.css') }}">
+
     <!-- font -->
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.css') }}">
 
