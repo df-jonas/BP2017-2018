@@ -10,28 +10,27 @@
         <div class="col-lg-6 col-md-10 col-sm-10 col-xs-12">
             <ul class="links">
                 <a href="{{ route('website-index') }}">
-                    <li class="hvr-shutter-out-horizontal">Home</li>
+                    <li>Home</li>
                 </a>
                 <a href="{{ route('website-about') }}">
-                    <li class="hvr-shutter-out-horizontal">Over UniHelp</li>
+                    <li>Over UniHelp</li>
                 </a>
                 <a href="{{ route('website-how') }}">
-                    <li class="hvr-shutter-out-horizontal">Hoe werkt het?</li>
+                    <li>Hoe werkt het?</li>
                 </a>
                 @if (Auth::check())
                     <a href="{{ route('logout') }}">
-                        <li class="hvr-shutter-out-horizontal">Uitloggen</li>
+                        <li>Uitloggen</li>
                     </a>
-
                     <a href="{{ route('login') }}">
-                        <li class="hvr-shutter-out-horizontal register">Platform</li>
+                        <li class="register">Platform</li>
                     </a>
                 @else
                     <a href="{{ route('login') }}">
-                        <li class="hvr-shutter-out-horizontal">Inloggen</li>
+                        <li>Inloggen</li>
                     </a>
                     <a href="{{ route('register') }}">
-                        <li class="hvr-shutter-out-horizontal register">Registreren</li>
+                        <li class="register">Registreren</li>
                     </a>
                 @endif
 

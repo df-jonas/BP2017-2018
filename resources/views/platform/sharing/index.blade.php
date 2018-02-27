@@ -7,17 +7,20 @@
     <div class="container">
         <div class="table">
             <div class="sidebar">
-
-                <article class="item button clearfix">
-                    <a href="{{ route("sharing-new") }}">
+                <!-- Upload button -->
+                <article class="item button">
+                    <a href="{{route('sharing-new')}}">
                         <button>
-                            Nieuw bestand toevoegen
+                            <i class="glyphicon glyphicon-plus-sign"></i> Bestand toevoegen
                         </button>
                     </a>
 
-                </article>
 
-                <article class="item clearfix">
+                </article>
+                <!-- end Upload button -->
+
+                <!-- Search form -->
+                <article class="item search">
                     <header>Zoeken</header>
                     <div class="inner-addon left-addon">
                         <i class="glyphicon glyphicon-search"></i>
@@ -25,9 +28,11 @@
                                placeholder="zoekterm"/>
                     </div>
                 </article>
+                <!-- Search form -->
 
-                <article class="item">
-                    <header>Filteren</header>
+                <!-- filter menu -->
+                <article class="item filter">
+                    <header>Bestanden filteren</header>
                     <div class="padding">
                         <div class="form-group clearfix">
                             <div class="selectdiv">
@@ -65,11 +70,39 @@
                                 </label>
                             @endforeach
                         </div>
+
+                        <!-- todo: bestands types ophalen (samenvatting; notities) -->
+                        <label>Type bestand</label>
+                        <br>
+                        <div class="form-group clearfix">
+
+                            <label class="checkbox-container col-xs-12">Type 1
+                                <input type="checkbox" name="pubyear[]" value="type 1"
+                                       class="filterlistener" checked>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label class="checkbox-container col-xs-12">Type 2
+                                <input type="checkbox" name="pubyear[]" value="type 1"
+                                       class="filterlistener" checked>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label class="checkbox-container col-xs-12">Type 3
+                                <input type="checkbox" name="pubyear[]" value="type 1"
+                                       class="filterlistener" checked>
+                                <span class="checkmark"></span>
+                            </label>
+
+                        </div>
+
                         <input type="hidden" class="filterlistener" name="_token" id="token" value="{{ csrf_token() }}">
                     </div>
                 </article>
+                <!-- filter menu -->
 
-                <article class="item uploads">
+                <!-- user uploaded items -->
+                <article class="item user-owned">
                     <header>Mijn uploads</header>
 
 
@@ -113,15 +146,15 @@
                     </div>
 
                 </article>
+            <!-- user items -->
             </div>
-
             <div class="content">
                 <div id="filecontainer" class="files">
                     @foreach($files as $file)
                         @php
                             $rating = $file->averageRating()
                         @endphp
-                        <article class="file clearfix">
+                        <article class="file item clearfix">
                             <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a
                                         href="{{ $file->downloadUrl() }}"><i class="fa fa-download"></i></a>
                             </header>
@@ -149,7 +182,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </article>
                     @endforeach

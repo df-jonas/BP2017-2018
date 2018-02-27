@@ -29,6 +29,14 @@ body.platform .mce-notification {
   color: #8A7E72;
 }
 
+.clearfix {
+  display: block;
+}
+
+div.container {
+  width: 80%;
+}
+
 /*Buttons*/
 
 .download-button,
@@ -295,15 +303,12 @@ input.previous {
   padding-right: 0.85em;
 }
 
-div.container {
-  width: 80%;
-}
-
+/*
 .account_img.edit {
   position: absolute;
   top: -4px;
   right: -16px;
-  background: #4D6A50;
+  background: $unihelp-green;
   color: #FFFFFF;
   height: 20px;
   width: 20px;
@@ -318,10 +323,7 @@ div.container {
   font-weight: 500;
   color: #FFFFFF;
 }
-
-.clearfix {
-  display: block;
-}
+*/
 
 /*table layout*/
 
@@ -358,18 +360,16 @@ div.container {
       flex-wrap: wrap;
 }
 
-/*Sidebar*/
+/*block witte achtergrond*/
 
-.sidebar .item,
-.content .file,
-.content .group-type,
-.content .group-detail {
+.item {
   background: #FFFFFF;
   margin-bottom: 3em;
 }
 
 .content .group-type .group {
   border-bottom: 1px solid #8A7E72;
+  cursor: pointer;
 }
 
 .content .group-type .group img {
@@ -411,27 +411,27 @@ div.container {
   padding: 1.5%;
 }
 
-.content .group-detail .info ul {
+.content .detail .info ul {
   width: 100%;
   list-style-type: none;
   padding-left: 0;
 }
 
-.content .group-detail .info ul li {
+.content .detail .info ul li {
   width: 15%;
   display: inline-block;
 }
 
-.content .group-detail .account_img {
+.content .detail .account_img {
   width: 32px;
   height: 32px;
 }
 
-.sidebar .item header,
-.content .file header,
-.content .group-type header,
-.group-detail header,
-.sidebar .button {
+.content .detail .actions .action {
+  padding: 1%;
+}
+
+.item header {
   background: #4D6A50;
   height: 2em;
   color: #FFFFFF;
@@ -441,6 +441,29 @@ div.container {
   text-decoration: none;
   font-size: 16px;
   border-bottom: 1px solid #dfdfdf;
+}
+
+#tutoringcontent .item {
+  padding: 0;
+  border: 5px solid transparent;
+  border-top: 0;
+  text-align: center;
+}
+
+#tutoringcontent .item header {
+  background: #8A7E72;
+  text-align: center;
+}
+
+#tutoringcontent .item .padding {
+  border: 5px solid transparent;
+  border-top: 0;
+}
+
+#tutoringcontent .item img {
+  width: 128px;
+  height: 128px;
+  margin: 10%;
 }
 
 /*New/upload button*/
@@ -484,53 +507,14 @@ div.container {
   width: 100%;
 }
 
-.sidebar .item.uploads h5 {
+.sidebar .item.user-owned h5 {
   margin-bottom: 0;
   margin-top: 0;
 }
 
-.sidebar .item.uploads .row {
+.sidebar .item.user-owned .row {
   margin-bottom: 20px;
   margin-top: 20px;
-}
-
-.sidebar .item li .left {
-  display: inline-block;
-  vertical-align: top;
-  /*not required*/
-  position: relative;
-}
-
-.sidebar .item li .left img {
-  max-height: 100%;
-  max-width: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-.sidebar .item .highlight li .left,
-.content .file .left {
-  width: 20%;
-  float: left;
-  padding: 2%;
-  height: 5em;
-}
-
-.content .file .left,
-.content .file .right {
-  padding: 0;
-}
-
-.sidebar .item .highlight li .left img,
-.content .file .left img {
-  width: 32px;
-  height: 32px;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 .content .file a {
@@ -584,32 +568,6 @@ div.container {
 .content .file .new input {
   margin-bottom: 2em;
   padding: 0.5%;
-}
-
-.sidebar .item .highlight li .right,
-.content .file .right {
-  /*width: 80%;*/
-  float: right;
-}
-
-.content .file.detail .left {
-  width: 20%;
-}
-
-.content .file.detail .right {
-  width: 80%;
-}
-
-.content .file.detail .left,
-.content .file.detail .right {
-  height: 5em;
-}
-
-.content .file.detail .left img {
-  height: 32px;
-  width: 32px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .content .file.detail .notes,
@@ -967,6 +925,14 @@ form .form-group {
     display: none;
   }
 
+  .table .sidebar {
+    margin-top: 0 !important;
+  }
+
+  .table .content {
+    padding-left: 0 !important;
+  }
+
   .container {
     width: 100% !important;
   }
@@ -990,6 +956,11 @@ form .form-group {
 }
 
 @media only screen and (max-width: 480px) {
+  .sidebar .user-owned,
+  .sidebar .stats {
+    display: none;
+  }
+
   .padding {
     position: relative;
   }

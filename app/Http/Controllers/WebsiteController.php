@@ -37,5 +37,9 @@ class WebsiteController extends Controller
     {
         return view("website.privacy");
     }
+    public function copyright()
+    {
+        return view("website.copyright");
+    }
 
 }

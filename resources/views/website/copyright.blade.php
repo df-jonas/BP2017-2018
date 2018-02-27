@@ -1,12 +1,10 @@
 @extends('layouts.website')
 
-
-
 @section('content')
     @include('partials.website.header')
 
     <div class="container">
-        <h1>Privacy beleid</h1>
+        <h1>Auteursrecht</h1>
 
         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
             tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
@@ -82,8 +80,6 @@
             porttitor, facilisis luctus, metus</p>
         <hr>
     </div>
-
-
 
 
 

@@ -4,20 +4,21 @@
     @include('partials.platform.header')
     @include('partials.platform.subheader')
 
-
-
     <div class="container">
         <div class="table">
         <div class="sidebar">
-            <!--<article class="item clearfix">
-                <header>Zoeken</header>
-                <div class="inner-addon left-addon">
-                    <i class="glyphicon glyphicon-search"></i>
-                    <input type="text" class="form-control" placeholder="zoekterm"/>
-                </div>
-            </article>-->
+            <!-- Upload button -->
+            <article class="item button">
+                <a href="{{route('sharing-new')}}">
+                    <button>
+                        <i class="glyphicon glyphicon-plus-sign"></i> Nieuw bestand
+                    </button>
+                </a>
+            </article>
+            <!-- end Upload button -->
 
-            <article class="item uploads">
+            <!-- user downloaded items -->
+            <article class="item user-owned">
                 <header>Mijn downloads</header>
                 <div class="padding">
 
@@ -39,67 +40,71 @@
                     @endforeach
                 </div>
             </article>
+            <!-- user items -->
         </div>
 
         <div class="content">
             <div class="files">
-                <article class="file detail clearfix">
+                <article class="file detail item clearfix">
                     <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a
                                 href="{{ $file->downloadUrl() }}"><i class="fa fa-download"></i></a>
                     </header>
                     <div class="padding">
-                        <div class="left">
-                            <div class="table">
-                                <div style="display: table-cell; width: 32px">
-                                    <img src="{{ asset('img/avatars/' . $file->user->image )}}" class="account_img">
 
-                                </div>
-                                <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                    <h6 style="margin: 0">{{ $file->user->first_name }} {{ $file->user->last_name }}</h6>
-                                    <h6 style="margin: 5px 0">{{ $file->humantimestamp() }}</h6>
+                        <div class="row flex">
+                            <div class="col-lg-3 col-xs-12">
+                                <div class="table">
+                                    <div style="display: table-cell; width: 32px"><img
+                                                src="{{ URL::asset('img/avatars/1518557547_bday.jpg') }}"
+                                                class="account_img"></div>
+                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
+                                        <h6 style="margin: 0">{{ $file->user->first_name }} {{ $file->user->last_name }}</h6>
+                                        <h6 style="margin: 5px 0">{{ $file->humantimestamp() }}</h6>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="right">
-                            <div class="rating">
-                                <input hidden type="hidden" id="csrftoken" value="{{csrf_token()}}">
-                                <input type="hidden" id="fileid" hidden name="fileid" value="{{ $file->id }}">
-                                <!--<label for="rev_stars">Uw rating:</label>-->
-                                <input min="1" max="5" type="number" name="stars" id="rev_stars" class="rating"
-                                       data-active-icon="fa fa-star checked"
-                                       data-inactive-icon="fa fa-star"
-                                       data-max="5" data-min="1" data-empty-value="5" data-inline
-                                       value="
+                            <div class="col-lg-9 col-xs-12">
+                                <div class="rating">
+                                    <input hidden type="hidden" id="csrftoken" value="{{csrf_token()}}">
+                                    <input type="hidden" id="fileid" hidden name="fileid" value="{{ $file->id }}">
+                                    <!--<label for="rev_stars">Uw rating:</label>-->
+                                    <input min="1" max="5" type="number" name="stars" id="rev_stars" class="rating"
+                                           data-active-icon="fa fa-star checked"
+                                           data-inactive-icon="fa fa-star"
+                                           data-max="5" data-min="1" data-empty-value="5" data-inline
+                                           value="
                                             @if ($userrating == null)
-                                               0
+                                                   0
                                             @else
-                                       {{ $userrating->rating }}
-                                       @endif
-                                               "/>
-                            </div>
-                        </div>
+                                           {{ $userrating->rating }}
+                                           @endif
+                                                   "/>
+                                </div>
 
-                        <div class="notes">
+                            </div>
+                        </div><!--TODO-->
+
+                        <div class="notes col-xs-12">
                             <h3>{{ $file->title }}</h3>
                             <p>{{ $file->filedescription }}</p>
                         </div>
 
-                        <div class="details clearfix">
+                        <div class="details col-xs-12">
                             <div class="row">
-                            <div class="detail col-lg-3">
+                            <div class="detail col-lg-3 col-xs-6">
                                 <h5>Type document</h5>
                                 <i class="fa fa-file"><span>{{ $file->doctype->name }}</span></i>
                             </div>
-                            <div class="detail col-lg-3">
+                            <div class="detail col-lg-3 col-xs-6">
                                 <h5>Studierichting</h5>
                                 <i class="fa fa-graduation-cap"><span>{{ $file->field->name }}</span></i>
                             </div>
-                            <div class="detail col-lg-3">
+                            <div class="detail col-lg-3 col-xs-6">
                                 <h5>Studiejaar</h5>
                                 <i class="fa fa-archive"><span>{{ $file->degree->name }}</span></i>
                             </div>
-                            <div class="detail col-lg-3">
+                            <div class="detail col-lg-3 col-xs-6">
                                 <h5>Vak</h5>
                                 <i class="fa fa-book"><span>{{ $file->course->name }}</span></i>
                             </div>
@@ -108,6 +113,7 @@
                         </div>
 
                         <a class="download col-lg-2" href="{{ $file->downloadUrl() }}">Download</a>
+                        </div>
                     </div>
                 </article>
             </div>
