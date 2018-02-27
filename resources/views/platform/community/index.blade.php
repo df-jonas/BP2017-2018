@@ -8,14 +8,17 @@
         <div class="table">
 
             <div class="sidebar">
-
-                <article class="item button clearfix">
+                <!--<article class="item button clearfix">
                     <a href="#">
                         <button>
                             Nieuwe post toevoegen
                         </button>
-                    </a>
-
+                    </a>-->
+                <article class="item clearfix">
+                    <header>Nieuw bestand</header>
+                    <div>
+                        <a href="{{ route("community-group-new") }}">Nieuwe groep maken.</a>
+                    </div>
                 </article>
 
                 <article class="item clearfix">
