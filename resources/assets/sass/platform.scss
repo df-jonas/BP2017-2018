@@ -29,6 +29,15 @@ body.platform {
   color: $unihelp-brown;
 }
 
+.clearfix {
+  display: block;
+}
+
+
+div.container {
+  width: 80%;
+}
+
 /*Buttons*/
 .download-button {
   padding: 1%;
@@ -227,10 +236,9 @@ button.download, a.download, input.next, input.previous {
   }
 }
 
-div.container {
-  width: 80%;
-}
 
+
+/*
 .account_img.edit {
   position: absolute;
   top: -4px;
@@ -250,10 +258,8 @@ div.container {
   font-weight: 500;
   color: #FFFFFF;
 }
+*/
 
-.clearfix {
-  display: block;
-}
 
 /*table layout*/
 .table {
@@ -285,14 +291,16 @@ div.container {
   flex-wrap: wrap;
 }
 
-/*Sidebar*/
-.sidebar .item, .content .file, .content .group-type, .content .group-detail {
+/*block witte achtergrond*/
+.item {
   background: #FFFFFF;
   margin-bottom: 3em;
 }
 
+
 .content .group-type .group {
   border-bottom: 1px solid $unihelp-brown;
+  cursor: pointer;
   img {
     position: absolute;
     top: 50%;
@@ -332,7 +340,7 @@ div.container {
   }
 }
 
-.content .group-detail {
+.content .detail {
   .info {
     ul {
       width: 100%;
@@ -349,10 +357,16 @@ div.container {
     width: 32px;
     height: 32px;
   }
+
+  .actions{
+    .action{
+      padding: 1%;
+    }
+  }
 }
 
-.sidebar .item header, .content .file header, .content .group-type header, .group-detail header, .sidebar .button {
-  background: #4D6A50;
+.item header{
+  background: $unihelp-green;
   height: 2em;
   color: #FFFFFF;
   line-height: 1.75em;
@@ -363,6 +377,33 @@ div.container {
   border-bottom: 1px solid #dfdfdf;
 }
 
+
+
+#tutoringcontent{
+  .item{
+    padding: 0;
+    border: 5px solid transparent;
+    border-top: 0;
+    text-align: center;
+
+    header{
+      background: $unihelp-brown;
+      text-align: center;
+    }
+    .padding{
+      border: 5px solid transparent;
+      border-top: 0;
+    }
+
+    img{
+      width: 128px;
+      height: 128px;
+      margin: 10%;
+    }
+
+
+  }
+}
 /*New/upload button*/
 .sidebar .button {
   background: $unihelp-brown;
@@ -399,7 +440,7 @@ div.container {
       }
 
     }
-    &.uploads{
+    &.user-owned{
       h5{
         margin-bottom: 0;
         margin-top: 0;
@@ -409,42 +450,12 @@ div.container {
         margin-top: 20px;
       }
     }
-    li {
-      .left {
-        display: inline-block;
-        vertical-align: top; /*not required*/
-        position: relative;
-        img {
-          max-height: 100%;
-          max-width: 100%;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          margin: auto;
-        }
-      }
-    }
+
+
+
   }
 }
 
-.sidebar .item .highlight li .left, .content .file .left {
-  width: 20%;
-  float: left;
-  padding: 2%;
-  height: 5em;
-}
-
-.content .file .left, .content .file .right {
-  padding: 0;
-}
-
-.sidebar .item .highlight li .left img, .content .file .left img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-}
 
 .content {
   .file {
@@ -478,28 +489,7 @@ div.container {
   }
 }
 
-.sidebar .item .highlight li .right, .content .file .right {
-  /*width: 80%;*/
-  float: right;
-}
 
-.content .file.detail .left {
-  width: 20%;
-}
-
-.content .file.detail .right {
-  width: 80%;
-}
-
-.content .file.detail .left, .content .file.detail .right {
-  height: 5em;
-}
-
-.content .file.detail .left img {
-  height: 32px;
-  width: 32px;
-  object-fit: cover;
-}
 
 .content .file.detail .notes, .content .file.detail .details {
   display: block;
@@ -832,6 +822,17 @@ form .form-group {
     display: none;
   }
 
+
+  .table{
+    .sidebar{
+      margin-top: 0!important;
+    }
+
+    .content{
+      padding-left: 0!important;
+    }
+  }
+
   .container {
     width: 100% !important;
   }
@@ -842,6 +843,7 @@ form .form-group {
   div.table {
     margin-top: 1em;
   }
+
   /*SIDEBAR*/
   .sidebar, .content {
     display: block !important;
@@ -853,6 +855,13 @@ form .form-group {
 }
 
 @media only screen and (max-width: 480px) {
+
+
+.sidebar{
+  .user-owned, .stats{
+    display: none;
+  }
+}
 
   .padding {
     position: relative;
