@@ -28,6 +28,7 @@ Route::get('/about', 'WebsiteController@about')->name('website-about');
 Route::get('/how-it-works', 'WebsiteController@how')->name('website-how');
 Route::get('/cookies', 'WebsiteController@cookies')->name('website-cookies');
 Route::get('/privacy', 'WebsiteController@privacy')->name('website-privacy');
+Route::get('/copyright', 'WebsiteController@copyright')->name('website-copyright');
 
 // Auth routes
 Route::get('/login', 'AuthController@login')->name('login');
@@ -82,6 +83,13 @@ Route::group(['middleware' => ['auth']], function () {
          * Tutoring
          */
         Route::get('/tutoring', 'TutoringController@index')->name('tutoring-index');
+
+
+        /**
+         * Profile
+         */
+        Route::get('/profile', 'ProfileController@index')->name('profile-index');
+
     });
 
 

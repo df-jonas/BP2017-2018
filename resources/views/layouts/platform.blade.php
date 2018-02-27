@@ -25,9 +25,9 @@
     <!-- font -->
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.css') }}">
 
-    <!-- TinyMCE editor
+    <!-- TinyMCE editor -->
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({selector: 'textarea'});</script>-->
+    <script>tinymce.init({selector: 'textarea'});</script>
 
     <!-- BugHerd script -->
     <script type='text/javascript'>

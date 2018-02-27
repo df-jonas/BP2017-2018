@@ -9,35 +9,170 @@
 
             <div class="sidebar">
 
+                <!-- Upload button -->
+                <article class="item button">
+                    <a href="#">
+                        <button>
+                            <i class="glyphicon glyphicon-plus-sign"></i> Nieuwe post
+                        </button>
+                    </a>
 
-                <article class="item">
+
+                </article>
+                <!-- end Upload button -->
+
+                <!-- User items -->
+                <article class="item user-owned">
                     <header>Mijn posts</header>
-                    <ul class="highlight">
 
 
-                    </ul>
+                    <div class="padding">
+
+
+                        <div class="row flex">
+                            <div class="icon col-md-2 col-xs-2">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                            </div>
+
+
+                            <div class="col-md-8 col-xs-8">
+                                <h5><a href="#">Teveel springuren</a></h5>
+                                <div class="rating">
+
+
+                                    <p>test</p>
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-2 col-xs-2">
+                                <i class="fa fa-pencil brown"></i>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="row flex">
+                            <div class="icon col-md-2 col-xs-2">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                            </div>
+
+
+                            <div class="col-md-8 col-xs-8">
+                                <h5><a href="#">Teveel springuren</a></h5>
+                                <div class="rating">
+
+
+                                    <p>test</p>
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-2 col-xs-2">
+                                <i class="fa fa-pencil brown"></i>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="row flex">
+                            <div class="icon col-md-2 col-xs-2">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                            </div>
+
+
+                            <div class="col-md-8 col-xs-8">
+                                <h5><a href="#">Teveel springuren</a></h5>
+                                <div class="rating">
+
+
+                                    <p>test</p>
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-2 col-xs-2">
+                                <i class="fa fa-pencil brown"></i>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
                 </article>
+                <!-- end User items -->
 
-                <article class="item">
+                <!-- Community stats -->
+                <article class="item stats">
                     <header>Statistieken</header>
-                    <ul class="highlight">
+                    <div class="padding">
+                        <div class="row flex">
+                            <div class="col-xs-10">
+                                <p>Groepen</p>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <p>23</p>
+                            </div>
+                        </div>
+
+                        <div class="row flex">
+                            <div class="col-xs-10">
+                                <p>Posts</p>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <p>23</p>
+                            </div>
+                        </div>
+
+                        <div class="row flex">
+                            <div class="col-xs-10">
+                                <p>Aantal reacties</p>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <p>23</p>
+                            </div>
+                        </div>
 
 
-                    </ul>
+                        <div class="row flex">
+                            <div class="col-xs-10">
+                                <p>Aantal gebruikers</p>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <p>23</p>
+                            </div>
+                        </div>
+                    </div>
                 </article>
+                <!-- end Community stats -->
             </div>
 
             <div class="content">
-                <div id="groupcontainer" class="groups">
+                <div id="groupcontainer" class="item groups">
 
-                    <div class="group-detail clearfix">
+                    <div class="group-detail detail clearfix">
                         <header>Studentenraad > klachten<a href=""><i class="fa fa-angle-up"></i></a>
                         </header>
 
                         <article class="group">
                             <div class="padding">
                                 <div class="row">
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 col-xs-12">
                                         <div class="table">
                                             <div style="display: table-cell; width: 32px"><img
                                                         src="{{ URL::asset('img/avatars/1518557547_bday.jpg') }}"
@@ -49,15 +184,15 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-9">
-                                        <div class="actions col-lg-6 col-lg-push-6" style="text-align: center">
-                                            <div class="col-lg-4" style="border: 1px solid darkgray"><i
+                                    <div class="col-lg-9 col-xs-12">
+                                        <div class="actions col-lg-6 col-lg-push-6 col-xs-12" style="text-align: center">
+                                            <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
                                                         class="fa fa-thumbs-up"></i> Upvote
                                             </div>
-                                            <div class="col-lg-4" style="border: 1px solid darkgray"><i
+                                            <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
                                                         class="fa fa-thumbs-down"></i> Downvote
                                             </div>
-                                            <div class="col-lg-4" style="border: 1px solid darkgray"><i
+                                            <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
                                                         class="fa fa-bookmark"></i> Volgen
                                             </div>
                                         </div>
