@@ -6,7 +6,8 @@
 
 
 
-    <div class="container table">
+    <div class="container">
+        <div class="table">
         <div class="sidebar">
             <!--<article class="item clearfix">
                 <header>Zoeken</header>
@@ -16,24 +17,41 @@
                 </div>
             </article>-->
 
-            <article class="item">
+
+
+
+            <article class="item uploads">
                 <header>Mijn downloads</header>
-                <ul class="highlight">
+
+
+                <div class="padding">
+
                     @foreach($userdownloads as $userdownload)
-                        <li class="clearfix">
-                        <!--<div class="left col-xs-3 clearfix">
-                                <img src="{{asset('img/logo/favicon.png')}}">
-                            </div>-->
-                            <div class="col-xs-12">
-                                <h4>
-                                    <a href="{{ $userdownload->file->detailUrl() }}">{{ $userdownload->file->title }}</a>
-                                </h4>
+
+
+
+                        <div class="row flex">
+                            <div class="icon col-md-2 col-xs-12">
+                                <img src="{{asset('img/icons/001-file.png')}} "
+                                     style="width: 36px; height: 36px">
+                            </div>
+
+
+                            <div class="col-md-10 col-xs-12">
+                                <h5><a href="{{ $userdownload->file->detailUrl() }}"> {{$userdownload->file->title}}</a></h5>
+
                                 <small>Gedownload {{ $userdownload->humantimestamp() }}</small>
                             </div>
-                        </li>
+
+
+
+                        </div>
                     @endforeach
-                </ul>
+                </div>
+
             </article>
+
+
         </div>
 
         <div class="content">
@@ -45,8 +63,10 @@
                     <div class="padding">
                         <div class="left">
                             <div class="table">
-                                <div style="display: table-cell; width: 32px"><img
-                                            src="{{ URL::asset('img/avatars/empty.png') }}" class="account_img"></div>
+                                <div style="display: table-cell; width: 32px">
+                                    <img src="{{ asset('img/avatars/' . $file->user->image )}}" class="account_img">
+
+                                </div>
                                 <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
                                     <h6 style="margin: 0">{{ $file->user->name }}</h6>
                                     <h6 style="margin: 5px 0">{{ $file->humantimestamp() }}</h6>
@@ -54,11 +74,13 @@
                             </div>
                         </div>
 
+
+
                         <div class="right">
                             <div class="rating">
                                 <input hidden type="hidden" id="csrftoken" value="{{csrf_token()}}">
                                 <input type="hidden" id="fileid" hidden name="fileid" value="{{ $file->id }}">
-                                <label for="rev_stars">Uw rating:</label>
+                                <!--<label for="rev_stars">Uw rating:</label>-->
                                 <input min="1" max="5" type="number" name="stars" id="rev_stars" class="rating"
                                        data-active-icon="fa fa-star checked"
                                        data-inactive-icon="fa fa-star"
@@ -74,37 +96,37 @@
                         </div>
 
                         <div class="notes">
-                            <h4>{{ $file->doctype->name }}</h4>
+                            <h3>{{ $file->title }}</h3>
                             <p>{{ $file->filedescription }}</p>
                         </div>
 
                         <div class="details clearfix">
-                            <div class="detail">
-                                <h4>Type document</h4>
-                                <i class="glyphicon glyphicon-search"><span>{{ $file->doctype->name }}</span></i>
+                            <div class="row">
+                            <div class="detail col-lg-3">
+                                <h5>Type document</h5>
+                                <i class="fa fa-file"><span>{{ $file->doctype->name }}</span></i>
                             </div>
-                            <div class="detail">
-                                <h4>Richting</h4>
-                                <i class="glyphicon glyphicon-search"><span>{{ $file->field->name }}</span></i>
+                            <div class="detail col-lg-3">
+                                <h5>Studierichting</h5>
+                                <i class="fa fa-graduation-cap"><span>{{ $file->field->name }}</span></i>
                             </div>
-                            <div class="detail">
-                                <h4>Studiejaar</h4>
-                                <i class="glyphicon glyphicon-search"><span>{{ $file->degree->name }}</span></i>
+                            <div class="detail col-lg-3">
+                                <h5>Studiejaar</h5>
+                                <i class="fa fa-archive"><span>{{ $file->degree->name }}</span></i>
                             </div>
-                            <div class="detail">
-                                <h4>Vak</h4>
-                                <i class="glyphicon glyphicon-search"><span>{{ $file->course->name }}</span></i>
+                            <div class="detail col-lg-3">
+                                <h5>Vak</h5>
+                                <i class="fa fa-book"><span>{{ $file->course->name }}</span></i>
                             </div>
-                            <div class="detail">
-                                <h4>Uploaddatum</h4>
-                                <i class="glyphicon glyphicon-search"><span>{{ $file->created_at }}</span></i>
                             </div>
+
                         </div>
 
                         <a class="download col-lg-2" href="{{ $file->downloadUrl() }}">Download</a>
                     </div>
                 </article>
             </div>
+        </div>
         </div>
     </div>
 

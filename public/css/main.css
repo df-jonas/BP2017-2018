@@ -372,8 +372,7 @@ form.register .form-group {
 /*Login*/
 
 #login_page {
-  height: 85vh;
-  max-height: 100vh;
+  height: 100vh;
   background: url("/img/backgrounds/login-bg.png");
   background-size: cover;
   background-position: center center;
@@ -383,26 +382,37 @@ form.register .form-group {
 .login_box {
   width: 32em;
   max-width: 100%;
-  padding: 1%;
+  padding: 1.5%;
   background: #FFFFFF;
   border-radius: 3.5px;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 52%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  /*
+  .canvas {
+    text-align: center;
+    padding-top: 10%;
+    img {
+      display: block;
+      width: 25%;
+      margin: 0 auto;
+      margin-bottom: 5%;
+    }
+  }
+  */
 }
 
-.login_box .canvas {
-  text-align: center;
-  padding-top: 10%;
+.login_box input {
+  border-radius: 0;
 }
 
-.login_box .canvas img {
+.login_box img {
   display: block;
   width: 25%;
   margin: 0 auto;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
 .login_box .login-problem {
@@ -429,10 +439,10 @@ form.register .form-group {
 
 .login_box .login.action-button,
 .login_box .register.action-button {
-  background: #333A40;
+  background: #4D6A50;
   width: 100%;
   padding: 2%;
-  margin-top: 15%;
+  /*margin-top: 15%;*/
   margin-bottom: 10%;
   color: #FFFFFF;
 }
@@ -464,14 +474,18 @@ form.register .form-group {
   position: relative;
   display: inline-block;
   overflow: hidden;
-  margin-bottom: 1%;
+}
+
+.profile-img-container img {
+  width: 128px;
+  height: 128px;
 }
 
 .profile-img-container a,
 .profile-img-container #picture-input {
   display: block;
   position: absolute;
-  top: -100%;
+  top: 0;
   opacity: 0;
   left: 0;
   bottom: 0;
@@ -541,7 +555,7 @@ footer .top {
 }
 
 footer .bottom {
-  height: 7em;
+  height: 4em;
   background: #2B2F33;
 }
 
@@ -631,6 +645,87 @@ footer a:focus {
   pointer-events: none;
 }
 
+/*Hover effects - based on hover.css*/
+
+/* Shutter Out Horizontal */
+
+.hvr-shutter-out-horizontal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-box-shadow: 0 0 1px transparent;
+          box-shadow: 0 0 1px transparent;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.hvr-shutter-out-horizontal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #4D6A50;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition-property: transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-shutter-out-horizontal:hover,
+.hvr-shutter-out-horizontal:focus,
+.hvr-shutter-out-horizontal:active {
+  color: white;
+}
+
+.hvr-shutter-out-horizontal:hover:before,
+.hvr-shutter-out-horizontal:focus:before,
+.hvr-shutter-out-horizontal:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/*Preloader*/
+
+/* Paste this css to your style sheet file or under head tag */
+
+/* This only works with JavaScript,
+if it's not present, don't show loader */
+
+.no-js #loader {
+  display: none;
+}
+
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0;
+}
+
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("/img/loaders/logo.gif") center no-repeat #fff;
+}
+
 @media only screen and (max-width: 1500px) {
   #page_header .links {
     padding-top: 0.5%;
@@ -641,12 +736,12 @@ footer a:focus {
   }
 
   footer .top {
-    min-height: 20em;
+    min-height: 15em;
     height: auto;
   }
 
   footer .bottom {
-    height: 12em;
+    /*height: 12em;*/
   }
 }
 
@@ -707,6 +802,11 @@ footer a:focus {
   #how-it-works .item p {
     text-align: justify;
     word-wrap: break-word;
+  }
+
+  .about_person,
+  .about_person .left {
+    text-align: center !important;
   }
 
   footer .top {

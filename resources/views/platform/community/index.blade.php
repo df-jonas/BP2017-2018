@@ -8,12 +8,16 @@
         <div class="table">
 
             <div class="sidebar">
-
+                <!--<article class="item button clearfix">
+                    <a href="#">
+                        <button>
+                            Nieuwe post toevoegen
+                        </button>
+                    </a>-->
                 <article class="item clearfix">
                     <header>Nieuw bestand</header>
                     <div>
-                        <a href="{{ route("sharing-new") }}">Nieuwe post maken.</a><br>
-                        <a href="{{ route("sharing-new") }}">Nieuwe groep maken.</a>
+                        <a href="{{ route("community-group-new") }}">Nieuwe groep maken.</a>
                     </div>
                 </article>
 
@@ -24,6 +28,15 @@
                         <input type="text" id="search" name="search" class="form-control filterlistener"
                                placeholder="zoekterm"/>
                     </div>
+                </article>
+
+
+                <article class="item">
+                    <header>Mijn posts</header>
+                    <ul class="highlight">
+
+
+                    </ul>
                 </article>
 
                 <article class="item">
@@ -62,14 +75,6 @@
 
 
                 <article class="item">
-                    <header>Mijn posts</header>
-                    <ul class="highlight">
-
-
-                    </ul>
-                </article>
-
-                <article class="item">
                     <header>Statistieken</header>
                     <ul class="highlight">
 
@@ -85,15 +90,18 @@
                         <header>Studentenraad<a href=""><i class="fa fa-angle-up"></i></a>
                         </header>
 
+
                         <article class="group">
                             <div class="padding">
                                 <div class="row flex">
                                     <div class="col-lg-1">
-                                        <img src="{{asset('img/logo/favicon.png')}} " style="width: 36px; height: 36px">
+                                    <!-- <img src="{{asset('img/logo/favicon.png')}} " style="width: 36px; height: 36px">-->
+                                        <img src="{{asset('img/icons/001-file.png')}} "
+                                             style="width: 36px; height: 36px">
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Klachten</h4>
+                                        <h3>Klachten</h3>
                                         <div class="row icons">
                                             <!--
                                             <div class="col-lg-2">
@@ -123,7 +131,8 @@
                             <div class="padding">
                                 <div class="row flex">
                                     <div class="col-lg-1">
-                                        <img src="{{asset('img/logo/favicon.png')}} " style="width: 36px; height: 36px">
+                                        <img src="{{asset('img/icons/005-black.png')}} "
+                                             style="width: 36px; height: 36px">
                                     </div>
 
                                     <div class="col-lg-5">
@@ -165,11 +174,12 @@
                             <div class="padding">
                                 <div class="row flex">
                                     <div class="col-lg-1">
-                                        <img src="{{asset('img/logo/favicon.png')}} " style="width: 36px; height: 36px">
+                                        <img src="{{asset('img/icons/003-trophy-black-cup-symbol.png')}} "
+                                             style="width: 36px; height: 36px">
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Klachten</h4>
+                                        <h4>Design</h4>
                                         <div class="row icons">
                                             <!--
                                             <div class="col-lg-2">
@@ -199,11 +209,12 @@
                             <div class="padding">
                                 <div class="row flex">
                                     <div class="col-lg-1">
-                                        <img src="{{asset('img/logo/favicon.png')}} " style="width: 36px; height: 36px">
+                                        <img src="{{asset('img/icons/003-trophy-black-cup-symbol.png')}} "
+                                             style="width: 36px; height: 36px">
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Klachten</h4>
+                                        <h4>Development</h4>
                                         <div class="row icons">
                                             <!--
                                             <div class="col-lg-2">
@@ -234,11 +245,12 @@
                             <div class="padding">
                                 <div class="row flex">
                                     <div class="col-lg-1">
-                                        <img src="{{asset('img/logo/favicon.png')}} " style="width: 36px; height: 36px">
+                                        <img src="{{asset('img/icons/005-black.png')}} "
+                                             style="width: 36px; height: 36px">
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Klachten</h4>
+                                        <h4>Server &amp; networking</h4>
                                         <div class="row icons">
                                             <!--
                                             <div class="col-lg-2">

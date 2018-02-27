@@ -60,7 +60,6 @@
                     <!-- step 1 -->
                     <fieldset>
 
-
                         <article class="file new clearfix">
                             <div class="padding">
                                 <div class="form-group clearfix">
@@ -73,19 +72,6 @@
                             </div>
                         </article>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </fieldset>
                     <!-- step 1 -->
 
@@ -94,13 +80,10 @@
                         <article class="file new clearfix">
                             <div class="padding">
 
-
-
                                 <div class="form-group clearfix">
                                     <label for="filedesc">Korte omschrijving groep</label>
                                     <textarea class="form-control" rows="5" id="filedesc" name="filedescription"></textarea>
                                 </div>
-
 
                                 <div class="form-group clearfix">
                                     <div class="selectdiv">
@@ -113,7 +96,6 @@
                                     </div>
                                 </div>
 
-
                                 <div class="form-group clearfix">
                                     <div class="selectdiv">
                                         <label for="course">Groep categorie</label>
@@ -124,9 +106,6 @@
                                         </select>
                                     </div>
                                 </div>
-
-
-
 
                                 <input type="button" name="next" class="next col-lg-2" value="Volgende"/>
                                 <input type="button" name="previous" class="previous col-lg-2" value="Vorige"/>
@@ -142,8 +121,6 @@
                             <div class="padding">
                                 <label>Kies groep icoon</label>
                             </div>
-
-
 
                             <div class="padding">
                                 <input type="button" name="next" class="next col-lg-2" value="Volgende"/>
