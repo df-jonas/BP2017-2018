@@ -1,4 +1,13 @@
+$(window).on("load", function (e) {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+});
+
+
+
 $(document).ready(function () {
+
+
     console.log('ready');
     //referentie: https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
     $('.inputFile').each(function () {

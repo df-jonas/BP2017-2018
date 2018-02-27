@@ -9,12 +9,13 @@
 
             <div class="sidebar">
 
-                <article class="item clearfix">
-                    <header>Nieuw bestand</header>
-                    <div>
-                        <a href="{{ route("sharing-new") }}">Nieuwe post maken.</a><br>
-                        <a href="{{ route("sharing-new") }}">Nieuwe groep maken.</a>
-                    </div>
+                <article class="item button clearfix">
+                    <a href="#">
+                        <button>
+                            Nieuwe post toevoegen
+                        </button>
+                    </a>
+
                 </article>
 
                 <article class="item clearfix">
@@ -60,7 +61,7 @@
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Klachten</h4>
+                                        <h4>Teveel springuren</h4>
                                         <div class="row icons">
 
                                             <div class="col-lg-2">
@@ -75,9 +76,9 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-lg-6" style="text-align: right">
+                                    <div class="info col-lg-6" style="text-align: right">
                                         <h6>16 februari 2018</h6>
-                                        <h6>door Arno Stalpaert</h6>
+                                        <h6>door <span>Arno Stalpaert</span></h6>
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +93,7 @@
                                     </div>
 
                                     <div class="col-lg-5">
-                                        <h4>Evenementen</h4>
+                                        <h4>Microgolf kapot</h4>
                                         <div class="row icons">
 
                                             <div class="col-lg-2">

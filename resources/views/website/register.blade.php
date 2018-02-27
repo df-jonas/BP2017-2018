@@ -1,7 +1,6 @@
 @extends('layouts.website')
 
 @section('content')
-    @include('partials.website.header')
 
     <div id="login_page">
         <div class="login_box">
@@ -70,8 +69,7 @@
                 </div>
 
 
-
-                    <button type="submit" class="action-button register">Registreren</button>
+                <button type="submit" class="action-button register">Registreren</button>
 
 
             </form>
@@ -79,5 +77,4 @@
 
     </div>
 
-    @include('partials.footer')
 @endsection
