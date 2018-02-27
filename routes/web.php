@@ -19,7 +19,12 @@ Route::get('/how-it-works', 'WebsiteController@how')->name('website-how');
 Route::get('/cookies', 'WebsiteController@cookies')->name('website-cookies');
 Route::get('/privacy', 'WebsiteController@privacy')->name('website-privacy');
 
-Auth::routes();
+// Auth::routes();
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login','Auth\LoginController@login');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+
 
 // Auth routes
 // Route::get('/canvas/login', 'AuthController@index')->name('canvas-login');
