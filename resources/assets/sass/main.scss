@@ -584,6 +584,10 @@ if it's not present, don't show loader */
   background: url('/img/loaders/logo.gif') center no-repeat #fff;
 }
 
+
+.page-error{
+  text-align: center;
+}
 @media only screen and (max-width: 1500px) {
   #page_header .links {
     padding-top: 0.5%;
