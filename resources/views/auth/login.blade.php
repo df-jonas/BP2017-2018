@@ -3,11 +3,7 @@
 @section('content')
     <div id="login_page">
         <div class="login_box">
-            <!--<div class="canvas">
-                <h4>Canvas login</h4>
-                <p>Als student aan de Erasmushogeschool Brussel kan je veilig en snel inloggen via je persoonlijke
-                    Canvas Account.</p>
-            </div>-->
+
             <a href="{{route('website-index')}}"><img src="{{ asset('img/logo/Logo_final.png') }}"></a>
             <form method="POST" action="{{ route('login') }}">
 

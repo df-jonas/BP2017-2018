@@ -12,7 +12,7 @@
 
 
             <!-- filter menu -->
-            <article class="item filter">
+            <article class="item cats">
                 <header>Posts categorie</header>
                 <div class="padding">
 
@@ -59,7 +59,7 @@
 
 
             <!-- filter menu -->
-            <article class="item filter">
+            <article class="item options">
                 <header>Post opties</header>
                 <div class="padding">
                     <div class="form-group clearfix">
@@ -129,11 +129,11 @@
         <div class="content">
             <div id="groupcontainer" class="groups">
 
-                <div class="group-detail clearfix">
+                <div class="item group-detail clearfix">
                     <header>Post aanmaken<a href=""><i class="fa fa-angle-up"></i></a>
                     </header>
 
-                    <article class="group">
+                    <article class="item group">
                         <div class="padding">
 
 
@@ -158,8 +158,7 @@
 
 
                             <input type="submit" name="submit" class="next col-lg-2" value="Opslaan"/>
-                            <input type="button" id="submitall" name="previous" class="previous col-lg-2"
-                                   value="Annuleren"/>
+
 
                         </form>
 

@@ -9,8 +9,19 @@
             <div class="sidebar">
 
 
+                <!-- New button -->
+                <article class="item button">
+                    <a href="">
+                        <button>
+                            <i class="glyphicon glyphicon-plus-sign"></i> Nieuw verzoek
+                        </button>
+                    </a>
 
-                <!-- Search form -->
+
+                </article>
+                <!-- end New button -->
+
+                <!-- Requests-->
                 <article class="item user-owned">
                     <header>Verzoeken</header>
                     <div class="padding">
@@ -77,12 +88,12 @@
 
                     </div>
                 </article>
-                <!-- Search form -->
+                <!-- End requests-->
 
 
 
 
-                <!-- Search form -->
+                <!--  Requests-->
                 <article class="item user-owned">
                     <header>Mijn tutees</header>
                     <div class="padding">
@@ -168,11 +179,11 @@
 
                     </div>
                 </article>
-                <!-- Search form -->
+                <!-- End requests-->
 
 
 
-                <!-- Search form -->
+                <!-- Requests-->
                 <article class="item user-owned">
                     <header>Mijn tutors</header>
                     <div class="padding">
@@ -232,7 +243,7 @@
 
                     </div>
                 </article>
-                <!-- Search form -->
+                <!-- End requests-->
 
 
 
@@ -244,39 +255,48 @@
 
                     <div class="row">
                     <!-- Search form -->
-                    <article class="item col-lg-4 col-xs-12">
-                        <header>Wordt tutor</header>
-                        <div class="padding">
+                    <article class="col-lg-4  col-xs-12">
+                        <div class="item col-lg-12">
+                            <header>Wordt tutor</header>
+                            <div class="padding">
 
-                            <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" >
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" >
+                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 
+                            </div>
                         </div>
+
                     </article>
                     <!-- Search form -->
 
 
                         <!-- Search form -->
-                        <article class="item col-lg-4 col-xs-12">
-                            <header>Wordt tutor</header>
-                            <div class="padding">
+                        <article class="col-lg-4  col-xs-12">
+                            <div class="item col-lg-12">
+                                <header>Hoe werkt het?</header>
+                                <div class="padding">
 
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" >
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" >
+                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 
+                                </div>
                             </div>
+
                         </article>
                         <!-- Search form -->
 
                         <!-- Search form -->
-                        <article class="item col-lg-4 col-xs-12">
-                            <header>Wordt tutor</header>
-                            <div class="padding">
+                        <article class="col-lg-4  col-xs-12">
+                            <div class="item col-lg-12">
+                                <header>Vind een tutor</header>
+                                <div class="padding">
 
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" >
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" >
+                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 
+                                </div>
                             </div>
+
                         </article>
                         <!-- Search form -->
 
@@ -296,7 +316,7 @@
                                     <div class="table">
                                         <div style="display: table-cell; width: 32px"><img
                                                     src="{{ URL::asset('img/avatars/1518557547_bday.jpg') }}"
-                                                    class="account_img"></div>
+                                                    class="group_img"></div>
                                         <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
                                             <h6 style="margin: 0">Arno Stalpaert</h6>
                                             <h6 style="margin: 5px 0">Donderdag om 14:43</h6>

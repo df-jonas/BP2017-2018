@@ -52,6 +52,7 @@ preloader
 <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
 <script src="{{ URL::asset('js/main.js') }}"></script>
 <script src="{{ URL::asset('js/nav.js') }}"></script>
+<script src="{{ URL::asset('js/multistep.js') }}"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47689548-7"></script>
 <script>

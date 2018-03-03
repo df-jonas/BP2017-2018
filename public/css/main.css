@@ -77,8 +77,8 @@ form input {
 
 .action-button,
 .action-button.long,
-.login_box .action-button.login,
-.login_box .action-button.register {
+#login_page .login_box .action-button.login,
+#login_page .login_box .action-button.register {
   background: #FFFFFF;
   display: inline-block;
   border: none;
@@ -232,7 +232,7 @@ form input {
 }
 
 .action-button.register,
-.login_box .register.action-button {
+#login_page .login_box .register.action-button {
   background: #4D6A50;
   color: #FFFFFF;
 }
@@ -242,8 +242,8 @@ form.register .form-group {
 }
 
 .long.action-button,
-.login_box .long.action-button.login,
-.login_box .long.action-button.register {
+#login_page .login_box .long.action-button.login,
+#login_page .login_box .long.action-button.register {
   width: 100%;
 }
 
@@ -377,9 +377,10 @@ form.register .form-group {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  /*Register*/
 }
 
-.login_box {
+#login_page .login_box {
   width: 32em;
   max-width: 100%;
   padding: 1.5%;
@@ -390,55 +391,43 @@ form.register .form-group {
   top: 52%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  /*
-  .canvas {
-    text-align: center;
-    padding-top: 10%;
-    img {
-      display: block;
-      width: 25%;
-      margin: 0 auto;
-      margin-bottom: 5%;
-    }
-  }
-  */
 }
 
-.login_box input {
+#login_page .login_box input {
   border-radius: 0;
 }
 
-.login_box img {
+#login_page .login_box img {
   display: block;
   width: 25%;
   margin: 0 auto;
   margin-bottom: 10%;
 }
 
-.login_box .login-problem {
+#login_page .login_box .login-problem {
   text-align: center;
   cursor: pointer;
 }
 
-.login_box .login-problem {
+#login_page .login_box .login-problem {
   color: black;
 }
 
-.login_box .login-problem:visited {
+#login_page .login_box .login-problem:visited {
   color: black;
 }
 
-.login_box .login-problem:hover {
+#login_page .login_box .login-problem:hover {
   color: black;
 }
 
-.login_box .login-problem:active,
-.login_box .login-problem:focus {
+#login_page .login_box .login-problem:active,
+#login_page .login_box .login-problem:focus {
   color: black;
 }
 
-.login_box .login.action-button,
-.login_box .register.action-button {
+#login_page .login_box .login.action-button,
+#login_page .login_box .register.action-button {
   background: #4D6A50;
   width: 100%;
   padding: 2%;
@@ -447,15 +436,13 @@ form.register .form-group {
   color: #FFFFFF;
 }
 
-.login_box .register.action-button {
+#login_page .login_box .register.action-button {
   background: #4D6A50;
   margin-top: 5%;
   margin-bottom: 5%;
 }
 
-/*Register*/
-
-.account_img {
+#login_page .account_img {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
@@ -465,24 +452,24 @@ form.register .form-group {
   cursor: pointer;
 }
 
-.account_img:hover {
+#login_page .account_img:hover {
   width: 10rem;
   height: 10rem;
 }
 
-.profile-img-container {
+#login_page .profile-img-container {
   position: relative;
   display: inline-block;
   overflow: hidden;
 }
 
-.profile-img-container img {
+#login_page .profile-img-container img {
   width: 128px;
   height: 128px;
 }
 
-.profile-img-container a,
-.profile-img-container #picture-input {
+#login_page .profile-img-container a,
+#login_page .profile-img-container #picture-input {
   display: block;
   position: absolute;
   top: 0;
@@ -497,13 +484,13 @@ form.register .form-group {
   cursor: pointer;
 }
 
-.profile-img-container:hover a {
+#login_page .profile-img-container:hover a {
   opacity: 1;
   top: 0;
   z-index: 500;
 }
 
-.profile-img-container:hover a span {
+#login_page .profile-img-container:hover a span {
   top: 50%;
   position: absolute;
   left: 0;
@@ -512,12 +499,12 @@ form.register .form-group {
           transform: translateY(-50%);
 }
 
-.profile-img-container #picture-input {
+#login_page .profile-img-container #picture-input {
   z-index: 999;
   width: 30rem;
 }
 
-.account_username {
+#login_page .account_username {
   text-align: center;
 }
 
@@ -671,6 +658,147 @@ if it's not present, don't show loader */
   height: 100%;
   z-index: 9999;
   background: url("/img/loaders/logo.gif") center no-repeat #fff;
+}
+
+#msform fieldset {
+  border: 0 none;
+  border-radius: 3px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*fieldsets op elkaar stacken*/
+  position: relative;
+}
+
+/*Alle steps hiden, behalve de eerste*/
+
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+
+/*steps bar*/
+
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+  padding-left: 0;
+}
+
+#progressbar li {
+  list-style-type: none;
+  color: red;
+  width: 25%;
+  float: left;
+  position: relative;
+  /*lijn tussen boxes*/
+  /*Geen connector nodig voor stap 1*/
+}
+
+#progressbar li:before {
+  position: relative;
+  /*html data-title*/
+  content: attr(data-title);
+  counter-increment: step;
+  line-height: 60px;
+  display: block;
+  color: white;
+  margin: 0 auto 5px auto;
+  background: #505457;
+  height: 60px;
+  width: 75%;
+  z-index: 10;
+}
+
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 10px;
+  background: #505457;
+  position: absolute;
+  left: -50%;
+  top: 35%;
+  z-index: 1;
+}
+
+#progressbar li:first-child:after {
+  content: none;
+}
+
+/*Actieve en voltooide stappen groen kleuren*/
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: #4D6A50;
+  color: white;
+}
+
+/*Buttons*/
+
+.download-button,
+button.download,
+a.download,
+input.next,
+input.previous {
+  padding: 2%;
+  background: #8A7E72;
+  color: #FFFFFF;
+  border: none;
+  margin-left: 2%;
+  text-align: center;
+}
+
+.download-button a,
+button.download a,
+a.download a,
+input.next a,
+input.previous a {
+  cursor: pointer;
+}
+
+.download-button a,
+button.download a,
+a.download a,
+input.next a,
+input.previous a {
+  color: white;
+}
+
+.download-button a:visited,
+button.download a:visited,
+a.download a:visited,
+input.next a:visited,
+input.previous a:visited {
+  color: white;
+}
+
+.download-button a:hover,
+button.download a:hover,
+a.download a:hover,
+input.next a:hover,
+input.previous a:hover {
+  color: white;
+}
+
+.download-button a:active,
+button.download a:active,
+a.download a:active,
+input.next a:active,
+input.previous a:active,
+.download-button a:focus,
+button.download a:focus,
+a.download a:focus,
+input.next a:focus,
+input.previous a:focus {
+  color: white;
+}
+
+button.download,
+a.download,
+input.next,
+input.previous {
+  margin-top: 2%;
+  width: 92.5%;
 }
 
 .page-error {
