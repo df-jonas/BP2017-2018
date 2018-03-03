@@ -472,6 +472,39 @@ input.previous {
   margin: 10%;
 }
 
+#messages {
+  margin-top: 2em;
+  border-bottom: 2px solid #505457;
+}
+
+#messages .msg {
+  margin-bottom: 2.5em;
+}
+
+#messages .msg .txt {
+  background: #8A7E72;
+  padding: 1.5%;
+  color: #ffffff;
+}
+
+#messages .msg .txt span {
+  font-size: .75em;
+  font-weight: 300;
+}
+
+#messages .msg.own .txt {
+  background: #4D6A50;
+}
+
+#comment-box {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#comment-box .txt {
+  line-height: 32px;
+}
+
 /*New/upload button*/
 
 .sidebar .button {

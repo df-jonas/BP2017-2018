@@ -407,6 +407,47 @@ button.download, a.download, input.next, input.previous {
 
 
   }
+
+
+
+
+}
+
+
+#messages{
+  margin-top: 2em;
+  border-bottom: 2px solid $grey;
+
+  .msg{
+    margin-bottom: 2.5em;
+    .txt{
+      background: $unihelp-brown;
+      padding: 1.5%;
+      color: #ffffff;
+
+      span{
+        font-size: .75em;
+        font-weight: 300;
+      }
+    }
+
+    &.own{
+      .txt{
+        background: $unihelp-green;
+      }
+    }
+  }
+
+
+}
+
+#comment-box{
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  .txt{
+    line-height: 32px;
+  }
 }
 /*New/upload button*/
 .sidebar .button {

@@ -229,19 +229,19 @@
 
                                 <hr>
 
-                                <div class="row flex">
-                                    <div class="col-lg-1">
-
+                                <div id="comment-box" class="col-lg-12 flex" style="margin-top: 3.5em">
+                                    <div class="picture col-lg-1">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="account_img">
                                     </div>
 
-                                    <div class="col-lg-10">
+                                    <div class="txt col-lg-10">
                                         <p>Reactie toevoegen</p>
 
 
                                     </div>
 
-                                    <div class="col-lg-1">
-                                        <i class="fa fa-reply"></i>
+                                    <div class="icon col-lg-1">
+                                        <i class="fa fa-paper-plane"></i>
 
 
                                     </div>
