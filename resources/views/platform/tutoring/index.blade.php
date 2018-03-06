@@ -253,7 +253,7 @@
                                 <header>Wordt tutor</header>
                                 <div class="padding">
 
-                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}">
+                                    <img src="{{ asset('img/icons/003-whiteboard.svg' )}}">
                                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
                                         turpis egestas.</p>
 
@@ -270,7 +270,7 @@
                                 <header>Hoe werkt het?</header>
                                 <div class="padding">
 
-                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}">
+                                    <img src="{{ asset('img/icons/001-pen.svg' )}}">
                                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
                                         turpis egestas.</p>
 
@@ -286,7 +286,7 @@
                                 <header>Vind een tutor</header>
                                 <div class="padding">
 
-                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}">
+                                    <img src="{{ asset('img/icons/002-book.svg' )}}">
                                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
                                         turpis egestas.</p>
 
@@ -319,129 +319,121 @@
                                 </div>
 
                                 <div class="col-lg-9 col-xs-12">
-                                    <div class="actions col-lg-6 col-lg-push-6 col-xs-12" style="text-align: center">
-                                        <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                    class="fa fa-thumbs-up"></i> Upvote
-                                        </div>
-                                        <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                    class="fa fa-thumbs-down"></i> Downvote
-                                        </div>
-                                        <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                    class="fa fa-bookmark"></i> Volgen
-                                        </div>
+                                    <div class="actions col-lg-9 col-lg-push-3 col-xs-12" style="text-align: center">
+                                        <a class="action col-lg-2" href="#">Download</a>
+                                        <a class="action col-lg-2" href="#">Download</a>
+                                        <a class="action col-lg-2" href="#">Download</a>
+                                        <a class="action col-lg-2" href="#">Download</a>
+
                                     </div>
 
                                 </div>
                             </div>
 
 
+                            <div id="messages" class="col-lg-12">
 
+                                <div class="msg col-lg-12">
 
-                                <div id="messages" class="col-lg-12">
-
-                                    <div class="msg col-lg-12">
-
-                                        <div class="picture col-lg-1">
-                                            <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                                        </div>
-
-                                        <div class="txt col-lg-11">
-                                            <div class="table">
-                                                <div style="display: table-cell;  float: left" >
-                                                    <span>Jeffrey Thor</span>
-                                                </div>
-                                                <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
-                                                    <span>Donderdag om 14:43</span>
-                                                </div>
-                                            </div>
-
-                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. </p>
-                                        </div>
-
-
-
+                                    <div class="picture col-lg-1">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
                                     </div>
 
-
-                                    <div class="msg own col-lg-12">
-
-                                        <div class="txt col-lg-11">
-                                            <div class="table">
-                                                <div style="display: table-cell;  float: left" >
-                                                    <span>Donderdag om 14:43</span>
-                                                </div>
-                                                <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
-                                                    <span>ik</span>
-                                                </div>
+                                    <div class="txt col-lg-11">
+                                        <div class="table">
+                                            <div style="display: table-cell;  float: left">
+                                                <span>Jeffrey Thor</span>
                                             </div>
-
-                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. </p>
-                                        </div>
-
-                                        <div class="picture col-lg-1">
-                                            <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                                        </div>
-
-
-
-
-
-                                    </div>
-
-
-                                    <div class="msg own col-lg-12">
-
-                                        <div class="txt col-lg-11">
-                                            <div class="table">
-                                                <div style="display: table-cell;  float: left" >
-                                                    <span>Donderdag om 14:43</span>
-                                                </div>
-                                                <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
-                                                    <span>ik</span>
-                                                </div>
+                                            <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                <span>Donderdag om 14:43</span>
                                             </div>
-
-                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. </p>
                                         </div>
 
-                                        <div class="picture col-lg-1">
-                                            <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                                        </div>
-
-
-
-
-
+                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet, ante. </p>
                                     </div>
-
-
-                                    <div class="msg col-lg-12">
-
-                                        <div class="picture col-lg-1">
-                                            <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                                        </div>
-
-                                        <div class="txt col-lg-11">
-                                            <div class="table">
-                                                <div style="display: table-cell;  float: left" >
-                                                    <span>Jeffrey Thor</span>
-                                                </div>
-                                                <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
-                                                    <span>Donderdag om 14:43</span>
-                                                </div>
-                                            </div>
-
-                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. </p>
-                                        </div>
-
-
-
-                                    </div>
-
-
 
 
                                 </div>
+
+
+                                <div class="msg own col-lg-12">
+
+                                    <div class="txt col-lg-11">
+                                        <div class="table">
+                                            <div style="display: table-cell;  float: left">
+                                                <span>Donderdag om 14:43</span>
+                                            </div>
+                                            <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                <span>ik</span>
+                                            </div>
+                                        </div>
+
+                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet, ante. </p>
+                                    </div>
+
+                                    <div class="picture col-lg-1">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="msg own col-lg-12">
+
+                                    <div class="txt col-lg-11">
+                                        <div class="table">
+                                            <div style="display: table-cell;  float: left">
+                                                <span>Donderdag om 14:43</span>
+                                            </div>
+                                            <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                <span>ik</span>
+                                            </div>
+                                        </div>
+
+                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet, ante. </p>
+                                    </div>
+
+                                    <div class="picture col-lg-1">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="msg col-lg-12">
+
+                                    <div class="picture col-lg-1">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                    </div>
+
+                                    <div class="txt col-lg-11">
+                                        <div class="table">
+                                            <div style="display: table-cell;  float: left">
+                                                <span>Jeffrey Thor</span>
+                                            </div>
+                                            <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                <span>Donderdag om 14:43</span>
+                                            </div>
+                                        </div>
+
+                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet, ante. </p>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
 
                             <div id="comment-box" class="col-lg-12 flex" style="margin-top: 3.5em">
                                 <div class="picture col-lg-1">
@@ -460,8 +452,6 @@
 
                                 </div>
                             </div>
-
-
 
 
                         </div>

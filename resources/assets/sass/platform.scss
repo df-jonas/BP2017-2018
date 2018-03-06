@@ -40,7 +40,7 @@ div.container {
 
 /*Buttons*/
 .download-button {
-  padding: 1%;
+  padding: 1.5%;
   background: $unihelp-brown;
   color: #FFFFFF;
   border: none;
@@ -58,6 +58,13 @@ button.download, a.download, input.next, input.previous {
   margin-top: 3.5em;
   margin-bottom: 3.5em;
   width: auto;
+}
+
+a.action{
+  @extend .download-button;
+  margin-top: 0;
+  width: auto;
+  background: $unihelp-green;
 }
 
 /*Header*/
@@ -473,7 +480,7 @@ button.download, a.download, input.next, input.previous {
 .sidebar {
   .item {
     /*mijn bestanden ul*/
-    /*
+
     .highlight {
       width: 100%;
       padding-left: 0;
@@ -486,7 +493,7 @@ button.download, a.download, input.next, input.previous {
       }
 
     }
-    */
+
     &.user-owned{
       h5{
         margin-bottom: 0;
@@ -717,6 +724,7 @@ form .form-group {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  text-align: left;
 
   /* Hide the browser's default checkbox */
   input {

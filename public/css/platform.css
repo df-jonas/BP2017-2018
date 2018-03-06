@@ -43,8 +43,9 @@ div.container {
 button.download,
 a.download,
 input.next,
-input.previous {
-  padding: 1%;
+input.previous,
+a.action {
+  padding: 1.5%;
   background: #8A7E72;
   color: #FFFFFF;
   border: none;
@@ -57,7 +58,8 @@ input.previous {
 button.download a,
 a.download a,
 input.next a,
-input.previous a {
+input.previous a,
+a.action a {
   cursor: pointer;
 }
 
@@ -65,7 +67,8 @@ input.previous a {
 button.download a,
 a.download a,
 input.next a,
-input.previous a {
+input.previous a,
+a.action a {
   color: white;
 }
 
@@ -73,7 +76,8 @@ input.previous a {
 button.download a:visited,
 a.download a:visited,
 input.next a:visited,
-input.previous a:visited {
+input.previous a:visited,
+a.action a:visited {
   color: white;
 }
 
@@ -81,7 +85,8 @@ input.previous a:visited {
 button.download a:hover,
 a.download a:hover,
 input.next a:hover,
-input.previous a:hover {
+input.previous a:hover,
+a.action a:hover {
   color: white;
 }
 
@@ -90,11 +95,13 @@ button.download a:active,
 a.download a:active,
 input.next a:active,
 input.previous a:active,
+a.action a:active,
 .download-button a:focus,
 button.download a:focus,
 a.download a:focus,
 input.next a:focus,
-input.previous a:focus {
+input.previous a:focus,
+a.action a:focus {
   color: white;
 }
 
@@ -105,6 +112,12 @@ input.previous {
   margin-top: 3.5em;
   margin-bottom: 3.5em;
   width: auto;
+}
+
+a.action {
+  margin-top: 0;
+  width: auto;
+  background: #4D6A50;
 }
 
 /*Header*/
@@ -531,20 +544,19 @@ input.previous {
 
 .sidebar .item {
   /*mijn bestanden ul*/
-  /*
-    .highlight {
-      width: 100%;
-      padding-left: 0;
-      background: #FFFFFF;
-      padding: 2%;
-      li {
-        display: block;
-        margin-bottom: 2%;
-        width: 100%;
-      }
+}
 
-    }
-    */
+.sidebar .item .highlight {
+  width: 100%;
+  padding-left: 0;
+  background: #FFFFFF;
+  padding: 2%;
+}
+
+.sidebar .item .highlight li {
+  display: block;
+  margin-bottom: 2%;
+  width: 100%;
 }
 
 .sidebar .item.user-owned h5 {
@@ -793,6 +805,7 @@ form .form-group {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  text-align: left;
   /* Hide the browser's default checkbox */
 }
 

@@ -75,7 +75,7 @@ form input {
   padding-left: 4%;
   padding-right: 4%;
   height: 100%;
-  margin-bottom: 3.5%;
+  //margin-bottom: 3.5%;
   color: #000000;
   text-align: center;
 }
@@ -340,26 +340,38 @@ form.register .form-group {
   background-repeat: no-repeat;
 
   .login_box {
-    width: 32em;
+    width: 35em;
     max-width: 100%;
-    padding: 1.5%;
     background: #FFFFFF;
-    border-radius: 3.5px;
     position: absolute;
     left: 50%;
     top: 52%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    color: #000000;
 
-    input {
-      border-radius: 0;
+    header, .box, footer {
+      padding: 24px 50px 36px;
     }
 
-    img {
-      display: block;
-      width: 25%;
-      margin: 0 auto;
-      margin-bottom: 10%;
+    header, footer {
+      text-align: center;
+
+    }
+
+    .box {
+      padding-top: 0;
+
+    }
+    footer {
+      background: #eee;
+      color: #000000;
+      text-transform: uppercase;
+    }
+
+    div.form-group {
+      padding-left: 0;
+      padding-right: 0;
     }
 
     .login-problem {
@@ -373,17 +385,27 @@ form.register .form-group {
       background: $unihelp-green;
       width: 100%;
       padding: 2%;
+      text-transform: uppercase;
       /*margin-top: 15%;*/
-      margin-bottom: 10%;
       color: #FFFFFF;
     }
-
-    .action-button.register {
-      background: $unihelp-green;
-      margin-top: 5%;
-      margin-bottom: 5%;
-    }
   }
+
+.action-button.register {
+    background: transparent;
+    border: 2px solid $unihelp-green;
+    color: #000000;
+    &:hover{
+      background: $unihelp-green;
+      color: #ffffff;
+      -webkit-transition: background-color 100ms linear;
+      -ms-transition: background-color 100ms linear;
+      transition: background-color 100ms linear;
+    }
+
+  }
+
+
 
   /*Register*/
 

@@ -118,13 +118,20 @@
 
 
 
+
             <!-- step 1 -->
                 <fieldset>
                     <article>
 
                         <div class="step">
 
-                            {{csrf_field()}}
+                            <header class="col-xs-12">
+                                <h3>Inloggen</h3>
+                                <p>Vul je gegevens in om in te loggen met je UniHelp account.</p>
+                            </header>
+
+
+                            <div class="box">
 
                             <div class="form-group clearfix col-xs-12">
                                 <div class="profile-img-container col-xs-12">
@@ -165,9 +172,13 @@
                                 @endif
                             </div>
 
-
+                            </div>
 
                             <input type="button" class="next col-xs-12" value="Volgende"/>
+
+
+
+
 
 
 
@@ -183,6 +194,13 @@
 
                     <article>
                         <div class="step">
+
+                            <header class="col-xs-12">
+                                <h3>Inloggen</h3>
+                                <p>Vul je gegevens in om in te loggen met je UniHelp account.</p>
+                            </header>
+
+                            <div class="box">
                             <div class="form-group clearfix col-xs-12">
                                 <label for="password">Wachtwoord</label>
                                 <input type="password" class="form-control col-lg-6" id="password" name="password"
@@ -243,6 +261,8 @@
                                 </label>
                             </div>
 
+                            </div>
+
 
 
 
@@ -258,7 +278,16 @@
 
 
             </form>
-            <a class="login-problem" href="{{ route('login') }}"><p>Ik heb al een account.</p></a>
+            <!-- <a class="login-problem" href="{{ route('login') }}"><p>Ik heb al een account.</p></a> -->
+            <footer class="col-xs-12 clearfix">
+                <h5>Heb je wel al een UniHelp account?</h5>
+                <br/>
+
+                <a href="{{ route('login') }}">
+                    <input type="button" class="action-button register" value="Inloggen">
+                </a>
+
+            </footer>
             <!-- files -->
         </div>
     </div>

@@ -263,6 +263,65 @@
                                 <h3>Reacties</h3>
                             </div>
 
+
+
+                            <div id="messages" class="col-lg-12" style="border-bottom: none">
+
+                                <div class="msg col-lg-12">
+
+                                    <div class="picture col-lg-1">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                    </div>
+
+                                    <div class="txt col-lg-11">
+                                        <div class="table">
+                                            <div style="display: table-cell;  float: left" >
+                                                <span>Jeffrey Thor</span>
+                                            </div>
+                                            <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                <span>Donderdag om 14:43</span>
+                                            </div>
+                                        </div>
+
+                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. </p>
+                                    </div>
+
+
+
+                                </div>
+
+
+
+
+
+                                <div class="msg col-lg-12">
+
+                                    <div class="picture col-lg-1">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                    </div>
+
+                                    <div class="txt col-lg-11">
+                                        <div class="table">
+                                            <div style="display: table-cell;  float: left" >
+                                                <span>Jeffrey Thor</span>
+                                            </div>
+                                            <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                <span>Donderdag om 14:43</span>
+                                            </div>
+                                        </div>
+
+                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. </p>
+                                    </div>
+
+
+
+                                </div>
+
+
+
+
+                            </div>
+
                         </article>
 
 
