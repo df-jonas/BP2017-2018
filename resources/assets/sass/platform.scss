@@ -23,6 +23,7 @@ body.platform {
 
 .padding {
   padding: 2%;
+  padding: 8px 15px 8px 15px;
 }
 
 .brown{
@@ -38,34 +39,7 @@ div.container {
   width: 80%;
 }
 
-/*Buttons*/
-.download-button {
-  padding: 1.5%;
-  background: $unihelp-brown;
-  color: #FFFFFF;
-  border: none;
-  float: right;
-  margin-left: 2%;
-  text-align: center;
-  a {
-    cursor: pointer;
-    @include link(white, white, white, white);
-  }
-}
 
-button.download, a.download, input.next, input.previous {
-  @extend .download-button;
-  margin-top: 3.5em;
-  margin-bottom: 3.5em;
-  width: auto;
-}
-
-a.action{
-  @extend .download-button;
-  margin-top: 0;
-  width: auto;
-  background: $unihelp-green;
-}
 
 /*Header*/
 #platform_header {
@@ -309,10 +283,8 @@ a.action{
   margin-bottom: 3em;
 }
 
-
-.content .group-type .group {
-  border-bottom: 1px solid $unihelp-brown;
-  cursor: pointer;
+/*afbeelding centreren in overzicht*/
+.content .group-type .group, .content  #filecontainer .file{
   img {
     position: absolute;
     top: 50%;
@@ -320,7 +292,20 @@ a.action{
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
+}
+
+.content .group-type .group, .content #filecontainer .file{
+  cursor: pointer;
+  .title{
+    a{
+      color: #000000;
+      &:hover{
+        color: $unihelp-green;
+      }
+    }
+  }
   .icons {
+    margin-bottom: 10px;
     i {
       color: $unihelp-brown;
     }
@@ -330,6 +315,23 @@ a.action{
       color: #0f0f0f;
     }
   }
+}
+
+.content .group-type .group, .content #filecontainer .file, .item.user-owned{
+  .title{
+    a{
+      color: #000000;
+      &:hover{
+        color: $unihelp-green;
+      }
+    }
+  }
+}
+
+.content .group-type .group {
+  border-bottom: 1px solid $unihelp-brown;
+
+
 
   .info {
     span {
@@ -392,6 +394,16 @@ a.action{
 
 
 #tutoringcontent{
+
+  article.col-lg-4:nth-of-type(1){
+    padding-left: 0;
+
+  }
+
+  article.col-lg-4:nth-of-type(3){
+    padding-right: 0;
+
+  }
   .item{
     padding: 0;
     border-top: 0;
@@ -407,9 +419,9 @@ a.action{
     }
 
     img{
-      width: 128px;
-      height: 128px;
-      margin: 10%;
+      width: 60px;
+      height: 60px;
+      margin: 5%;
     }
 
 
@@ -423,7 +435,6 @@ a.action{
 
 #messages{
   margin-top: 2em;
-  border-bottom: 2px solid $grey;
 
   .msg{
     margin-bottom: 2.5em;
@@ -449,12 +460,19 @@ a.action{
 }
 
 #comment-box{
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 1.5em;
+  padding-top: 1.5em;
+  margin-bottom: 1.5em;
+  border-top: 2px solid $unihelp-brown;
+  line-height: 32px;
 
-  .txt{
-    line-height: 32px;
-  }
+input, button{
+  border: none;
+  padding: 0;
+  background: none;
+  color: inherit;
+}
+
 }
 /*New/upload button*/
 .sidebar .button {
@@ -514,26 +532,30 @@ a.action{
 .content {
   .file {
 
-    a {
-      cursor: pointer;
-      @include link(#000000, #000000, #000000, #000000);
-    }
+
 
     header{
       a{
         @include link(white, white, white, white);
+      }
+
+      i{
+        float: right;
+        margin-top: 7px;
       }
     }
     h3{
       margin-top: 0;
       /*margin-bottom: 0;*/
     }
+    /*
     .icon {
       img {
         margin-top: 30%;
         margin-left: 5%;
       }
     }
+    */
     .new {
       input {
         margin-bottom: 2em;
@@ -547,7 +569,7 @@ a.action{
 
 .content .file.detail .notes, .content .file.detail .details {
   display: block;
-  margin-top: 3.5em;
+  margin-top: 1em;
 }
 
 

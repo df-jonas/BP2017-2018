@@ -35,7 +35,7 @@
 
 
                             <div class="col-xs-7">
-                                <h5><a href="#">Android development</a></h5>
+                                <h5 class="title"> <a href="#">Android development</a></h5>
                                 <div class="rating">
 
 
@@ -62,7 +62,7 @@
 
 
                             <div class="col-xs-7">
-                                <h5><a href="#">Android development</a></h5>
+                                <h5 class="title"><a href="#">Android development</a></h5>
                                 <div class="rating">
 
 
@@ -101,7 +101,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
+                                <h5 class="title"><a href="#">Johnny Smit</a></h5>
                                 <div class="rating">
 
 
@@ -127,7 +127,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
+                                <h5 class="title"><a href="#">Johnny Smit</a></h5>
                                 <div class="rating">
 
 
@@ -153,7 +153,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
+                                <h5 class="title"><a href="#">Johnny Smit</a></h5>
                                 <div class="rating">
 
 
@@ -190,7 +190,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
+                                <h5 class="title"> <a href="#">Johnny Smit</a></h5>
                                 <div class="rating">
 
 
@@ -216,7 +216,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
+                                <h5 class="title"><a href="#">Johnny Smit</a></h5>
                                 <div class="rating">
 
 
@@ -303,7 +303,7 @@
 
                 <div class="row">
                     <!-- Search form -->
-                    <article class="item col-xs-12">
+                    <article class="item padding col-xs-12">
                         <div class="padding">
                             <div class="row">
                                 <div class="col-lg-3 col-xs-12">
@@ -320,8 +320,8 @@
 
                                 <div class="col-lg-9 col-xs-12">
                                     <div class="actions col-lg-9 col-lg-push-3 col-xs-12" style="text-align: center">
-                                        <a class="action col-lg-2" href="#">Download</a>
-                                        <a class="action col-lg-2" href="#">Download</a>
+                                        <a class="action col-lg-2" href="#">Chatten</a>
+                                        <a class="action col-lg-2" href="#">Test 1</a>
                                         <a class="action col-lg-2" href="#">Download</a>
                                         <a class="action col-lg-2" href="#">Download</a>
 
@@ -435,22 +435,29 @@
 
                             </div>
 
-                            <div id="comment-box" class="col-lg-12 flex" style="margin-top: 3.5em">
+                            <div id="comment-box" class="flex padding col-lg-12">
                                 <div class="picture col-lg-1">
-                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="account_img">
+                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                         class="account_img">
                                 </div>
 
-                                <div class="txt col-lg-10">
-                                    <p>Reactie toevoegen</p>
+                                <form method="post" action="#">
+                                    <div class="txt col-lg-10">
+                                        <input type="text" name="comment" class="col-lg-12"
+                                               placeholder="bericht versturen">
+
+                                    </div>
+
+                                    <div class="icon col-lg-1">
+
+                                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
 
 
-                                </div>
+                                    </div>
 
-                                <div class="icon col-lg-1">
-                                    <i class="fa fa-paper-plane"></i>
+                                </form>
 
 
-                                </div>
                             </div>
 
 

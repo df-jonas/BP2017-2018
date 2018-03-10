@@ -230,6 +230,10 @@ form input {
           transform: translateY(-75%);
 }
 
+#page_banner #welcome .buttons {
+  margin-top: 2.5em;
+}
+
 .action-button.register,
 #login_page .login_box .register.action-button {
   background: #4D6A50;
@@ -377,6 +381,13 @@ form.register .form-group {
   background-position: center center;
   background-repeat: no-repeat;
   /*Register*/
+}
+
+#login_page img {
+  width: 25%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10%;
 }
 
 #login_page .login_box {
@@ -708,8 +719,8 @@ if it's not present, don't show loader */
 
 #progressbar li {
   list-style-type: none;
-  color: red;
   width: 25%;
+  height: 50px;
   float: left;
   position: relative;
   /*lijn tussen boxes*/
@@ -721,12 +732,12 @@ if it's not present, don't show loader */
   /*html data-title*/
   content: attr(data-title);
   counter-increment: step;
-  line-height: 60px;
+  line-height: 50px;
   display: block;
   color: white;
   margin: 0 auto 5px auto;
   background: #505457;
-  height: 60px;
+  height: 50px;
   width: 75%;
   z-index: 10;
 }
@@ -760,20 +771,23 @@ if it's not present, don't show loader */
 button.download,
 a.download,
 input.next,
-input.previous {
-  padding: 2%;
+input.previous,
+input.finish {
+  padding: 8px 15px;
   background: #8A7E72;
   color: #FFFFFF;
   border: none;
-  margin-left: 2%;
   text-align: center;
+  float: right;
+  margin: 2%;
 }
 
 .download-button a,
 button.download a,
 a.download a,
 input.next a,
-input.previous a {
+input.previous a,
+input.finish a {
   cursor: pointer;
 }
 
@@ -781,7 +795,8 @@ input.previous a {
 button.download a,
 a.download a,
 input.next a,
-input.previous a {
+input.previous a,
+input.finish a {
   color: white;
 }
 
@@ -789,7 +804,8 @@ input.previous a {
 button.download a:visited,
 a.download a:visited,
 input.next a:visited,
-input.previous a:visited {
+input.previous a:visited,
+input.finish a:visited {
   color: white;
 }
 
@@ -797,7 +813,8 @@ input.previous a:visited {
 button.download a:hover,
 a.download a:hover,
 input.next a:hover,
-input.previous a:hover {
+input.previous a:hover,
+input.finish a:hover {
   color: white;
 }
 
@@ -806,20 +823,70 @@ button.download a:active,
 a.download a:active,
 input.next a:active,
 input.previous a:active,
+input.finish a:active,
 .download-button a:focus,
 button.download a:focus,
 a.download a:focus,
 input.next a:focus,
-input.previous a:focus {
+input.previous a:focus,
+input.finish a:focus {
   color: white;
 }
 
 button.download,
 a.download,
 input.next,
-input.previous {
-  margin-top: 2%;
-  width: 92.5%;
+input.previous,
+input.finish {
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-top: 7.5%;
+  margin-bottom: 5%;
+}
+
+button.download a,
+a.download a,
+input.next a,
+input.previous a,
+input.finish a {
+  cursor: pointer;
+}
+
+button.download a,
+a.download a,
+input.next a,
+input.previous a,
+input.finish a {
+  color: white;
+}
+
+button.download a:visited,
+a.download a:visited,
+input.next a:visited,
+input.previous a:visited,
+input.finish a:visited {
+  color: white;
+}
+
+button.download a:hover,
+a.download a:hover,
+input.next a:hover,
+input.previous a:hover,
+input.finish a:hover {
+  color: white;
+}
+
+button.download a:active,
+button.download a:focus,
+a.download a:active,
+a.download a:focus,
+input.next a:active,
+input.next a:focus,
+input.previous a:active,
+input.previous a:focus,
+input.finish a:active,
+input.finish a:focus {
+  color: white;
 }
 
 .page-error {

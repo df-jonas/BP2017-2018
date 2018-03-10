@@ -149,8 +149,10 @@
                                     </div>
                                 </div>
 
+
                                 <input type="button" name="next" class="next col-lg-2" value="Volgende"/>
                                 <input type="button" name="previous" class="previous col-lg-2" value="Vorige"/>
+
 
                             </div>
                         </article>
@@ -254,9 +256,11 @@
 
                                 </table>
 
+
                                 <input type="submit" name="submit" class="next col-lg-2" value="Versturen"/>
                                 <input type="button" id="submitall" name="previous" class="previous col-lg-2"
                                        value="Vorige"/>
+
 
 
                             </div>

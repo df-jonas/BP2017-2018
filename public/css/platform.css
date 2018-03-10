@@ -3,7 +3,7 @@
 /*General css*/
 
 body.platform {
-  background-color: rgba(181, 212, 183, 0.14);
+  background-color: rgba(181, 212, 183, 0.2);
   /*tinymce ads*/
 }
 
@@ -23,6 +23,7 @@ body.platform .mce-notification {
 
 .padding {
   padding: 2%;
+  padding: 8px 15px 8px 15px;
 }
 
 .brown {
@@ -35,89 +36,6 @@ body.platform .mce-notification {
 
 div.container {
   width: 80%;
-}
-
-/*Buttons*/
-
-.download-button,
-button.download,
-a.download,
-input.next,
-input.previous,
-a.action {
-  padding: 1.5%;
-  background: #8A7E72;
-  color: #FFFFFF;
-  border: none;
-  float: right;
-  margin-left: 2%;
-  text-align: center;
-}
-
-.download-button a,
-button.download a,
-a.download a,
-input.next a,
-input.previous a,
-a.action a {
-  cursor: pointer;
-}
-
-.download-button a,
-button.download a,
-a.download a,
-input.next a,
-input.previous a,
-a.action a {
-  color: white;
-}
-
-.download-button a:visited,
-button.download a:visited,
-a.download a:visited,
-input.next a:visited,
-input.previous a:visited,
-a.action a:visited {
-  color: white;
-}
-
-.download-button a:hover,
-button.download a:hover,
-a.download a:hover,
-input.next a:hover,
-input.previous a:hover,
-a.action a:hover {
-  color: white;
-}
-
-.download-button a:active,
-button.download a:active,
-a.download a:active,
-input.next a:active,
-input.previous a:active,
-a.action a:active,
-.download-button a:focus,
-button.download a:focus,
-a.download a:focus,
-input.next a:focus,
-input.previous a:focus,
-a.action a:focus {
-  color: white;
-}
-
-button.download,
-a.download,
-input.next,
-input.previous {
-  margin-top: 3.5em;
-  margin-bottom: 3.5em;
-  width: auto;
-}
-
-a.action {
-  margin-top: 0;
-  width: auto;
-  background: #4D6A50;
 }
 
 /*Header*/
@@ -387,12 +305,10 @@ a.action {
   margin-bottom: 3em;
 }
 
-.content .group-type .group {
-  border-bottom: 1px solid #8A7E72;
-  cursor: pointer;
-}
+/*afbeelding centreren in overzicht*/
 
-.content .group-type .group img {
+.content .group-type .group img,
+.content #filecontainer .file img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -400,14 +316,52 @@ a.action {
   transform: translate(-50%, -50%);
 }
 
-.content .group-type .group .icons i {
+.content .group-type .group,
+.content #filecontainer .file {
+  cursor: pointer;
+}
+
+.content .group-type .group .title a,
+.content #filecontainer .file .title a {
+  color: #000000;
+}
+
+.content .group-type .group .title a:hover,
+.content #filecontainer .file .title a:hover {
+  color: #4D6A50;
+}
+
+.content .group-type .group .icons,
+.content #filecontainer .file .icons {
+  margin-bottom: 10px;
+}
+
+.content .group-type .group .icons i,
+.content #filecontainer .file .icons i {
   color: #8A7E72;
 }
 
-.content .group-type .group .icons span {
+.content .group-type .group .icons span,
+.content #filecontainer .file .icons span {
   font-family: Raleway;
   padding-left: 5px;
   color: #0f0f0f;
+}
+
+.content .group-type .group .title a,
+.content #filecontainer .file .title a,
+.item.user-owned .title a {
+  color: #000000;
+}
+
+.content .group-type .group .title a:hover,
+.content #filecontainer .file .title a:hover,
+.item.user-owned .title a:hover {
+  color: #4D6A50;
+}
+
+.content .group-type .group {
+  border-bottom: 1px solid #8A7E72;
 }
 
 .content .group-type .group .info span {
@@ -463,6 +417,14 @@ a.action {
   border-bottom: 1px solid #dfdfdf;
 }
 
+#tutoringcontent article.col-lg-4:nth-of-type(1) {
+  padding-left: 0;
+}
+
+#tutoringcontent article.col-lg-4:nth-of-type(3) {
+  padding-right: 0;
+}
+
 #tutoringcontent .item {
   padding: 0;
   border-top: 0;
@@ -480,14 +442,13 @@ a.action {
 }
 
 #tutoringcontent .item img {
-  width: 128px;
-  height: 128px;
-  margin: 10%;
+  width: 60px;
+  height: 60px;
+  margin: 5%;
 }
 
 #messages {
   margin-top: 2em;
-  border-bottom: 2px solid #505457;
 }
 
 #messages .msg {
@@ -510,12 +471,19 @@ a.action {
 }
 
 #comment-box {
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 1.5em;
+  padding-top: 1.5em;
+  margin-bottom: 1.5em;
+  border-top: 2px solid #8A7E72;
+  line-height: 32px;
 }
 
-#comment-box .txt {
-  line-height: 32px;
+#comment-box input,
+#comment-box button {
+  border: none;
+  padding: 0;
+  background: none;
+  color: inherit;
 }
 
 /*New/upload button*/
@@ -569,25 +537,15 @@ a.action {
   margin-top: 20px;
 }
 
-.content .file a {
-  cursor: pointer;
-}
-
-.content .file a {
-  color: #000000;
-}
-
-.content .file a:visited {
-  color: #000000;
-}
-
-.content .file a:hover {
-  color: #000000;
-}
-
-.content .file a:active,
-.content .file a:focus {
-  color: #000000;
+.content .file {
+  /*
+    .icon {
+      img {
+        margin-top: 30%;
+        margin-left: 5%;
+      }
+    }
+    */
 }
 
 .content .file header a {
@@ -607,14 +565,14 @@ a.action {
   color: white;
 }
 
+.content .file header i {
+  float: right;
+  margin-top: 7px;
+}
+
 .content .file h3 {
   margin-top: 0;
   /*margin-bottom: 0;*/
-}
-
-.content .file .icon img {
-  margin-top: 30%;
-  margin-left: 5%;
 }
 
 .content .file .new input {
@@ -625,7 +583,7 @@ a.action {
 .content .file.detail .notes,
 .content .file.detail .details {
   display: block;
-  margin-top: 3.5em;
+  margin-top: 1em;
 }
 
 .content .file.detail .details .detail i {

@@ -20,4 +20,9 @@ class TutoringController extends Controller
     {
         return view("platform.tutoring.tuteenew");
     }
+
+    public function help()
+    {
+        return view("platform.tutoring.help");
+    }
 }

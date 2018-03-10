@@ -111,6 +111,12 @@
 -->
 
 
+            <header class="col-xs-12">
+                <h3>Registreren</h3>
+                <p>Vul je gegevens in om een UniHelp account aan te maken.</p>
+            </header>
+
+
             <form id="msform" class="register clearfix" method="post" enctype="multipart/form-data"
                   action="{{ route('register') }}">
 
@@ -123,12 +129,9 @@
                 <fieldset>
                     <article>
 
-                        <div class="step">
 
-                            <header class="col-xs-12">
-                                <h3>Inloggen</h3>
-                                <p>Vul je gegevens in om in te loggen met je UniHelp account.</p>
-                            </header>
+
+
 
 
                             <div class="box">
@@ -172,9 +175,10 @@
                                 @endif
                             </div>
 
+                                <input type="button" class="next col-xs-12" value="Volgende"/>
+
                             </div>
 
-                            <input type="button" class="next col-xs-12" value="Volgende"/>
 
 
 
@@ -182,7 +186,7 @@
 
 
 
-                        </div>
+
 
                     </article>
 
@@ -193,12 +197,8 @@
                 <fieldset>
 
                     <article>
-                        <div class="step">
 
-                            <header class="col-xs-12">
-                                <h3>Inloggen</h3>
-                                <p>Vul je gegevens in om in te loggen met je UniHelp account.</p>
-                            </header>
+
 
                             <div class="box">
                             <div class="form-group clearfix col-xs-12">
@@ -261,14 +261,21 @@
                                 </label>
                             </div>
 
+
+
+                                <input type="button" name="previous" class="previous col-xs-12" value="Vorige"/>
+                                <input type="submit" name="submit" class="finish col-xs-12" value="Voltooien"/>
+
+
+                                 <!-- <input type="submit" name="submit" class="next col-xs-12" value="Registreren"/> -->
+
                             </div>
 
 
 
 
-                            <input type="button" name="previous" class="previous col-xs-12" value="Vorige"/>
-                            <input type="submit" name="submit" class="next col-xs-12" value="Registreren"/>
-                        </div>
+
+
                     </article>
                 </fieldset>
                 <!-- step 2 -->

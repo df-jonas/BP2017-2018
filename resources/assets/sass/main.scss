@@ -198,6 +198,9 @@ form input {
   text-align: center;
   top: 75%;
   transform: translateY(-75%);
+  .buttons{
+    margin-top: 2.5em;
+  }
 }
 
 .action-button.register {
@@ -339,6 +342,12 @@ form.register .form-group {
   background-position: center center;
   background-repeat: no-repeat;
 
+  img{
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10%;
+  }
   .login_box {
     width: 35em;
     max-width: 100%;
@@ -622,8 +631,8 @@ if it's not present, don't show loader */
   padding-left: 0;
   li {
     list-style-type: none;
-    color: red;
     width: 25%;
+    height: 50px;
     float: left;
     position: relative;
     //box with title*/
@@ -632,12 +641,12 @@ if it's not present, don't show loader */
       /*html data-title*/
       content: attr(data-title);
       counter-increment: step;
-      line-height: 60px;
+      line-height: 50px;
       display: block;
       color: white;
       margin: 0 auto 5px auto;
       background: $grey;
-      height: 60px;
+      height: 50px;
       width: 75%;
       z-index: 10;
     }
@@ -669,22 +678,30 @@ if it's not present, don't show loader */
 
 /*Buttons*/
 .download-button {
-  padding: 2%;
+  padding: 8px 15px;
   background: $unihelp-brown;
   color: #FFFFFF;
   border: none;
-  margin-left: 2%;
   text-align: center;
+  float: right;
+  margin: 2%;
   a {
     cursor: pointer;
     @include link(white, white, white, white);
   }
 }
 
-button.download, a.download, input.next, input.previous {
+
+button.download, a.download, input.next, input.previous, input.finish {
   @extend .download-button;
-  margin-top: 2%;
-  width: 92.5%;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-top: 7.5%;
+  margin-bottom: 5%;
+  a {
+    cursor: pointer;
+    @include link(white, white, white, white);
+  }
 }
 
 .page-error {

@@ -31,7 +31,7 @@
                                 </div>
 
                                 <div class="col-md-10 col-xs-12">
-                                    <h5>
+                                    <h5 class="title">
                                         <a href="{{ $userdownload->file->detailUrl() }}"> {{$userdownload->file->title}}</a>
                                     </h5>
 
