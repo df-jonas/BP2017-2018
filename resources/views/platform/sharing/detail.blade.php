@@ -52,7 +52,7 @@
                                     href="{{ $file->downloadUrl() }}"><i class="fa fa-download"></i></a>
                         </header>
                         <div class="padding">
-                            <div class="row flex">
+                            <div class="row colflex">
                                 <div class="col-lg-3 col-xs-12">
                                     <div class="table">
                                         <div style="display: table-cell; width: 32px"><img
