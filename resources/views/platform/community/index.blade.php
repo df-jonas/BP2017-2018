@@ -250,7 +250,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-xs-12" style="text-align: right">
-                                                <h6>Klachten over school</h6>
+                                                <h6>{{ $group->shortdesc }}</h6>
                                                 <h6>Laatste update: {{ $group->lastupdate() }}</h6>
                                             </div>
                                         </div>
