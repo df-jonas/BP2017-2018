@@ -36,7 +36,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
+                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
                                 <div class="rating">
 
 
@@ -62,7 +62,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
+                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
                                 <div class="rating">
 
 
@@ -88,7 +88,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
+                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
                                 <div class="rating">
 
 
@@ -174,9 +174,10 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-xs-12">
                                         <div class="table">
-                                            <div style="display: table-cell; width: 32px"><img
-                                                        src="{{ URL::asset('img/avatars/1518557547_bday.jpg') }}"
-                                                        class="account_img"></div>
+                                            <div style="display: table-cell; width: 32px">
+                                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                                     class="account_img">
+                                            </div>
                                             <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
                                                 <h6 style="margin: 0">Arno Stalpaert</h6>
                                                 <h6 style="margin: 5px 0">Donderdag om 14:43</h6>
@@ -185,7 +186,8 @@
                                     </div>
 
                                     <div class="col-lg-9 col-xs-12">
-                                        <div class="actions col-lg-6 col-lg-push-6 col-xs-12" style="text-align: center">
+                                        <div class="actions col-lg-6 col-lg-push-6 col-xs-12"
+                                             style="text-align: center">
                                             <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
                                                         class="fa fa-thumbs-up"></i> Upvote
                                             </div>
@@ -227,24 +229,30 @@
                                     </ul>
                                 </div>
 
-                                <hr>
 
-                                <div class="row flex">
-                                    <div class="col-lg-1">
-
+                                <div id="comment-box" class="flex padding col-lg-12">
+                                    <div class="picture col-lg-1">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                             class="account_img">
                                     </div>
 
-                                    <div class="col-lg-10">
-                                        <p>Reactie toevoegen</p>
+                                    <form method="post" action="#">
+                                        <div class="txt col-lg-10">
+                                            <input type="text" name="comment" class="col-lg-12"
+                                                   placeholder="reactie toevoegen">
+
+                                        </div>
+
+                                        <div class="icon col-lg-1">
+
+                                            <button type="submit"><i class="fa fa-paper-plane"></i></button>
 
 
-                                    </div>
+                                        </div>
 
-                                    <div class="col-lg-1">
-                                        <i class="fa fa-reply"></i>
+                                    </form>
 
 
-                                    </div>
                                 </div>
 
                             </div>
@@ -255,18 +263,74 @@
                     </div>
 
 
-                    <div class="group-detail clearfix">
+                </div>
 
 
-                        <article class="group">
-                            <div class="padding">
-                                <h3>Reacties</h3>
+                <div class="item clearfix" style="margin-top: 3em">
+
+
+                    <article class="group">
+                        <div class="padding">
+                            <h3>Reacties</h3>
+                        </div>
+
+
+                        <div id="messages" class="col-lg-12" style="border-bottom: none">
+
+                            <div class="msg col-lg-12">
+
+                                <div class="picture col-lg-1">
+                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                </div>
+
+                                <div class="txt col-lg-11">
+                                    <div class="table">
+                                        <div style="display: table-cell;  float: left">
+                                            <span>Jeffrey Thor</span>
+                                        </div>
+                                        <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                            <span>Donderdag om 14:43</span>
+                                        </div>
+                                    </div>
+
+                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                        turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor
+                                        sit amet, ante. </p>
+                                </div>
+
+
                             </div>
 
-                        </article>
+
+                            <div class="msg col-lg-12">
+
+                                <div class="picture col-lg-1">
+                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                </div>
+
+                                <div class="txt col-lg-11">
+                                    <div class="table">
+                                        <div style="display: table-cell;  float: left">
+                                            <span>Jeffrey Thor</span>
+                                        </div>
+                                        <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                            <span>Donderdag om 14:43</span>
+                                        </div>
+                                    </div>
+
+                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                        turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor
+                                        sit amet, ante. </p>
+                                </div>
 
 
-                    </div>
+                            </div>
+
+
+                        </div>
+
+                    </article>
+
 
                 </div>
 

@@ -75,7 +75,7 @@ form input {
   padding-left: 4%;
   padding-right: 4%;
   height: 100%;
-  margin-bottom: 3.5%;
+  //margin-bottom: 3.5%;
   color: #000000;
   text-align: center;
 }
@@ -198,6 +198,9 @@ form input {
   text-align: center;
   top: 75%;
   transform: translateY(-75%);
+  .buttons{
+    margin-top: 2.5em;
+  }
 }
 
 .action-button.register {
@@ -338,125 +341,141 @@ form.register .form-group {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-}
-
-.login_box {
-  width: 32em;
-  max-width: 100%;
-  padding: 1.5%;
-  background: #FFFFFF;
-  border-radius: 3.5px;
-  position: absolute;
-  left: 50%;
-  top: 52%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-
-  input{
-    border-radius: 0;
-  }
 
   img{
-    display: block;
     width: 25%;
+    display: block;
     margin: 0 auto;
-    margin-bottom: 10%;
+    margin-top: 10%;
   }
+  .login_box {
+    width: 35em;
+    max-width: 100%;
+    background: #FFFFFF;
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #000000;
 
+    header, .box, footer {
+      padding: 24px 50px 36px;
+    }
 
-  /*
-  .canvas {
-    text-align: center;
-    padding-top: 10%;
-    img {
-      display: block;
-      width: 25%;
-      margin: 0 auto;
-      margin-bottom: 5%;
+    header, footer {
+      text-align: center;
+
+    }
+
+    .box {
+      padding-top: 0;
+
+    }
+    footer {
+      background: #eee;
+      color: #000000;
+      text-transform: uppercase;
+    }
+
+    div.form-group {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .login-problem {
+      text-align: center;
+      cursor: pointer;
+      @include link(black, black, black, black);
+    }
+
+    .action-button.login, .action-button.register {
+      @extend .action-button;
+      background: $unihelp-green;
+      width: 100%;
+      padding: 2%;
+      text-transform: uppercase;
+      /*margin-top: 15%;*/
+      color: #FFFFFF;
     }
   }
-  */
-  .login-problem {
-    text-align: center;
-    cursor: pointer;
-    @include link(black, black, black, black);
+
+.action-button.register {
+    background: transparent;
+    border: 2px solid $unihelp-green;
+    color: #000000;
+    &:hover{
+      background: $unihelp-green;
+      color: #ffffff;
+      -webkit-transition: background-color 100ms linear;
+      -ms-transition: background-color 100ms linear;
+      transition: background-color 100ms linear;
+    }
+
   }
 
-  .action-button.login, .action-button.register {
-    @extend .action-button;
-    background: $unihelp-green;
-    width: 100%;
-    padding: 2%;
-    /*margin-top: 15%;*/
-    margin-bottom: 10%;
-    color: #FFFFFF;
-  }
 
-  .action-button.register {
-    background: $unihelp-green;
-    margin-top: 5%;
-    margin-bottom: 5%;
-  }
-}
 
-/*Register*/
+  /*Register*/
 
-.account_img {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  background-color: #FFFFFF;
-  display: block;
-  margin: 0 auto;
-  cursor: pointer;
-  &:hover {
+  .account_img {
     width: 10rem;
     height: 10rem;
-  }
-}
-
-.profile-img-container {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  img{
-    width: 128px;
-    height: 128px;
-  }
-  a, #picture-input {
+    border-radius: 50%;
+    background-color: #FFFFFF;
     display: block;
-    position: absolute;
-    top: 0;
-    opacity: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    text-align: center;
-    color: inherit;
-    color: $unihelp-green;
-    font-size: 0.5em;
+    margin: 0 auto;
     cursor: pointer;
-  }
-  &:hover a {
-    opacity: 1;
-    top: 0;
-    z-index: 500;
-    span {
-      top: 50%;
-      position: absolute;
-      left: 0;
-      right: 0;
-      transform: translateY(-50%);
+    &:hover {
+      width: 10rem;
+      height: 10rem;
     }
   }
-  #picture-input {
-    z-index: 999;
-    width: 30rem;
-  }
-}
 
-.account_username {
-  text-align: center;
+  .profile-img-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    img {
+      width: 128px;
+      height: 128px;
+    }
+    a, #picture-input {
+      display: block;
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      text-align: center;
+      color: inherit;
+      color: $unihelp-green;
+      font-size: 0.5em;
+      cursor: pointer;
+    }
+    &:hover a {
+      opacity: 1;
+      top: 0;
+      z-index: 500;
+      span {
+        top: 50%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+      }
+    }
+    #picture-input {
+      z-index: 999;
+      width: 30rem;
+    }
+  }
+
+  .account_username {
+    text-align: center;
+  }
+
 }
 
 /*Footer*/
@@ -565,15 +584,21 @@ footer {
   }
 }
 
-
-
-
 /*Preloader*/
 /* Paste this css to your style sheet file or under head tag */
 /* This only works with JavaScript,
 if it's not present, don't show loader */
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.no-js #loader {
+  display: none;
+}
+
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0;
+}
+
 .se-pre-con {
   position: fixed;
   left: 0px;
@@ -582,6 +607,105 @@ if it's not present, don't show loader */
   height: 100%;
   z-index: 9999;
   background: url('/img/loaders/logo.gif') center no-repeat #fff;
+}
+
+#msform fieldset {
+  border: 0 none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  /*fieldsets op elkaar stacken*/
+  position: relative;
+}
+
+/*Alle steps hiden, behalve de eerste*/
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+
+/*steps bar*/
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+  padding-left: 0;
+  li {
+    list-style-type: none;
+    width: 25%;
+    height: 50px;
+    float: left;
+    position: relative;
+    //box with title*/
+    &:before {
+      position: relative;
+      /*html data-title*/
+      content: attr(data-title);
+      counter-increment: step;
+      line-height: 50px;
+      display: block;
+      color: white;
+      margin: 0 auto 5px auto;
+      background: $grey;
+      height: 50px;
+      width: 75%;
+      z-index: 10;
+    }
+    /*lijn tussen boxes*/
+    &:after {
+      content: '';
+      width: 100%;
+      height: 10px;
+      background: $grey;
+      position: absolute;
+      left: -50%;
+      top: 35%;
+      z-index: 1;
+    }
+    /*Geen connector nodig voor stap 1*/
+
+    &:first-child:after {
+      content: none;
+    }
+
+  }
+}
+
+/*Actieve en voltooide stappen groen kleuren*/
+#progressbar li.active:before, #progressbar li.active:after {
+  background: $unihelp-green;
+  color: white;
+}
+
+/*Buttons*/
+.download-button {
+  padding: 8px 15px;
+  background: $unihelp-brown;
+  color: #FFFFFF;
+  border: none;
+  text-align: center;
+  float: right;
+  margin: 2%;
+  a {
+    cursor: pointer;
+    @include link(white, white, white, white);
+  }
+}
+
+
+button.download, a.download, input.next, input.previous, input.finish {
+  @extend .download-button;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-top: 7.5%;
+  margin-bottom: 5%;
+  a {
+    cursor: pointer;
+    @include link(white, white, white, white);
+  }
+}
+
+.page-error {
+  text-align: center;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -661,8 +785,8 @@ if it's not present, don't show loader */
 
   }
 
-  .about_person, .about_person .left{
-    text-align: center!important;
+  .about_person, .about_person .left {
+    text-align: center !important;
   }
 
   footer {

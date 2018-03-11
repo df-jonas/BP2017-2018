@@ -93,7 +93,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
+                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
                                 <div class="rating">
 
 
@@ -119,7 +119,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
+                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
                                 <div class="rating">
 
 
@@ -145,7 +145,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
+                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
                                 <div class="rating">
 
 
@@ -239,7 +239,7 @@
                                     </div>
 
                                     <div class="col-lg-5 col-xs-10">
-                                        <h4>Klachten</h4>
+                                        <h4 class="title"><a href="#">Klachten</a></h4>
                                         <div class="row icons">
                                             <!--
                                             <div class="col-lg-2">
@@ -274,7 +274,7 @@
                                     </div>
 
                                     <div class="col-lg-5 col-xs-10">
-                                        <h4>Evenementen</h4>
+                                        <h4 class="title"><a href="#">Evenementen</a></h4>
                                         <div class="row icons">
                                             <!--
                                             <div class="col-lg-2">
@@ -318,7 +318,7 @@
                                     </div>
 
                                     <div class="col-lg-5 col-xs-10">
-                                        <h4>Design</h4>
+                                        <h4 class="title"><a href="#">Design</a></h4>
                                         <div class="row icons">
                                             <!--
                                             <div class="col-lg-2">
@@ -354,7 +354,7 @@
                                     </div>
 
                                     <div class="col-lg-5 col-xs-10">
-                                        <h4>Development</h4>
+                                        <h4 class="title"><a href="#">Development</a></h4>
                                         <div class="row icons">
                                             <!--
                                             <div class="col-lg-2">
@@ -390,7 +390,7 @@
                                     </div>
 
                                     <div class="col-lg-5 col-xs-10">
-                                        <h4>Server & Networking</h4>
+                                        <h4 class="title"><a href="#">Server & Networking</a></h4>
                                         <div class="row icons">
                                             <!--
                                             <div class="col-lg-2">

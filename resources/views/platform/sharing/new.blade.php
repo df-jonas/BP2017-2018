@@ -46,7 +46,7 @@
                 {{ csrf_field() }}
 
                 <!-- progressbar -->
-                    <article class="file new clearfix">
+                    <article class="item file new clearfix">
                         <div class="padding">
                             <ul id="progressbar">
                                 <li data-title="Kies Vak" class="active"></li>
@@ -61,7 +61,7 @@
                     <!-- step 1 -->
                     <fieldset>
 
-                        <article class="file new clearfix">
+                        <article class="item file new clearfix">
                             <div class="padding">
                                 <div class="form-group clearfix">
                                     <div class="selectdiv">
@@ -76,7 +76,7 @@
                             </div>
                         </article>
 
-                        <article class="file new clearfix">
+                        <article class="item file new clearfix">
                             <div class="padding">
                                 <label>Bestanden uploaden</label>
                             </div>
@@ -98,7 +98,7 @@
 
                     <!-- step 2 -->
                     <fieldset>
-                        <article class="file new clearfix">
+                        <article class="item file new clearfix">
                             <div class="padding">
 
                                 <div class="form-group clearfix">
@@ -149,8 +149,10 @@
                                     </div>
                                 </div>
 
+
                                 <input type="button" name="next" class="next col-lg-2" value="Volgende"/>
                                 <input type="button" name="previous" class="previous col-lg-2" value="Vorige"/>
+
 
                             </div>
                         </article>
@@ -159,7 +161,7 @@
 
                     <!-- step 3 -->
                     <fieldset>
-                        <article class="file new clearfix">
+                        <article class="item file new clearfix">
                             <div class="padding">
 
                                 <div class="form-group clearfix">
@@ -190,7 +192,7 @@
 
                     <!-- step 4 -->
                     <fieldset>
-                        <article class="file new clearfix">
+                        <article class="item file new clearfix">
                             <div class="padding">
 
                                 <label>Document eigenschappen</label>
@@ -254,9 +256,11 @@
 
                                 </table>
 
+
                                 <input type="submit" name="submit" class="next col-lg-2" value="Versturen"/>
                                 <input type="button" id="submitall" name="previous" class="previous col-lg-2"
                                        value="Vorige"/>
+
 
 
                             </div>

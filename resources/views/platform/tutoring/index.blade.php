@@ -9,8 +9,19 @@
             <div class="sidebar">
 
 
+                <!-- New button -->
+                <article class="item button">
+                    <a href="">
+                        <button>
+                            <i class="glyphicon glyphicon-plus-sign"></i> Nieuw verzoek
+                        </button>
+                    </a>
 
-                <!-- Search form -->
+
+                </article>
+                <!-- end New button -->
+
+                <!-- Requests-->
                 <article class="item user-owned">
                     <header>Verzoeken</header>
                     <div class="padding">
@@ -24,7 +35,7 @@
 
 
                             <div class="col-xs-7">
-                                <h5><a href="#">Android development</a></h5>
+                                <h5 class="title"> <a href="#">Android development</a></h5>
                                 <div class="rating">
 
 
@@ -51,7 +62,7 @@
 
 
                             <div class="col-xs-7">
-                                <h5><a href="#">Android development</a></h5>
+                                <h5 class="title"><a href="#">Android development</a></h5>
                                 <div class="rating">
 
 
@@ -72,17 +83,12 @@
                         </div>
 
 
-
-
-
                     </div>
                 </article>
-                <!-- Search form -->
+                <!-- End requests-->
 
 
-
-
-                <!-- Search form -->
+                <!--  Requests-->
                 <article class="item user-owned">
                     <header>Mijn tutees</header>
                     <div class="padding">
@@ -95,7 +101,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
+                                <h5 class="title"><a href="#">Johnny Smit</a></h5>
                                 <div class="rating">
 
 
@@ -121,7 +127,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
+                                <h5 class="title"><a href="#">Johnny Smit</a></h5>
                                 <div class="rating">
 
 
@@ -147,7 +153,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
+                                <h5 class="title"><a href="#">Johnny Smit</a></h5>
                                 <div class="rating">
 
 
@@ -168,11 +174,10 @@
 
                     </div>
                 </article>
-                <!-- Search form -->
+                <!-- End requests-->
 
 
-
-                <!-- Search form -->
+                <!-- Requests-->
                 <article class="item user-owned">
                     <header>Mijn tutors</header>
                     <div class="padding">
@@ -185,7 +190,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
+                                <h5 class="title"> <a href="#">Johnny Smit</a></h5>
                                 <div class="rating">
 
 
@@ -211,7 +216,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
+                                <h5 class="title"><a href="#">Johnny Smit</a></h5>
                                 <div class="rating">
 
 
@@ -232,8 +237,7 @@
 
                     </div>
                 </article>
-                <!-- Search form -->
-
+                <!-- End requests-->
 
 
             </div>
@@ -243,87 +247,218 @@
                 <div id="tutoringcontent">
 
                     <div class="row">
-                    <!-- Search form -->
-                    <article class="item col-lg-4 col-xs-12">
-                        <header>Wordt tutor</header>
-                        <div class="padding">
+                        <!-- Search form -->
+                        <article class="col-lg-4  col-xs-12">
+                            <div class="item col-lg-12">
+                                <header>Wordt tutor</header>
+                                <div class="padding">
 
-                            <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" >
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                    <img src="{{ asset('img/icons/003-whiteboard.svg' )}}">
+                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                        turpis egestas.</p>
 
-                        </div>
-                    </article>
-                    <!-- Search form -->
+                                </div>
+                            </div>
+
+                        </article>
+                        <!-- Search form -->
 
 
                         <!-- Search form -->
-                        <article class="item col-lg-4 col-xs-12">
-                            <header>Wordt tutor</header>
-                            <div class="padding">
+                        <article class="col-lg-4  col-xs-12">
+                            <div class="item col-lg-12">
+                                <header>Hoe werkt het?</header>
+                                <div class="padding">
 
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" >
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                    <img src="{{ asset('img/icons/001-pen.svg' )}}">
+                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                        turpis egestas.</p>
 
+                                </div>
                             </div>
+
                         </article>
                         <!-- Search form -->
 
                         <!-- Search form -->
-                        <article class="item col-lg-4 col-xs-12">
-                            <header>Wordt tutor</header>
-                            <div class="padding">
+                        <article class="col-lg-4  col-xs-12">
+                            <div class="item col-lg-12">
+                                <header>Vind een tutor</header>
+                                <div class="padding">
 
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" >
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                    <img src="{{ asset('img/icons/002-book.svg' )}}">
+                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                        turpis egestas.</p>
 
+                                </div>
                             </div>
+
                         </article>
                         <!-- Search form -->
 
                     </div>
 
 
-
-
                 </div>
 
                 <div class="row">
                     <!-- Search form -->
-                    <article class="item col-xs-12">
+                    <article class="item padding col-xs-12">
                         <div class="padding">
                             <div class="row">
                                 <div class="col-lg-3 col-xs-12">
                                     <div class="table">
                                         <div style="display: table-cell; width: 32px"><img
-                                                    src="{{ URL::asset('img/avatars/1518557547_bday.jpg') }}"
-                                                    class="account_img"></div>
+                                                    src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                                    class="group_img"></div>
                                         <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
                                             <h6 style="margin: 0">Arno Stalpaert</h6>
-                                            <h6 style="margin: 5px 0">Donderdag om 14:43</h6>
+                                            <h6 style="margin: 5px 0">Data Visualisatie</h6>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-9 col-xs-12">
-                                    <div class="actions col-lg-6 col-lg-push-6 col-xs-12" style="text-align: center">
-                                        <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                    class="fa fa-thumbs-up"></i> Upvote
-                                        </div>
-                                        <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                    class="fa fa-thumbs-down"></i> Downvote
-                                        </div>
-                                        <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                    class="fa fa-bookmark"></i> Volgen
-                                        </div>
+                                    <div class="actions col-lg-9 col-lg-push-3 col-xs-12" style="text-align: center">
+                                        <a class="action col-lg-2" href="#">Chatten</a>
+                                        <a class="action col-lg-2" href="#">Test 1</a>
+                                        <a class="action col-lg-2" href="#">Download</a>
+                                        <a class="action col-lg-2" href="#">Download</a>
+
                                     </div>
 
                                 </div>
                             </div>
 
 
+                            <div id="messages" class="col-lg-12">
+
+                                <div class="msg col-lg-12">
+
+                                    <div class="picture col-lg-1">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                    </div>
+
+                                    <div class="txt col-lg-11">
+                                        <div class="table">
+                                            <div style="display: table-cell;  float: left">
+                                                <span>Jeffrey Thor</span>
+                                            </div>
+                                            <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                <span>Donderdag om 14:43</span>
+                                            </div>
+                                        </div>
+
+                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet, ante. </p>
+                                    </div>
 
 
+                                </div>
 
+
+                                <div class="msg own col-lg-12">
+
+                                    <div class="txt col-lg-11">
+                                        <div class="table">
+                                            <div style="display: table-cell;  float: left">
+                                                <span>Donderdag om 14:43</span>
+                                            </div>
+                                            <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                <span>ik</span>
+                                            </div>
+                                        </div>
+
+                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet, ante. </p>
+                                    </div>
+
+                                    <div class="picture col-lg-1">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="msg own col-lg-12">
+
+                                    <div class="txt col-lg-11">
+                                        <div class="table">
+                                            <div style="display: table-cell;  float: left">
+                                                <span>Donderdag om 14:43</span>
+                                            </div>
+                                            <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                <span>ik</span>
+                                            </div>
+                                        </div>
+
+                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet, ante. </p>
+                                    </div>
+
+                                    <div class="picture col-lg-1">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="msg col-lg-12">
+
+                                    <div class="picture col-lg-1">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                    </div>
+
+                                    <div class="txt col-lg-11">
+                                        <div class="table">
+                                            <div style="display: table-cell;  float: left">
+                                                <span>Jeffrey Thor</span>
+                                            </div>
+                                            <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                <span>Donderdag om 14:43</span>
+                                            </div>
+                                        </div>
+
+                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet, ante. </p>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+                            <div id="comment-box" class="flex padding col-lg-12">
+                                <div class="picture col-lg-1">
+                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                         class="account_img">
+                                </div>
+
+                                <form method="post" action="#">
+                                    <div class="txt col-lg-10">
+                                        <input type="text" name="comment" class="col-lg-12"
+                                               placeholder="bericht versturen">
+
+                                    </div>
+
+                                    <div class="icon col-lg-1">
+
+                                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
+
+
+                                    </div>
+
+                                </form>
+
+
+                            </div>
 
 
                         </div>

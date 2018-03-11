@@ -122,7 +122,7 @@
 
 
                                 <div class="col-md-8 col-xs-12">
-                                    <h5><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h5>
+                                    <h5 class="title"><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h5>
                                     <div class="rating">
                                         @for ($i = 1; $i <= 5; $i++)
                                             @if($i <= $rating)
@@ -154,6 +154,7 @@
                         @php
                             $rating = $file->averageRating()
                         @endphp
+                    <!--
                         <article class="file item clearfix">
                             <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a
                                         href="{{ $file->downloadUrl() }}"><i class="fa fa-download"></i></a>
@@ -184,7 +185,59 @@
                                 </div>
                             </div>
                         </article>
-                    @endforeach
+-->
+
+
+                        <article class="file item">
+                            <a href="{{ $file->detailUrl() }}">
+                            <header>
+                               {{$file->course->name}}<i class="fa fa-download"></i>
+                            </header>
+                            </a>
+                            <div class="padding">
+                                <div class="row flex">
+                                    <div class="col-lg-1 col-xs-2">
+                                        <img src="{{asset('img/icons/002-group-filled-persons.png')}} "
+                                             style="width: 36px; height: 36px">
+                                    </div>
+
+                                    <div class="col-lg-5 col-xs-10">
+                                        <h4 class="title"><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h4>
+                                        <div class="row icons">
+                                            <!--
+                                            <div class="col-lg-2">
+                                                <i class="fa fa-comment"><span>22</span></i>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <i class="fa fa-thumbs-up"><span>22</span></i>
+                                            </div>
+                                            -->
+                                            <div class="col-xs-12">
+                                                door {{$file->user->first_name}} {{$file->user->last_name}}
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-6 col-xs-12" style="text-align: right">
+
+                                        <div class="rating">
+                                            @for ($i = 1; $i <= 5; $i++)
+                                                @if($i <= $rating)
+                                                    <span class="fa fa-star checked"></span>
+                                                @else
+                                                    <span class="fa fa-star"></span>
+                                                @endif
+                                            @endfor
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+
+                        @endforeach
                 </div>
             </div>
 

@@ -7,17 +7,17 @@ $(document).ready(function () {
             success: function (json) {
                 var newhtml = "";
                 if (json.length > 0) {
-                    newhtml = '<span class="filter filter-results col-xs-12">Er werden ' + json.length + ' resultaten gevonden.</span><br><br>';
+                    newhtml = '<span class="filter filter-results padding col-xs-12">Er werden ' + json.length + ' resultaten gevonden.</span><br><br>';
                     $.each(json, function (key, value) {
                         newhtml += '<article class="file item clearfix">' +
                             '<header>' + value.field.name + ' > ' + value.degree.name + ' > ' + value.course.name + '<a href="/p/sharing/proxy/' + value.public_id + '">' +
                             '<i class="fa fa-download"></i></a></header><div class="padding">' +
                             '<div class="row flex">' +
-                            '<div class="icon col-md-1 col-xs-12">' +
-                            '<img src="/img/icons/001-file.png" style="width: 36px; height: 36px">' +
+                            '<div class="icon col-lg-1 col-xs-10">' +
+                            '<img src="/img/icons/002-group-filled-persons.png" style="width: 36px; height: 36px">' +
                             '</div>' +
                             '<div class="col-md-5 col-xs-12">' +
-                            '<h3><a href="/p/sharing/' + value.id + '">' + value.title + '</a></h3>' +
+                            '<h4 class="title"><a href="/p/sharing/' + value.id + '">' + value.title + '</a></h4>' +
                             '<p>door ' + value.user.first_name + ' ' + value.user.last_name + '</p>' +
                             '</div>' +
                             '<div class="col-md-6 col-xs-12" style="text-align: right">' +
@@ -32,7 +32,7 @@ $(document).ready(function () {
                         newhtml += '</div></div></div></div></article>';
                     });
                 } else {
-                    newhtml = '<span class="filter filter-noresults col-xs-12">Er werden geen resultaten gevonden.</span>';
+                    newhtml = '<span class="filter filter-noresults padding col-xs-12">Er werden geen resultaten gevonden.</span>';
                 }
                 $("#filecontainer").html(newhtml);
             }

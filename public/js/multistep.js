@@ -13,8 +13,10 @@ $(document).ready(function () {
 
         //current fieldset
         current_fs = $(this).parent().parent().parent();
+        //console.log(current_fs);
         //next fieldset
         next_fs = $(this).parent().parent().parent().next();
+        //console.log(next_fs);
 
         //activate next step on progressbar using the index of next_fs
         $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
@@ -49,7 +51,9 @@ $(document).ready(function () {
         animating = true;
 
         current_fs = $(this).parent().parent().parent();
+        //console.log(current_fs);
         previous_fs = $(this).parent().parent().parent().prev();
+        console.log(previous_fs);
 
 
         //de-activate current step on progressbar

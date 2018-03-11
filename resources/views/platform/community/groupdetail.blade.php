@@ -50,7 +50,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
+                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
                                 <div class="rating">
 
 
@@ -76,7 +76,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
+                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
                                 <div class="rating">
 
 
@@ -102,7 +102,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
+                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
                                 <div class="rating">
 
 

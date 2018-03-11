@@ -87,8 +87,8 @@
                 <h5>Dig-X student
                     <small>(Network &amp; Security)</small>
                 </h5>
-                <p>Hallo, ik ben Arno en ik zit in mijn laatste jaar Multimedia- en communicatie technologie aan de Erasmushogeschool Brussel. Vorig jaar koos ik er voor om mij te specialiseren in Mobile App en Web development. Hier leerde ik onder andere veel over design, front-end, back-end, User Experience, website development, enzovoort. Om deze reden koos ik voor een veelzijdig project waar al deze zaken aan bod zouden komen. Tijdens dit project zal ik mij vooral focussen op het front-end, design en UX gedeelte. </p>
-
+                <p>Hallo, mijn naam is Jonas De Frère, laatstejaarsstudent Dig-X (toegepaste informatica) aan de Erasmushogeschool Brussel. Ik volg de specialisatie Netwerken & Security, waardoor ik een grote kennis heb over servers, beveiliging en back-end.
+                Tijdens mijn opleiding leerde ik aan de slag gaan met back-end development. Belangrijk hierbij is het aspect snelheid, optimalisatie en beveiliging. Deze competenties laat ik zien in in ons eigen platform, UniHelp.</p>
             </div>
 
 
