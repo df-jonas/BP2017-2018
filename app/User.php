@@ -40,6 +40,10 @@ class User extends Authenticatable
         return $this->belongsTo('App\Campus', 'campusid');
     }
 
+    public function role() {
+        return $this->belongsTo('App\Role', 'role');
+    }
+
     public function isValid()
     {
         if (
