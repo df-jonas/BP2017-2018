@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\GroupCategory;
 use Illuminate\Http\Request;
 
 class CommunityController extends Controller
 {
     public function index()
     {
-        return view("platform.community.index");
+        $arr = [
+            'categories' => GroupCategory::all()
+        ];
+
+        return view("platform.community.index", $arr);
     }
 
     public function newgroup()
