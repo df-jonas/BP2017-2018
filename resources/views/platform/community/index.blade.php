@@ -21,7 +21,7 @@
                 </article>
                 <!-- end Upload button -->
 
-                <!--
+            <!--
                 <article class="item clearfix">
                     <header>Nieuw bestand</header>
                     <div>
@@ -75,7 +75,7 @@
                         <input type="hidden" class="filterlistener" name="_token" id="token" value="{{ csrf_token() }}">
                     </div>
                 </article>
-                 <!-- filter menu -->
+                <!-- filter menu -->
 
 
                 <!-- User items -->
@@ -220,211 +220,49 @@
             </div>
 
 
-
             <div class="content">
                 <div id="groupcontainer" class="groups">
 
-                    <div class="group-type item clearfix">
-                        <header>Studentenraad<a href=""><i class="fa fa-angle-up"></i></a>
-                        </header>
 
-
-                        <article class="group">
-                            <div class="padding">
-                                <div class="row flex">
-                                    <div class="col-lg-1 col-xs-2">
-                                    <!-- <img src="{{asset('img/logo/favicon.png')}} " style="width: 36px; height: 36px">-->
-                                        <img src="{{asset('img/icons/001-file.png')}} "
-                                             style="width: 36px; height: 36px">
-                                    </div>
-
-                                    <div class="col-lg-5 col-xs-10">
-                                        <h4 class="title"><a href="#">Klachten</a></h4>
-                                        <div class="row icons">
-                                            <!--
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-comment"><span>22</span></i>
+                    @foreach($categories as $category)
+                        <div class="group-type item clearfix">
+                            <header>{{ $category->name }}<!--<a href="#top"><i class="fa fa-angle-up"></i></a>--></header>
+                            @foreach($category->groups as $group)
+                                <article class="group">
+                                    <div class="padding">
+                                        <div class="row lil kleine ronnie flex">
+                                            <div class="col-lg-1 col-xs-2">
+                                                <img src="{{asset('img/icons/' . $group->icon->path)}}"
+                                                     style="width: 36px; height: 36px">
                                             </div>
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-thumbs-up"><span>22</span></i>
+                                            <div class="col-lg-5 col-xs-10">
+                                                <h4 class="title"><a href="{{ $group->url() }}">{{ $group->name }}</a></h4>
+                                                <div class="row icons">
+                                                    <!--<div class="col-lg-2"><i class="fa fa-comment"><span>22</span></i></div>
+                                                    <div class="col-lg-2"><i class="fa fa-thumbs-up"><span>22</span></i></div>-->
+                                                    <div class="col-xs-12">
+                                                        @if($group->postcount() == 1)
+                                                            1 post
+                                                        @else
+                                                            {{ $group->postcount() }} posts
+                                                        @endif
+                                                    </div>
+                                                </div>
                                             </div>
-                                            -->
-                                            <div class="col-xs-12">
-                                                23 posts
+                                            <div class="col-lg-6 col-xs-12" style="text-align: right">
+                                                <h6>{{ $group->shortdesc }}</h6>
+                                                <h6>Laatste update: {{ $group->lastupdate() }}</h6>
                                             </div>
-
                                         </div>
-
                                     </div>
-                                    <div class="col-lg-6 col-xs-12" style="text-align: right">
-                                        <h6>Klachten over school</h6>
-                                        <h6>Laatste update om 14:33</h6>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </article>
-
-                        <article class="group">
-                            <div class="padding">
-                                <div class="row flex">
-                                    <div class="col-lg-1 col-xs-2">
-                                        <img src="{{asset('img/icons/003-trophy-black-cup-symbol.png')}} "
-                                             style="width: 36px; height: 36px">
-                                    </div>
-
-                                    <div class="col-lg-5 col-xs-10">
-                                        <h4 class="title"><a href="#">Evenementen</a></h4>
-                                        <div class="row icons">
-                                            <!--
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-comment"><span>22</span></i>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-thumbs-up"><span>22</span></i>
-                                            </div>
-                                            -->
-                                            <div class="col-xs-12">
-                                                23 posts
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                    <div class="col-lg-6 col-xs-12" style="text-align: right">
-                                        <h6>Klachten over school</h6>
-                                        <h6>Laatste update om 14:33</h6>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </article>
-
-
-                    </div>
-
-
-                    <div class="group-type item clearfix">
-                        <header>Interesse groepen<a href=""><i class="fa fa-angle-up"></i></a>
-                        </header>
-
-                        <article class="group">
-                            <div class="padding">
-                                <div class="row flex">
-                                    <div class="col-lg-1 col-xs-2">
-                                    <!-- <img src="{{asset('img/logo/favicon.png')}} " style="width: 36px; height: 36px">-->
-                                        <img src="{{asset('img/icons/001-file.png')}} "
-                                             style="width: 36px; height: 36px">
-                                    </div>
-
-                                    <div class="col-lg-5 col-xs-10">
-                                        <h4 class="title"><a href="#">Design</a></h4>
-                                        <div class="row icons">
-                                            <!--
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-comment"><span>22</span></i>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-thumbs-up"><span>22</span></i>
-                                            </div>
-                                            -->
-                                            <div class="col-xs-12">
-                                                23 posts
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                    <div class="col-lg-6 col-xs-12" style="text-align: right">
-                                        <h6>Klachten over school</h6>
-                                        <h6>Laatste update om 14:33</h6>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </article>
-
-                        <article class="group">
-                            <div class="padding">
-                                <div class="row flex">
-                                    <div class="col-lg-1 col-xs-2">
-                                    <!-- <img src="{{asset('img/logo/favicon.png')}} " style="width: 36px; height: 36px">-->
-                                        <img src="{{asset('img/icons/001-file.png')}} "
-                                             style="width: 36px; height: 36px">
-                                    </div>
-
-                                    <div class="col-lg-5 col-xs-10">
-                                        <h4 class="title"><a href="#">Development</a></h4>
-                                        <div class="row icons">
-                                            <!--
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-comment"><span>22</span></i>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-thumbs-up"><span>22</span></i>
-                                            </div>
-                                            -->
-                                            <div class="col-xs-12">
-                                                23 posts
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                    <div class="col-lg-6 col-xs-12" style="text-align: right">
-                                        <h6>Klachten over school</h6>
-                                        <h6>Laatste update om 14:33</h6>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </article>
-
-
-                        <article class="group">
-                            <div class="padding">
-                                <div class="row flex">
-                                    <div class="col-lg-1 col-xs-2">
-                                        <img src="{{asset('img/icons/003-trophy-black-cup-symbol.png')}} "
-                                             style="width: 36px; height: 36px">
-                                    </div>
-
-                                    <div class="col-lg-5 col-xs-10">
-                                        <h4 class="title"><a href="#">Server & Networking</a></h4>
-                                        <div class="row icons">
-                                            <!--
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-comment"><span>22</span></i>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-thumbs-up"><span>22</span></i>
-                                            </div>
-                                            -->
-                                            <div class="col-xs-12">
-                                                23 posts
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                    <div class="col-lg-6 col-xs-12" style="text-align: right">
-                                        <h6>Klachten over school</h6>
-                                        <h6>Laatste update om 14:33</h6>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </article>
-
-
-                    </div>
+                                </article>
+                            @endforeach
+                        </div>
+                    @endforeach
 
 
                 </div>
-
-
             </div>
-
         </div>
     </div>
 
