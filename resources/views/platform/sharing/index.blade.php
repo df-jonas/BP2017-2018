@@ -197,7 +197,7 @@
                             <div class="padding">
                                 <div class="row flex">
                                     <div class="col-lg-1 col-xs-2">
-                                        <img src="{{asset('img/icons/002-group-filled-persons.png')}} "
+                                        <img src="{{asset('img/icons/001-file.png')}} "
                                              style="width: 36px; height: 36px">
                                     </div>
 

@@ -16,8 +16,6 @@
                             <i class="glyphicon glyphicon-plus-sign"></i> Nieuw verzoek
                         </button>
                     </a>
-
-
                 </article>
                 <!-- end New button -->
 
@@ -25,8 +23,6 @@
                 <article class="item user-owned">
                     <header>Verzoeken</header>
                     <div class="padding">
-
-
                         <div class="row flex">
                             <div class="icon col-xs-2">
                                 <img src="{{asset('img/icons/003-trophy-black-cup-symbol.png')}} "
@@ -35,13 +31,9 @@
 
 
                             <div class="col-xs-7">
-                                <h5 class="title"> <a href="#">Android development</a></h5>
+                                <h5 class="title"><a href="#">Android development</a></h5>
                                 <div class="rating">
-
-
                                     <p>Inkomend tutee verzoek</p>
-
-
                                 </div>
 
                             </div>
@@ -190,7 +182,7 @@
 
 
                             <div class="col-md-8 col-xs-8">
-                                <h5 class="title"> <a href="#">Johnny Smit</a></h5>
+                                <h5 class="title"><a href="#">Johnny Smit</a></h5>
                                 <div class="rating">
 
 

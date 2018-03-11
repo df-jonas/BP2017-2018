@@ -62,7 +62,6 @@
                         </div>
 
 
-
                     </div>
                 </article>
 
@@ -94,7 +93,6 @@
                     <div class="row">
 
 
-
                         <div class="right col-lg-6 col-lg-push-6 col-xs-12">
                             <h1>Volg interessante groepen, blijf op de hoogte.</h1>
 
@@ -109,7 +107,6 @@
                         <div class="left col-lg-6 col-lg-pull-6 col-xs-12">
                             <img src="img/backgrounds/wat-3.png">
                         </div>
-
 
 
                     </div>
