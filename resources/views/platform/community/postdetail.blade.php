@@ -170,9 +170,9 @@
                         </header>
 
                         <article class="group">
-                            <div class="padding">
-                                <div class="row">
-                                    <div class="col-lg-3 col-xs-12">
+                            <div class="padding clearfix">
+                                <div class="row col-xs-12">
+                                    <div class="info col-lg-3 col-xs-12">
                                         <div class="table">
                                             <div style="display: table-cell; width: 32px">
                                                 <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
@@ -201,7 +201,7 @@
 
                                     </div>
                                 </div>
-
+<div class="col-xs-12">
                                 <h3>Teveel springuren</h3>
                                 <p>
                                     Een broodrooster is een huishoudelijk apparaat waarmee brood kan worden geroosterd.
@@ -221,7 +221,9 @@
                                     gedaan.
                                 </p>
 
-                                <div class="info" style="margin-top: 5%">
+</div>
+
+                                <div class="info col-xs-12" style="margin-top: 5%">
                                     <ul>
                                         <li>Reacties: 44</li>
                                         <li>Upvotes: 44</li>
