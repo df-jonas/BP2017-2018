@@ -82,90 +82,24 @@
                 <article class="item user-owned">
                     <header>Mijn posts</header>
 
-
                     <div class="padding">
-
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
-                                <div class="rating">
-
-
-                                    <p>test</p>
-
-
+                        @foreach($myposts as $post)
+                            <div class="row flex">
+                                <div class="icon col-md-2 col-xs-2">
+                                    <img src="{{ asset('img/avatars/' . $post->user->image )}}" class="group_img">
                                 </div>
-
-                            </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-pencil brown"></i>
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
-                                <div class="rating">
-
-
-                                    <p>test</p>
-
-
+                                <div class="col-md-8 col-xs-8">
+                                    <h5 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h5>
+                                    <div class="rating">
+                                        <p>subtitle</p>
+                                    </div>
                                 </div>
-
-                            </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-pencil brown"></i>
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
-                                <div class="rating">
-
-
-                                    <p>test</p>
-
-
+                                <div class="col-md-2 col-xs-2">
+                                    <i class="fa fa-pencil brown"></i>
                                 </div>
-
                             </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-pencil brown"></i>
-
-
-                            </div>
-
-                        </div>
-
+                        @endforeach
                     </div>
-
 
                 </article>
                 <!-- end User items -->
@@ -180,7 +114,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>23</p>
+                                <p>0</p>
                             </div>
                         </div>
 
@@ -190,7 +124,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>23</p>
+                                <p>0</p>
                             </div>
                         </div>
 
@@ -200,7 +134,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>23</p>
+                                <p>0</p>
                             </div>
                         </div>
 
@@ -211,7 +145,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>23</p>
+                                <p>0</p>
                             </div>
                         </div>
                     </div>

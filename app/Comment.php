@@ -9,6 +9,7 @@
 namespace App;
 
 
+use Coduo\PHPHumanizer\DateTimeHumanizer;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
@@ -23,5 +24,10 @@ class Comment extends Model
     public function post()
     {
         return $this->belongsTo('App\Post', 'post_id');
+    }
+
+    public function commentcreated()
+    {
+        return DateTimeHumanizer::difference(new \DateTime(), $this->created_at, "nl");
     }
 }
