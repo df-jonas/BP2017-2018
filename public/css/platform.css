@@ -267,6 +267,14 @@ div.container {
   clear: both;
 }
 
+.table.tutoring {
+  display: table;
+}
+
+.table.tutoring .sidebar {
+  display: table-cell;
+}
+
 .table.tutoring .sidebar .people-list {
   list-style-type: none;
   padding-left: 0;
@@ -296,8 +304,25 @@ div.container {
   color: #ffffff;
 }
 
+.table.tutoring .sidebar .table {
+  margin-bottom: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.table.tutoring .sidebar .item {
+  margin-bottom: 0;
+}
+
 .table.tutoring .content {
+  display: table-cell;
   padding-left: 0;
+  position: relative;
+}
+
+.table.tutoring .content .item {
+  position: absolute;
+  height: 100%;
 }
 
 .row.flex {
@@ -424,17 +449,17 @@ div.container {
 }
 
 .content .actions div.col-lg-4 {
-  padding: 0 !important;
+  padding-left: 0 !important;
 }
 
 .content .actions .action {
   padding: 8px 15px;
   background: #8A7E72;
   color: #ffffff;
-  border: 2px solid #ffffff;
 }
 
-.content .actions .action:hover {
+.content .actions .action:hover,
+.content .actions .action.active {
   cursor: pointer;
   background: #4D6A50;
   -webkit-transition: background-color 0.5s ease-out;
@@ -481,10 +506,6 @@ div.container {
   width: 60px;
   height: 60px;
   margin: 5%;
-}
-
-#messages {
-  margin-top: 2em;
 }
 
 #messages .msg {
@@ -863,6 +884,19 @@ form .form-group {
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+/*event calendar*/
+
+.popup {
+  position: absolute;
+  left: 30%;
+  width: 35%;
+  margin: 0 auto;
+  background: red;
+  z-index: 9999999;
+  padding: 8px 15px;
+  height: 350px;
 }
 
 /*Mediaqueries*/

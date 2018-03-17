@@ -18,6 +18,9 @@
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                     <li><a href="#">Mijn profiel</a></li>
+                    <li><a href="#">Mijn downloads</a></li>
+                    <li><a href="#">Mijn uploads</a></li>
+                    <li><a href="#">Mijn beoordelingen</a></li>
                     <li><a href="#">Contact</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="{{route('logout')}}">Uitloggen</a></li>

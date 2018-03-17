@@ -97,7 +97,12 @@
                                 <div class="rating">
 
 
-                                    <p>test</p>
+                                    <div class="col-lg-2 col-xs-3">
+                                        <i class="fa fa-comment"><span>22</span></i>
+                                    </div>
+                                    <div class="col-lg-2 col-xs-3">
+                                        <i class="fa fa-thumbs-up"><span>22</span></i>
+                                    </div>
 
 
                                 </div>
@@ -123,7 +128,12 @@
                                 <div class="rating">
 
 
-                                    <p>test</p>
+                                    <div class="col-lg-2 col-xs-3">
+                                        <i class="fa fa-comment"><span>22</span></i>
+                                    </div>
+                                    <div class="col-lg-2 col-xs-3">
+                                        <i class="fa fa-thumbs-up"><span>22</span></i>
+                                    </div>
 
 
                                 </div>
@@ -149,9 +159,12 @@
                                 <div class="rating">
 
 
-                                    <p>test</p>
-
-
+                                    <div class="col-lg-2 col-xs-3">
+                                        <i class="fa fa-comment"><span>22</span></i>
+                                    </div>
+                                    <div class="col-lg-2 col-xs-3">
+                                        <i class="fa fa-thumbs-up"><span>22</span></i>
+                                    </div>
                                 </div>
 
                             </div>

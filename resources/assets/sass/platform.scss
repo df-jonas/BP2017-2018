@@ -252,7 +252,10 @@ div.container {
 }
 
 .table.tutoring{
+  display: table;
   .sidebar{
+    display: table-cell;
+
     .people-list{
       list-style-type: none;
       padding-left: 0;
@@ -276,9 +279,24 @@ div.container {
         }
       }
     }
+    .table{
+      margin-bottom: 0;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .item{
+      margin-bottom: 0;
+    }
   }
   .content{
+    display: table-cell;
     padding-left: 0;
+    position: relative;
+    .item{
+      position: absolute;
+      height: 100%;
+    }
   }
 }
 
@@ -392,14 +410,14 @@ div.container {
   .actions{
     padding: 0;
     div.col-lg-4{
-      padding: 0!important;
+      padding-left: 0!important;
     }
     .action{
       padding: 8px 15px;
       background: $unihelp-brown;
       color: #ffffff;
-      border: 2px solid #ffffff;
-      &:hover{
+
+      &:hover, &.active{
         cursor: pointer;
         background: $unihelp-green;
         -webkit-transition: background-color 0.5s ease-out;
@@ -467,7 +485,6 @@ div.container {
 
 
 #messages{
-  margin-top: 2em;
 
   .msg{
     margin-bottom: 2.5em;
@@ -843,6 +860,18 @@ form .form-group {
   transform: rotate(45deg);
 }
 
+
+/*event calendar*/
+.popup{
+  position: absolute;
+  left: 30%;
+  width: 35%;
+  margin: 0 auto;
+  background: red;
+  z-index: 9999999;
+  padding: 8px 15px;
+  height: 350px;
+}
 /*Mediaqueries*/
 
 @media only screen and (max-width: 768px) {

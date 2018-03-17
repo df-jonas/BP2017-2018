@@ -8,11 +8,21 @@
         <div class="table">
             <!-- Sidebar -->
             <div class="sidebar">
-                <article class="item">
-                    <header>Informatie</header>
-                    <div class="padding">
 
+
+                <div id="date-popup" class="modal col-lg-4 col-lg-push-4" style="">
+
+                    <div id="date-popup-content" class="modal-content"></div>
+                </div>
+
+                <article class="item">
+                    <header>Planning</header>
+                    <div class="padding">
+                        <div id="my-calendar">
+
+                        </div>
                     </div>
+
                 </article>
                 <!-- sidebar -->
             </div>
@@ -25,50 +35,57 @@
                     <div class="padding">
 
 
-                            <!-- Search form -->
-                            <article class="item padding col-xs-12">
-                                <div class="padding">
-                                    <div class="row">
-                                        <div class="col-lg-3 col-xs-12">
-                                            <div class="table">
-                                                <div style="display: table-cell; width: 32px"><img
-                                                            src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                            class="group_img"></div>
-                                                <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                                    <h6 style="margin: 0">Arno Stalpaert</h6>
-                                                    <h6 style="margin: 5px 0">Data Visualisatie</h6>
-                                                </div>
-                                            </div>
-                                        </div>
+                        <!-- Search form -->
+                        <article class="item padding col-xs-12">
+                            <div class="padding clearfix">
 
-                                        <div class="col-lg-9 col-xs-12">
-                                            <div class="actions col-lg-8 col-lg-push-4 col-xs-12" style="text-align: center">
 
-                                                <div class="row">
+                                <div class="col-lg-3 col-xs-12">
 
-                                                    <div class="col-lg-4">
-                                                        <a class="action col-lg-12" href="#">Chatten</a>
-                                                    </div>
 
-                                                    <div class="col-lg-4">
-                                                        <a class="action col-lg-12" href="#">Download</a>
-                                                    </div>
-
-                                                    <div class="col-lg-4">
-                                                        <a class="action col-lg-12" href="#">Tutoring stoppen</a>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
+                                    <div class="table">
+                                        <div style="display: table-cell; width: 42px"><img
+                                                    src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                                    class="group_img"></div>
+                                        <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
+                                            <h6 style="margin: 0">Jonas De Frère</h6>
+                                            <h6 style="margin: 5px 0">Data Visualisatie</h6>
                                         </div>
                                     </div>
+                                </div>
 
+                                <div class="col-lg-9 col-xs-12">
+                                    <div class="actions col-lg-12 col-xs-12" style="text-align: center">
+
+                                        <div class="row">
+
+                                            <div class="col-lg-4">
+                                                <a class="action col-lg-12" href="{{route('tutoring-messages', ['id' => '1'])}}">Chatten</a>
+                                            </div>
+
+                                            <div class="col-lg-4">
+                                                <a class="action col-lg-12" href="{{route('tutoring-planning', ['id' => '1']) }}">Planning</a>
+                                            </div>
+
+                                            <div class="col-lg-4">
+                                                <a class="action col-lg-12" href="#">Tutoring stoppen</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
 
                                 </div>
-                            </article>
-                            <!-- Search form -->
 
+
+
+
+                                <div class="col-xs-12">
+                                    <h3>Berichten</h3>
+                                </div>
+
+                            </div>
+                        </article>
+                        <!-- Search form -->
 
 
                         <div id="messages" class="col-lg-12">
@@ -211,5 +228,65 @@
 @endsection
 
 @section("scripts")
-    <script src="{{asset("js/sharing-new.js")}}"></script>
+    <script src="{{asset("js/zabuto_calendar.min.js")}}"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+
+
+            var eventData = [
+                {"date":"2018-03-10", "classname":"item-herinnering"},
+                {"date":"2018-03-20", "title":"Example 2", "classname":"item-taak"}
+            ];
+
+
+            $("#my-calendar").zabuto_calendar({
+                language: "nl",
+                show_previous: false,
+                show_next: 3,
+                today: true,
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "block", label: "Herinnering", classname: "cal-herinnering"},
+                    {type: "spacer"},
+                    {type: "block", label: "Taak", classname: "cal-taak"},
+                    {type: "spacer"},
+                ],
+                data: eventData
+            });
+        });
+
+        function myDateFunction(id, fromModal) {
+            $("#date-popup").hide();
+            if (fromModal) {
+                $("#" + id + "_modal").modal("hide");
+            }
+            var date = $("#" + id).data("date");
+            var parms = $("#" + id).data();
+
+            console.log(parms);
+
+            var hasEvent = $("#" + id).data("hasEvent");
+            if (!hasEvent && !fromModal) {
+                return false;
+            }
+            $("#date-popup-content").html('You clicked on date ' + date);
+            $("#date-popup").show();
+            return true;
+        }
+
+        function myNavFunction(id) {
+            $("#date-popup").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+        }
+    </script>
 @endsection
