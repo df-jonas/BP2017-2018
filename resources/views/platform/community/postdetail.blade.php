@@ -101,9 +101,9 @@
                         </header>
 
                         <article class="group">
-                            <div class="padding">
-                                <div class="row">
-                                    <div class="col-lg-3 col-xs-12">
+                            <div class="padding clearfix">
+                                <div class="row col-xs-12">
+                                    <div class="info col-lg-3 col-xs-12">
                                         <div class="table">
                                             <div style="display: table-cell; width: 32px">
                                                 <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
@@ -132,11 +132,13 @@
 
                                     </div>
                                 </div>
+                                
+                                <div class="col-xs-12">
+                                    <h3>{{ $post->title }}</h3>
+                                    <p>{{ $post->content }}</p>
+                                </div>
 
-                                <h3>{{ $post->title }}</h3>
-                                <p>{{ $post->content }}</p>
-
-                                <div class="info" style="margin-top: 5%">
+                                <div class="info col-xs-12" style="margin-top: 5%">
                                     <ul>
                                         <li>Reacties: 0</li>
                                         <li>Upvotes: 0</li>

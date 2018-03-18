@@ -224,27 +224,7 @@ div.container {
 
 
 
-/*
-.account_img.edit {
-  position: absolute;
-  top: -4px;
-  right: -16px;
-  background: $unihelp-green;
-  color: #FFFFFF;
-  height: 20px;
-  width: 20px;
-  text-align: center;
-  cursor: pointer;
-}
 
-.account_username {
-  margin-left: 16px;
-  margin-right: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #FFFFFF;
-}
-*/
 
 
 /*table layout*/
@@ -266,8 +246,56 @@ div.container {
     width: 70%;
     padding-left: 5%;
     .filter {
-      background: #FFFFFF;
       clear: both;
+    }
+  }
+}
+
+.table.tutoring{
+  display: table;
+  .sidebar{
+    display: table-cell;
+
+    .people-list{
+      list-style-type: none;
+      padding-left: 0;
+      li{
+        display: block;
+        background: $unihelp-green;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+        &:hover, &.active{
+          cursor: pointer;
+          background: #ffffff;
+          color: $unihelp-green;
+        }
+        &.load-more{
+          text-align: center;
+        }
+
+        &.load-more:hover, &.new:hover{
+          background: $unihelp-brown;
+          color: #ffffff;
+        }
+      }
+    }
+    .table{
+      margin-bottom: 0;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .item{
+      margin-bottom: 0;
+    }
+  }
+  .content{
+    display: table-cell;
+    padding-left: 0;
+    position: relative;
+    .item{
+      position: absolute;
+      height: 100%;
     }
   }
 }
@@ -281,6 +309,11 @@ div.container {
 .item {
   background: #FFFFFF;
   margin-bottom: 3em;
+}
+
+
+#filecontainer{
+  display: inline;
 }
 
 /*afbeelding centreren in overzicht*/
@@ -354,8 +387,10 @@ div.container {
   }
 }
 
-.content .detail {
+
+.content  {
   .info {
+    margin-top: 1em;
     ul {
       width: 100%;
       list-style-type: none;
@@ -373,8 +408,24 @@ div.container {
   }
 
   .actions{
+    padding: 0;
+    div.col-lg-4{
+      padding-left: 0!important;
+    }
     .action{
-      padding: 1%;
+      padding: 8px 15px;
+      background: $unihelp-brown;
+      color: #ffffff;
+
+      &:hover, &.active{
+        cursor: pointer;
+        background: $unihelp-green;
+        -webkit-transition: background-color 0.5s ease-out;
+        -moz-transition: background-color 0.5s ease-out;
+        -o-transition: background-color 0.5s ease-out;
+        transition: background-color 0.5s ease-out;
+      }
+
     }
   }
 }
@@ -434,7 +485,6 @@ div.container {
 
 
 #messages{
-  margin-top: 2em;
 
   .msg{
     margin-bottom: 2.5em;
@@ -503,11 +553,17 @@ input, button{
       width: 100%;
       padding-left: 0;
       background: #FFFFFF;
-      padding: 2%;
+
       li {
         display: block;
         margin-bottom: 2%;
         width: 100%;
+
+        i{
+          span{
+            margin-left: 5px;
+          }
+        }
       }
 
     }
@@ -562,6 +618,10 @@ input, button{
         padding: 0.5%;
       }
     }
+  }
+
+  .filter{
+    margin-bottom: 1em;
   }
 }
 
@@ -800,6 +860,18 @@ form .form-group {
   transform: rotate(45deg);
 }
 
+
+/*event calendar*/
+.popup{
+  position: absolute;
+  left: 30%;
+  width: 35%;
+  margin: 0 auto;
+  background: red;
+  z-index: 9999999;
+  padding: 8px 15px;
+  height: 350px;
+}
 /*Mediaqueries*/
 
 @media only screen and (max-width: 768px) {
@@ -844,6 +916,7 @@ form .form-group {
       padding-left: 0!important;
     }
   }
+
 
   .container {
     width: 100% !important;

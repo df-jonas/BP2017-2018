@@ -69,6 +69,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/tutoring/tutor/new', 'TutoringController@newtutor')->name('tutoring-tutor-new');
         Route::get('/tutoring/tutee/new', 'TutoringController@newtutee')->name('tutoring-tutee-new');
         Route::get('/tutoring/help', 'TutoringController@help')->name('tutoring-help');
+        Route::get('/tutoring/{id}/messages', 'TutoringController@messages')->name('tutoring-messages');
+        Route::get('/tutoring/{id}/planning', 'TutoringController@planning')->name('tutoring-planning');
+
 
 
         /**

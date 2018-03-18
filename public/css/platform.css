@@ -241,28 +241,6 @@ div.container {
   padding-right: 0.85em;
 }
 
-/*
-.account_img.edit {
-  position: absolute;
-  top: -4px;
-  right: -16px;
-  background: $unihelp-green;
-  color: #FFFFFF;
-  height: 20px;
-  width: 20px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.account_username {
-  margin-left: 16px;
-  margin-right: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #FFFFFF;
-}
-*/
-
 /*table layout*/
 
 .table {
@@ -286,8 +264,65 @@ div.container {
 }
 
 .table .content .filter {
-  background: #FFFFFF;
   clear: both;
+}
+
+.table.tutoring {
+  display: table;
+}
+
+.table.tutoring .sidebar {
+  display: table-cell;
+}
+
+.table.tutoring .sidebar .people-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.table.tutoring .sidebar .people-list li {
+  display: block;
+  background: #4D6A50;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.table.tutoring .sidebar .people-list li:hover,
+.table.tutoring .sidebar .people-list li.active {
+  cursor: pointer;
+  background: #ffffff;
+  color: #4D6A50;
+}
+
+.table.tutoring .sidebar .people-list li.load-more {
+  text-align: center;
+}
+
+.table.tutoring .sidebar .people-list li.load-more:hover,
+.table.tutoring .sidebar .people-list li.new:hover {
+  background: #8A7E72;
+  color: #ffffff;
+}
+
+.table.tutoring .sidebar .table {
+  margin-bottom: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.table.tutoring .sidebar .item {
+  margin-bottom: 0;
+}
+
+.table.tutoring .content {
+  display: table-cell;
+  padding-left: 0;
+  position: relative;
+}
+
+.table.tutoring .content .item {
+  position: absolute;
+  height: 100%;
 }
 
 .row.flex {
@@ -303,6 +338,10 @@ div.container {
 .item {
   background: #FFFFFF;
   margin-bottom: 3em;
+}
+
+#filecontainer {
+  display: inline;
 }
 
 /*afbeelding centreren in overzicht*/
@@ -385,24 +424,46 @@ div.container {
   padding: 1.5%;
 }
 
-.content .detail .info ul {
+.content .info {
+  margin-top: 1em;
+}
+
+.content .info ul {
   width: 100%;
   list-style-type: none;
   padding-left: 0;
 }
 
-.content .detail .info ul li {
+.content .info ul li {
   width: 15%;
   display: inline-block;
 }
 
-.content .detail .account_img {
+.content .account_img {
   width: 32px;
   height: 32px;
 }
 
-.content .detail .actions .action {
-  padding: 1%;
+.content .actions {
+  padding: 0;
+}
+
+.content .actions div.col-lg-4 {
+  padding-left: 0 !important;
+}
+
+.content .actions .action {
+  padding: 8px 15px;
+  background: #8A7E72;
+  color: #ffffff;
+}
+
+.content .actions .action:hover,
+.content .actions .action.active {
+  cursor: pointer;
+  background: #4D6A50;
+  -webkit-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
 }
 
 .item header {
@@ -445,10 +506,6 @@ div.container {
   width: 60px;
   height: 60px;
   margin: 5%;
-}
-
-#messages {
-  margin-top: 2em;
 }
 
 #messages .msg {
@@ -518,13 +575,16 @@ div.container {
   width: 100%;
   padding-left: 0;
   background: #FFFFFF;
-  padding: 2%;
 }
 
 .sidebar .item .highlight li {
   display: block;
   margin-bottom: 2%;
   width: 100%;
+}
+
+.sidebar .item .highlight li i span {
+  margin-left: 5px;
 }
 
 .sidebar .item.user-owned h5 {
@@ -578,6 +638,10 @@ div.container {
 .content .file .new input {
   margin-bottom: 2em;
   padding: 0.5%;
+}
+
+.content .filter {
+  margin-bottom: 1em;
 }
 
 .content .file.detail .notes,
@@ -820,6 +884,19 @@ form .form-group {
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+/*event calendar*/
+
+.popup {
+  position: absolute;
+  left: 30%;
+  width: 35%;
+  margin: 0 auto;
+  background: red;
+  z-index: 9999999;
+  padding: 8px 15px;
+  height: 350px;
 }
 
 /*Mediaqueries*/

@@ -51,9 +51,10 @@
                         <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a
                                     href="{{ $file->downloadUrl() }}"><i class="fa fa-download"></i></a>
                         </header>
-                        <div class="padding">
-                            <div class="row flex">
-                                <div class="col-lg-3 col-xs-12">
+                        <div class="padding clearfix">
+                            <div class="row col-xs-12">
+
+                                <div class="info col-lg-3 col-xs-12">
                                     <div class="table">
                                         <div style="display: table-cell; width: 32px"><img
                                                     src="{{ asset('img/avatars/' . $file->user->image) }}"
@@ -84,6 +85,7 @@
                                     </div>
                                 </div>
                             </div>
+
 
                             <div class="notes col-xs-12">
                                 <h3>{{ $file->title }}</h3>

@@ -12,6 +12,7 @@ $(document).ready(function () {
         }
     });
 
+    /*
 
     //menu aanpassen bij pagina resize
     $(window).resize(function () {
@@ -26,7 +27,7 @@ $(document).ready(function () {
             $("#page_header .hamburger, #platform_header .hamburger").hide();
         }
     });
-
+*/
 
     //main menu hamburger click
     $('#page_header .hamburger, #platform_header .hamburger').click(function () {

@@ -91,7 +91,12 @@
                                 <div class="col-md-8 col-xs-8">
                                     <h5 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h5>
                                     <div class="rating">
-                                        <p>subtitle</p>
+                                        <div class="col-lg-2 col-xs-3">
+                                            <i class="fa fa-comment"><span>22</span></i>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-3">
+                                            <i class="fa fa-thumbs-up"><span>22</span></i>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-xs-2">

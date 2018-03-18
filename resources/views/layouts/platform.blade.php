@@ -32,6 +32,9 @@
     <!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({selector: 'textarea'});</script>-->
 
+    <!-- calendar -->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/zabuto_calendar.min.css') }}" />
+
     <!-- BugHerd script -->
     <script type='text/javascript'>
         (function (d, t) {
