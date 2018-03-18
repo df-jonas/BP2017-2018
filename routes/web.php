@@ -56,12 +56,13 @@ Route::group(['middleware' => ['auth']], function () {
 
         /** Community */
         Route::get('/community', 'CommunityController@index')->name('community-index');
-        Route::get('/community/new', 'CommunityController@newgroup')->name('community-group-new');
-        Route::post('/community/new', 'CommunityController@newgrouppost');
+        //Route::get('/community/new', 'CommunityController@newgroup')->name('community-group-new');
+        //Route::post('/community/new', 'CommunityController@newgrouppost');
         Route::get('/community/{group_id}', 'CommunityController@groupdetail')->name('community-group-detail');
         Route::get('/community/{group_id}/new', 'CommunityController@newpost')->name('community-post-new');
         Route::post('/community/{group_id}/new', 'CommunityController@newpostpost');
         Route::get('/community/{group_id}/{post_id}', 'CommunityController@postdetail')->name('community-post-detail');
+        Route::post('/community/{group_id}/{post_id}/comment', 'CommunityController@addcommentasync')->name('community-add-comment');
 
         /** Tutoring */
         Route::get('/tutoring', 'TutoringController@index')->name('tutoring-index');

@@ -150,9 +150,11 @@
                                         <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
                                              class="account_img">
                                     </div>
-                                    <form method="post" action="#">
+                                    <form id="comment-form" method="POST"
+                                          action="{{ route('community-add-comment', ['group_id' => $post->group->url, 'post_id' => $post->id]) }}">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <div class="txt col-lg-10">
-                                            <input type="text" name="comment" class="col-lg-12"
+                                            <input type="text" name="comment" id="commentfield" class="col-lg-12"
                                                    placeholder="reactie toevoegen">
                                         </div>
                                         <div class="icon col-lg-1">
@@ -174,7 +176,8 @@
                             @foreach($post->comments as $comment)
                                 <div class="msg col-lg-12">
                                     <div class="picture col-lg-1">
-                                        <img src="{{ asset('img/avatars/' . $comment->user->image )}}" class="group_img">
+                                        <img src="{{ asset('img/avatars/' . $comment->user->image )}}"
+                                             class="group_img">
                                     </div>
                                     <div class="txt col-lg-11">
                                         <div class="table">
@@ -201,5 +204,5 @@
 @endsection
 
 @section("scripts")
-    <script src="{{ asset("js/sharing-filter.js") }}"></script>
+    <script src="{{ asset("js/community-detail.js") }}"></script>
 @endsection

@@ -28,7 +28,7 @@ class Post extends Model
 
     public function comments()
     {
-        return $this->hasMany('App\Comment', 'post_id');
+        return $this->hasMany('App\Comment', 'post_id')->orderBy('created_at', 'desc');
     }
 
     public function votes()

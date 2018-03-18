@@ -10,7 +10,7 @@
             <div class="sidebar">
 
                 <!-- Upload button -->
-                <article class="item button">
+                <!--<article class="item button">
                     <a href="">
                         <button>
                             <i class="glyphicon glyphicon-plus-sign"></i> Nieuwe post
@@ -18,14 +18,14 @@
                     </a>
 
 
-                </article>
+                </article>-->
                 <!-- end Upload button -->
 
             <!--
                 <article class="item clearfix">
                     <header>Nieuw bestand</header>
                     <div>
-                        <a href="{{ route("community-group-new") }}">Nieuwe groep maken.</a>
+                        <a href="">Nieuwe groep maken.</a>
                     </div>
                 </article>
                 -->

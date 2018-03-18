@@ -13,7 +13,7 @@
             <div class="sidebar">
                 <!-- Upload button -->
                 <article class="item button">
-                    <a href="#">
+                    <a href="{{ route('community-post-new', [ 'group_id' => $group->url ]) }}">
                         <button>
                             <i class="glyphicon glyphicon-plus-sign"></i> Nieuwe post
                         </button>
@@ -119,7 +119,8 @@
                                 <div class="padding">
                                     <div class="row flex">
                                         <div class="col-lg-1 col-xs-2">
-                                            <img src="{{ asset('img/avatars/' . $post->user->image) }}" class="group_img">
+                                            <img src="{{ asset('img/avatars/' . $post->user->image) }}"
+                                                 class="group_img">
                                         </div>
                                         <div class="col-lg-5 col-xs-10">
                                             <h4><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h4>
@@ -134,7 +135,9 @@
                                         </div>
                                         <div class="info col-lg-6 col-xs-12" style="text-align: right">
                                             <h6>{{ $post->postcreated() }}</h6>
-                                            <h6>door <span>{{ $post->user->first_name }} {{ $post->user->last_name }}</span></h6>
+                                            <h6>door
+                                                <span>{{ $post->user->first_name }} {{ $post->user->last_name }}</span>
+                                            </h6>
                                         </div>
                                     </div>
                                 </div>
