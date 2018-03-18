@@ -11,13 +11,12 @@ namespace App;
 
 use Coduo\PHPHumanizer\DateTimeHumanizer;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Log;
 
 class Group extends Model
 {
     protected $table = "groups";
 
-    public function post()
+    public function posts()
     {
         return $this->hasMany('App\Post', 'group_id');
     }
@@ -39,7 +38,7 @@ class Group extends Model
 
     public function postcount()
     {
-        return $this->post()->count();
+        return $this->posts()->count();
     }
 
     public function lastupdate()
@@ -47,7 +46,7 @@ class Group extends Model
         if ($this->postcount() == 0) {
             $date = new \DateTime($this->updated_at);
         } else {
-            $date = new \DateTime($this->post()->orderBy('created_at', 'desc')->first()->created_at);
+            $date = new \DateTime($this->posts()->orderBy('created_at', 'desc')->first()->created_at);
         }
         return DateTimeHumanizer::difference(new \DateTime(), $date, "nl");
     }
