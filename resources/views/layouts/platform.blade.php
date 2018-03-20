@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.css') }}">
 
     <!-- TinyMCE editor -->
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({selector: 'textarea'});</script>
+    <!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({selector: 'textarea'});</script>-->
 
     <!-- calendar -->
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/zabuto_calendar.min.css') }}" />

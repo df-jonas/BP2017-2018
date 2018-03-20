@@ -10,7 +10,7 @@
             <div class="sidebar">
 
                 <!-- Upload button -->
-                <article class="item button">
+                <!--<article class="item button">
                     <a href="">
                         <button>
                             <i class="glyphicon glyphicon-plus-sign"></i> Nieuwe post
@@ -18,14 +18,14 @@
                     </a>
 
 
-                </article>
+                </article>-->
                 <!-- end Upload button -->
 
             <!--
                 <article class="item clearfix">
                     <header>Nieuw bestand</header>
                     <div>
-                        <a href="{{ route("community-group-new") }}">Nieuwe groep maken.</a>
+                        <a href="">Nieuwe groep maken.</a>
                     </div>
                 </article>
                 -->
@@ -82,100 +82,29 @@
                 <article class="item user-owned">
                     <header>Mijn posts</header>
 
-
                     <div class="padding">
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img small">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
-                                <div class="rating">
-
-
-                                    <div class="col-md-4 col-xs-3">
-                                        <i class="fa fa-comment"><span>22</span></i>
-                                    </div>
-                                    <div class="col-md-4 col-xs-3">
-                                        <i class="fa fa-thumbs-up"><span>22</span></i>
-                                    </div>
-
-
+                        @foreach($myposts as $post)
+                            <div class="row flex">
+                                <div class="icon col-md-2 col-xs-2">
+                                    <img src="{{ asset('img/avatars/' . $post->user->image )}}" class="group_img">
                                 </div>
-
-                            </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-pencil brown"></i>
-
-
-                            </div>
-
-                        </div>
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img small">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
-                                <div class="rating">
-
-
-                                    <div class="col-md-4 col-xs-3">
-                                        <i class="fa fa-comment"><span>22</span></i>
+                                <div class="col-md-8 col-xs-8">
+                                    <h5 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h5>
+                                    <div class="rating">
+                                        <div class="col-lg-2 col-xs-3">
+                                            <i class="fa fa-comment"><span>22</span></i>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-3">
+                                            <i class="fa fa-thumbs-up"><span>22</span></i>
+                                        </div>
                                     </div>
-                                    <div class="col-md-4 col-xs-3">
-                                        <i class="fa fa-thumbs-up"><span>22</span></i>
-                                    </div>
-
-
                                 </div>
-
-                            </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-pencil brown"></i>
-
-
-                            </div>
-
-                        </div>
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img small">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5 class="title"><a href="#">Teveel springuren</a></h5>
-                                <div class="rating">
-
-
-                                    <div class="col-md-4 col-xs-3">
-                                        <i class="fa fa-comment"><span>22</span></i>
-                                    </div>
-                                    <div class="col-md-4 col-xs-3">
-                                        <i class="fa fa-thumbs-up"><span>22</span></i>
-                                    </div>
-
-
+                                <div class="col-md-2 col-xs-2">
+                                    <i class="fa fa-pencil brown"></i>
                                 </div>
-
                             </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-pencil brown"></i>
-
-
-                            </div>
-
-                        </div>
+                        @endforeach
                     </div>
-
 
                 </article>
                 <!-- end User items -->
@@ -190,7 +119,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>23</p>
+                                <p>0</p>
                             </div>
                         </div>
 
@@ -200,7 +129,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>23</p>
+                                <p>0</p>
                             </div>
                         </div>
 
@@ -210,7 +139,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>23</p>
+                                <p>0</p>
                             </div>
                         </div>
 
@@ -221,7 +150,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>23</p>
+                                <p>0</p>
                             </div>
                         </div>
                     </div>
