@@ -22,13 +22,13 @@
                     <header>Mijn posts</header>
 
                     <div class="padding">
-                        @foreach($myposts as $post)
+                        @foreach($myposts as $mypost)
                             <div class="row flex">
                                 <div class="icon col-md-2 col-xs-2">
-                                    <img src="{{ asset('img/avatars/' . $post->user->image )}}" class="group_img">
+                                    <img src="{{ asset('img/avatars/' . $mypost->user->image )}}" class="group_img">
                                 </div>
                                 <div class="col-md-8 col-xs-8">
-                                    <h5 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h5>
+                                    <h5 class="title"><a href="{{ $mypost->generateurl() }}">{{ $mypost->title }}</a></h5>
                                     <div class="rating">
                                         <p>subtitle</p>
                                     </div>
@@ -96,9 +96,7 @@
                 <div id="groupcontainer" class="item groups">
 
                     <div class="group-detail detail clearfix">
-                        <header>{{ $post->group->category->name }} > {{ $post->group->name }}<a href=""><i
-                                        class="fa fa-angle-up"></i></a>
-                        </header>
+                        <header>{{ $post->group->category->name }} > {{ $post->group->name }}</header>
 
                         <article class="group">
                             <div class="padding clearfix">
@@ -132,7 +130,7 @@
 
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-xs-12">
                                     <h3>{{ $post->title }}</h3>
                                     <p>{{ $post->content }}</p>

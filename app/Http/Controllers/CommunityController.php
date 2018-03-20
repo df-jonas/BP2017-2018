@@ -8,6 +8,7 @@ use App\GroupCategory;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class CommunityController extends Controller
 {
@@ -70,7 +71,7 @@ class CommunityController extends Controller
     public function postdetail($group_id, $post_id)
     {
         $myposts = Post::query()
-            ->where("id", "=", Auth::user()->id)
+            ->where("user_id", "=", Auth::user()->id)
             ->orderBy("created_at", "desc")
             ->take(5)
             ->get();
