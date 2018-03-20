@@ -24,14 +24,10 @@
                 <!-- User items -->
                 <article class="item user-owned">
                     <header>Mijn posts</header>
-
-
                     <div class="padding">
-
-
                         <div class="row flex">
                             <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img small">
                             </div>
 
 
@@ -40,7 +36,12 @@
                                 <div class="rating">
 
 
-                                    <p>test</p>
+                                    <div class="col-md-4 col-xs-3">
+                                        <i class="fa fa-comment"><span>22</span></i>
+                                    </div>
+                                    <div class="col-md-4 col-xs-3">
+                                        <i class="fa fa-thumbs-up"><span>22</span></i>
+                                    </div>
 
 
                                 </div>
@@ -54,10 +55,9 @@
                             </div>
 
                         </div>
-
                         <div class="row flex">
                             <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img small">
                             </div>
 
 
@@ -66,7 +66,12 @@
                                 <div class="rating">
 
 
-                                    <p>test</p>
+                                    <div class="col-md-4 col-xs-3">
+                                        <i class="fa fa-comment"><span>22</span></i>
+                                    </div>
+                                    <div class="col-md-4 col-xs-3">
+                                        <i class="fa fa-thumbs-up"><span>22</span></i>
+                                    </div>
 
 
                                 </div>
@@ -80,10 +85,9 @@
                             </div>
 
                         </div>
-
                         <div class="row flex">
                             <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img small">
                             </div>
 
 
@@ -92,7 +96,12 @@
                                 <div class="rating">
 
 
-                                    <p>test</p>
+                                    <div class="col-md-4 col-xs-3">
+                                        <i class="fa fa-comment"><span>22</span></i>
+                                    </div>
+                                    <div class="col-md-4 col-xs-3">
+                                        <i class="fa fa-thumbs-up"><span>22</span></i>
+                                    </div>
 
 
                                 </div>
@@ -106,10 +115,7 @@
                             </div>
 
                         </div>
-
                     </div>
-
-
                 </article>
                 <!-- end User items -->
 
@@ -186,7 +192,7 @@
                                     </div>
 
                                     <div class="col-lg-9 col-xs-12">
-                                        <div class="actions col-lg-6 col-lg-push-6 col-xs-12"
+                                        <div class="actions col-lg-10 col-lg-push-2 col-xs-12"
                                              style="text-align: center">
                                             <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
                                                         class="fa fa-thumbs-up"></i> Upvote
@@ -201,27 +207,32 @@
 
                                     </div>
                                 </div>
-<div class="col-xs-12">
-                                <h3>Teveel springuren</h3>
-                                <p>
-                                    Een broodrooster is een huishoudelijk apparaat waarmee brood kan worden geroosterd.
-                                    Een geroosterde snee brood noemt men ook wel toast. Een snee brood werd traditioneel
-                                    geroosterd aan een lange vork of in een klem van metaaldraad boven open vuur. In
-                                    1893 werd het elektrisch broodrooster uitgevonden door de Schot Alan MacMasters.[1]
-                                    Albert Marsh ontwikkelde in 1905 de nichrome verwarmingsdraden bestaande uit een
-                                    nikkel-chroomlegering die nog steeds in broodroosters worden toegepast.
-                                </p>
+                                <div class="col-xs-12">
+                                    <h3>Teveel springuren</h3>
+                                    <p>
+                                        Een broodrooster is een huishoudelijk apparaat waarmee brood kan worden
+                                        geroosterd.
+                                        Een geroosterde snee brood noemt men ook wel toast. Een snee brood werd
+                                        traditioneel
+                                        geroosterd aan een lange vork of in een klem van metaaldraad boven open vuur. In
+                                        1893 werd het elektrisch broodrooster uitgevonden door de Schot Alan
+                                        MacMasters.[1]
+                                        Albert Marsh ontwikkelde in 1905 de nichrome verwarmingsdraden bestaande uit een
+                                        nikkel-chroomlegering die nog steeds in broodroosters worden toegepast.
+                                    </p>
 
-                                <p>
-                                    Het bekende ‘pop-up’ broodrooster, die automatisch de broodjes uit de rooster gooit,
-                                    werd in 1919 door Charles Strite gepatenteerd. Er zijn ook broodroosters waarmee
-                                    tosti’s gemaakt kunnen worden. Deze hebben daarvoor een uitneembare houder, waar de
-                                    tosti in geplaatst wordt.
-                                    Sindsdien zijn er nog veel verbeteringen en aanpassingen aan het broodrooster
-                                    gedaan.
-                                </p>
+                                    <p>
+                                        Het bekende ‘pop-up’ broodrooster, die automatisch de broodjes uit de rooster
+                                        gooit,
+                                        werd in 1919 door Charles Strite gepatenteerd. Er zijn ook broodroosters waarmee
+                                        tosti’s gemaakt kunnen worden. Deze hebben daarvoor een uitneembare houder, waar
+                                        de
+                                        tosti in geplaatst wordt.
+                                        Sindsdien zijn er nog veel verbeteringen en aanpassingen aan het broodrooster
+                                        gedaan.
+                                    </p>
 
-</div>
+                                </div>
 
                                 <div class="info col-xs-12" style="margin-top: 5%">
                                     <ul>

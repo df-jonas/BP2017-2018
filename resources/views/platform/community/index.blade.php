@@ -84,11 +84,9 @@
 
 
                     <div class="padding">
-
-
                         <div class="row flex">
                             <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img small">
                             </div>
 
 
@@ -97,10 +95,10 @@
                                 <div class="rating">
 
 
-                                    <div class="col-lg-2 col-xs-3">
+                                    <div class="col-md-4 col-xs-3">
                                         <i class="fa fa-comment"><span>22</span></i>
                                     </div>
-                                    <div class="col-lg-2 col-xs-3">
+                                    <div class="col-md-4 col-xs-3">
                                         <i class="fa fa-thumbs-up"><span>22</span></i>
                                     </div>
 
@@ -116,10 +114,9 @@
                             </div>
 
                         </div>
-
                         <div class="row flex">
                             <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img small">
                             </div>
 
 
@@ -128,10 +125,10 @@
                                 <div class="rating">
 
 
-                                    <div class="col-lg-2 col-xs-3">
+                                    <div class="col-md-4 col-xs-3">
                                         <i class="fa fa-comment"><span>22</span></i>
                                     </div>
-                                    <div class="col-lg-2 col-xs-3">
+                                    <div class="col-md-4 col-xs-3">
                                         <i class="fa fa-thumbs-up"><span>22</span></i>
                                     </div>
 
@@ -147,10 +144,9 @@
                             </div>
 
                         </div>
-
                         <div class="row flex">
                             <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img small">
                             </div>
 
 
@@ -159,12 +155,14 @@
                                 <div class="rating">
 
 
-                                    <div class="col-lg-2 col-xs-3">
+                                    <div class="col-md-4 col-xs-3">
                                         <i class="fa fa-comment"><span>22</span></i>
                                     </div>
-                                    <div class="col-lg-2 col-xs-3">
+                                    <div class="col-md-4 col-xs-3">
                                         <i class="fa fa-thumbs-up"><span>22</span></i>
                                     </div>
+
+
                                 </div>
 
                             </div>
@@ -176,7 +174,6 @@
                             </div>
 
                         </div>
-
                     </div>
 
 

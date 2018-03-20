@@ -10,17 +10,41 @@
             <div class="sidebar">
 
 
-                <div id="date-popup" class="modal col-lg-4 col-lg-push-4" style="">
 
+                <!--
+                <div id="date-popup" class="modal col-lg-4 col-lg-push-4" style="">
                     <div id="date-popup-content" class="modal-content"></div>
                 </div>
+                -->
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="date-modal" role="dialog">
+                    <div class="modal-dialog  ">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Herinnering - oefeningen</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p id="date"></p>
+                                <p>Oefeningen afwerken en verbeteren.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="download-button" data-dismiss="modal">Sluit</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
 
                 <article class="item">
                     <header>Planning</header>
-                    <div class="padding">
-                        <div id="my-calendar">
+                        <div id="date-calendar">
 
-                        </div>
                     </div>
 
                 </article>
@@ -234,12 +258,12 @@
 
 
             var eventData = [
-                {"date":"2018-03-10", "classname":"item-herinnering"},
-                {"date":"2018-03-20", "title":"Example 2", "classname":"item-taak"}
+                {"date":"2018-03-10", "title": "test 1", "classname":"item-herinnering"},
+                {"date":"2018-03-20", "title":"Test 2", "classname":"item-taak"}
             ];
 
 
-            $("#my-calendar").zabuto_calendar({
+            $("#date-calendar").zabuto_calendar({
                 language: "nl",
                 show_previous: false,
                 show_next: 3,
@@ -265,26 +289,27 @@
         });
 
         function myDateFunction(id, fromModal) {
-            $("#date-popup").hide();
+            $("#date-modal").hide();
             if (fromModal) {
                 $("#" + id + "_modal").modal("hide");
             }
             var date = $("#" + id).data("date");
             var parms = $("#" + id).data();
 
-            console.log(parms);
+            //console.log(parms);
 
             var hasEvent = $("#" + id).data("hasEvent");
             if (!hasEvent && !fromModal) {
                 return false;
             }
-            $("#date-popup-content").html('You clicked on date ' + date);
-            $("#date-popup").show();
+            //$("#date-popup-content").html('You clicked on date ' + date);
+            $('#date-modal #date').html(date);
+            $("#date-modal").modal();
             return true;
         }
 
         function myNavFunction(id) {
-            $("#date-popup").hide();
+            $("#date-modal").hide();
             var nav = $("#" + id).data("navigation");
             var to = $("#" + id).data("to");
         }

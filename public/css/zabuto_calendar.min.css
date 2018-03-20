@@ -36,12 +36,10 @@ div.zabuto_calendar .table tr.calendar-month-header td {
 div.zabuto_calendar .table tr.calendar-month-header td span {
   cursor: pointer;
   display: inline-block;
-  padding-bottom: 10px;
 }
 
 div.zabuto_calendar .table tr.calendar-month-header td {
-  padding-top: 12px;
-  padding-bottom: 4px;
+  padding: 5px;
 }
 
 div.zabuto_calendar .table-bordered tr.calendar-month-header td {
@@ -71,8 +69,7 @@ div.zabuto_calendar tr.calendar-dow td {
 
 div.zabuto_calendar .table tr td div.day {
   margin: 0;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding: 5px;
 }
 
 div.zabuto_calendar .table tr td.event div.day,
@@ -110,7 +107,7 @@ div.zabuto_calendar .badge-event {
 
 div.zabuto_calendar div.legend {
   margin-top: 5px;
-  text-align: right;
+  text-align: left;
 }
 
 div.zabuto_calendar div.legend .cal-herinnering,
