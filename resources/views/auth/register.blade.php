@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <div id="login_page">
-        <div class="login_box">
+    <div id="login-page">
+        <div class="login-box">
         <!--
             <form class="register" action="{{ route('register') }}" method="post" enctype="multipart/form-data">
 

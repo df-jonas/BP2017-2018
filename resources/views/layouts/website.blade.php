@@ -9,8 +9,6 @@
     <title>UniHelp | Home</title>
 
 
-    <script src="{{ URL::asset('js/loader.js') }}"></script>
-
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="{{asset('img/logo/favicon.png')}}"/>
 
@@ -39,10 +37,6 @@
 
 </head>
 <body>
-<!--
-preloader
-<div class="se-pre-con"></div>
--->
 
 @yield('content')
 

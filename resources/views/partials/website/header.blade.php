@@ -1,4 +1,4 @@
-<header id="page_header">
+<header id="page-header">
     <div class="row">
 
         <!-- logo -->

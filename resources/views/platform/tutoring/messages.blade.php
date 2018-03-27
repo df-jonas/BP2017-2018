@@ -10,7 +10,6 @@
             <div class="sidebar">
 
 
-
                 <!--
                 <div id="date-popup" class="modal col-lg-4 col-lg-push-4" style="">
                     <div id="date-popup-content" class="modal-content"></div>
@@ -43,7 +42,7 @@
 
                 <article class="item">
                     <header>Planning</header>
-                        <div id="date-calendar">
+                    <div id="date-calendar">
 
                     </div>
 
@@ -84,11 +83,13 @@
                                         <div class="row">
 
                                             <div class="col-lg-4">
-                                                <a class="action col-lg-12" href="{{route('tutoring-messages', ['id' => '1'])}}">Chatten</a>
+                                                <a class="action col-lg-12"
+                                                   href="{{route('tutoring-messages', ['id' => '1'])}}">Chatten</a>
                                             </div>
 
                                             <div class="col-lg-4">
-                                                <a class="action col-lg-12" href="{{route('tutoring-planning', ['id' => '1']) }}">Planning</a>
+                                                <a class="action col-lg-12"
+                                                   href="{{route('tutoring-planning', ['id' => '1']) }}">Planning</a>
                                             </div>
 
                                             <div class="col-lg-4">
@@ -99,8 +100,6 @@
                                     </div>
 
                                 </div>
-
-
 
 
                                 <div class="col-xs-12">
@@ -258,8 +257,8 @@
 
 
             var eventData = [
-                {"date":"2018-03-10", "title": "test 1", "classname":"item-herinnering"},
-                {"date":"2018-03-20", "title":"Test 2", "classname":"item-taak"}
+                {"date": "2018-03-10", "body": "test 1", "title": "test 1", "classname": "item-herinnering"},
+                {"date": "2018-03-20", "body": "Test 2", "title": "Test 2", "classname": "item-taak"}
             ];
 
 
@@ -294,7 +293,7 @@
                 $("#" + id + "_modal").modal("hide");
             }
             var date = $("#" + id).data("date");
-            var parms = $("#" + id).data();
+            var title = $("#" + id).data("header");
 
             //console.log(parms);
 
@@ -303,7 +302,10 @@
                 return false;
             }
             //$("#date-popup-content").html('You clicked on date ' + date);
-            $('#date-modal #date').html(date);
+            $('#date-modal #date').html(title);
+            console.log(id);
+            console.log(date);
+            console.log($("#" + id));
             $("#date-modal").modal();
             return true;
         }

@@ -1,4 +1,4 @@
-<header id="platform_header">
+<header id="platform-header">
     <div class="container">
         <div class="logo col-lg-1 col-xs-3" style="padding:0">
             <a href="{{ route('sharing-index') }}"><img class="logo"

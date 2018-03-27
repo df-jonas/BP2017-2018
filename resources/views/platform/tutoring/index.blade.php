@@ -127,7 +127,9 @@
 
                         <li class="load-more">
 
+
                             <h6 class="bold">Toon alle</h6>
+
 
                         </li>
 

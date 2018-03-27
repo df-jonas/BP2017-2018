@@ -1,8 +1,8 @@
 @extends('layouts.website')
 
 @section('content')
-    <div id="login_page">
-        <div class="login_box">
+    <div id="login-page">
+        <div class="login-box">
 
 
 

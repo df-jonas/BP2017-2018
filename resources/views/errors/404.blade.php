@@ -1,20 +1,23 @@
 @extends('layouts.website')
 
 @section('content')
-    <div id="login_page">
-        <div class="login_box">
+    <div id="login-page">
+        <div class="login-box">
 
             <a href="{{route('website-index')}}"><img src="{{ asset('img/logo/Logo_final.png') }}"></a>
 
             <div class="page-error">
-                <h1 class="">404</h1>
                 <br>
-                <h4>Deze pagina kon niet gevonden worden...</h4>
+                <h1>404</h1>
                 <br>
+                <h3>Deze pagina kon niet gevonden worden.</h3>
+                <br>
+
+
+
+            <a href="{{ route('website-index') }}"><p>Ga naar de home pagina.</p></a>
             </div>
-
-
-            <a class="login-problem" href="{{ route('website-index') }}"><p>Ga naar de home pagina.</p></a>
+            <br>
         </div>
     </div>
 @endsection

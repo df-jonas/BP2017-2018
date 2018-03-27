@@ -132,38 +132,9 @@
 
                                     </div>
                                 </div>
-<<<<<<< HEAD
-                                <div class="col-xs-12">
-                                    <h3>Teveel springuren</h3>
-                                    <p>
-                                        Een broodrooster is een huishoudelijk apparaat waarmee brood kan worden
-                                        geroosterd.
-                                        Een geroosterde snee brood noemt men ook wel toast. Een snee brood werd
-                                        traditioneel
-                                        geroosterd aan een lange vork of in een klem van metaaldraad boven open vuur. In
-                                        1893 werd het elektrisch broodrooster uitgevonden door de Schot Alan
-                                        MacMasters.[1]
-                                        Albert Marsh ontwikkelde in 1905 de nichrome verwarmingsdraden bestaande uit een
-                                        nikkel-chroomlegering die nog steeds in broodroosters worden toegepast.
-                                    </p>
-
-                                    <p>
-                                        Het bekende ‘pop-up’ broodrooster, die automatisch de broodjes uit de rooster
-                                        gooit,
-                                        werd in 1919 door Charles Strite gepatenteerd. Er zijn ook broodroosters waarmee
-                                        tosti’s gemaakt kunnen worden. Deze hebben daarvoor een uitneembare houder, waar
-                                        de
-                                        tosti in geplaatst wordt.
-                                        Sindsdien zijn er nog veel verbeteringen en aanpassingen aan het broodrooster
-                                        gedaan.
-                                    </p>
-
-=======
-                                
                                 <div class="col-xs-12">
                                     <h3>{{ $post->title }}</h3>
                                     <p>{{ $post->content }}</p>
->>>>>>> origin/dev_arno
                                 </div>
 
                                 <div class="info col-xs-12" style="margin-top: 5%">

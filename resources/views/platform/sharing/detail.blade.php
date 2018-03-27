@@ -114,7 +114,7 @@
 
                             </div>
 
-                            <a class="download col-lg-2" href="{{ $file->downloadUrl() }}">Download</a>
+                            <a class="download-button col-lg-2" href="{{ $file->downloadUrl() }}">Download</a>
                         </div>
                     </article>
                 </div>
