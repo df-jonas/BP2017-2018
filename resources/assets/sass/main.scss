@@ -762,6 +762,10 @@ footer {
     cursor: pointer;
     @include link(white, white, white, white);
   }
+
+  &:hover{
+    background: $unihelp-green;
+  }
 }
 
 

@@ -874,6 +874,10 @@ footer a:focus {
   color: white;
 }
 
+.download-button:hover {
+  background: #4D6A50;
+}
+
 .page-error h1,
 .page-error h3,
 .page-error h4,
