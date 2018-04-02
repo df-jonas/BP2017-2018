@@ -71,7 +71,7 @@
                             @endforeach
                         </div>
 
-                        <!-- todo: bestands types ophalen (samenvatting; notities) -->
+                        <!-- TODO bestands types ophalen (samenvatting; notities) -->
                         <label>Type bestand</label>
                         <br>
                         <div class="form-group clearfix">
@@ -150,6 +150,7 @@
             </div>
             <div class="content">
                 <div id="filecontainer" class="files">
+                    <span class="filter item filter-results padding col-xs-12">Er werden {{ sizeof($files) }} resultaten gevonden.</span><br><br>
                     @foreach($files as $file)
                         @php
                             $rating = $file->averageRating()

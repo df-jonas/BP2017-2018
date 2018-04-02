@@ -30,10 +30,11 @@ class CommunityController extends Controller
         return view("platform.community.index", $arr);
     }
 
-    /*public function newgroup()
+    public function newgroup()
     {
-        return view("platform.community.groupnew");
-    }*/
+        // TODO create new group for administrators
+        // return view("platform.community.groupnew");
+    }
 
     public function groupdetail($group_id)
     {
