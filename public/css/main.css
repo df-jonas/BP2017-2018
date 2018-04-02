@@ -163,7 +163,6 @@ a:active {
 #login-page .login-box .action-button.login,
 #login-page .login-box .action-button.register,
 .download-button {
-  width: 195px;
   height: 40px;
   background-color: #ffffff;
   display: inline-block;
