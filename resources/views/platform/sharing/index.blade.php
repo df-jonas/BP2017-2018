@@ -58,6 +58,7 @@
                             </div>
                         </div>
 
+
                         <label>Geschreven in</label>
                         <br>
 
@@ -70,6 +71,7 @@
                                 </label>
                             @endforeach
                         </div>
+
 
                         <!-- todo: bestands types ophalen (samenvatting; notities) -->
                         <label>Type bestand</label>
@@ -102,77 +104,24 @@
                 <!-- filter menu -->
 
                 <!-- user uploaded items -->
-                <article class="item user-owned">
+                <div class="filecontainer item files">
                     <header>Mijn uploads</header>
-
-
-                    <div class="padding">
-
-                        @foreach($userfiles as $file)
-                            @php
-                                $rating = $file->averageRating()
-                            @endphp
-
-
-                            <div class="row flex">
-                                <div class="icon col-md-2 col-xs-12">
-                                    <img src="{{asset('img/icons/001-file.png')}} "
-                                         style="width: 36px; height: 36px">
-                                </div>
-
-
-                                <div class="col-md-8 col-xs-12">
-                                    <h5 class="title"><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h5>
-                                    <div class="rating">
-                                        @for ($i = 1; $i <= 5; $i++)
-                                            @if($i <= $rating)
-                                                <span class="fa fa-star checked"></span>
-                                            @else
-                                                <span class="fa fa-star"></span>
-                                            @endif
-                                        @endfor
-                                    </div>
-
-                                </div>
-
-                                <div class="col-md-2 col-xs-12">
-                                    <i class="fa fa-pencil brown"></i>
-
-
-                                </div>
-
-                            </div>
-                        @endforeach
-                    </div>
-
-                </article>
-            <!-- user items -->
-            </div>
-            <div class="content">
-                <div id="filecontainer" class="files">
-                    @foreach($files as $file)
+                    @foreach($userfiles as $file)
                         @php
                             $rating = $file->averageRating()
                         @endphp
-                    <!--
-                        <article class="file item clearfix">
-                            <header>{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}<a
-                                        href="{{ $file->downloadUrl() }}"><i class="fa fa-download"></i></a>
-                            </header>
-                            <div class="padding">
 
+                        <article class="file item user-owned">
+                            <div class="padding">
                                 <div class="row flex">
-                                    <div class="icon col-md-1 col-xs-12">
+                                    <div class="icon col-lg-1 col-md-2 col-sm-2 col-xs-2">
                                         <img src="{{asset('img/icons/001-file.png')}} "
                                              style="width: 36px; height: 36px">
                                     </div>
 
-                                    <div class="col-md-5 col-xs-12">
-                                        <h3><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h3>
-                                        <p>door {{$file->user->first_name}} {{$file->user->last_name}}</p>
-                                    </div>
-                                    <div class="col-md-6 col-xs-12" style="text-align: right">
-                                        <div class="rating">
+                                    <div class="col-lg-5 col-md-6 col-sm-6 col-xs-10">
+                                        <h5 class="title"><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h5>
+                                        <div class="vertical-center rating  col-xs-12" style="margin-top: 0.5em">
                                             @for ($i = 1; $i <= 5; $i++)
                                                 @if($i <= $rating)
                                                     <span class="fa fa-star checked"></span>
@@ -181,27 +130,45 @@
                                                 @endif
                                             @endfor
                                         </div>
+
                                     </div>
+
+                                    <div class="edit col-lg-2 col-md-12 col-sm-12 col-xs-12">
+                                        <i class="fa fa-pencil brown"></i>
+                                    </div>
+
                                 </div>
+
                             </div>
+
                         </article>
--->
+                    @endforeach
+                </div>
+                <!-- user items -->
+            </div>
+            <div class="content">
+                <div class="filecontainer files">
+                    @foreach($files as $file)
+                        @php
+                            $rating = $file->averageRating()
+                        @endphp
+
 
 
                         <article class="file item">
                             <a href="{{ $file->detailUrl() }}">
-                            <header>
-                               {{$file->course->name}}<i class="fa fa-download"></i>
-                            </header>
+                                <header>
+                                    {{$file->course->name}}<i class="fa fa-download"></i>
+                                </header>
                             </a>
                             <div class="padding">
                                 <div class="row flex">
-                                    <div class="col-lg-1 col-xs-2">
+                                    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2">
                                         <img src="{{asset('img/icons/001-file.png')}} "
                                              style="width: 36px; height: 36px">
                                     </div>
 
-                                    <div class="col-lg-5 col-xs-10">
+                                    <div class="col-lg-5 col-md-6 col-sm-6 col-xs-10">
                                         <h4 class="title"><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h4>
                                         <div class="row icons">
                                             <!--
@@ -219,9 +186,9 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-lg-6 col-xs-12" style="text-align: right">
+                                    <div class="col-lg-6 col-lg-push-0 col-md-4 col-sm-4 col-sm-push-0 col-xs-8 col-xs-push-2">
 
-                                        <div class="rating">
+                                        <div class="vertical-center padding rating">
                                             @for ($i = 1; $i <= 5; $i++)
                                                 @if($i <= $rating)
                                                     <span class="fa fa-star checked"></span>
@@ -237,7 +204,7 @@
 
                         </article>
 
-                        @endforeach
+                    @endforeach
                 </div>
             </div>
 

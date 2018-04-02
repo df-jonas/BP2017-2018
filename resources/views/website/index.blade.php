@@ -7,7 +7,6 @@
 
     <!-- banner -->
     <div id="page-banner" class="col-xs-12">
-
         <div id="welcome" class="col-lg-6 col-lg-push-3 col-xs-12">
             <h1>Welkom bij UniHelp</h1>
             <h3>Het slimme leerplatform om studenten altijd en overal te helpen.</h3>

@@ -1,10 +1,10 @@
 <header id="platform-header">
     <div class="container">
+
+
         <div class="logo col-lg-1 col-xs-3" style="padding:0">
-            <a href="{{ route('sharing-index') }}"><img class="logo"
-                                                        src="{{ URL::asset('img/logo/favicon_white.png') }}"></a>
+            <a href="{{ route('sharing-index') }}"><img class="logo" src="{{ URL::asset('img/logo/favicon_white.png') }}"></a>
         </div>
-        
         <div class="dropdown">
             <div class="account">
                 <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="account_img" data-toggle="dropdown">
@@ -27,13 +27,18 @@
                 </ul>
             </div>
         </div>
+
+
+        <!-- responsive menu buttons -->
+        <div>
+            <button class="hamburger">&#9776;</button>
+            <button class="cross">&#735;</button>
+        </div>
+
+
     </div>
 
-    <!-- responsive menu buttons -->
-    <div>
-        <button class="hamburger">&#9776;</button>
-        <button class="cross">&#735;</button>
-    </div>
+
     </div>
 
     <ul class="sub col-xs-12 clearfix">

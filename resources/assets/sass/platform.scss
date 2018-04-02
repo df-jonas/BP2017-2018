@@ -101,16 +101,9 @@ div.container {
 
 }
 
-.hamburger {
+.hamburger, .cross {
   color: $unihelp-white;
-  left: 0;
-  display: none;
-}
 
-.cross {
-  color: $unihelp-white;
-  left: 0;
-  display: none;
 }
 
 /*Menu*/
@@ -274,7 +267,8 @@ div.container {
         background: $unihelp-green;
         color: $unihelp-white;
         border: 1px solid $unihelp-white;
-        height: 90px;
+        height: 80px;
+        position: relative;
         &:hover, &.active{
           cursor: pointer;
           background: $unihelp-white;
@@ -290,14 +284,11 @@ div.container {
           background: $unihelp-brown;
           color: $unihelp-white;
         }
+      
       }
     }
     .table{
       margin-bottom: 0;
-      margin-top: 8px;
-      margin-bottom: 8px;
-      margin-top: 7.5%;
-      transform: translate(0, -7.5%);
     }
 
     .item{
@@ -315,6 +306,28 @@ div.container {
   }
 }
 
+.overview-calendar{
+  height: 45px;
+  margin-top: 2.5em;
+  position: relative;
+
+  .date{
+      color: $unihelp-black;
+    text-align: left;
+
+  }
+
+  .reminder{
+    height: 45px;
+    color: $unihelp-white;
+    background: $unihelp-brown;
+    h5{
+      margin: 0;
+    }
+  }
+
+}
+
 .row.flex {
   display: flex;
   flex-wrap: wrap;
@@ -327,12 +340,12 @@ div.container {
 }
 
 
-#filecontainer{
+.filecontainer{
   display: inline;
 }
 
 /*afbeelding centreren in overzicht*/
-.content .group-type .group, .content  #filecontainer .file{
+.content .group-type .group, .content  .filecontainer .file{
   img {
     position: absolute;
     top: 50%;
@@ -342,7 +355,7 @@ div.container {
   }
 }
 
-.content .group-type .group, .content #filecontainer .file{
+.content .group-type .group, .content .filecontainer .file{
   cursor: pointer;
   .title{
     a{
@@ -365,7 +378,7 @@ div.container {
   }
 }
 
-.content .group-type .group, .content #filecontainer .file, .item.user-owned{
+.content .group-type .group, .content .filecontainer .file, .item.user-owned{
   .title{
     a{
       color: $unihelp-black;
@@ -526,8 +539,8 @@ div.container {
 
 #comment-box{
   margin-top: 1.5em;
-  padding-top: 1.5em;
-  margin-bottom: 1.5em;
+  //padding-top: 1.5em;
+  //margin-bottom: 1.5em;
   border-top: 2px solid $unihelp-brown;
   line-height: 32px;
 
@@ -664,8 +677,15 @@ input, button{
 
 /*star rating*/
 .content .file .rating {
-  float: right;
   font-size: 1.5em;
+  font-size: 1.5em;
+}
+
+.vertical-center{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .rating{
@@ -1005,10 +1025,49 @@ form .form-group {
 }
 /*Mediaqueries*/
 
+/*Bootstrap medium*/
+@media only screen and (max-width: 1200px){
+
+}
+
+/*Bootsstrap small*/
+@media only screen and (max-width: 992px){
+  .edit{
+    display: none;
+  }
+  div.table {
+    margin-top: 1em;
+  }
+
+  /*SIDEBAR*/
+  .sidebar, .content {
+    display: block !important;
+    padding: 0;
+    left: 0!important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    margin-top: 0 !important;
+
+  }
+
+
+
+}
+
+/*Bootstrap extra small*/
 @media only screen and (max-width: 768px) {
+
+ 
+  .hide-mobile{
+    display: none;
+  }
   /*responsive menu*/
   #platform-header {
     height: auto;
+    
+    .account{
+      float: left;
+    }
     .logo {
       display: none;
     }
@@ -1038,15 +1097,7 @@ form .form-group {
   }
 
 
-  .table{
-    .sidebar{
-      margin-top: 0!important;
-    }
 
-    .content{
-      padding-left: 0!important;
-    }
-  }
 
 
   .container {
@@ -1056,16 +1107,15 @@ form .form-group {
   .subheader {
     margin-bottom: 0;
   }
-  div.table {
-    margin-top: 1em;
-  }
 
-  /*SIDEBAR*/
-  .sidebar, .content {
-    display: block !important;
-    padding: 0;
-    width: 100% !important;
 
+ .file .rating {
+    font-size: 1.5em;
+    font-size: 1.5em;
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translate(0, -50%);
   }
 
 }
@@ -1074,7 +1124,7 @@ form .form-group {
 
 
 .sidebar{
-  .user-owned, .stats{
+  .stats{
     display: none;
   }
 }

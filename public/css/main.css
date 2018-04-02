@@ -20,6 +20,10 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+  width: 85% !important;
+}
+
 /*Fonts*/
 
 h1,
@@ -400,7 +404,7 @@ a:active {
 /*About*/
 
 #about-banner {
-  height: 800px;
+  height: auto;
   margin-top: 78px;
   background: #4D6A50;
   padding: 2%;
@@ -639,6 +643,7 @@ a:active {
 
 footer {
   clear: both;
+  /*Override default mce css*/
 }
 
 footer.col-xs-12 {
@@ -653,17 +658,17 @@ footer .bottom {
   display: block;
 }
 
-footer .top .box,
-footer .bottom .box {
+footer .top .container,
+footer .bottom .container {
   position: absolute;
   top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  left: 7.5%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
 }
 
 footer .top {
-  height: 250px;
+  height: 200px;
   background: #333a40;
 }
 
@@ -673,7 +678,7 @@ footer .top p {
 }
 
 footer .bottom {
-  height: 100px;
+  height: 85px;
   background: #2b2f33;
 }
 
@@ -701,6 +706,22 @@ footer a:hover {
 footer a:active,
 footer a:focus {
   color: white;
+}
+
+footer #mce-EMAIL {
+  width: 50% !important;
+  float: left !important;
+  border: none !important;
+  background-color: #505457 !important;
+  color: #ffffff !important;
+}
+
+footer #mc-embedded-subscribe {
+  width: 20% !important;
+  margin-left: 2.5% !important;
+  float: left !important;
+  text-align: center !important;
+  background: #4D6A50 !important;
 }
 
 /*Custom checkboxes*/
@@ -945,6 +966,11 @@ footer a:focus {
 }
 
 @media only screen and (max-width: 768px) {
+  #page-banner,
+  #about-banner {
+    margin-top: 48px;
+  }
+
   /*responsive menu*/
 
   #page-header {
@@ -979,7 +1005,15 @@ footer a:focus {
 
   #page-banner {
     margin-top: 0;
-    height: 65vh;
+    height: 85vh;
+  }
+
+  #page-banner #welcome {
+    top: 65%;
+  }
+
+  #page-banner .scroll {
+    top: 105%;
   }
 
   .what .items .item .left img,
@@ -993,9 +1027,8 @@ footer a:focus {
     padding: 0;
   }
 
-  #how-it-works .item h1 {
-    text-align: center;
-    word-wrap: break-word;
+  #how-it-works .item h2 {
+    word-wrap: break-all;
   }
 
   #how-it-works .item p {
@@ -1003,9 +1036,30 @@ footer a:focus {
     word-wrap: break-word;
   }
 
-  .about_person,
-  .about_person .left {
-    text-align: center !important;
+  #about-quote h1 {
+    text-align: center;
+  }
+
+  .about-person .right {
+    margin-top: 1em;
+  }
+
+  .about-person h3,
+  .about-person h4,
+  .about-person p {
+    text-align: center;
+  }
+
+  #how-it-works .items .item img {
+    width: 100%;
+  }
+
+  .call-to-action {
+    height: auto;
+  }
+
+  footer .container {
+    left: 0 !important;
   }
 
   footer .top {
@@ -1019,9 +1073,28 @@ footer a:focus {
 }
 
 @media only screen and (max-width: 480px) {
-  #page-banner {
-    margin-top: 0;
-    height: 50vh;
+  .call-to-action {
+    min-height: 250px;
+  }
+
+  footer .top {
+    min-height: 35em;
+  }
+
+  footer #mce-EMAIL {
+    width: 100% !important;
+    float: left !important;
+    border: none !important;
+    background-color: #505457 !important;
+    color: #ffffff !important;
+  }
+
+  footer #mc-embedded-subscribe {
+    width: 100% !important;
+    margin-left: 0 !important;
+    float: left !important;
+    text-align: center !important;
+    background: #4D6A50 !important;
   }
 }
 

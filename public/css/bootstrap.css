@@ -1993,11 +1993,9 @@ address {
   .col-lg-6 {
     width: 48%;
   }
-
   .col-lg-6.left{
     margin-right: 2%;
   }
-
   .col-lg-6.right{
     margin-left: 2%;
   }

@@ -1,7 +1,7 @@
 <footer class="col-xs-12">
 
     <div class="top clearfix">
-        <div class="box col-lg-8 col-lg-push-2 col-xs-12">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-xs-12">
                     <h4>Privacy</h4>
@@ -28,7 +28,7 @@
                               class="validate" target="_blank" novalidate>
                             <div id="mc_embed_signup_scroll">
                                 <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL"
-                                       placeholder="iemand@mail.com" required style=" width: 60%; float: left">
+                                       placeholder="iemand@mail.com" required>
                                 <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                                 <div style="position: absolute; left: -5000px; height: 48px" aria-hidden="true">
                                     <input type="text" name="b_f29e41bdbbcefab7c8478106b_d506043aaf" tabindex="-1"
@@ -36,8 +36,7 @@
                                 </div>
 
                                 <input type="submit" value="Inschrijven" name="subscribe" id="mc-embedded-subscribe"
-                                       class="button"
-                                       style="width: 40%; float:right; text-align: center; background: #4D6A50"></div>
+                                       class="button"></div>
                         </form>
                     </div>
 
@@ -49,21 +48,21 @@
     </div>
 
     <div class="bottom clearfix">
-        <div class="box col-lg-8 col-lg-push-2 col-xs-12">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-xs-6">
+                <div class="col-sm-3 col-xs-12 ">
                     <a href="{{route('website-copyright')}}"><p>&copy; 2017-2018 UniHelp</p></a>
                 </div>
 
-                <div class="col-lg-3 col-xs-6">
+                <div class="col-sm-3 col-xs-12">
                     <a href="{{route('website-cookies')}}"><p>Cookie beleid</p></a>
                 </div>
 
-                <div class="col-lg-3 col-xs-6">
+                <div class="col-sm-3 col-xs-12">
                     <a href="{{route('website-privacy')}}"><p>Privacy beleid</p></a>
                 </div>
 
-                <div class="col-lg-3 col-xs-6">
+                <div class="col-sm-3 col-xs-12">
                     <a href="https://blog.unihelp.be" target="_blank"><p>Project blog</p></a>
                 </div>
             </div>

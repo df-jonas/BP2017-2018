@@ -44,14 +44,17 @@
         </div>
     </section>
 
+
+    <div class="container">
+
     <section class="about-person col-xs-12">
         <div class="row flex">
-            <div class="left col-lg-2 col-lg-push-2 col-xs-6 col-xs-push-3">
+            <div class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
                 <img src="img/team/arno.png" class="round_img">
             </div>
 
 
-            <div class="right col-lg-6 col-lg-push-2 col-xs-12">
+            <div class="right col-lg-6 col-lg-push-1 col-md-8 col-md-push-2 col-xs-12">
                 <h3>Arno Stalpaert</h3>
                 <h4>Multec student
                     <small>(Mobile App &amp; Web development)</small>
@@ -65,6 +68,8 @@
         </div>
 
     </section>
+
+    </div>
 
     <section id="about-quote" class="col-xs-12 clearfix">
         <div class="quote col-lg-6 col-lg-push-3 col-xs-12">
@@ -96,14 +101,15 @@
     </section>
 -->
 
+    <div class="container">
     <section class="about-person col-xs-12">
         <div class="row flex">
-            <div class="left col-lg-2 col-lg-push-2 col-xs-6 col-xs-push-3">
+            <div class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
                 <img src="img/team/jonas.png" class="round_img">
             </div>
 
 
-            <div class="right col-lg-6 col-lg-push-2 col-xs-12">
+            <div class="right col-lg-6 col-lg-push-1 col-md-8 col-md-push-2 col-xs-12">
                 <h3>Jonas De Frère</h3>
                 <h4>Dig-X student
                     <small>(Mobile App &amp; Web development)</small>
@@ -116,5 +122,6 @@
 
     </section>
 
+    </div>
     @include('partials.footer')
 @endsection

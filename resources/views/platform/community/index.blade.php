@@ -85,10 +85,10 @@
                     <div class="padding">
                         @foreach($myposts as $post)
                             <div class="row flex">
-                                <div class="icon col-md-2 col-xs-2">
+                                <div class="icon col-lg-2 col-md-2 col-xs-2">
                                     <img src="{{ asset('img/avatars/' . $post->user->image )}}" class="group_img">
                                 </div>
-                                <div class="col-md-8 col-xs-8">
+                                <div class="col-lg-8 col-md-8 col-xs-8">
                                     <h5 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h5>
                                     <div class="rating">
                                         <div class="col-lg-2 col-xs-3">
@@ -99,7 +99,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-2 col-xs-2">
+                                <div class="col-lg-2 col-md-2 col-xs-2">
                                     <i class="fa fa-pencil brown"></i>
                                 </div>
                             </div>
@@ -167,14 +167,14 @@
                         <div class="group-type item clearfix">
                             <header>{{ $category->name }}<!--<a href="#top"><i class="fa fa-angle-up"></i></a>--></header>
                             @foreach($category->groups as $group)
-                                <article class="group">
+                                <article class="group" style="position: relative">
                                     <div class="padding">
-                                        <div class="row lil kleine ronnie flex">
-                                            <div class="col-lg-1 col-xs-2">
+                                        <div class="row flex">
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                                 <img src="{{asset('img/icons/' . $group->icon->path)}}"
                                                      style="width: 36px; height: 36px">
                                             </div>
-                                            <div class="col-lg-5 col-xs-10">
+                                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-11">
                                                 <h4 class="title"><a href="{{ $group->url() }}">{{ $group->name }}</a></h4>
                                                 <div class="row icons">
                                                     <!--<div class="col-lg-2"><i class="fa fa-comment"><span>22</span></i></div>
@@ -188,7 +188,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-xs-12" style="text-align: right">
+                                            <div class="vertical-center col-lg-6 col-md-6 col-sm-6 col-xs-0 hide-mobile" style="text-align: right;">
                                                 <h6>{{ $group->shortdesc }}</h6>
                                                 <h6>Laatste update: {{ $group->lastupdate() }}</h6>
                                             </div>

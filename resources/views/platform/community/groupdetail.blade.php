@@ -118,11 +118,11 @@
                             <article class="group">
                                 <div class="padding">
                                     <div class="row flex">
-                                        <div class="col-lg-1 col-xs-2">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
                                             <img src="{{ asset('img/avatars/' . $post->user->image) }}"
                                                  class="group_img">
                                         </div>
-                                        <div class="col-lg-5 col-xs-10">
+                                        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-10">
                                             <h4><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h4>
                                             <div class="row icons">
                                                 <div class="col-lg-2 col-xs-3">
@@ -133,7 +133,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="info col-lg-6 col-xs-12" style="text-align: right">
+                                        <div class="info hide-mobile col-lg-6 col-md-6 col-sm-4 col-xs-12"
+                                             style="text-align: right;">
                                             <h6>{{ $post->postcreated() }}</h6>
                                             <h6>door
                                                 <span>{{ $post->user->first_name }} {{ $post->user->last_name }}</span>

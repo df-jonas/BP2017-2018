@@ -19,6 +19,10 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+  width: 85% !important;
+}
+
 /*Fonts*/
 h1, h2, h3, h4, h5, h6, p {
   font-family: Raleway;
@@ -79,8 +83,7 @@ p {
   color: $unihelp-black;
 }
 
-
-label, select{
+label, select {
   font-family: HelveticaNeue;
   font-size: 16px;
   font-weight: normal;
@@ -92,15 +95,14 @@ label, select{
   color: #505457;
 }
 
-label{
+label {
   margin-bottom: 5px;
 }
 
-
-
-.form-group{
+.form-group {
   margin-bottom: 10px;
 }
+
 a:hover, a:visited, a:link, a:active {
   text-decoration: none;
 }
@@ -132,14 +134,13 @@ a:hover, a:visited, a:link, a:active {
   flex-wrap: wrap;
 }
 
-
 .action-button {
   width: 195px;
   height: 40px;
   background-color: $unihelp-white;
   display: inline-block;
   border: none;
-  &.register{
+  &.register {
     background: $unihelp-green;
     color: $unihelp-white;
     &:hover {
@@ -151,17 +152,16 @@ a:hover, a:visited, a:link, a:active {
     }
   }
 
-  &.login{
+  &.login {
     &:hover {
       background: $unihelp-green;
-      color: $unihelp-white ;
+      color: $unihelp-white;
       -webkit-transition: background-color 100ms linear;
       -ms-transition: background-color 100ms linear;
       transition: background-color 100ms linear;
     }
   }
 }
-
 
 /*menu*/
 #page-header, #platform-header {
@@ -342,7 +342,7 @@ a:hover, a:visited, a:link, a:active {
   button {
     background-color: $unihelp-white !important;
     color: $unihelp-green !important;
-    &:hover{
+    &:hover {
       background: lightgray !important;
       color: $unihelp-green !important;
     }
@@ -352,7 +352,7 @@ a:hover, a:visited, a:link, a:active {
 /*About*/
 
 #about-banner {
-  height: 800px;
+  height: auto;
   margin-top: 78px;
   background: $unihelp-green;
   padding: 2%;
@@ -394,10 +394,10 @@ a:hover, a:visited, a:link, a:active {
 
 .about-person {
   margin: 10% 0;
-  h3{
+  h3 {
     color: $unihelp-green;
   }
-  h4{
+  h4 {
     color: $unihelp-black;
   }
 
@@ -426,12 +426,11 @@ a:hover, a:visited, a:link, a:active {
   background-position: center center;
   background-repeat: no-repeat;
 
-
-  h3{
+  h3 {
     color: $unihelp-green;
   }
 
-  h3, p{
+  h3, p {
     text-align: center;
   }
   img {
@@ -451,8 +450,8 @@ a:hover, a:visited, a:link, a:active {
     transform: translate(-50%, -50%);
     color: $unihelp-black;
 
-    .login-problem p{
-      text-align: center!important;
+    .login-problem p {
+      text-align: center !important;
     }
 
     header, .box, footer {
@@ -478,8 +477,6 @@ a:hover, a:visited, a:link, a:active {
       padding-left: 0;
       padding-right: 0;
     }
-
-
 
     .action-button.login, .action-button.register {
       @extend .action-button;
@@ -570,8 +567,6 @@ a:hover, a:visited, a:link, a:active {
 
 /*Footer*/
 
-
-
 footer {
   clear: both;
   &.col-xs-12 {
@@ -583,17 +578,17 @@ footer {
     clear: both;
     display: block;
     //vertical align
-    .box {
+    .container {
       position: absolute;
       top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
+      left: 7.5%;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
     }
   }
 
   .top {
-    height: 250px;
+    height: 200px;
     background: $unihelp-asphalt;
     p {
       font-size: 16px;
@@ -602,7 +597,7 @@ footer {
   }
 
   .bottom {
-    height: 100px;
+    height: 85px;
     background: $unihelp-grey;
     p {
       font-size: 14px;
@@ -614,9 +609,24 @@ footer {
     cursor: pointer;
     @include link(white, white, white, white);
   }
+
+  /*Override default mce css*/
+  #mce-EMAIL {
+    width: 50% !important;
+    float: left !important;
+    border: none !important;
+    background-color: #505457 !important;
+    color: $unihelp-white !important;
+  }
+
+  #mc-embedded-subscribe {
+    width: 20% !important;
+    margin-left: 2.5% !important;
+    float: left !important;
+    text-align: center !important;
+    background: #4D6A50 !important;
+  }
 }
-
-
 
 /*Custom checkboxes*/
 .checkbox-label {
@@ -763,32 +773,27 @@ footer {
     @include link(white, white, white, white);
   }
 
-  &:hover{
+  &:hover {
     background: $unihelp-green;
   }
 }
 
-
-
 .page-error {
-  h1, h3, h4, p, a{
+  h1, h3, h4, p, a {
     text-align: center !important;
   }
 
-  h3{
+  h3 {
     color: $unihelp-green;
   }
 
-  a, p{
+  a, p {
     text-align: center !important;
     cursor: pointer;
     @include link(black, black, black, black);
   }
 
 }
-
-
-
 
 @media only screen and (max-width: 1500px) {
   #page-header .links {
@@ -824,6 +829,9 @@ footer {
 
 @media only screen and (max-width: 768px) {
 
+  #page-banner, #about-banner{
+    margin-top: 48px;
+  }
   /*responsive menu*/
   #page-header {
     height: auto;
@@ -853,7 +861,13 @@ footer {
 
   #page-banner {
     margin-top: 0;
-    height: 65vh;
+    height: 85vh;
+    #welcome {
+      top: 65%;
+    }
+    .scroll {
+      top: 105%;
+    }
   }
 
   .what .items .item .left img, .what .items .item .right img {
@@ -866,10 +880,10 @@ footer {
       padding: 0;
     }
 
-    h1 {
-      text-align: center;
-      word-wrap: break-word;
+    h2 {
+      word-wrap: break-all;
     }
+
     p {
       text-align: justify;
       word-wrap: break-word;
@@ -877,11 +891,37 @@ footer {
 
   }
 
-  .about_person, .about_person .left {
-    text-align: center !important;
+  #about-quote h1{
+    text-align: center;
+  }
+  .about-person{
+    .right{
+      margin-top: 1em;
+    }
+    h3, h4, p{
+      text-align: center;
+    }
   }
 
+
+  #how-it-works {
+    .items {
+      .item {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .call-to-action {
+    height: auto;
+  }
   footer {
+
+    .container{
+      left: 0 !important;
+    }
     .top {
       min-height: 30em;
       height: auto;
@@ -896,13 +936,35 @@ footer {
 }
 
 @media only screen and (max-width: 480px) {
-  #page-banner {
-    margin-top: 0;
-    height: 50vh;
+
+  .call-to-action {
+    min-height: 250px;
+  }
+  footer {
+    .top {
+      min-height: 35em;
+    }
+
+
+
+    #mce-EMAIL {
+      width: 100% !important;
+      float: left !important;
+      border: none !important;
+      background-color: #505457 !important;
+      color: $unihelp-white !important;
+    }
+
+    #mc-embedded-subscribe {
+      width: 100% !important;
+      margin-left: 0 !important;
+      float: left !important;
+      text-align: center !important;
+      background: #4D6A50 !important;
+    }
   }
 
 }
-
 
 input:focus, .form-control:focus {
   box-shadow: none;
