@@ -21,14 +21,14 @@
                 </article>-->
                 <!-- end Upload button -->
 
-            <!--
-                <article class="item clearfix">
-                    <header>Nieuw bestand</header>
-                    <div>
-                        <a href="">Nieuwe groep maken.</a>
-                    </div>
-                </article>
-                -->
+                <!--
+                    <article class="item clearfix">
+                        <header>Nieuw bestand</header>
+                        <div>
+                            <a href="">Nieuwe groep maken.</a>
+                        </div>
+                    </article>
+                    -->
 
                 <!-- Search form -->
                 <article class="item search">
@@ -47,30 +47,22 @@
                     <div class="padding">
                         <div class="form-group clearfix">
                             <div class="selectdiv">
-                                <label for="fos">Populariteit</label>
-                                <select id="fos" name="fos" class="select col-xs-12 filterlistener">
-                                    <option value="-1" selected>Geen selectie</option>
-
-                                </select>
+                                <label for="rangepop">Populariteit</label>
+                                <input id="rangepop" class="filterlistener" name="popularity" type="range" min="0" max="100">
                             </div>
                         </div>
-                        <label>Type groep</label>
-                        <br>
 
                         <div class="form-group clearfix">
-
-                            <label class="checkbox-container col-xs-12">Studentenraad
-                                <input type="checkbox" name="pubyear[]" value="1"
-                                       class="filterlistener" checked>
-                                <span class="checkmark"></span>
-                            </label>
-
-                            <label class="checkbox-container col-xs-12">Interesse groep
-                                <input type="checkbox" name="pubyear[]" value="1"
-                                       class="filterlistener">
-                                <span class="checkmark"></span>
-                            </label>
-
+                            <label>Type groep</label>
+                            @foreach($categories as $category)
+                                @foreach($category->groups as $group)
+                                    <label class="checkbox-container col-xs-12">{{ $group->name }}
+                                        <input type="checkbox" name="category[]" value="{{ $group->id }}"
+                                               class="filterlistener">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                @endforeach
+                            @endforeach
                         </div>
                         <input type="hidden" class="filterlistener" name="_token" id="token" value="{{ csrf_token() }}">
                     </div>
@@ -175,7 +167,8 @@
                                                      style="width: 36px; height: 36px">
                                             </div>
                                             <div class="col-lg-5 col-xs-10">
-                                                <h4 class="title"><a href="{{ $group->url() }}">{{ $group->name }}</a></h4>
+                                                <h4 class="title"><a href="{{ $group->url() }}">{{ $group->name }}</a>
+                                                </h4>
                                                 <div class="row icons">
                                                     <!--<div class="col-lg-2"><i class="fa fa-comment"><span>22</span></i></div>
                                                     <div class="col-lg-2"><i class="fa fa-thumbs-up"><span>22</span></i></div>-->
@@ -210,5 +203,5 @@
 @endsection
 
 @section("scripts")
-    <script src="{{ asset("js/sharing-filter.js") }}"></script>
+    <script src="{{ asset("js/community-filter.js") }}"></script>
 @endsection

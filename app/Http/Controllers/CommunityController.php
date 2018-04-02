@@ -134,4 +134,33 @@ class CommunityController extends Controller
             $query->select('id', 'first_name', 'last_name', 'image');
         }])->firstOrFail());
     }
+
+    public function ajaxFilter(Request $request)
+    {
+        $q = Post::query();
+
+        if ($request->search != "") {
+            $q->where("title", "LIKE", "%" . $request->search . "%");
+        }
+
+        if (!empty($request->category) && sizeof($request->category) > 0) {
+            $q->whereIn("group_id", $request->category);
+        }
+
+        $returnarr = $q->select(["title", "user_id", "group_id", "created_at"])->with([
+            'user' => function ($query) {
+                $query->select("id", "first_name", "last_name", "image");
+            },
+            'group' => function ($query) {
+                $query->select("id", "name");
+            },
+        ])->orderBy('id', 'desc')->get();
+
+        foreach ($returnarr as $post) {
+            $post['commentcount'] = $post->commentcount();
+            $post['votesum'] = $post->votesum();
+        }
+
+        return $returnarr;
+    }
 }
