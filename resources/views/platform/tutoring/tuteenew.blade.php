@@ -73,9 +73,8 @@
                                     </div>
                                 </div>
 
-                                <div class="padding">
-                                    <input type="button" class="next col-lg-2" value="Volgende"/>
-
+                                <div class="form-group padding clearfix">
+                                    <input type="button" class="download-button next col-lg-2 col-sm-4 col-xs-12" value="Volgende">
                                 </div>
 
                             </article>
@@ -103,8 +102,8 @@
 
 
 
-                                    <input type="button" name="next" class="next col-lg-2" value="Volgende"/>
-                                    <input type="button" name="previous" class="previous col-lg-2" value="Vorige"/>
+                                    <input type="button" class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Volgende">
+                                    <input type="button" class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1 col-xs-12" value="Vorige">
 
                                 </div>
                             </article>
@@ -147,8 +146,8 @@
 
 
 
-                                    <input type="button" name="next" class="next col-lg-2" value="Volgende"/>
-                                    <input type="button" name="previous" class="previous col-lg-2" value="Vorige"/>
+                                    <input type="button" class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Volgende">
+                                    <input type="button" class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1 col-xs-12" value="Vorige">
                                 </div>
                             </article>
                         </fieldset>
@@ -201,9 +200,8 @@
 
                                     </table>
 
-                                    <input type="submit" name="submit" class="next col-lg-2" value="Versturen"/>
-                                    <input type="button" id="submitall" name="previous" class="previous col-lg-2"
-                                           value="Vorige"/>
+                                    <input id="submitall" type="submit" name="submit" class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Versturen">
+                                    <input type="button" class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1 col-xs-12" value="Vorige">
 
 
                                 </div>

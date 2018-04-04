@@ -18,8 +18,6 @@
                             <i class="glyphicon glyphicon-plus-sign"></i> Nieuwe post
                         </button>
                     </a>
-
-
                 </article>
                 <!-- end Upload button -->
 
@@ -43,7 +41,7 @@
                         @foreach($myposts as $post)
                             <div class="row flex">
                                 <div class="icon col-md-2 col-xs-2">
-                                    <img src="{{ asset('img/avatars/' . $post->user->image )}}" class="group_img">
+                                    <img src="{{ asset('img/avatars/' . $post->user->image )}}" class="group-img round-img">
                                 </div>
                                 <div class="col-md-8 col-xs-8">
                                     <h5 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h5>
@@ -69,8 +67,9 @@
                             <div class="col-xs-10">
                                 <p>Groepen</p>
                             </div>
+
                             <div class="col-xs-2">
-                                <p>0</p>
+                                <p class="amount">0</p>
                             </div>
                         </div>
 
@@ -78,8 +77,9 @@
                             <div class="col-xs-10">
                                 <p>Posts</p>
                             </div>
+
                             <div class="col-xs-2">
-                                <p>0</p>
+                                <p class="amount">0</p>
                             </div>
                         </div>
 
@@ -87,8 +87,9 @@
                             <div class="col-xs-10">
                                 <p>Aantal reacties</p>
                             </div>
+
                             <div class="col-xs-2">
-                                <p>0</p>
+                                <p class="amount">0</p>
                             </div>
                         </div>
 
@@ -97,8 +98,9 @@
                             <div class="col-xs-10">
                                 <p>Aantal gebruikers</p>
                             </div>
+
                             <div class="col-xs-2">
-                                <p>0</p>
+                                <p class="amount">0</p>
                             </div>
                         </div>
                     </div>
@@ -111,7 +113,7 @@
             <div class="content">
                 <div id="groupcontainer" class="item groups">
 
-                    <div class="group-type clearfix">
+                    <div class="overview group group-type item clearfix">
                         <header>Posts in "{{ $group->name }}"</header>
 
                         @foreach($group->posts as $post)
@@ -120,16 +122,13 @@
                                     <div class="row flex">
                                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
                                             <img src="{{ asset('img/avatars/' . $post->user->image) }}"
-                                                 class="group_img">
+                                                 class="group-img round-img">
                                         </div>
                                         <div class="col-lg-5 col-md-5 col-sm-7 col-xs-10">
-                                            <h4><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h4>
+                                            <h4 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h4>
                                             <div class="row icons">
-                                                <div class="col-lg-2 col-xs-3">
-                                                    <i class="fa fa-comment"><span>{{ $post->commentcount() }}</span></i>
-                                                </div>
-                                                <div class="col-lg-2 col-xs-3">
-                                                    <i class="fa fa-thumbs-up"><span>{{ $post->votesum() }}</span></i>
+                                                <div class="col-sm-3 col-xs-12">
+                                                    <i class="fa fa-comment"><span>{{ $post->commentcount() }} reacties</span></i>
                                                 </div>
                                             </div>
                                         </div>

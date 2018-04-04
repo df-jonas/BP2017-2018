@@ -50,7 +50,7 @@
     <section class="about-person col-xs-12">
         <div class="row flex">
             <div class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
-                <img src="img/team/arno.png" class="round_img">
+                <img src="img/team/arno.png" class="round-img">
             </div>
 
 
@@ -78,34 +78,11 @@
     </section>
 
 
-   <!--  <section class="about-person col-xs-12">
-        <div class="row">
-
-
-            <div class="right col-lg-2 col-lg-push-8 col-xs-6 col-xs-push-3">
-                <img src="img/team/jonas.png" class="round_img">
-            </div>
-
-            <div class="left col-lg-6  col-xs-12">
-                <h3>Jonas De Frère</h3>
-                <h5>Dig-X student
-                    <small>(Network &amp; Security)</small>
-                </h5>
-                <p>Hallo, mijn naam is Jonas De Frère, laatstejaarsstudent Dig-X (toegepaste informatica) aan de Erasmushogeschool Brussel. Ik volg de specialisatie Netwerken & Security, waardoor ik een grote kennis heb over servers, beveiliging en back-end.
-                Tijdens mijn opleiding leerde ik aan de slag gaan met back-end development. Belangrijk hierbij is het aspect snelheid, optimalisatie en beveiliging. Deze competenties laat ik zien in in ons eigen platform, UniHelp.</p>
-            </div>
-
-
-        </div>
-
-    </section>
--->
-
     <div class="container">
     <section class="about-person col-xs-12">
         <div class="row flex">
             <div class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
-                <img src="img/team/jonas.png" class="round_img">
+                <img src="img/team/jonas.png" class="round-img">
             </div>
 
 

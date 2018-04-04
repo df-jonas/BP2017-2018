@@ -59,13 +59,13 @@
                                     href="{{ $file->downloadUrl() }}"><i class="fa fa-download"></i></a>
                         </header>
                         <div class="padding clearfix">
-                            <div class="row flex col-xs-12">
+                            <div class="row flex">
 
                                 <div class="info col-lg-10 col-md-9 col-sm-9 col-xs-12">
                                     <div class="table">
                                         <div style="display: table-cell; width: 32px"><img
                                                     src="{{ asset('img/avatars/' . $file->user->image) }}"
-                                                    class="account_img"></div>
+                                                    class="account-img round-img"></div>
                                         <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
                                             <h6 style="margin: 0">{{ $file->user->first_name }} {{ $file->user->last_name }}</h6>
                                             <h6 style="margin: 5px 0">{{ $file->humantimestamp() }}</h6>
@@ -74,7 +74,7 @@
                                 </div>
 
                                 <div class="col-lg-2 col-md-3 col-sm-3 col-sm-push-0 col-xs-8 col-xs-push-1">
-                                    <div class="vertical-center rating">
+                                    <div class=" rating">
                                         <input hidden type="hidden" id="csrftoken" value="{{csrf_token()}}">
                                         <input type="hidden" id="fileid" hidden name="fileid" value="{{ $file->id }}">
                                         <!--<label for="rev_stars">Uw rating:</label>-->
@@ -95,7 +95,7 @@
 
 
                             <div class="notes col-xs-12">
-                                <h3>{{ $file->title }}</h3>
+                                <h4>{{ $file->title }}</h4>
                                 <p>{{ $file->filedescription }}</p>
                             </div>
 
@@ -121,7 +121,11 @@
 
                             </div>
 
-                            <a class="download-button col-lg-2 col-xs-12" href="{{ $file->downloadUrl() }}">Download</a>
+                            <div class="col-xs-12">
+                                <input type="button" class="download-button next col-lg-2 col-sm-4 col-xs-12" value="Volgende">
+                            </div>
+
+
                         </div>
                     </article>
                 </div>

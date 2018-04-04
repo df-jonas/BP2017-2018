@@ -1,5 +1,4 @@
-<footer class="col-xs-12">
-
+<footer class="row">
     <div class="top clearfix">
         <div class="container">
             <div class="row">

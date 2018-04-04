@@ -14,8 +14,6 @@
                             <i class="glyphicon glyphicon-plus-sign"></i> Bestand toevoegen
                         </button>
                     </a>
-
-
                 </article>
                 <!-- end Upload button -->
 
@@ -34,7 +32,8 @@
                 <article class="item filter">
                     <header>Bestanden filteren</header>
                     <div class="padding">
-                        <div class="form-group clearfix">
+
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="selectdiv">
                                 <label for="fos">Kies opleiding</label>
                                 <select id="fos" name="fos" class="select col-xs-12 filterlistener">
@@ -46,7 +45,10 @@
                             </div>
                         </div>
 
-                        <div class="form-group clearfix">
+
+
+
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="selectdiv">
                                 <label for="course">Kies vak</label>
                                 <select id="course" name="course" class="select col-xs-12 filterlistener">
@@ -111,15 +113,15 @@
                             $rating = $file->averageRating()
                         @endphp
 
-                        <article class="file item user-owned">
+                        <article class="overviewfile item user-owned">
                             <div class="padding">
                                 <div class="row flex">
-                                    <div class="icon col-lg-1 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="icon col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                         <img src="{{asset('img/icons/001-file.png')}} "
                                              style="width: 36px; height: 36px">
                                     </div>
 
-                                    <div class="col-lg-5 col-md-6 col-sm-6 col-xs-10">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-10">
                                         <h5 class="title"><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h5>
                                         <div class="vertical-center rating  col-xs-12" style="margin-top: 0.5em">
                                             @for ($i = 1; $i <= 5; $i++)
@@ -133,7 +135,7 @@
 
                                     </div>
 
-                                    <div class="edit col-lg-2 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="edit col-lg-2 col-md-2 col-sm-2 col-xs-0">
                                         <i class="fa fa-pencil brown"></i>
                                     </div>
 
@@ -146,16 +148,19 @@
                 </div>
                 <!-- user items -->
             </div>
+
+            <!-- content -->
             <div class="content">
-                <div class="filecontainer files">
+                <div id="filter-results" class="filecontainer files">
+
+                    <span id="filter-details" class="item padding col-xs-12"> Aantal bestanden: <small>300</small></span><br><br>
+
                     @foreach($files as $file)
                         @php
                             $rating = $file->averageRating()
                         @endphp
 
-
-
-                        <article class="file item">
+                        <article class="overview file item clearfix">
                             <a href="{{ $file->detailUrl() }}">
                                 <header>
                                     {{$file->course->name}}<i class="fa fa-download"></i>
@@ -169,16 +174,10 @@
                                     </div>
 
                                     <div class="col-lg-5 col-md-6 col-sm-6 col-xs-10">
-                                        <h4 class="title"><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h4>
-                                        <div class="row icons">
-                                            <!--
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-comment"><span>22</span></i>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <i class="fa fa-thumbs-up"><span>22</span></i>
-                                            </div>
-                                            -->
+                                        <h4 class="title no-margin"><a
+                                                    href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h4>
+                                        <h5 class="brown">Erasmushogeschool Brussel</h5>
+                                        <div class="row">
                                             <div class="col-xs-12">
                                                 door {{$file->user->first_name}} {{$file->user->last_name}}
                                             </div>
@@ -188,7 +187,7 @@
                                     </div>
                                     <div class="col-lg-6 col-lg-push-0 col-md-4 col-sm-4 col-sm-push-0 col-xs-8 col-xs-push-2">
 
-                                        <div class="vertical-center padding rating">
+                                        <div class="vertical-center rating">
                                             @for ($i = 1; $i <= 5; $i++)
                                                 @if($i <= $rating)
                                                     <span class="fa fa-star checked"></span>
@@ -197,11 +196,9 @@
                                                 @endif
                                             @endfor
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-
                         </article>
 
                     @endforeach

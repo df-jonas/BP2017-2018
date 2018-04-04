@@ -58,11 +58,11 @@
                     <div class="padding clearfix">
 
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                                 <div class="table">
                                     <div style="display: table-cell; width: 42px"><img
                                                 src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group_img"></div>
+                                                class="group-img round-img"></div>
                                     <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
                                         <h6 style="margin: 0">Jonas De Frère</h6>
                                         <h6 style="margin: 5px 0">Data Visualisatie</h6>
@@ -71,22 +71,19 @@
                             </div>
 
 
-                            <div class="actions  col-lg-6 col-md-6 col-sm-6 col-xs-12" style="text-align: center">
-                                <div class="col-xs-12">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                        <a class="action col-lg-12 col-xs-12"
-                                           href="{{route('tutoring-messages', ['id' => '1']) }}">Chatten</a>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                        <a class="action col-lg-12 col-xs-12"
-                                           href="{{route('tutoring-planning', ['id' => '1']) }}">Agenda</a>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                        <a class="action col-lg-12 col-xs-12" href="#">Stopzetten</a>
-                                    </div>
+                            <div class="actions col-lg-4 col-md-4 col-sm-6 col-xs-12" style="text-align: center">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <a class="action col-lg-12 col-xs-12" href="{{route('tutoring-messages', ['id' => '1']) }}">Chatten</a>
                                 </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <a class="action col-lg-12 col-xs-12" href="{{route('tutoring-planning', ['id' => '1']) }}">Agenda</a>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <a class="action col-lg-12 col-xs-12" href="#">Stopzetten</a>
+                                </div>
+
                             </div>
 
                         </div>
@@ -140,6 +137,8 @@
             <!-- content -->
             </article>
         </div>
+        </div>
+    </div>
         <!-- container -->
     </div>
 

@@ -12,7 +12,7 @@
                     <div class="headline">
                         <div class="row flex">
                             <div class="left col-lg-1 col-sm-2 col-xs-12">
-                                <img src="/img/team/arno.png" class="round_img">
+                                <img src="/img/team/arno.png" class="group-img round-img">
                                 <br>
                                 <p class="wijzigen">wijzigen</p>
                             </div>
@@ -71,7 +71,7 @@
                             </div>
                         </div>
 
-
+                        <br>
                         <div class="form-group clearfix">
                             <input type="submit" class="download-button col-lg-4 col-sm-4 col-xs-12" value="Opslaan">
                         </div>

@@ -34,13 +34,7 @@
                         @endif
                     </div>
 
-                    <!--
-                    <div class="form-group clearfix col-xs-12">
-                        <label class="form-check-label">
-                            <input type="checkbox" name="remember" class="form-check-input">Aangemeld blijven
-                        </label>
-                    </div>
-                    -->
+
                     <div class="form-group clearfix col-xs-12">
                         <label for="password"></label>
                         <input type="submit" class="action-button login" value="Inloggen">

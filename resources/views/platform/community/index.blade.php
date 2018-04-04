@@ -9,26 +9,16 @@
 
             <div class="sidebar">
 
+                <!--TODO Je moet ook een groep kunnen toevoegen vanop de index pagina -->
                 <!-- Upload button -->
-                <!--<article class="item button">
-                    <a href="">
+                <article class="item button">
+                    <a href="{{ route('community-post-new', [ 'group_id' => 1 ]) }}">
                         <button>
                             <i class="glyphicon glyphicon-plus-sign"></i> Nieuwe post
                         </button>
                     </a>
-
-
-                </article>-->
-                <!-- end Upload button -->
-
-            <!--
-                <article class="item clearfix">
-                    <header>Nieuw bestand</header>
-                    <div>
-                        <a href="">Nieuwe groep maken.</a>
-                    </div>
                 </article>
-                -->
+                <!-- end Upload button -->
 
                 <!-- Search form -->
                 <article class="item search">
@@ -45,7 +35,7 @@
                 <article class="item filter">
                     <header>Posts filteren</header>
                     <div class="padding">
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="selectdiv">
                                 <label for="fos">Populariteit</label>
                                 <select id="fos" name="fos" class="select col-xs-12 filterlistener">
@@ -54,18 +44,16 @@
                                 </select>
                             </div>
                         </div>
-                        <label>Type groep</label>
-                        <br>
-
                         <div class="form-group clearfix">
-
-                            <label class="checkbox-container col-xs-12">Studentenraad
+                            <br>
+                            <label>Type groep</label>
+                            <label class="checkbox-container col-xs-12 clearfix">Studentenraad
                                 <input type="checkbox" name="pubyear[]" value="1"
                                        class="filterlistener" checked>
                                 <span class="checkmark"></span>
                             </label>
 
-                            <label class="checkbox-container col-xs-12">Interesse groep
+                            <label class="checkbox-container col-xs-12 clearfix">Interesse groep
                                 <input type="checkbox" name="pubyear[]" value="1"
                                        class="filterlistener">
                                 <span class="checkmark"></span>
@@ -119,7 +107,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>0</p>
+                                <p class="amount">0</p>
                             </div>
                         </div>
 
@@ -129,7 +117,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>0</p>
+                                <p class="amount">0</p>
                             </div>
                         </div>
 
@@ -139,7 +127,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>0</p>
+                                <p class="amount">0</p>
                             </div>
                         </div>
 
@@ -150,7 +138,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>0</p>
+                                <p class="amount">0</p>
                             </div>
                         </div>
                     </div>
@@ -160,12 +148,10 @@
 
 
             <div class="content">
-                <div id="groupcontainer" class="groups">
-
-
+                <div id="groupcontainer" class="overview groups">
                     @foreach($categories as $category)
-                        <div class="group-type item clearfix">
-                            <header>{{ $category->name }}<!--<a href="#top"><i class="fa fa-angle-up"></i></a>--></header>
+                        <div class="overview group-type item clearfix">
+                            <header>{{ $category->name }}</header>
                             @foreach($category->groups as $group)
                                 <article class="group" style="position: relative">
                                     <div class="padding">
@@ -177,8 +163,6 @@
                                             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-11">
                                                 <h4 class="title"><a href="{{ $group->url() }}">{{ $group->name }}</a></h4>
                                                 <div class="row icons">
-                                                    <!--<div class="col-lg-2"><i class="fa fa-comment"><span>22</span></i></div>
-                                                    <div class="col-lg-2"><i class="fa fa-thumbs-up"><span>22</span></i></div>-->
                                                     <div class="col-xs-12">
                                                         @if($group->postcount() == 1)
                                                             1 post
@@ -189,8 +173,9 @@
                                                 </div>
                                             </div>
                                             <div class="vertical-center col-lg-6 col-md-6 col-sm-6 col-xs-0 hide-mobile" style="text-align: right;">
-                                                <h6>{{ $group->shortdesc }}</h6>
-                                                <h6>Laatste update: {{ $group->lastupdate() }}</h6>
+                                                <!--todo short descriptions moeten in database komen -->
+                                                <h6 class="bold">{{ $group->shortdesc }}</h6>
+                                                <h6 class="update">Laatste update: {{ $group->lastupdate() }}</h6>
                                             </div>
                                         </div>
                                     </div>

@@ -18,6 +18,7 @@
                 <a href="{{ route('website-how') }}">
                     <li>Hoe werkt het?</li>
                 </a>
+
                 @if (Auth::check())
                     <a href="{{ route('logout') }}">
                         <li>Uitloggen</li>
