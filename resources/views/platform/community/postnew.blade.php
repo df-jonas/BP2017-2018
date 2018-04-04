@@ -48,10 +48,10 @@
 
 
                     <!-- filter menu -->
-                    <article class="item options">
+                    <article class="item options clearfix">
                         <header>Post opties</header>
                         <div class="padding">
-                            <div class="form-group clearfix">
+                            <div class="form-group col-xs-12 no-padding">
                                 <div class="selectdiv">
                                     <label for="visibility">Zichtbaarheid</label>
                                     <select id="visibility" name="visibility" class="select col-xs-12">
@@ -60,7 +60,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group clearfix">
+                            <div class="form-group col-xs-12 no-padding">
                                 <label for="date">Uitgesteld publiceren</label>
                                 <input type="date" id="date" name="date" class="col-xs-12">
                             </div>
@@ -112,17 +112,18 @@
 
                                     {{ csrf_field() }}
                                     <input type="hidden" name="url" value="{{ $group->url }}">
-                                    <div class="form-group clearfix">
+                                    <div class="form-group col-xs-12 no-padding">
                                         <div class="textdiv">
                                             <label for="title">Titel</label>
                                             <input id="title" name="title" type="text" class="form-control col-xs-12">
                                         </div>
                                     </div>
-                                    <div class="form-group clearfix">
+                                    <div class="form-group col-xs-12 no-padding">
                                         <label for="content">Inhoud</label>
                                         <textarea class="form-control" rows="5" id="content" name="content"></textarea>
                                     </div>
-                                    <input type="submit" name="submit" class="next col-lg-2" value="Opslaan"/>
+
+                                        <input type="submit" name="submit" class="download-button next col-lg-2 col-sm-4 col-xs-12"  value="Opslaan">
                                 </div>
                             </article>
                         </div>

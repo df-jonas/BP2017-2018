@@ -5,21 +5,45 @@
     @include('partials.platform.subheader')
 
     <div class="container">
+
+        <!-- Modal -->
+        <div class="modal fade" id="verzoek-modal" role="dialog">
+            <div class="modal-dialog  modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Keuze hier tonen</p>
+                    </div>
+                    <div class="modal-footer padding">
+                        <div class="form-group col-xs-12 clearfix">
+                            <input type="button" class="download-button next col-lg-2 col-sm-4 col-xs-12"  data-dismiss="modal" value="Sluiten">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
         <div class="table tutoring flex">
+
+
 
             <!-- Sidebar -->
             <div class="sidebar clearfix">
                 <article class="item">
                     <ul class="people-list">
-                        <li class="new">
+                        <li class="new" data-toggle="modal" data-target="#verzoek-modal">
                             <div class="padding vertical-center">
                                 <div class="table">
                                     <div style="display: table-cell; width: 42px">
                                         <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img"
                                              style="background: red"></div>
                                     <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 class="bold" style="margin: 0">Stuur verzoek</h6>
-
+                                        <h6 class="bold"  style="margin: 0">Stuur verzoek</h6>
                                     </div>
                                 </div>
                             </div>

@@ -10,16 +10,9 @@
             <div class="sidebar">
 
 
-                <!--
-                <div id="date-popup" class="modal col-lg-4 col-lg-push-4" style="">
-                    <div id="date-popup-content" class="modal-content"></div>
-                </div>
-                -->
-
-
                 <!-- Modal -->
                 <div class="modal fade" id="date-modal" role="dialog">
-                    <div class="modal-dialog  ">
+                    <div class="modal-dialog ">
 
                         <!-- Modal content-->
                         <div class="modal-content">
@@ -32,7 +25,9 @@
                                 <p>Oefeningen afwerken en verbeteren.</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="download-button" data-dismiss="modal">Sluit</button>
+                                <div class="form-group col-xs-12 clearfix">
+                                    <input type="button" class="download-button next col-lg-2 col-sm-4 col-xs-12"  data-dismiss="modal" value="Sluiten">
+                                </div>
                             </div>
                         </div>
 

@@ -44,7 +44,7 @@
 
                     <form>
 
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="selectdiv">
                                 <label for="studierichting">Studierichting</label>
                                 <select id="studierichting" name="studierichting" class="select col-xs-12">
@@ -54,7 +54,7 @@
                         </div>
 
 
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="selectdiv">
                                 <label for="campus">Campus</label>
                                 <select id="campus" name="campus" class="select col-xs-12">
@@ -64,7 +64,7 @@
                         </div>
 
 
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="textdiv">
                                 <label for="woonplaats">Woonplaats</label>
                                 <input id="woonplaats" name="woonplaats" type="text" class="form-control col-xs-12">
@@ -72,7 +72,7 @@
                         </div>
 
                         <br>
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <input type="submit" class="download-button col-lg-4 col-sm-4 col-xs-12" value="Opslaan">
                         </div>
 
@@ -93,7 +93,7 @@
                     <h3>Voorkeuren</h3>
                     <form>
                         <h4>Accentkleur</h4>
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="color-choose col-lg-4 col-md-4 col-sm-4 col-xs-12"
                                  style="background: #505457"></div>
                             <div class="color-choose col-lg-4 col-md-4 col-sm-4 col-xs-12"
@@ -102,7 +102,7 @@
                                  style="background: #d6b83a"></div>
                         </div>
                         <h4>Meldingen</h4>
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="notification-choose col-lg-3 left col-md-3 col-sm-5 col-xs-12">
                                 <header></header>
                                 <p><i class="fa fa-bell-o"></i></p>
@@ -126,7 +126,7 @@
                         </div>
 
 
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <input type="submit" class="download-button col-lg-4 col-sm-4 col-xs-12" value="Opslaan">
                         </div>
 
@@ -144,7 +144,7 @@
                     <h3>Mijn vakken</h3>
 
                     <form>
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <ul class="vakken">
                                 <li>Online marketing <span><i class="fa fa-trash"></i></span></li>
                                 <li>Cross Media Design <span><i class="fa fa-trash"></i></span></li>
@@ -155,7 +155,7 @@
 
 
                         <h4>Vak toevoegen</h4>
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="inner-addon left-addon">
                                 <input type="text" id="vak-zoeken" name="search" class="form-control filterlistener"
                                        placeholder="zoekterm"/>
@@ -163,7 +163,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <ul class="vakken-nieuw">
                                 <li>Enterpreneurship <span><input type="submit" class="download-button"
                                                                   value="Toevoegen"></span></li>
@@ -185,7 +185,7 @@
                 <div class="padding">
                     <h3>Account instellingen</h3>
                     <form>
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="textdiv">
                                 <label for="gebruikersnaam">Gebruikersnaam</label>
                                 <input id="gebruikersnaam" name="gebruikersnaam" type="text"
@@ -194,7 +194,7 @@
                         </div>
 
 
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="textdiv">
                                 <label for="e-mail">E-mailadres</label>
                                 <input id="e-mail" name="e-mail" type="text" class="form-control col-xs-12">
@@ -202,7 +202,7 @@
                         </div>
 
 
-                        <div class="form-group clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <input type="submit" class="download-button col-lg-4 col-sm-4 col-xs-12" value="Opslaan">
                         </div>
 
