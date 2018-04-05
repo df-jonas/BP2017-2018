@@ -13,13 +13,11 @@
             <div class="sidebar">
                 <!-- Upload button -->
                 <article class="item button">
-                    <a href="#">
+                    <a href="{{ route('community-post-new', [ 'group_id' => $group->url ]) }}">
                         <button>
                             <i class="glyphicon glyphicon-plus-sign"></i> Nieuwe post
                         </button>
                     </a>
-
-
                 </article>
                 <!-- end Upload button -->
 
@@ -39,90 +37,24 @@
                 <article class="item user-owned">
                     <header>Mijn posts</header>
 
-
                     <div class="padding">
-
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
-                                <div class="rating">
-
-
-                                    <p>test</p>
-
-
+                        @foreach($myposts as $post)
+                            <div class="row flex">
+                                <div class="icon col-md-2 col-xs-2">
+                                    <img src="{{ asset('img/avatars/' . $post->user->image )}}" class="group-img round-img">
                                 </div>
-
-                            </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-pencil brown"></i>
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
-                                <div class="rating">
-
-
-                                    <p>test</p>
-
-
+                                <div class="col-md-8 col-xs-8">
+                                    <h5 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h5>
+                                    <div class="rating">
+                                        <p>subtitle</p>
+                                    </div>
                                 </div>
-
-                            </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-pencil brown"></i>
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
-                                <div class="rating">
-
-
-                                    <p>test</p>
-
-
+                                <div class="col-md-2 col-xs-2">
+                                    <i class="fa fa-pencil brown"></i>
                                 </div>
-
                             </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-pencil brown"></i>
-
-
-                            </div>
-
-                        </div>
-
+                        @endforeach
                     </div>
-
 
                 </article>
                 <!-- end User items -->
@@ -137,7 +69,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>23</p>
+                                <p class="amount">0</p>
                             </div>
                         </div>
 
@@ -147,7 +79,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>23</p>
+                                <p class="amount">0</p>
                             </div>
                         </div>
 
@@ -157,7 +89,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>23</p>
+                                <p class="amount">0</p>
                             </div>
                         </div>
 
@@ -168,7 +100,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p>23</p>
+                                <p class="amount">0</p>
                             </div>
                         </div>
                     </div>
@@ -181,84 +113,44 @@
             <div class="content">
                 <div id="groupcontainer" class="item groups">
 
-                    <div class="group-type clearfix">
-                        <header>Posts in klachten<a href=""><i class="fa fa-angle-up"></i></a>
-                        </header>
+                    <div class="overview group group-type item clearfix">
+                        <header>Posts in "{{ $group->name }}"</header>
 
-                        <article class="group">
-                            <div class="padding">
-                                <div class="row flex">
-                                    <div class="col-lg-1 col-xs-2">
-                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                                    </div>
-
-                                    <div class="col-lg-5 col-xs-10">
-                                        <h4>Teveel springuren</h4>
-                                        <div class="row icons">
-
-                                            <div class="col-lg-2 col-xs-3">
-                                                <i class="fa fa-comment"><span>22</span></i>
-                                            </div>
-                                            <div class="col-lg-2 col-xs-3">
-                                                <i class="fa fa-thumbs-up"><span>22</span></i>
-                                            </div>
-
-
-
+                        @foreach($group->posts as $post)
+                            <article class="group">
+                                <div class="padding">
+                                    <div class="row flex">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
+                                            <img src="{{ asset('img/avatars/' . $post->user->image) }}"
+                                                 class="group-img round-img">
                                         </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-10">
+                                            <h4 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h4>
+                                            <div class="row icons">
+                                                <div class="col-sm-3 col-xs-12">
+                                                    <i class="fa fa-comment"><span>{{ $post->commentcount() }} reacties</span></i>
+                                                </div>
 
-                                    </div>
-                                    <div class="info col-lg-6 col-xs-12" style="text-align: right">
-                                        <h6>16 februari 2018</h6>
-                                        <h6>door <span>Arno Stalpaert</span></h6>
+                                                <!-- TODO aantal likes tellen (controleren door arno) -->
+                                                <div class="col-sm-3 col-xs-12">
+                                                    <i class="fa fa-thumbs-up"><span>{{ $post->votesum() }}</span></i>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="info hide-mobile col-lg-6 col-md-6 col-sm-4 col-xs-12"
+                                             style="text-align: right;">
+                                            <h6>{{ $post->postcreated() }}</h6>
+                                            <h6>door
+                                                <span>{{ $post->user->first_name }} {{ $post->user->last_name }}</span>
+                                            </h6>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                        </article>
-
-                        <article class="group">
-                            <div class="padding">
-                                <div class="row flex">
-                                    <div class="col-lg-1 col-xs-2">
-                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                                    </div>
-
-                                    <div class="col-lg-5 col-xs-10">
-                                        <h4>Microgolf kapot</h4>
-                                        <div class="row icons">
-
-                                            <div class="col-lg-2 col-xs-3">
-                                                <i class="fa fa-comment"><span>22</span></i>
-                                            </div>
-                                            <div class="col-lg-2 col-xs-3">
-                                                <i class="fa fa-thumbs-up"><span>22</span></i>
-                                            </div>
-
-
-
-                                        </div>
-
-                                    </div>
-                                    <div class="info col-lg-6 col-xs-12" style="text-align: right">
-                                        <h6>16 februari 2018</h6>
-                                        <h6>door <span>Arno Stalpaert</span></h6>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </article>
-
-
+                            </article>
+                        @endforeach
                     </div>
-
-
-
-
-
                 </div>
-
-
             </div>
             <!-- end content section -->
 
@@ -272,5 +164,4 @@
 @endsection
 
 @section("scripts")
-    <script src="{{ asset("js/sharing-filter.js") }}"></script>
 @endsection

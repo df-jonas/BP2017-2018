@@ -1,4 +1,4 @@
-<header id="page_header">
+<header id="page-header">
     <div class="row">
 
         <!-- logo -->
@@ -18,6 +18,7 @@
                 <a href="{{ route('website-how') }}">
                     <li>Hoe werkt het?</li>
                 </a>
+
                 @if (Auth::check())
                     <a href="{{ route('logout') }}">
                         <li>Uitloggen</li>

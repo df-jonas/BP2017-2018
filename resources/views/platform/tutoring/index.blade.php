@@ -5,334 +5,258 @@
     @include('partials.platform.subheader')
 
     <div class="container">
-        <div class="table">
-            <div class="sidebar">
 
+        <!-- Modal -->
+        <div class="modal fade" id="verzoek-modal" role="dialog">
+            <div class="modal-dialog  modal-lg">
 
-
-                <!-- Search form -->
-                <article class="item user-owned">
-                    <header>Verzoeken</header>
-                    <div class="padding">
-
-
-                        <div class="row flex">
-                            <div class="icon col-xs-2">
-                                <img src="{{asset('img/icons/003-trophy-black-cup-symbol.png')}} "
-                                     style="width: 36px; height: 36px">
-                            </div>
-
-
-                            <div class="col-xs-7">
-                                <h5><a href="#">Android development</a></h5>
-                                <div class="rating">
-
-
-                                    <p>Inkomend tutee verzoek</p>
-
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-xs-3">
-                                <i class="fa fa-check brown"></i>
-                                <i class="fa fa-trash brown"></i>
-                            </div>
-
-                        </div>
-
-
-                        <div class="row flex">
-                            <div class="col-xs-2">
-                                <img src="{{asset('img/icons/003-trophy-black-cup-symbol.png')}} "
-                                     style="width: 36px; height: 36px">
-                            </div>
-
-
-                            <div class="col-xs-7">
-                                <h5><a href="#">Android development</a></h5>
-                                <div class="rating">
-
-
-                                    <p>Uitgaand tutor verzoek</p>
-
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-xs-3">
-                                <i class="fa fa-check brown"></i>
-                                <i class="fa fa-trash brown"></i>
-
-
-                            </div>
-
-                        </div>
-
-
-
-
-
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                </article>
-                <!-- Search form -->
-
-
-
-
-                <!-- Search form -->
-                <article class="item user-owned">
-                    <header>Mijn tutees</header>
-                    <div class="padding">
-
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
-                                <div class="rating">
-
-
-                                    <p>Android Development</p>
-
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-comments brown"></i>
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
-                                <div class="rating">
-
-
-                                    <p>Android Development</p>
-
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-comments brown"></i>
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
-                                <div class="rating">
-
-
-                                    <p>Android Development</p>
-
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-comments brown"></i>
-
-
-                            </div>
-
-                        </div>
-
+                    <div class="modal-body">
+                        <p>Keuze hier tonen</p>
                     </div>
-                </article>
-                <!-- Search form -->
-
-
-
-                <!-- Search form -->
-                <article class="item user-owned">
-                    <header>Mijn tutors</header>
-                    <div class="padding">
-
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
-                                <div class="rating">
-
-
-                                    <p>Android Development</p>
-
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-comments brown"></i>
-
-
-                            </div>
-
+                    <div class="modal-footer padding">
+                        <div class="form-group col-xs-12 clearfix">
+                            <input type="button" class="download-button next col-lg-2 col-sm-4 col-xs-12"  data-dismiss="modal" value="Sluiten">
                         </div>
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Johnny Smit</a></h5>
-                                <div class="rating">
-
-
-                                    <p>Android Development</p>
-
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-comments brown"></i>
-
-
-                            </div>
-
-                        </div>
-
                     </div>
-                </article>
-                <!-- Search form -->
-
-
+                </div>
 
             </div>
+        </div>
+
+        <div class="table tutoring flex">
 
 
-            <div class="content">
-                <div id="tutoringcontent">
 
-                    <div class="row">
-                    <!-- Search form -->
-                    <article class="item col-lg-4 col-xs-12">
-                        <header>Wordt tutor</header>
-                        <div class="padding">
+            <!-- Sidebar -->
+            <div class="sidebar clearfix">
+                <article class="item">
+                    <ul class="people-list">
+                        <li class="new" data-toggle="modal" data-target="#verzoek-modal">
+                            <div class="padding vertical-center">
+                                <div class="table">
+                                    <div style="display: table-cell; width: 42px">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img"
+                                             style="background: red"></div>
+                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
+                                        <h6 class="bold"  style="margin: 0">Stuur verzoek</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
 
-                            <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" >
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                        <li class="active">
+                            <div class="padding vertical-center">
+                                <div class="table">
+                                    <div style="display: table-cell; width: 42px"><img
+                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                                class="group-img round-img"></div>
+                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
+                                        <h6 class="bold" style="margin: 0">Jonas De Frère</h6>
+                                        <h6 style="margin: 5px 0">Data Visualisatie</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
 
+
+                        <li>
+                            <div class="padding vertical-center">
+                                <div class="table">
+                                    <div style="display: table-cell; width: 42px"><img
+                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                                class="group-img round-img"></div>
+                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
+                                        <h6 class="bold" style="margin: 0">Sam Goeman</h6>
+                                        <h6 style="margin: 5px 0">Project Management</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="padding vertical-center">
+                                <div class="table">
+                                    <div style="display: table-cell; width: 42px"><img
+                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                                class="group-img round-img"></div>
+                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
+                                        <h6 class="bold" style="margin: 0">Gijs Claes</h6>
+                                        <h6 style="margin: 5px 0">Data Visualisatie</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="padding vertical-center">
+                                <div class="table">
+                                    <div style="display: table-cell; width: 42px"><img
+                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                                class="group-img round-img"></div>
+                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
+                                        <h6 class="bold" style="margin: 0">Dieter Conversal</h6>
+                                        <h6 style="margin: 5px 0">Communicatie Management</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="padding vertical-center">
+                                <div class="table">
+                                    <div style="display: table-cell; width: 42px"><img
+                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                                class="group-img round-img"></div>
+                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
+                                        <h6 class="bold" style="margin: 0">Jens Conversal</h6>
+                                        <h6 style="margin: 5px 0">Online Marketing</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="padding vertical-center">
+                                <div class="table">
+                                    <div style="display: table-cell; width: 42px"><img
+                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                                class="group-img round-img"></div>
+                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
+                                        <h6 class="bold" style="margin: 0">Jelle Stalpaert</h6>
+                                        <h6 style="margin: 5px 0">Sales</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="padding vertical-center">
+                                <div class="table">
+                                    <div style="display: table-cell; width: 42px"><img
+                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                                class="group-img round-img"></div>
+                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
+                                        <h6 class="bold" style="margin: 0">Arno Stalpaert</h6>
+                                        <h6 style="margin: 5px 0">Data Visualisatie</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="load-more">
+                            <div class="padding vertical-center">
+                                <div class="table">
+                                    <h6 class="col-xs-12 bold">Toon alle</h6>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                <!-- sidebar -->
+            </div>
+
+            <div class="content clearfix" style="min-height: 50em;">
+                <!-- Search form -->
+                <article class="item padding col-xs-12">
+                    <br>
+                    <div class="padding clearfix">
+
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                                <div class="table">
+                                    <div style="display: table-cell; width: 42px"><img
+                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                                class="group-img round-img round-img"></div>
+                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
+                                        <h6 style="margin: 0">Jonas De Frère</h6>
+                                        <h6 style="margin: 5px 0">Data Visualisatie</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="actions col-lg-4 col-md-4 col-sm-6 col-xs-12" style="text-align: center">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <a class="action col-lg-12 col-xs-12" href="{{route('tutoring-messages', ['id' => '1']) }}">Chatten</a>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <a class="action col-lg-12 col-xs-12" href="{{route('tutoring-planning', ['id' => '1']) }}">Agenda</a>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <a class="action col-lg-12 col-xs-12" href="#">Stopzetten</a>
+                                    </div>
+
+                            </div>
+
+
+                            <div class="col-xs-12">
+
+                                <p>
+                                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet,
+                                    ante.
+                                    Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris
+                                    placerat eleifend leo. Pellentesque habitant morbi tristique senectus et netus et
+                                    malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies
+                                    eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
+                                    ultricies mi vitae est. Mauris placerat eleifend leo.
+                                </p>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <h3>Planning</h3>
+
+                                <div class="row">
+                                    <div class="overview-calendar col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
+                                        <div class="date col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <span class="bold">12</span><br>
+                                            <small>Maart</small>
+                                        </div>
+                                        <div class="reminder col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                            <h5 class="col-xs-12 vertical-center">Test activiteit</h5>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="overview-calendar col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
+                                        <div class="date col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <span class="bold">12</span><br>
+                                            <small>Maart</small>
+                                        </div>
+                                        <div class="reminder col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                            <h5 class="col-xs-12 vertical-center">Test activiteit</h5>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="overview-calendar col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
+                                        <div class="date col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <span class="bold">12</span><br>
+                                            <small>Maart</small>
+                                        </div>
+                                        <div class="reminder col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                            <h5 class="col-xs-12 vertical-center">Test activiteit</h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
-                    </article>
-                    <!-- Search form -->
-
-
-                        <!-- Search form -->
-                        <article class="item col-lg-4 col-xs-12">
-                            <header>Wordt tutor</header>
-                            <div class="padding">
-
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" >
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-
-                            </div>
-                        </article>
-                        <!-- Search form -->
-
-                        <!-- Search form -->
-                        <article class="item col-lg-4 col-xs-12">
-                            <header>Wordt tutor</header>
-                            <div class="padding">
-
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" >
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-
-                            </div>
-                        </article>
-                        <!-- Search form -->
-
                     </div>
+                </article>
+                <!-- Search form -->
 
-
-
-
-                </div>
-
-                <div class="row">
-                    <!-- Search form -->
-                    <article class="item col-xs-12">
-                        <div class="padding">
-                            <div class="row">
-                                <div class="col-lg-3 col-xs-12">
-                                    <div class="table">
-                                        <div style="display: table-cell; width: 32px"><img
-                                                    src="{{ URL::asset('img/avatars/1518557547_bday.jpg') }}"
-                                                    class="account_img"></div>
-                                        <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                            <h6 style="margin: 0">Arno Stalpaert</h6>
-                                            <h6 style="margin: 5px 0">Donderdag om 14:43</h6>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-9 col-xs-12">
-                                    <div class="actions col-lg-6 col-lg-push-6 col-xs-12" style="text-align: center">
-                                        <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                    class="fa fa-thumbs-up"></i> Upvote
-                                        </div>
-                                        <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                    class="fa fa-thumbs-down"></i> Downvote
-                                        </div>
-                                        <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                    class="fa fa-bookmark"></i> Volgen
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-                        </div>
-                    </article>
-                    <!-- Search form -->
-                </div>
             </div>
 
         </div>
+
     </div>
 
     @include('partials.footer')

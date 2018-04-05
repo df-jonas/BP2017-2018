@@ -6,9 +6,7 @@
 
     <div class="container">
         <div class="table">
-
             <div class="sidebar">
-
                 <!-- Upload button -->
                 <article class="item button">
                     <a href="#">
@@ -16,8 +14,6 @@
                             <i class="glyphicon glyphicon-plus-sign"></i> Nieuwe post
                         </button>
                     </a>
-
-
                 </article>
                 <!-- end Upload button -->
 
@@ -25,254 +21,130 @@
                 <article class="item user-owned">
                     <header>Mijn posts</header>
 
-
                     <div class="padding">
-
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
-                                <div class="rating">
-
-
-                                    <p>test</p>
-
-
+                        @foreach($myposts as $mypost)
+                            <div class="row flex">
+                                <div class="icon col-md-2 col-xs-2">
+                                    <img src="{{ asset('img/avatars/' . $mypost->user->image )}}" class="group_img">
                                 </div>
-
-                            </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-pencil brown"></i>
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
-                                <div class="rating">
-
-
-                                    <p>test</p>
-
-
+                                <div class="col-md-8 col-xs-8">
+                                    <h5 class="title"><a href="{{ $mypost->generateurl() }}">{{ $mypost->title }}</a></h5>
+                                    <div class="rating">
+                                        <p>subtitle</p>
+                                    </div>
                                 </div>
-
-                            </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-pencil brown"></i>
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="row flex">
-                            <div class="icon col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group_img">
-                            </div>
-
-
-                            <div class="col-md-8 col-xs-8">
-                                <h5><a href="#">Teveel springuren</a></h5>
-                                <div class="rating">
-
-
-                                    <p>test</p>
-
-
+                                <div class="col-md-2 col-xs-2">
+                                    <i class="fa fa-pencil brown"></i>
                                 </div>
-
                             </div>
-
-                            <div class="col-md-2 col-xs-2">
-                                <i class="fa fa-pencil brown"></i>
-
-
-                            </div>
-
-                        </div>
-
+                        @endforeach
                     </div>
-
 
                 </article>
                 <!-- end User items -->
 
-                <!-- Community stats -->
-                <article class="item stats">
-                    <header>Statistieken</header>
-                    <div class="padding">
-                        <div class="row flex">
-                            <div class="col-xs-10">
-                                <p>Groepen</p>
-                            </div>
 
-                            <div class="col-xs-2">
-                                <p>23</p>
-                            </div>
-                        </div>
-
-                        <div class="row flex">
-                            <div class="col-xs-10">
-                                <p>Posts</p>
-                            </div>
-
-                            <div class="col-xs-2">
-                                <p>23</p>
-                            </div>
-                        </div>
-
-                        <div class="row flex">
-                            <div class="col-xs-10">
-                                <p>Aantal reacties</p>
-                            </div>
-
-                            <div class="col-xs-2">
-                                <p>23</p>
-                            </div>
-                        </div>
-
-
-                        <div class="row flex">
-                            <div class="col-xs-10">
-                                <p>Aantal gebruikers</p>
-                            </div>
-
-                            <div class="col-xs-2">
-                                <p>23</p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <!-- end Community stats -->
             </div>
 
             <div class="content">
                 <div id="groupcontainer" class="item groups">
 
                     <div class="group-detail detail clearfix">
-                        <header>Studentenraad > klachten<a href=""><i class="fa fa-angle-up"></i></a>
-                        </header>
+                        <header>{{ $post->group->category->name }} > {{ $post->group->name }}</header>
 
-                        <article class="group">
-                            <div class="padding">
-                                <div class="row">
-                                    <div class="col-lg-3 col-xs-12">
+                        <article class="detail group col-xs-12">
+                            <div class="padding clearfix">
+                                <div class="row" style="position: relative">
+                                    <div class="info col-lg-8 col-md-8 col-sm-6 col-xs-12">
                                         <div class="table">
-                                            <div style="display: table-cell; width: 32px"><img
-                                                        src="{{ URL::asset('img/avatars/1518557547_bday.jpg') }}"
-                                                        class="account_img"></div>
+                                            <div style="display: table-cell; width: 32px">
+                                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                                     class="account-img round-img">
+                                            </div>
                                             <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                                <h6 style="margin: 0">Arno Stalpaert</h6>
-                                                <h6 style="margin: 5px 0">Donderdag om 14:43</h6>
+                                                <h6 style="margin: 0">{{ $post->user->first_name }} {{ $post->user->last_name }}</h6>
+                                                <h6 style="margin: 5px 0">{{ $post->postcreated() }}</h6>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-9 col-xs-12">
-                                        <div class="actions col-lg-6 col-lg-push-6 col-xs-12" style="text-align: center">
-                                            <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                        class="fa fa-thumbs-up"></i> Upvote
-                                            </div>
-                                            <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                        class="fa fa-thumbs-down"></i> Downvote
-                                            </div>
-                                            <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                        class="fa fa-bookmark"></i> Volgen
-                                            </div>
-                                        </div>
+                                    <div class="actions vertical-center col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <a class="action col-lg-6 left col-xs-12" href="#">Upvote</a>
 
+                                        <!-- TODO rapporteren in plaats van downvoten
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a class="action col-lg-12 col-xs-12" href="#">Downvote</a>
+                                            </div>
+                                        -->
+
+                                        <a class="action col-lg-6 right col-xs-12" href="#">Volgen</a>
                                     </div>
                                 </div>
-
-                                <h3>Teveel springuren</h3>
-                                <p>
-                                    Een broodrooster is een huishoudelijk apparaat waarmee brood kan worden geroosterd.
-                                    Een geroosterde snee brood noemt men ook wel toast. Een snee brood werd traditioneel
-                                    geroosterd aan een lange vork of in een klem van metaaldraad boven open vuur. In
-                                    1893 werd het elektrisch broodrooster uitgevonden door de Schot Alan MacMasters.[1]
-                                    Albert Marsh ontwikkelde in 1905 de nichrome verwarmingsdraden bestaande uit een
-                                    nikkel-chroomlegering die nog steeds in broodroosters worden toegepast.
-                                </p>
-
-                                <p>
-                                    Het bekende ‘pop-up’ broodrooster, die automatisch de broodjes uit de rooster gooit,
-                                    werd in 1919 door Charles Strite gepatenteerd. Er zijn ook broodroosters waarmee
-                                    tosti’s gemaakt kunnen worden. Deze hebben daarvoor een uitneembare houder, waar de
-                                    tosti in geplaatst wordt.
-                                    Sindsdien zijn er nog veel verbeteringen en aanpassingen aan het broodrooster
-                                    gedaan.
-                                </p>
+                                
+                                <div class="col-xs-12">
+                                    <h3>{{ $post->title }}</h3>
+                                    <p>{{ $post->content }}</p>
+                                </div>
 
                                 <div class="info" style="margin-top: 5%">
                                     <ul>
-                                        <li>Reacties: 44</li>
-                                        <li>Upvotes: 44</li>
-                                        <li>Downvotes: 44</li>
+                                        <li>Reacties: 0</li>
+                                        <li>Upvotes: 0</li>
                                     </ul>
                                 </div>
-
-                                <hr>
-
-                                <div class="row flex">
-                                    <div class="col-lg-1">
-
-                                    </div>
-
-                                    <div class="col-lg-10">
-                                        <p>Reactie toevoegen</p>
-
-
-                                    </div>
-
-                                    <div class="col-lg-1">
-                                        <i class="fa fa-reply"></i>
-
-
-                                    </div>
+                                
+                            </div>
+                            <div id="comment-box" class="row flex padding">
+                                <div class="picture hide-mobile col-sm-1 col-xs-0">
+                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                         class="account-img round-img">
                                 </div>
-
+                                <form id="comment-form" class="col-sm-11 col-xs-12" method="POST"
+                                      action="{{ route('community-add-comment', ['group_id' => $post->group->url, 'post_id' => $post->id]) }}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <div class="txt col-sm-11 col-xs-10">
+                                        <input type="text" name="comment" id="commentfield" class="col-xs-11"
+                                               placeholder="reactie toevoegen">
+                                    </div>
+                                    <div class="icon col-sm-1 col-xs-2">
+                                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                                    </div>
+                                </form>
                             </div>
-
                         </article>
-
-
                     </div>
-
-
-                    <div class="group-detail clearfix">
-
-
-                        <article class="group">
-                            <div class="padding">
-                                <h3>Reacties</h3>
-                            </div>
-
-                        </article>
-
-
-                    </div>
-
                 </div>
 
-
+                <div class="item clearfix" style="margin-top: 3em">
+                    <article class="group">
+                        <div class="padding">
+                            <h3>Reacties</h3>
+                        </div>
+                        <div id="messages" class="col-lg-12" style="border-bottom: none">
+                            @foreach($post->comments as $comment)
+                                <div class="msg clearfix col-lg-12">
+                                    <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
+                                        <img src="{{ asset('img/avatars/' . $comment->user->image )}}"
+                                             class="group-img round-img">
+                                    </div>
+                                    <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
+                                        <div class="table">
+                                            <div style="display: table-cell;  float: left">
+                                                <span>{{ $comment->user->first_name }} {{ $comment->user->last_name }}</span>
+                                            </div>
+                                            <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                <span>{{ $comment->commentcreated() }}</span>
+                                            </div>
+                                        </div>
+                                        <p>{{ $comment->content }}</p>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <br>
+                    </article>
+                </div>
             </div>
-
         </div>
     </div>
 
@@ -281,5 +153,5 @@
 @endsection
 
 @section("scripts")
-    <script src="{{ asset("js/sharing-filter.js") }}"></script>
+    <script src="{{ asset("js/community-detail.js") }}"></script>
 @endsection

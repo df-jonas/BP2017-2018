@@ -7,21 +7,23 @@ $(document).ready(function () {
             success: function (json) {
                 var newhtml = "";
                 if (json.length > 0) {
-                    newhtml = '<span class="filter filter-results col-xs-12">Er werden ' + json.length + ' resultaten gevonden.</span><br><br>';
+                    newhtml = '<span id="filter-details" class="item padding col-xs-12">Er werden ' + json.length + ' resultaten gevonden.</span><br><br>';
                     $.each(json, function (key, value) {
-                        newhtml += '<article class="file item clearfix">' +
-                            '<header>' + value.field.name + ' > ' + value.degree.name + ' > ' + value.course.name + '<a href="/p/sharing/proxy/' + value.public_id + '">' +
-                            '<i class="fa fa-download"></i></a></header><div class="padding">' +
+                        newhtml += '<article class="overview file item clearfix">' +
+                            '<a href="{{ $file->detailUrl() }}">'+
+                            '<header>' + value.course.name +
+                            '<i class="fa fa-download"></i></header></a><div class="padding">' +
                             '<div class="row flex">' +
-                            '<div class="icon col-md-1 col-xs-12">' +
+                            '<div class="icon col-lg-1 col-md-2 col-sm-2 col-xs-3">' +
                             '<img src="/img/icons/001-file.png" style="width: 36px; height: 36px">' +
                             '</div>' +
-                            '<div class="col-md-5 col-xs-12">' +
-                            '<h3><a href="/p/sharing/' + value.id + '">' + value.title + '</a></h3>' +
-                            '<p>door ' + value.user.first_name + ' ' + value.user.last_name + '</p>' +
+                            '<div class="col-lg-5 col-md-6 col-sm-6 col-xs-10">' +
+                            '<h4 class="title no-margin"><a href="/p/sharing/' + value.id + '">' + value.title + '</a></h4>' +
+                            '<h5 class="brown">Erasmushogeschool Brussel</h5>' +
+                            '<div class="row"><div class="col-xs-12"> door ' + value.user.first_name + ' ' + value.user.last_name + '</div></div>' +
                             '</div>' +
-                            '<div class="col-md-6 col-xs-12" style="text-align: right">' +
-                            '<div class="rating">';
+                            '<div class="col-lg-6 col-lg-push-0 col-md-4 col-sm-4 col-sm-push-0 col-xs-8 col-xs-push-2">' +
+                            '<div class="vertical-center rating">';
                         for (var i = 1; i <= 5; i++) {
                             if (i <= value.averageRating) {
                                 newhtml += '<span class="fa fa-star checked"></span>';
@@ -32,9 +34,9 @@ $(document).ready(function () {
                         newhtml += '</div></div></div></div></article>';
                     });
                 } else {
-                    newhtml = '<span class="filter filter-noresults col-xs-12">Er werden geen resultaten gevonden.</span>';
+                    newhtml = '<span id="filter-details" class="item padding col-xs-12">Er werden geen resultaten gevonden.</span>';
                 }
-                $("#filecontainer").html(newhtml);
+                $("#filter-results").html(newhtml);
             }
         });
     });

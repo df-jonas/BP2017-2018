@@ -9,8 +9,6 @@
     <title>UniHelp | Home</title>
 
 
-    <script src="{{ URL::asset('js/loader.js') }}"></script>
-
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="{{asset('img/logo/favicon.png')}}"/>
 
@@ -39,10 +37,6 @@
 
 </head>
 <body>
-<!--
-preloader
-<div class="se-pre-con"></div>
--->
 
 @yield('content')
 
@@ -52,6 +46,7 @@ preloader
 <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
 <script src="{{ URL::asset('js/main.js') }}"></script>
 <script src="{{ URL::asset('js/nav.js') }}"></script>
+<script src="{{ URL::asset('js/multistep.js') }}"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47689548-7"></script>
 <script>

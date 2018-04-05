@@ -45,7 +45,7 @@
                 {{ csrf_field() }}
 
                 <!-- progressbar -->
-                    <article class="file new clearfix">
+                    <article class="item file new clearfix">
                         <div class="padding">
                             <ul id="progressbar">
                                 <li data-title="Naam" class="active"></li>
@@ -60,7 +60,7 @@
                     <!-- step 1 -->
                     <fieldset>
 
-                        <article class="file new clearfix">
+                        <article class="item file new clearfix">
                             <div class="padding">
                                 <div class="form-group clearfix">
                                     <div class="textdiv">
@@ -77,7 +77,7 @@
 
                     <!-- step 2 -->
                     <fieldset>
-                        <article class="file new clearfix">
+                        <article class="item file new clearfix">
                             <div class="padding">
 
                                 <div class="form-group clearfix">
@@ -117,7 +117,7 @@
 
                     <!-- step 3 -->
                     <fieldset>
-                        <article class="file new clearfix">
+                        <article class="item file new clearfix">
                             <div class="padding">
                                 <label>Kies groep icoon</label>
                             </div>
@@ -132,7 +132,7 @@
 
                     <!-- step 4 -->
                     <fieldset>
-                        <article class="file new clearfix">
+                        <article class="item file new clearfix">
                             <div class="padding">
 
                                 <label>Groep eigenschappen</label>
@@ -218,5 +218,4 @@
 @endsection
 
 @section("scripts")
-    <script src="{{asset("js/sharing-new.js")}}"></script>
 @endsection
