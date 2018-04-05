@@ -43,53 +43,7 @@
                 </article>
                 <!-- end User items -->
 
-                <!-- Community stats -->
-                <article class="item stats">
-                    <header>Statistieken</header>
-                    <div class="padding">
-                        <div class="row flex">
-                            <div class="col-xs-10">
-                                <p>Groepen</p>
-                            </div>
 
-                            <div class="col-xs-2">
-                                <p>0</p>
-                            </div>
-                        </div>
-
-                        <div class="row flex">
-                            <div class="col-xs-10">
-                                <p>Posts</p>
-                            </div>
-
-                            <div class="col-xs-2">
-                                <p>0</p>
-                            </div>
-                        </div>
-
-                        <div class="row flex">
-                            <div class="col-xs-10">
-                                <p>Aantal reacties</p>
-                            </div>
-
-                            <div class="col-xs-2">
-                                <p>0</p>
-                            </div>
-                        </div>
-
-
-                        <div class="row flex">
-                            <div class="col-xs-10">
-                                <p>Aantal gebruikers</p>
-                            </div>
-
-                            <div class="col-xs-2">
-                                <p>0</p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <!-- end Community stats -->
             </div>
 
             <div class="content">
@@ -98,14 +52,14 @@
                     <div class="group-detail detail clearfix">
                         <header>{{ $post->group->category->name }} > {{ $post->group->name }}</header>
 
-                        <article class="group">
+                        <article class="detail group col-xs-12">
                             <div class="padding clearfix">
-                                <div class="row col-xs-12">
-                                    <div class="info col-lg-3 col-xs-12">
+                                <div class="row" style="position: relative">
+                                    <div class="info col-lg-8 col-md-8 col-sm-6 col-xs-12">
                                         <div class="table">
                                             <div style="display: table-cell; width: 32px">
                                                 <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                     class="account_img">
+                                                     class="account-img round-img">
                                             </div>
                                             <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
                                                 <h6 style="margin: 0">{{ $post->user->first_name }} {{ $post->user->last_name }}</h6>
@@ -114,54 +68,46 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-9 col-xs-12">
-                                        <div class="actions col-lg-6 col-lg-push-6 col-xs-12"
-                                             style="text-align: center">
-                                            <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                        class="fa fa-thumbs-up"></i> Upvote
+                                    <div class="actions vertical-center col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <a class="action col-lg-6 left col-xs-12" href="#">Upvote</a>
+                                        <!--
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a class="action col-lg-12 col-xs-12" href="#">Downvote</a>
                                             </div>
-                                            <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                        class="fa fa-thumbs-down"></i> Downvote
-                                            </div>
-                                            <div class="action col-lg-4 col-xs-12" style="border: 1px solid darkgray"><i
-                                                        class="fa fa-bookmark"></i> Volgen
-                                            </div>
-                                        </div>
-
+                                        -->
+                                        <a class="action col-lg-6 right col-xs-12" href="#">Volgen</a>
                                     </div>
                                 </div>
-
+                                
                                 <div class="col-xs-12">
                                     <h3>{{ $post->title }}</h3>
                                     <p>{{ $post->content }}</p>
                                 </div>
 
-                                <div class="info col-xs-12" style="margin-top: 5%">
+                                <div class="info" style="margin-top: 5%">
                                     <ul>
                                         <li>Reacties: 0</li>
                                         <li>Upvotes: 0</li>
-                                        <li>Downvotes: 0</li>
                                     </ul>
                                 </div>
-
-
-                                <div id="comment-box" class="flex padding col-lg-12">
-                                    <div class="picture col-lg-1">
-                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                             class="account_img">
-                                    </div>
-                                    <form id="comment-form" method="POST"
-                                          action="{{ route('community-add-comment', ['group_id' => $post->group->url, 'post_id' => $post->id]) }}">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <div class="txt col-lg-10">
-                                            <input type="text" name="comment" id="commentfield" class="col-lg-12"
-                                                   placeholder="reactie toevoegen">
-                                        </div>
-                                        <div class="icon col-lg-1">
-                                            <button type="submit"><i class="fa fa-paper-plane"></i></button>
-                                        </div>
-                                    </form>
+                                
+                            </div>
+                            <div id="comment-box" class="row flex padding">
+                                <div class="picture hide-mobile col-sm-1 col-xs-0">
+                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                         class="account-img round-img">
                                 </div>
+                                <form id="comment-form" class="col-sm-11 col-xs-12" method="POST"
+                                      action="{{ route('community-add-comment', ['group_id' => $post->group->url, 'post_id' => $post->id]) }}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <div class="txt col-sm-11 col-xs-10">
+                                        <input type="text" name="comment" id="commentfield" class="col-xs-11"
+                                               placeholder="reactie toevoegen">
+                                    </div>
+                                    <div class="icon col-sm-1 col-xs-2">
+                                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                                    </div>
+                                </form>
                             </div>
                         </article>
                     </div>
@@ -174,12 +120,12 @@
                         </div>
                         <div id="messages" class="col-lg-12" style="border-bottom: none">
                             @foreach($post->comments as $comment)
-                                <div class="msg col-lg-12">
-                                    <div class="picture col-lg-1">
+                                <div class="msg clearfix col-lg-12">
+                                    <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
                                         <img src="{{ asset('img/avatars/' . $comment->user->image )}}"
-                                             class="group_img">
+                                             class="group-img round-img">
                                     </div>
-                                    <div class="txt col-lg-11">
+                                    <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
                                         <div class="table">
                                             <div style="display: table-cell;  float: left">
                                                 <span>{{ $comment->user->first_name }} {{ $comment->user->last_name }}</span>
@@ -193,6 +139,7 @@
                                 </div>
                             @endforeach
                         </div>
+                        <br>
                     </article>
                 </div>
             </div>

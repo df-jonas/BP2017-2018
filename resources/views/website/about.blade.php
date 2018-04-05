@@ -2,8 +2,7 @@
 
 @section('content')
     @include('partials.website.header')
-
-    <section id="about_banner" class="col-xs-12 clearfix">
+    <section id="about-banner" class="col-xs-12">
         <h1>Over UniHelp</h1>
         <div class="left col-lg-4 col-lg-push-2 col-xs-12">
             <p>Studenten hebben al wel vaker gemerkt: vragen over leerstof die net niet belangrijk genoeg zijn om ermee
@@ -45,18 +44,21 @@
         </div>
     </section>
 
-    <section id="about_person_1" class="about_person col-xs-12">
-        <div class="row">
-            <div class="left col-lg-2 col-lg-push-2 col-xs-6 col-xs-push-3">
-                <img src="img/team/arno.png" class="round_img">
+
+    <div class="container">
+
+    <section class="about-person col-xs-12">
+        <div class="row flex">
+            <div class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
+                <img src="img/team/arno.png" class="round-img">
             </div>
 
 
-            <div class="right col-lg-6 col-lg-push-2 col-xs-12">
+            <div class="right col-lg-6 col-lg-push-1 col-md-8 col-md-push-2 col-xs-12">
                 <h3>Arno Stalpaert</h3>
-                <h5>Multec student
+                <h4>Multec student
                     <small>(Mobile App &amp; Web development)</small>
-                </h5>
+                </h4>
                 <p>Hallo, ik ben Arno en ik zit in mijn laatste jaar Multimedia- en communicatie technologie aan de Erasmushogeschool Brussel. Vorig jaar koos ik er voor om mij te specialiseren in Mobile App en Web development.
                 Hier leerde ik onder andere veel over design, front-end, back-end, User Experience, website development, enzovoort. Om deze reden koos ik voor een veelzijdig project waar al deze zaken aan bod zouden komen. Tijdens dit project zal
                     ik mij vooral focussen op het front-end, design en UX gedeelte.
@@ -67,34 +69,36 @@
 
     </section>
 
-    <section id="about_quote" class="col-xs-12 clearfix">
+    </div>
+
+    <section id="about-quote" class="col-xs-12 clearfix">
         <div class="quote col-lg-6 col-lg-push-3 col-xs-12">
             <h1>“Als IT studenten zagen wij in studentenplatformen ruimte voor verbetering.”</h1>
         </div>
     </section>
 
 
-    <section id="about_person_2" class="about_person col-xs-12">
-        <div class="row">
-
-
-            <div class="right col-lg-2 col-lg-push-8 col-xs-6 col-xs-push-3">
-                <img src="img/team/jonas.png" class="round_img">
+    <div class="container">
+    <section class="about-person col-xs-12">
+        <div class="row flex">
+            <div class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
+                <img src="img/team/jonas.png" class="round-img">
             </div>
 
-            <div class="left col-lg-6  col-xs-12">
+
+            <div class="right col-lg-6 col-lg-push-1 col-md-8 col-md-push-2 col-xs-12">
                 <h3>Jonas De Frère</h3>
-                <h5>Dig-X student
-                    <small>(Network &amp; Security)</small>
-                </h5>
+                <h4>Dig-X student
+                    <small>(Mobile App &amp; Web development)</small>
+                </h4>
                 <p>Hallo, mijn naam is Jonas De Frère, laatstejaarsstudent Dig-X (toegepaste informatica) aan de Erasmushogeschool Brussel. Ik volg de specialisatie Netwerken & Security, waardoor ik een grote kennis heb over servers, beveiliging en back-end.
-                Tijdens mijn opleiding leerde ik aan de slag gaan met back-end development. Belangrijk hierbij is het aspect snelheid, optimalisatie en beveiliging. Deze competenties laat ik zien in in ons eigen platform, UniHelp.</p>
+                    Tijdens mijn opleiding leerde ik aan de slag gaan met back-end development. Belangrijk hierbij is het aspect snelheid, optimalisatie en beveiliging. Deze competenties laat ik zien in in ons eigen platform, UniHelp.</p>
+
             </div>
-
-
         </div>
 
     </section>
 
+    </div>
     @include('partials.footer')
 @endsection

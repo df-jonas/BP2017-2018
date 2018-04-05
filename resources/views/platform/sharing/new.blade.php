@@ -40,7 +40,7 @@
             <div class="files">
 
                 <!-- multistep form -->
-                <form id="msform" class="clearfix" method="post" enctype="multipart/form-data"
+                <form id="msform" class="col-xs-12 no-padding clearfix" method="post" enctype="multipart/form-data"
                       action="{{route('sharing-new')}}">
 
                 {{ csrf_field() }}
@@ -88,9 +88,14 @@
                                 <h5>Of sleep uw bestand hier</h5>
                             </div>
 
-                            <div class="padding">
-                                <input type="button" class="next col-lg-2" value="Volgende"/>
+
+
+                            <div class="form-group col-xs-12 padding clearfix">
+                                <input type="button"  class="download-button next col-lg-2 col-sm-4 col-xs-12"  value="Volgende">
                             </div>
+
+
+
                         </article>
 
                     </fieldset>
@@ -101,19 +106,19 @@
                         <article class="item file new clearfix">
                             <div class="padding">
 
-                                <div class="form-group clearfix">
+                                <div class="form-group col-xs-12 no-padding clearfix">
                                     <div class="textdiv">
                                         <label for="title">Titel</label>
                                         <input id="title" name="title" type="text" class="form-control col-xs-12">
                                     </div>
                                 </div>
 
-                                <div class="form-group clearfix">
+                                <div class="form-group col-xs-12 no-padding clearfix">
                                     <label for="filedesc">Omschrijving bestand</label>
                                     <textarea class="form-control" rows="5" id="filedesc" name="filedescription"></textarea>
                                 </div>
 
-                                <div class="form-group clearfix">
+                                <div class="form-group col-xs-12 no-padding clearfix">
 
                                     <div class="selectdiv">
                                         <label for="doctype">Type document</label>
@@ -125,8 +130,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group clearfix">
-
+                                <div class="form-group col-xs-12 no-padding clearfix">
                                     <div class="selectdiv">
                                         <label for="degree">Studiejaar</label>
                                         <select id="degree" name="degree" class="form-control select col-xs-12">
@@ -137,7 +141,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group clearfix">
+                                <div class="form-group col-xs-12 no-padding clearfix">
 
                                     <div class="selectdiv">
                                         <label for="originaldate">Geschreven in</label>
@@ -150,9 +154,8 @@
                                 </div>
 
 
-                                <input type="button" name="next" class="next col-lg-2" value="Volgende"/>
-                                <input type="button" name="previous" class="previous col-lg-2" value="Vorige"/>
-
+                                    <input type="button" class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Volgende">
+                                <input type="button" class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1 col-xs-12" value="Vorige">
 
                             </div>
                         </article>
@@ -164,7 +167,7 @@
                         <article class="item file new clearfix">
                             <div class="padding">
 
-                                <div class="form-group clearfix">
+                                <div class="form-group col-xs-12 no-padding clearfix">
 
                                     <div class="selectdiv">
                                         <label for="book">Is er een boek gekoppeld aan dit vak?</label>
@@ -175,7 +178,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group clearfix">
+                                <div class="form-group col-xs-12 no-padding clearfix">
                                     <div class="textdiv">
                                         <label for="booktitle">Welk boek?</label>
                                         <input id="booktitle" name="booktitle" type="text" class="form-control">
@@ -183,8 +186,8 @@
 
                                 </div>
 
-                                <input type="button" name="next" class="next col-lg-2" value="Volgende"/>
-                                <input type="button" name="previous" class="previous col-lg-2" value="Vorige"/>
+                                <input type="button" class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Volgende">
+                                <input type="button" class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1  col-xs-12" value="Vorige">
                             </div>
                         </article>
                     </fieldset>
@@ -257,11 +260,11 @@
                                 </table>
 
 
-                                <input type="submit" name="submit" class="next col-lg-2" value="Versturen"/>
-                                <input type="button" id="submitall" name="previous" class="previous col-lg-2"
-                                       value="Vorige"/>
 
 
+
+                                <input id="submitall" type="submit" name="submit" class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Versturen">
+                                <input type="button" class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1 col-xs-12" value="Vorige">2
 
                             </div>
                         </article>

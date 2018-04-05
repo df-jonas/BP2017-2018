@@ -6,8 +6,6 @@
 
     <title>UniHelp | Platform</title>
 
-    <script src="{{ asset('js/loader.js') }}"></script>
-
     <!-- mobile responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -49,10 +47,7 @@
 </head>
 
 <body class="platform">
-<!--
-preloader
-<div class="se-pre-con"></div>
--->
+
 
 @yield('sidebar')
 
