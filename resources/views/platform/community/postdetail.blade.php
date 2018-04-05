@@ -70,11 +70,13 @@
 
                                     <div class="actions vertical-center col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                         <a class="action col-lg-6 left col-xs-12" href="#">Upvote</a>
-                                        <!--
+
+                                        <!-- TODO rapporteren in plaats van downvoten
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                                 <a class="action col-lg-12 col-xs-12" href="#">Downvote</a>
                                             </div>
                                         -->
+
                                         <a class="action col-lg-6 right col-xs-12" href="#">Volgen</a>
                                     </div>
                                 </div>

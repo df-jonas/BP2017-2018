@@ -122,10 +122,12 @@
                             </div>
 
                             <div class="col-xs-12">
+
+                            <!-- TODO Arno fixen
+                                <a class="download col-lg-2" href="{{ $file->downloadUrl() }}">Download</a>
+                            -->
                                 <input type="button" class="download-button next col-lg-2 col-sm-4 col-xs-12" value="Volgende">
                             </div>
-
-
                         </div>
                     </article>
                 </div>

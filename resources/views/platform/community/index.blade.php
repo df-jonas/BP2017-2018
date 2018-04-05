@@ -67,11 +67,9 @@
                 </article>
                 <!-- filter menu -->
 
-
                 <!-- User items -->
                 <article class="item user-owned">
                     <header>Mijn posts</header>
-
                     <div class="padding">
                         @foreach($myposts as $post)
                             <div class="row flex">
@@ -95,7 +93,6 @@
                             </div>
                         @endforeach
                     </div>
-
                 </article>
                 <!-- end User items -->
 
@@ -112,7 +109,6 @@
                                 <p class="amount">0</p>
                             </div>
                         </div>
-
                         <div class="row flex">
                             <div class="col-xs-10">
                                 <p>Posts</p>
@@ -122,7 +118,6 @@
                                 <p class="amount">0</p>
                             </div>
                         </div>
-
                         <div class="row flex">
                             <div class="col-xs-10">
                                 <p>Aantal reacties</p>
@@ -132,8 +127,6 @@
                                 <p class="amount">0</p>
                             </div>
                         </div>
-
-
                         <div class="row flex">
                             <div class="col-xs-10">
                                 <p>Aantal gebruikers</p>
@@ -147,7 +140,6 @@
                 </article>
                 <!-- end Community stats -->
             </div>
-
 
             <div class="content">
                 <div id="groupcontainer" class="overview groups">
@@ -175,7 +167,6 @@
                                                 </div>
                                             </div>
                                             <div class="vertical-center col-lg-6 col-md-6 col-sm-6 col-xs-0 hide-mobile" style="text-align: right;">
-                                                <!--todo short descriptions moeten in database komen -->
                                                 <h6 class="bold">{{ $group->shortdesc }}</h6>
                                                 <h6 class="update">Laatste update: {{ $group->lastupdate() }}</h6>
                                             </div>
@@ -185,13 +176,10 @@
                             @endforeach
                         </div>
                     @endforeach
-
-
                 </div>
             </div>
         </div>
     </div>
-
 
     @include('partials.footer')
 @endsection
