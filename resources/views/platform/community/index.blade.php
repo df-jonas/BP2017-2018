@@ -9,17 +9,25 @@
 
             <div class="sidebar">
 
-                <!--TODO Je moet ook een groep kunnen toevoegen vanop de index pagina -->
-                <!-- Upload button -->
-                <article class="item button">
-                    <a href="{{ route('community-post-new', [ 'group_id' => 1 ]) }}">
-                        <button>
-                            <i class="glyphicon glyphicon-plus-sign"></i> Nieuwe post
-                        </button>
-                    </a>
-                </article>
-                <!-- end Upload button -->
-
+                <!-- TODO Je moet ook een groep kunnen toevoegen vanop de index pagina
+                    <article class="item button">
+                        <a href="{{ route('community-post-new', [ 'group_id' => 1 ]) }}">
+                            <button>
+                                <i class="glyphicon glyphicon-plus-sign"></i> Nieuwe post
+                            </button>
+                        </a>
+                    </article>
+                -->
+                
+                <!-- TODO Enkel voor admins nieuwe groep maken
+                    <article class="item clearfix">
+                        <header>Nieuw bestand</header>
+                        <div>
+                            <a href="">Nieuwe groep maken.</a>
+                        </div>
+                    </article>
+                -->
+                    
                 <!-- Search form -->
                 <article class="item search">
                     <header>Zoeken</header>
@@ -37,28 +45,22 @@
                     <div class="padding">
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="selectdiv">
-                                <label for="fos">Populariteit</label>
-                                <select id="fos" name="fos" class="select col-xs-12 filterlistener">
-                                    <option value="-1" selected>Geen selectie</option>
-
-                                </select>
+                                <label for="rangepop">Populariteit</label>
+                                <input id="rangepop" class="filterlistener" name="popularity" type="range" min="0" max="100">
                             </div>
                         </div>
+                        
                         <div class="form-group clearfix">
-                            <br>
                             <label>Type groep</label>
-                            <label class="checkbox-container col-xs-12 clearfix">Studentenraad
-                                <input type="checkbox" name="pubyear[]" value="1"
-                                       class="filterlistener" checked>
-                                <span class="checkmark"></span>
-                            </label>
-
-                            <label class="checkbox-container col-xs-12 clearfix">Interesse groep
-                                <input type="checkbox" name="pubyear[]" value="1"
-                                       class="filterlistener">
-                                <span class="checkmark"></span>
-                            </label>
-
+                            @foreach($categories as $category)
+                                @foreach($category->groups as $group)
+                                    <label class="checkbox-container col-xs-12">{{ $group->name }}
+                                        <input type="checkbox" name="category[]" value="{{ $group->id }}"
+                                               class="filterlistener">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                @endforeach
+                            @endforeach
                         </div>
                         <input type="hidden" class="filterlistener" name="_token" id="token" value="{{ csrf_token() }}">
                     </div>
@@ -195,5 +197,5 @@
 @endsection
 
 @section("scripts")
-    <script src="{{ asset("js/sharing-filter.js") }}"></script>
+    <script src="{{ asset("js/community-filter.js") }}"></script>
 @endsection

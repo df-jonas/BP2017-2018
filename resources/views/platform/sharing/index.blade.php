@@ -73,9 +73,9 @@
                                 </label>
                             @endforeach
                         </div>
-
-
-                        <!-- todo: bestands types ophalen (samenvatting; notities) -->
+                        
+                        <!-- TODO bestands types ophalen (samenvatting; notities) -->
+                        
                         <label>Type bestand</label>
                         <br>
                         <div class="form-group clearfix">
@@ -109,6 +109,9 @@
                 <div class="filecontainer item files">
                     <header>Mijn uploads</header>
                     @foreach($userfiles as $file)
+                    
+                    <!-- TODO hier opgefockt -->
+                    
                         @php
                             $rating = $file->averageRating()
                         @endphp

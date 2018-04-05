@@ -8,6 +8,7 @@ use App\GroupCategory;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class CommunityController extends Controller
 {
@@ -29,10 +30,11 @@ class CommunityController extends Controller
         return view("platform.community.index", $arr);
     }
 
-    /*public function newgroup()
+    public function newgroup()
     {
-        return view("platform.community.groupnew");
-    }*/
+        // TODO create new group for administrators
+        // return view("platform.community.groupnew");
+    }
 
     public function groupdetail($group_id)
     {
@@ -70,7 +72,7 @@ class CommunityController extends Controller
     public function postdetail($group_id, $post_id)
     {
         $myposts = Post::query()
-            ->where("id", "=", Auth::user()->id)
+            ->where("user_id", "=", Auth::user()->id)
             ->orderBy("created_at", "desc")
             ->take(5)
             ->get();
@@ -131,5 +133,34 @@ class CommunityController extends Controller
         return response()->json(Comment::query()->where('id', '=', $comment->id)->with(['user' => function ($query) {
             $query->select('id', 'first_name', 'last_name', 'image');
         }])->firstOrFail());
+    }
+
+    public function ajaxFilter(Request $request)
+    {
+        $q = Post::query();
+
+        if ($request->search != "") {
+            $q->where("title", "LIKE", "%" . $request->search . "%");
+        }
+
+        if (!empty($request->category) && sizeof($request->category) > 0) {
+            $q->whereIn("group_id", $request->category);
+        }
+
+        $returnarr = $q->select(["title", "user_id", "group_id", "created_at"])->with([
+            'user' => function ($query) {
+                $query->select("id", "first_name", "last_name", "image");
+            },
+            'group' => function ($query) {
+                $query->select("id", "name");
+            },
+        ])->orderBy('id', 'desc')->get();
+
+        foreach ($returnarr as $post) {
+            $post['commentcount'] = $post->commentcount();
+            $post['votesum'] = $post->votesum();
+        }
+
+        return $returnarr;
     }
 }

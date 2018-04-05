@@ -22,13 +22,13 @@
                     <header>Mijn posts</header>
 
                     <div class="padding">
-                        @foreach($myposts as $post)
+                        @foreach($myposts as $mypost)
                             <div class="row flex">
                                 <div class="icon col-md-2 col-xs-2">
-                                    <img src="{{ asset('img/avatars/' . $post->user->image )}}" class="group_img">
+                                    <img src="{{ asset('img/avatars/' . $mypost->user->image )}}" class="group_img">
                                 </div>
                                 <div class="col-md-8 col-xs-8">
-                                    <h5 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h5>
+                                    <h5 class="title"><a href="{{ $mypost->generateurl() }}">{{ $mypost->title }}</a></h5>
                                     <div class="rating">
                                         <p>subtitle</p>
                                     </div>
@@ -50,9 +50,7 @@
                 <div id="groupcontainer" class="item groups">
 
                     <div class="group-detail detail clearfix">
-                        <header>{{ $post->group->category->name }} > {{ $post->group->name }}<a href=""><i
-                                        class="fa fa-angle-up"></i></a>
-                        </header>
+                        <header>{{ $post->group->category->name }} > {{ $post->group->name }}</header>
 
                         <article class="detail group col-xs-12">
                             <div class="padding clearfix">
@@ -71,19 +69,17 @@
                                     </div>
 
                                     <div class="actions vertical-center col-lg-4 col-md-4 col-sm-6 col-xs-12">
-
-                                                <a class="action col-lg-6 left col-xs-12" href="#">Upvote</a>
-
-
-                                            <!--
+                                        <a class="action col-lg-6 left col-xs-12" href="#">Upvote</a>
+                                        <!--
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                                 <a class="action col-lg-12 col-xs-12" href="#">Downvote</a>
                                             </div>
-                                            -->
-                                                <a class="action col-lg-6 right col-xs-12" href="#">Volgen</a>
-                                        </div>
+                                        -->
+                                        <a class="action col-lg-6 right col-xs-12" href="#">Volgen</a>
                                     </div>
-                                <div>
+                                </div>
+                                
+                                <div class="col-xs-12">
                                     <h3>{{ $post->title }}</h3>
                                     <p>{{ $post->content }}</p>
                                 </div>
@@ -94,9 +90,7 @@
                                         <li>Upvotes: 0</li>
                                     </ul>
                                 </div>
-
-
-
+                                
                             </div>
                             <div id="comment-box" class="row flex padding">
                                 <div class="picture hide-mobile col-sm-1 col-xs-0">
