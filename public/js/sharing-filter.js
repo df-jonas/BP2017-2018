@@ -1,7 +1,5 @@
 $(document).ready(function () {
-    console.log('filter ready');
     $(".filterlistener").on("change", function () {
-        console.log('jaa');
         $.ajax({
             type: "POST",
             url: "/p/sharing/filter",

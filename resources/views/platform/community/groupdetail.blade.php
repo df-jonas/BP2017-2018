@@ -130,6 +130,12 @@
                                                 <div class="col-sm-3 col-xs-12">
                                                     <i class="fa fa-comment"><span>{{ $post->commentcount() }} reacties</span></i>
                                                 </div>
+
+                                                <!-- TODO aantal likes tellen (controleren door arno) -->
+                                                <div class="col-sm-3 col-xs-12">
+                                                    <i class="fa fa-thumbs-up"><span>{{ $post->votesum() }}</span></i>
+                                                </div>
+
                                             </div>
                                         </div>
                                         <div class="info hide-mobile col-lg-6 col-md-6 col-sm-4 col-xs-12"
