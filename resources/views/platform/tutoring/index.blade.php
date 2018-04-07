@@ -8,15 +8,42 @@
 
         <!-- Modal -->
         <div class="modal fade" id="verzoek-modal" role="dialog">
-            <div class="modal-dialog  modal-lg">
-
+            <div id="tutoring-modal" class="modal-dialog  modal-lg">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                    <div class="modal-body">
-                        <p>Keuze hier tonen</p>
+                    <div class="col-xs-12 modal-body clearfix">
+                        <div class="col-lg-4">
+                            <article class="item keuze no-padding col-xs-12">
+                                <header>Vind een tutor</header>
+                                <div class="padding">
+                                    <img src="{{ asset('img/icons/001-pen.svg' )}}" >
+                                    <!-- <h4>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</h4> -->
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <article class="item keuze no-padding col-xs-12">
+                                <header>Wordt tutor</header>
+                                <div class="padding">
+                                    <img src="{{ asset('img/icons/002-book.svg' )}}" >
+                                    <!-- <h4>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</h4> -->
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <article class="item keuze no-padding col-xs-12">
+                                <header>Hoe werkt het?</header>
+                                <div class="padding">
+                                    <img src="{{ asset('img/icons/003-whiteboard.svg' )}}" >
+                                    <!-- <h4>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</h4> -->
+                                </div>
+                            </article>
+                        </div>
                     </div>
                     <div class="modal-footer padding">
                         <div class="form-group col-xs-12 clearfix">
@@ -24,7 +51,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -36,23 +62,24 @@
                         <li class="new" data-toggle="modal" data-target="#verzoek-modal">
                             <div class="padding vertical-center">
                                 <div class="table">
-                                    <div style="display: table-cell; width: 42px">
-                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img"
-                                             style="background: red"></div>
-                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 class="bold"  style="margin: 0">Stuur verzoek</h6>
+                                    <div class="add group-img round-img" style="display: table-cell">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="info">
+                                        <h6 class="bold">Stuur verzoek</h6>
                                     </div>
                                 </div>
                             </div>
                         </li>
 
+                        <!-- TODO jonas data request id moet de id zijn van database tutoring request -->
                         <li class="people-list-active" data-request-id="1">
                             <div class="padding vertical-center">
                                 <div class="table">
-                                    <div style="display: table-cell; width: 42px"><img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img"></div>
-                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 class="bold" style="margin: 0">Jonas De Frère</h6>
-                                        <h6 style="margin: 5px 0">Data Visualisatie</h6>
+                                    <div class="picture"><img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img"></div>
+                                    <div class="info">
+                                        <h6 class="bold">Jonas De Frère</h6>
+                                        <h6>Data Visualisatie</h6>
                                     </div>
                                 </div>
                             </div>
@@ -61,12 +88,10 @@
                         <li data-request-id="2">
                             <div class="padding vertical-center">
                                 <div class="table">
-                                    <div style="display: table-cell; width: 42px"><img
-                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img"></div>
-                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 class="bold" style="margin: 0">Sam Goeman</h6>
-                                        <h6 style="margin: 5px 0">Project Management</h6>
+                                    <div class="picture"><img src="{{ asset('img/avatars/' . Auth::user()->image )}}"class="group-img round-img"></div>
+                                    <div class="info">
+                                        <h6 class="bold">Sam Goeman</h6>
+                                        <h6>Project Management</h6>
                                     </div>
                                 </div>
                             </div>
@@ -75,12 +100,10 @@
                         <li data-request-id="3">
                             <div class="padding vertical-center">
                                 <div class="table">
-                                    <div style="display: table-cell; width: 42px"><img
-                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img"></div>
-                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 class="bold" style="margin: 0">Gijs Claes</h6>
-                                        <h6 style="margin: 5px 0">Data Visualisatie</h6>
+                                    <div class="picture"><img src="{{ asset('img/avatars/' . Auth::user()->image )}}"class="group-img round-img"></div>
+                                    <div class="info">
+                                        <h6 class="bold">Gijs Claes</h6>
+                                        <h6>Data Visualisatie</h6>
                                     </div>
                                 </div>
                             </div>
@@ -89,12 +112,10 @@
                         <li data-request-id="4">
                             <div class="padding vertical-center">
                                 <div class="table">
-                                    <div style="display: table-cell; width: 42px"><img
-                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img"></div>
-                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 class="bold" style="margin: 0">Dieter Conversal</h6>
-                                        <h6 style="margin: 5px 0">Communicatie Management</h6>
+                                    <div class="picture"><img src="{{ asset('img/avatars/' . Auth::user()->image )}}"class="group-img round-img"></div>
+                                    <div class="info">
+                                        <h6 class="bold">Dieter Conversal</h6>
+                                        <h6>Communicatie Management</h6>
                                     </div>
                                 </div>
                             </div>
@@ -103,12 +124,10 @@
                         <li data-request-id="5">
                             <div class="padding vertical-center">
                                 <div class="table">
-                                    <div style="display: table-cell; width: 42px"><img
-                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img"></div>
-                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 class="bold" style="margin: 0">Jens Conversal</h6>
-                                        <h6 style="margin: 5px 0">Online Marketing</h6>
+                                    <div class="picture"><img src="{{ asset('img/avatars/' . Auth::user()->image )}}"class="group-img round-img"></div>
+                                    <div class="info">
+                                        <h6 class="bold">Jens Conversal</h6>
+                                        <h6>Online Marketing</h6>
                                     </div>
                                 </div>
                             </div>
@@ -117,12 +136,10 @@
                         <li data-request-id="6">
                             <div class="padding vertical-center">
                                 <div class="table">
-                                    <div style="display: table-cell; width: 42px"><img
-                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img"></div>
-                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 class="bold" style="margin: 0">Jelle Stalpaert</h6>
-                                        <h6 style="margin: 5px 0">Sales</h6>
+                                    <div class="picture"><img src="{{ asset('img/avatars/' . Auth::user()->image )}}"class="group-img round-img"></div>
+                                    <div class="info">
+                                        <h6 class="bold">Jelle Stalpaert</h6>
+                                        <h6">Sales</h6>
                                     </div>
                                 </div>
                             </div>
@@ -131,12 +148,10 @@
                         <li data-request-id="7">
                             <div class="padding vertical-center">
                                 <div class="table">
-                                    <div style="display: table-cell; width: 42px"><img
-                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img"></div>
-                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 class="bold" style="margin: 0">Arno Stalpaert</h6>
-                                        <h6 style="margin: 5px 0">Data Visualisatie</h6>
+                                    <div class="picture"><img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img"></div>
+                                    <div class="info">
+                                        <h6 class="bold">Arno Stalpaert</h6>
+                                        <h6>Data Visualisatie</h6>
                                     </div>
                                 </div>
                             </div>
