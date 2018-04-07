@@ -22,26 +22,19 @@
                 <div class="item files">
                     <header>Mijn downloads</header>
                     @foreach($userdownloads as $userdownload)
-
                         <article class="file item user-owned clearfix">
-
                             <div class="padding">
-
-
                                 <div class="row flex">
                                     <div class="icon col-md-2 col-xs-9">
                                         <img src="{{asset('img/icons/001-file.png')}} "
                                              style="width: 36px; height: 36px">
                                     </div>
-
                                     <div class="col-md-10 col-xs-1">
                                         <h5 class="title">
                                             <a href="{{ $userdownload->file->detailUrl() }}"> {{$userdownload->file->title}}</a>
                                         </h5>
-
                                         <small>Gedownload {{ $userdownload->humantimestamp() }}</small>
                                     </div>
-
                                 </div>
                             </div>
                         </article>
@@ -118,15 +111,11 @@
                                         <i class="fa fa-book"><span>{{ $file->course->name }}</span></i>
                                     </div>
                                 </div>
-
                             </div>
 
                             <div class="col-xs-12">
-
-                            <!-- TODO Arno fixen
-                                <a class="download col-lg-2" href="{{ $file->downloadUrl() }}">Download</a>
-                            -->
-                                <input type="button" class="download-button next col-lg-2 col-sm-4 col-xs-12" value="Volgende">
+                                <a class="download-button col-lg-2 col-sm-4 col-xs-12"
+                                   href="{{ $file->downloadUrl() }}">Download</a>
                             </div>
                         </div>
                     </article>

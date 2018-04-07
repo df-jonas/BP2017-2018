@@ -127,12 +127,10 @@
                                         <div class="col-lg-5 col-md-5 col-sm-7 col-xs-10">
                                             <h4 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h4>
                                             <div class="row icons">
-                                                <div class="col-sm-3 col-xs-12">
-                                                    <i class="fa fa-comment"><span>{{ $post->commentcount() }} reacties</span></i>
+                                                <div class="col-lg-2 col-sm-2 col-xs-3">
+                                                    <i class="fa fa-comment"><span>{{ $post->commentcount() }}</span></i>
                                                 </div>
-
-                                                <!-- TODO aantal likes tellen (controleren door arno) -->
-                                                <div class="col-sm-3 col-xs-12">
+                                                <div class="col-lg-2 col-sm-2 col-xs-3">
                                                     <i class="fa fa-thumbs-up"><span>{{ $post->votesum() }}</span></i>
                                                 </div>
 

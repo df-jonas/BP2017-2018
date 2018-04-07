@@ -29,9 +29,6 @@
         </div>
 
         <div class="table tutoring flex">
-
-
-
             <!-- Sidebar -->
             <div class="sidebar clearfix">
                 <article class="item">
@@ -49,12 +46,10 @@
                             </div>
                         </li>
 
-                        <li class="active">
+                        <li class="people-list-active" data-request-id="1">
                             <div class="padding vertical-center">
                                 <div class="table">
-                                    <div style="display: table-cell; width: 42px"><img
-                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img"></div>
+                                    <div style="display: table-cell; width: 42px"><img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img"></div>
                                     <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
                                         <h6 class="bold" style="margin: 0">Jonas De Frère</h6>
                                         <h6 style="margin: 5px 0">Data Visualisatie</h6>
@@ -63,8 +58,7 @@
                             </div>
                         </li>
 
-
-                        <li>
+                        <li data-request-id="2">
                             <div class="padding vertical-center">
                                 <div class="table">
                                     <div style="display: table-cell; width: 42px"><img
@@ -78,7 +72,7 @@
                             </div>
                         </li>
 
-                        <li>
+                        <li data-request-id="3">
                             <div class="padding vertical-center">
                                 <div class="table">
                                     <div style="display: table-cell; width: 42px"><img
@@ -92,7 +86,7 @@
                             </div>
                         </li>
 
-                        <li>
+                        <li data-request-id="4">
                             <div class="padding vertical-center">
                                 <div class="table">
                                     <div style="display: table-cell; width: 42px"><img
@@ -106,7 +100,7 @@
                             </div>
                         </li>
 
-                        <li>
+                        <li data-request-id="5">
                             <div class="padding vertical-center">
                                 <div class="table">
                                     <div style="display: table-cell; width: 42px"><img
@@ -120,7 +114,7 @@
                             </div>
                         </li>
 
-                        <li>
+                        <li data-request-id="6">
                             <div class="padding vertical-center">
                                 <div class="table">
                                     <div style="display: table-cell; width: 42px"><img
@@ -134,7 +128,7 @@
                             </div>
                         </li>
 
-                        <li>
+                        <li data-request-id="7">
                             <div class="padding vertical-center">
                                 <div class="table">
                                     <div style="display: table-cell; width: 42px"><img
@@ -160,14 +154,13 @@
                 <!-- sidebar -->
             </div>
 
-            <div class="content clearfix" style="min-height: 50em;">
+            <div id="people-list-detail" class="content clearfix" style="min-height: 50em;">
                 <!-- Search form -->
-                <article class="item padding col-xs-12">
-                    <br>
+                <article class="item col-xs-12">
                     <div class="padding clearfix">
 
                         <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                            <div class="col-lg-8 col-md-4 col-sm-6 col-xs-12">
                                 <div class="table">
                                     <div style="display: table-cell; width: 42px"><img
                                                 src="{{ asset('img/avatars/' . Auth::user()->image )}}"
@@ -180,7 +173,7 @@
                             </div>
 
 
-                            <div class="actions col-lg-4 col-md-4 col-sm-6 col-xs-12" style="text-align: center">
+                            <div class="actions col-lg-4 col-md-8 col-sm-6 col-xs-12" style="text-align: center">
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                         <a class="action col-lg-12 col-xs-12" href="{{route('tutoring-messages', ['id' => '1']) }}">Chatten</a>
                                     </div>
@@ -192,7 +185,6 @@
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                         <a class="action col-lg-12 col-xs-12" href="#">Stopzetten</a>
                                     </div>
-
                             </div>
 
 

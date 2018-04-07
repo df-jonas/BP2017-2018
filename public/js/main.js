@@ -47,4 +47,20 @@ $(document).ready(function () {
 
         });
     });
+
+    //Tutoring people list
+    $('.people-list li').click(function (e) {
+        //haalt alle active classes weg
+        $( ".people-list li" ).each(function() {
+            if($(this).hasClass('people-list-active')){
+                $(this ).removeClass('people-list-active');
+            }
+        });
+        //kent active class toe aan li waarop geklikt werd
+        $(this).toggleClass("people-list-active");
+        e.preventDefault();
+        $data = $(this).data('request-id');
+        //console.log($(this).data('request-id'));
+        //$('#people-list-detail article').append("<p>" + $data +"</p>");
+    })
 });

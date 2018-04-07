@@ -109,21 +109,15 @@
                 <div class="filecontainer item files">
                     <header>Mijn uploads</header>
                     @foreach($userfiles as $file)
-                    
-                    <!-- TODO hier opgefockt -->
-                    
                         @php
                             $rating = $file->averageRating()
                         @endphp
-
                         <article class="overviewfile item user-owned">
                             <div class="padding">
                                 <div class="row flex">
                                     <div class="icon col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        <img src="{{asset('img/icons/001-file.png')}} "
-                                             style="width: 36px; height: 36px">
+                                        <img src="{{asset('img/icons/001-file.png')}} " style="width: 36px; height: 36px">
                                     </div>
-
                                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-10">
                                         <h5 class="title"><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h5>
                                         <div class="vertical-center rating  col-xs-12" style="margin-top: 0.5em">
@@ -135,17 +129,12 @@
                                                 @endif
                                             @endfor
                                         </div>
-
                                     </div>
-
                                     <div class="edit col-lg-2 col-md-2 col-sm-2 col-xs-0">
                                         <i class="fa fa-pencil brown"></i>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </article>
                     @endforeach
                 </div>
@@ -155,14 +144,11 @@
             <!-- content -->
             <div class="content">
                 <div id="filter-results" class="filecontainer files">
-
                     <span id="filter-details" class="item padding col-xs-12"> Aantal bestanden: <small>300</small></span><br><br>
-
                     @foreach($files as $file)
                         @php
                             $rating = $file->averageRating()
                         @endphp
-
                         <article class="overview file item clearfix">
                             <a href="{{ $file->detailUrl() }}">
                                 <header>
@@ -172,24 +158,18 @@
                             <div class="padding">
                                 <div class="row flex">
                                     <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2">
-                                        <img src="{{asset('img/icons/001-file.png')}} "
-                                             style="width: 36px; height: 36px">
+                                        <img src="{{asset('img/icons/001-file.png')}} " style="width: 36px; height: 36px">
                                     </div>
-
                                     <div class="col-lg-5 col-md-6 col-sm-6 col-xs-10">
-                                        <h4 class="title no-margin"><a
-                                                    href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h4>
+                                        <h4 class="title no-margin"><a  href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h4>
                                         <h5 class="brown">Erasmushogeschool Brussel</h5>
                                         <div class="row">
                                             <div class="col-xs-12">
                                                 door {{$file->user->first_name}} {{$file->user->last_name}}
                                             </div>
-
                                         </div>
-
                                     </div>
                                     <div class="col-lg-6 col-lg-push-0 col-md-4 col-sm-4 col-sm-push-0 col-xs-8 col-xs-push-2">
-
                                         <div class="vertical-center rating">
                                             @for ($i = 1; $i <= 5; $i++)
                                                 @if($i <= $rating)
@@ -203,7 +183,6 @@
                                 </div>
                             </div>
                         </article>
-
                     @endforeach
                 </div>
             </div>

@@ -44,7 +44,7 @@
                     <header>Posts filteren</header>
                     <div class="padding">
                         <div class="form-group col-xs-12 no-padding clearfix">
-                            <div class="selectdiv">
+                            <div class="sliderdiv">
                                 <label for="rangepop">Populariteit</label>
                                 <input id="rangepop" class="filterlistener" name="popularity" type="range" min="0" max="100">
                             </div>
@@ -55,8 +55,8 @@
                             @foreach($categories as $category)
                                 @foreach($category->groups as $group)
                                     <label class="checkbox-container col-xs-12">{{ $group->name }}
-                                        <input type="checkbox" name="category[]" value="{{ $group->id }}"
-                                               class="filterlistener">
+                                        <!-- TODO Jonas ik heb checked er bij gezet, is handig als een filter standaard alle opties al toont by default -->
+                                        <input type="checkbox" name="category[]" value="{{ $group->id }}" class="filterlistener" checked>
                                         <span class="checkmark"></span>
                                     </label>
                                 @endforeach

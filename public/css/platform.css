@@ -233,12 +233,12 @@ div.container {
 }
 
 .subheader ul li:hover,
-.subheader ul li.active {
+.subheader ul li.uh-active {
   border-bottom: 3px solid #8A7E72;
 }
 
 .subheader ul li:hover a,
-.subheader ul li.active a {
+.subheader ul li.uh-active a {
   color: #8A7E72;
 }
 
@@ -307,7 +307,7 @@ div.container {
 }
 
 .table.tutoring .sidebar .people-list li:hover,
-.table.tutoring .sidebar .people-list li.active {
+.table.tutoring .sidebar .people-list li.people-list-active {
   cursor: pointer;
   background: #ffffff;
   color: #4D6A50;

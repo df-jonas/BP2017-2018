@@ -55,7 +55,7 @@
                         <article class="detail group col-xs-12">
                             <div class="padding clearfix">
                                 <div class="row" style="position: relative">
-                                    <div class="info col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                                    <div class="info col-lg-8 col-md-4 col-sm-6 col-xs-12">
                                         <div class="table">
                                             <div style="display: table-cell; width: 32px">
                                                 <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
@@ -68,20 +68,22 @@
                                         </div>
                                     </div>
 
-                                    <div class="actions vertical-center col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                        <a class="action col-lg-6 left col-xs-12" href="#">Upvote</a>
+                                    <div class="actions col-lg-4 col-md-8 col-sm-6 col-xs-12" style="text-align: center">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <a class="action col-lg-12 col-xs-12" href="#">Like</a>
+                                        </div>
 
-                                        <!-- TODO rapporteren in plaats van downvoten
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                <a class="action col-lg-12 col-xs-12" href="#">Downvote</a>
-                                            </div>
-                                        -->
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <a class="action col-lg-12 col-xs-12" href="#">Volgen</a>
+                                        </div>
 
-                                        <a class="action col-lg-6 right col-xs-12" href="#">Volgen</a>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <a class="action col-lg-12 col-xs-12" href="#">Rapporteer</a>
+                                        </div>
                                     </div>
                                 </div>
                                 
-                                <div class="col-xs-12">
+                                <div class="col-xs-12 no-padding">
                                     <h3>{{ $post->title }}</h3>
                                     <p>{{ $post->content }}</p>
                                 </div>

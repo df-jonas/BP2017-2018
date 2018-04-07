@@ -200,7 +200,7 @@ div.container {
       line-height: 3em;
       cursor: pointer;
       color: $unihelp-brown;
-      &:hover, &.active {
+      &:hover, &.uh-active {
         border-bottom: 3px solid $unihelp-brown;
         a {
           color: $unihelp-brown;
@@ -260,7 +260,7 @@ div.container {
         border: 1px solid $unihelp-white;
         height: 80px;
         position: relative;
-        &:hover, &.active {
+        &:hover, &.people-list-active {
           cursor: pointer;
           background: $unihelp-white;
           color: $unihelp-green;
