@@ -5,6 +5,7 @@
     @include('partials.platform.subheader')
 
     <div class="container">
+        @include('partials.platform.go-back')
         <div class="table">
             <!-- Sidebar -->
             <div class="sidebar">
@@ -52,7 +53,7 @@
                     <div class="padding clearfix">
 
                         <div class="row">
-                            <div class="col-lg-8 col-md-4 col-sm-6 col-xs-12">
+                            <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
                                 <div class="table">
                                     <div style="display: table-cell; width: 42px"><img
                                                 src="{{ asset('img/avatars/' . Auth::user()->image )}}"
@@ -65,7 +66,7 @@
                             </div>
 
 
-                            <div class="actions col-lg-4 col-md-8 col-sm-6 col-xs-12" style="text-align: center">
+                            <div class="actions col-lg-6 col-md-8 col-sm-6 col-xs-12" style="text-align: center">
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <a class="action col-lg-12 col-xs-12" href="{{route('tutoring-messages', ['id' => '1']) }}">Chatten</a>
                                 </div>
@@ -82,7 +83,7 @@
                         <br>
 
                         <div class="col-xs-12">
-                            <h3>Planning</h3>
+                            <h4>Planning</h4>
 
                             <div class="row">
                                 <div class="overview-calendar col-lg-6 col-md-6 col-sm-6 col-xs-12 left">

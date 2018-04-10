@@ -82,6 +82,22 @@ div.container {
   cursor: pointer;
 }
 
+.go-back a {
+  color: #8A7E72;
+}
+
+.go-back i {
+  cursor: pointer;
+}
+
+.go-back i span {
+  font-family: Raleway;
+}
+
+.go-back .padding {
+  padding: 7.5px;
+}
+
 .modal h4 {
   color: #4D6A50;
 }
@@ -149,6 +165,10 @@ div.container {
   flex-direction: row;
   float: right;
   position: relative;
+}
+
+#platform-header .account:hover > .dropdown-menu {
+  display: block;
 }
 
 #platform-header .account .account-img {
@@ -254,6 +274,15 @@ div.container {
 .subheader ul li span {
   display: inline-block;
   padding-right: 0.85em;
+}
+
+.subheader ul li .badge {
+  background: #8A7E72;
+  padding: 5px;
+  width: 20px;
+  height: 20px;
+  line-height: 10px;
+  text-align: center;
 }
 
 /*table layout*/
@@ -425,6 +454,10 @@ div.container {
   margin: 0;
 }
 
+.overview-calendar .reminder p {
+  color: #ffffff;
+}
+
 /*block witte achtergrond*/
 
 .item {
@@ -560,14 +593,18 @@ div.container {
   transform: translate(0, 0%);
 }
 
+.detail p {
+  font-size: 14px;
+}
+
 .detail.file .info {
   left: 15px;
 }
 
 .detail.file .rating {
   position: absolute;
-  top: 0%;
-  right: 30px;
+  top: 0;
+  right: 20px;
   -webkit-transform: translate(0, 0%);
   transform: translate(0, 0%);
   text-align: right;
@@ -594,10 +631,6 @@ div.container {
   text-align: center;
 }
 
-.content .info {
-  margin-top: 1em;
-}
-
 .content .info ul {
   width: 100%;
   list-style-type: none;
@@ -621,6 +654,7 @@ div.container {
   padding: 8px 15px;
   background: #8A7E72;
   color: #ffffff;
+  margin-bottom: 7px;
 }
 
 .content .actions .action:hover,
@@ -745,7 +779,6 @@ div.container {
 
 .sidebar .item.user-owned .row {
   margin-bottom: 20px;
-  margin-top: 20px;
 }
 
 .sidebar .stats p {
@@ -789,7 +822,7 @@ div.container {
 }
 
 .file .rating {
-  font-size: 1.5em;
+  font-size: 1.5em !important;
 }
 
 .file .rating:hover {
@@ -944,6 +977,7 @@ form .form-group {
   width: 85.5px;
   height: 26.5px;
   margin-top: 0;
+  line-height: 26px;
 }
 
 #vak-zoeken {
@@ -1131,15 +1165,15 @@ form .form-group {
     margin-bottom: 0;
   }
 
+  /*
   .file .rating {
-    font-size: 1.5em;
     font-size: 1.5em;
     position: absolute;
     left: 0%;
     top: 50%;
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
   }
+*/
 
   .headline .right h4 {
     text-align: center;

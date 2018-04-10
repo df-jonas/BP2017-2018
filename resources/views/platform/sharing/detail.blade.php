@@ -5,6 +5,7 @@
     @include('partials.platform.subheader')
 
     <div class="container">
+        @include('partials.platform.go-back')
         <div class="table">
             <div class="sidebar">
                 <!-- Upload button -->
@@ -16,35 +17,27 @@
                     </a>
                 </article>
                 <!-- end Upload button -->
-
-
-                <!-- user downloaded items -->
-                <div class="item files">
-                    <header>Mijn downloads</header>
-                    @foreach($userdownloads as $userdownload)
-                        <article class="file item user-owned clearfix">
-                            <div class="padding">
-                                <div class="row flex">
-                                    <div class="icon col-md-2 col-xs-9">
-                                        <img src="{{asset('img/icons/001-file.png')}} "
-                                             style="width: 36px; height: 36px">
-                                    </div>
-                                    <div class="col-md-10 col-xs-1">
-                                        <h5 class="title">
-                                            <a href="{{ $userdownload->file->detailUrl() }}"> {{$userdownload->file->title}}</a>
-                                        </h5>
+                <!-- User items -->
+                <article class="overview item user-owned">
+                    <header><i class="fa fa-download"></i> Mijn downloads</header>
+                    <div class="padding">
+                        @foreach($userdownloads as $userdownload)
+                            <div class="row flex">
+                                <div class="icon col-lg-2 col-md-2 col-xs-2">
+                                    <img src="{{ asset('img/avatars/' . $userdownload->user->image )}}" class="account-img round-img">
+                                </div>
+                                <div class="col-lg-10 col-md-8 col-xs-8">
+                                    <h5 class="title col-xs-12 no-padding"><a href="{{ $userdownload->file->detailUrl() }}"> {{$userdownload->file->title}}</a></h5>
+                                    <div class="rating col-xs-12 no-padding">
                                         <small>Gedownload {{ $userdownload->humantimestamp() }}</small>
                                     </div>
                                 </div>
                             </div>
-                        </article>
-                    @endforeach
-                </div>
-                <!-- user items -->
-
-
+                        @endforeach
+                    </div>
+                </article>
+                <!-- end User items -->
             </div>
-
             <div class="content">
                 <div class="files">
                     <article class="file detail item clearfix">

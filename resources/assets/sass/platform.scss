@@ -73,6 +73,22 @@ div.container {
   cursor: pointer;
 }
 
+.go-back {
+  a{
+    color: $unihelp-brown;
+  }
+  i {
+    cursor: pointer;
+    span {
+      font-family: Raleway;
+
+    }
+  }
+  .padding {
+    padding: 7.5px;
+  }
+}
+
 .modal h4 {
   color: $unihelp-green;
 }
@@ -130,6 +146,9 @@ div.container {
     flex-direction: row;
     float: right;
     position: relative;
+    &:hover > .dropdown-menu{
+      display: block;
+    }
     .account-img {
       width: 32px;
       height: 32px;
@@ -214,6 +233,14 @@ div.container {
         display: inline-block;
         padding-right: 0.85em;
       }
+      .badge{
+        background: $unihelp-brown;
+        padding: 5px;
+        width: 20px;
+        height: 20px;
+        line-height: 10px;
+        text-align: center;
+      }
     }
   }
 }
@@ -274,11 +301,11 @@ div.container {
           padding-left: 16px;
           vertical-align: middle;
           padding-top: 4px;
-          h6{
+          h6 {
             margin: 5px 0;
           }
 
-          h6.bold{
+          h6.bold {
             margin: 0;
           }
         }
@@ -322,29 +349,30 @@ div.container {
   }
 }
 
-#tutoring-modal{
-  .keuze{
+#tutoring-modal {
+  .keuze {
     text-align: center;
     cursor: pointer;
-    header{
-    background: $unihelp-brown;
+    header {
+      background: $unihelp-brown;
     }
     background: $unihelp-green;
-    img{
+    img {
       display: block;
       margin: auto;
       //width: 100%;
       height: 10em;
       object-fit: cover;
     }
-    p, h4{
+    p, h4 {
       text-align: center;
     }
-    &:hover{
+    &:hover {
       background-color: $unihelp-brown;
     }
   }
 }
+
 .overview-calendar {
   height: 45px;
   margin-top: 2.5em;
@@ -359,6 +387,9 @@ div.container {
     background: $unihelp-brown;
     h5 {
       margin: 0;
+    }
+    p{
+      color: $unihelp-white;
     }
   }
 
@@ -397,6 +428,7 @@ div.container {
 .filecontainer {
   display: inline;
 }
+
 
 .overview {
   &.groups, &.group, &.file, &.user-owned {
@@ -473,18 +505,23 @@ div.container {
       -webkit-transform: translate(0, -0%);
       transform: translate(0, -0%);
     }
+
   }
 }
 
 .detail {
+  p{
+    font-size: 14px;
+  }
   &.file {
     .info {
       left: 15px;
     }
+
     .rating {
       position: absolute;
-      top: 0%;
-      right: 30px;
+      top: 0;
+      right: 20px;
       -webkit-transform: translate(0, -0%);
       transform: translate(0, -0%);
       text-align: right;
@@ -518,7 +555,7 @@ div.container {
 
 .content {
   .info {
-    margin-top: 1em;
+    //margin-top: 1em;
     ul {
       width: 100%;
       list-style-type: none;
@@ -539,6 +576,7 @@ div.container {
       padding: 8px 15px;
       background: $unihelp-brown;
       color: $unihelp-white;
+      margin-bottom: 7px;
 
       &:hover, &.active {
         cursor: pointer;
@@ -665,7 +703,7 @@ div.container {
       }
       .row {
         margin-bottom: 20px;
-        margin-top: 20px;
+        //margin-top: 15px;
       }
     }
 
@@ -704,7 +742,7 @@ div.container {
     }
   }
   .rating {
-    font-size: 1.5em;
+    font-size: 1.5em!important;
     &:hover {
       cursor: pointer;
     }
@@ -851,6 +889,7 @@ form .form-group {
       width: 85.5px;
       height: 26.5px;
       margin-top: 0;
+      line-height: 26px;
     }
   }
 }
@@ -945,7 +984,7 @@ form .form-group {
   border-radius: 0;
 }
 
-.modal-header{
+.modal-header {
   border-bottom: none !important;
 }
 
@@ -1030,16 +1069,15 @@ form .form-group {
   .subheader {
     margin-bottom: 0;
   }
-
+/*
   .file .rating {
-    font-size: 1.5em;
     font-size: 1.5em;
     position: absolute;
     left: 0%;
     top: 50%;
     transform: translate(0, -50%);
   }
-
+*/
   .headline {
     .right {
       h4 {

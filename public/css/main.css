@@ -24,6 +24,7 @@ body {
 
 .container {
   width: 85% !important;
+  max-width: 1800px;
 }
 
 /*Fonts*/
@@ -79,8 +80,9 @@ h3 {
   color: #ffffff;
 }
 
-h4 {
-  font-size: 16px;
+h4,
+h5 {
+  font-size: 20px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -88,6 +90,10 @@ h4 {
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
+}
+
+h5 {
+  font-size: 18px;
 }
 
 p {
@@ -148,6 +154,10 @@ a:active {
 
 .no-margin {
   margin: 0 !important;
+}
+
+no-margin-top {
+  margin-top: 0 !important;
 }
 
 .no-padding {
@@ -282,7 +292,7 @@ a:active {
 
 #page-header,
 #platform-header {
-  height: 80px;
+  height: auto;
   width: 100%;
   background-color: #ffffff;
   padding: 1%;
@@ -825,7 +835,7 @@ footer a:focus {
 }
 
 footer #mce-EMAIL {
-  width: 50% !important;
+  width: 60% !important;
   float: left !important;
   border: none !important;
   background-color: #505457 !important;
@@ -833,7 +843,7 @@ footer #mce-EMAIL {
 }
 
 footer #mc-embedded-subscribe {
-  width: 20% !important;
+  width: 35% !important;
   margin-left: 2.5% !important;
   float: left !important;
   text-align: center !important;
@@ -916,8 +926,8 @@ footer #mc-embedded-subscribe {
 
 .sliderdiv input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-          box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  -webkit-box-shadow: 1px 1px 1px #4D6A50, 0px 0px 1px transparent;
+          box-shadow: 1px 1px 1px #4D6A50, 0px 0px 1px transparent;
   border: none;
   height: 24px;
   width: 10px;
@@ -929,7 +939,7 @@ footer #mc-embedded-subscribe {
 }
 
 .sliderdiv input[type=range]::-moz-range-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  box-shadow: 1px 1px 1px #4D6A50, 0px 0px 1px transparent;
   border: none !important;
   height: 24px;
   width: 10px;
@@ -1197,10 +1207,6 @@ form.register .form-group {
 @media only screen and (max-width: 1500px) {
   #page-header .links {
     padding-top: 0.5%;
-  }
-
-  #page-banner {
-    height: 90vh;
   }
 
   footer .top {

@@ -169,13 +169,13 @@
                 <!-- sidebar -->
             </div>
 
-            <div id="people-list-detail" class="content clearfix" style="min-height: 50em;">
+            <div id="people-list-detail" class="content detail clearfix">
                 <!-- Search form -->
                 <article class="item col-xs-12">
                     <div class="padding clearfix">
 
                         <div class="row">
-                            <div class="col-lg-8 col-md-4 col-sm-6 col-xs-12">
+                            <div class="col-lg-6 left col-md-4 col-sm-6 col-xs-12">
                                 <div class="table">
                                     <div style="display: table-cell; width: 42px"><img
                                                 src="{{ asset('img/avatars/' . Auth::user()->image )}}"
@@ -188,7 +188,7 @@
                             </div>
 
 
-                            <div class="actions col-lg-4 col-md-8 col-sm-6 col-xs-12" style="text-align: center">
+                            <div class="actions col-lg-6 right col-md-8 col-sm-6 col-xs-12" style="text-align: center">
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                         <a class="action col-lg-12 col-xs-12" href="{{route('tutoring-messages', ['id' => '1']) }}">Chatten</a>
                                     </div>
@@ -204,7 +204,7 @@
 
 
                             <div class="col-xs-12">
-
+                                <h4>Introductie</h4>
                                 <p>
                                     Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
                                     egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet,
@@ -218,7 +218,7 @@
                             </div>
 
                             <div class="col-xs-12">
-                                <h3>Planning</h3>
+                                <h4>Planning</h4>
 
                                 <div class="row">
                                     <div class="overview-calendar col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
@@ -227,7 +227,7 @@
                                             <small>Maart</small>
                                         </div>
                                         <div class="reminder col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <h5 class="col-xs-12 vertical-center">Test activiteit</h5>
+                                            <p class="col-xs-12 vertical-center">Test activiteit</p>
                                         </div>
                                     </div>
 
@@ -238,7 +238,7 @@
                                             <small>Maart</small>
                                         </div>
                                         <div class="reminder col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <h5 class="col-xs-12 vertical-center">Test activiteit</h5>
+                                            <p class="col-xs-12 vertical-center">Test activiteit</p>
                                         </div>
                                     </div>
 
@@ -249,7 +249,7 @@
                                             <small>Maart</small>
                                         </div>
                                         <div class="reminder col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <h5 class="col-xs-12 vertical-center">Test activiteit</h5>
+                                            <p class="col-xs-12 vertical-center">Test activiteit</p>
                                         </div>
                                     </div>
 

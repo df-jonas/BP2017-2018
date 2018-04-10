@@ -14,13 +14,13 @@ $(document).ready(function () {
                             '<header>' + value.course.name +
                             '<i class="fa fa-download"></i></header></a><div class="padding">' +
                             '<div class="row flex">' +
-                            '<div class="icon col-lg-1 col-md-2 col-sm-2 col-xs-3">' +
-                            '<img src="/img/icons/001-file.png" style="width: 36px; height: 36px">' +
+                            '<div class=" col-lg-1 col-md-2 col-sm-2 col-xs-2">' +
+                            '<img src="/img/icons/001-file.png" class="account-img">' +
                             '</div>' +
                             '<div class="col-lg-5 col-md-6 col-sm-6 col-xs-10">' +
-                            '<h4 class="title no-margin"><a href="/p/sharing/' + value.id + '">' + value.title + '</a></h4>' +
-                            '<h5 class="brown">Erasmushogeschool Brussel</h5>' +
-                            '<div class="row"><div class="col-xs-12"> door ' + value.user.first_name + ' ' + value.user.last_name + '</div></div>' +
+                            '<h5 class="title no-margin"><a href="/p/sharing/' + value.id + '">' + value.title + '</a></h5>' +
+                            '<h6 class="brown">Erasmushogeschool Brussel</h6>' +
+                            '<div class="row"><div class="col-xs-12"><h6 class="no-margin">door ' + value.user.first_name + ' ' + value.user.last_name + '</h6></div></div>' +
                             '</div>' +
                             '<div class="col-lg-6 col-lg-push-0 col-md-4 col-sm-4 col-sm-push-0 col-xs-8 col-xs-push-2">' +
                             '<div class="vertical-center rating">';
@@ -41,3 +41,5 @@ $(document).ready(function () {
         });
     });
 });
+
+

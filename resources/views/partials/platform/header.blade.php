@@ -10,7 +10,7 @@
             <div class="account">
                 <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="account-img" data-toggle="dropdown">
                 <div class="account_username"
-                     data-toggle="dropdown">{{Auth::user()->first_name}} {{Auth::user()->last_name}}</div>
+                     data-toggle="dropdown"><h6>{{Auth::user()->first_name}} {{Auth::user()->last_name}}</h6></div>
                 <div class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 9 6"
                          class="account_dropdown_btn">
