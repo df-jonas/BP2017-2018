@@ -1,8 +1,5 @@
 $(document).ready(function () {
 
-    //console.log('nav script ready');
-    //menu aanpassen bij pagina resize
-
     //main menu hamburger click
     $('#page-header .hamburger, #platform-header .hamburger').click(function () {
         console.log("open menu");
@@ -35,14 +32,4 @@ $(document).ready(function () {
             scrollTop: $($.attr(this, 'href')).offset().top
         }, 500);
     });
-
-
-    //dropdown account in nav
-    /*
-    $('.account').click(function () {
-        $('.dropdown-content').toggle();
-    })
-    */
-
-
 });

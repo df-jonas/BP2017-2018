@@ -20,6 +20,7 @@
 
 body {
   overflow-x: hidden;
+  margin: 0 auto;
 }
 
 .container {
@@ -79,7 +80,8 @@ h3 {
   color: #ffffff;
 }
 
-h4 {
+h4,
+h5 {
   font-size: 20px;
   font-weight: normal;
   font-style: normal;
@@ -88,6 +90,10 @@ h4 {
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
+}
+
+h5 {
+  font-size: 18px;
 }
 
 p {
@@ -150,6 +156,10 @@ a:active {
   margin: 0 !important;
 }
 
+no-margin-top {
+  margin-top: 0 !important;
+}
+
 .no-padding {
   padding: 0 !important;
 }
@@ -165,6 +175,14 @@ a:active {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.vertical-center {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 
 .round-img {
@@ -211,7 +229,7 @@ a:active {
 .login.download-button:hover,
 #login-page .login-box .login.action-button:hover {
   background: #4D6A50;
-  color: #ffffff;
+  color: #ffffff !important;
   -webkit-transition: background-color 100ms linear;
   transition: background-color 100ms linear;
 }
@@ -225,28 +243,52 @@ a:active {
   color: #ffffff;
   border: none;
   text-align: center;
+  line-height: 40px;
   float: right;
   margin: 3% 0 3% 0;
 }
 
-.download-button a {
+.download-button {
+  color: white;
+}
+
+.download-button:visited {
+  color: white;
+}
+
+.download-button:hover {
+  color: white;
+}
+
+.download-button:active,
+.download-button:focus {
+  color: white;
+}
+
+.download-button a,
+.download-button a:hover {
   cursor: pointer;
 }
 
-.download-button a {
-  color: white;
-}
-
-.download-button a:visited {
-  color: white;
-}
-
+.download-button a,
 .download-button a:hover {
   color: white;
 }
 
+.download-button a:visited,
+.download-button a:hover:visited {
+  color: white;
+}
+
+.download-button a:hover,
+.download-button a:hover:hover {
+  color: white;
+}
+
 .download-button a:active,
-.download-button a:focus {
+.download-button a:focus,
+.download-button a:hover:active,
+.download-button a:hover:focus {
   color: white;
 }
 
@@ -258,11 +300,13 @@ a:active {
 
 #page-header,
 #platform-header {
-  height: 80px;
+  height: auto;
   width: 100%;
   background-color: #ffffff;
   padding: 1%;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 100;
 }
 
 #page-header img.logo,
@@ -275,8 +319,11 @@ a:active {
   padding: 1% 0 1% 0;
 }
 
+.slicknav_menu {
+  display: none;
+}
+
 #page-header {
-  position: fixed !important;
   top: 0;
   left: 0;
   z-index: 999;
@@ -291,6 +338,7 @@ a:active {
 }
 
 #page-header .links {
+  float: right;
   list-style-type: none;
   text-align: right;
 }
@@ -317,6 +365,34 @@ a:active {
 
 #page-header .links li.register:hover {
   opacity: 0.9;
+}
+
+.breadcrumb-banner {
+  height: 35vh;
+  position: relative;
+}
+
+.breadcrumb-banner .background-image {
+  background-image: url("/img/backgrounds/alexis-brown-82988.jpg");
+  background-size: cover;
+  background-position: center;
+  display: block;
+  filter: blur(6.5px);
+  -webkit-filter: blur(6.5px);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.breadcrumb-banner .inner-content {
+  z-index: 2;
+}
+
+.breadcrumb-banner .inner-content h1 {
+  text-align: center;
+  color: #ffffff;
 }
 
 /*Mobile navigation*/
@@ -448,6 +524,7 @@ a:active {
 .call-to-action button {
   background-color: #ffffff !important;
   color: #4D6A50 !important;
+  margin-bottom: 1em;
 }
 
 .call-to-action button:hover {
@@ -458,8 +535,6 @@ a:active {
 /*About*/
 
 #about-banner {
-  height: auto;
-  margin-top: 80px;
   background: #4D6A50;
   padding: 2%;
   color: #ffffff;
@@ -473,6 +548,7 @@ a:active {
 
 #about-banner p {
   text-align: justify;
+  color: #ffffff;
 }
 
 #about-quote {
@@ -801,7 +877,7 @@ footer a:focus {
 }
 
 footer #mce-EMAIL {
-  width: 50% !important;
+  width: 60% !important;
   float: left !important;
   border: none !important;
   background-color: #505457 !important;
@@ -809,11 +885,37 @@ footer #mce-EMAIL {
 }
 
 footer #mc-embedded-subscribe {
-  width: 20% !important;
+  width: 35% !important;
   margin-left: 2.5% !important;
   float: left !important;
   text-align: center !important;
   background: #4D6A50 !important;
+}
+
+.cookie-consent {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: #4D6A50;
+  padding: 15px;
+  color: #ffffff;
+}
+
+.cookie-consent button {
+  color: #4D6A50;
+  border: 1px solid transparent;
+  border-radius: 0 !important;
+  margin-top: 1em;
+  padding: 5px;
+}
+
+.cookie-consent button:hover {
+  cursor: pointer;
+  background: #4D6A50;
+  border: 1px solid #ffffff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  color: #ffffff;
 }
 
 /*Custom checkboxes*/
@@ -879,6 +981,117 @@ footer #mc-embedded-subscribe {
   padding: 0 0 2px;
   position: absolute;
   pointer-events: none;
+}
+
+.sliderdiv input[type=range] {
+  -webkit-appearance: none;
+  /* Hides the slider so that custom slider can be made */
+  width: 100%;
+  /* Specific width is required for Firefox. */
+  background: transparent;
+  /* Otherwise white in Chrome */
+}
+
+.sliderdiv input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-box-shadow: 1px 1px 1px #4D6A50, 0px 0px 1px transparent;
+          box-shadow: 1px 1px 1px #4D6A50, 0px 0px 1px transparent;
+  border: none;
+  height: 24px;
+  width: 10px;
+  border-radius: 0px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -10px;
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+.sliderdiv input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #4D6A50, 0px 0px 1px transparent;
+  border: none !important;
+  height: 24px;
+  width: 10px;
+  border-radius: 0px !important;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.sliderdiv input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: none !important;
+  height: 24px;
+  width: 10px;
+  border-radius: 0px !important;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.sliderdiv input[type=range]:focus {
+  outline: none;
+  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+.sliderdiv input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.sliderdiv input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+          box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #4D6A50;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+.sliderdiv input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #4D6A50;
+}
+
+.sliderdiv input[type=range]::-moz-range-track {
+  height: 10px;
+  cursor: pointer;
+  background: #4D6A50;
+  border-radius: 0px;
+  border: none;
+}
+
+.sliderdiv input[type=range]::-ms-track {
+  height: 10px;
+  cursor: pointer;
+  background: #4D6A50;
+  border-radius: 0px;
+  border: none;
+  color: transparent;
+}
+
+.sliderdiv input[type=range]::-ms-fill-lower {
+  background: #4D6A50;
+  border: none;
+  border-radius: 0px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+.sliderdiv input[type=range]:focus::-ms-fill-lower {
+  background: #4D6A50;
+}
+
+.sliderdiv input[type=range]::-ms-fill-upper {
+  background: #4D6A50;
+  border: none;
+  border-radius: 0px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+.sliderdiv input[type=range]:focus::-ms-fill-upper {
+  background: #4D6A50;
 }
 
 /*Custom checkboxes*/
@@ -1064,10 +1277,6 @@ form.register .form-group {
     padding-top: 0.5%;
   }
 
-  #page-banner {
-    height: 90vh;
-  }
-
   footer .top {
     min-height: 15em;
     height: auto;
@@ -1102,9 +1311,7 @@ form.register .form-group {
   }
 
   #page-header .links {
-    display: none;
-    margin-top: 2%;
-    width: 100% !important;
+    margin-top: -2.85em;
     padding-left: 0;
     background: white;
   }
@@ -1117,10 +1324,28 @@ form.register .form-group {
     line-height: 2em;
   }
 
-  #page-header img.logo {
-    width: 32px;
-    height: 32px;
-    padding: 5px;
+  /* #slicknav menu */
+
+  #menu > li,
+  #menu > a {
+    display: none;
+  }
+
+  .js .slicknav_menu {
+    display: block;
+  }
+
+  .slicknav_menu {
+    display: none;
+  }
+
+  .slicknav_nav {
+    width: 100%;
+  }
+
+  .slicknav_menu {
+    display: block;
+    min-height: 3em;
   }
 
   #page-banner {
@@ -1176,10 +1401,6 @@ form.register .form-group {
 
   .call-to-action {
     height: auto;
-  }
-
-  footer .container {
-    left: 0 !important;
   }
 
   footer .top {

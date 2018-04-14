@@ -1,49 +1,51 @@
 <header id="page-header">
     <div class="row">
+        <div class="col-xs-12">
+            <div class="col-lg-6 col-md-2 col-sm-2 col-xs-2" style="z-index: 999">
+                <a href="{{ route('website-index') }}"><img class="logo" src="img/logo/favicon.png"></a>
+            </div>
 
-        <!-- logo -->
-        <div class="col-lg-6 col-md-2 col-sm-2 col-xs-12">
-            <a href="{{ route('website-index') }}"><img class="logo" src="img/logo/favicon.png"></a>
-        </div>
+        <ul id="menu" class="links col-lg-6 col-sm-10 col-xs-12">
+            <a href="{{ route('website-index') }}">
+                <li>Home</li>
+            </a>
+            <a href="{{ route('website-about') }}">
+                <li>Over UniHelp</li>
+            </a>
+            <a href="{{ route('website-how') }}">
+                <li>Hoe werkt het?</li>
+            </a>
 
-        <!-- menu -->
-        <div class="col-lg-6 col-md-10 col-sm-10 col-xs-12">
-            <ul class="links">
-                <a href="{{ route('website-index') }}">
-                    <li>Home</li>
+            @if (Auth::check())
+                <a href="{{ route('logout') }}">
+                    <li>Uitloggen</li>
                 </a>
-                <a href="{{ route('website-about') }}">
-                    <li>Over UniHelp</li>
+                <a href="{{ route('login') }}">
+                    <li class="register">Platform</li>
                 </a>
-                <a href="{{ route('website-how') }}">
-                    <li>Hoe werkt het?</li>
+            @else
+                <a href="{{ route('login') }}">
+                    <li>Inloggen</li>
                 </a>
-
-                @if (Auth::check())
-                    <a href="{{ route('logout') }}">
-                        <li>Uitloggen</li>
-                    </a>
-                    <a href="{{ route('login') }}">
-                        <li class="register">Platform</li>
-                    </a>
-                @else
-                    <a href="{{ route('login') }}">
-                        <li>Inloggen</li>
-                    </a>
-                    <a href="{{ route('register') }}">
-                        <li class="register">Registreren</li>
-                    </a>
-                @endif
-
-            </ul>
+                <a href="{{ route('register') }}">
+                    <li class="register">Registreren</li>
+                </a>
+            @endif
+        </ul>
         </div>
     </div>
 
+
+
+
     <!-- responsive menu buttons -->
+    <!--
     <div>
         <button class="hamburger">&#9776;</button>
         <button class="cross">&#735;</button>
     </div>
+    -->
 
 
 </header>
+

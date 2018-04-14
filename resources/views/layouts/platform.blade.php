@@ -19,6 +19,7 @@
     <!-- own css -->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/platform.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/slicknav.css') }}">
 
     <!-- mailchimp -->
     <link rel="stylesheet" href="{{ asset('css/mailchimp-horizontal-slim-10_7.css') }}">
@@ -59,6 +60,16 @@
 <script src="{{ URL::asset('js/nav.js') }}"></script>
 <script src="{{ URL::asset('js/main.js') }}"></script>
 <script src="{{ URL::asset('js/multistep.js') }}"></script>
+<script src="{{ URL::asset('js/jquery.slicknav.js') }}"></script>
+<script>
+    $(function(){
+        $('#account-dropdown').slicknav({
+            label: ' ',
+            duration: 200,
+            prependTo:'#account-dropdown'
+        });
+    });
+</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47689548-7"></script>
 <script>
