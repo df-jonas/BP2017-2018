@@ -20,11 +20,11 @@
 
 body {
   overflow-x: hidden;
+  margin: 0 auto;
 }
 
 .container {
   width: 85% !important;
-  max-width: 1800px;
 }
 
 /*Fonts*/
@@ -177,6 +177,14 @@ no-margin-top {
       flex-wrap: wrap;
 }
 
+.vertical-center {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
 .round-img {
   border-radius: 100%;
 }
@@ -296,7 +304,9 @@ no-margin-top {
   width: 100%;
   background-color: #ffffff;
   padding: 1%;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 100;
 }
 
 #page-header img.logo,
@@ -309,8 +319,11 @@ no-margin-top {
   padding: 1% 0 1% 0;
 }
 
+.slicknav_menu {
+  display: none;
+}
+
 #page-header {
-  position: fixed !important;
   top: 0;
   left: 0;
   z-index: 999;
@@ -325,6 +338,7 @@ no-margin-top {
 }
 
 #page-header .links {
+  float: right;
   list-style-type: none;
   text-align: right;
 }
@@ -351,6 +365,34 @@ no-margin-top {
 
 #page-header .links li.register:hover {
   opacity: 0.9;
+}
+
+.breadcrumb-banner {
+  height: 35vh;
+  position: relative;
+}
+
+.breadcrumb-banner .background-image {
+  background-image: url("/img/backgrounds/alexis-brown-82988.jpg");
+  background-size: cover;
+  background-position: center;
+  display: block;
+  filter: blur(6.5px);
+  -webkit-filter: blur(6.5px);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.breadcrumb-banner .inner-content {
+  z-index: 2;
+}
+
+.breadcrumb-banner .inner-content h1 {
+  text-align: center;
+  color: #ffffff;
 }
 
 /*Mobile navigation*/
@@ -482,6 +524,7 @@ no-margin-top {
 .call-to-action button {
   background-color: #ffffff !important;
   color: #4D6A50 !important;
+  margin-bottom: 1em;
 }
 
 .call-to-action button:hover {
@@ -492,8 +535,6 @@ no-margin-top {
 /*About*/
 
 #about-banner {
-  height: auto;
-  margin-top: 80px;
   background: #4D6A50;
   padding: 2%;
   color: #ffffff;
@@ -507,6 +548,7 @@ no-margin-top {
 
 #about-banner p {
   text-align: justify;
+  color: #ffffff;
 }
 
 #about-quote {
@@ -1243,9 +1285,7 @@ form.register .form-group {
   }
 
   #page-header .links {
-    display: none;
-    margin-top: 2%;
-    width: 100% !important;
+    margin-top: -2.85em;
     padding-left: 0;
     background: white;
   }
@@ -1258,10 +1298,28 @@ form.register .form-group {
     line-height: 2em;
   }
 
-  #page-header img.logo {
-    width: 32px;
-    height: 32px;
-    padding: 5px;
+  /* #slicknav menu */
+
+  #menu > li,
+  #menu > a {
+    display: none;
+  }
+
+  .js .slicknav_menu {
+    display: block;
+  }
+
+  .slicknav_menu {
+    display: none;
+  }
+
+  .slicknav_nav {
+    width: 100%;
+  }
+
+  .slicknav_menu {
+    display: block;
+    min-height: 3em;
   }
 
   #page-banner {
@@ -1317,10 +1375,6 @@ form.register .form-group {
 
   .call-to-action {
     height: auto;
-  }
-
-  footer .container {
-    left: 0 !important;
   }
 
   footer .top {

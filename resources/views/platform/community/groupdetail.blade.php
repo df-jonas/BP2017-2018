@@ -43,9 +43,11 @@
                                 <div class="col-lg-8 col-md-8 col-xs-8">
                                     <h5 class="title no-margin"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h5>
                                     <div class="rating col-xs-12 no-padding clearfix">
+                                        <!--
                                         <div class="col-lg-4 col-xs-3 no-padding">
                                             <i class="fa fa-comment"><span> 22</span></i>
                                         </div>
+                                        -->
                                         <div class="col-lg-4 col-xs-3 no-padding">
                                             <i class="fa fa-thumbs-up"><span> 22</span></i>
                                         </div>

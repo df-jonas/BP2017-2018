@@ -19,11 +19,12 @@
 
 body {
   overflow-x: hidden;
+  //max-width: 1800px;
+  margin: 0 auto;
 }
 
 .container {
   width: 85% !important;
-  max-width: 1800px;
 }
 
 /*Fonts*/
@@ -74,9 +75,10 @@ h4, h5 {
   color: $unihelp-white;
 }
 
-h5{
+h5 {
   font-size: 18px;
 }
+
 p {
   font-family: Raleway;
   font-size: 18px;
@@ -129,7 +131,8 @@ a:hover, a:visited, a:link, a:active {
 .no-margin {
   margin: 0 !important;
 }
-no-margin-top{
+
+no-margin-top {
   margin-top: 0 !important;
 }
 
@@ -146,6 +149,14 @@ no-margin-top{
   display: flex;
   flex-wrap: wrap;
 }
+
+.vertical-center {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
 
 .round-img {
   border-radius: 100%;
@@ -212,7 +223,8 @@ no-margin-top{
   width: 100%;
   background-color: $unihelp-white;
   padding: 1%;
-  position: relative;
+  position: sticky;
+  z-index: 100;
   img.logo {
     width: 36px;
     height: 36px;
@@ -223,9 +235,13 @@ no-margin-top{
   padding: 1% 0 1% 0;
 }
 
+.slicknav_menu {
+  display: none;
+}
+
 #page-header {
   //sticky
-  position: fixed !important;
+  //position: fixed !important;
   top: 0;
   left: 0;
   z-index: 999;
@@ -234,7 +250,9 @@ no-margin-top{
     color: $unihelp-black;
     text-decoration: none;
   }
+
   .links {
+    float: right;
     list-style-type: none;
     text-align: right;
     li {
@@ -256,6 +274,31 @@ no-margin-top{
           opacity: 0.9;
         }
       }
+    }
+  }
+}
+
+.breadcrumb-banner{
+  height: 35vh;
+  position: relative;
+  .background-image{
+    background-image: url("/img/backgrounds/alexis-brown-82988.jpg");
+    background-size: cover;
+    background-position: center;
+    display: block;
+    filter: blur(6.5px);
+    -webkit-filter: blur(6.5px);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+  .inner-content{
+    z-index: 2;
+    h1{
+      text-align: center;
+      color: $unihelp-white;
     }
   }
 }
@@ -373,6 +416,7 @@ no-margin-top{
   button {
     background-color: $unihelp-white !important;
     color: $unihelp-green !important;
+    margin-bottom: 1em;
     &:hover {
       background: lightgray !important;
       color: $unihelp-green !important;
@@ -382,8 +426,6 @@ no-margin-top{
 
 /*About*/
 #about-banner {
-  height: auto;
-  margin-top: 80px;
   background: $unihelp-green;
   padding: 2%;
   color: $unihelp-white;
@@ -394,6 +436,7 @@ no-margin-top{
   }
   p {
     text-align: justify;
+    color: $unihelp-white;
   }
 }
 
@@ -718,8 +761,7 @@ footer {
   }
 }
 
-
-.sliderdiv{
+.sliderdiv {
   input[type=range] {
     -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
     width: 100%; /* Specific width is required for Firefox. */
@@ -740,20 +782,20 @@ footer {
 
   input[type=range]::-moz-range-thumb {
     box-shadow: 1px 1px 1px $unihelp-green, 0px 0px 1px transparent;
-    border: none!important;
+    border: none !important;
     height: 24px;
     width: 10px;
-    border-radius: 0px!important;
+    border-radius: 0px !important;
     background: #ffffff;
     cursor: pointer;
   }
 
   input[type=range]::-ms-thumb {
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: none!important;
+    border: none !important;
     height: 24px;
     width: 10px;
-    border-radius: 0px!important;
+    border-radius: 0px !important;
     background: #ffffff;
     cursor: pointer;
   }
@@ -889,7 +931,6 @@ footer {
   transform: rotate(45deg);
 }
 
-
 /*Multistep form*/
 #msform fieldset {
   border: 0 none;
@@ -962,7 +1003,7 @@ footer {
 
 /*Forms*/
 .form-group {
-  margin-bottom: 20px!important;
+  margin-bottom: 20px !important;
   display: block;
 }
 
@@ -974,7 +1015,7 @@ form input, form textarea {
   border-radius: 0 !important;
 }
 
-form textarea{
+form textarea {
   max-width: 100%;
   min-width: 100%;
 }
@@ -1016,15 +1057,16 @@ form.register .form-group {
     margin-top: 48px;
   }
   /*responsive menu*/
+
   #page-header {
     height: auto;
     .hamburger {
       display: block;
     }
     .links {
-      display: none;
-      margin-top: 2%;
-      width: 100% !important;
+      //display: none;
+      margin-top: -2.85em;
+      //width: 100% !important;
       padding-left: 0;
       background: white;
       li {
@@ -1035,11 +1077,27 @@ form.register .form-group {
         line-height: 2em;
       }
     }
-    img.logo {
-      width: 32px;
-      height: 32px;
-      padding: 5px;
-    }
+
+  }
+
+  /* #slicknav menu */
+  #menu > li, #menu > a {
+    display: none;
+  }
+
+  .js .slicknav_menu {
+    display: block;
+  }
+  .slicknav_menu {
+    display: none;
+  }
+
+  .slicknav_nav {
+    width: 100%;
+  }
+  .slicknav_menu {
+    display: block;
+    min-height: 3em;
   }
 
   #page-banner {
@@ -1100,10 +1158,6 @@ form.register .form-group {
     height: auto;
   }
   footer {
-
-    .container {
-      left: 0 !important;
-    }
     .top {
       min-height: 30em;
       height: auto;
@@ -1145,7 +1199,5 @@ form.register .form-group {
   }
 
 }
-
-
 
 

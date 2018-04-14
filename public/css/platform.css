@@ -60,14 +60,6 @@ div.container {
      object-fit: cover;
 }
 
-.vertical-center {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-}
-
 .wijzigen {
   font-family: HelveticaNeue;
   margin-top: 10px;
@@ -167,19 +159,6 @@ div.container {
   position: relative;
 }
 
-#platform-header .account:hover > .dropdown-menu {
-  display: block;
-}
-
-#platform-header .account .account-img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 #platform-header .account .account_username {
   margin-left: 8px;
   margin-right: 6px;
@@ -197,21 +176,21 @@ div.container {
 }
 
 #platform-header #account-dropdown {
-  width: 250px;
+  width: 200px;
   height: auto;
-  margin-left: -27.5%;
-  top: 3.75em;
+  margin-left: -30%;
+  top: 3em;
   position: absolute;
   padding: 0;
   -webkit-box-shadow: 2px #333a40;
           box-shadow: 2px #333a40;
+  border-radius: 3px;
 }
 
 #platform-header #account-dropdown li {
+  cursor: pointer;
   height: 50px;
   line-height: 50px;
-  border: 0.5px solid #4D6A50;
-  border-top: none;
 }
 
 #platform-header #account-dropdown li:hover {
@@ -235,6 +214,7 @@ div.container {
   -webkit-box-shadow: 0px 1px 5px #4D6A50;
           box-shadow: 0px 1px 5px #4D6A50;
   height: 3em;
+  margin-top: -3.5px;
   margin-bottom: 3.5em;
 }
 
@@ -1114,19 +1094,60 @@ form .form-group {
     display: none;
   }
 
-  /*responsive menu*/
-
-  #platform-header {
-    height: auto;
-    position: relative;
+  .dropdown {
+    padding: 0 !important;
   }
+
+  #account-dropdown {
+    top: 0 !important;
+    right: 0 !important;
+    width: 400px !important;
+    position: absolute;
+    background: transparent;
+    width: 100vw !important;
+    margin-top: -3.2em;
+  }
+
+  /* #slicknav menu */
+
+  #account-dropdown > li,
+  #account-dropdown > a {
+    display: none;
+  }
+
+  .js .slicknav_menu {
+    display: block;
+  }
+
+  .slicknav_menu {
+    display: none;
+    padding: 0 !important;
+  }
+
+  .slicknav_nav {
+    width: 100%;
+    background: #4D6A50;
+  }
+
+  .slicknav_menu {
+    display: block;
+    text-align: center;
+  }
+
+  /*responsive menu*/
 
   #platform-header .account {
     float: left;
   }
 
-  #platform-header .logo {
+  #platform-header .account .account_username,
+  #platform-header .account img,
+  #platform-header .account .dropdown-toggle {
     display: none;
+  }
+
+  #platform-header .account .dropdown-menu {
+    display: block;
   }
 
   #platform-header .account_username,
@@ -1136,25 +1157,6 @@ form .form-group {
 
   #platform-header .hamburger {
     display: block;
-  }
-
-  #platform-header .sub {
-    display: none;
-    margin-top: 2%;
-    width: 100% !important;
-    padding-left: 0;
-  }
-
-  #platform-header .sub li {
-    width: 100%;
-    height: 3em;
-    margin: 0 !important;
-    text-align: center;
-    line-height: 2em;
-  }
-
-  .subheader {
-    display: none;
   }
 
   .container {
