@@ -183,7 +183,7 @@ no-margin-top {
   &.login {
     &:hover {
       background: $unihelp-green;
-      color: $unihelp-white;
+      color: $unihelp-white!important;
       -webkit-transition: background-color 100ms linear;
       -ms-transition: background-color 100ms linear;
       transition: background-color 100ms linear;
@@ -695,6 +695,30 @@ footer {
     float: left !important;
     text-align: center !important;
     background: #4D6A50 !important;
+  }
+}
+
+
+.cookie-consent{
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: $unihelp-green;
+  padding: 15px;
+  color: $unihelp-white;
+  button{
+    color: $unihelp-green;
+    border: 1px solid transparent;
+    border-radius: 0!important;
+    margin-top: 1em;
+    padding: 5px;
+    &:hover{
+      cursor: pointer;
+      background: $unihelp-green;
+      border: 1px solid $unihelp-white;
+      transition: all 0.2s ease;
+      color: $unihelp-white;
+    }
   }
 }
 

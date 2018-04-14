@@ -229,7 +229,7 @@ no-margin-top {
 .login.download-button:hover,
 #login-page .login-box .login.action-button:hover {
   background: #4D6A50;
-  color: #ffffff;
+  color: #ffffff !important;
   -webkit-transition: background-color 100ms linear;
   transition: background-color 100ms linear;
 }
@@ -890,6 +890,32 @@ footer #mc-embedded-subscribe {
   float: left !important;
   text-align: center !important;
   background: #4D6A50 !important;
+}
+
+.cookie-consent {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: #4D6A50;
+  padding: 15px;
+  color: #ffffff;
+}
+
+.cookie-consent button {
+  color: #4D6A50;
+  border: 1px solid transparent;
+  border-radius: 0 !important;
+  margin-top: 1em;
+  padding: 5px;
+}
+
+.cookie-consent button:hover {
+  cursor: pointer;
+  background: #4D6A50;
+  border: 1px solid #ffffff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  color: #ffffff;
 }
 
 /*Custom checkboxes*/
