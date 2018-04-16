@@ -1,23 +1,4 @@
 $(document).ready(function () {
-
-    //main menu hamburger click
-    $('#page-header .hamburger, #platform-header .hamburger').click(function () {
-        console.log("open menu");
-        $("#page-header .links, #platform-header .sub").slideToggle("fast", function () {
-            $("#page-header .cross, #platform-header .cross").toggle();
-            $("#page-header .hamburger, #platform-header .hamburger").toggle();
-        })
-    });
-
-    //main menu cross click
-    $('#page-header .cross, #platform-header .cross').click(function () {
-        //console.log("close menu");
-        $("#page-header .links, #platform-header .sub").slideToggle("fast", function () {
-            $("#page-header .cross, #platform-header .cross").toggle();
-            $("#page-header .hamburger, #platform-header .hamburger").toggle();
-        })
-    });
-
     //banner scroll down
     $("#page-banner .scroll").click(function () {
         $("html, body").animate({scrollTop: 720}, 600);

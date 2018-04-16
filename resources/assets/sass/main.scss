@@ -19,7 +19,7 @@
 
 body {
   overflow-x: hidden;
-  //max-width: 1800px;
+  max-width: 2000px;
   margin: 0 auto;
 }
 
@@ -91,7 +91,7 @@ p {
 }
 
 label, select {
-  font-family: HelveticaNeue;
+  /*font-family: HelveticaNeue;*/
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
@@ -286,8 +286,6 @@ no-margin-top {
     background-size: cover;
     background-position: center;
     display: block;
-    filter: blur(6.5px);
-    -webkit-filter: blur(6.5px);
     height: 100%;
     left: 0;
     position: absolute;
@@ -299,6 +297,7 @@ no-margin-top {
     h1{
       text-align: center;
       color: $unihelp-white;
+      text-shadow: 1px 1px $unihelp-asphalt;
     }
   }
 }

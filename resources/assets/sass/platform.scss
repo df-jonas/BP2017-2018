@@ -121,9 +121,7 @@ div.container {
       }
     }
   }
-  .hamburger, .cross {
-    color: $unihelp-white;
-  }
+
   /*Menu*/
   .account {
     display: -webkit-box;
@@ -156,13 +154,15 @@ div.container {
   }
   #account-dropdown {
     width: 200px;
-    height: auto;
+    //height: 100%;
     margin-left: -30%;
     top: 3em;
     position: absolute;
-    padding: 0;
+    //padding: 0;
     box-shadow: 2px $unihelp-asphalt;
     border-radius: 3px;
+    padding-bottom: 0;
+    margin-bottom: 0;
     li {
       cursor: pointer;
       height: 50px;
@@ -364,6 +364,17 @@ div.container {
   .date {
     color: $unihelp-black;
     text-align: left;
+
+  }
+  &.new{
+    cursor: pointer;
+    .reminder{
+      background: $unihelp-green;
+    }
+    .date{
+      text-align: center;
+      line-height: 40px;
+    }
   }
   .reminder {
     height: 45px;
@@ -1023,6 +1034,7 @@ form .form-group {
     background: transparent;
     width: 100vw!important;
     margin-top: -3.2em;
+    height: 100%;
   }
 
   /* #slicknav menu */
@@ -1062,11 +1074,6 @@ form .form-group {
     .account_username, .account_dropdown_btn {
       display: none;
     }
-    .hamburger {
-      display: block;
-    }
-
-
   }
 
 
@@ -1097,6 +1104,11 @@ form .form-group {
 }
 
 @media only screen and (max-width: 480px) {
+
+  .subheader{
+    height: 7em;
+    text-align: center;
+  }
 
   .sidebar {
     .stats {
