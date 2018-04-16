@@ -21,21 +21,16 @@
                 <article class="overview item user-owned">
                     <header><i class="fa fa-upload"></i> Mijn posts</header>
                     <div class="padding">
-                        @foreach($myposts as $post)
+                        @foreach($myposts as $mypost)
                             <div class="row flex">
                                 <div class="icon col-lg-2 col-md-2 col-xs-2">
-                                    <img src="{{ asset('img/avatars/' . $post->user->image )}}" class="account-img round-img">
+                                    <img src="{{ asset('img/avatars/' . $mypost->user->image )}}" class="account-img round-img">
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-xs-8">
-                                    <h5 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h5>
+                                    <h5 class="title no-margin"><a href="{{ $mypost->generateurl() }}">{{ $mypost->title }}</a></h5>
                                     <div class="rating col-xs-12 no-padding clearfix">
-                                        <!--
                                         <div class="col-lg-4 col-xs-3 no-padding">
-                                            <i class="fa fa-comment"><span> 22</span></i>
-                                        </div>
-                                        -->
-                                        <div class="col-lg-4 col-xs-3 no-padding">
-                                            <i class="fa fa-thumbs-up"><span> 22</span></i>
+                                            <span class="fa fa-thumbs-up"></span> {{ $mypost->votesum() }}
                                         </div>
                                     </div>
                                 </div>

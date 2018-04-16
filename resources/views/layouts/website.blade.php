@@ -6,7 +6,7 @@
     <!-- mobile responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>UniHelp | Home</title>
+    <title>UniHelp | @yield('pagetitle')</title>
 
 
     <!-- favicon -->

@@ -4,7 +4,7 @@
 
     <meta charset="UTF-8">
 
-    <title>UniHelp | Platform</title>
+    <title>UniHelp | @yield('pagetitle')</title>
 
     <!-- mobile responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
