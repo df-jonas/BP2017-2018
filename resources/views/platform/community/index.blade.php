@@ -6,7 +6,7 @@
     <div class="container">
         <div class="table">
             <div class="sidebar">
-                <!-- TODO Enkel voor admins nieuwe groep maken
+                <!-- TODO [JONAS] Only admins should be able to create a new group.
                     <article class="item clearfix">
                         <header>Nieuw bestand</header>
                         <div>
@@ -19,7 +19,8 @@
                     <header><i class="fa fa-search"></i> Zoeken</header>
                     <div class="inner-addon left-addon">
                         <!--<i class="glyphicon glyphicon-search"></i>-->
-                        <input type="text" id="search" name="search" class="form-control filterlistener" placeholder="zoekterm"/>
+                        <input type="text" id="search" name="search" class="form-control filterlistener"
+                               placeholder="zoekterm"/>
                     </div>
                 </article>
                 <!-- end Search form -->
@@ -31,17 +32,18 @@
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="sliderdiv">
                                 <label for="rangepop">Populariteit</label>
-                                <input id="rangepop" class="filterlistener" name="popularity" type="range" min="0" max="100">
+                                <input id="rangepop" class="filterlistener" name="popularity" type="range" min="0"
+                                       max="100">
                             </div>
                         </div>
-                        
+
                         <div class="form-group clearfix">
                             <label>Type groep</label>
                             @foreach($categories as $category)
                                 @foreach($category->groups as $group)
                                     <label class="checkbox-container col-xs-12">{{ $group->name }}
-                                        <!-- TODO Jonas ik heb checked er bij gezet, is handig als een filter standaard alle opties al toont by default -->
-                                        <input type="checkbox" name="category[]" value="{{ $group->id }}" class="filterlistener" checked>
+                                        <input type="checkbox" name="category[]" value="{{ $group->id }}"
+                                               class="filterlistener" checked>
                                         <span class="checkmark"></span>
                                     </label>
                                 @endforeach
@@ -56,21 +58,18 @@
                 <article class="overview item user-owned">
                     <header><i class="fa fa-upload"></i> Mijn posts</header>
                     <div class="padding">
-                        @foreach($myposts as $post)
+                        @foreach($myposts as $mypost)
                             <div class="row flex">
                                 <div class="icon col-lg-2 col-md-2 col-xs-2">
-                                    <img src="{{ asset('img/avatars/' . $post->user->image )}}" class="account-img round-img">
+                                    <img src="{{ asset('img/avatars/' . $mypost->user->image )}}"
+                                         class="account-img round-img">
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-xs-8">
-                                    <h5 class="title no-margin"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h5>
+                                    <h5 class="title no-margin"><a
+                                                href="{{ $mypost->generateurl() }}">{{ $mypost->title }}</a></h5>
                                     <div class="rating col-xs-12 no-padding clearfix">
-                                        <!--
                                         <div class="col-lg-4 col-xs-3 no-padding">
-                                            <i class="fa fa-comment"><span> 22</span></i>
-                                        </div>
-                                        -->
-                                        <div class="col-lg-4 col-xs-3 no-padding">
-                                            <i class="fa fa-thumbs-up"><span> 22</span></i>
+                                            <span class="fa fa-thumbs-up"></span> {{ $mypost->votesum() }}
                                         </div>
                                     </div>
                                 </div>
@@ -85,7 +84,7 @@
 
                 <!-- Community stats -->
                 <article class="item stats">
-                    <header><i class="fa fa-line-chart"></i> Statistieken </header>
+                    <header><i class="fa fa-line-chart"></i> Statistieken</header>
                     <div class="padding">
                         <div class="row flex">
                             <div class="col-xs-10">
@@ -137,10 +136,12 @@
                                     <div class="padding">
                                         <div class="row flex">
                                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
-                                                <img class="account-img" src="{{asset('img/icons/' . $group->icon->path)}}">
+                                                <img class="account-img"
+                                                     src="{{asset('img/icons/' . $group->icon->path)}}">
                                             </div>
                                             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-10">
-                                                <h5 class="title no-margin"><a href="{{ $group->url() }}">{{ $group->name }}</a></h5>
+                                                <h5 class="title no-margin"><a
+                                                            href="{{ $group->url() }}">{{ $group->name }}</a></h5>
                                                 <div class="row">
                                                     <div class="col-xs-12">
                                                         @if($group->postcount() == 1)
@@ -151,7 +152,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="vertical-center col-lg-6 col-md-6 col-sm-6 col-xs-0 hide-mobile" style="text-align: right;">
+                                            <div class="vertical-center col-lg-6 col-md-6 col-sm-6 col-xs-0 hide-mobile"
+                                                 style="text-align: right;">
                                                 <h6 class="bold">{{ $group->shortdesc }}</h6>
                                                 <h6 class="update">Laatste update: {{ $group->lastupdate() }}</h6>
                                             </div>

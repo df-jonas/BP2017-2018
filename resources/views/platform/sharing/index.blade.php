@@ -65,7 +65,7 @@
                                 </label>
                             @endforeach
                         </div>
-                        <!-- TODO bestands types ophalen (samenvatting; notities) -->
+                        <!-- TODO [JONAS] Getting file types asynchronous -->
                         <label>Type bestand</label>
                         <br>
                         <div class="form-group clearfix">

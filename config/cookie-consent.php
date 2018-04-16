@@ -11,5 +11,5 @@ return [
      * The name of the cookie in which we store if the user
      * has agreed to accept the conditions.
      */
-    'cookie_name' => 'laravel_cookie_consent',
+    'cookie_name' => 'unihelp_cookie_consent',
 ];

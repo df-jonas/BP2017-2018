@@ -72,7 +72,7 @@
                             </div>
                         </li>
 
-                        <!-- TODO jonas data request id moet de id zijn van database tutoring request -->
+                        <!-- TODO [JONAS] data-request-id attribute must be equal to the id of the tutoring request in the database. -->
                         <li class="people-list-active" data-request-id="1">
                             <div class="padding vertical-center">
                                 <div class="table">
