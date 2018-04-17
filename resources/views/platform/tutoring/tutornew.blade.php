@@ -40,7 +40,7 @@
                 <div class="files">
 
                     <!-- multistep form -->
-                    <form id="msform" class="clearfix" method="post" enctype="multipart/form-data"
+                    <form id="msform" class="col-xs-12 no-padding clearfix" method="post" enctype="multipart/form-data"
                           action="{{route('sharing-new')}}">
 
                     {{ csrf_field() }}

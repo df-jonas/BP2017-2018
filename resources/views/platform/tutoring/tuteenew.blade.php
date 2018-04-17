@@ -9,7 +9,7 @@
             <!-- Sidebar -->
             <div class="sidebar">
 
-                <article class="item">
+                <article class="item file new clearfix">
                     <header>Informatie</header>
                     <div class="padding">
                         <ul class="highlight">
@@ -40,7 +40,7 @@
                 <div class="files">
 
                     <!-- multistep form -->
-                    <form id="msform" class="clearfix" method="post" enctype="multipart/form-data"
+                    <form id="msform" class="col-xs-12 no-padding clearfix" method="post" enctype="multipart/form-data"
                           action="{{route('sharing-new')}}">
 
                     {{ csrf_field() }}

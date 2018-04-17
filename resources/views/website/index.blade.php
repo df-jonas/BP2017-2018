@@ -13,10 +13,15 @@
             <section class="buttons col-sm-8 col-sm-push-2">
                 <div class="row">
                     <a href="{{ route('login')}}">
-                        <button type="button" class="action-button  left register col-lg-6 col-sm-6 col-xs-12 col-xs-push-0">Registreren</button>
+                        <button type="button"
+                                class="action-button  left register col-lg-6 col-sm-6 col-xs-12 col-xs-push-0">
+                            Registreren
+                        </button>
                     </a>
                     <a href="{{ route('login')}}">
-                        <button type="button" class="action-button right login col-lg-6 col-sm-6  col-xs-12 col-xs-push-0">Inloggen</button>
+                        <button type="button"
+                                class="action-button right login col-lg-6 col-sm-6  col-xs-12 col-xs-push-0">Inloggen
+                        </button>
                     </a>
                 </div>
             </section>
@@ -108,23 +113,29 @@
 
 
     <!-- call to action slogan -->
-    <section class="call-to-action col-xs-12">
-        <h2>Word nu lid, geniet als student van tal van voordelen!</h2>
-        <div class="col-lg-6 col-lg-push-3 col-xs-12">
-            <section class="buttons col-sm-8 col-sm-push-2">
-                <div class="row">
-                    <a href="{{ route('login')}}">
-                        <button type="button" class="action-button  left login col-lg-6 col-sm-6 col-xs-12 col-xs-push-0">Registreren</button>
-                    </a>
-                    <a href="{{ route('login')}}">
-                        <button type="button" class="action-button right login col-lg-6 col-sm-6  col-xs-12 col-xs-push-0">Inloggen</button>
-                    </a>
-                </div>
-            </section>
-
-        </div>
-
-    </section>
+    <div class="row">
+        <section class="call-to-action col-xs-12">
+            <h2>Word nu lid, geniet als student van tal van voordelen!</h2>
+            <div class="col-lg-6 col-lg-push-3 col-xs-12">
+                <section class="buttons col-sm-8 col-sm-push-2">
+                    <div class="row">
+                        <a href="{{ route('login')}}">
+                            <button type="button"
+                                    class="action-button  left login col-lg-6 col-sm-6 col-xs-12 col-xs-push-0">
+                                Registreren
+                            </button>
+                        </a>
+                        <a href="{{ route('login')}}">
+                            <button type="button"
+                                    class="action-button right login col-lg-6 col-sm-6  col-xs-12 col-xs-push-0">
+                                Inloggen
+                            </button>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </div>
 
 
     <!-- footer -->

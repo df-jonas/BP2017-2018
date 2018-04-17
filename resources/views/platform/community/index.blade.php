@@ -68,8 +68,8 @@
                                     <h5 class="title no-margin"><a
                                                 href="{{ $mypost->generateurl() }}">{{ $mypost->title }}</a></h5>
                                     <div class="rating col-xs-12 no-padding clearfix">
-                                        <div class="col-lg-4 col-xs-3 no-padding">
-                                            <span class="fa fa-thumbs-up"></span> {{ $mypost->votesum() }}
+                                        <div class="col-xs-12 no-padding">
+                                            <span class="fa fa-thumbs-up"></span> {{ $mypost->votesum() }} likes
                                         </div>
                                     </div>
                                 </div>

@@ -138,11 +138,6 @@ div.container {
   color: #ffffff;
 }
 
-#platform-header .hamburger,
-#platform-header .cross {
-  color: #ffffff;
-}
-
 #platform-header .account {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -177,14 +172,14 @@ div.container {
 
 #platform-header #account-dropdown {
   width: 200px;
-  height: auto;
   margin-left: -30%;
   top: 3em;
   position: absolute;
-  padding: 0;
   -webkit-box-shadow: 2px #333a40;
           box-shadow: 2px #333a40;
   border-radius: 3px;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 #platform-header #account-dropdown li {
@@ -422,6 +417,19 @@ div.container {
 .overview-calendar .date {
   color: #000000;
   text-align: left;
+}
+
+.overview-calendar.new {
+  cursor: pointer;
+}
+
+.overview-calendar.new .reminder {
+  background: #4D6A50;
+}
+
+.overview-calendar.new .date {
+  text-align: center;
+  line-height: 40px;
 }
 
 .overview-calendar .reminder {
@@ -1106,6 +1114,7 @@ form .form-group {
     background: transparent;
     width: 100vw !important;
     margin-top: -3.2em;
+    height: 100%;
   }
 
   /* #slicknav menu */
@@ -1155,10 +1164,6 @@ form .form-group {
     display: none;
   }
 
-  #platform-header .hamburger {
-    display: block;
-  }
-
   .container {
     width: 100% !important;
   }
@@ -1183,6 +1188,11 @@ form .form-group {
 }
 
 @media only screen and (max-width: 480px) {
+  .subheader {
+    height: 7em;
+    text-align: center;
+  }
+
   .sidebar .stats {
     display: none;
   }

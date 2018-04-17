@@ -15,7 +15,8 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="col-xs-12 modal-body clearfix">
-                        <div class="col-lg-4">
+                        <div class="col-sm-4 col-xs-12 clearfix">
+                            <a href="{{ route('tutoring-tutee-new') }}">
                             <article class="item keuze no-padding col-xs-12">
                                 <header>Vind een tutor</header>
                                 <div class="padding">
@@ -23,9 +24,11 @@
                                     <!-- <h4>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</h4> -->
                                 </div>
                             </article>
+                            </a>
                         </div>
 
-                        <div class="col-lg-4">
+                        <div class="col-sm-4 col-xs-12 c clearfix">
+                             <a href="{{route(('tutoring-tutor-new'))}}">
                             <article class="item keuze no-padding col-xs-12">
                                 <header>Wordt tutor</header>
                                 <div class="padding">
@@ -33,9 +36,11 @@
                                     <!-- <h4>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</h4> -->
                                 </div>
                             </article>
+                             </a>
                         </div>
 
-                        <div class="col-lg-4">
+                        <div class="col-sm-4 col-xs-12 clearfix">
+                             <a href="{{route('tutoring-help')}}">
                             <article class="item keuze no-padding col-xs-12">
                                 <header>Hoe werkt het?</header>
                                 <div class="padding">
@@ -43,6 +48,7 @@
                                     <!-- <h4>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</h4> -->
                                 </div>
                             </article>
+                             </a>
                         </div>
                     </div>
                     <div class="modal-footer padding">
