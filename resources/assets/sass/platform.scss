@@ -35,14 +35,12 @@ div.container {
   width: 80%;
 }
 
-
 .row.flex {
   display: flex;
   flex-wrap: wrap;
 }
 
-
-.group-img{
+.group-img {
   width: 42px;
   height: 42px;
   object-fit: cover;
@@ -52,13 +50,6 @@ div.container {
   width: 32px;
   height: 32px;
   object-fit: cover;
-}
-
-.vertical-center {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translate(0, -50%);
 }
 
 .wijzigen {
@@ -75,7 +66,23 @@ div.container {
   cursor: pointer;
 }
 
-.modal h4{
+.go-back {
+  a{
+    color: $unihelp-brown;
+  }
+  i {
+    cursor: pointer;
+    span {
+      font-family: Raleway;
+
+    }
+  }
+  .padding {
+    padding: 7.5px;
+  }
+}
+
+.modal h4 {
   color: $unihelp-green;
 }
 
@@ -114,9 +121,7 @@ div.container {
       }
     }
   }
-  .hamburger, .cross {
-    color: $unihelp-white;
-  }
+
   /*Menu*/
   .account {
     display: -webkit-box;
@@ -132,13 +137,6 @@ div.container {
     flex-direction: row;
     float: right;
     position: relative;
-    .account-img {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background-color: $unihelp-white;
-      object-fit: cover;
-    }
     .account_username {
       margin-left: 8px;
       margin-right: 6px;
@@ -155,18 +153,20 @@ div.container {
     }
   }
   #account-dropdown {
-    width: 250px;
-    height: auto;
-    margin-left: -27.5%;
-    top: 3.75em;
+    width: 200px;
+    //height: 100%;
+    margin-left: -30%;
+    top: 3em;
     position: absolute;
-    padding: 0;
+    //padding: 0;
     box-shadow: 2px $unihelp-asphalt;
+    border-radius: 3px;
+    padding-bottom: 0;
+    margin-bottom: 0;
     li {
+      cursor: pointer;
       height: 50px;
       line-height: 50px;
-      border: 0.5px solid $unihelp-green;
-      border-top: none;
       &:hover {
         background: $unihelp-green !important;
       }
@@ -183,12 +183,12 @@ div.container {
   }
 }
 
-
 /*Subheader*/
 .subheader {
   background: $unihelp-white;
   box-shadow: 0px 1px 5px $unihelp-green;
   height: 3em;
+  margin-top: -3.5px;
   margin-bottom: 3.5em;
   ul {
     list-style-type: none;
@@ -200,7 +200,7 @@ div.container {
       line-height: 3em;
       cursor: pointer;
       color: $unihelp-brown;
-      &:hover, &.active {
+      &:hover, &.uh-active {
         border-bottom: 3px solid $unihelp-brown;
         a {
           color: $unihelp-brown;
@@ -217,10 +217,17 @@ div.container {
         display: inline-block;
         padding-right: 0.85em;
       }
+      .badge{
+        background: $unihelp-brown;
+        padding: 5px;
+        width: 20px;
+        height: 20px;
+        line-height: 10px;
+        text-align: center;
+      }
     }
   }
 }
-
 
 /*table layout*/
 .table {
@@ -244,7 +251,6 @@ div.container {
   }
 }
 
-
 /*Tutoring*/
 .table.tutoring {
   display: table;
@@ -260,7 +266,7 @@ div.container {
         border: 1px solid $unihelp-white;
         height: 80px;
         position: relative;
-        &:hover, &.active {
+        &:hover, &.people-list-active {
           cursor: pointer;
           background: $unihelp-white;
           color: $unihelp-green;
@@ -269,6 +275,36 @@ div.container {
           text-align: center;
           height: 55px;
           line-height: 85px;
+        }
+        .picture {
+          display: table-cell;
+          width: 42px;
+        }
+        .info {
+          display: table-cell;
+          padding-left: 16px;
+          vertical-align: middle;
+          padding-top: 4px;
+          h6 {
+            margin: 5px 0;
+          }
+
+          h6.bold {
+            margin: 0;
+          }
+        }
+        &.new {
+          .add {
+            background: $unihelp-white;
+            color: $unihelp-green;
+            text-align: center;
+            font-size: 1em;
+            line-height: 42px;
+            &:hover {
+              background: $unihelp-green;
+              color: $unihelp-white;
+            }
+          }
         }
 
         &.load-more:hover, &.new:hover {
@@ -297,6 +333,30 @@ div.container {
   }
 }
 
+#tutoring-modal {
+  .keuze {
+    text-align: center;
+    cursor: pointer;
+    header {
+      background: $unihelp-brown;
+    }
+    background: $unihelp-green;
+    img {
+      display: block;
+      margin: auto;
+      //width: 100%;
+      height: 10em;
+      object-fit: cover;
+    }
+    p, h4 {
+      text-align: center;
+    }
+    &:hover {
+      background-color: $unihelp-brown;
+    }
+  }
+}
+
 .overview-calendar {
   height: 45px;
   margin-top: 2.5em;
@@ -304,6 +364,17 @@ div.container {
   .date {
     color: $unihelp-black;
     text-align: left;
+
+  }
+  &.new{
+    cursor: pointer;
+    .reminder{
+      background: $unihelp-green;
+    }
+    .date{
+      text-align: center;
+      line-height: 40px;
+    }
   }
   .reminder {
     height: 45px;
@@ -312,33 +383,35 @@ div.container {
     h5 {
       margin: 0;
     }
+    p{
+      color: $unihelp-white;
+    }
   }
 
 }
-
 
 /*block witte achtergrond*/
 .item {
   background: $unihelp-white;
   margin-bottom: 3em;
   display: block;
-  header{
-      background: $unihelp-green;
-      height: 2em;
-      color: $unihelp-white;
-      line-height: 1.75em;
-      padding: 2px 10px;
-      font-weight: 300;
-      text-decoration: none;
-      font-size: 16px;
-      border-bottom: 1px solid #dfdfdf;
+  header {
+    background: $unihelp-green;
+    height: 2em;
+    color: $unihelp-white;
+    line-height: 1.75em;
+    padding: 2px 10px;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px solid #dfdfdf;
     header a {
       padding-right: 1%;
       padding-left: 1%;
       color: white;
       float: right;
     }
-    }
+  }
 
   h3, h4 {
     color: $unihelp-black;
@@ -347,16 +420,15 @@ div.container {
 
 }
 
-
-
 .filecontainer {
   display: inline;
 }
 
-.overview{
-  &.groups, &.group, &.file, &.user-owned{
+
+.overview {
+  &.groups, &.group, &.file, &.user-owned {
     cursor: pointer;
-    .title{
+    .title {
       a {
         color: $unihelp-black;
         &:hover {
@@ -383,7 +455,7 @@ div.container {
       transform: translate(-50%, -50%);
     }
   }
-  .group{
+  .group {
     border-bottom: 1px solid $unihelp-brown;
 
     .info {
@@ -428,19 +500,23 @@ div.container {
       -webkit-transform: translate(0, -0%);
       transform: translate(0, -0%);
     }
+
   }
 }
 
-
 .detail {
+  p{
+    font-size: 14px;
+  }
   &.file {
     .info {
       left: 15px;
     }
+
     .rating {
       position: absolute;
-      top: 0%;
-      right: 30px;
+      top: 0;
+      right: 20px;
       -webkit-transform: translate(0, -0%);
       transform: translate(0, -0%);
       text-align: right;
@@ -472,12 +548,9 @@ div.container {
   }
 }
 
-
-
-
 .content {
   .info {
-    margin-top: 1em;
+    //margin-top: 1em;
     ul {
       width: 100%;
       list-style-type: none;
@@ -498,6 +571,7 @@ div.container {
       padding: 8px 15px;
       background: $unihelp-brown;
       color: $unihelp-white;
+      margin-bottom: 7px;
 
       &:hover, &.active {
         cursor: pointer;
@@ -511,7 +585,6 @@ div.container {
     }
   }
 }
-
 
 #tutoringcontent {
   article.col-lg-4:nth-of-type(1) {
@@ -543,7 +616,6 @@ div.container {
   }
 
 }
-
 
 /*Messages*/
 #messages {
@@ -587,7 +659,6 @@ div.container {
 
 }
 
-
 .sidebar {
   /*New/upload button*/
   .button {
@@ -627,7 +698,7 @@ div.container {
       }
       .row {
         margin-bottom: 20px;
-        margin-top: 20px;
+        //margin-top: 15px;
       }
     }
 
@@ -643,9 +714,7 @@ div.container {
   }
 }
 
-
-
-.file{
+.file {
   header {
     a {
       @include link(white, white, white, white);
@@ -668,7 +737,7 @@ div.container {
     }
   }
   .rating {
-    font-size: 1.5em;
+    font-size: 1.5em!important;
     &:hover {
       cursor: pointer;
     }
@@ -678,7 +747,6 @@ div.container {
     }
   }
 
-
 }
 
 #filter-details {
@@ -687,11 +755,6 @@ div.container {
     color: $unihelp-brown;
   }
 }
-
-
-
-
-
 
 /* search input */
 .inner-addon {
@@ -753,7 +816,6 @@ form .mce-tinymce {
 form .form-group {
   margin: 2.5% 0 2.5% 0;
 }
-
 
 /* Profiel */
 .color-choose {
@@ -822,6 +884,7 @@ form .form-group {
       width: 85.5px;
       height: 26.5px;
       margin-top: 0;
+      line-height: 26px;
     }
   }
 }
@@ -855,13 +918,6 @@ form .form-group {
     padding-top: 1%;
   }
 }
-
-
-
-
-
-
-
 
 /*dropzone*/
 .inputFile {
@@ -914,18 +970,17 @@ form .form-group {
   width: 100%;
 }
 
-
-
 .file-overview tr td:last-child {
   text-align: right;
 }
 
-
-
-
 /*Bootstrap modals*/
 .modal-content {
   border-radius: 0;
+}
+
+.modal-header {
+  border-bottom: none !important;
 }
 
 .modal.in .modal-dialog {
@@ -935,9 +990,9 @@ form .form-group {
   transform: translate(0, 50%);
 }
 
-
 /*Bootstrap medium*/
-@media only screen and (max-width: 1200px) { }
+@media only screen and (max-width: 1200px) {
+}
 
 /*Bootsstrap small*/
 @media only screen and (max-width: 992px) {
@@ -967,40 +1022,60 @@ form .form-group {
   .hide-mobile {
     display: none;
   }
+
+  .dropdown{
+    padding: 0!important;
+  }
+  #account-dropdown{
+    top: 0!important;
+    right: 0!important;
+    width: 400px!important;
+    position: absolute;
+    background: transparent;
+    width: 100vw!important;
+    margin-top: -3.2em;
+    height: 100%;
+  }
+
+  /* #slicknav menu */
+  #account-dropdown > li, #account-dropdown > a {
+    display: none;
+  }
+
+  .js .slicknav_menu {
+    display: block;
+  }
+  .slicknav_menu {
+    display: none;
+    padding: 0!important;
+  }
+
+  .slicknav_nav {
+    width: 100%;
+    background: $unihelp-green;
+  }
+  .slicknav_menu {
+    display: block;
+    text-align: center;
+  }
+
   /*responsive menu*/
   #platform-header {
-    height: auto;
-    position: relative;
     .account {
       float: left;
+     .account_username, img, .dropdown-toggle{
+       display: none;
+     }
+      .dropdown-menu{
+        display: block;
+      }
     }
-    .logo {
-      display: none;
-    }
+
     .account_username, .account_dropdown_btn {
       display: none;
     }
-    .hamburger {
-      display: block;
-    }
-    .sub {
-      display: none;
-      margin-top: 2%;
-      width: 100% !important;
-      padding-left: 0;
-      li {
-        width: 100%;
-        height: 3em;
-        margin: 0 !important;
-        text-align: center;
-        line-height: 2em;
-      }
-    }
   }
 
-  .subheader {
-    display: none;
-  }
 
   .container {
     width: 100% !important;
@@ -1009,16 +1084,15 @@ form .form-group {
   .subheader {
     margin-bottom: 0;
   }
-
+/*
   .file .rating {
-    font-size: 1.5em;
     font-size: 1.5em;
     position: absolute;
     left: 0%;
     top: 50%;
     transform: translate(0, -50%);
   }
-
+*/
   .headline {
     .right {
       h4 {
@@ -1030,6 +1104,11 @@ form .form-group {
 }
 
 @media only screen and (max-width: 480px) {
+
+  .subheader{
+    height: 7em;
+    text-align: center;
+  }
 
   .sidebar {
     .stats {

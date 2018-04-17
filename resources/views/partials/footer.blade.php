@@ -1,22 +1,21 @@
 <footer class="row">
-    <div class="top clearfix">
+    <div class="top padding clearfix">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-xs-12">
                     <h4>Privacy</h4>
-                    <p>Dit platform wordt op meerdere manieren beveiligd om uw data veilig te bewaren. Uw data wordt
-                        niet doorgegeven.</p>
+                    <p>Dit platform wordt op meerdere manieren beveiligd om uw data veilig te bewaren.</p>
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-xs-12">
                     <h4>Ondersteuning</h4>
-                    <p>Bij problemen of vragen kan u steeds terecht op onze <a href="#"><b>Veelgestelde vragen</b>
+                    <p>Bij problemen of vragen kan u steeds terecht op onze <a href="#"><b>veelgestelde vragen</b>
                             pagina</a>.</p>
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-xs-12">
-                    <h4>Blijf op de hoogte</h4>
-                    <p>Schrijf u in voor onze nieuwsbrief en mis geen enkele tip.</p>
+                    <h4>Nieuwsbrief</h4>
+                    <!--<p>Schrijf u in voor onze nieuwsbrief en blijf steeds op de hoogte.</p>-->
 
                     <!--<input id="newsletter">-->
 
@@ -46,8 +45,9 @@
         </div>
     </div>
 
-    <div class="bottom clearfix">
+    <div class="bottom padding clearfix">
         <div class="container">
+            <!--
             <div class="row">
                 <div class="col-sm-3 col-xs-12 ">
                     <a href="{{route('website-copyright')}}"><p>&copy; 2017-2018 UniHelp</p></a>
@@ -65,6 +65,11 @@
                     <a href="https://blog.unihelp.be" target="_blank"><p>Project blog</p></a>
                 </div>
             </div>
+            -->
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-12"><a href="#"><h6>&copy; 2017-2018 - Een platform door De Frère Jonas en Stalpaert Arno</h6></a></div>
+                    <div class="col-lg-6 col-md-6 col-xs-12"></div>
+                </div>
         </div>
     </div>
 </footer>

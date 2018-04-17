@@ -5,12 +5,13 @@
     @include('partials.platform.subheader')
 
     <div class="container">
+        @include('partials.platform.go-back')
         <div class="table">
             <!-- Sidebar -->
             <div class="sidebar">
 
 
-                <!-- Modal -->
+                <!-- Calendar Modal -->
                 <div class="modal fade" id="date-modal" role="dialog">
                     <div class="modal-dialog ">
 
@@ -23,6 +24,30 @@
                             <div class="modal-body">
                                 <p id="date"></p>
                                 <p>Oefeningen afwerken en verbeteren.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="form-group col-xs-12 clearfix">
+                                    <input type="button" class="download-button next col-lg-2 col-sm-4 col-xs-12"  data-dismiss="modal" value="Sluiten">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- New item Modal -->
+                <div class="modal fade" id="new-item-modal" role="dialog">
+                    <div class="modal-dialog ">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Nieuwe activiteit</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid ad utilitatem tantae pecuniae? Nemo igitur esse beatus potest. Quo modo autem philosophus loquitur? Videsne quam sit magna dissensio? </p>
                             </div>
                             <div class="modal-footer">
                                 <div class="form-group col-xs-12 clearfix">
@@ -48,16 +73,15 @@
             <!-- content -->
             <div class="content clearfix">
                 <!-- Search form -->
-                <article class="item padding col-xs-12">
-                    <br>
+                <article class="item col-xs-12">
                     <div class="padding clearfix">
 
                         <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                            <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
                                 <div class="table">
                                     <div style="display: table-cell; width: 42px"><img
                                                 src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img"></div>
+                                                class="group-img round-img round-img"></div>
                                     <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
                                         <h6 style="margin: 0">Jonas De Frère</h6>
                                         <h6 style="margin: 5px 0">Data Visualisatie</h6>
@@ -66,7 +90,7 @@
                             </div>
 
 
-                            <div class="actions col-lg-4 col-md-4 col-sm-6 col-xs-12" style="text-align: center">
+                            <div class="actions col-lg-6 col-md-8 col-sm-6 col-xs-12" style="text-align: center">
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <a class="action col-lg-12 col-xs-12" href="{{route('tutoring-messages', ['id' => '1']) }}">Chatten</a>
                                 </div>
@@ -78,16 +102,12 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <a class="action col-lg-12 col-xs-12" href="#">Stopzetten</a>
                                 </div>
-
                             </div>
-
-                        </div>
-
                         <!-- Search form -->
                         <br>
 
                         <div class="col-xs-12">
-                            <h3>Planning</h3>
+                            <h4>Planning</h4>
 
                             <div class="row">
                                 <div class="overview-calendar col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
@@ -119,6 +139,17 @@
                                     </div>
                                     <div class="reminder col-lg-10 col-md-10 col-sm-10 col-xs-10">
                                         <h5 class="col-xs-12 vertical-center">Test activiteit</h5>
+                                    </div>
+                                </div>
+
+                                <div class="overview-calendar new col-lg-6 col-md-6 col-sm-6 col-xs-12 left" data-toggle="modal" data-target="#new-item-modal">
+                                    <div class="date  col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="add group-img round-img" style="display: table-cell">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="reminder col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                        <h5 class="col-xs-12 vertical-center">Voeg een item toe</h5>
                                     </div>
                                 </div>
 

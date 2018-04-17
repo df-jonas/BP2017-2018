@@ -3,23 +3,10 @@
 @section('content')
     @include('partials.platform.header')
     @include('partials.platform.subheader')
-
     <div class="container">
         <div class="table">
-
             <div class="sidebar">
-
-                <!-- TODO Je moet ook een groep kunnen toevoegen vanop de index pagina
-                    <article class="item button">
-                        <a href="{{ route('community-post-new', [ 'group_id' => 1 ]) }}">
-                            <button>
-                                <i class="glyphicon glyphicon-plus-sign"></i> Nieuwe post
-                            </button>
-                        </a>
-                    </article>
-                -->
-                
-                <!-- TODO Enkel voor admins nieuwe groep maken
+                <!-- TODO [JONAS] Only admins should be able to create a new group.
                     <article class="item clearfix">
                         <header>Nieuw bestand</header>
                         <div>
@@ -27,12 +14,11 @@
                         </div>
                     </article>
                 -->
-                    
                 <!-- Search form -->
                 <article class="item search">
-                    <header>Zoeken</header>
+                    <header><i class="fa fa-search"></i> Zoeken</header>
                     <div class="inner-addon left-addon">
-                        <i class="glyphicon glyphicon-search"></i>
+                        <!--<i class="glyphicon glyphicon-search"></i>-->
                         <input type="text" id="search" name="search" class="form-control filterlistener"
                                placeholder="zoekterm"/>
                     </div>
@@ -41,22 +27,23 @@
 
                 <!-- filter menu -->
                 <article class="item filter">
-                    <header>Posts filteren</header>
+                    <header><i class="fa fa-filter"></i> Posts filteren</header>
                     <div class="padding">
                         <div class="form-group col-xs-12 no-padding clearfix">
-                            <div class="selectdiv">
+                            <div class="sliderdiv">
                                 <label for="rangepop">Populariteit</label>
-                                <input id="rangepop" class="filterlistener" name="popularity" type="range" min="0" max="100">
+                                <input id="rangepop" class="filterlistener" name="popularity" type="range" min="0"
+                                       max="100">
                             </div>
                         </div>
-                        
+
                         <div class="form-group clearfix">
                             <label>Type groep</label>
                             @foreach($categories as $category)
                                 @foreach($category->groups as $group)
                                     <label class="checkbox-container col-xs-12">{{ $group->name }}
                                         <input type="checkbox" name="category[]" value="{{ $group->id }}"
-                                               class="filterlistener">
+                                               class="filterlistener" checked>
                                         <span class="checkmark"></span>
                                     </label>
                                 @endforeach
@@ -68,22 +55,21 @@
                 <!-- filter menu -->
 
                 <!-- User items -->
-                <article class="item user-owned">
-                    <header>Mijn posts</header>
+                <article class="overview item user-owned">
+                    <header><i class="fa fa-upload"></i> Mijn posts</header>
                     <div class="padding">
-                        @foreach($myposts as $post)
+                        @foreach($myposts as $mypost)
                             <div class="row flex">
                                 <div class="icon col-lg-2 col-md-2 col-xs-2">
-                                    <img src="{{ asset('img/avatars/' . $post->user->image )}}" class="group_img">
+                                    <img src="{{ asset('img/avatars/' . $mypost->user->image )}}"
+                                         class="account-img round-img">
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-xs-8">
-                                    <h5 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h5>
-                                    <div class="rating">
-                                        <div class="col-lg-2 col-xs-3">
-                                            <i class="fa fa-comment"><span>22</span></i>
-                                        </div>
-                                        <div class="col-lg-2 col-xs-3">
-                                            <i class="fa fa-thumbs-up"><span>22</span></i>
+                                    <h5 class="title no-margin"><a
+                                                href="{{ $mypost->generateurl() }}">{{ $mypost->title }}</a></h5>
+                                    <div class="rating col-xs-12 no-padding clearfix">
+                                        <div class="col-xs-12 no-padding">
+                                            <span class="fa fa-thumbs-up"></span> {{ $mypost->votesum() }} likes
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +84,7 @@
 
                 <!-- Community stats -->
                 <article class="item stats">
-                    <header>Statistieken</header>
+                    <header><i class="fa fa-line-chart"></i> Statistieken</header>
                     <div class="padding">
                         <div class="row flex">
                             <div class="col-xs-10">
@@ -140,7 +126,6 @@
                 </article>
                 <!-- end Community stats -->
             </div>
-
             <div class="content">
                 <div id="groupcontainer" class="overview groups">
                     @foreach($categories as $category)
@@ -150,13 +135,14 @@
                                 <article class="group" style="position: relative">
                                     <div class="padding">
                                         <div class="row flex">
-                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                                <img src="{{asset('img/icons/' . $group->icon->path)}}"
-                                                     style="width: 36px; height: 36px">
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
+                                                <img class="account-img"
+                                                     src="{{asset('img/icons/' . $group->icon->path)}}">
                                             </div>
-                                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-11">
-                                                <h4 class="title"><a href="{{ $group->url() }}">{{ $group->name }}</a></h4>
-                                                <div class="row icons">
+                                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-10">
+                                                <h5 class="title no-margin"><a
+                                                            href="{{ $group->url() }}">{{ $group->name }}</a></h5>
+                                                <div class="row">
                                                     <div class="col-xs-12">
                                                         @if($group->postcount() == 1)
                                                             1 post
@@ -166,7 +152,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="vertical-center col-lg-6 col-md-6 col-sm-6 col-xs-0 hide-mobile" style="text-align: right;">
+                                            <div class="vertical-center col-lg-6 col-md-6 col-sm-6 col-xs-0 hide-mobile"
+                                                 style="text-align: right;">
                                                 <h6 class="bold">{{ $group->shortdesc }}</h6>
                                                 <h6 class="update">Laatste update: {{ $group->lastupdate() }}</h6>
                                             </div>
@@ -180,10 +167,8 @@
             </div>
         </div>
     </div>
-
     @include('partials.footer')
 @endsection
-
 @section("scripts")
     <script src="{{ asset("js/community-filter.js") }}"></script>
 @endsection

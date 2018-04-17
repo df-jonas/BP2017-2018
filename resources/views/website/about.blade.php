@@ -2,8 +2,13 @@
 
 @section('content')
     @include('partials.website.header')
+    <div class="breadcrumb-banner col-xs-12">
+        <div class="background-image"></div>
+        <div class="inner-content vertical-center col-lg-12">
+            <h1>Over Unihelp</h1>
+        </div>
+    </div>
     <section id="about-banner" class="col-xs-12">
-        <h1>Over UniHelp</h1>
         <div class="left col-lg-4 col-lg-push-2 col-xs-12">
             <p>Studenten hebben al wel vaker gemerkt: vragen over leerstof die net niet belangrijk genoeg zijn om ermee
                 naar de docent te trekken, informatie over een opdracht die je niet zo duidelijk lijkt, een buddy zoeken

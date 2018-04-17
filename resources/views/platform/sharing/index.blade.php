@@ -16,21 +16,18 @@
                     </a>
                 </article>
                 <!-- end Upload button -->
-
                 <!-- Search form -->
                 <article class="item search">
-                    <header>Zoeken</header>
+                    <header><i class="fa fa-search"></i> Zoeken</header>
                     <div class="inner-addon left-addon">
-                        <i class="glyphicon glyphicon-search"></i>
-                        <input type="text" id="search" name="search" class="form-control filterlistener"
-                               placeholder="zoekterm"/>
+                        <!--<i class="glyphicon glyphicon-search"></i>-->
+                        <input type="text" id="search" name="search" class="form-control filterlistener" placeholder="zoekterm"/>
                     </div>
                 </article>
                 <!-- Search form -->
-
                 <!-- filter menu -->
                 <article class="item filter">
-                    <header>Bestanden filteren</header>
+                    <header><i class="fa fa-filter"></i> Bestanden filteren</header>
                     <div class="padding">
 
                         <div class="form-group col-xs-12 no-padding clearfix">
@@ -45,9 +42,6 @@
                             </div>
                         </div>
 
-
-
-
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="selectdiv">
                                 <label for="course">Kies vak</label>
@@ -60,10 +54,8 @@
                             </div>
                         </div>
 
-
                         <label>Geschreven in</label>
                         <br>
-
                         <div class="form-group clearfix">
                             @foreach($pubyears as $pubyear)
                                 <label class="checkbox-container col-xs-12">{{ $pubyear->name }}
@@ -73,13 +65,10 @@
                                 </label>
                             @endforeach
                         </div>
-                        
-                        <!-- TODO bestands types ophalen (samenvatting; notities) -->
-                        
+                        <!-- TODO [JONAS] Getting file types asynchronous -->
                         <label>Type bestand</label>
                         <br>
                         <div class="form-group clearfix">
-
                             <label class="checkbox-container col-xs-12">Type 1
                                 <input type="checkbox" name="pubyear[]" value="type 1"
                                        class="filterlistener" checked>
@@ -97,72 +86,54 @@
                                        class="filterlistener" checked>
                                 <span class="checkmark"></span>
                             </label>
-
                         </div>
-
                         <input type="hidden" class="filterlistener" name="_token" id="token" value="{{ csrf_token() }}">
                     </div>
                 </article>
                 <!-- filter menu -->
-
-                <!-- user uploaded items -->
-                <div class="filecontainer item files">
-                    <header>Mijn uploads</header>
-                    @foreach($userfiles as $file)
-                    
-                    <!-- TODO hier opgefockt -->
-                    
-                        @php
-                            $rating = $file->averageRating()
-                        @endphp
-
-                        <article class="overviewfile item user-owned">
-                            <div class="padding">
-                                <div class="row flex">
-                                    <div class="icon col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        <img src="{{asset('img/icons/001-file.png')}} "
-                                             style="width: 36px; height: 36px">
-                                    </div>
-
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-10">
-                                        <h5 class="title"><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h5>
-                                        <div class="vertical-center rating  col-xs-12" style="margin-top: 0.5em">
-                                            @for ($i = 1; $i <= 5; $i++)
-                                                @if($i <= $rating)
-                                                    <span class="fa fa-star checked"></span>
-                                                @else
-                                                    <span class="fa fa-star"></span>
-                                                @endif
-                                            @endfor
-                                        </div>
-
-                                    </div>
-
-                                    <div class="edit col-lg-2 col-md-2 col-sm-2 col-xs-0">
-                                        <i class="fa fa-pencil brown"></i>
-                                    </div>
-
+                <!-- User items -->
+                <article class="overview item user-owned">
+                    <header><i class="fa fa-upload"></i> Mijn uploads</header>
+                    <div class="padding">
+                        @foreach($userfiles as $file)
+                            @php
+                                $rating = $file->averageRating()
+                            @endphp
+                            <div class="row flex">
+                                <div class="icon col-lg-2 col-md-2 col-xs-2">
+                                    <img src="{{ asset('img/avatars/' . $file->user->image )}}"
+                                         class="account-img round-img">
                                 </div>
-
+                                <div class="col-lg-8 col-md-8 col-xs-8">
+                                    <h5 class="title col-xs-12 no-padding"><a
+                                                href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h5>
+                                    <div class="rating col-xs-12 no-padding">
+                                        @for ($i = 1; $i <= 5; $i++)
+                                            @if($i <= $rating)
+                                                <span class="fa fa-star checked"></span>
+                                            @else
+                                                <span class="fa fa-star"></span>
+                                            @endif
+                                        @endfor
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-xs-2">
+                                    <i class="fa fa-pencil brown"></i>
+                                </div>
                             </div>
-
-                        </article>
-                    @endforeach
-                </div>
-                <!-- user items -->
+                        @endforeach
+                    </div>
+                </article>
+                <!-- end User items -->
             </div>
-
             <!-- content -->
             <div class="content">
                 <div id="filter-results" class="filecontainer files">
-
-                    <span id="filter-details" class="item padding col-xs-12"> Aantal bestanden: <small>300</small></span><br><br>
-
+                    <span id="filter-details" class="item padding col-xs-12">Er werden 100 resultaten gevonden.</span><br><br>
                     @foreach($files as $file)
                         @php
                             $rating = $file->averageRating()
                         @endphp
-
                         <article class="overview file item clearfix">
                             <a href="{{ $file->detailUrl() }}">
                                 <header>
@@ -172,24 +143,18 @@
                             <div class="padding">
                                 <div class="row flex">
                                     <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2">
-                                        <img src="{{asset('img/icons/001-file.png')}} "
-                                             style="width: 36px; height: 36px">
+                                        <img src="{{asset('img/icons/001-file.png')}}" class="account-img">
                                     </div>
-
                                     <div class="col-lg-5 col-md-6 col-sm-6 col-xs-10">
-                                        <h4 class="title no-margin"><a
-                                                    href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h4>
-                                        <h5 class="brown">Erasmushogeschool Brussel</h5>
+                                        <h5 class="title no-margin"><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h5>
+                                        <h6 class="brown">Erasmushogeschool Brussel</h6>
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                door {{$file->user->first_name}} {{$file->user->last_name}}
+                                                <h6 class="no-margin">door {{$file->user->first_name}} {{$file->user->last_name}}</h6>
                                             </div>
-
                                         </div>
-
                                     </div>
                                     <div class="col-lg-6 col-lg-push-0 col-md-4 col-sm-4 col-sm-push-0 col-xs-8 col-xs-push-2">
-
                                         <div class="vertical-center rating">
                                             @for ($i = 1; $i <= 5; $i++)
                                                 @if($i <= $rating)
@@ -203,11 +168,9 @@
                                 </div>
                             </div>
                         </article>
-
                     @endforeach
                 </div>
             </div>
-
         </div>
     </div>
 

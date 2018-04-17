@@ -6,7 +6,8 @@
 
     <!-- begin container -->
     <div class="container">
-        <!-- begin table -->
+    @include('partials.platform.go-back')
+    <!-- begin table -->
         <div class="table">
 
             <!-- sidebar -->
@@ -23,45 +24,44 @@
 
                 <!-- Search form -->
                 <article class="item search">
-                    <header>Zoeken</header>
+                    <header><i class="fa fa-search"></i> Zoeken</header>
                     <div class="inner-addon left-addon">
-                        <i class="glyphicon glyphicon-search"></i>
+                        <!--<i class="glyphicon glyphicon-search"></i>-->
                         <input type="text" id="search" name="search" class="form-control filterlistener"
                                placeholder="zoekterm"/>
                     </div>
                 </article>
                 <!-- end Search form -->
-
-
                 <!-- User items -->
-                <article class="item user-owned">
-                    <header>Mijn posts</header>
-
+                <article class="overview item user-owned">
+                    <header><i class="fa fa-upload"></i> Mijn posts</header>
                     <div class="padding">
-                        @foreach($myposts as $post)
+                        @foreach($myposts as $mypost)
                             <div class="row flex">
-                                <div class="icon col-md-2 col-xs-2">
-                                    <img src="{{ asset('img/avatars/' . $post->user->image )}}" class="group-img round-img">
+                                <div class="icon col-lg-2 col-md-2 col-xs-2">
+                                    <img src="{{ asset('img/avatars/' . $mypost->user->image )}}"
+                                         class="account-img round-img">
                                 </div>
-                                <div class="col-md-8 col-xs-8">
-                                    <h5 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h5>
-                                    <div class="rating">
-                                        <p>subtitle</p>
+                                <div class="col-lg-8 col-md-8 col-xs-8">
+                                    <h5 class="title no-margin"><a
+                                                href="{{ $mypost->generateurl() }}">{{ $mypost->title }}</a></h5>
+                                    <div class="rating col-xs-12 no-padding clearfix">
+                                        <div class="col-xs-12 no-padding">
+                                            <span class="fa fa-thumbs-up"></span> {{ $mypost->votesum() }} likes
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-2 col-xs-2">
+                                <div class="col-lg-2 col-md-2 col-xs-2">
                                     <i class="fa fa-pencil brown"></i>
                                 </div>
                             </div>
                         @endforeach
                     </div>
-
                 </article>
                 <!-- end User items -->
-
                 <!-- Community stats -->
                 <article class="item stats">
-                    <header>Statistieken</header>
+                    <header><i class="fa fa-line-chart"></i> Statistieken</header>
                     <div class="padding">
                         <div class="row flex">
                             <div class="col-xs-10">
@@ -115,40 +115,42 @@
 
                     <div class="overview group group-type item clearfix">
                         <header>Posts in "{{ $group->name }}"</header>
-
-                        @foreach($group->posts as $post)
-                            <article class="group">
-                                <div class="padding">
-                                    <div class="row flex">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
-                                            <img src="{{ asset('img/avatars/' . $post->user->image) }}"
-                                                 class="group-img round-img">
-                                        </div>
-                                        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-10">
-                                            <h4 class="title"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h4>
-                                            <div class="row icons">
-                                                <div class="col-sm-3 col-xs-12">
-                                                    <i class="fa fa-comment"><span>{{ $post->commentcount() }} reacties</span></i>
+                        @if(sizeof($group->posts) > 0)
+                            @foreach($group->posts as $post)
+                                <article class="group">
+                                    <div class="padding">
+                                        <div class="row flex">
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
+                                                <img src="{{ asset('img/avatars/' . $post->user->image) }}"
+                                                     class="group-img round-img">
+                                            </div>
+                                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-10">
+                                                <h5 class="title no-margin"><a
+                                                            href="{{ $post->generateurl() }}">{{ $post->title }}</a>
+                                                </h5>
+                                                <div class="row icons">
+                                                    <div class="col-lg-2 col-sm-2 col-xs-3">
+                                                        <i class="fa fa-comment"><span>{{ $post->commentcount() }}</span></i>
+                                                    </div>
+                                                    <div class="col-lg-2 col-sm-2 col-xs-3">
+                                                        <i class="fa fa-thumbs-up"><span>{{ $post->votesum() }}</span></i>
+                                                    </div>
                                                 </div>
-
-                                                <!-- TODO aantal likes tellen (controleren door arno) -->
-                                                <div class="col-sm-3 col-xs-12">
-                                                    <i class="fa fa-thumbs-up"><span>{{ $post->votesum() }}</span></i>
-                                                </div>
-
+                                            </div>
+                                            <div class="info hide-mobile col-lg-6 col-md-6 col-sm-4 col-xs-12"
+                                                 style="text-align: right;">
+                                                <h6>{{ $post->postcreated() }}</h6>
+                                                <h6>door
+                                                    <span>{{ $post->user->first_name }} {{ $post->user->last_name }}</span>
+                                                </h6>
                                             </div>
                                         </div>
-                                        <div class="info hide-mobile col-lg-6 col-md-6 col-sm-4 col-xs-12"
-                                             style="text-align: right;">
-                                            <h6>{{ $post->postcreated() }}</h6>
-                                            <h6>door
-                                                <span>{{ $post->user->first_name }} {{ $post->user->last_name }}</span>
-                                            </h6>
-                                        </div>
                                     </div>
-                                </div>
-                            </article>
-                        @endforeach
+                                </article>
+                            @endforeach
+                        @else
+                            <span class="item padding">Er zijn geen posts in deze groep. Ga van start door een nieuwe post toe te voegen.</span>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -158,7 +160,6 @@
         </div>
     </div>
     <!-- end container -->
-
 
     @include('partials.footer')
 @endsection

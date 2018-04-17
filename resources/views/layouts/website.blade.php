@@ -6,7 +6,7 @@
     <!-- mobile responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>UniHelp | Home</title>
+    <title>UniHelp | @yield('pagetitle')</title>
 
 
     <!-- favicon -->
@@ -18,6 +18,8 @@
 
     <!-- own css -->
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
+
+    <link rel="stylesheet" href="{{ URL::asset('css/slicknav.css') }}">
 
     <!-- mailchimp -->
     <link rel="stylesheet" href="{{ URL::asset('css/mailchimp-horizontal-slim-10_7.css') }}">
@@ -39,7 +41,7 @@
 <body>
 
 @yield('content')
-
+@include('cookieConsent::index')
 
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -47,6 +49,17 @@
 <script src="{{ URL::asset('js/main.js') }}"></script>
 <script src="{{ URL::asset('js/nav.js') }}"></script>
 <script src="{{ URL::asset('js/multistep.js') }}"></script>
+<script src="{{ URL::asset('js/jquery.slicknav.js') }}"></script>
+<script>
+    $(function(){
+        $('#menu').slicknav({
+            label: ' ',
+            duration: 200,
+            prependTo:'#menu'
+        });
+    });
+</script>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47689548-7"></script>
 <script>

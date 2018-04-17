@@ -19,6 +19,8 @@
 
 body {
   overflow-x: hidden;
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
 .container {
@@ -62,7 +64,7 @@ h3 {
   color: $unihelp-white;
 }
 
-h4 {
+h4, h5 {
   font-size: 20px;
   font-weight: normal;
   font-style: normal;
@@ -71,6 +73,10 @@ h4 {
   letter-spacing: normal;
   text-align: left;
   color: $unihelp-white;
+}
+
+h5 {
+  font-size: 18px;
 }
 
 p {
@@ -85,7 +91,7 @@ p {
 }
 
 label, select {
-  font-family: HelveticaNeue;
+  /*font-family: HelveticaNeue;*/
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
@@ -126,6 +132,10 @@ a:hover, a:visited, a:link, a:active {
   margin: 0 !important;
 }
 
+no-margin-top {
+  margin-top: 0 !important;
+}
+
 .no-padding {
   padding: 0 !important;
 }
@@ -139,6 +149,14 @@ a:hover, a:visited, a:link, a:active {
   display: flex;
   flex-wrap: wrap;
 }
+
+.vertical-center {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
 
 .round-img {
   border-radius: 100%;
@@ -165,7 +183,7 @@ a:hover, a:visited, a:link, a:active {
   &.login {
     &:hover {
       background: $unihelp-green;
-      color: $unihelp-white;
+      color: $unihelp-white!important;
       -webkit-transition: background-color 100ms linear;
       -ms-transition: background-color 100ms linear;
       transition: background-color 100ms linear;
@@ -184,9 +202,11 @@ a:hover, a:visited, a:link, a:active {
   color: $unihelp-white;
   border: none;
   text-align: center;
+  line-height: 40px;
   float: right;
   margin: 3% 0 3% 0;
-  a {
+  @include link(white, white, white, white);
+  a, a:hover {
     cursor: pointer;
     @include link(white, white, white, white);
   }
@@ -198,11 +218,13 @@ a:hover, a:visited, a:link, a:active {
 
 /*Navigation*/
 #page-header, #platform-header {
-  height: 80px;
+  //height: 80px;
+  height: auto;
   width: 100%;
   background-color: $unihelp-white;
   padding: 1%;
-  position: relative;
+  position: sticky;
+  z-index: 100;
   img.logo {
     width: 36px;
     height: 36px;
@@ -213,9 +235,13 @@ a:hover, a:visited, a:link, a:active {
   padding: 1% 0 1% 0;
 }
 
+.slicknav_menu {
+  display: none;
+}
+
 #page-header {
   //sticky
-  position: fixed !important;
+  //position: fixed !important;
   top: 0;
   left: 0;
   z-index: 999;
@@ -224,7 +250,9 @@ a:hover, a:visited, a:link, a:active {
     color: $unihelp-black;
     text-decoration: none;
   }
+
   .links {
+    float: right;
     list-style-type: none;
     text-align: right;
     li {
@@ -246,6 +274,30 @@ a:hover, a:visited, a:link, a:active {
           opacity: 0.9;
         }
       }
+    }
+  }
+}
+
+.breadcrumb-banner{
+  height: 35vh;
+  position: relative;
+  .background-image{
+    background-image: url("/img/backgrounds/alexis-brown-82988.jpg");
+    background-size: cover;
+    background-position: center;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+  .inner-content{
+    z-index: 2;
+    h1{
+      text-align: center;
+      color: $unihelp-white;
+      text-shadow: 1px 1px $unihelp-asphalt;
     }
   }
 }
@@ -363,6 +415,7 @@ a:hover, a:visited, a:link, a:active {
   button {
     background-color: $unihelp-white !important;
     color: $unihelp-green !important;
+    margin-bottom: 1em;
     &:hover {
       background: lightgray !important;
       color: $unihelp-green !important;
@@ -372,8 +425,6 @@ a:hover, a:visited, a:link, a:active {
 
 /*About*/
 #about-banner {
-  height: auto;
-  margin-top: 80px;
   background: $unihelp-green;
   padding: 2%;
   color: $unihelp-white;
@@ -384,6 +435,7 @@ a:hover, a:visited, a:link, a:active {
   }
   p {
     text-align: justify;
+    color: $unihelp-white;
   }
 }
 
@@ -629,7 +681,7 @@ footer {
 
   /*Override default mce css*/
   #mce-EMAIL {
-    width: 50% !important;
+    width: 60% !important;
     float: left !important;
     border: none !important;
     background-color: #505457 !important;
@@ -637,11 +689,35 @@ footer {
   }
 
   #mc-embedded-subscribe {
-    width: 20% !important;
+    width: 35% !important;
     margin-left: 2.5% !important;
     float: left !important;
     text-align: center !important;
     background: #4D6A50 !important;
+  }
+}
+
+
+.cookie-consent{
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: $unihelp-green;
+  padding: 15px;
+  color: $unihelp-white;
+  button{
+    color: $unihelp-green;
+    border: 1px solid transparent;
+    border-radius: 0!important;
+    margin-top: 1em;
+    padding: 5px;
+    &:hover{
+      cursor: pointer;
+      background: $unihelp-green;
+      border: 1px solid $unihelp-white;
+      transition: all 0.2s ease;
+      color: $unihelp-white;
+    }
   }
 }
 
@@ -708,6 +784,107 @@ footer {
   }
 }
 
+.sliderdiv {
+  input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    box-shadow: 1px 1px 1px $unihelp-green, 0px 0px 1px transparent;
+    border: none;
+    height: 24px;
+    width: 10px;
+    border-radius: 0px;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -10px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  }
+
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px $unihelp-green, 0px 0px 1px transparent;
+    border: none !important;
+    height: 24px;
+    width: 10px;
+    border-radius: 0px !important;
+    background: #ffffff;
+    cursor: pointer;
+  }
+
+  input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: none !important;
+    height: 24px;
+    width: 10px;
+    border-radius: 0px !important;
+    background: #ffffff;
+    cursor: pointer;
+  }
+
+  input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  }
+
+  input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    /* Hides the slider so custom styles can be added */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: $unihelp-green;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+  }
+
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: $unihelp-green;
+  }
+
+  input[type=range]::-moz-range-track {
+    height: 10px;
+    cursor: pointer;
+    background: $unihelp-green;
+    border-radius: 0px;
+    border: none;
+  }
+
+  input[type=range]::-ms-track {
+    height: 10px;
+    cursor: pointer;
+    background: $unihelp-green;
+    border-radius: 0px;
+    border: none;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: $unihelp-green;
+    border: none;
+    border-radius: 0px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: $unihelp-green;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: $unihelp-green;
+    border: none;
+    border-radius: 0px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: $unihelp-green;
+  }
+}
 
 /*Custom checkboxes*/
 /*https://www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
@@ -776,7 +953,6 @@ footer {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
 
 /*Multistep form*/
 #msform fieldset {
@@ -850,7 +1026,7 @@ footer {
 
 /*Forms*/
 .form-group {
-  margin-bottom: 20px!important;
+  margin-bottom: 20px !important;
   display: block;
 }
 
@@ -862,7 +1038,7 @@ form input, form textarea {
   border-radius: 0 !important;
 }
 
-form textarea{
+form textarea {
   max-width: 100%;
   min-width: 100%;
 }
@@ -876,9 +1052,6 @@ form.register .form-group {
     padding-top: 0.5%;
   }
 
-  #page-banner {
-    height: 90vh;
-  }
   footer {
     .top {
       min-height: 15em;
@@ -907,15 +1080,16 @@ form.register .form-group {
     margin-top: 48px;
   }
   /*responsive menu*/
+
   #page-header {
     height: auto;
     .hamburger {
       display: block;
     }
     .links {
-      display: none;
-      margin-top: 2%;
-      width: 100% !important;
+      //display: none;
+      margin-top: -2.85em;
+      //width: 100% !important;
       padding-left: 0;
       background: white;
       li {
@@ -926,11 +1100,27 @@ form.register .form-group {
         line-height: 2em;
       }
     }
-    img.logo {
-      width: 32px;
-      height: 32px;
-      padding: 5px;
-    }
+
+  }
+
+  /* #slicknav menu */
+  #menu > li, #menu > a {
+    display: none;
+  }
+
+  .js .slicknav_menu {
+    display: block;
+  }
+  .slicknav_menu {
+    display: none;
+  }
+
+  .slicknav_nav {
+    width: 100%;
+  }
+  .slicknav_menu {
+    display: block;
+    min-height: 3em;
   }
 
   #page-banner {
@@ -991,10 +1181,6 @@ form.register .form-group {
     height: auto;
   }
   footer {
-
-    .container {
-      left: 0 !important;
-    }
     .top {
       min-height: 30em;
       height: auto;
@@ -1036,7 +1222,5 @@ form.register .form-group {
   }
 
 }
-
-
 
 
