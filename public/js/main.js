@@ -1,12 +1,12 @@
 $(window).on("load", function (e) {
     // Animate loader off screen
-    $(".se-pre-con").fadeOut("slow");;
+    $(".se-pre-con").fadeOut("slow");
+    ;
 });
 
 
-
 $(document).ready(function () {
-    console.log('ready');
+    //console.log('ready');
     //referentie: https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
     $('.inputFile').each(function () {
         var $input = $(this),
@@ -38,31 +38,43 @@ $(document).ready(function () {
     });
 
 
+    //galerij home
+    $('.box').click(function () {
+        $('.full-image').html($(this).html());
+    });
+
+
+    $('.box').hover(function () {
+        $('.full-image').html($(this).html());
+    });
+
+
     //profile pic upload on register screen
     $(function () {
         $('#picture-input').change(function (e) {
-            console.log('upload');
+            //console.log('upload');
             var img = URL.createObjectURL(e.target.files[0]);
             $('#register-img').attr('src', img);
 
         });
     });
 
+
     //Tutoring people list
     $('.people-list li').click(function (e) {
         e.preventDefault();
         //haalt alle active classes weg
-        $( ".people-list li" ).each(function() {
-            if($(this).hasClass('people-list-active')){
-                $(this ).removeClass('people-list-active');
+        $(".people-list li").each(function () {
+            if ($(this).hasClass('people-list-active')) {
+                $(this).removeClass('people-list-active');
             }
         });
         //kent active class toe aan li waarop geklikt werd
-        if(!$(this).hasClass('new') && !$(this).hasClass('load-more')){
+        if (!$(this).hasClass('new') && !$(this).hasClass('load-more')) {
             $(this).toggleClass("people-list-active");
         }
-        else{
-            console.log("Nope");
+        else {
+            //console.log("Nope");
         }
         //data attribute in html
         $data = $(this).data('request-id');

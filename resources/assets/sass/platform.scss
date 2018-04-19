@@ -18,11 +18,6 @@ body.platform {
   display: none;
 }
 
-/*Helpers*/
-.padding {
-  padding: 15px;
-}
-
 .brown {
   color: $unihelp-brown;
 }
@@ -222,7 +217,7 @@ div.container {
         padding: 5px;
         width: 20px;
         height: 20px;
-        line-height: 10px;
+        line-height: 7.5px;
         text-align: center;
       }
     }
@@ -512,7 +507,6 @@ div.container {
     .info {
       left: 15px;
     }
-
     .rating {
       position: absolute;
       top: 0;
@@ -526,16 +520,20 @@ div.container {
       font-size: 14px;
     }
     .details {
+      margin-top: 2em;
+      opacity: 0.9;
       .detail {
+        background: $unihelp-green;
+        border: 1px solid $unihelp-white;
+        padding: 5px 5px 5px 10px;
+        color: $unihelp-white;
         i {
-          color: $unihelp-brown;
+          //color: $unihelp-brown;
           span {
-            font-family: Raleway;
-            color: black;
+            color: $unihelp-white;
             line-height: 1em;
             padding-left: 12px;
             font-size: 16px;
-
           }
         }
       }
