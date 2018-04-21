@@ -1,11 +1,11 @@
-<header id="page-header">
+<header id="page-header" class="large">
     <div class="row">
         <div class="col-xs-12">
-            <div class="col-lg-6 col-md-2 col-sm-2 col-xs-2" style="z-index: 999">
+            <div class="col-lg-4 col-md-2 col-sm-2 col-xs-2" style="z-index: 999">
                 <a href="{{ route('website-index') }}"><img class="logo" src="img/logo/favicon.png"></a>
             </div>
 
-        <ul id="menu" class="links col-lg-6 col-sm-10 col-xs-12">
+        <ul id="menu" class="links col-lg-8 col-sm-10 col-xs-12">
             <a href="{{ route('website-index') }}">
                 <li>Home</li>
             </a>

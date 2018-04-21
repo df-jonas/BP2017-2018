@@ -335,6 +335,8 @@ no-margin-top {
 }
 
 #page-header {
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
   top: 0;
   left: 0;
   z-index: 999;
@@ -376,6 +378,15 @@ no-margin-top {
 
 #page-header .links li.register:hover {
   opacity: 0.9;
+}
+
+#page-header.large {
+  height: auto;
+}
+
+#page-header.small {
+  height: 4.5em !important;
+  padding: 5px !important;
 }
 
 .breadcrumb-banner {
@@ -432,7 +443,7 @@ no-margin-top {
 /*Home banner*/
 
 #page-banner {
-  height: 99.5vh;
+  height: 90vh;
   margin-bottom: 5%;
   background-image: url("/img/backgrounds/banner.png");
   background-size: cover;
@@ -1390,10 +1401,6 @@ form.register .form-group {
 }
 
 @media only screen and (max-width: 1500px) {
-  #page-header .links {
-    padding-top: 0.5%;
-  }
-
   footer .top {
     min-height: 15em;
     height: auto;

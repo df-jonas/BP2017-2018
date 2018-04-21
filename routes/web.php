@@ -78,6 +78,9 @@
 
             /** Profile */
             Route::get('/profile', 'ProfileController@index')->name('profile-index');
+            Route::get('/profile/ratings', 'ProfileController@ratings')->name('profile-ratings');
+            Route::get('/profile/downloads', 'ProfileController@downloads')->name('profile-downloads');
+            Route::get('/profile/uploads', 'ProfileController@uploads')->name('profile-uploads');
         });
     });
 }

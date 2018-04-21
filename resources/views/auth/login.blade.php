@@ -24,8 +24,10 @@
                         @endif
                     </div>
                     <div class="form-group clearfix col-xs-12">
-                        <label class="form-check-label">
-                            <input type="checkbox" name="remember" class="form-check-input"> Aangemeld blijven
+
+                        <label class="checkbox-container col-xs-12">Aangemeld blijven
+                            <input type="checkbox" name="remember" value="Aangemeld blijven" class="form-check-input" checked>
+                            <span class="checkmark"></span>
                         </label>
                     </div>
                     <div class="form-group clearfix col-xs-12">
