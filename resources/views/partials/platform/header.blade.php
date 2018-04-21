@@ -20,7 +20,9 @@
                         <li>
                             <a href="{{ route('profile-index') }}"><i class="fa fa-dashboard"></i> Mijn profiel </a>
                         </li>
-
+                        <li>
+                            <a href="{{ route('profile-notifications') }}"><i class="fa fa-dashboard"></i> {{count(auth()->user()->notifications())}} Notificaties </a>
+                        </li>
                         <li>
                             <a href="{{ route('profile-downloads') }}"><i class="fa fa-download"></i> Mijn downloads </a>
                         </li>

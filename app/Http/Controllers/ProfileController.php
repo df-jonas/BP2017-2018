@@ -25,4 +25,8 @@ class ProfileController extends Controller
     {
         return view("platform.profile.uploads");
     }
+    public function notifications()
+    {
+        return view("platform.profile.notifications");
+    }
 }
