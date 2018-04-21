@@ -128,6 +128,10 @@ a:hover, a:visited, a:link, a:active {
   font-weight: bold;
 }
 
+.green{
+  color: $unihelp-green;
+}
+
 .no-margin {
   margin: 0 !important;
 }
@@ -138,6 +142,11 @@ no-margin-top {
 
 .no-padding {
   padding: 0 !important;
+}
+
+/*Helpers*/
+.padding {
+  padding: 15px;
 }
 
 .small {
@@ -156,7 +165,6 @@ no-margin-top {
   top: 50%;
   transform: translate(0, -50%);
 }
-
 
 .round-img {
   border-radius: 100%;
@@ -183,7 +191,7 @@ no-margin-top {
   &.login {
     &:hover {
       background: $unihelp-green;
-      color: $unihelp-white!important;
+      color: $unihelp-white !important;
       -webkit-transition: background-color 100ms linear;
       -ms-transition: background-color 100ms linear;
       transition: background-color 100ms linear;
@@ -240,8 +248,7 @@ no-margin-top {
 }
 
 #page-header {
-  //sticky
-  //position: fixed !important;
+  transition: 1s ease all;
   top: 0;
   left: 0;
   z-index: 999;
@@ -250,7 +257,6 @@ no-margin-top {
     color: $unihelp-black;
     text-decoration: none;
   }
-
   .links {
     float: right;
     list-style-type: none;
@@ -276,12 +282,20 @@ no-margin-top {
       }
     }
   }
+  &.large{
+    height: auto;
+
+  }
+  &.small{
+    height: 4.5em!important;
+    padding: 5px!important;
+  }
 }
 
-.breadcrumb-banner{
+.breadcrumb-banner {
   height: 35vh;
   position: relative;
-  .background-image{
+  .background-image {
     background-image: url("/img/backgrounds/alexis-brown-82988.jpg");
     background-size: cover;
     background-position: center;
@@ -292,9 +306,9 @@ no-margin-top {
     right: 0;
     z-index: 1;
   }
-  .inner-content{
+  .inner-content {
     z-index: 2;
-    h1{
+    h1 {
       text-align: center;
       color: $unihelp-white;
       text-shadow: 1px 1px $unihelp-asphalt;
@@ -326,7 +340,7 @@ no-margin-top {
 
 /*Home banner*/
 #page-banner {
-  height: 99.5vh;
+  height: 90vh;
   margin-bottom: 5%;
   background-image: url("/img/backgrounds/banner.png");
   background-size: cover;
@@ -400,6 +414,41 @@ no-margin-top {
         margin: 0 auto;
       }
     }
+  }
+}
+
+#gallery {
+  margin: 2em 0 2em 0;
+  .box {
+    cursor: pointer;
+    margin-bottom: 10px;
+    height: 185px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .full-image {
+    height: 770px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: galerij-animatie 1s linear 1;
+    }
+  }
+}
+
+@keyframes galerij-animatie {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -641,6 +690,46 @@ no-margin-top {
   }
 }
 
+.auth-box {
+  min-height: 350px;
+  height: auto;
+  margin: auto;
+  background: $unihelp-white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  input[type=text], input[type=password], input[type=submit] {
+    height: 50px !important;
+  }
+  h3, h4{
+    text-align: left!important;
+  }
+h4{color:$unihelp-asphalt; text-align: center}
+  .login {
+    background: $unihelp-green;
+    color: $unihelp-white;
+    &:hover {
+      background: $unihelp-grey;
+    }
+  }
+  .reg{
+    background: $unihelp-brown;
+    color: $unihelp-white;
+  }
+
+  .canvas{
+    background: $unihelp-grey;
+    color: $unihelp-white;
+  }
+  footer {
+    height: 60px;
+    line-height: 60px;
+    background: #f3f3f3;
+  }
+}
+
 /*Footer*/
 footer {
   clear: both;
@@ -697,21 +786,20 @@ footer {
   }
 }
 
-
-.cookie-consent{
+.cookie-consent {
   position: fixed;
   left: 20px;
   bottom: 20px;
   background: $unihelp-green;
   padding: 15px;
   color: $unihelp-white;
-  button{
+  button {
     color: $unihelp-green;
     border: 1px solid transparent;
-    border-radius: 0!important;
+    border-radius: 0 !important;
     margin-top: 1em;
     padding: 5px;
-    &:hover{
+    &:hover {
       cursor: pointer;
       background: $unihelp-green;
       border: 1px solid $unihelp-white;
@@ -901,7 +989,6 @@ footer {
   -ms-user-select: none;
   user-select: none;
   text-align: left;
-
   /* Hide the browser's default checkbox */
   input {
     position: absolute;
@@ -1010,7 +1097,6 @@ footer {
       z-index: 1;
     }
     /*Geen connector nodig voor stap 1*/
-
     &:first-child:after {
       content: none;
     }
@@ -1049,15 +1135,13 @@ form.register .form-group {
 
 @media only screen and (max-width: 1500px) {
   #page-header .links {
-    padding-top: 0.5%;
+    //padding-top: 0.5%;
   }
-
   footer {
     .top {
       min-height: 15em;
       height: auto;
     }
-
     .bottom {
       /*height: 12em;*/
     }
@@ -1070,17 +1154,14 @@ form.register .form-group {
       min-height: 25em;
       height: auto;
     }
-
   }
 }
 
 @media only screen and (max-width: 768px) {
-
   #page-banner, #about-banner {
     margin-top: 48px;
   }
   /*responsive menu*/
-
   #page-header {
     height: auto;
     .hamburger {
@@ -1100,7 +1181,6 @@ form.register .form-group {
         line-height: 2em;
       }
     }
-
   }
 
   /* #slicknav menu */
@@ -1139,7 +1219,6 @@ form.register .form-group {
     margin-left: 0;
   }
   #how-it-works .item {
-
     .right, .left {
       padding: 0;
     }
@@ -1185,17 +1264,14 @@ form.register .form-group {
       min-height: 30em;
       height: auto;
     }
-
     .bottom {
       height: 12em;
     }
-
   }
 
 }
 
 @media only screen and (max-width: 480px) {
-
   .call-to-action {
     min-height: 250px;
   }
@@ -1203,7 +1279,6 @@ form.register .form-group {
     .top {
       min-height: 35em;
     }
-
     #mce-EMAIL {
       width: 100% !important;
       float: left !important;
@@ -1220,7 +1295,6 @@ form.register .form-group {
       background: #4D6A50 !important;
     }
   }
-
 }
 
 

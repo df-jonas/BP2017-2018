@@ -86,24 +86,22 @@
                             </div>
 
                             <div class="details col-xs-12">
-                                <div class="row">
                                     <div class="detail col-sm-3 col-xs-12">
-                                        <h5>Type document</h5>
+                                        <h6>Type document</h6>
                                         <i class="fa fa-file"><span>{{ $file->doctype->name }}</span></i>
                                     </div>
                                     <div class="detail col-sm-3 col-xs-12">
-                                        <h5>Studierichting</h5>
+                                        <h6>Studierichting</h6>
                                         <i class="fa fa-graduation-cap"><span>{{ $file->field->name }}</span></i>
                                     </div>
                                     <div class="detail col-sm-3 col-xs-12">
-                                        <h5>Studiejaar</h5>
+                                        <h6>Studiejaar</h6>
                                         <i class="fa fa-archive"><span>{{ $file->degree->name }}</span></i>
                                     </div>
                                     <div class="detail col-sm-3 col-xs-12">
-                                        <h5>Vak</h5>
+                                        <h6>Vak</h6>
                                         <i class="fa fa-book"><span>{{ $file->course->name }}</span></i>
                                     </div>
-                                </div>
                             </div>
 
                             <div class="col-xs-12">

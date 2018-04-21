@@ -10,4 +10,23 @@ class ProfileController extends Controller
     {
         return view("platform.profile.index");
     }
+
+    public function ratings()
+    {
+        return view("platform.profile.ratings");
+    }
+
+    public function downloads()
+    {
+        return view("platform.profile.downloads");
+    }
+
+    public function uploads()
+    {
+        return view("platform.profile.uploads");
+    }
+    public function notifications()
+    {
+        return view("platform.profile.notifications");
+    }
 }

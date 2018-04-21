@@ -2,68 +2,56 @@
 
 @section('content')
     <div id="login-page">
-        <div class="login-box">
+        <!-- TODO classes goed zetten, name attrituben, routes -->
+        <div class="auth-box col-lg-5 col-mg-8 col-sm-10 col-xs-12 clearfix">
 
-
-
-            <header class="col-xs-12">
-                <h3>Inloggen</h3>
-                <p>Vul je gegevens in om in te loggen met je UniHelp account.</p>
-            </header>
-
-            <div class="box col-xs-12 clearfix">
-                <form method="POST" action="{{ route('login') }}">
-
-                    {{ csrf_field() }}
-
+            <form method="POST" action="{{ route('login') }}">
+                {{ csrf_field() }}
+                <div class="col-sm-6 col-xs-12 padding">
+                    <h4 class="padding">Aanmelden</h4>
                     <div class="form-group clearfix col-xs-12">
-                        <label for="email">E-mailadres</label>
-                        <input type="text" class="form-control" id="email" name="email"
-                               aria-describedby="usernameHelp">
+                        <input type="text" class="form-control" id="email" name="email" aria-describedby="usernameHelp"
+                               placeholder="someone@example.com">
                         @if ($errors->has('email'))
                             <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
                         @endif
                     </div>
-
                     <div class="form-group clearfix col-xs-12">
-                        <label for="password">Wachtwoord</label>
                         <input type="password" class="form-control" id="password" name="password"
-                               aria-describedby="usernameHelp">
+                               aria-describedby="usernameHelp" placeholder="*****">
                         @if ($errors->has('password'))
                             <span class="help-block"><strong>{{ $errors->first('password') }}</strong></span>
                         @endif
                     </div>
-
-                    <!-- TODO aangemeld blijven
                     <div class="form-group clearfix col-xs-12">
-                        <label class="form-check-label">
-                            <input type="checkbox" name="remember" class="form-check-input">Aangemeld blijven
+
+                        <label class="checkbox-container col-xs-12">Aangemeld blijven
+                            <input type="checkbox" name="remember" value="Aangemeld blijven" class="form-check-input" checked>
+                            <span class="checkmark"></span>
                         </label>
                     </div>
-                    -->
+                    <div class="form-group clearfix col-xs-12">
+                        <input type="submit" class="action-button login col-xs-12" value="Inloggen">
+                    </div>
+                </div>
+            </form>
+                <div class="col-sm-6 col-xs-12 padding">
+                    <h4 class="padding">Registreren</h4>
 
                     <div class="form-group clearfix col-xs-12">
-                        <label for="password"></label>
-                        <input type="submit" class="action-button login" value="Inloggen">
+                        <a href="{{ route('register') }}">
+                        <input type="submit" class="action-button reg col-xs-12" value="Registreren">
+                        </a>
                     </div>
+                    <!-- TODO Jonas: login with canvas -->
+                    <div class="form-group clearfix col-xs-12">
+                        <input type="submit" class="action-button canvas col-xs-12" value="LOGIN MET CANVAS">
+                    </div>
+                </div>
 
-                </form>
-                <a class="login-problem" href="#"><p>Wachtwoord vergeten?</p></a>
-            </div>
-
-
-
-
-            <footer class="col-xs-12 clearfix">
-                <h5>Heb je nog geen UniHelp account?</h5>
-                <br/>
-
-                    <a href="{{ route('register') }}">
-                        <input type="button" class="action-button register" value="Registreer nu">
-                    </a>
-
+            <footer class="row">
+                <p>Problemen met inloggen? <strong>Wachtwoord vergeten?</strong></p>
             </footer>
-
 
         </div>
     </div>

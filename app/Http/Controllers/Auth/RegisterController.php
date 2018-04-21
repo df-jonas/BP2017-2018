@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Intervention\Image\Facades\Image;
+use Notification;
+use App\Notifications\UserRegistered;
 
 class RegisterController extends Controller
 {
@@ -101,7 +103,7 @@ class RegisterController extends Controller
             })->save($img_location);
         }
 
-        return User::create([
+         $user = User::create([
             'image' => $img_name,
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
@@ -111,5 +113,8 @@ class RegisterController extends Controller
             'campusid' => $data['campus'],
             'fosid' => $data['fos'],
         ]);
+        //user mail na register
+        $user->notify(new UserRegistered($user));
+        return $user;
     }
 }

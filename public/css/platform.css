@@ -20,12 +20,6 @@ body.platform {
   display: none;
 }
 
-/*Helpers*/
-
-.padding {
-  padding: 15px;
-}
-
 .brown {
   color: #8A7E72;
 }
@@ -256,7 +250,7 @@ div.container {
   padding: 5px;
   width: 20px;
   height: 20px;
-  line-height: 10px;
+  line-height: 7.5px;
   text-align: center;
 }
 
@@ -603,13 +597,20 @@ div.container {
   font-size: 14px;
 }
 
-.detail.file .details .detail i {
-  color: #8A7E72;
+.detail.file .details {
+  margin-top: 2em;
+  opacity: 0.9;
+}
+
+.detail.file .details .detail {
+  background: #4D6A50;
+  border: 1px solid #ffffff;
+  padding: 5px 5px 5px 10px;
+  color: #ffffff;
 }
 
 .detail.file .details .detail i span {
-  font-family: Raleway;
-  color: black;
+  color: #ffffff;
   line-height: 1em;
   padding-left: 12px;
   font-size: 16px;

@@ -110,8 +110,6 @@
     </section>
 
 
-
-
     <!-- call to action slogan -->
     <div class="row">
         <section class="call-to-action col-xs-12">
@@ -136,6 +134,8 @@
             </div>
         </section>
     </div>
+
+
 
 
     <!-- footer -->

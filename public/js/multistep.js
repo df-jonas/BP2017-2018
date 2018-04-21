@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    console.log('Multistep script ready');
+    //console.log('Multistep script ready');
 
     //jQuery time
     var current_fs, next_fs, previous_fs; //fieldsets

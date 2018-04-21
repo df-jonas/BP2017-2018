@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 use App\Campus;
 use App\Fos;
 use App\Helpers\HttpHelper;
+use App\Notifications\UserRegistered;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -103,6 +104,7 @@ class AuthController extends Controller
     {
         if (Auth::check() && Auth::user()->isValid()) {
             return Redirect::to(route('sharing-index'));
+
         }
         return view("website.login");
     }
@@ -139,7 +141,8 @@ class AuthController extends Controller
             }
 
             $user->save();
-
+            //user mail na register
+            //$user->notify(new UserRegistered($user));
             return Redirect::to(route('sharing-index'));
         }
         return Redirect::to(route('register'));

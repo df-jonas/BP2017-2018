@@ -25,7 +25,7 @@ class WebsiteController extends Controller
 
     public function how()
     {
-        return view("website.index");
+        return view("website.how");
     }
 
     public function cookies()

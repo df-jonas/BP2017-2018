@@ -7,22 +7,16 @@
 
             <header class="col-xs-12">
                 <h3>Registreren</h3>
-                <p>Vul je gegevens in om een UniHelp account aan te maken.</p>
             </header>
-
 
             <form id="msform" class="register clearfix" method="post" enctype="multipart/form-data"
                   action="{{ route('register') }}">
 
             {{ csrf_field() }}
-
-
             <!-- step 1 -->
                 <fieldset>
                     <article>
-
                         <div class="box">
-
                             <div class="form-group clearfix col-xs-12">
                                 <div class="profile-img-container col-xs-12">
                                     <img src="{{ asset('img/avatars/empty.png') }}" class="account-img round-img"
@@ -32,6 +26,7 @@
                                     @if ($errors->has('avatar'))
                                         <span class="help-block"><strong>{{ $errors->first('avatar') }}</strong></span>
                                     @endif
+                                    <h6 style="text-align: center">Klik om een avatar te kiezen.</h6>
                                 </div>
                             </div>
 
@@ -139,34 +134,29 @@
                                 </label>
                             </div>
 
-
-                            <input type="button" name="previous" class="action-button previous col-xs-12" value="Vorige"/>
-                            <input type="submit" name="submit" class="action-button finish col-xs-12" value="Voltooien"/>
-
-
-                            <!-- <input type="submit" name="submit" class="next col-xs-12" value="Registreren"/> -->
+                            <input type="button" name="previous" class="action-button previous col-xs-12"
+                                   value="Vorige"/>
+                            <input type="submit" name="submit" class="action-button finish col-xs-12"
+                                   value="Voltooien"/>
 
                         </div>
-
 
                     </article>
                 </fieldset>
                 <!-- step 2 -->
 
-
                 <!-- multistep form -->
-
-
             </form>
-        <!-- <a class="login-problem" href="{{ route('login') }}"><p>Ik heb al een account.</p></a> -->
             <footer class="col-xs-12 clearfix">
-                <h5>Heb je wel al een UniHelp account?</h5>
+                <h5 class="green">Heb je wel al een UniHelp account?</h5>
                 <br/>
-
                 <a href="{{ route('login') }}">
                     <input type="button" class="action-button register" value="Inloggen">
                 </a>
-
+                <!-- TODO JONAS Canvas register -->
+                <a href="#">
+                    <input type="button" class="action-button register" value="Registreer met canvas">
+                </a>
             </footer>
             <!-- files -->
         </div>
