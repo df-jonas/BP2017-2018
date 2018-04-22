@@ -228,6 +228,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'ActiveHelper' => App\Helpers\ActiveRouteHelper::class,
+        'Variable' => App\Helpers\GlobalVariableHelper::class,
     ],
 
     /*
@@ -235,7 +236,7 @@ return [
     | Canvas parameters
     |--------------------------------------------------------------------------
     |
-    | Parameters to be initialized for canvas usage
+    | Parameters to be initialized for canvas usage.
     |
     */
 
