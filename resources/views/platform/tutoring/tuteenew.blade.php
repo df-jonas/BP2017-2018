@@ -1,14 +1,14 @@
 @extends('layouts.platform')
 
+@section('pagetitle', 'Word tutee')
+
 @section('content')
     @include('partials.platform.header')
     @include('partials.platform.subheader')
-
     <div class="container">
         <div class="table">
             <!-- Sidebar -->
             <div class="sidebar">
-
                 <article class="item file new clearfix">
                     <header>Informatie</header>
                     <div class="padding">
@@ -32,19 +32,14 @@
                 </article>
                 <!-- sidebar -->
             </div>
-
-
             <!-- content -->
             <div class="content">
                 <!-- files -->
                 <div class="files">
-
                     <!-- multistep form -->
                     <form id="msform" class="col-xs-12 no-padding clearfix" method="post" enctype="multipart/form-data"
-                          action="{{route('sharing-new')}}">
-
+                          action="{{route('tutoring-tutee-new')}}">
                     {{ csrf_field() }}
-
                     <!-- progressbar -->
                         <article class="item file new clearfix">
                             <div class="padding">
@@ -57,153 +52,114 @@
                             </div>
                         </article>
                         <!-- progressbar -->
-
                         <!-- step 1 -->
                         <fieldset>
-
                             <article class="item file new clearfix">
                                 <div class="padding">
                                     <div class="form-group clearfix">
                                         <div class="selectdiv">
                                             <label for="course">Voor welk vak wil je tutoring krijgen?</label>
                                             <select id="course" class="select col-xs-12 form-control" name="course">
-                                                <option value="1">Test</option>
+                                                @foreach($courses as $course)
+                                                    <option value="{{ $course->id }}">{{ $course->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group padding clearfix">
-                                    <input type="button" class="download-button next col-lg-2 col-sm-4 col-xs-12" value="Volgende">
+                                    <input type="button" class="download-button next col-lg-2 col-sm-4 col-xs-12"
+                                           value="Volgende">
                                 </div>
-
                             </article>
-
-
-
                         </fieldset>
                         <!-- step 1 -->
-
                         <!-- step 2 -->
                         <fieldset>
                             <article class="item file new clearfix">
                                 <div class="padding">
-
-
-
                                     <div class="form-group clearfix">
-                                        <label for="filedesc">Waarom heb je tutoring nodig voor dit vak?</label>
-                                        <textarea class="form-control" rows="5" id="filedesc" name="filedescription"></textarea>
+                                        <label for="description">Waarom heb je tutoring nodig voor dit vak?</label>
+                                        <textarea class="form-control" rows="5" id="description"
+                                                  name="description"></textarea>
                                     </div>
-
-
-
-
-
-
-
-                                    <input type="button" class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Volgende">
-                                    <input type="button" class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1 col-xs-12" value="Vorige">
-
+                                    <input type="button" class="download-button next col-lg-2  col-sm-4 col-xs-12"
+                                           value="Volgende">
+                                    <input type="button"
+                                           class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1 col-xs-12"
+                                           value="Vorige">
                                 </div>
                             </article>
                         </fieldset>
                         <!-- step 2 -->
-
                         <!-- step 3 -->
                         <fieldset>
                             <article class="item file new clearfix">
                                 <div class="padding">
-
                                     <div class="form-group clearfix">
-
                                         <label>Kies uw persoonlijke voorkeuren</label>
-
-
-                                        <label class="checkbox-container col-xs-12">extra oefeningen
-                                            <input type="checkbox" name="pubyear[]" value="1"
-                                                   class="filterlistener">
+                                        <label class="checkbox-container col-xs-12">Extra oefeningen
+                                            <input type="checkbox" name="exercises">
                                             <span class="checkmark"></span>
                                         </label>
-
-                                        <label class="checkbox-container col-xs-12">nood aan extra uitleg
-                                            <input type="checkbox" name="pubyear[]" value="1"
-                                                   class="filterlistener">
+                                        <label class="checkbox-container col-xs-12">Nood aan extra uitleg
+                                            <input type="checkbox" name="explanation">
                                             <span class="checkmark"></span>
                                         </label>
-
-                                        <label class="checkbox-container col-xs-12">studiehulp
-                                            <input type="checkbox" name="pubyear[]" value="1"
-                                                   class="filterlistener">
+                                        <label class="checkbox-container col-xs-12">Studiehulp
+                                            <input type="checkbox" name="studying">
                                             <span class="checkmark"></span>
                                         </label>
-
-
-
-
-
                                     </div>
-
-
-
-                                    <input type="button" class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Volgende">
-                                    <input type="button" class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1 col-xs-12" value="Vorige">
+                                    <input type="button" class="download-button next col-lg-2  col-sm-4 col-xs-12"
+                                           value="Volgende">
+                                    <input type="button"
+                                           class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1 col-xs-12"
+                                           value="Vorige">
                                 </div>
                             </article>
                         </fieldset>
                         <!-- step 3 -->
-
                         <!-- step 4 -->
                         <fieldset>
                             <article class="item file new clearfix">
                                 <div class="padding">
-
                                     <label>Verzoek eigenschappen</label>
-
                                     <table class="file-overview">
-
                                         <tr class="spacer" style="height: 2em;">
                                             <td></td>
                                         </tr>
-
-
                                         <tr>
                                             <td class="bold">Vak</td>
                                             <td class="static-course">Project management</td>
                                             <td class="small">Bewerken</td>
                                         </tr>
-
                                         <tr class="spacer">
                                             <td></td>
                                         </tr>
-
                                         <tr>
                                             <td class="bold">Beschrijvingen</td>
                                             <td class="static-title">Lorem ipsum</td>
                                             <td class="small">Bewerken</td>
                                         </tr>
-
-
                                         <tr class="spacer">
                                             <td></td>
                                         </tr>
-
                                         <tr>
                                             <td class="bold">Voorkeuren</td>
                                             <td class="static-book">Extra oefeningen</td>
                                             <td class="small">Bewerken</td>
                                         </tr>
-
                                         <tr class="spacer">
                                             <td></td>
                                         </tr>
-
                                     </table>
-
-                                    <input id="submitall" type="submit" name="submit" class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Versturen">
-                                    <input type="button" class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1 col-xs-12" value="Vorige">
-
-
+                                    <input id="submitall" type="submit" name="submit"
+                                           class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Versturen">
+                                    <input type="button"
+                                           class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1 col-xs-12"
+                                           value="Vorige">
                                 </div>
                             </article>
                         </fieldset>
@@ -217,7 +173,6 @@
         </div>
         <!-- container -->
     </div>
-
     @include('partials.footer')
 @endsection
 
