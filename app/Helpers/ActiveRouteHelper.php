@@ -16,7 +16,6 @@ class ActiveRouteHelper
 {
     public static function isActive($q)
     {
-        Log::info($q);
         return Request::is(substr($q, 1) . '*') ? true : false;
     }
 
