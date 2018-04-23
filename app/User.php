@@ -32,16 +32,32 @@ class User extends Authenticatable
         return $this->hasMany('App\File');
     }
 
-    public function field() {
+    public function field()
+    {
         return $this->belongsTo('App\Fos', 'fosid');
     }
 
-    public function campus() {
+    public function campus()
+    {
         return $this->belongsTo('App\Campus', 'campusid');
     }
 
-    public function role() {
+    public function role()
+    {
         return $this->belongsTo('App\Role', 'role');
+    }
+
+    public function countIsTutor()
+    {
+        $ids = Tutor::query()
+            ->where("user_id", "=", $this->id)
+            ->where("active", "=", true)
+            ->get(['id']);
+
+        return TutoringSession::query()
+            ->whereIn("tutor_id", $ids)
+            ->where("active", "=", true)
+            ->count();
     }
 
     public function isValid()

@@ -75,6 +75,7 @@
             Route::get('/tutoring/tutee/new', 'TutoringController@newtutee')->name('tutoring-tutee-new');
             Route::post('/tutoring/tutee/new', 'TutoringController@newtuteepost');
             Route::get('/tutoring/help', 'TutoringController@help')->name('tutoring-help');
+            Route::get('/tutoring/accept/{tutee_id}', 'TutoringController@accept')->name('tutoring-accept');
             Route::get('/tutoring/{id}/messages', 'TutoringController@messages')->name('tutoring-messages');
             Route::get('/tutoring/{id}/planning', 'TutoringController@planning')->name('tutoring-planning');
 

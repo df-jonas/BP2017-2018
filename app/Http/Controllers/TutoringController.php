@@ -117,9 +117,59 @@ class TutoringController extends Controller
         return Redirect::to(route('tutoring-index'));
     }
 
+    public function accept($tutee_id)
+    {
+        if (Auth::user()->countIsTutor() >= 3)
+            abort(404);
+
+        $tutee = Tutee::query()
+            ->where("id", "=", $tutee_id)
+            ->where("active", "=", true)
+            ->first();
+
+        if ($tutee == null)
+            abort(404);
+
+        $tutor = Tutor::query()
+            ->where("user_id", "=", Auth::id())
+            ->where("course_id", "=", $tutee->course->id)
+            ->where("active", "=", true)
+            ->first();
+
+        if ($tutor == null)
+            abort(404);
+
+        $tutee->active = false;
+        $tutee->save();
+
+        $session = new TutoringSession();
+        $session->tutee_id = $tutee->id;
+        $session->tutor_id = $tutor->id;
+        $session->active = true;
+        $session->save();
+
+        return Redirect::to(route("tutoring-index"));
+    }
+
     public function help()
     {
-        return view("platform.tutoring.help");
+        $ids = Tutor::query()
+            ->where("active", "=", true)
+            ->where("user_id", "=", Auth::id())
+            ->get(['course_id']);
+
+        $candidates = Tutee::query()
+            ->where("active", "=", true)
+            ->whereIn("course_id", $ids)
+            ->orderBy("created_at", "asc")
+            ->take(10)
+            ->get();
+
+        $arr = [
+            'candidates' => $candidates
+        ];
+
+        return view("platform.tutoring.help", $arr);
     }
 
     public function messages()
@@ -131,6 +181,4 @@ class TutoringController extends Controller
     {
         return view("platform.tutoring.planning");
     }
-
-
 }

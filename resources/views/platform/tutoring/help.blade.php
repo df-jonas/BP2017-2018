@@ -13,42 +13,33 @@
                 <article class="item user-owned">
                     <header>Verzoeken</header>
                     <div class="padding">
-                        <div class="row flex">
-                            <div class="icon col-xs-2">
-                                <img src="{{asset('img/icons/003-trophy-black-cup-symbol.png')}} "
-                                     style="width: 36px; height: 36px">
-                            </div>
-                            <div class="col-xs-7">
-                                <h5><a href="#">Android development</a></h5>
-                                <div class="rating">
-                                    <p>Inkomend tutee verzoek</p>
+                        @if(sizeof($candidates) <= 0)
+                            <p>Er zijn geen verzoeken gevonden voor jouw geselecteerde vakken.</p>
+                        @else
+                            @foreach($candidates as $candidate)
+                                <div class="row flex">
+                                    <div class="icon col-xs-2">
+                                        <img src="{{asset('img/icons/002-group-persons.png')}} "
+                                             style="width: 36px; height: 36px">
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <h5><a href="#">{{ $candidate->course->name }}</a></h5>
+                                        <div class="rating">
+                                            <p>Inkomend tutee verzoek</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <a href="{{ route("tutoring-accept", ['tutee_id' => $candidate->id]) }}">
+                                            <i class="fa fa-check brown"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xs-3">
-                                <i class="fa fa-check brown"></i>
-                                <i class="fa fa-trash brown"></i>
-                            </div>
-                        </div>
-                        <div class="row flex">
-                            <div class="col-xs-2">
-                                <img src="{{asset('img/icons/003-trophy-black-cup-symbol.png')}} "
-                                     style="width: 36px; height: 36px">
-                            </div>
-                            <div class="col-xs-7">
-                                <h5><a href="#">Android development</a></h5>
-                                <div class="rating">
-                                    <p>Uitgaand tutor verzoek</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-3">
-                                <i class="fa fa-check brown"></i>
-                                <i class="fa fa-trash brown"></i>
-                            </div>
-                        </div>
+                            @endforeach
+                        @endif
                     </div>
                 </article>
                 <!-- End requests-->
-                <!--
+            <!--
                 <article class="item user-owned">
                     <header>Mijn tutees</header>
                     <div class="padding">
@@ -97,7 +88,7 @@
                     </div>
                 </article>
                 -->
-                <!--
+            <!--
                 <article class="item user-owned">
                     <header>Mijn tutors</header>
                     <div class="padding">
