@@ -1,12 +1,4 @@
-$(window).on("load", function (e) {
-    // Animate loader off screen
-    $(".se-pre-con").fadeOut("slow");
-    ;
-});
-
-
 $(document).ready(function () {
-    //console.log('ready');
     //referentie: https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
     $('.inputFile').each(function () {
         var $input = $(this),
@@ -52,7 +44,6 @@ $(document).ready(function () {
     //profile pic upload on register screen
     $(function () {
         $('#picture-input').change(function (e) {
-            //console.log('upload');
             var img = URL.createObjectURL(e.target.files[0]);
             $('#register-img').attr('src', img);
 

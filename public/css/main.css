@@ -689,7 +689,6 @@ no-margin-top {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /*Register*/
 }
 
 #login-page h3 {
@@ -699,13 +698,6 @@ no-margin-top {
 #login-page h3,
 #login-page p {
   text-align: center;
-}
-
-#login-page img {
-  width: 25%;
-  display: block;
-  margin: 0 auto;
-  margin-top: 10%;
 }
 
 #login-page .login-box {
@@ -791,62 +783,6 @@ no-margin-top {
   transition: background-color 100ms linear;
 }
 
-#login-page .account-img {
-  width: 10rem;
-  height: 10rem;
-  background-color: #ffffff;
-  display: block;
-  margin: 0 auto;
-  cursor: pointer;
-}
-
-#login-page .profile-img-container {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-}
-
-#login-page .profile-img-container img {
-  width: 128px;
-  height: 128px;
-}
-
-#login-page .profile-img-container a,
-#login-page .profile-img-container #picture-input {
-  display: block;
-  position: absolute;
-  top: 0;
-  opacity: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-  color: inherit;
-  color: #4D6A50;
-  font-size: 0.5em;
-  cursor: pointer;
-}
-
-#login-page .profile-img-container:hover a {
-  opacity: 1;
-  top: 0;
-  z-index: 500;
-}
-
-#login-page .profile-img-container:hover a span {
-  top: 50%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-#login-page .profile-img-container #picture-input {
-  z-index: 999;
-  width: 30rem;
-}
-
 #login-page .page-error h1,
 #login-page .page-error h3,
 #login-page .page-error h4,
@@ -885,6 +821,64 @@ no-margin-top {
 #login-page .page-error p:active,
 #login-page .page-error p:focus {
   color: black;
+}
+
+/*Register*/
+
+.account-img {
+  width: 10rem;
+  height: 10rem;
+  background-color: #ffffff;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.profile-img-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.profile-img-container img {
+  width: 128px;
+  height: 128px;
+}
+
+.profile-img-container a,
+.profile-img-container #picture-input {
+  display: block;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  color: inherit;
+  color: #4D6A50;
+  font-size: 0.5em;
+  cursor: pointer;
+}
+
+.profile-img-container:hover a {
+  opacity: 1;
+  top: 0;
+  z-index: 500;
+}
+
+.profile-img-container:hover a span {
+  top: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.profile-img-container #picture-input {
+  z-index: 999;
+  width: 30rem;
 }
 
 .auth-box {

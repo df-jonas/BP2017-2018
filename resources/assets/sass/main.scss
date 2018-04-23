@@ -551,12 +551,7 @@ no-margin-top {
   h3, p {
     text-align: center;
   }
-  img {
-    width: 25%;
-    display: block;
-    margin: 0 auto;
-    margin-top: 10%;
-  }
+
   .login-box {
     width: 35em;
     max-width: 100%;
@@ -622,55 +617,6 @@ no-margin-top {
 
   }
 
-  /*Register*/
-  .account-img {
-    width: 10rem;
-    height: 10rem;
-    background-color: $unihelp-white;
-    display: block;
-    margin: 0 auto;
-    cursor: pointer;
-  }
-
-  .profile-img-container {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    img {
-      width: 128px;
-      height: 128px;
-    }
-    a, #picture-input {
-      display: block;
-      position: absolute;
-      top: 0;
-      opacity: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      text-align: center;
-      color: inherit;
-      color: $unihelp-green;
-      font-size: 0.5em;
-      cursor: pointer;
-    }
-    &:hover a {
-      opacity: 1;
-      top: 0;
-      z-index: 500;
-      span {
-        top: 50%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        transform: translateY(-50%);
-      }
-    }
-    #picture-input {
-      z-index: 999;
-      width: 30rem;
-    }
-  }
 
   .page-error {
     h1, h3, h4, p, a {
@@ -687,6 +633,56 @@ no-margin-top {
       @include link(black, black, black, black);
     }
 
+  }
+}
+
+/*Register*/
+.account-img {
+  width: 10rem;
+  height: 10rem;
+  background-color: $unihelp-white;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.profile-img-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  img {
+    width: 128px;
+    height: 128px;
+  }
+  a, #picture-input {
+    display: block;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: inherit;
+    color: $unihelp-green;
+    font-size: 0.5em;
+    cursor: pointer;
+  }
+  &:hover a {
+    opacity: 1;
+    top: 0;
+    z-index: 500;
+    span {
+      top: 50%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+  #picture-input {
+    z-index: 999;
+    width: 30rem;
   }
 }
 
