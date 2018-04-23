@@ -3,7 +3,7 @@
 @section('content')
     <div id="login-page">
         <!-- TODO classes goed zetten, name attrituben, routes -->
-        <div class="auth-box col-lg-5 col-mg-8 col-sm-10 col-xs-12 clearfix">
+        <div class="auth-box col-lg-6 col-mg-8 col-sm-10 col-xs-12 clearfix">
 
             <form method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}

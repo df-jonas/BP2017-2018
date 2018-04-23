@@ -68,20 +68,29 @@ div.container {
   cursor: pointer;
 }
 
-.go-back a {
+.go-back a,
+.message a {
   color: #8A7E72;
 }
 
-.go-back i {
+.go-back i,
+.message i {
   cursor: pointer;
 }
 
-.go-back i span {
+.go-back i span,
+.message i span {
   font-family: Raleway;
 }
 
-.go-back .padding {
+.go-back .padding,
+.message .padding {
   padding: 7.5px;
+}
+
+.message {
+  color: #ffffff !important;
+  background: #4D6A50 !important;
 }
 
 .modal h4 {
@@ -164,16 +173,57 @@ div.container {
   opacity: 0.5;
 }
 
+#platform-header .account:hover .account-img {
+  border: 0.5px solid #ffffff;
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+#platform-header .account .account-user-notifications {
+  margin-right: 1em;
+  position: relative;
+}
+
+#platform-header .account .account-user-notifications span {
+  font-size: 12px;
+  padding: 2px;
+  position: absolute;
+  line-height: 9px;
+  text-align: center;
+  right: -5px;
+  top: -5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background: red;
+  color: #ffffff;
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+#platform-header .account .account-user-notifications:hover span {
+  height: 17px;
+  width: 17px;
+  font-size: 13px;
+  line-height: 10px;
+  top: -6px;
+  right: -6px;
+  background: #333a40;
+}
+
 #platform-header #account-dropdown {
   width: 200px;
-  margin-left: -30%;
-  top: 3em;
+  margin-left: -100px;
+  top: 3.5em;
+  padding-top: 0;
   position: absolute;
   -webkit-box-shadow: 2px #333a40;
           box-shadow: 2px #333a40;
   border-radius: 3px;
   padding-bottom: 0;
   margin-bottom: 0;
+  -webkit-transition: 0.5s ease all linear;
+  transition: 0.5s ease all linear;
 }
 
 #platform-header #account-dropdown li {
@@ -193,6 +243,31 @@ div.container {
 
 #platform-header #account-dropdown li a:hover {
   background: #4D6A50 !important;
+  color: #ffffff;
+}
+
+#platform-header #account-dropdown:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 6px 12px 6px;
+  border-color: transparent transparent #ffffff;
+  position: absolute;
+  right: 12px;
+  top: -12px;
+}
+
+#platform-header .dropdown-user-info {
+  display: block;
+  height: auto;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+#platform-header .dropdown-user-info:hover {
+  background: #8A7E72;
   color: #ffffff;
 }
 
@@ -1174,14 +1249,14 @@ form .form-group {
   }
 
   /*
-  .file .rating {
-    font-size: 1.5em;
-    position: absolute;
-    left: 0%;
-    top: 50%;
-    transform: translate(0, -50%);
-  }
-*/
+    .file .rating {
+      font-size: 1.5em;
+      position: absolute;
+      left: 0%;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  */
 
   .headline .right h4 {
     text-align: center;

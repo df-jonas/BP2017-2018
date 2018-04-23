@@ -61,8 +61,8 @@ div.container {
   cursor: pointer;
 }
 
-.go-back {
-  a{
+.go-back, .message {
+  a {
     color: $unihelp-brown;
   }
   i {
@@ -75,6 +75,11 @@ div.container {
   .padding {
     padding: 7.5px;
   }
+}
+
+.message {
+  color: $unihelp-white !important;
+  background: $unihelp-green !important;
 }
 
 .modal h4 {
@@ -146,18 +151,55 @@ div.container {
       fill: $unihelp-white;
       opacity: 0.5;
     }
+    &:hover{
+      .account-img {
+        border: 0.5px solid $unihelp-white;
+        transition: 0.2s ease all;
+      }
+    }
+    .account-user-notifications{
+      margin-right: 1em;
+      position: relative;
+      span{
+        font-size: 12px;
+        padding: 2px;
+        position: absolute;
+        line-height: 9px;
+        text-align: center;
+        right: -5px;
+        top: -5px;
+        width: 16px;
+        height: 16px;
+        border-radius: 100%;
+        background: red;
+        color: $unihelp-white;
+        transition: 0.2s ease all;
+      }
+      &:hover{
+        span{
+          height: 17px;
+          width: 17px;
+          font-size: 13px;
+          line-height: 10px;
+          top: -6px;
+          right: -6px;
+          background: $unihelp-asphalt;
+        }
+      }
+    }
   }
   #account-dropdown {
     width: 200px;
-    //height: 100%;
-    margin-left: -30%;
-    top: 3em;
+    //margin-left: -30%;
+    margin-left: -100px;
+    top: 3.5em;
+    padding-top: 0;
     position: absolute;
-    //padding: 0;
     box-shadow: 2px $unihelp-asphalt;
     border-radius: 3px;
     padding-bottom: 0;
     margin-bottom: 0;
+    transition: 0.5s ease all linear;
     li {
       cursor: pointer;
       height: 50px;
@@ -174,6 +216,29 @@ div.container {
         }
       }
 
+    }
+    &:before{
+      content:"";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 6px 12px 6px;
+      border-color: transparent transparent #ffffff;
+      position: absolute;
+      right: 12px;
+      top:-12px;
+    }
+  }
+
+  .dropdown-user-info{
+    display:block;
+    height: auto;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    &:hover{
+      background: $unihelp-brown;
+      color: $unihelp-white;
     }
   }
 }
@@ -212,7 +277,7 @@ div.container {
         display: inline-block;
         padding-right: 0.85em;
       }
-      .badge{
+      .badge {
         background: $unihelp-brown;
         padding: 5px;
         width: 20px;
@@ -328,6 +393,7 @@ div.container {
   }
 }
 
+
 #tutoring-modal {
   .keuze {
     text-align: center;
@@ -361,12 +427,12 @@ div.container {
     text-align: left;
 
   }
-  &.new{
+  &.new {
     cursor: pointer;
-    .reminder{
+    .reminder {
       background: $unihelp-green;
     }
-    .date{
+    .date {
       text-align: center;
       line-height: 40px;
     }
@@ -378,7 +444,7 @@ div.container {
     h5 {
       margin: 0;
     }
-    p{
+    p {
       color: $unihelp-white;
     }
   }
@@ -418,7 +484,6 @@ div.container {
 .filecontainer {
   display: inline;
 }
-
 
 .overview {
   &.groups, &.group, &.file, &.user-owned {
@@ -500,7 +565,7 @@ div.container {
 }
 
 .detail {
-  p{
+  p {
     font-size: 14px;
   }
   &.file {
@@ -735,7 +800,7 @@ div.container {
     }
   }
   .rating {
-    font-size: 1.5em!important;
+    font-size: 1.5em !important;
     &:hover {
       cursor: pointer;
     }
@@ -1021,16 +1086,16 @@ form .form-group {
     display: none;
   }
 
-  .dropdown{
-    padding: 0!important;
+  .dropdown {
+    padding: 0 !important;
   }
-  #account-dropdown{
-    top: 0!important;
-    right: 0!important;
-    width: 400px!important;
+  #account-dropdown {
+    top: 0 !important;
+    right: 0 !important;
+    width: 400px !important;
     position: absolute;
     background: transparent;
-    width: 100vw!important;
+    width: 100vw !important;
     margin-top: -3.2em;
     height: 100%;
   }
@@ -1045,7 +1110,7 @@ form .form-group {
   }
   .slicknav_menu {
     display: none;
-    padding: 0!important;
+    padding: 0 !important;
   }
 
   .slicknav_nav {
@@ -1061,10 +1126,10 @@ form .form-group {
   #platform-header {
     .account {
       float: left;
-     .account_username, img, .dropdown-toggle{
-       display: none;
-     }
-      .dropdown-menu{
+      .account_username, img, .dropdown-toggle {
+        display: none;
+      }
+      .dropdown-menu {
         display: block;
       }
     }
@@ -1074,7 +1139,6 @@ form .form-group {
     }
   }
 
-
   .container {
     width: 100% !important;
   }
@@ -1082,15 +1146,15 @@ form .form-group {
   .subheader {
     margin-bottom: 0;
   }
-/*
-  .file .rating {
-    font-size: 1.5em;
-    position: absolute;
-    left: 0%;
-    top: 50%;
-    transform: translate(0, -50%);
-  }
-*/
+  /*
+    .file .rating {
+      font-size: 1.5em;
+      position: absolute;
+      left: 0%;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  */
   .headline {
     .right {
       h4 {
@@ -1103,7 +1167,7 @@ form .form-group {
 
 @media only screen and (max-width: 480px) {
 
-  .subheader{
+  .subheader {
     height: 7em;
     text-align: center;
   }

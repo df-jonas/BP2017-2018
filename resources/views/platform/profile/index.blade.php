@@ -5,6 +5,40 @@
     @include('partials.platform.subheader')
 
     <div class="container">
+    @include('partials.platform.message')
+    <!-- Modal -->
+        <div class="modal fade" id="avatar-modal" role="dialog">
+            <form action="{{ route('profile-update') }}" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <div class="modal-dialog  ">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Kies een avatar</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group clearfix col-xs-12">
+                                <br>
+                                <div class="profile-img-container col-xs-12">
+                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                         class="account-img round-img" id="register-img">
+                                    <a href="#"><span class="fa fa-upload fa-5x"></span></a>
+                                    <input id="picture-input" type="file" name="avatar"/>
+                                    @if ($errors->has('avatar'))
+                                        <span class="help-block"><strong>{{ $errors->first('avatar') }}</strong></span>
+                                    @endif
+                                    <h6 style="text-align: center">Klik om een avatar te kiezen.</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="download-button col-lg-2" value="Opslaan">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
 
         <div class="row">
             <article class="item col-xs-12">
@@ -12,84 +46,72 @@
                     <div class="headline">
                         <div class="row flex">
                             <div class="left col-lg-1 col-sm-2 col-xs-12">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img"
+                                     data-toggle="modal" data-target="#avatar-modal">
                                 <br>
-                                <p class="wijzigen">wijzigen</p>
+                                <p class="wijzigen" data-toggle="modal" data-target="#avatar-modal">wijzigen</p>
                             </div>
-
-
                             <div class="right col-lg-11 col-sm-10 col-xs-12">
-                                <h4>Arno Stalpaert</h4>
+                                <h4>{{ $user->first_name. " " .$user->last_name }}</h4>
                                 <h4 style="margin-top: 0">
-                                    <small>arno.stalpaert@hotmail.com</small>
+                                    <small>{{ $email }}</small>
                                 </h4>
                             </div>
-
-
                         </div>
                         <br>
-
                     </div>
                 </div>
-
             </article>
 
 
             <article class="item col-lg-6 left col-xs-12">
-
-
                 <div class="padding">
-
                     <h4>Profiel instellingen</h4>
-
-                    <form>
-
-                        <div class="form-group col-xs-12 no-padding clearfix">
+                    <form action="{{ route('profile-update') }}" method="POST">
+                        {{ csrf_field() }}
+                        <div class="form-group  col-xs-12 no-padding clearfix">
                             <div class="selectdiv">
-                                <label for="studierichting">Studierichting</label>
-                                <select id="studierichting" name="studierichting" class="select col-xs-12">
-                                    <option value="1" selected>Geen selectie</option>
+                                <label for="fos">Welke studierichting volgt u?</label>
+                                <select class="select col-xs-12" id="fos" name="fos">
+                                    @foreach($foses as $fos)
+                                        <option value="{{ $fos->id }}" {{ ($user->fosid == $fos->id ? "selected" : " ") }}>{{ $fos->name }}</option>
+                                    @endforeach
                                 </select>
+                                @if ($errors->has('fos'))
+                                    <span class="help-block"><strong>{{ $errors->first('fos') }}</strong></span>
+                                @endif
                             </div>
                         </div>
-
-
-                        <div class="form-group col-xs-12 no-padding clearfix">
+                        <div class="form-group  col-xs-12 no-padding clearfix">
                             <div class="selectdiv">
-                                <label for="campus">Campus</label>
-                                <select id="campus" name="campus" class="select col-xs-12">
-                                    <option value="1" selected>Geen selectie</option>
+                                <label for="campus">Aan welke campus studeert u?</label>
+                                <select class="select col-xs-12" id="campus" name="campus">
+                                    @foreach($campuses as $campus)
+                                        <option value="{{ $campus->id }}" {{ ($user->campus->id == $campus->id ? "selected" : " ") }}>{{ $campus->name }}</option>
+                                    @endforeach
                                 </select>
+                                @if ($errors->has('campus'))
+                                    <span class="help-block"><strong>{{ $errors->first('campus') }}</strong></span>
+                                @endif
                             </div>
                         </div>
-
-
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="textdiv">
                                 <label for="woonplaats">Woonplaats</label>
                                 <input id="woonplaats" name="woonplaats" type="text" class="form-control col-xs-12">
                             </div>
                         </div>
-
                         <br>
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <input type="submit" class="download-button col-lg-4 col-sm-4 col-xs-12" value="Opslaan">
                         </div>
-
                     </form>
-
-
                 </div>
-
-
             </article>
 
 
             <article class="item col-lg-6 right col-xs-12">
-
-
                 <div class="padding">
-
                     <h4>Voorkeuren</h4>
                     <form>
                         <h4>Accentkleur</h4>
@@ -124,13 +146,9 @@
                                 <label>Test</label>
                             </div>
                         </div>
-
-
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <input type="submit" class="download-button col-lg-4 col-sm-4 col-xs-12" value="Opslaan">
                         </div>
-
-
                     </form>
                 </div>
 
@@ -138,11 +156,8 @@
 
 
             <article class="item col-lg-6 left col-xs-12">
-
-
                 <div class="padding">
                     <h4>Mijn vakken</h4>
-
                     <form>
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <ul class="vakken">
@@ -153,67 +168,49 @@
                             </ul>
                         </div>
 
-
                         <h4>Vak toevoegen</h4>
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="inner-addon left-addon">
-                                <input type="text" id="vak-zoeken" name="search" class="form-control filterlistener"
-                                       placeholder="zoekterm"/>
+                                <input type="text" id="vak-zoeken" name="search" class="form-control filterlistener" placeholder="zoekterm"/>
                                 <!-- <i class="glyphicon glyphicon-search"></i> -->
                             </div>
                         </div>
-
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <ul class="vakken-nieuw">
-                                <li>Enterpreneurship <span><input type="submit" class="download-button"
-                                                                  value="Toevoegen"></span></li>
-                                <li>Enterpreneurship 2 <span><input type="submit" class="download-button"
-                                                                    value="Toevoegen"></span></li>
+                                <li>Enterpreneurship <span><input type="submit" class="download-button" value="Toevoegen"></span></li>
+                                <li>Enterpreneurship 2 <span><input type="submit" class="download-button" value="Toevoegen"></span></li>
                             </ul>
                         </div>
-
-
                     </form>
                 </div>
-
             </article>
 
 
             <article class="item col-lg-6 right col-xs-12">
-
-
                 <div class="padding">
                     <h4>Account instellingen</h4>
-                    <form>
+                    <form action="{{ route('profile-update') }}" method="POST">
+                        {{ csrf_field() }}
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="textdiv">
                                 <label for="gebruikersnaam">Gebruikersnaam</label>
-                                <input id="gebruikersnaam" name="gebruikersnaam" type="text"
-                                       class="form-control col-xs-12">
+                                <input id="gebruikersnaam" name="username" type="text" class="form-control col-xs-12" value="{{ $username }}">
                             </div>
                         </div>
-
 
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="textdiv">
                                 <label for="e-mail">E-mailadres</label>
-                                <input id="e-mail" name="e-mail" type="text" class="form-control col-xs-12">
+                                <input id="e-mail" name="email" type="text" class="form-control col-xs-12" value="{{ $email }}">
                             </div>
                         </div>
-
-
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <input type="submit" class="download-button col-lg-4 col-sm-4 col-xs-12" value="Opslaan">
                         </div>
-
                     </form>
                 </div>
-
             </article>
-
-
         </div>
-
     </div>
 
 
