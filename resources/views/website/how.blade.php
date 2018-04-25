@@ -1,11 +1,14 @@
 @extends('layouts.website')
 
 @section('content')
+@section('pagetitle', 'Hoe werkt het')
     @include('partials.website.header')
     <div class="breadcrumb-banner col-xs-12">
-        <div class="background-image"></div>
-        <div class="inner-content vertical-center col-lg-12">
-            <h1>Hoe werkt het?</h1>
+        <div id="breadcrumb">
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a> <span class="divider">-></span></li>
+                <li>Hoe werkt het?</li>
+            </ul>
         </div>
     </div>
     <!-- Galerij -->
@@ -33,5 +36,6 @@
         </div>
     </div>
     </div>
+@include('partials.newsletter')
     @include('partials.footer')
 @endsection

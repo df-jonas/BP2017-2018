@@ -38,7 +38,7 @@
     </script>
 
 </head>
-<body>
+<body class="innerpage">
 
 @yield('content')
 @include('cookieConsent::index')
@@ -51,11 +51,11 @@
 <script src="{{ URL::asset('js/multistep.js') }}"></script>
 <script src="{{ URL::asset('js/jquery.slicknav.js') }}"></script>
 <script>
-    $(function () {
+    $(function(){
         $('#menu').slicknav({
             label: ' ',
             duration: 200,
-            prependTo: '#menu'
+            prependTo:'#menu'
         });
     });
 </script>

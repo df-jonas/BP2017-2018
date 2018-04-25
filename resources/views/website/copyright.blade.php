@@ -80,10 +80,6 @@
             porttitor, facilisis luctus, metus</p>
         <hr>
     </div>
-
-
-
-
-
+    @include('partials.newsletter')
     @include('partials.footer')
 @endsection

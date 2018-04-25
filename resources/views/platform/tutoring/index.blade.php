@@ -6,6 +6,13 @@
 
     <div class="container">
 
+        <a href="#">
+            <div class="item message col-xs-12">
+                <div class="padding">
+                    <div>2 inkomende verzoeken <i class="fa fa-close pull-right"></i></div>
+                </div>
+            </div>
+        </a>
         <!-- Modal -->
         <div class="modal fade" id="verzoek-modal" role="dialog">
             <div id="tutoring-modal" class="modal-dialog  modal-lg">

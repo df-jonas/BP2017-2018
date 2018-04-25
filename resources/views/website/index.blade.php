@@ -110,7 +110,11 @@
     </section>
 
 
+    @include('partials.newsletter')
+
+
     <!-- call to action slogan -->
+    <!--
     <div class="row">
         <section class="call-to-action col-xs-12">
             <h2>Word nu lid, geniet als student van tal van voordelen!</h2>
@@ -134,7 +138,7 @@
             </div>
         </section>
     </div>
-
+-->
 
 
 

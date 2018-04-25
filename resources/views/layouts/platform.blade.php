@@ -51,7 +51,7 @@
 
 
 @yield('sidebar')
-
+@include('partials.platform.beta')
 @yield('content')
 
 <!-- jquery -->

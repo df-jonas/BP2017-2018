@@ -13,6 +13,19 @@ body.platform {
 
 }
 
+
+h1, h2, h3 {
+  font-size: 60px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.18;
+  letter-spacing: normal;
+  text-align: left;
+  color: $unihelp-black;
+  //margin-top: 0;
+}
+
 /*tinymce ads*/
 #mceu_31, #mceu_33, #mceu_62, .mce-notification {
   display: none;

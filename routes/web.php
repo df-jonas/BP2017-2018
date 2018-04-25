@@ -22,6 +22,7 @@
     Route::get('/cookies', 'WebsiteController@cookies')->name('website-cookies');
     Route::get('/privacy', 'WebsiteController@privacy')->name('website-privacy');
     Route::get('/copyright', 'WebsiteController@copyright')->name('website-copyright');
+    Route::get('/terms', 'WebsiteController@terms')->name('website-terms');
 
     // Authentication routes
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

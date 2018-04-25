@@ -44,7 +44,7 @@ h1, h2, h3 {
   letter-spacing: normal;
   text-align: left;
   color: $unihelp-black;
-  margin-top: 0;
+  //margin-top: 0;
 }
 
 h2 {
@@ -90,6 +90,41 @@ p {
   color: $unihelp-black;
 }
 
+
+
+.innerpage{
+  background: $unihelp-white;
+  background-image:  url("/img/backgrounds/doodles.png");
+  background-repeat: repeat;
+  #main-content{
+    background: $unihelp-white;
+    h1, h2, h3{
+      font-size: 32px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      padding-bottom: 0.4em;
+    }
+    h1{
+
+    }
+    h2{
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+    h3{
+
+    }
+    p{
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      color: #4e5050;
+    }
+    a{
+      color: $unihelp-green;
+    }
+  }
+
+}
 label, select {
   /*font-family: HelveticaNeue;*/
   font-size: 16px;
@@ -292,6 +327,7 @@ no-margin-top {
   }
 }
 
+/*
 .breadcrumb-banner {
   height: 35vh;
   position: relative;
@@ -311,10 +347,53 @@ no-margin-top {
     h1 {
       text-align: center;
       color: $unihelp-white;
-      text-shadow: 1px 1px $unihelp-asphalt;
+      font-size: 41px;
+      font-weight: 600;
+      padding: 0;
     }
   }
 }
+*/
+
+
+.breadcrumb-banner{
+  background: #f7f7f7;
+  text-align: right;
+  #breadcrumb{
+    float: right;
+    padding: 5px;
+    width: auto;
+    max-width: 400px;
+    ul.breadcrumb{
+      padding-left: 27px !important;
+      position: relative;
+      padding-right: 17px;
+      margin-bottom: 0;
+      &:before{
+        content: "\f015";
+        font-family: FontAwesome;
+        font-size: 1.2em;
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 0;
+      }
+      li{
+        display: inline-block;
+        max-width: 500px;
+        margin: 7px 7px 7px 0px;
+        color: $unihelp-black;
+        &:nth-of-type(1){
+          color: $unihelp-green;
+          a{
+            color: $unihelp-green;
+            font-weight: 400;
+          }
+        }
+      }
+      }
+    }
+  }
 
 /*Mobile navigation*/
 .hamburger, .cross {
@@ -780,8 +859,27 @@ footer {
     text-align: center !important;
     background: #4D6A50 !important;
   }
+
+  .module{
+    img{
+      margin-top: 15px;
+      width: 85px;
+    }
+    ul{
+      padding-left: 0;
+      list-style: none;
+      li{
+        a{
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }
 
+#newsletter{
+  background: $unihelp-green;
+}
 .cookie-consent {
   position: fixed;
   left: 20px;
@@ -803,6 +901,16 @@ footer {
       color: $unihelp-white;
     }
   }
+}
+
+.beta-notice{
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: $unihelp-brown;
+  padding: 15px;
+  color: $unihelp-white;
+  z-index: 9999;
 }
 
 /*Custom checkboxes*/
