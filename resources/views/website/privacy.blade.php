@@ -2,15 +2,7 @@
 @section('pagetitle', 'Privacy policy')
 @section('content')
     @include('partials.website.header')
-
-    <div class="breadcrumb-banner col-xs-12">
-        <div id="breadcrumb">
-            <ul class="breadcrumb">
-                <li><a href="/">Home</a> <span class="divider"><i class="fa fa-arrow-right"></i></span></li>
-                <li>Privacy policy</li>
-            </ul>
-        </div>
-    </div>
+    @include('partials.website.breadcrumb')
 
     <div id="main-content" class="col-md-6 col-md-push-3 col-xs-12">
         <h1>Privacy policy </h1>
@@ -80,6 +72,6 @@
             Meer informatie omtrent deze privacy disclaimer kan u bekomen via info@conversal.be.</p>
         <br/>
     </div>
-    @include('partials.newsletter')
+    @include('partials.website.newsletter')
     @include('partials.footer')
 @endsection

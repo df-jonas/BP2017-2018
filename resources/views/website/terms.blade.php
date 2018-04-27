@@ -2,15 +2,7 @@
 @section('pagetitle', 'Algemene voorwaarden')
 @section('content')
     @include('partials.website.header')
-
-    <div class="breadcrumb-banner col-xs-12">
-        <div id="breadcrumb">
-            <ul class="breadcrumb">
-                <li><a href="/">Home</a> <span class="divider"><i class="fa fa-arrow-right"></i></span></li>
-                <li>PAlgemene voorwaarden</li>
-            </ul>
-        </div>
-    </div>
+    @include('partials.website.breadcrumb')
     <div id="main-content" class="padding col-md-6 col-md-push-3 col-xs-12">
         <h1>Algemene voorwaarden</h1>
         <p>
@@ -295,6 +287,6 @@
             overeenkomst.
         </p>
     </div>
-    @include('partials.newsletter')
+    @include('partials.website.newsletter')
     @include('partials.footer')
 @endsection

@@ -30,12 +30,6 @@ $(document).ready(function () {
     });
 
 
-    //galerij home
-    $('.box').click(function () {
-        $('.full-image').html($(this).html());
-    });
-
-
     $('.box').hover(function () {
         $('.full-image').html($(this).html());
     });

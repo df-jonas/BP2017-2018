@@ -2,15 +2,7 @@
 @section('pagetitle', 'Cookie policy')
 @section('content')
     @include('partials.website.header')
-
-    <div class="breadcrumb-banner col-xs-12">
-        <div id="breadcrumb">
-            <ul class="breadcrumb">
-                <li><a href="/">Home</a> <span class="divider"><i class="fa fa-arrow-right"></i></span></li>
-                <li>Cookie policy</li>
-            </ul>
-        </div>
-    </div>
+    @include('partials.website.breadcrumb')
 
     <div id="main-content" class="padding col-md-6 col-md-push-3 col-xs-12">
         <br>
@@ -97,6 +89,6 @@
         </p>
         <br>
     </div>
-    @include('partials.newsletter')
+    @include('partials.website.newsletter')
     @include('partials.footer')
 @endsection
