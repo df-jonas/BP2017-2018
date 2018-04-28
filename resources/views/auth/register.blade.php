@@ -1,16 +1,11 @@
 @extends('layouts.website')
-
+@section('pagetitle', 'Registreer')
 @section('content')
 
-    <div id="login-page">
-        <div class="login-box">
-
-            <header class="col-xs-12">
-                <h3>Registreren</h3>
-            </header>
-
-            <form id="msform" class="register clearfix" method="post" enctype="multipart/form-data"
-                  action="{{ route('register') }}">
+    <div class="auth-page">
+        <div class="auth-box col-lg-4 col-lg-push-4 col-md-6 col-md-push-6 col-sm-8 col-sm-push-2  col-xs-12">
+            <img class="logo" src="img/logo/favicon.png">
+            <form id="msform" class="register clearfix" method="post" enctype="multipart/form-data" action="{{ route('register') }}">
 
             {{ csrf_field() }}
             <!-- step 1 -->
@@ -30,6 +25,7 @@
                                 </div>
                             </div>
 
+
                             <div class="form-group clearfix col-xs-12">
                                 <label for="first_name">Voornaam</label>
                                 <input type="text" class="form-control col-lg-6" id="first_name" name="first_name"
@@ -48,17 +44,7 @@
                                 @endif
                             </div>
 
-                            <div class="form-group clearfix col-xs-12">
-                                <label for="email">E-mailadres</label>
-                                <input type="email" class="form-control col-lg-6" id="email" name="email"
-                                       aria-describedby="usernameHelp" required value="{{ old('email') }}">
-                                @if ($errors->has('email'))
-                                    <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
-                                @endif
-                            </div>
-
-                            <input type="button" class="action-button next col-xs-12" value="Volgende"/>
-
+                            <input type="button" class="action-button login next col-xs-12" value="VOLGENDE">
                         </div>
 
 
@@ -71,24 +57,14 @@
                 <fieldset>
 
                     <article>
-
-
                         <div class="box">
-                            <div class="form-group clearfix col-xs-12">
-                                <label for="password">Wachtwoord</label>
-                                <input type="password" class="form-control col-lg-6" id="password" name="password"
-                                       aria-describedby="last_nameHelp" required>
-                                @if ($errors->has('password'))
-                                    <span class="help-block"><strong>{{ $errors->first('password') }}</strong></span>
-                                @endif
-                            </div>
 
                             <div class="form-group clearfix col-xs-12">
-                                <label for="password_confirmation">Wachtwoord bevestigen</label>
-                                <input type="password" class="form-control col-lg-6" id="password_confirmation"
-                                       name="password_confirmation" aria-describedby="last_nameHelp" required>
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block"><strong>{{ $errors->first('password_confirmation') }}</strong></span>
+                                <label for="email">E-mailadres</label>
+                                <input type="email" class="form-control col-lg-6" id="email" name="email"
+                                       aria-describedby="usernameHelp" required value="{{ old('email') }}">
+                                @if ($errors->has('email'))
+                                    <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
                                 @endif
                             </div>
 
@@ -123,6 +99,38 @@
                                 </div>
                             </div>
 
+
+                            <input type="button" class="action-button login next col-xs-12" value="VOLGENDE">
+                        </div>
+
+                    </article>
+                </fieldset>
+                <!-- step 2 -->
+
+                <!-- step 3 -->
+                <fieldset>
+
+                    <article>
+                        <div class="box">
+
+                            <div class="form-group clearfix col-xs-12">
+                                <label for="password">Wachtwoord</label>
+                                <input type="password" class="form-control col-lg-6" id="password" name="password"
+                                       aria-describedby="last_nameHelp" required>
+                                @if ($errors->has('password'))
+                                    <span class="help-block"><strong>{{ $errors->first('password') }}</strong></span>
+                                @endif
+                            </div>
+
+                            <div class="form-group clearfix col-xs-12">
+                                <label for="password_confirmation">Wachtwoord bevestigen</label>
+                                <input type="password" class="form-control col-lg-6" id="password_confirmation"
+                                       name="password_confirmation" aria-describedby="last_nameHelp" required>
+                                @if ($errors->has('password_confirmation'))
+                                    <span class="help-block"><strong>{{ $errors->first('password_confirmation') }}</strong></span>
+                                @endif
+                            </div>
+
                             <div class="form-group clearfix col-xs-12">
                                 <label class="form-check-label">
                                     <input type="checkbox" name="tnc" class="form-check-input"
@@ -136,28 +144,34 @@
 
                             <input type="button" name="previous" class="action-button previous col-xs-12"
                                    value="Vorige"/>
-                            <input type="submit" name="submit" class="action-button finish col-xs-12"
-                                   value="Voltooien"/>
+
+                            <input type="button" class="action-button login previous col-xs-12" value="VORIGE">
+
+                            <input type="submit" class="action-button login submit col-xs-12" value="Voltooien">
+
 
                         </div>
-
                     </article>
                 </fieldset>
-                <!-- step 2 -->
+                <!-- step 3 -->
 
                 <!-- multistep form -->
             </form>
+        <!--
             <footer class="col-xs-12 clearfix">
+
                 <h5 class="green">Heb je wel al een UniHelp account?</h5>
                 <br/>
                 <a href="{{ route('login') }}">
                     <input type="button" class="action-button register" value="Inloggen">
                 </a>
                 <!-- TODO JONAS Canvas register -->
-                <a href="#">
-                    <input type="button" class="action-button register" value="Registreer met canvas">
-                </a>
-            </footer>
+            <!--
+            <a href="#">
+                <input type="button" class="action-button register" value="Registreer met canvas">
+            </a>
+        </footer>
+        -->
             <!-- files -->
         </div>
     </div>

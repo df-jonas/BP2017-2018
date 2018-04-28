@@ -13,7 +13,7 @@
 
 body {
   overflow-x: hidden;
-  max-width: 2000px;
+  //max-width: 2000px;
   margin: 0 auto;
 }
 
@@ -84,6 +84,12 @@ p {
   color: $unihelp-black;
 }
 
+
+a.text-muted:hover{
+  color: $unihelp-green!important;
+  font-weight: 400;
+}
+/*innerpage styling*/
 .innerpage {
   background: $unihelp-white;
   background-image: url("/img/backgrounds/doodles.png");
@@ -118,21 +124,7 @@ p {
 
 }
 
-label, select {
-  /*font-family: HelveticaNeue;*/
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
-  color: #505457;
-}
 
-label {
-  margin-bottom: 5px;
-}
 
 /*Links*/
 a:hover, a:visited, a:link, a:active {
@@ -196,6 +188,32 @@ no-margin-top {
 
 .round-img {
   border-radius: 100%;
+}
+
+
+/*Quotes*/
+.quote{
+  font-family: Georgia,sans-serif;
+  font-size: 22px;
+  color: #727a87;
+  margin: 0 auto;
+  display: inline-block;
+  max-width: 900px;
+  line-height: 2.2em;
+  font-weight: 300;
+  position: relative;
+  &:before{
+    content: '\f10d';
+    font-family: FontAwesome;
+    font-size: 2em;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: -50px;
+    top: 10px;
+    opacity: .7;
+    color: $unihelp-green;
+  }
 }
 
 /*Buttons*/
@@ -275,6 +293,7 @@ no-margin-top {
   display: none;
 }
 
+/*Navigation*/
 #page-header {
   transition: 1s ease all;
   top: 0;
@@ -297,7 +316,7 @@ no-margin-top {
       line-height: .5em;
       text-align: center;
       cursor: pointer;
-      &:hover {
+      &:hover, &.active-state {
         background: lightgray;
         opacity: 0.75;
       }
@@ -320,6 +339,7 @@ no-margin-top {
   }
 }
 
+/*Breadcrumb module*/
 .breadcrumb-banner {
   background: #f7f7f7;
   text-align: right;
@@ -359,8 +379,8 @@ no-margin-top {
   }
 }
 
-/*Home banner*/
-#page-banner {
+/*Home page banner*/
+#page-banner, #innerpage-banner {
   height: 700px;
   margin-bottom: 5x;
   background-image: url("/img/backgrounds/banner.png");
@@ -404,103 +424,25 @@ no-margin-top {
   }
 }
 
-@keyframes galerij-animatie {
-  0% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.call-to-action {
-  background: $unihelp-green;
-  color: $unihelp-white;
-  height: auto;
-  position: relative;
-  .image {
-    padding: 2.5%;
-    img {
-      position: absolute;
-      right: 125px;
-      top: -35px;
-      object-fit: contain;
-      -webkit-transform: rotate(-5deg);
-      transform: rotate(-3.5deg);
-      height: 400px;
-    }
-
-  }
-  .text {
-    padding: 2.5%;
-    h2 {
-      color: $unihelp-white;
-      font-size: 24px;
-      letter-spacing: -.03em;
-      font-weight: 700;
-      margin-top: 0;
-    }
-    p {
-      color: $unihelp-white;
-      font-size: 18px;
-      line-height: 24px;
-      margin-top: 16px;
-      margin-bottom: 20px;
-      width: calc(100% - 150px);
-    }
-  }
-
-  button {
-    background-color: $unihelp-white !important;
-    color: $unihelp-green !important;
-    margin-bottom: 1em;
-    &:hover {
-      background: lightgray !important;
-      color: $unihelp-green !important;
-    }
-  }
-}
-
-/*About*/
-#about-banner {
-  background: $unihelp-green;
-  padding: 2%;
-  color: $unihelp-white;
-  h1 {
-    text-align: center;
-    margin-bottom: 2%;
-    color: $unihelp-white;
-  }
-  p {
-    text-align: justify;
-    color: $unihelp-white;
-  }
-}
-
-#about-quote {
-  height: 650px;
-  background-image: url("/img/backgrounds/rawpixel-com-250087.jpg");
+/*Other pages banners*/
+#innerpage-banner{
+  height: 300px;
+  background-image: url("/img/backgrounds/login-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: $unihelp-white;
-  position: relative;
-  padding: 0;
-  .quote {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-    text-shadow: 1px 1px $unihelp-green;
-  }
-  h1 {
-    color: $unihelp-white;
-    text-align: center;
+  #welcome{
+    h3, p {
+      text-align: center;
+    }
+    p{
+      font-weight: 400;
+      color: rgba(255,255,255,.7);
+    }
   }
 }
 
+/*unihelp team member*/
 .about-person {
   margin: 10% 0;
   h3 {
@@ -526,6 +468,7 @@ no-margin-top {
   }
 }
 
+/*Home 3 features block*/
 #features {
   height: auto;
   margin: 5% 0 5% 0;
@@ -598,6 +541,7 @@ no-margin-top {
   }
 }
 
+/*How it works*/
 #how {
   margin: 5% 0 5% 0;
   .intro {
@@ -625,6 +569,8 @@ no-margin-top {
     padding: 0;
     .step {
       height: 200px;
+      margin: 2% 0 2% 0;
+      background: rgba(0, 0, 0, .05);
       h4 {
         margin-top: 20px;
         font-size: 16px;
@@ -646,102 +592,287 @@ no-margin-top {
 
 }
 
-/*Login + register*/
-#login-page {
-  height: 100vh;
-  background: url("/img/backgrounds/login-bg.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  h3 {
-    color: $unihelp-green;
-  }
-
-  h3, p {
+/*Avout intro*/
+#intro{
+  margin: 5% 0 5% 0;
+  h2, h4{
     text-align: center;
   }
+  h2{
+    font-size: 28px;
+    font-weight: 500;
+  }
+}
 
-  .login-box {
-    width: 35em;
-    max-width: 100%;
+/* Goals block*/
+#goal, #action{
+  background: $unihelp-green;
+  padding: 5%;
+  h3, p{
+    color: $unihelp-white;
+    font-weight: 500;
+    font-size: 24px;
+  }
+  p{
+    color: rgba(255,255,255,.7);
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+/*Action block*/
+#action{
+  background: $unihelp-asphalt;
+  padding: 1%;
+  h3, a{
+    text-align: center;
+    @include link($unihelp-white, $unihelp-white, $unihelp-white, $unihelp-white);
+  }
+  a{
+    &:after{
+      content: '\f061';
+      font-family: FontAwesome;
+      width: 25px;
+      height: 25px;
+      margin-left: 5px;
+    }
+  }
+}
+
+
+/*Call to action block*/
+.call-to-action {
+  background: $unihelp-green;
+  color: $unihelp-white;
+  height: auto;
+  position: relative;
+  .image {
+    padding: 2.5%;
+    img {
+      position: absolute;
+      right: 125px;
+      top: -35px;
+      object-fit: contain;
+      -webkit-transform: rotate(-5deg);
+      transform: rotate(-3.5deg);
+      height: 400px;
+    }
+
+  }
+  .text {
+    padding: 2.5%;
+    h2 {
+      color: $unihelp-white;
+      font-size: 24px;
+      letter-spacing: -.03em;
+      font-weight: 700;
+      margin-top: 0;
+    }
+    p {
+      color: $unihelp-white;
+      font-size: 18px;
+      line-height: 24px;
+      margin-top: 16px;
+      margin-bottom: 20px;
+      width: calc(100% - 150px);
+    }
+  }
+
+  button {
+    background-color: $unihelp-white !important;
+    color: $unihelp-green !important;
+    margin-bottom: 1em;
+    &:hover {
+      background: lightgray !important;
+      color: $unihelp-green !important;
+    }
+  }
+}
+
+/*Newletter block*/
+#newsletter {
+  background: $unihelp-white;
+  padding: 2%;
+  h3 {
+    color: $unihelp-green;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 5px;
+    letter-spacing: -.02em;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -.02em;
+    color: #7f8fab;
+  }
+  form {
+    float: right;
+    margin-top: 3.5%;
+    transform: translateY(-3.5%);
+    input {
+      padding: 2% !important;
+      height: 45px !important;
+      border: none !important;
+      line-height: 22.5px!important;
+      &[type="email"], &[type="text"] {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+      }
+    }
+    #mc-embedded-subscribe {
+      background: $unihelp-green !important;
+    }
+  }
+}
+
+/*Footer*/
+footer {
+  clear: both;
+  .top, .bottom {
+    position: relative;
+    text-align: left;
+    display: block;
+  }
+  .top {
+    background: $unihelp-asphalt;
+    p {
+      font-size: 16px;
+      color: $unihelp-white;
+    }
+  }
+  .bottom {
+    background: $unihelp-grey;
+    p {
+      font-size: 14px;
+      color: $unihelp-white;
+    }
+  }
+  .module {
+    ul {
+      padding-left: 0;
+      list-style: none;
+      li {
+        height: 24px;
+        a {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  a {
+    cursor: pointer;
+    @include link(white, white, white, white);
+  }
+}
+
+/*Cookie box*/
+.cookie-consent {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: $unihelp-green;
+  padding: 15px;
+  color: $unihelp-white;
+  button {
+    color: $unihelp-green;
+    border: 1px solid transparent;
+    border-radius: 0 !important;
+    margin-top: 1em;
+    padding: 5px;
+    &:hover {
+      cursor: pointer;
+      background: $unihelp-green;
+      border: 1px solid $unihelp-white;
+      transition: all 0.2s ease;
+      color: $unihelp-white;
+    }
+  }
+}
+
+/*Beta notice box */
+.beta-notice {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: $unihelp-brown;
+  padding: 15px;
+  color: $unihelp-white;
+  z-index: 9999;
+}
+
+/*Auth pages*/
+.auth-page, .message-page{
+  background-image: url("/img/backgrounds/doodles.png");
+  background-repeat: repeat;
+  height: 100vh;
+  .logo{
+    width: 32px;
+    display: block;
+    margin: 5% auto;
+  }
+  .auth-box {
     background: $unihelp-white;
     position: absolute;
+    top: 50%;
     left: 50%;
-    top: 52%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    color: $unihelp-black;
-
-    .login-problem p {
-      text-align: center !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    input[type=text], input[type=password], input[type=submit] {
+      height: 50px !important;
     }
-
-    header, .box, footer {
-      padding: 24px 50px 36px;
+    h3, h4, a, p {
+      text-align: left !important;
     }
-
-    header, footer {
-      text-align: center;
-
+    h4 {
+      color: $unihelp-asphalt;
+      text-align: center
     }
-
-    .box {
-      padding-top: 0;
-
+    label.remember{
+      font-size: 12px!important;
+      line-height: 18px;
+    }
+    .login {
+      background: $unihelp-green;
+      color: $unihelp-white;
+      &:hover {
+        background: lightgray;
+        color: $unihelp-grey!important;
+      }
+    }
+    .reg {
+      background: $unihelp-brown;
+      color: $unihelp-white;
+    }
+    .canvas {
+      background: $unihelp-grey;
+      color: $unihelp-white;
+      &:hover{
+        background: lightgray;
+        color: $unihelp-grey!important;
+      }
     }
     footer {
-      background: #eee;
-      color: $unihelp-black;
-      text-transform: uppercase;
+      height: 60px;
+      line-height: 60px;
+      background: #f3f3f3;
+      text-align: center;
     }
-
-    div.form-group {
-      padding-left: 0;
-      padding-right: 0;
+    &.message{
+      min-height: 200px;
+      h4, a{
+        text-align: center!important;
+      }
     }
-
-    .action-button.login, .action-button.register, .action-button.next, .action-button.previous, .action-button.finish {
-      @extend .action-button;
-      background: $unihelp-green;
-      width: 100%;
-      padding: 2%;
-      text-transform: uppercase;
-      margin-bottom: 2%;
-      color: $unihelp-white;
-    }
-
   }
 
-  .action-button.register {
-    background: transparent;
-    border: 2px solid $unihelp-green;
-    color: $unihelp-black;
-    &:hover {
-      background: $unihelp-green;
-      color: $unihelp-white;
-      -webkit-transition: background-color 100ms linear;
-      -ms-transition: background-color 100ms linear;
-      transition: background-color 100ms linear;
-    }
+}
 
-  }
 
-  .page-error {
-    h1, h3, h4, p, a {
-      text-align: center !important;
-    }
+/*Error page*/
+.message-page{
 
-    h3 {
-      color: $unihelp-green;
-    }
-
-    a, p {
-      text-align: center !important;
-      cursor: pointer;
-      @include link(black, black, black, black);
-    }
-
-  }
 }
 
 /*Register*/
@@ -794,181 +925,9 @@ no-margin-top {
   }
 }
 
-.auth-box {
-  min-height: 350px;
-  height: auto;
-  margin: auto;
-  background: $unihelp-white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  input[type=text], input[type=password], input[type=submit] {
-    height: 50px !important;
-  }
-  h3, h4 {
-    text-align: left !important;
-  }
-  h4 {
-    color: $unihelp-asphalt;
-    text-align: center
-  }
-  .login {
-    background: $unihelp-green;
-    color: $unihelp-white;
-    &:hover {
-      background: $unihelp-grey;
-    }
-  }
-  .reg {
-    background: $unihelp-brown;
-    color: $unihelp-white;
-  }
 
-  .canvas {
-    background: $unihelp-grey;
-    color: $unihelp-white;
-  }
-  footer {
-    height: 60px;
-    line-height: 60px;
-    background: #f3f3f3;
-  }
-}
 
-/*Footer*/
-footer {
-  clear: both;
-  .top, .bottom {
-    position: relative;
-    text-align: left;
-    display: block;
-  }
-  .top {
-    background: $unihelp-asphalt;
-    p {
-      font-size: 16px;
-      color: $unihelp-white;
-    }
-  }
-  .bottom {
-    background: $unihelp-grey;
-    p {
-      font-size: 14px;
-      color: $unihelp-white;
-    }
-  }
 
-  a {
-    cursor: pointer;
-    @include link(white, white, white, white);
-  }
-
-  /*Override default mce css*/
-  #mce-EMAIL {
-    width: 60% !important;
-    float: left !important;
-    border: none !important;
-    background-color: #505457 !important;
-    color: $unihelp-white !important;
-  }
-
-  #mc-embedded-subscribe {
-    width: 35% !important;
-    margin-left: 2.5% !important;
-    float: left !important;
-    text-align: center !important;
-    background: #4D6A50 !important;
-  }
-
-  .module {
-    img {
-      margin-top: 15px;
-      width: 85px;
-    }
-    ul {
-      padding-left: 0;
-      list-style: none;
-      li {
-        height: 24px;
-        a {
-          font-size: 13px;
-        }
-      }
-    }
-  }
-}
-
-#newsletter {
-  background: $unihelp-white;
-  padding: 2%;
-  h3 {
-    color: $unihelp-green;
-    font-weight: 600;
-    font-size: 24px;
-    margin-bottom: 5px;
-    letter-spacing: -.02em;
-  }
-
-  p {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: -.02em;
-    color: #7f8fab;
-  }
-  form {
-    float: right;
-    margin-top: 3.5%;
-    transform: translateY(-3.5%);
-    input {
-      padding: 2% !important;
-      height: 45px !important;
-      border: none !important;
-      line-height: 45px;
-      &[type="email"], &[type="text"] {
-        box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
-      }
-    }
-    #mc-embedded-subscribe {
-      background: $unihelp-green !important;
-    }
-  }
-
-}
-
-.cookie-consent {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
-  background: $unihelp-green;
-  padding: 15px;
-  color: $unihelp-white;
-  button {
-    color: $unihelp-green;
-    border: 1px solid transparent;
-    border-radius: 0 !important;
-    margin-top: 1em;
-    padding: 5px;
-    &:hover {
-      cursor: pointer;
-      background: $unihelp-green;
-      border: 1px solid $unihelp-white;
-      transition: all 0.2s ease;
-      color: $unihelp-white;
-    }
-  }
-}
-
-.beta-notice {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
-  background: $unihelp-brown;
-  padding: 15px;
-  color: $unihelp-white;
-  z-index: 9999;
-}
 
 /*Custom checkboxes*/
 .checkbox-label {
@@ -1133,6 +1092,22 @@ footer {
   input[type=range]:focus::-ms-fill-upper {
     background: $unihelp-green;
   }
+}
+
+label, select {
+  /*font-family: HelveticaNeue;*/
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #505457;
+}
+
+label {
+  margin-bottom: 5px;
 }
 
 /*Custom checkboxes*/
@@ -1352,6 +1327,17 @@ form.register .form-group {
 
   .slicknav_nav {
     width: 100%;
+    a{
+      color: $unihelp-green!important;
+      padding: 0!important;
+      &:hover{
+        border-radius: 0px!important;
+        -webkit-border-radius: 0px!important;
+        -moz-border-radius: 0px!important;
+        background: $unihelp-green!important;
+        color: $unihelp-white!important;
+      }
+    }
   }
   .slicknav_menu {
     display: block;
@@ -1386,9 +1372,7 @@ form.register .form-group {
 
   }
 
-  #about-quote h1 {
-    text-align: center;
-  }
+
   .about-person {
     .right {
       margin-top: 1em;

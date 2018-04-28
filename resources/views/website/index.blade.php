@@ -1,6 +1,8 @@
 @extends('layouts.website')
 @section('content')
-    <!-- header -->
+@section('pagetitle', 'Een slim studentenplatform')
+
+<!-- header -->
     @include('partials.website.header')
     <!-- end header -->
 
@@ -62,7 +64,7 @@
                         <img src="img/backgrounds/wat-3.png">
                         <p>Community</p>
                         <h3>Lorem ipsum dolor sit <br> amet.</h3>
-                        <a class="meer col-lg-4 col-md-3 col-xs-6">Ga van start</a>
+                        <a class="meer col-lg-4 col-md-3 col-xshttp://localhost:3000/login-6">Ga van start</a>
                     </div>
                 </div>
             </a>
