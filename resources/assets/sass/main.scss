@@ -5,7 +5,7 @@
 /*Variables*/
 @import "variables/colors";
 
-/*General*/
+/*General css*/
 * {
   font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
@@ -13,7 +13,6 @@
 
 body {
   overflow-x: hidden;
-  //max-width: 2000px;
   margin: 0 auto;
 }
 
@@ -84,47 +83,10 @@ p {
   color: $unihelp-black;
 }
 
-
-a.text-muted:hover{
-  color: $unihelp-green!important;
+a.text-muted:hover {
+  color: $unihelp-green !important;
   font-weight: 400;
 }
-/*innerpage styling*/
-.innerpage {
-  background: $unihelp-white;
-  background-image: url("/img/backgrounds/doodles.png");
-  background-repeat: repeat;
-  #main-content {
-    background: $unihelp-white;
-    h1, h2, h3 {
-      font-size: 32px;
-      margin-bottom: 15px;
-      font-weight: bold;
-      padding-bottom: 0.4em;
-    }
-    h1 {
-
-    }
-    h2 {
-      text-transform: uppercase;
-      font-size: 20px;
-    }
-    h3 {
-
-    }
-    p {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 14px;
-      color: #4e5050;
-    }
-    a {
-      color: $unihelp-green;
-    }
-  }
-
-}
-
-
 
 /*Links*/
 a:hover, a:visited, a:link, a:active {
@@ -144,20 +106,8 @@ a:hover, a:visited, a:link, a:active {
   }
 }
 
-.bold {
-  font-weight: bold;
-}
-
-.green {
-  color: $unihelp-green;
-}
-
 .no-margin {
   margin: 0 !important;
-}
-
-no-margin-top {
-  margin-top: 0 !important;
 }
 
 .no-padding {
@@ -167,11 +117,6 @@ no-margin-top {
 /*Helpers*/
 .padding {
   padding: 15px;
-}
-
-.small {
-  font-size: 12px;
-  color: $grey;
 }
 
 .row.flex {
@@ -190,10 +135,9 @@ no-margin-top {
   border-radius: 100%;
 }
 
-
 /*Quotes*/
-.quote{
-  font-family: Georgia,sans-serif;
+.quote {
+  font-family: Georgia, sans-serif;
   font-size: 22px;
   color: #727a87;
   margin: 0 auto;
@@ -202,7 +146,7 @@ no-margin-top {
   line-height: 2.2em;
   font-weight: 300;
   position: relative;
-  &:before{
+  &:before {
     content: '\f10d';
     font-family: FontAwesome;
     font-size: 2em;
@@ -270,6 +214,10 @@ no-margin-top {
   }
 }
 
+.slicknav_menu {
+  display: none;
+}
+
 /*Navigation*/
 #page-header, #platform-header {
   //height: 80px;
@@ -283,14 +231,6 @@ no-margin-top {
     width: 36px;
     height: 36px;
   }
-}
-
-#platform-header {
-  padding: 1% 0 1% 0;
-}
-
-.slicknav_menu {
-  display: none;
 }
 
 /*Navigation*/
@@ -337,6 +277,41 @@ no-margin-top {
     height: 4.5em !important;
     padding: 5px !important;
   }
+}
+
+/*innerpage styling*/
+.innerpage {
+  background: $unihelp-white;
+  background-image: url("/img/backgrounds/doodles.png");
+  background-repeat: repeat;
+  #main-content {
+    background: $unihelp-white;
+    h1, h2, h3 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      padding-bottom: 0.4em;
+    }
+    h1 {
+
+    }
+    h2 {
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+    h3 {
+
+    }
+    p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      color: #4e5050;
+    }
+    a {
+      color: $unihelp-green;
+    }
+  }
+
 }
 
 /*Breadcrumb module*/
@@ -425,19 +400,19 @@ no-margin-top {
 }
 
 /*Other pages banners*/
-#innerpage-banner{
+#innerpage-banner {
   height: 300px;
   background-image: url("/img/backgrounds/login-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  #welcome{
+  #welcome {
     h3, p {
       text-align: center;
     }
-    p{
+    p {
       font-weight: 400;
-      color: rgba(255,255,255,.7);
+      color: rgba(255, 255, 255, .7);
     }
   }
 }
@@ -593,43 +568,43 @@ no-margin-top {
 }
 
 /*Avout intro*/
-#intro{
+#intro {
   margin: 5% 0 5% 0;
-  h2, h4{
+  h2, h4 {
     text-align: center;
   }
-  h2{
+  h2 {
     font-size: 28px;
     font-weight: 500;
   }
 }
 
 /* Goals block*/
-#goal, #action{
+#goal, #action {
   background: $unihelp-green;
   padding: 5%;
-  h3, p{
+  h3, p {
     color: $unihelp-white;
     font-weight: 500;
     font-size: 24px;
   }
-  p{
-    color: rgba(255,255,255,.7);
+  p {
+    color: rgba(255, 255, 255, .7);
     font-weight: 400;
     font-size: 14px;
   }
 }
 
 /*Action block*/
-#action{
+#action {
   background: $unihelp-asphalt;
   padding: 1%;
-  h3, a{
+  h3, a {
     text-align: center;
     @include link($unihelp-white, $unihelp-white, $unihelp-white, $unihelp-white);
   }
-  a{
-    &:after{
+  a {
+    &:after {
       content: '\f061';
       font-family: FontAwesome;
       width: 25px;
@@ -638,7 +613,6 @@ no-margin-top {
     }
   }
 }
-
 
 /*Call to action block*/
 .call-to-action {
@@ -715,7 +689,7 @@ no-margin-top {
       padding: 2% !important;
       height: 45px !important;
       border: none !important;
-      line-height: 22.5px!important;
+      line-height: 22.5px !important;
       &[type="email"], &[type="text"] {
         box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
       }
@@ -802,11 +776,11 @@ footer {
 }
 
 /*Auth pages*/
-.auth-page, .message-page{
+.auth-page, .message-page {
   background-image: url("/img/backgrounds/doodles.png");
   background-repeat: repeat;
   height: 100vh;
-  .logo{
+  .logo {
     width: 32px;
     display: block;
     margin: 5% auto;
@@ -829,8 +803,8 @@ footer {
       color: $unihelp-asphalt;
       text-align: center
     }
-    label.remember{
-      font-size: 12px!important;
+    label.remember {
+      font-size: 12px !important;
       line-height: 18px;
     }
     .login {
@@ -838,7 +812,7 @@ footer {
       color: $unihelp-white;
       &:hover {
         background: lightgray;
-        color: $unihelp-grey!important;
+        color: $unihelp-grey !important;
       }
     }
     .reg {
@@ -848,9 +822,9 @@ footer {
     .canvas {
       background: $unihelp-grey;
       color: $unihelp-white;
-      &:hover{
+      &:hover {
         background: lightgray;
-        color: $unihelp-grey!important;
+        color: $unihelp-grey !important;
       }
     }
     footer {
@@ -859,432 +833,77 @@ footer {
       background: #f3f3f3;
       text-align: center;
     }
-    &.message{
+    &.message {
       min-height: 200px;
-      h4, a{
-        text-align: center!important;
+      h4, a {
+        text-align: center !important;
       }
     }
   }
-
-}
-
-
-/*Error page*/
-.message-page{
-
-}
-
-/*Register*/
-.account-img {
-  width: 10rem;
-  height: 10rem;
-  background-color: $unihelp-white;
-  display: block;
-  margin: 0 auto;
-  cursor: pointer;
-}
-
-.profile-img-container {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  img {
-    width: 128px;
-    height: 128px;
-  }
-  a, #picture-input {
+  /*Register*/
+  .account-img {
+    width: 10rem;
+    height: 10rem;
+    background-color: $unihelp-white;
     display: block;
-    position: absolute;
-    top: 0;
-    opacity: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    text-align: center;
-    color: inherit;
-    color: $unihelp-green;
-    font-size: 0.5em;
-    cursor: pointer;
-  }
-  &:hover a {
-    opacity: 1;
-    top: 0;
-    z-index: 500;
-    span {
-      top: 50%;
-      position: absolute;
-      left: 0;
-      right: 0;
-      transform: translateY(-50%);
-    }
-  }
-  #picture-input {
-    z-index: 999;
-    width: 30rem;
-  }
-}
-
-
-
-
-
-/*Custom checkboxes*/
-.checkbox-label {
-  margin-bottom: 2%;
-}
-
-.checkbox-label input {
-  display: none;
-}
-
-.checkbox-label span {
-  height: 12px;
-  width: 12px;
-  padding: 2%;
-  border: 1px solid grey;
-  display: inline-block;
-  position: relative;
-}
-
-.checkbox-label [type=checkbox]:checked + span:before {
-  content: '\f00c';
-  font-family: FontAwesome;
-  position: absolute;
-  top: -5px;
-  left: 0;
-  color: $download-button;
-}
-
-/*custom select box*/
-.textdiv {
-  input {
-    background: transparent;
-    padding: 5px 35px 5px 5px;
-    border: 1px solid #ccc;
-    height: 34px;
-    width: 100%;
-  }
-}
-
-.selectdiv {
-  position: relative;
-  select, input {
-    background: transparent;
-    padding: 5px 35px 5px 5px;
-    border: 1px solid #ccc;
-    border-radius: 0;
-    height: 34px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-
-  &::after {
-    content: "\f078";
-    font: 17px FontAwesome;
-    color: $unihelp-green;
-    right: 11px;
-    top: 32px;
-    padding: 0 0 2px;
-    position: absolute;
-    pointer-events: none;
-  }
-}
-
-.sliderdiv {
-  input[type=range] {
-    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-    width: 100%; /* Specific width is required for Firefox. */
-    background: transparent; /* Otherwise white in Chrome */
-  }
-
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    box-shadow: 1px 1px 1px $unihelp-green, 0px 0px 1px transparent;
-    border: none;
-    height: 24px;
-    width: 10px;
-    border-radius: 0px;
-    background: #ffffff;
-    cursor: pointer;
-    margin-top: -10px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-  }
-
-  input[type=range]::-moz-range-thumb {
-    box-shadow: 1px 1px 1px $unihelp-green, 0px 0px 1px transparent;
-    border: none !important;
-    height: 24px;
-    width: 10px;
-    border-radius: 0px !important;
-    background: #ffffff;
+    margin: 0 auto;
     cursor: pointer;
   }
 
-  input[type=range]::-ms-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: none !important;
-    height: 24px;
-    width: 10px;
-    border-radius: 0px !important;
-    background: #ffffff;
-    cursor: pointer;
-  }
-
-  input[type=range]:focus {
-    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-  }
-
-  input[type=range]::-ms-track {
-    width: 100%;
-    cursor: pointer;
-    /* Hides the slider so custom styles can be added */
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-  }
-
-  input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 8.4px;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: $unihelp-green;
-    border-radius: 1.3px;
-    border: 0.2px solid #010101;
-  }
-
-  input[type=range]:focus::-webkit-slider-runnable-track {
-    background: $unihelp-green;
-  }
-
-  input[type=range]::-moz-range-track {
-    height: 10px;
-    cursor: pointer;
-    background: $unihelp-green;
-    border-radius: 0px;
-    border: none;
-  }
-
-  input[type=range]::-ms-track {
-    height: 10px;
-    cursor: pointer;
-    background: $unihelp-green;
-    border-radius: 0px;
-    border: none;
-    color: transparent;
-  }
-  input[type=range]::-ms-fill-lower {
-    background: $unihelp-green;
-    border: none;
-    border-radius: 0px;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  }
-  input[type=range]:focus::-ms-fill-lower {
-    background: $unihelp-green;
-  }
-  input[type=range]::-ms-fill-upper {
-    background: $unihelp-green;
-    border: none;
-    border-radius: 0px;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  }
-  input[type=range]:focus::-ms-fill-upper {
-    background: $unihelp-green;
-  }
-}
-
-label, select {
-  /*font-family: HelveticaNeue;*/
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
-  color: #505457;
-}
-
-label {
-  margin-bottom: 5px;
-}
-
-/*Custom checkboxes*/
-/*https://www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
-
-.checkbox-container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 16px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-align: left;
-  /* Hide the browser's default checkbox */
-  input {
-    position: absolute;
-    opacity: 0;
-  }
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 18px;
-  width: 18px;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.checkbox-container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.checkbox-container input:checked ~ .checkmark {
-  background-color: $unihelp-green;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.checkbox-container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.checkbox-container .checkmark:after {
-  left: 7px;
-  top: 3px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-/*Multistep form*/
-#msform fieldset {
-  border: 0 none;
-  border-radius: 3px;
-  box-sizing: border-box;
-  /*fieldsets op elkaar stacken*/
-  position: relative;
-}
-
-/*Alle steps hiden, behalve de eerste*/
-#msform fieldset:not(:first-of-type) {
-  display: none;
-}
-
-/*steps bar*/
-#progressbar {
-  overflow: hidden;
-  padding: 8px 15px;
-  padding-bottom: 0;
-  /*CSS counters to number the steps*/
-  counter-reset: step;
-  padding-left: 0;
-  li {
-    list-style-type: none;
-    width: 25%;
-    height: 50px;
-    float: left;
+  .profile-img-container {
     position: relative;
-    text-align: center;
-    //box with title*/
-    &:before {
-      position: relative;
-      /*html data-title*/
-      content: attr(data-title);
-      counter-increment: step;
-      line-height: 50px;
+    display: inline-block;
+    overflow: hidden;
+    img {
+      width: 128px;
+      height: 128px;
+    }
+    a, #picture-input {
       display: block;
-      color: white;
-      margin: 0 auto 5px auto;
-      background: $grey;
-      height: 50px;
-      width: 75%;
-      z-index: 10;
-    }
-    /*lijn tussen boxes*/
-    &:after {
-      content: '';
-      width: 100%;
-      height: 10px;
-      background: $grey;
       position: absolute;
-      left: -50%;
-      top: 35%;
-      z-index: 1;
+      top: 0;
+      opacity: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      text-align: center;
+      color: inherit;
+      color: $unihelp-green;
+      font-size: 0.5em;
+      cursor: pointer;
     }
-    /*Geen connector nodig voor stap 1*/
-    &:first-child:after {
-      content: none;
+    &:hover a {
+      opacity: 1;
+      top: 0;
+      z-index: 500;
+      span {
+        top: 50%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+      }
     }
-
+    #picture-input {
+      z-index: 999;
+      width: 30rem;
+    }
   }
+
 }
 
-/*Actieve en voltooide stappen groen kleuren*/
-#progressbar li.active:before, #progressbar li.active:after {
-  background: $unihelp-green;
-  color: white;
-}
 
-/*Forms*/
-.form-group {
-  margin-bottom: 20px !important;
-  display: block;
-}
-
-input:focus, .form-control:focus {
-  box-shadow: none;
-}
-
-form input, form textarea {
-  border-radius: 0 !important;
-}
-
-form textarea {
-  max-width: 100%;
-  min-width: 100%;
-}
-
-form.register .form-group {
-  margin-bottom: 7.5%;
-}
-
+/*Desktop screens*/
 @media only screen and (max-width: 1500px) {
   #page-header .links {
-    //padding-top: 0.5%;
-  }
-
-}
-
-@media only screen and (max-width: 1200px) {
-  footer {
-    .top {
-      min-height: 30em;
-      height: auto;
-    }
+    padding-top: 0.5%;
   }
 }
 
+/*Laptop screens*/
+@media only screen and (max-width: 1200px) {}
+
+/*Tablets*/
 @media only screen and (max-width: 768px) {
 
   .hide-tablet {
@@ -1327,15 +946,15 @@ form.register .form-group {
 
   .slicknav_nav {
     width: 100%;
-    a{
-      color: $unihelp-green!important;
-      padding: 0!important;
-      &:hover{
-        border-radius: 0px!important;
-        -webkit-border-radius: 0px!important;
-        -moz-border-radius: 0px!important;
-        background: $unihelp-green!important;
-        color: $unihelp-white!important;
+    a {
+      color: $unihelp-green !important;
+      padding: 0 !important;
+      &:hover {
+        border-radius: 0px !important;
+        -webkit-border-radius: 0px !important;
+        -moz-border-radius: 0px !important;
+        background: $unihelp-green !important;
+        color: $unihelp-white !important;
       }
     }
   }
@@ -1347,31 +966,7 @@ form.register .form-group {
   #page-banner {
     height: 600px;
     text-align: center;
-    #welcome {
-      top: 50%;
-    }
   }
-
-  .what .items .item .left img, .what .items .item .right img {
-    width: 100%;
-    margin-left: 0;
-  }
-  #how-it-works .item {
-    .right, .left {
-      padding: 0;
-    }
-
-    h2 {
-      word-wrap: break-all;
-    }
-
-    p {
-      text-align: justify;
-      word-wrap: break-word;
-    }
-
-  }
-
 
   .about-person {
     .right {
@@ -1382,16 +977,6 @@ form.register .form-group {
     }
   }
 
-  #how-it-works {
-    .items {
-      .item {
-        img {
-          width: 100%;
-        }
-      }
-    }
-  }
-
   #page-banner, .call-to-action, #newsletter {
     h1, h2, h3, p {
       text-align: center !important;
@@ -1399,10 +984,11 @@ form.register .form-group {
     }
   }
 
-  .call-to-action .text p {
-    width: 100%;
+  .call-to-action .text {
+    p {
+      width: 100%;
+    }
   }
-
   footer {
     h4, h6, .module {
       text-align: center;
@@ -1410,6 +996,7 @@ form.register .form-group {
   }
 }
 
+/*Mobile*/
 @media only screen and (max-width: 480px) {
   .container {
     width: 95% !important;
@@ -1418,6 +1005,5 @@ form.register .form-group {
   .hide-mobile {
     display: none;
   }
-
 }
 

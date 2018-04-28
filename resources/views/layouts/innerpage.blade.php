@@ -18,6 +18,7 @@
 
     <!-- own css -->
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/inputs.css') }}">
 
     <link rel="stylesheet" href="{{ URL::asset('css/slicknav.css') }}">
 

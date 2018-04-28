@@ -4,7 +4,7 @@
 
 /*Variables*/
 
-/*General*/
+/*General css*/
 
 * {
   font-family: 'Raleway', sans-serif;
@@ -105,42 +105,6 @@ a.text-muted:hover {
   font-weight: 400;
 }
 
-/*innerpage styling*/
-
-.innerpage {
-  background: #ffffff;
-  background-image: url("/img/backgrounds/doodles.png");
-  background-repeat: repeat;
-}
-
-.innerpage #main-content {
-  background: #ffffff;
-}
-
-.innerpage #main-content h1,
-.innerpage #main-content h2,
-.innerpage #main-content h3 {
-  font-size: 32px;
-  margin-bottom: 15px;
-  font-weight: bold;
-  padding-bottom: 0.4em;
-}
-
-.innerpage #main-content h2 {
-  text-transform: uppercase;
-  font-size: 20px;
-}
-
-.innerpage #main-content p {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  color: #4e5050;
-}
-
-.innerpage #main-content a {
-  color: #4D6A50;
-}
-
 /*Links*/
 
 a:hover,
@@ -165,20 +129,8 @@ a:active {
   height: 0;
 }
 
-.bold {
-  font-weight: bold;
-}
-
-.green {
-  color: #4D6A50;
-}
-
 .no-margin {
   margin: 0 !important;
-}
-
-no-margin-top {
-  margin-top: 0 !important;
 }
 
 .no-padding {
@@ -189,11 +141,6 @@ no-margin-top {
 
 .padding {
   padding: 15px;
-}
-
-.small {
-  font-size: 12px;
-  color: #505457;
 }
 
 .row.flex {
@@ -219,7 +166,7 @@ no-margin-top {
 /*Quotes*/
 
 .quote {
-  font-family: Georgia,sans-serif;
+  font-family: Georgia, sans-serif;
   font-size: 22px;
   color: #727a87;
   margin: 0 auto;
@@ -342,6 +289,10 @@ no-margin-top {
   background: #4D6A50;
 }
 
+.slicknav_menu {
+  display: none;
+}
+
 /*Navigation*/
 
 #page-header,
@@ -359,14 +310,6 @@ no-margin-top {
 #platform-header img.logo {
   width: 36px;
   height: 36px;
-}
-
-#platform-header {
-  padding: 1% 0 1% 0;
-}
-
-.slicknav_menu {
-  display: none;
 }
 
 /*Navigation*/
@@ -425,6 +368,42 @@ no-margin-top {
 #page-header.small {
   height: 4.5em !important;
   padding: 5px !important;
+}
+
+/*innerpage styling*/
+
+.innerpage {
+  background: #ffffff;
+  background-image: url("/img/backgrounds/doodles.png");
+  background-repeat: repeat;
+}
+
+.innerpage #main-content {
+  background: #ffffff;
+}
+
+.innerpage #main-content h1,
+.innerpage #main-content h2,
+.innerpage #main-content h3 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  padding-bottom: 0.4em;
+}
+
+.innerpage #main-content h2 {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.innerpage #main-content p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #4e5050;
+}
+
+.innerpage #main-content a {
+  color: #4D6A50;
 }
 
 /*Breadcrumb module*/
@@ -1034,6 +1013,7 @@ footer a:focus {
   background-image: url("/img/backgrounds/doodles.png");
   background-repeat: repeat;
   height: 100vh;
+  /*Register*/
 }
 
 .auth-page .logo,
@@ -1137,11 +1117,8 @@ footer a:focus {
   text-align: center !important;
 }
 
-/*Error page*/
-
-/*Register*/
-
-.account-img {
+.auth-page .account-img,
+.message-page .account-img {
   width: 10rem;
   height: 10rem;
   background-color: #ffffff;
@@ -1150,19 +1127,23 @@ footer a:focus {
   cursor: pointer;
 }
 
-.profile-img-container {
+.auth-page .profile-img-container,
+.message-page .profile-img-container {
   position: relative;
   display: inline-block;
   overflow: hidden;
 }
 
-.profile-img-container img {
+.auth-page .profile-img-container img,
+.message-page .profile-img-container img {
   width: 128px;
   height: 128px;
 }
 
-.profile-img-container a,
-.profile-img-container #picture-input {
+.auth-page .profile-img-container a,
+.auth-page .profile-img-container #picture-input,
+.message-page .profile-img-container a,
+.message-page .profile-img-container #picture-input {
   display: block;
   position: absolute;
   top: 0;
@@ -1177,13 +1158,15 @@ footer a:focus {
   cursor: pointer;
 }
 
-.profile-img-container:hover a {
+.auth-page .profile-img-container:hover a,
+.message-page .profile-img-container:hover a {
   opacity: 1;
   top: 0;
   z-index: 500;
 }
 
-.profile-img-container:hover a span {
+.auth-page .profile-img-container:hover a span,
+.message-page .profile-img-container:hover a span {
   top: 50%;
   position: absolute;
   left: 0;
@@ -1192,388 +1175,23 @@ footer a:focus {
           transform: translateY(-50%);
 }
 
-.profile-img-container #picture-input {
+.auth-page .profile-img-container #picture-input,
+.message-page .profile-img-container #picture-input {
   z-index: 999;
   width: 30rem;
 }
 
-/*Custom checkboxes*/
+/*Desktop screens*/
 
-.checkbox-label {
-  margin-bottom: 2%;
-}
-
-.checkbox-label input {
-  display: none;
-}
-
-.checkbox-label span {
-  height: 12px;
-  width: 12px;
-  padding: 2%;
-  border: 1px solid grey;
-  display: inline-block;
-  position: relative;
-}
-
-.checkbox-label [type=checkbox]:checked + span:before {
-  content: '\F00C';
-  font-family: FontAwesome;
-  position: absolute;
-  top: -5px;
-  left: 0;
-  color: #505457;
-}
-
-/*custom select box*/
-
-.textdiv input {
-  background: transparent;
-  padding: 5px 35px 5px 5px;
-  border: 1px solid #ccc;
-  height: 34px;
-  width: 100%;
-}
-
-.selectdiv {
-  position: relative;
-}
-
-.selectdiv select,
-.selectdiv input {
-  background: transparent;
-  padding: 5px 35px 5px 5px;
-  border: 1px solid #ccc;
-  border-radius: 0;
-  height: 34px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.selectdiv::after {
-  content: "\F078";
-  font: 17px FontAwesome;
-  color: #4D6A50;
-  right: 11px;
-  top: 32px;
-  padding: 0 0 2px;
-  position: absolute;
-  pointer-events: none;
-}
-
-.sliderdiv input[type=range] {
-  -webkit-appearance: none;
-  /* Hides the slider so that custom slider can be made */
-  width: 100%;
-  /* Specific width is required for Firefox. */
-  background: transparent;
-  /* Otherwise white in Chrome */
-}
-
-.sliderdiv input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  -webkit-box-shadow: 1px 1px 1px #4D6A50, 0px 0px 1px transparent;
-          box-shadow: 1px 1px 1px #4D6A50, 0px 0px 1px transparent;
-  border: none;
-  height: 24px;
-  width: 10px;
-  border-radius: 0px;
-  background: #ffffff;
-  cursor: pointer;
-  margin-top: -10px;
-  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-}
-
-.sliderdiv input[type=range]::-moz-range-thumb {
-  box-shadow: 1px 1px 1px #4D6A50, 0px 0px 1px transparent;
-  border: none !important;
-  height: 24px;
-  width: 10px;
-  border-radius: 0px !important;
-  background: #ffffff;
-  cursor: pointer;
-}
-
-.sliderdiv input[type=range]::-ms-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: none !important;
-  height: 24px;
-  width: 10px;
-  border-radius: 0px !important;
-  background: #ffffff;
-  cursor: pointer;
-}
-
-.sliderdiv input[type=range]:focus {
-  outline: none;
-  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-}
-
-.sliderdiv input[type=range]::-ms-track {
-  width: 100%;
-  cursor: pointer;
-  /* Hides the slider so custom styles can be added */
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
-}
-
-.sliderdiv input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 8.4px;
-  cursor: pointer;
-  -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-          box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #4D6A50;
-  border-radius: 1.3px;
-  border: 0.2px solid #010101;
-}
-
-.sliderdiv input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #4D6A50;
-}
-
-.sliderdiv input[type=range]::-moz-range-track {
-  height: 10px;
-  cursor: pointer;
-  background: #4D6A50;
-  border-radius: 0px;
-  border: none;
-}
-
-.sliderdiv input[type=range]::-ms-track {
-  height: 10px;
-  cursor: pointer;
-  background: #4D6A50;
-  border-radius: 0px;
-  border: none;
-  color: transparent;
-}
-
-.sliderdiv input[type=range]::-ms-fill-lower {
-  background: #4D6A50;
-  border: none;
-  border-radius: 0px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-
-.sliderdiv input[type=range]:focus::-ms-fill-lower {
-  background: #4D6A50;
-}
-
-.sliderdiv input[type=range]::-ms-fill-upper {
-  background: #4D6A50;
-  border: none;
-  border-radius: 0px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-
-.sliderdiv input[type=range]:focus::-ms-fill-upper {
-  background: #4D6A50;
-}
-
-label,
-select {
-  /*font-family: HelveticaNeue;*/
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
-  color: #505457;
-}
-
-label {
-  margin-bottom: 5px;
-}
-
-/*Custom checkboxes*/
-
-/*https://www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
-
-.checkbox-container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 16px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-align: left;
-  /* Hide the browser's default checkbox */
-}
-
-.checkbox-container input {
-  position: absolute;
-  opacity: 0;
-}
-
-/* Create a custom checkbox */
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 18px;
-  width: 18px;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-
-.checkbox-container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-
-.checkbox-container input:checked ~ .checkmark {
-  background-color: #4D6A50;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-
-.checkbox-container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-
-.checkbox-container .checkmark:after {
-  left: 7px;
-  top: 3px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-/*Multistep form*/
-
-#msform fieldset {
-  border: 0 none;
-  border-radius: 3px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  /*fieldsets op elkaar stacken*/
-  position: relative;
-}
-
-/*Alle steps hiden, behalve de eerste*/
-
-#msform fieldset:not(:first-of-type) {
-  display: none;
-}
-
-/*steps bar*/
-
-#progressbar {
-  overflow: hidden;
-  padding: 8px 15px;
-  padding-bottom: 0;
-  /*CSS counters to number the steps*/
-  counter-reset: step;
-  padding-left: 0;
-}
-
-#progressbar li {
-  list-style-type: none;
-  width: 25%;
-  height: 50px;
-  float: left;
-  position: relative;
-  text-align: center;
-  /*lijn tussen boxes*/
-  /*Geen connector nodig voor stap 1*/
-}
-
-#progressbar li:before {
-  position: relative;
-  /*html data-title*/
-  content: attr(data-title);
-  counter-increment: step;
-  line-height: 50px;
-  display: block;
-  color: white;
-  margin: 0 auto 5px auto;
-  background: #505457;
-  height: 50px;
-  width: 75%;
-  z-index: 10;
-}
-
-#progressbar li:after {
-  content: '';
-  width: 100%;
-  height: 10px;
-  background: #505457;
-  position: absolute;
-  left: -50%;
-  top: 35%;
-  z-index: 1;
-}
-
-#progressbar li:first-child:after {
-  content: none;
-}
-
-/*Actieve en voltooide stappen groen kleuren*/
-
-#progressbar li.active:before,
-#progressbar li.active:after {
-  background: #4D6A50;
-  color: white;
-}
-
-/*Forms*/
-
-.form-group {
-  margin-bottom: 20px !important;
-  display: block;
-}
-
-input:focus,
-.form-control:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-form input,
-form textarea {
-  border-radius: 0 !important;
-}
-
-form textarea {
-  max-width: 100%;
-  min-width: 100%;
-}
-
-form.register .form-group {
-  margin-bottom: 7.5%;
-}
-
-@media only screen and (max-width: 1200px) {
-  footer .top {
-    min-height: 30em;
-    height: auto;
+@media only screen and (max-width: 1500px) {
+  #page-header .links {
+    padding-top: 0.5%;
   }
 }
+
+/*Laptop screens*/
+
+/*Tablets*/
 
 @media only screen and (max-width: 768px) {
   .hide-tablet {
@@ -1646,30 +1264,6 @@ form.register .form-group {
     text-align: center;
   }
 
-  #page-banner #welcome {
-    top: 50%;
-  }
-
-  .what .items .item .left img,
-  .what .items .item .right img {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  #how-it-works .item .right,
-  #how-it-works .item .left {
-    padding: 0;
-  }
-
-  #how-it-works .item h2 {
-    word-wrap: break-all;
-  }
-
-  #how-it-works .item p {
-    text-align: justify;
-    word-wrap: break-word;
-  }
-
   .about-person .right {
     margin-top: 1em;
   }
@@ -1678,10 +1272,6 @@ form.register .form-group {
   .about-person h4,
   .about-person p {
     text-align: center;
-  }
-
-  #how-it-works .items .item img {
-    width: 100%;
   }
 
   #page-banner h1,
@@ -1710,6 +1300,8 @@ form.register .form-group {
     text-align: center;
   }
 }
+
+/*Mobile*/
 
 @media only screen and (max-width: 480px) {
   .container {

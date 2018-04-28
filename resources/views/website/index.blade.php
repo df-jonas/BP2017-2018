@@ -15,7 +15,7 @@
                     <p>Lorem ipsum dolor sit <a href="#">amet</a>, consectetur adipiscing <a href="#">elit</a>. Quod ea non occurrentia fingunt, vincunt
                         Aristonem Duo Reges.</p>
 
-                    <section class="buttons col-lg-8 col-md-10 col-xs-12">
+                    <section class="buttons col-lg-8 col-md-10 col-sm-10 col-xs-12">
                         <div class="row">
                             <a href="{{ route('register')}}">
                                 <button type="button" class="action-button left register col-lg-6 col-lg-push-0 col-sm-5 col-xs-12">

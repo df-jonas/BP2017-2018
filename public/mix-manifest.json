@@ -3,5 +3,6 @@
     "/css/app.css": "/css/app.css",
     "/css/platform.css": "/css/platform.css",
     "/css/zabuto_calendar.min.css": "/css/zabuto_calendar.min.css",
-    "/css/main.css": "/css/main.css"
+    "/css/main.css": "/css/main.css",
+    "/css/inputs.css": "/css/inputs.css"
 }

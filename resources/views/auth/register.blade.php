@@ -5,26 +5,14 @@
     <div class="auth-page">
         <div class="auth-box col-lg-4 col-lg-push-4 col-md-6 col-md-push-6 col-sm-8 col-sm-push-2  col-xs-12">
             <img class="logo" src="img/logo/favicon.png">
-            <form id="msform" class="register clearfix" method="post" enctype="multipart/form-data" action="{{ route('register') }}">
+            <form id="msform" class="register clearfix" method="post" enctype="multipart/form-data"
+                  action="{{ route('register') }}">
 
             {{ csrf_field() }}
             <!-- step 1 -->
                 <fieldset>
                     <article>
                         <div class="box">
-                            <div class="form-group clearfix col-xs-12">
-                                <div class="profile-img-container col-xs-12">
-                                    <img src="{{ asset('img/avatars/empty.png') }}" class="account-img round-img"
-                                         id="register-img">
-                                    <a href="#"><span class="fa fa-upload fa-5x"></span></a>
-                                    <input id="picture-input" type="file" name="avatar"/>
-                                    @if ($errors->has('avatar'))
-                                        <span class="help-block"><strong>{{ $errors->first('avatar') }}</strong></span>
-                                    @endif
-                                    <h6 style="text-align: center">Klik om een avatar te kiezen.</h6>
-                                </div>
-                            </div>
-
 
                             <div class="form-group clearfix col-xs-12">
                                 <label for="first_name">Voornaam</label>
@@ -107,6 +95,40 @@
                 </fieldset>
                 <!-- step 2 -->
 
+
+                <!-- step 3 -->
+                <fieldset>
+
+                    <article>
+                        <div class="box">
+
+                            <div class="form-group clearfix col-xs-12">
+                                <div class="profile-img-container col-xs-12">
+                                    <img src="{{ asset('img/avatars/empty.png') }}" class="account-img round-img"
+                                         id="register-img">
+                                    <a href="#"><span class="fa fa-upload fa-5x"></span></a>
+                                    <input id="picture-input" type="file" name="avatar"/>
+                                    @if ($errors->has('avatar'))
+                                        <span class="help-block"><strong>{{ $errors->first('avatar') }}</strong></span>
+                                    @endif
+                                    <h6 style="text-align: center">Klik om een avatar te kiezen.</h6>
+                                </div>
+                            </div>
+
+                            <div class="form-group clearfix col-xs-12">
+                                Kies uw favoriete kleur
+                            </div>
+
+
+                            <input type="button" class="action-button login next col-xs-12" value="VOLGENDE">
+
+
+                        </div>
+                    </article>
+                </fieldset>
+                <!-- step 3 -->
+
+
                 <!-- step 3 -->
                 <fieldset>
 
@@ -142,18 +164,17 @@
                                 </label>
                             </div>
 
-                            <input type="button" name="previous" class="action-button previous col-xs-12"
-                                   value="Vorige"/>
 
-                            <input type="button" class="action-button login previous col-xs-12" value="VORIGE">
-
-                            <input type="submit" class="action-button login submit col-xs-12" value="Voltooien">
+                            <input type="button" class="action-button login previous col-xs-12" name="previous"
+                                   value="VORIGE">
+                            <input type="submit" class="action-button login submit col-xs-12" value="VOLTOOIEN">
 
 
                         </div>
                     </article>
                 </fieldset>
                 <!-- step 3 -->
+
 
                 <!-- multistep form -->
             </form>

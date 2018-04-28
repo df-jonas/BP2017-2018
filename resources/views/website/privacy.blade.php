@@ -4,7 +4,7 @@
     @include('partials.website.header')
     @include('partials.website.breadcrumb')
 
-    <div id="main-content" class="col-md-6 col-md-push-3 col-xs-12">
+    <div id="main-content" class="padding col-md-8 col-md-push-2 col-sm-10 col-sm-push-1 col-xs-12">
         <h1>Privacy policy </h1>
         <p>
             Conversal heeft met huidige website tot doel om aan elke geïnteresseerde toe te staan kennis te nemen van de

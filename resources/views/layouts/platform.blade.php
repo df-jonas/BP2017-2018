@@ -19,6 +19,8 @@
     <!-- own css -->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/platform.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/inputs.css') }}">
+
     <link rel="stylesheet" href="{{ URL::asset('css/slicknav.css') }}">
 
     <!-- mailchimp -->

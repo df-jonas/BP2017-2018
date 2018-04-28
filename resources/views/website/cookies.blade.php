@@ -3,8 +3,7 @@
 @section('content')
     @include('partials.website.header')
     @include('partials.website.breadcrumb')
-
-    <div id="main-content" class="padding col-md-6 col-md-push-3 col-xs-12">
+    <div id="main-content" class="padding col-md-8 col-md-push-2 col-sm-10 col-sm-push-1 col-xs-12">
         <br>
         <h1>Cookie policy</h1>
         <p>

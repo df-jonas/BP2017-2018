@@ -99,9 +99,11 @@ div.container {
   color: $unihelp-green;
 }
 
+
 /*Header*/
 #platform-header {
   background-color: $unihelp-green;
+  padding: 1% 0 1% 0;
   .sub {
     display: none;
     list-style-type: none;
