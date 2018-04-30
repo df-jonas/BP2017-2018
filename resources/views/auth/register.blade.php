@@ -5,15 +5,13 @@
     <div class="auth-page">
         <div class="auth-box col-lg-4 col-lg-push-4 col-md-6 col-md-push-6 col-sm-8 col-sm-push-2  col-xs-12">
             <img class="logo" src="img/logo/favicon.png">
-            <form id="msform" class="register clearfix" method="post" enctype="multipart/form-data"
-                  action="{{ route('register') }}">
-
+            <form id="msform" class="register clearfix col-xs-12" method="post" enctype="multipart/form-data" action="{{ route('register') }}">
             {{ csrf_field() }}
-            <!-- step 1 -->
+
+                <!-- step 1 -->
                 <fieldset>
                     <article>
                         <div class="box">
-
                             <div class="form-group clearfix col-xs-12">
                                 <label for="first_name">Voornaam</label>
                                 <input type="text" class="form-control col-lg-6" id="first_name" name="first_name"
@@ -31,22 +29,19 @@
                                     <span class="help-block"><strong>{{ $errors->first('last_name') }}</strong></span>
                                 @endif
                             </div>
-
-                            <input type="button" class="action-button login next col-xs-12" value="VOLGENDE">
+                            <div class="form-group clearfix col-xs-12">
+                                <input type="button" class="action-button login next col-lg-5 col-lg-push-7 col-xs-12"
+                                       value="VOLGENDE">
+                            </div>
                         </div>
-
-
                     </article>
-
                 </fieldset>
                 <!-- step 1 -->
 
                 <!-- step 2 -->
                 <fieldset>
-
                     <article>
                         <div class="box">
-
                             <div class="form-group clearfix col-xs-12">
                                 <label for="email">E-mailadres</label>
                                 <input type="email" class="form-control col-lg-6" id="email" name="email"
@@ -56,11 +51,9 @@
                                 @endif
                             </div>
 
-
                             <div class="form-group clearfix col-xs-12">
                                 <div class="selectdiv">
                                     <label for="campus">Aan welke campus studeert u?</label>
-
                                     <select class="select col-xs-12" id="campus" name="campus">
                                         @foreach($campuses as $campus)
                                             <option value="{{ $campus->id }}" {{ (old("campus") == $campus->id ? "selected":"") }}>{{ $campus->name }}</option>
@@ -73,7 +66,6 @@
                             </div>
 
                             <div class="form-group clearfix col-xs-12">
-
                                 <div class="selectdiv">
                                     <label for="fos">Welke studierichting volgt u?</label>
                                     <select class="select col-xs-12" id="fos" name="fos">
@@ -87,21 +79,22 @@
                                 </div>
                             </div>
 
-
-                            <input type="button" class="action-button login next col-xs-12" value="VOLGENDE">
+                            <div class="form-group clearfix col-xs-12">
+                                <input type="button" class="action-button login previous col-lg-5 col-xs-12"
+                                       value="VORIGE">
+                                <input type="button" class="action-button login next col-lg-5 col-lg-push-2 col-xs-12"
+                                       value="VOLGENDE">
+                            </div>
                         </div>
 
                     </article>
                 </fieldset>
                 <!-- step 2 -->
 
-
                 <!-- step 3 -->
                 <fieldset>
-
                     <article>
                         <div class="box">
-
                             <div class="form-group clearfix col-xs-12">
                                 <div class="profile-img-container col-xs-12">
                                     <img src="{{ asset('img/avatars/empty.png') }}" class="account-img round-img"
@@ -116,25 +109,20 @@
                             </div>
 
                             <div class="form-group clearfix col-xs-12">
-                                Kies uw favoriete kleur
+                                <input type="button" class="action-button login previous col-lg-5 col-xs-12"
+                                       value="VORIGE">
+                                <input type="button" class="action-button login next col-lg-5 col-lg-push-2 col-xs-12"
+                                       value="VOLGENDE">
                             </div>
-
-
-                            <input type="button" class="action-button login next col-xs-12" value="VOLGENDE">
-
-
                         </div>
                     </article>
                 </fieldset>
                 <!-- step 3 -->
 
-
-                <!-- step 3 -->
+                <!-- step 4 -->
                 <fieldset>
-
                     <article>
                         <div class="box">
-
                             <div class="form-group clearfix col-xs-12">
                                 <label for="password">Wachtwoord</label>
                                 <input type="password" class="form-control col-lg-6" id="password" name="password"
@@ -156,31 +144,29 @@
                             <div class="form-group clearfix col-xs-12">
                                 <label class="form-check-label">
                                     <input type="checkbox" name="tnc" class="form-check-input"
-                                           value="{{ old('tnc', 'on') }}">
-                                    Ik aanvaard de algemene voorwaarden.
+                                           value="{{ old('tnc', 'on') }}">Ik aanvaard de <a
+                                            href="{{route('website-terms')}}" target="_blank">algemene voorwaarden</a>.
                                     @if ($errors->has('tnc'))
                                         <br><span class="help-block"><strong>{{ $errors->first('tnc') }}</strong></span>
                                     @endif
                                 </label>
                             </div>
 
-
-                            <input type="button" class="action-button login previous col-xs-12" name="previous"
-                                   value="VORIGE">
-                            <input type="submit" class="action-button login submit col-xs-12" value="VOLTOOIEN">
-
-
+                            <div class="form-group clearfix col-xs-12">
+                                <input type="button" class="action-button login previous col-lg-5 col-xs-12"
+                                       value="VORIGE">
+                                <input type="submit" class="action-button login submit col-lg-5 col-lg-push-2 col-xs-12"
+                                       value="VOLTOOIEN">
+                            </div>
                         </div>
                     </article>
                 </fieldset>
-                <!-- step 3 -->
-
+                <!-- step 4 -->
 
                 <!-- multistep form -->
             </form>
         <!--
             <footer class="col-xs-12 clearfix">
-
                 <h5 class="green">Heb je wel al een UniHelp account?</h5>
                 <br/>
                 <a href="{{ route('login') }}">
@@ -196,5 +182,7 @@
             <!-- files -->
         </div>
     </div>
-
+    <!-- Multistep script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ URL::asset('js/register.js') }}"></script>
 @endsection

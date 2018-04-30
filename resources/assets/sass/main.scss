@@ -135,6 +135,16 @@ a:hover, a:visited, a:link, a:active {
   border-radius: 100%;
 }
 
+.account-img {
+  width: 10rem;
+  height: 10rem;
+  background-color: $unihelp-white;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+
 /*Quotes*/
 .quote {
   font-family: Georgia, sans-serif;
@@ -186,6 +196,9 @@ a:hover, a:visited, a:link, a:active {
       -ms-transition: background-color 100ms linear;
       transition: background-color 100ms linear;
     }
+  }
+  &.submit{
+    height: 40px!important;
   }
 }
 
@@ -856,59 +869,58 @@ footer {
         text-align: center !important;
       }
     }
-  }
-  /*Register*/
-  .account-img {
-    width: 10rem;
-    height: 10rem;
-    background-color: $unihelp-white;
-    display: block;
-    margin: 0 auto;
-    cursor: pointer;
-  }
-
-  .profile-img-container {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    img {
-      width: 128px;
-      height: 128px;
-    }
-    a, #picture-input {
-      display: block;
-      position: absolute;
-      top: 0;
-      opacity: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      text-align: center;
-      color: inherit;
-      color: $unihelp-green;
-      font-size: 0.5em;
-      cursor: pointer;
-    }
-    &:hover a {
-      opacity: 1;
-      top: 0;
-      z-index: 500;
-      span {
-        top: 50%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        transform: translateY(-50%);
+    fieldset{
+      input.next, input.previous, input.submit{
+        margin: 0 0 2% 0;
       }
-    }
-    #picture-input {
-      z-index: 999;
-      width: 30rem;
     }
   }
 
 }
 
+/*Profile mage upload*/
+.profile-img-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  img {
+    width: 128px;
+    height: 128px;
+    display: block;
+    margin: 0 auto;
+  }
+  a, #picture-input {
+    display: block;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    margin: 0 auto;
+    color: inherit;
+    color: $unihelp-green;
+    font-size: 0.5em;
+    cursor: pointer;
+  }
+  &:hover a {
+    opacity: 1;
+    top: 0;
+    z-index: 500;
+    span {
+      top: 45%;
+      left: 47%;
+      position: absolute;
+      transform: translateY(-50%);
+      margin: auto;
+    }
+  }
+  #picture-input {
+    z-index: 999;
+    width: 30rem;
+  }
+}
 
 /*Desktop screens*/
 @media only screen and (max-width: 1500px) {

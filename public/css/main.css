@@ -163,6 +163,15 @@ a:active {
   border-radius: 100%;
 }
 
+.account-img {
+  width: 10rem;
+  height: 10rem;
+  background-color: #ffffff;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
 /*Quotes*/
 
 .quote {
@@ -225,6 +234,12 @@ a:active {
   color: #ffffff !important;
   -webkit-transition: background-color 100ms linear;
   transition: background-color 100ms linear;
+}
+
+.action-button.submit,
+.submit.form-button,
+.submit.download-button {
+  height: 40px !important;
 }
 
 .form-button {
@@ -1034,7 +1049,6 @@ footer a:focus {
   background-image: url("/img/backgrounds/doodles.png");
   background-repeat: repeat;
   height: 100vh;
-  /*Register*/
 }
 
 .auth-page .logo,
@@ -1138,33 +1152,32 @@ footer a:focus {
   text-align: center !important;
 }
 
-.auth-page .account-img,
-.message-page .account-img {
-  width: 10rem;
-  height: 10rem;
-  background-color: #ffffff;
-  display: block;
-  margin: 0 auto;
-  cursor: pointer;
+.auth-page .auth-box fieldset input.next,
+.auth-page .auth-box fieldset input.previous,
+.auth-page .auth-box fieldset input.submit,
+.message-page .auth-box fieldset input.next,
+.message-page .auth-box fieldset input.previous,
+.message-page .auth-box fieldset input.submit {
+  margin: 0 0 2% 0;
 }
 
-.auth-page .profile-img-container,
-.message-page .profile-img-container {
+/*Profile mage upload*/
+
+.profile-img-container {
   position: relative;
   display: inline-block;
   overflow: hidden;
 }
 
-.auth-page .profile-img-container img,
-.message-page .profile-img-container img {
+.profile-img-container img {
   width: 128px;
   height: 128px;
+  display: block;
+  margin: 0 auto;
 }
 
-.auth-page .profile-img-container a,
-.auth-page .profile-img-container #picture-input,
-.message-page .profile-img-container a,
-.message-page .profile-img-container #picture-input {
+.profile-img-container a,
+.profile-img-container #picture-input {
   display: block;
   position: absolute;
   top: 0;
@@ -1173,31 +1186,29 @@ footer a:focus {
   bottom: 0;
   right: 0;
   text-align: center;
+  margin: 0 auto;
   color: inherit;
   color: #4D6A50;
   font-size: 0.5em;
   cursor: pointer;
 }
 
-.auth-page .profile-img-container:hover a,
-.message-page .profile-img-container:hover a {
+.profile-img-container:hover a {
   opacity: 1;
   top: 0;
   z-index: 500;
 }
 
-.auth-page .profile-img-container:hover a span,
-.message-page .profile-img-container:hover a span {
-  top: 50%;
+.profile-img-container:hover a span {
+  top: 45%;
+  left: 47%;
   position: absolute;
-  left: 0;
-  right: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  margin: auto;
 }
 
-.auth-page .profile-img-container #picture-input,
-.message-page .profile-img-container #picture-input {
+.profile-img-container #picture-input {
   z-index: 999;
   width: 30rem;
 }

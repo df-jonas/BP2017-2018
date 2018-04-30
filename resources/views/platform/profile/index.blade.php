@@ -10,7 +10,7 @@
         <div class="modal fade" id="avatar-modal" role="dialog">
             <form action="{{ route('profile-update') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                <div class="modal-dialog  ">
+                <div class="modal-dialog ">
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
@@ -20,16 +20,20 @@
                         <div class="modal-body">
                             <div class="form-group clearfix col-xs-12">
                                 <br>
-                                <div class="profile-img-container col-xs-12">
-                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                         class="account-img round-img" id="register-img">
-                                    <a href="#"><span class="fa fa-upload fa-5x"></span></a>
-                                    <input id="picture-input" type="file" name="avatar"/>
-                                    @if ($errors->has('avatar'))
-                                        <span class="help-block"><strong>{{ $errors->first('avatar') }}</strong></span>
-                                    @endif
-                                    <h6 style="text-align: center">Klik om een avatar te kiezen.</h6>
+
+
+                                <div class="form-group clearfix col-xs-12" >
+                                    <div class="profile-img-container col-xs-12">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="account-img round-img" id="register-img">
+                                        <a href="#"><span class="fa fa-upload fa-5x"></span></a>
+                                        <input id="picture-input" type="file" name="avatar"/>
+                                        @if ($errors->has('avatar'))
+                                            <span class="help-block"><strong>{{ $errors->first('avatar') }}</strong></span>
+                                        @endif
+                                        <h6 style="text-align: center">Klik om een avatar te kiezen.</h6>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                         <div class="modal-footer">

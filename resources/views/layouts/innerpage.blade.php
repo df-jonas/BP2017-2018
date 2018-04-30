@@ -49,7 +49,6 @@
 <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
 <script src="{{ URL::asset('js/main.js') }}"></script>
 <script src="{{ URL::asset('js/nav.js') }}"></script>
-<script src="{{ URL::asset('js/multistep.js') }}"></script>
 <script src="{{ URL::asset('js/jquery.slicknav.js') }}"></script>
 <script>
     $(function(){
