@@ -10,7 +10,7 @@
         <div class="container">
             <div class="col-md-6 col-md-push-3 col-xs-12 no-padding">
                 <h3>Over UniHelp</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>UniHelp is een platform dat gemaakt werd door 2 studenten.</p>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
         <div class="col-lg-8 col-lg-push-2">
             <h2>Waarom UniHelp?</h2>
             <h4 class="quote">
-                For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.
+                Ik was al een tijdje op zoek naar een geschikt platform dat de beste functionaliteiten van Canvas, Desiderius, Facebook en WeTransfer kon bundelen tot één geheel.
             </h4>
         </div>
     </div>
@@ -35,19 +35,18 @@
     <div class="container">
         <div class="col-lg-6 col-xs-12">
             <div class="col-lg-10 col-lg-push-1 col-xs-12">
-                <h3>Dit is een goal</h3>
-                <p>Si longus, levis. Inquit, dasne adolescenti veniam? Philosophi autem in suis lectulis plerumque
-                    moriuntur. Immo videri fortasse. Quis est tam dissimile homini. At iam decimum annum in spelunca
-                    iacet.
+                <h3>Helemaal gratis</h3>
+                <p>
+                    Dit platform is bedoeld om het leven van een hardwerkende student heel wat draaglijker en aangenamer te maken.
+                    Hiervoor moeten studenten niets betalen, het is geheel gratis.
                 </p>
             </div>
         </div>
         <div class="col-lg-6 col-xs-12">
             <div class="col-lg-10 col-lg-push-1 col-xs-12">
-                <h3>Dit is een goal</h3>
-                <p>Si longus, levis. Inquit, dasne adolescenti veniam? Philosophi autem in suis lectulis plerumque
-                    moriuntur. Immo videri fortasse. Quis est tam dissimile homini. At iam decimum annum in spelunca
-                    iacet.
+                <h3>Gebruiksvriendelijk</h3>
+                <p>
+                    Er zijn heel wat bevragingen gebeurd om de noden van alle studenten te analyseren. Op basis van deze analyses en testen hebben wij UniHelp opgebouwd.
                 </p>
             </div>
         </div>
@@ -87,7 +86,7 @@
         <div class="col-lg-6 col-lg-push-3 padding">
             <div class="col-lg-10 col-lg-push-1">
                 <h3>Probeer het gratis!</h3>
-                <a href="{{ route('website-how') }}" class="col-xs-12">Als IT studenten zagen wij in studentenplatformen ruimte voor verbetering.</a>
+                <a href="{{ route('register') }}" class="col-xs-12">Als IT studenten zagen wij in studentenplatformen ruimte voor verbetering.</a>
             </div>
         </div>
     </div>

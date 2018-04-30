@@ -297,10 +297,12 @@ a:hover, a:visited, a:link, a:active {
     }
     h2 {
       text-transform: uppercase;
+      color: $unihelp-green;
       font-size: 20px;
     }
     h3 {
-
+      font-size: 18px;
+      color: $unihelp-green;
     }
     p {
       font-family: 'Open Sans', sans-serif;
@@ -402,7 +404,7 @@ a:hover, a:visited, a:link, a:active {
 /*Other pages banners*/
 #innerpage-banner {
   height: 300px;
-  background-image: url("/img/backgrounds/login-bg.png");
+  background-image: url("/img/features/1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -413,6 +415,8 @@ a:hover, a:visited, a:link, a:active {
     p {
       font-weight: 400;
       color: rgba(255, 255, 255, .7);
+      color: $unihelp-green;
+      font-weight: 600;
     }
   }
 }
@@ -425,6 +429,10 @@ a:hover, a:visited, a:link, a:active {
   }
   h4 {
     color: $unihelp-black;
+  }
+  p{
+    font-weight: 400;
+    font-size: 16px;
   }
   .left {
     text-align: right;
@@ -466,7 +474,10 @@ a:hover, a:visited, a:link, a:active {
     p {
       top: 35%;
       color: lightgray;
+      color: $unihelp-green;
+      font-weight: bold;
       text-transform: uppercase;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, .15);
     }
     a.meer {
       background: $unihelp-white;
@@ -610,6 +621,12 @@ a:hover, a:visited, a:link, a:active {
       width: 25px;
       height: 25px;
       margin-left: 5px;
+    }
+    &:hover{
+      &:after{
+        color: $unihelp-green;
+        font-weight: 800;
+      }
     }
   }
 }

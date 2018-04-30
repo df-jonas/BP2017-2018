@@ -45,8 +45,8 @@
                 <h4>Contactinformatie</h4>
                 <ul>
                     <li><a href="mailto:info@unihelp.be">
-                            <i class="fa fa-inbox"></i> info@unihelp.be</a></li>
-                    <li><a href="#"><i class="fa fa-map-marker"></i> Straatnaam 33</a></li>
+                            <i class="fa fa-inbox"></i> info@unihelp.be</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -54,7 +54,7 @@
     <div class="bottom padding clearfix">
         <div class="container">
                 <div class="col-xs-12">
-                    <a href="{{ route('website-copyright') }}"><h6>Copyright &copy; 2018 UniHelp. Alle rechten voorbehouden. </h6>
+                    <a href=""><h6>Copyright &copy; 2018 UniHelp. Alle rechten voorbehouden. </h6>
                     </a>
                 </div>
         </div>

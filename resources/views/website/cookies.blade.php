@@ -6,86 +6,76 @@
     <div id="main-content" class="padding col-md-8 col-md-push-2 col-sm-10 col-sm-push-1 col-xs-12">
         <br>
         <h1>Cookie policy</h1>
+        <p>Cookie policy voor UniHelp, eigenaar van www.unihelp.be</p>
+        <h2>Wat is een cookie?</h2>
+        <p>UniHelp maakt gebruik van cookies. Een cookie is een eenvoudig klein bestandje dat met pagina’s
+            van deze website [en/of Flash-applicaties] wordt meegestuurd en door uw browser op uw harde schrijf van uw
+            computer wordt opgeslagen. De daarin opgeslagen informatie kan bij een volgend bezoek weer naar onze servers
+            teruggestuurd worden.</p>
+        <h2>Gebruik van permanente cookies</h2>
+        <p>Met behulp van een permanente cookie kunnen wij jou herkennen bij een nieuw bezoek op onze website. De
+            website kan daardoor speciaal op jouw voorkeuren worden ingesteld. Ook wanneer je toestemming hebt gegeven
+            voor het plaatsen van cookies kunnen wij dit door middel van een cookie onthouden. Hierdoor hoef je niet
+            steeds jouw voorkeuren te herhalen waardoor je dus tijd bespaart en een prettiger gebruik van onze website
+            kunt maken. Permanente cookies kan je verwijderen via de instellingen van jouw browser.</p>
+        <h2>Gebruik van sessie cookies</h2>
+        <p>Met behulp van een sessie cookie kunnen wij zien welke onderdelen van de website je met dit bezoek hebt
+            bekeken. Wij kunnen onze dienst daardoor zoveel mogelijk aanpassen op het surfgedrag van onze bezoekers.
+            Deze cookies worden automatisch verwijderd zodra je jouw webbrowser afsluit.</p>
+        <h2>Tracking cookies van onszelf</h2>
+        <p>Met jouw toestemming plaatsen wij een cookie op jouw apparatuur, welke kan worden opgevraagd zodra je een
+            website uit ons netwerk bezoekt. Hierdoor kunnen wij te weten komen dat je naast onze website ook op de
+            betreffende andere website(s) uit ons netwerk bent geweest. Het daardoor opgebouwde profiel is niet
+            gekoppeld aan jouw naam, adres, e-mailadres en dergelijke, maar dient alleen om advertenties af te stemmen
+            op jouw profiel, zodat deze zo veel mogelijk relevant voor je zijn.“</p>
+        <h2>Trackingcookies van derden</h2>
+        <p>Met jouw toestemming plaatsen onze adverteerders “tracking cookies” op jouw apparatuur. Deze cookies
+            gebruiken zij om bij te houden welke pagina’s je bezoekt uit hun netwerk, om zo een profiel op te bouwen van
+            jouw online surfgedrag. Dit profiel wordt mede opgebouwd op basis van vergelijkbare informatie die zij van
+            jouw bezoek aan andere websites uit hun netwerk krijgen. Dit profiel wordt niet gekoppeld aan jouw naam,
+            adres, e-mailadres en dergelijke zoals bij ons bekend, maar dient alleen om advertenties af te stemmen op
+            jouw profiel zodat deze zo veel mogelijk relevant voor je zijn.</p>
+        <h3>Google Analytics</h3>
+        <p>Via onze website wordt een cookie geplaatst van het Amerikaanse bedrijf Google, als deel van de
+            “Analytics”-dienst. Wij gebruiken deze dienst om bij te houden en rapportages te krijgen over hoe bezoekers
+            de website gebruiken. Google kan deze informatie aan derden verschaffen indien Google hiertoe wettelijk
+            wordt verplicht, of voor zover derden de informatie namens Google verwerken. Wij hebben hier geen invloed
+            op. Wij hebben Google wel/niet toegestaan de verkregen analytics informatie te gebruiken voor andere Google
+            diensten.</p>
+        <p>De informatie die Google verzamelt wordt zo veel mogelijk geanonimiseerd. Uw IP-adres wordt nadrukkelijk niet
+            meegegeven. De informatie wordt overgebracht naar en door Google opgeslagen op servers in de Verenigde
+            Staten. Google stelt zich te houden aan de Privacy Shield principles en is aangesloten bij het Privacy
+            Shield-programma van het Amerikaanse Ministerie van Handel. Dit houdt in dat er sprake is van een passend
+            beschermingsniveau voor de verwerking van eventuele persoonsgegevens.</p>
+        <h2>Recht op inzage en correctie</h2>
+        <p>Recht op inzage en correctie of verwijdering van jouw gegevens
+            Je hebt het recht om te vragen om inzage in en correctie of verwijdering van jouw gegevens. Zie hiervoor
+            onze contactpagina. Om misbruik te voorkomen kunnen wij je daarbij vragen om je adequaat te identificeren.
+            Wanneer het gaat om inzage in persoonsgegevens gekoppeld aan een cookie, dien je een kopie van het cookie in
+            kwestie mee te sturen. Je kunt deze terug vinden in de instellingen van je browser.</p>
+        <h2>Verwijderen van cookies</h2>
+        <p>In- en uitschakelen van cookies en verwijdering daarvan
+            Meer informatie omtrent het in- en uitschakelen en het verwijderen van cookies kan je vinden in de
+            instructies en/of met behulp van de Help-functie van jouw browser.</p>
+        <h2>Verwijderen van tracking cookies</h2>
+        <p>Verwijderen van tracking cookies geplaatst door derden
+            Sommige tracking cookies worden geplaatst door derden die onder meer via onze website advertenties aan je
+            vertonen. Deze cookies kan je centraal verwijderen via Your Online Choices zodat ze niet bij een website van
+            een derde teruggeplaatst worden</p>
+        <h2>Meer informatie</h2>
         <p>
-            Wij zijn Conversal, gekend als Conversal – Buggenhoudt, een gewone commanditaire vennootschap, gevestigd
-            te 9320 Erembodegem, Burgemeester De Cocklaan 10 bus 1, met ondernemingsnummer 0848.529.769.
-            In dit Cookiebeleid leggen we uit welke persoonlijke informatie wij verzamelen en hoe wij deze gebruiken
-            en delen om onze dienstverlening te verbeteren. Dit Cookiebeleid maakt integraal deel uit van onze Algemene
-            Voorwaarden.
-        </p>
-
-
-        <h2>2. Het gebruik van cookies</h2>
-        <p>Tijdens een bezoek aan de site kunnen 'cookies' op de harde schijf van uw computer geplaatst worden. Een
-            cookie is een tekstbestand dat door de server van een website in de browser van uw computer of op uw
-            mobiel apparaat geplaatst wordt wanneer u een website raadpleegt. Cookies kunnen niet worden gebruikt om
-            personen te identificeren, een cookie kan slechts een machine identificeren.
-        </p>
-
-
-        <strong>First-party cookies:</strong>
-        <p>
+            Op de volgende websites kan je meer informatie over cookies vinden:
         <ul>
-            <li>Onthouden van persoonlijke voorkeuren</li>
+            <li>ICTRecht: <a href="https://ictrecht.nl/juridisch-advies/achtergrond-cookiewet/" target="_blank"> Achtergrond Cookiewet</a></li>
+            <li>Consumentenbond: <a href="http://www.consumentenbond.nl/test/elektronica-communicatie/veilig-online/privacy-op-internet/extra/wat-zijn-cookies/" target="_blank">“Wat zijn cookies?”</a></li>
+            <li>Consumentenbond: <a href="https://web.archive.org/web/20160702001240/http://www.consumentenbond.nl/test/elektronica-communicatie/veilig-online/privacy-op-internet/extra/waarvoor-dienen-cookies/" target="_blank">“Waarvoor dienen cookies?”</a> </li>
+            <li>Consumentenbond: <a href="http://www.consumentenbond.nl/test/elektronica-communicatie/veilig-online/privacy-op-internet/extra/cookies-verwijderen/" target="_blank">“Cookies verwijderen”</a></li>
+            <li>Consumentenbond: <a href="http://www.consumentenbond.nl/internet-privacy/cookies-verwijderen/" target="_blank">“Cookies uitschakelen”</a> </li>
+            <li> Your Online Choices: <a href="http://www.youronlinechoices.eu/" target="_blank">“A guide to online behavioural advertising”</a></li>
         </ul>
         </p>
 
-        <strong>Third-party cookies:</strong>
-        <ul>
-            <li> Google Adwords: tracking & remarketing (<a href="#">https://www.google.com/policies/privacy/</a>)</li>
-            <li>Google Analytics: tracking (<a href="#">https://www.google.com/policies/privacy/</a> )</li>
-            <li> Hotjar: tracking (<a href="#"> https://www.hotjar.com/privacy</a> )</li>
-            <li> Opt-out Hotjar via <a href="#">https://www.hotjar.com/opt-out.</a></li>
-            <li>Facebook: tracking & remarketing (<a href="#">https://www.facebook.com/policy.php)</a></li>
-        </ul>
-
-
-        <p>
-            ‘First party cookies’ zijn technische cookies die gebruikt worden door de bezochte site zelf en die tot
-            doel
-            hebben de site optimaal te laten functioneren. Voorbeeld: instellingen die de gebruiker bij de vorige
-            bezoeken aan de site heeft gedaan, of nog : een vooraf ingevuld formulier met data dat de gebruiker tijdens
-            vorige bezoeken heeft gedaan.
-            <br>
-            ‘Third Party cookies’ zijn cookies die niet afkomstig zijn van de website zelf, maar wel van derden,
-            bijvoorbeeld een aanwezige marketing of advertentieplug-in. Bijvoorbeeld cookies van Facebook of Google
-            Analytics. Voor dergelijke cookies moet de bezoeker van de site eerst toestemming geven – dit kan
-            gebeuren via een balk onderaan of bovenaan de website, met verwijzing naar deze policy, die het verder
-            surfen op de
-            website echter niet verhindert.)
-            <br>
-            U kan uw internetbrowser zodanig instellen dat cookies niet worden geaccepteerd, dat u een waarschuwing
-            ontvangt wanneer een cookie geïnstalleerd wordt of dat de cookies nadien van uw harde schijf worden
-            verwijderd.
-            Dit kan u doen via de instellingen van uw browser (via de help-functie). Hou er hierbij wel rekening mee dat
-            bepaalde grafische elementen niet correct kunnen verschijnen, of dat u bepaalde applicaties niet zal kunnen
-            gebruiken.
-            <br>
-            Door gebruik te maken van onze website, gaat u akkoord met ons gebruik van cookies.
-        </p>
-
-        <h2>4. Google analytics</h2>
-        <p>
-            Deze website maakt gebruik van Google Analytics, een webanalyse-service die wordt aangeboden door Google
-            Inc. (“Google”). Google Analytics maakt gebruik van “cookies” (tekstbestandjes die op Uw computer worden
-            geplaatst) om de website te helpen analyseren hoe gebruikers de site gebruiken. De door het cookie
-            gegenereerde
-            informatie over Uw gebruik van de website (met inbegrip van Uw IP-adres) wordt overgebracht naar en door
-            Google
-            opgeslagen op servers in de Verenigde Staten. Google gebruikt deze informatie om bij te houden hoe u de
-            website
-            gebruikt, rapporten over de website-activiteit op te stellen voor website-exploitanten en andere diensten
-            aan te
-            bieden met betrekking tot website-activiteit en internetgebruik. Google mag deze informatie aan derden
-            verschaffen indien Google hiertoe wettelijk wordt verplicht, of voor zover deze derden de informatie namens
-            Google
-            verwerken. Google zal Uw IP-adres niet combineren met andere gegevens waarover Google beschikt. U kunt
-            het gebruik van cookies weigeren door in Uw browser de daarvoor geëigende instellingen te kiezen. Wij wijzen
-            u er echter op dat u in dat geval wellicht niet alle mogelijkheden van deze website kunt benutten. Door
-            gebruik te maken van deze website geeft u toestemming voor het verwerken van de informatie door Google op de
-            wijze
-            en voor de doeleinden zoals hiervoor omschreven.
-        </p>
+        <strong>Deze policy is gebaseerd op: <a href="https://ictrecht.nl/juridisch-advies/cookieverklaring/" target="_blank">ICT recht</a></strong>
         <br>
     </div>
     @include('partials.website.newsletter')

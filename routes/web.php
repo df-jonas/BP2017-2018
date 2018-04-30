@@ -17,12 +17,11 @@
 {
     // Website routes
     Route::get('/', 'WebsiteController@index')->name('website-index');
-    Route::get('/about', 'WebsiteController@about')->name('website-about');
-    Route::get('/how-it-works', 'WebsiteController@how')->name('website-how');
-    Route::get('/cookies', 'WebsiteController@cookies')->name('website-cookies');
-    Route::get('/privacy', 'WebsiteController@privacy')->name('website-privacy');
-    Route::get('/copyright', 'WebsiteController@copyright')->name('website-copyright');
-    Route::get('/terms', 'WebsiteController@terms')->name('website-terms');
+    Route::get('/over', 'WebsiteController@about')->name('website-about');
+    Route::get('/hoe-het-werkt', 'WebsiteController@how')->name('website-how');
+    Route::get('/cookie-policy', 'WebsiteController@cookies')->name('website-cookies');
+    Route::get('/privacy-policy', 'WebsiteController@privacy')->name('website-privacy');
+    Route::get('/algemene-voorwaarden', 'WebsiteController@terms')->name('website-terms');
 
     // Authentication routes
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
