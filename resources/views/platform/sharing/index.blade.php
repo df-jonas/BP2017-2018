@@ -130,7 +130,7 @@
             <!-- content -->
             <div class="content">
                 <div id="filter-results" class="filecontainer files">
-                    <span id="filter-details" class="item padding col-xs-12">Er werden 100 resultaten gevonden.</span><br><br>
+                    <span id="filter-details" class="item padding col-xs-12">Er werden {{ $files->count() }} resultaten gevonden.</span><br><br>
                     @foreach($files as $file)
                         @php
                             $rating = $file->averageRating()
