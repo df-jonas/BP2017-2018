@@ -10,7 +10,11 @@
             <div class="dropdown col-lg-10 col-sm-10 col-xs-12 clearfix">
                 <div class="account">
                     <div class="account-user-notifications col-lg-2">
-                        <a href="{{ route('profile-notifications') }}"><i class="fa fa-bell" style="color:white;"></i><span>{{count(auth()->user()->notifications())}}</span></a>
+                        <a href="{{ route('profile-notifications') }}"><i class="fa fa-bell" style="color:white;"></i>
+                            @if(!(Auth::user()->notifs->count() <= 0))
+                                <span>{{ Auth::user()->notifs->count() }}</span>
+                            @endif
+                        </a>
                     </div>
                     <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="account-img round-img"
                          data-toggle="dropdown">

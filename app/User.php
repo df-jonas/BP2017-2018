@@ -47,6 +47,11 @@ class User extends Authenticatable
         return $this->belongsTo('App\Role', 'role');
     }
 
+    public function notifs()
+    {
+        return $this->hasMany('App\Notification', 'user_id', 'id');
+    }
+
     public function countIsTutor()
     {
         $ids = Tutor::query()
