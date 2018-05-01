@@ -1,0 +1,55 @@
+/*Auth pages*/
+.auth-page, .message-page {
+  background-image: url("/img/backgrounds/doodles.png");
+  background-repeat: repeat;
+  height: 100vh;
+  width: 100vw;
+  .logo {
+    width: 32px;
+    display: block;
+    margin: 5% auto;
+  }
+  .auth-box {
+    background: $unihelp-white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    input[type=text], input[type=password] {
+      height: 50px !important;
+    }
+    h3, h4, a, p {
+      text-align: left !important;
+    }
+    h4 {
+      color: $unihelp-asphalt;
+      text-align: center
+    }
+    label.remember {
+      font-size: 12px !important;
+      line-height: 18px;
+    }
+
+    footer {
+      height: 60px;
+      line-height: 60px;
+      background: #f3f3f3;
+      text-align: center;
+      a {
+        color: $theme-color !important;
+        &:hover {
+          color: $unihelp-asphalt;
+        }
+      }
+    }
+    &.message {
+      min-height: 200px;
+      h4, a {
+        text-align: center !important;
+      }
+    }
+
+  }
+}

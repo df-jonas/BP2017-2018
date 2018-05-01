@@ -1,6 +1,7 @@
 @extends('layouts.platform')
 
 @section('content')
+@section('pagetitle', 'Sharing')
     @include('partials.platform.header')
     @include('partials.platform.subheader')
 

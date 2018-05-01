@@ -1,7 +1,8 @@
 @extends('layouts.platform')
 
 @section('content')
-    @include('partials.platform.header')
+@section('pagetitle', 'Community')
+@include('partials.platform.header')
     @include('partials.platform.subheader')
 
     <div class="container">
@@ -104,7 +105,7 @@
                     <div id="groupcontainer" class="groups">
 
                         <div class="item group-detail clearfix">
-                            <header>Post aanmaken<a href=""><i class="fa fa-angle-up"></i></a>
+                            <header>Post aanmaken<a href=""></a>
                             </header>
 
                             <article class="item group">

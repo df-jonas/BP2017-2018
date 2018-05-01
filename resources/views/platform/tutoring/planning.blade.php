@@ -1,7 +1,8 @@
 @extends('layouts.platform')
 
 @section('content')
-    @include('partials.platform.header')
+@section('pagetitle', 'Tutoring - Planning')
+@include('partials.platform.header')
     @include('partials.platform.subheader')
 
     <div class="container">
@@ -14,7 +15,6 @@
                 <!-- Calendar Modal -->
                 <div class="modal fade" id="date-modal" role="dialog">
                     <div class="modal-dialog ">
-
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
@@ -39,7 +39,6 @@
                 <!-- New item Modal -->
                 <div class="modal fade" id="new-item-modal" role="dialog">
                     <div class="modal-dialog ">
-
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
@@ -61,11 +60,25 @@
 
 
                 <article class="item">
-                    <header>Planning</header>
+                    <header><i class="fa fa-calendar"></i> Planning</header>
                     <div id="date-calendar">
-
                     </div>
-
+                </article>
+                <article class="overview item user-owned">
+                    <header><i class="fa fa-upload"></i> Gedeelde bestanden</header>
+                    <div class="padding">
+                            <div class="row flex">
+                                <div class="icon col-lg-2 col-md-2 col-xs-2">
+                                    <img src="" class="account-img round-img">
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-xs-8">
+                                    <h5 class="title col-xs-12 no-padding"><a href="#"> Test</a></h5>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-xs-2">
+                                    <i class="fa fa-download brown"></i>
+                                </div>
+                            </div>
+                    </div>
                 </article>
                 <!-- sidebar -->
             </div>

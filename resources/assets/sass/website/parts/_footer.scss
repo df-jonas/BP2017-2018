@@ -1,0 +1,39 @@
+/*Footer*/
+footer {
+  clear: both;
+  .top, .bottom {
+    position: relative;
+    text-align: left;
+    display: block;
+  }
+  .top {
+    background: $unihelp-asphalt;
+    p {
+      font-size: 16px;
+      color: $unihelp-white;
+    }
+  }
+  .bottom {
+    background: $unihelp-grey;
+    p {
+      font-size: 14px;
+      color: $unihelp-white;
+    }
+  }
+  .module {
+    ul {
+      padding-left: 0;
+      list-style: none;
+      li {
+        height: 24px;
+        a {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  a {
+    cursor: pointer;
+    @include link(white, white, white, white);
+  }
+}

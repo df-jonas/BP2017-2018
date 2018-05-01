@@ -1,0 +1,50 @@
+
+.file {
+  header {
+    a {
+      @include link(white, white, white, white);
+    }
+
+    i {
+      float: right;
+      margin-top: 7px;
+    }
+  }
+  h3 {
+    margin-top: 0;
+    /*margin-bottom: 0;*/
+  }
+
+  .new {
+    input {
+      margin-bottom: 2em;
+      padding: 0.5%;
+    }
+  }
+  .rating {
+    font-size: 1.5em !important;
+    &:hover {
+      cursor: pointer;
+    }
+
+    .checked {
+      color: $unihelp-brown;
+    }
+  }
+
+}
+
+.filecontainer {
+  display: inline;
+}
+
+
+/*file overview*/
+.file-overview {
+  text-align: left;
+  width: 100%;
+}
+
+.file-overview tr td:last-child {
+  text-align: right;
+}

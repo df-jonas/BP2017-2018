@@ -1,6 +1,7 @@
 @extends('layouts.platform')
 
 @section('content')
+@section('pagetitle', 'Community')
     @include('partials.platform.header')
     @include('partials.platform.subheader')
     <div class="container">

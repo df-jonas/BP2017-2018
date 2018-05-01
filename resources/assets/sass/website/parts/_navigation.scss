@@ -1,0 +1,175 @@
+/*Navigation*/
+#page-header, #platform-header {
+  //height: 80px;
+  height: auto;
+  width: 100%;
+  background-color: $unihelp-white;
+  padding: 1%;
+  position: sticky;
+  z-index: 100;
+  img.logo {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/*Navigation*/
+#page-header {
+  transition: 1s ease all;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  a, a:hover {
+    color: $unihelp-black;
+    text-decoration: none;
+  }
+  .links {
+    float: right;
+    list-style-type: none;
+    text-align: right;
+    li {
+      display: inline-block;
+      padding: 2%;
+      padding-left: 4%;
+      padding-right: 4%;
+      line-height: .5em;
+      text-align: center;
+      cursor: pointer;
+      &:hover, &.active-state {
+        background: lightgray;
+        opacity: 0.75;
+      }
+      &.register {
+        background: $theme-color;
+        color: $unihelp-white;
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+  &.large {
+    height: auto;
+
+  }
+  &.small {
+    height: 4.5em !important;
+    padding: 5px !important;
+    box-shadow: 0px 1px 0px 0.25px $theme-color;
+  }
+}
+
+/*Breadcrumb module*/
+.breadcrumb-banner {
+  background: #f7f7f7;
+  text-align: right;
+  #breadcrumb {
+    float: right;
+    padding: 5px 0 5px 0;
+    width: auto;
+    max-width: 400px;
+    ul.breadcrumb {
+      padding-left: 27px !important;
+      padding-right: 0;
+      position: relative;
+      margin-bottom: 0;
+      &:before {
+        content: "\f015";
+        font-family: FontAwesome;
+        font-size: 1.2em;
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 0;
+      }
+      li {
+        display: inline-block;
+        max-width: 500px;
+        margin: 7px 7px 7px 0px;
+        color: $unihelp-black;
+        &:nth-of-type(1) {
+          color: $theme-color;
+          a {
+            color: $theme-color;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*Home page banner*/
+#page-banner, #innerpage-banner {
+  height: 700px;
+  margin-bottom: 5x;
+  background-image: url("/img/backgrounds/banner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  //box-shadow: 0px 1px 3px 0px $unihelp-black;
+  #welcome {
+    color: $unihelp-white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    h1, p {
+      text-align: left;
+      color: $unihelp-white;
+      font-weight: bold;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.6em;
+      margin-top: 20px;
+      margin-bottom: 35px;
+      letter-spacing: -.03em;
+    }
+    a {
+      color: $theme-color;
+      text-decoration: underline;
+    }
+    .buttons {
+      display: block;
+      margin: 3.5% 0 auto;
+      .register {
+        margin-bottom: 2em;
+        &:hover{
+          background: $unihelp-white;
+          color: $theme-color;
+        }
+      }
+      .login {
+        background: $unihelp-white;
+        color: $theme-color;
+        margin-bottom: 2em;
+        &:hover{
+          background: $theme-color;
+          color: $unihelp-white;
+        }
+      }
+    }
+  }
+}
+
+/*Other pages banners*/
+#innerpage-banner {
+  height: 300px;
+  background-image: url("/img/features/1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  #welcome {
+    h3, p {
+      text-align: center;
+    }
+    p {
+      font-weight: 400;
+      color: rgba(255, 255, 255, .7);
+      color: $theme-color;
+      font-weight: 600;
+    }
+  }
+}
+

@@ -1,23 +1,11 @@
 @extends('layouts.website')
-
+@section('pagetitle', 'Pagine niet gevonden')
 @section('content')
-    <div id="login-page">
-        <div class="login-box">
-
-            <a href="{{route('website-index')}}"><img src="{{ asset('img/logo/Logo_final.png') }}"></a>
-
-            <div class="page-error">
-                <br>
-                <h1>404</h1>
-                <br>
-                <h3>Deze pagina kon niet gevonden worden.</h3>
-                <br>
-
-
-
-            <a href="{{ route('website-index') }}"><p>Ga naar de home pagina.</p></a>
-            </div>
-            <br>
+    <div class="auth-page">
+        <div class="auth-box message col-lg-4 col-lg-push-4 col-md-6 col-md-push-6 col-sm-8 col-sm-push-2  col-xs-12">
+            <img class="logo" src="img/logo/favicon.png">
+            <h4>Deze pagina kon niet gevonden worden.</h4>
+            <a class="text-muted col-xs-12" href="{{route('website-index')}}">Klik <strong>hier</strong> om terug te keren naar de home pagina</a>
         </div>
     </div>
 @endsection

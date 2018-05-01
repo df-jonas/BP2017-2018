@@ -1,0 +1,145 @@
+/*Tutoring*/
+.table.tutoring {
+  display: table;
+  .sidebar {
+    display: table-cell;
+    .people-list {
+      list-style-type: none;
+      padding-left: 0;
+      li {
+        display: block;
+        background: $theme-color;
+        color: $unihelp-white;
+        border: 1px solid $unihelp-white;
+        height: 80px;
+        position: relative;
+        &:hover, &.people-list-active {
+          cursor: pointer;
+          background: $unihelp-white;
+          color: $theme-color;
+        }
+        &.load-more {
+          text-align: center;
+          height: 55px;
+          line-height: 85px;
+        }
+        .picture {
+          display: table-cell;
+          width: 42px;
+        }
+        .info {
+          display: table-cell;
+          padding-left: 16px;
+          vertical-align: middle;
+          padding-top: 4px;
+          h6 {
+            margin: 5px 0;
+          }
+
+          h6.bold {
+            margin: 0;
+          }
+        }
+        &.new {
+          .add {
+            background: $unihelp-white;
+            color: $theme-color;
+            text-align: center;
+            font-size: 1em;
+            line-height: 42px;
+            &:hover {
+              background: $theme-color;
+              color: $unihelp-white;
+            }
+          }
+        }
+
+        &.load-more:hover, &.new:hover {
+          background: $unihelp-brown;
+          color: $unihelp-white;
+        }
+
+      }
+    }
+    .table {
+      margin-bottom: 0;
+    }
+
+    .item {
+      margin-bottom: 0;
+    }
+  }
+  .content {
+    display: table-cell;
+    padding-left: 0;
+    position: relative;
+    .item {
+      position: absolute;
+      height: 100%;
+    }
+  }
+}
+
+#tutoringcontent {
+  article.col-lg-4:nth-of-type(1) {
+    padding-left: 0;
+  }
+  article.col-lg-4:nth-of-type(3) {
+    padding-right: 0;
+  }
+  .item {
+    padding: 0;
+    border-top: 0;
+    text-align: center;
+
+    header {
+      background: $unihelp-brown;
+      text-align: center;
+    }
+    .padding {
+      border: 5px solid transparent;
+      border-top: 0;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      margin: 5%;
+    }
+
+  }
+
+}
+
+.overview-calendar {
+  height: 45px;
+  margin-top: 2.5em;
+  position: relative;
+  .date {
+    color: $unihelp-black;
+    text-align: left;
+
+  }
+  &.new {
+    cursor: pointer;
+    .reminder {
+      background: $theme-color;
+    }
+    .date {
+      text-align: center;
+      line-height: 40px;
+    }
+  }
+  .reminder {
+    height: 45px;
+    color: $unihelp-white;
+    background: $unihelp-brown;
+    h5 {
+      margin: 0;
+    }
+    p {
+      color: $unihelp-white;
+    }
+  }
+
+}

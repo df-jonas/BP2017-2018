@@ -1,6 +1,7 @@
 @extends('layouts.platform')
 
 @section('content')
+@section('pagetitle', 'Sharing - ' . $file->title)
     @include('partials.platform.header')
     @include('partials.platform.subheader')
 

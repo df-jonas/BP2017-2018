@@ -3,7 +3,8 @@
 @section('pagetitle', 'Word tutee')
 
 @section('content')
-    @include('partials.platform.header')
+@section('pagetitle', 'Tutoring')
+@include('partials.platform.header')
     @include('partials.platform.subheader')
     <div class="container">
         <div class="table">

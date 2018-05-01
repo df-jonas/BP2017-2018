@@ -3,7 +3,8 @@
 @section('pagetitle', 'Hulpcentrum')
 
 @section('content')
-    @include('partials.platform.header')
+@section('pagetitle', 'Tutoring - Help')
+@include('partials.platform.header')
     @include('partials.platform.subheader')
 
     <div class="container">

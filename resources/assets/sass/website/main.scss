@@ -1,0 +1,131 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/* Mixins */
+@import "../mixin/link";
+
+/* Default theme colors */
+@import "../colors/default";
+
+/* Theme parts */
+@import "/parts/typo";
+@import "/parts/general";
+@import "/parts/buttons";
+@import "/parts/navigation";
+@import "/parts/content";
+@import "/parts/footer";
+@import "/parts/auth";
+@import "/parts/inputs";
+
+.slicknav_menu {
+  display: none;
+}
+
+/* Mediaqueries */
+
+/* Desktop screens */
+@media only screen and (max-width: 1500px) {
+  #page-header .links {
+    padding-top: 0.5%;
+  }
+}
+
+/* Laptop screens */
+@media only screen and (max-width: 1200px) {
+}
+
+/* Tablets */
+@media only screen and (max-width: 768px) {
+  .hide-tablet {
+    display: none;
+  }
+
+  /*responsive menu*/
+  #page-header {
+    height: auto;
+    .hamburger {
+      display: block;
+    }
+    .links {
+      //display: none;
+      margin-top: -2.85em;
+      //width: 100% !important;
+      padding-left: 0;
+      background: white;
+      li {
+        width: 100%;
+        height: 3em;
+        margin: 0 !important;
+        text-align: center;
+        line-height: 2em;
+      }
+    }
+  }
+
+  #page-banner {
+    height: 600px;
+    text-align: center;
+  }
+
+  /* #slicknav menu */
+  #menu > li, #menu > a {
+    display: none;
+  }
+
+  .slicknav_nav {
+    width: 100%;
+    a {
+      color: $theme-color !important;
+      padding: 0 !important;
+      &:hover {
+        border-radius: 0px !important;
+        -webkit-border-radius: 0px !important;
+        -moz-border-radius: 0px !important;
+        background: $theme-color !important;
+        color: $unihelp-white !important;
+      }
+    }
+  }
+
+  .slicknav_menu {
+    display: block;
+    min-height: 3em;
+  }
+
+  .about-person {
+    h3, h4, p {
+      text-align: center;
+    }
+  }
+
+  #page-banner, .call-to-action, #newsletter {
+    h1, h2, h3, p {
+      text-align: center !important;
+      width: 100%;
+    }
+  }
+
+  .call-to-action .text {
+    p {
+      width: 100%;
+    }
+  }
+
+  footer {
+    h4, h6, .module {
+      text-align: center;
+    }
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+  .hide-mobile {
+    display: none;
+  }
+  .container {
+    width: 95% !important;
+    margin: 0 auto;
+  }
+}
+
