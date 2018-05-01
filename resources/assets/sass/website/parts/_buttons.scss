@@ -1,0 +1,79 @@
+/*Buttons*/
+.action-button {
+  height: 40px;
+  line-height: 1em;
+  background-color: $unihelp-white;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
+  &.register, &.login, &.submit {
+    background: $theme-color;
+    color: $unihelp-white;
+    &:hover {
+      background: $unihelp-grey;
+      color: $unihelp-white;
+
+    }
+  }
+
+  &.canvas {
+    background: $unihelp-grey;
+    color: $unihelp-white;
+    /*
+    &:hover {
+      background: $theme-color;
+      color: $unihelp-white;
+      -webkit-transition: background-color 100ms linear;
+      -ms-transition: background-color 100ms linear;
+      transition: background-color 100ms linear;
+    }
+    */
+  }
+
+  &.previous{
+    background: $unihelp-grey;
+    &:hover{
+      background: $theme-color;
+    }
+  }
+
+}
+
+.form-button {
+  @extend .action-button;
+  background: $theme-color;
+}
+
+.download-button {
+  @extend .action-button;
+  background: $unihelp-brown;
+  color: $unihelp-white;
+  border: none;
+  text-align: center;
+  line-height: 40px;
+  float: right;
+  margin: 3% 0 3% 0;
+  @include link(white, white, white, white);
+  a, a:hover {
+    cursor: pointer;
+    @include link(white, white, white, white);
+  }
+
+  &:hover {
+    background: $theme-color;
+  }
+}
+
+/* Sidebar add button */
+.new-button{
+}
+
+/* Multistep navigation buttons */
+fieldset {
+  input.next, input.previous, input.submit {
+    margin: 0 0 2% 0;
+  }
+}

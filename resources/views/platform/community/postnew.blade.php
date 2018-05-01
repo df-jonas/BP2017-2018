@@ -104,7 +104,7 @@
                     <div id="groupcontainer" class="groups">
 
                         <div class="item group-detail clearfix">
-                            <header>Post aanmaken<a href=""><i class="fa fa-angle-up"></i></a>
+                            <header>Post aanmaken<a href=""></a>
                             </header>
 
                             <article class="item group">

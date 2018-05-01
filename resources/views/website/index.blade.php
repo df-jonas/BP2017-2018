@@ -41,7 +41,7 @@
     <div id="features" class="padding clearfix col-xs-12">
         <div class="container no-padding">
             <a href="{{route('website-how')}}">
-                <div class="col-lg-4 col-xs-12">
+                <div class="col-md-4 col-xs-12">
                     <div class="feature no-padding col-xs-12">
                         <img src="img/features/1.jpg">
                         <p>Tutoring</p>
@@ -51,7 +51,7 @@
                 </div>
             </a>
             <a href="{{route('website-how')}}">
-                <div class="col-lg-4 col-xs-12">
+                <div class="col-md-4 col-xs-12">
                     <div class="feature no-padding col-xs-12">
                         <img src="img/features/5.jpg">
                         <p>Bestanden delen</p>
@@ -61,7 +61,7 @@
                 </div>
             </a>
             <a href="{{route('website-how')}}">
-                <div class="col-lg-4 col-xs-12">
+                <div class="col-md-4 col-xs-12">
                     <div class="feature no-padding col-xs-12">
                         <img src="img/features/4.jpg">
                         <p>Community</p>

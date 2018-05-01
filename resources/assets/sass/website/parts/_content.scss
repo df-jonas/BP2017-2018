@@ -1,0 +1,392 @@
+/*innerpage styling*/
+.innerpage {
+  background: $unihelp-white;
+  background-image: url("/img/backgrounds/doodles.png");
+  background-repeat: repeat;
+  #main-content {
+    background: $unihelp-white;
+    h1, h2, h3 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      padding-bottom: 0.4em;
+    }
+    h1 {
+
+    }
+    h2 {
+      text-transform: uppercase;
+      color: $theme-color;
+      font-size: 20px;
+    }
+    h3 {
+      font-size: 18px;
+      color: $theme-color;
+    }
+    p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      color: #4e5050;
+    }
+    a {
+      color: $theme-color;
+    }
+  }
+
+}
+
+/*unihelp team member*/
+.about-person {
+  margin: 10% 0;
+  h3 {
+    color: $theme-color;
+  }
+  h4 {
+    color: $unihelp-black;
+  }
+  p{
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .left {
+    text-align: right;
+  }
+  img {
+    position: relative;
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+    margin: 5.5% auto;
+    display: block;
+    top: 55%;
+    -webkit-transform: translateY(-55%);
+    -ms-transform: translateY(-55%);
+    transform: translateY(-55%);
+  }
+}
+
+/*Home 3 features block*/
+#features {
+  height: auto;
+  margin: 5% 0 5% 0;
+  .feature {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 350px;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    h3, p {
+      position: absolute;
+      left: 25px;
+      top: 37.5%;
+      color: $unihelp-white;
+    }
+    p {
+      top: 35%;
+      color: lightgray;
+      color: $theme-color;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, .15);
+    }
+    a.meer {
+      background: $unihelp-white;
+      padding: 3.5%;
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.5s ease all;
+      color: $theme-color;
+      cursor: pointer;
+      box-shadow: 2px 2px 3px rgba(0, 0, 0, .15);
+      &:after {
+        content: '\f105';
+        font-family: FontAwesome;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-left: 5px;
+      }
+    }
+    &:hover {
+      transform: scale(1.02);
+      transition: 0.5s ease all;
+      a {
+        background: $theme-color;
+        color: $unihelp-white;
+      }
+    }
+  }
+  .promo {
+    margin-top: 2.5%;
+    h2 {
+      color: #7f8fab;
+      margin: 0 auto;
+      font-size: 25px;
+      max-width: 760px;
+      text-align: center;
+      line-height: 1.4em;
+      letter-spacing: -.04em;
+      font-weight: 600;
+      strong {
+        color: $theme-color;
+      }
+    }
+  }
+}
+
+/*How it works*/
+#how {
+  margin: 5% 0 5% 0;
+  .intro {
+    h2, p {
+      text-align: center;
+    }
+    h2 {
+      font-size: 28px;
+    }
+    p {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: -.02em;
+      color: #576070;
+    }
+    img {
+      width: 100%;
+      margin: 5% 0 5% 0;
+    }
+  }
+  .steps {
+    margin: 5% 0 5% 0;
+    list-style: none;
+    padding: 0;
+    .step {
+      height: 200px;
+      margin: 2% 0 2% 0;
+      background: rgba(0, 0, 0, .05);
+      h4 {
+        margin-top: 20px;
+        font-size: 16px;
+        color: $theme-color;
+      }
+      p {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #898989;
+        line-height: 1.85em;
+        font-weight: 500;
+      }
+      i {
+        color: $theme-color;
+        font-size: 2em;
+      }
+    }
+  }
+
+}
+
+/*Avout intro*/
+#intro {
+  margin: 5% 0 5% 0;
+  h2, h4 {
+    text-align: center;
+  }
+  h2 {
+    font-size: 28px;
+    font-weight: 500;
+  }
+}
+
+/* Goals block*/
+#goal, #action {
+  background: $theme-color;
+  padding: 5%;
+  h3, p {
+    color: $unihelp-white;
+    font-weight: 500;
+    font-size: 24px;
+  }
+  p {
+    color: rgba(255, 255, 255, .7);
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+/*Action block*/
+#action {
+  background: $unihelp-asphalt;
+  padding: 1%;
+  h3, a {
+    text-align: center;
+    @include link($unihelp-white, $unihelp-white, $unihelp-white, $unihelp-white);
+  }
+  a {
+    &:after {
+      content: '\f061';
+      font-family: FontAwesome;
+      width: 25px;
+      height: 25px;
+      margin-left: 5px;
+    }
+    &:hover{
+      &:after{
+        color: $theme-color;
+        font-weight: 800;
+      }
+    }
+  }
+}
+
+/*Call to action block*/
+.call-to-action {
+  background: $theme-color;
+  color: $unihelp-white;
+  height: auto;
+  position: relative;
+  .image {
+    padding: 2.5%;
+    img {
+      position: absolute;
+      right: 125px;
+      top: -35px;
+      object-fit: contain;
+      -webkit-transform: rotate(-5deg);
+      transform: rotate(-3.5deg);
+      height: 400px;
+    }
+
+  }
+  .text {
+    padding: 2.5%;
+    h2 {
+      color: $unihelp-white;
+      font-size: 24px;
+      letter-spacing: -.03em;
+      font-weight: 700;
+      margin-top: 0;
+    }
+    p {
+      color: $unihelp-white;
+      font-size: 18px;
+      line-height: 24px;
+      margin-top: 16px;
+      margin-bottom: 20px;
+      width: calc(100% - 150px);
+    }
+  }
+
+  button {
+    background-color: $unihelp-white !important;
+    color: $theme-color !important;
+    margin-bottom: 1em;
+    &:hover {
+      background: lightgray !important;
+      color: $theme-color !important;
+    }
+  }
+}
+
+/*Newletter block*/
+#newsletter {
+  background: $unihelp-white;
+  padding: 2%;
+  h3 {
+    color: $theme-color;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 5px;
+    letter-spacing: -.02em;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -.02em;
+    color: #7f8fab;
+  }
+  form {
+    float: right;
+    margin-top: 3.5%;
+    transform: translateY(-3.5%);
+    input {
+      padding: 2% !important;
+      height: 45px !important;
+      border: none !important;
+      line-height: 22.5px !important;
+      &[type="email"], &[type="text"] {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+      }
+    }
+    #mc-embedded-subscribe {
+      background: $theme-color !important;
+    }
+  }
+}
+
+/*Cookie box*/
+.cookie-consent {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: $theme-color;
+  padding: 15px;
+  color: $unihelp-white;
+  button {
+    color: $theme-color;
+    border: 1px solid transparent;
+    border-radius: 0 !important;
+    margin-top: 1em;
+    padding: 5px;
+    &:hover {
+      cursor: pointer;
+      background: $theme-color;
+      border: 1px solid $unihelp-white;
+      transition: all 0.2s ease;
+      color: $unihelp-white;
+    }
+  }
+}
+
+/*Beta notice box */
+.beta-notice {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: $unihelp-brown;
+  padding: 15px;
+  color: $unihelp-white;
+  z-index: 9999;
+}
+
+/*Quotes*/
+.quote {
+  font-family: Georgia, sans-serif;
+  font-size: 22px;
+  color: #727a87;
+  margin: 0 auto;
+  display: inline-block;
+  max-width: 900px;
+  line-height: 2.2em;
+  font-weight: 300;
+  position: relative;
+  &:before {
+    content: '\f10d';
+    font-family: FontAwesome;
+    font-size: 2em;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: -50px;
+    top: 10px;
+    opacity: .7;
+    color: $theme-color;
+  }
+}

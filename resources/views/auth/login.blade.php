@@ -2,9 +2,8 @@
 @section('pagetitle', 'Login')
 @section('content')
     <div class="auth-page">
-        <!-- TODO classes goed zetten, name attrituben, routes -->
         <div class="auth-box col-lg-4 col-lg-push-4 col-md-6 col-md-push-6 col-sm-8 col-sm-push-2  col-xs-12">
-            <img class="logo" src="img/logo/favicon.png">
+            <a href="{{route('website-index')}}"><img class="logo" src="img/logo/favicon.png"></a>
             <form method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
                 <div class="col-xs-12 padding">
@@ -34,9 +33,7 @@
                     </div>
                     <div class="form-group clearfix col-xs-12">
                         <!-- TODO Jonas: login with canvas -->
-                        <!--
-                        <input type="submit" class="action-button canvas col-xs-12" value="LOGIN MET CANVAS">
-                        -->
+                        <input type="submit" class="action-button canvas disabled col-xs-12" value="LOGIN MET CANVAS" disabled readonly title="Inloggen met Canvas is innenkort beschikbaar">
                     </div>
                 </div>
             </form>

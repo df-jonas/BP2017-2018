@@ -16,9 +16,6 @@
                         <li>Hoe het werkt</li>
                     </a>
                     @if (Auth::check())
-                        <a href="{{ route('logout') }}">
-                            <li>Uitloggen</li>
-                        </a>
                         <a href="{{ route('login') }}">
                             <li class="register">Platform</li>
                         </a>

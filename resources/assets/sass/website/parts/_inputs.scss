@@ -1,9 +1,9 @@
 /*FONTS*/
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 /*Mixins*/
-@import "mixin/link";
+@import "../../mixin/link";
 /*Variables*/
-@import "variables/colors";
+@import "../../colors/default";
 
 /*Custom checkboxes*/
 .checkbox-label {
@@ -59,7 +59,7 @@
   &::after {
     content: "\f078";
     font: 17px FontAwesome;
-    color: $unihelp-green;
+    color: $theme-color;
     right: 11px;
     top: 32px;
     padding: 0 0 2px;
@@ -123,7 +123,7 @@ label {
 
 /* When the checkbox is checked, add a blue background */
 .checkbox-container input:checked ~ .checkmark {
-  background-color: $unihelp-green;
+  background-color: $theme-color;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -216,7 +216,7 @@ label {
 
 /*Actieve en voltooide stappen groen kleuren*/
 #progressbar li.active:before, #progressbar li.active:after {
-  background: $unihelp-green;
+  background: $theme-color;
   color: white;
 }
 
@@ -240,7 +240,29 @@ form textarea {
 }
 
 form.register .form-group {
-  margin-bottom: 7.5%;
+  //margin-bottom: 7.5%;
+}
+
+/*Forms*/
+form input, form textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+form input[type=submit] {
+  padding: 0;
+}
+
+form label {
+  float: left;
+}
+
+form .form-group {
+  // margin: 2.5% 0 2.5% 0;
 }
 
 .sliderdiv {
@@ -252,7 +274,7 @@ form.register .form-group {
 
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    box-shadow: 1px 1px 1px $unihelp-green, 0px 0px 1px transparent;
+    box-shadow: 1px 1px 1px $theme-color, 0px 0px 1px transparent;
     border: none;
     height: 24px;
     width: 10px;
@@ -263,7 +285,7 @@ form.register .form-group {
   }
 
   input[type=range]::-moz-range-thumb {
-    box-shadow: 1px 1px 1px $unihelp-green, 0px 0px 1px transparent;
+    box-shadow: 1px 1px 1px $theme-color, 0px 0px 1px transparent;
     border: none !important;
     height: 24px;
     width: 10px;
@@ -300,19 +322,19 @@ form.register .form-group {
     height: 8.4px;
     cursor: pointer;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: $unihelp-green;
+    background: $theme-color;
     border-radius: 1.3px;
     border: 0.2px solid #010101;
   }
 
   input[type=range]:focus::-webkit-slider-runnable-track {
-    background: $unihelp-green;
+    background: $theme-color;
   }
 
   input[type=range]::-moz-range-track {
     height: 10px;
     cursor: pointer;
-    background: $unihelp-green;
+    background: $theme-color;
     border-radius: 0px;
     border: none;
   }
@@ -320,28 +342,28 @@ form.register .form-group {
   input[type=range]::-ms-track {
     height: 10px;
     cursor: pointer;
-    background: $unihelp-green;
+    background: $theme-color;
     border-radius: 0px;
     border: none;
     color: transparent;
   }
   input[type=range]::-ms-fill-lower {
-    background: $unihelp-green;
+    background: $theme-color;
     border: none;
     border-radius: 0px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   }
   input[type=range]:focus::-ms-fill-lower {
-    background: $unihelp-green;
+    background: $theme-color;
   }
   input[type=range]::-ms-fill-upper {
-    background: $unihelp-green;
+    background: $theme-color;
     border: none;
     border-radius: 0px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   }
   input[type=range]:focus::-ms-fill-upper {
-    background: $unihelp-green;
+    background: $theme-color;
   }
 }
 

@@ -7,9 +7,9 @@
                     <li><a href="{{ route('website-index') }}">Home</a></li>
                     <li><a href="{{ route('website-about') }}">Over UniHelp</a></li>
                     <li><a href="{{ route('website-how') }}">Hoe het werkt</a></li>
-                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
+            <!--
             <div class="module clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
                 <h4>Bedrijven</h4>
                 <ul>
@@ -17,6 +17,7 @@
                     <li><a href="#">Boek een demonstratie</a></li>
                 </ul>
             </div>
+            -->
             <div class="module  clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
                 <h4>Account</h4>
                 <ul>
@@ -42,10 +43,15 @@
                 </ul>
             </div>
             <div class="module  clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
-                <h4>Contactinformatie</h4>
+                <h4>Help &amp; support</h4>
                 <ul>
-                    <li><a href="mailto:info@unihelp.be">
-                            <i class="fa fa-inbox"></i> info@unihelp.be</a>
+                    <li>
+                        <a href="mailto:info@unihelp.be">info@unihelp.be</a>
+                    <li>
+                        <a href="#">Contacteer ons</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQ</a>
                     </li>
                 </ul>
             </div>
@@ -53,10 +59,10 @@
     </div>
     <div class="bottom padding clearfix">
         <div class="container">
-                <div class="col-xs-12">
-                    <a href=""><h6>Copyright &copy; 2018 UniHelp. Alle rechten voorbehouden. </h6>
-                    </a>
-                </div>
+            <div class="col-xs-12">
+                <a href=""><h6>Copyright &copy; 2018 UniHelp. Alle rechten voorbehouden. </h6>
+                </a>
+            </div>
         </div>
     </div>
 </footer>

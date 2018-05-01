@@ -1,5 +1,5 @@
 /*Imports*/
-@import "variables/colors";
+@import "colors/default";
 /*General css*/
 
 
@@ -80,7 +80,7 @@ div.zabuto_calendar .table tr td.dow-clickable, div.zabuto_calendar .table tr td
 }
 
 div.zabuto_calendar .badge-today, div.zabuto_calendar div.legend span.badge-today {
-  background-color: $unihelp-green;
+  background-color: $theme-color;
   color: #fff;
   text-shadow: none;
   padding: 8px;

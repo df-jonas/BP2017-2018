@@ -11,13 +11,9 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css')
-    .sass('resources/assets/sass/platform.scss', 'public/css')
+mix.sass('resources/assets/sass/themes/default.scss', 'public/css/themes')
+    .sass('resources/assets/sass/themes/light.scss', 'public/css/themes')
+    .sass('resources/assets/sass/themes/dark.scss', 'public/css/themes')
     .sass('resources/assets/sass/zabuto_calendar.min.scss', 'public/css')
-    .sass('resources/assets/sass/main.scss', 'public/css')
-    .sass('resources/assets/sass/inputs.scss', 'public/css')
+    .sass('resources/assets/sass/website/main.scss', 'public/css')
     .browserSync('http://localhost:8888');
-
-
-

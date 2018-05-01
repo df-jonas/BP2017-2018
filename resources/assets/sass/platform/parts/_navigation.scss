@@ -1,0 +1,197 @@
+/*Header*/
+#platform-header {
+  background-color: $theme-color;
+  padding: 1% 0 1% 0;
+  .account{
+    /*User menu*/
+    .user-profile {
+      display: flex;
+      cursor: pointer;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-direction: row;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      flex-direction: row;
+      float: right;
+      position: relative;
+      .account_username {
+        margin-left: 8px;
+        margin-right: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $unihelp-white;
+      }
+      .account_dropdown_btn {
+        width: 10px;
+        height: 6px;
+        margin-top: 2px;
+        fill: $unihelp-white;
+        opacity: 0.5;
+      }
+      &:hover{
+        .account-img {
+          border: 0.5px solid $unihelp-white;
+          transition: 0.2s ease all;
+        }
+      }
+
+    }
+
+    /*Notification menu*/
+    .user-notifications{
+      margin-right: 1em;
+      position: relative;
+      height: 100%;
+      text-align: right;
+      cursor: pointer;
+      i{
+        padding-top: 10px;
+        padding-right: 7.5px;
+        color: $unihelp-white;
+      }
+      span{
+        font-size: 12px;
+        padding: 2px;
+        position: absolute;
+        line-height: 9px;
+        text-align: center;
+        right: -5px;
+        top: 0px;
+        width: 16px;
+        height: 16px;
+        border-radius: 100%;
+        background: red;
+        color: $unihelp-white;
+        transition: 0.2s ease all;
+      }
+      &:hover{
+        span{
+          height: 17px;
+          width: 17px;
+          font-size: 13px;
+          line-height: 10px;
+          top: -6px;
+          right: -6px;
+          background: $unihelp-asphalt;
+        }
+      }
+      #notifications-dropdown{
+        i{
+          &:before{
+            color: $unihelp-asphalt;
+          }
+        }
+      }
+    }
+  }
+
+  /*Dropdowns*/
+  #account-dropdown, #notifications-dropdown {
+    width: 200px;
+    margin-left: -100px;
+    top: 3.5em;
+    padding-top: 0;
+    position: absolute;
+    box-shadow: 2px $unihelp-asphalt;
+    border-radius: 3px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    transition: 0.5s ease all linear;
+    li {
+      cursor: pointer;
+      height: 50px;
+      line-height: 50px;
+      &:hover {
+        background: $theme-color !important;
+      }
+      a {
+        line-height: 3em;
+        cursor: pointer;
+        &:hover {
+          background: $theme-color !important;
+          color: $unihelp-white;
+        }
+      }
+
+    }
+    &:before{
+      content:"";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 6px 12px 6px;
+      border-color: transparent transparent #ffffff;
+      position: absolute;
+      right: 12px;
+      top:-12px;
+    }
+    .user-info{
+      display:block;
+      height: auto;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      &:hover{
+        background: $unihelp-brown;
+        color: $unihelp-white;
+      }
+    }
+  }
+
+  /*Notification dropdown*/
+  #notifications-dropdown{
+    margin-left: -150px;
+
+  }
+}
+
+/*Subheader navigation*/
+.subheader {
+  background: $unihelp-white;
+  box-shadow: 0px 1px 5px $theme-color;
+  height: 3em;
+  margin-top: -3.5px;
+  margin-bottom: 3.5em;
+  ul {
+    list-style-type: none;
+    height: 3em;
+    padding-left: 0;
+    li {
+      display: inline-block;
+      margin-right: 3%;
+      line-height: 3em;
+      cursor: pointer;
+      color: $unihelp-brown;
+      &:hover, &.uh-active {
+        border-bottom: 3px solid $unihelp-brown;
+        a {
+          color: $unihelp-brown;
+        }
+      }
+      a {
+        display: block;
+        color: $unihelp-asphalt;
+        &:hover {
+          color: $unihelp-brown;
+        }
+      }
+      span {
+        display: inline-block;
+        padding-right: 0.85em;
+      }
+      .badge {
+        background: $unihelp-brown;
+        padding: 5px;
+        width: 20px;
+        height: 20px;
+        line-height: 7.5px;
+        margin-top: -15px;
+        font-size: 10px;
+        text-align: center;
+      }
+    }
+  }
+}
+

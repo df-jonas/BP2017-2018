@@ -3,10 +3,9 @@
 @section('content')
     @include('partials.platform.header')
     @include('partials.platform.subheader')
-
     <div class="container">
     @include('partials.platform.message')
-    <!-- Modal -->
+         <!-- Avatar upload modal -->
         <div class="modal fade" id="avatar-modal" role="dialog">
             <form action="{{ route('profile-update') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
@@ -21,16 +20,15 @@
                             <div class="form-group clearfix col-xs-12">
                                 <br>
 
-
-                                <div class="form-group clearfix col-xs-12" >
+                                <div class="form-group clearfix col-xs-12">
                                     <div class="profile-img-container col-xs-12">
-                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="account-img round-img" id="register-img">
+                                        <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                             class="account-img round-img" id="register-img">
                                         <a href="#"><span class="fa fa-upload fa-5x"></span></a>
                                         <input id="picture-input" type="file" name="avatar"/>
                                         @if ($errors->has('avatar'))
                                             <span class="help-block"><strong>{{ $errors->first('avatar') }}</strong></span>
                                         @endif
-                                        <h6 style="text-align: center">Klik om een avatar te kiezen.</h6>
                                     </div>
                                 </div>
 
@@ -43,17 +41,18 @@
                 </div>
             </form>
         </div>
+        <!-- end Avatar upload modal -->
 
         <div class="row">
-            <article class="item col-xs-12">
-                <div class="padding">
+            <!-- picture -->
+            <article class="col-xs-12">
+                <div class="item padding clearfix">
                     <div class="headline">
                         <div class="row flex">
                             <div class="left col-lg-1 col-sm-2 col-xs-12">
                                 <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img"
                                      data-toggle="modal" data-target="#avatar-modal">
                                 <br>
-                                <p class="wijzigen" data-toggle="modal" data-target="#avatar-modal">wijzigen</p>
                             </div>
                             <div class="right col-lg-11 col-sm-10 col-xs-12">
                                 <h4>{{ $user->first_name. " " .$user->last_name }}</h4>
@@ -66,10 +65,14 @@
                     </div>
                 </div>
             </article>
+            <!-- end picture -->
+        </div>
 
 
-            <article class="item col-lg-6 left col-xs-12">
-                <div class="padding">
+        <div class="row">
+            <!-- instellingen -->
+            <article class="col-lg-6 col-xs-12">
+                <div class="item padding clearfix">
                     <h4>Profiel instellingen</h4>
                     <form action="{{ route('profile-update') }}" method="POST">
                         {{ csrf_field() }}
@@ -112,22 +115,30 @@
                     </form>
                 </div>
             </article>
+            <!-- end instellingen -->
 
-
-            <article class="item col-lg-6 right col-xs-12">
-                <div class="padding">
-                    <h4>Voorkeuren</h4>
+            <!-- voorkeuren -->
+            <article class="col-lg-6 col-xs-12">
+                <div class="item padding clearfix">
+                    <h4>Thema</h4>
                     <form>
-                        <h4>Accentkleur</h4>
-                        <div class="form-group col-xs-12 no-padding clearfix">
-                            <div class="color-choose col-lg-4 col-md-4 col-sm-4 col-xs-12"
-                                 style="background: #505457"></div>
-                            <div class="color-choose col-lg-4 col-md-4 col-sm-4 col-xs-12"
-                                 style="background: #62868e"></div>
-                            <div class="color-choose col-lg-4 col-md-4 col-sm-4 col-xs-12"
-                                 style="background: #d6b83a"></div>
+                        <div class="form-group col-sm-3 col-xs-12 no-padding">
+                            <div class="color-choose col-xs-12" style="background: #505457"></div>
                         </div>
-                        <h4>Meldingen</h4>
+
+                        <div class="form-group col-sm-3 col-xs-12 no-padding">
+                            <div class="color-choose col-xs-12" style="background: #62868e"></div>
+                        </div>
+                        <div class="form-group col-sm-3 col-xs-12 no-padding">
+                            <div class="color-choose col-xs-12" style="background: #d6b83a"></div>
+                        </div>
+                        <div class="form-group col-sm-3 col-xs-12 no-padding">
+                            <div class="color-choose col-xs-12" style="background: #d6b83a"></div>
+                        </div>
+                    </form>
+
+                    <h4>Meldingen</h4>
+                    <form>
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="notification-choose col-lg-3 left col-md-3 col-sm-5 col-xs-12">
                                 <header></header>
@@ -157,10 +168,13 @@
                 </div>
 
             </article>
+            <!-- end voorkeuren -->
+        </div>
 
-
-            <article class="item col-lg-6 left col-xs-12">
-                <div class="padding">
+        <div class="row">
+            <!-- vakken -->
+            <article class="col-lg-6 left col-xs-12">
+                <div class="item padding clearfix">
                     <h4>Mijn vakken</h4>
                     <form>
                         <div class="form-group col-xs-12 no-padding clearfix">
@@ -175,37 +189,44 @@
                         <h4>Vak toevoegen</h4>
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="inner-addon left-addon">
-                                <input type="text" id="vak-zoeken" name="search" class="form-control filterlistener" placeholder="zoekterm"/>
+                                <input type="text" id="vak-zoeken" name="search" class="form-control filterlistener"
+                                       placeholder="zoekterm"/>
                                 <!-- <i class="glyphicon glyphicon-search"></i> -->
                             </div>
                         </div>
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <ul class="vakken-nieuw">
-                                <li>Enterpreneurship <span><input type="submit" class="download-button" value="Toevoegen"></span></li>
-                                <li>Enterpreneurship 2 <span><input type="submit" class="download-button" value="Toevoegen"></span></li>
+                                <li>Enterpreneurship <span><input type="submit" class="download-button"
+                                                                  value="Toevoegen"></span></li>
+                                <li>Enterpreneurship 2 <span><input type="submit" class="download-button"
+                                                                    value="Toevoegen"></span>
+                                </li>
                             </ul>
                         </div>
                     </form>
                 </div>
             </article>
+            <!-- end vakken -->
 
-
-            <article class="item col-lg-6 right col-xs-12">
-                <div class="padding">
+            <!-- account -->
+            <article class="col-lg-6 right col-xs-12">
+                <div class="item padding clearfix">
                     <h4>Account instellingen</h4>
                     <form action="{{ route('profile-update') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="textdiv">
                                 <label for="gebruikersnaam">Gebruikersnaam</label>
-                                <input id="gebruikersnaam" name="username" type="text" class="form-control col-xs-12" value="{{ $username }}">
+                                <input id="gebruikersnaam" name="username" type="text" class="form-control col-xs-12"
+                                       value="{{ $username }}">
                             </div>
                         </div>
 
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="textdiv">
                                 <label for="e-mail">E-mailadres</label>
-                                <input id="e-mail" name="email" type="text" class="form-control col-xs-12" value="{{ $email }}">
+                                <input id="e-mail" name="email" type="text" class="form-control col-xs-12"
+                                       value="{{ $email }}">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 no-padding clearfix">
@@ -214,9 +235,9 @@
                     </form>
                 </div>
             </article>
+            <!-- end account -->
         </div>
     </div>
-
 
     @include('partials.footer')
 @endsection
