@@ -1,5 +1,5 @@
 @extends('layouts.website')
-@section('pagetitle', 'Registreer')
+@section('pagetitle', 'Registreren')
 @section('content')
 
     <div class="auth-page">

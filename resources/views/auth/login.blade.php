@@ -1,5 +1,5 @@
 @extends('layouts.website')
-@section('pagetitle', 'Login')
+@section('pagetitle', 'Inloggen')
 @section('content')
     <div class="auth-page">
         <div class="auth-box col-lg-4 col-lg-push-4 col-md-6 col-md-push-6 col-sm-8 col-sm-push-2  col-xs-12">

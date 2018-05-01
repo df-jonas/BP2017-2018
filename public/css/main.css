@@ -553,10 +553,23 @@ fieldset input.submit {
   margin-bottom: 2em;
 }
 
+#page-banner #welcome .buttons .register:hover,
+#innerpage-banner #welcome .buttons .register:hover {
+  background: #ffffff;
+  color: #4D6A50;
+}
+
 #page-banner #welcome .buttons .login,
 #innerpage-banner #welcome .buttons .login {
+  background: #ffffff;
   color: #4D6A50;
   margin-bottom: 2em;
+}
+
+#page-banner #welcome .buttons .login:hover,
+#innerpage-banner #welcome .buttons .login:hover {
+  background: #4D6A50;
+  color: #ffffff;
 }
 
 /*Other pages banners*/

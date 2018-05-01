@@ -1,7 +1,7 @@
 @extends('layouts.website')
 
 @section('content')
-@section('pagetitle', 'Over ons')
+@section('pagetitle', 'Over')
 @include('partials.website.header')
 
 <!-- page banner -->

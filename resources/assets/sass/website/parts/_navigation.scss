@@ -135,10 +135,19 @@
       margin: 3.5% 0 auto;
       .register {
         margin-bottom: 2em;
+        &:hover{
+          background: $unihelp-white;
+          color: $theme-color;
+        }
       }
       .login {
+        background: $unihelp-white;
         color: $theme-color;
         margin-bottom: 2em;
+        &:hover{
+          background: $theme-color;
+          color: $unihelp-white;
+        }
       }
     }
   }

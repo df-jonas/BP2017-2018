@@ -1,7 +1,8 @@
 @extends('layouts.platform')
 
 @section('content')
-    @include('partials.platform.header')
+@section('pagetitle', 'Profiel')
+@include('partials.platform.header')
     @include('partials.platform.subheader')
     <div class="container">
     @include('partials.platform.message')
