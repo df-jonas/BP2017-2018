@@ -1,7 +1,7 @@
 {
-    "/css/main.css": "/css/main.css",
     "/css/themes/default.css": "/css/themes/default.css",
     "/css/themes/light.css": "/css/themes/light.css",
     "/css/themes/dark.css": "/css/themes/dark.css",
-    "/css/zabuto_calendar.min.css": "/css/zabuto_calendar.min.css"
+    "/css/zabuto_calendar.min.css": "/css/zabuto_calendar.min.css",
+    "/css/main.css": "/css/main.css"
 }
