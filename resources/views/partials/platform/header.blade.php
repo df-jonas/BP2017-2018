@@ -15,18 +15,26 @@
                         <div class="user-notifications">
                             <div>
                                 <i class="fa fa-bell dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i>
-                                {{--
-                                @if(!(Auth::user()->notifs->count() <= 0))
-                                    <span>{{ Auth::user()->notifs->count() }}</span>
+
+                                @if(!(Auth::user()->notifications->count() <= 0))
+
+                                    <span>{{ Auth::user()->unreadNotifications->count() }}</span>
                                 @endif
-                                --}}
-                            </div>
+
+
+
                             <!-- notifications dropdown -->
                             <ul id="notifications-dropdown" class="dropdown-menu col-xs-12" aria-labelledby="notifications-dropdown">
-                                <li>
-                                    <a href="{{route('profile-notifications')}}"><i class="fa fa-comment"></i> Notificatie 1
-                                    </a>
-                                </li>
+
+                                @foreach(Auth::user()->unreadNotifications as $notification)
+                                    <li>
+                                        <a href="#"><i class="fa fa-comment"></i>
+                                            {{ $notification->data['commenter'] }} - {{ $notification->data['title'] }} - {{ $notification->data['comment_title'] }}
+                                        </a>
+                                    </li>
+                                @endforeach
+
+                                <!--
                                 <li>
                                     <a href="{{route('profile-notifications')}}"><i class="fa fa-bell"></i> Notificatie 2 </a>
                                 </li>
@@ -38,14 +46,16 @@
                                     <a href="{{route('profile-notifications')}}"><i class="fa fa-smile-o"></i> Notificatie 4
                                     </a>
                                 </li>
-                                <!--
+                                -->
+
                                 <a class="user-info padding" href="{{ route('profile-notifications') }}">
                                     <div class="row flex no-margin">
                                         <h6>Bekijk alles</h6>
                                     </div>
                                 </a>
-                                -->
+
                             </ul>
+                            </div>
                             <!-- end notifications dropdown -->
                         </div>
                     </div>

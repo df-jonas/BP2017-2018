@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Comment;
 use App\Group;
 use App\GroupCategory;
+use App\Notifications\PostComment;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -128,7 +129,14 @@ class CommunityController extends Controller
         $comment->content = $request->comment;
         $comment->post_id = $post->id;
         $comment->user_id = Auth::user()->id;
+        //notification
         $comment->save();
+        //$url = route('community-post-detail', ['post' => $post->id]);
+        $url ="";
+        //$comment->post->user->notify(new PostComment($post, $comment, $url));
+        //Auth::user()->notify(new PostComment($post, $comment));
+
+
 
         return response()->json(Comment::query()->where('id', '=', $comment->id)->with(['user' => function ($query) {
             $query->select('id', 'first_name', 'last_name', 'image');

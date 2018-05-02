@@ -2,7 +2,6 @@ $(document).ready(function () {
     //small banner on scroll
     $(document).on("scroll", function () {
         if ($(document).width() > 768) {
-            console.log('yoo');
             if ($(document).scrollTop() > 300) {
                 $("#page-header").removeClass("large").addClass("small");
             }
