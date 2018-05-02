@@ -10,6 +10,7 @@ use Auth;
 use Redirect;
 use Session;
 use Intervention\Image\Facades\Image;
+use App\Notifications\test;
 
 class ProfileController extends Controller
 {
@@ -32,6 +33,10 @@ class ProfileController extends Controller
         $username = $request->username;
         $email = $request->email;
         $avatar = $request->file('avatar');
+        $firstname = $request->firstname;
+        $lastname = $request->lastname;
+
+        $user->notify(new test($user));
 
         if(!empty($campus)) {
             $user->campusid = $campus;
@@ -44,6 +49,15 @@ class ProfileController extends Controller
         if(!empty($username)) {
             $user->username = $username;
         }
+
+        if(!empty($firstname)) {
+            $user->first_name = $firstname;
+        }
+
+        if(!empty($lastname)) {
+            $user->last_name = $lastname;
+        }
+
 
         if(!empty($email)) {
             $user->email = $email;

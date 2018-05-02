@@ -4,8 +4,6 @@
 
 /*Mixins*/
 
-/*Variables*/
-
 /*Custom checkboxes*/
 
 .checkbox-label {
@@ -63,7 +61,7 @@
 .selectdiv::after {
   content: "\F078";
   font: 17px FontAwesome;
-  color: #4D6A50;
+  color: black !important;
   right: 11px;
   top: 32px;
   padding: 0 0 2px;
@@ -132,7 +130,7 @@ label {
 /* When the checkbox is checked, add a blue background */
 
 .checkbox-container input:checked ~ .checkmark {
-  background-color: #4D6A50;
+  background-color: black !important;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -235,7 +233,7 @@ label {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-  background: #4D6A50;
+  background: black !important;
   color: white;
 }
 
@@ -294,8 +292,8 @@ form label {
 
 .sliderdiv input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  -webkit-box-shadow: 1px 1px 1px #4D6A50, 0px 0px 1px transparent;
-          box-shadow: 1px 1px 1px #4D6A50, 0px 0px 1px transparent;
+  -webkit-box-shadow: 1px 1px 1px black !important, 0px 0px 1px transparent;
+          box-shadow: 1px 1px 1px black !important, 0px 0px 1px transparent;
   border: none;
   height: 24px;
   width: 10px;
@@ -307,7 +305,7 @@ form label {
 }
 
 .sliderdiv input[type=range]::-moz-range-thumb {
-  box-shadow: 1px 1px 1px #4D6A50, 0px 0px 1px transparent;
+  box-shadow: 1px 1px 1px black !important, 0px 0px 1px transparent;
   border: none !important;
   height: 24px;
   width: 10px;
@@ -346,19 +344,19 @@ form label {
   cursor: pointer;
   -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
           box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #4D6A50;
+  background: black !important;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
 
 .sliderdiv input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #4D6A50;
+  background: black !important;
 }
 
 .sliderdiv input[type=range]::-moz-range-track {
   height: 10px;
   cursor: pointer;
-  background: #4D6A50;
+  background: black !important;
   border-radius: 0px;
   border: none;
 }
@@ -366,32 +364,32 @@ form label {
 .sliderdiv input[type=range]::-ms-track {
   height: 10px;
   cursor: pointer;
-  background: #4D6A50;
+  background: black !important;
   border-radius: 0px;
   border: none;
   color: transparent;
 }
 
 .sliderdiv input[type=range]::-ms-fill-lower {
-  background: #4D6A50;
+  background: black !important;
   border: none;
   border-radius: 0px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 
 .sliderdiv input[type=range]:focus::-ms-fill-lower {
-  background: #4D6A50;
+  background: black !important;
 }
 
 .sliderdiv input[type=range]::-ms-fill-upper {
-  background: #4D6A50;
+  background: black !important;
   border: none;
   border-radius: 0px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 
 .sliderdiv input[type=range]:focus::-ms-fill-upper {
-  background: #4D6A50;
+  background: black !important;
 }
 
 .file header a {
@@ -495,7 +493,7 @@ div.container {
 
 .table.tutoring .sidebar .people-list li {
   display: block;
-  background: #4D6A50;
+  background: black !important;
   color: #ffffff;
   border: 1px solid #ffffff;
   height: 80px;
@@ -506,7 +504,7 @@ div.container {
 .table.tutoring .sidebar .people-list li.people-list-active {
   cursor: pointer;
   background: #ffffff;
-  color: #4D6A50;
+  color: black !important;
 }
 
 .table.tutoring .sidebar .people-list li.load-more {
@@ -537,14 +535,14 @@ div.container {
 
 .table.tutoring .sidebar .people-list li.new .add {
   background: #ffffff;
-  color: #4D6A50;
+  color: black !important;
   text-align: center;
   font-size: 1em;
   line-height: 42px;
 }
 
 .table.tutoring .sidebar .people-list li.new .add:hover {
-  background: #4D6A50;
+  background: black !important;
   color: #ffffff;
 }
 
@@ -619,7 +617,7 @@ div.container {
 }
 
 .overview-calendar.new .reminder {
-  background: #4D6A50;
+  background: black !important;
 }
 
 .overview-calendar.new .date {
@@ -644,7 +642,7 @@ div.container {
 /*Header*/
 
 #platform-header {
-  background-color: #4D6A50;
+  background-color: black !important;
   padding: 1% 0 1% 0;
   /*Dropdowns*/
   /*Notification dropdown*/
@@ -763,7 +761,7 @@ div.container {
 
 #platform-header #account-dropdown li:hover,
 #platform-header #notifications-dropdown li:hover {
-  background: #4D6A50 !important;
+  background: black !important !important;
 }
 
 #platform-header #account-dropdown li a,
@@ -774,7 +772,7 @@ div.container {
 
 #platform-header #account-dropdown li a:hover,
 #platform-header #notifications-dropdown li a:hover {
-  background: #4D6A50 !important;
+  background: black !important !important;
   color: #ffffff;
 }
 
@@ -814,8 +812,8 @@ div.container {
 
 .subheader {
   background: #ffffff;
-  -webkit-box-shadow: 0px 1px 5px #4D6A50;
-          box-shadow: 0px 1px 5px #4D6A50;
+  -webkit-box-shadow: 0px 1px 5px black !important;
+          box-shadow: 0px 1px 5px black !important;
   height: 3em;
   margin-top: -3.5px;
   margin-bottom: 3.5em;
@@ -909,13 +907,13 @@ div.container {
   margin-bottom: 2.5em;
   height: 65px;
   display: inline-block;
-  border: 1px solid #4D6A50;
+  border: 1px solid black !important;
   position: relative;
   cursor: pointer;
 }
 
 .notification-choose header {
-  background: #4D6A50;
+  background: black !important;
   height: 12px;
 }
 
@@ -954,7 +952,7 @@ div.container {
 .vakken li span,
 .vakken-nieuw li span {
   float: right;
-  color: #4D6A50;
+  color: black !important;
   font-size: 16px;
   cursor: pointer;
 }
@@ -988,13 +986,13 @@ div.container {
 }
 
 .modal h4 {
-  color: #4D6A50;
+  color: black !important;
 }
 
 .modal .keuze {
   text-align: center;
   cursor: pointer;
-  background: #4D6A50;
+  background: black !important;
 }
 
 .modal .keuze header {
@@ -1062,7 +1060,7 @@ h3 {
 
 .message {
   color: #ffffff !important;
-  background: #4D6A50 !important;
+  background: black !important !important;
 }
 
 /*Messages*/
@@ -1088,7 +1086,7 @@ h3 {
 }
 
 #messages .msg.own .txt {
-  background: #4D6A50;
+  background: black !important;
 }
 
 #comment-box {
@@ -1136,7 +1134,7 @@ h3 {
 .dropzone {
   width: 100%;
   padding: 2.5%;
-  background: #4D6A50;
+  background: black !important;
   position: relative;
 }
 
@@ -1213,7 +1211,7 @@ h3 {
 }
 
 .item header {
-  background: #4D6A50;
+  background: black !important;
   height: 2em;
   color: #ffffff;
   line-height: 1.75em;
@@ -1255,7 +1253,7 @@ h3 {
 .overview.group .title a:hover,
 .overview.file .title a:hover,
 .overview.user-owned .title a:hover {
-  color: #4D6A50;
+  color: black !important;
 }
 
 .overview.groups .icons,
@@ -1297,7 +1295,7 @@ h3 {
 }
 
 .overview .group .info span {
-  color: #4D6A50;
+  color: black !important;
 }
 
 .overview .group:last-child {
@@ -1314,7 +1312,7 @@ h3 {
 }
 
 .overview .group-type .update {
-  color: #4D6A50;
+  color: black !important;
   font-weight: 500;
 }
 
@@ -1363,7 +1361,7 @@ h3 {
 }
 
 .detail.file .details .detail {
-  background: #4D6A50;
+  background: black !important;
   border: 1px solid #ffffff;
   padding: 5px 5px 5px 10px;
   color: #ffffff;
@@ -1409,7 +1407,7 @@ h3 {
 .content .actions .action:hover,
 .content .actions .action.active {
   cursor: pointer;
-  background: #4D6A50;
+  background: black !important;
   -webkit-transition: background-color 0.5s ease-out;
   transition: background-color 0.5s ease-out;
 }
@@ -1581,7 +1579,7 @@ h3 {
 
   .slicknav_nav {
     width: 100%;
-    background: #4D6A50;
+    background: black !important;
   }
 
   .slicknav_menu {

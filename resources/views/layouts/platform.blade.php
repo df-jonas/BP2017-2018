@@ -13,7 +13,6 @@
     <!-- own css -->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/themes/default.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/inputs.css') }}">
     <!-- Slicknav -->
     <link rel="stylesheet" href="{{ URL::asset('css/slicknav.css') }}">
     <!-- mailchimp -->

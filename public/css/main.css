@@ -1239,8 +1239,6 @@ footer a:focus {
 
 /*Mixins*/
 
-/*Variables*/
-
 /*Custom checkboxes*/
 
 .checkbox-label {
@@ -1734,6 +1732,10 @@ form label {
 
   .call-to-action .text p {
     width: 100%;
+  }
+
+  .cookie-consent {
+    left: 0;
   }
 
   footer h4,

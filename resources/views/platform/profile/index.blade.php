@@ -225,6 +225,20 @@
 
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="textdiv">
+                                <label for="voornaam">Voornaam</label>
+                                <input id="voornaam" name="firstname" type="text" class="form-control col-xs-12"
+                                       value="{{ $user->first_name }}">
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-12 no-padding clearfix">
+                            <div class="textdiv">
+                                <label for="achternaam">Achternaam</label>
+                                <input id="achternaam" name="lastname" type="text" class="form-control col-xs-12"
+                                       value="{{ $user->last_name }}">
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-12 no-padding clearfix">
+                            <div class="textdiv">
                                 <label for="e-mail">E-mailadres</label>
                                 <input id="e-mail" name="email" type="text" class="form-control col-xs-12"
                                        value="{{ $email }}">

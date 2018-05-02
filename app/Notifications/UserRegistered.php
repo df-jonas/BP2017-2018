@@ -43,7 +43,8 @@ class UserRegistered extends Notification
     {
         $username = $this->user->first_name;
         return (new MailMessage)
-                    ->subject('Welkom bij UniHelp')
+                     ->view('mail.login')
+                     ->subject('Welkom bij UniHelp')
                     ->greeting('Hallo, '  .$username )
                     ->line('The introduction to the notification.')
                     ->action('Bezoek UniHelp', url('/'))

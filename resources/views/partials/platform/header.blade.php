@@ -15,9 +15,11 @@
                         <div class="user-notifications">
                             <div>
                                 <i class="fa fa-bell dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i>
+                                {{--
                                 @if(!(Auth::user()->notifs->count() <= 0))
                                     <span>{{ Auth::user()->notifs->count() }}</span>
                                 @endif
+                                --}}
                             </div>
                             <!-- notifications dropdown -->
                             <ul id="notifications-dropdown" class="dropdown-menu col-xs-12" aria-labelledby="notifications-dropdown">
