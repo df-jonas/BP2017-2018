@@ -6,6 +6,7 @@
 
 <!-- page banner -->
 <div id="innerpage-banner" class="col-xs-12">
+    <div class="overlay">
     <div id="welcome" class="col-xs-12 no-padding">
         <div class="container">
             <div class="col-md-6 col-md-push-3 col-xs-12 no-padding">
@@ -13,6 +14,7 @@
                 <p>UniHelp is een platform dat gemaakt werd door 2 studenten.</p>
             </div>
         </div>
+    </div>
     </div>
 </div>
 <!-- end page banner -->

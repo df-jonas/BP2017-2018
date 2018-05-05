@@ -1,6 +1,6 @@
 @extends('layouts.website')
 @section('content')
-@section('pagetitle', 'Een slim studentenplatform')
+@section('pagetitle', 'Een studentenplatform om U tegen te zeggen.')
 
 <!-- header -->
     @include('partials.website.header')
@@ -8,6 +8,7 @@
 
     <!-- page banner -->
     <div id="page-banner" class="col-xs-12">
+        <div class="overlay"></div>
         <div id="welcome" class="col-xs-12 no-padding">
             <div class="container">
                 <div class="col-lg-6 col-md-8 col-xs-12 no-padding">
@@ -43,30 +44,36 @@
             <a href="{{route('website-how')}}">
                 <div class="col-md-4 col-xs-12">
                     <div class="feature no-padding col-xs-12">
+                        <div class="overlay clearfix">
+                        </div>
                         <img src="img/features/1.jpg">
                         <p>Tutoring</p>
                         <h3>Vind een geschikte <br> tutor.</h3>
-                        <a class="meer col-lg-4 col-md-3 col-xs-6" href="{{route('website-how')}}">Ga van start</a>
+                        <a class="meer" href="{{route('website-how')}}">Ga van start</a>
                     </div>
                 </div>
             </a>
             <a href="{{route('website-how')}}">
                 <div class="col-md-4 col-xs-12">
                     <div class="feature no-padding col-xs-12">
+                        <div class="overlay clearfix">
+                        </div>
                         <img src="img/features/5.jpg">
                         <p>Bestanden delen</p>
                         <h3>Download de perfecte <br> samenvattingen.</h3>
-                        <a class="meer col-lg-4 col-md-3 col-xs-6" href="{{route('website-how')}}">Ga van start</a>
+                        <a class="meer" href="{{route('website-how')}}">Ga van start</a>
                     </div>
                 </div>
             </a>
             <a href="{{route('website-how')}}">
                 <div class="col-md-4 col-xs-12">
                     <div class="feature no-padding col-xs-12">
+                        <div class="overlay clearfix">
+                        </div>
                         <img src="img/features/4.jpg">
                         <p>Community</p>
                         <h3>Blijf altijd op de<br> hoogte.</h3>
-                        <a class="meer col-lg-4 col-md-3 col-xs-6" href="{{route('website-how')}}">Ga van start</a>
+                        <a class="meer" href="{{route('website-how')}}">Ga van start</a>
                     </div>
                 </div>
             </a>

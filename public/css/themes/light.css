@@ -805,7 +805,8 @@ div.container {
 }
 
 #platform-header #notifications-dropdown {
-  margin-left: -115px;
+  width: 300px;
+  margin-left: -215px;
 }
 
 /*Subheader navigation*/

@@ -28,10 +28,17 @@
   #page-header .links {
     padding-top: 0.5%;
   }
+  .steps {
+    margin: 2% 0 2% 0;
+    .step {
+      min-height: 285px!important;
+    }
+  }
 }
 
 /* Laptop screens */
 @media only screen and (max-width: 1200px) {
+
 }
 
 /* Tablets */

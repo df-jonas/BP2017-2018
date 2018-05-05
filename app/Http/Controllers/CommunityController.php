@@ -132,11 +132,8 @@ class CommunityController extends Controller
         //notification
         $comment->save();
         //$url = route('community-post-detail', ['post' => $post->id]);
-        $url ="";
-        //$comment->post->user->notify(new PostComment($post, $comment, $url));
-        //Auth::user()->notify(new PostComment($post, $comment));
-
-
+        $url = "/p/community/" . $comment->post->group->url . '/' . $comment->post->id;
+        $comment->post->user->notify(new PostComment($post, $comment, $url));
 
         return response()->json(Comment::query()->where('id', '=', $comment->id)->with(['user' => function ($query) {
             $query->select('id', 'first_name', 'last_name', 'image');

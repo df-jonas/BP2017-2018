@@ -28,8 +28,8 @@
 
                                 @foreach(Auth::user()->unreadNotifications as $notification)
                                     <li>
-                                        <a href="#"><i class="fa fa-comment"></i>
-                                            {{ $notification->data['commenter'] }} - {{ $notification->data['title'] }} - {{ $notification->data['comment_title'] }}
+                                        <a href="{{ $notification->data['url'] }}"><i class="fa fa-comment"></i>
+                                           <strong>{{ $notification->data['commenter'] }}</strong>  {{ $notification->data['melding'] }}
                                         </a>
                                     </li>
                                 @endforeach
@@ -49,7 +49,7 @@
                                 -->
 
                                 <a class="user-info padding" href="{{ route('profile-notifications') }}">
-                                    <div class="row flex no-margin">
+                                    <div class="row no-margin">
                                         <h6>Bekijk alles</h6>
                                     </div>
                                 </a>

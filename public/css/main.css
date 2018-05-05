@@ -508,6 +508,16 @@ fieldset input.submit {
   background-repeat: no-repeat;
 }
 
+#page-banner .overlay,
+#innerpage-banner .overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 #page-banner #welcome,
 #innerpage-banner #welcome {
   color: #ffffff;
@@ -546,6 +556,7 @@ fieldset input.submit {
 #innerpage-banner #welcome .buttons {
   display: block;
   margin: 3.5% 0 auto;
+  padding: 0;
 }
 
 #page-banner #welcome .buttons .register,
@@ -580,6 +591,16 @@ fieldset input.submit {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+}
+
+#innerpage-banner .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #innerpage-banner #welcome h3,
@@ -590,7 +611,7 @@ fieldset input.submit {
 #innerpage-banner #welcome p {
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
-  color: #4D6A50;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -686,6 +707,17 @@ fieldset input.submit {
   position: relative;
 }
 
+#features .feature .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+}
+
 #features .feature img {
   width: 100%;
   height: 100%;
@@ -697,17 +729,22 @@ fieldset input.submit {
 #features .feature p {
   position: absolute;
   left: 25px;
-  top: 37.5%;
+  top: 32.5%;
   color: #ffffff;
 }
 
 #features .feature p {
-  top: 35%;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  text-align: center;
   color: lightgray;
-  color: #4D6A50;
-  font-weight: bold;
+  background: #4D6A50;
+  color: #ffffff;
   text-transform: uppercase;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
 }
 
 #features .feature a.meer {
@@ -740,6 +777,10 @@ fieldset input.submit {
           transform: scale(1.02);
   -webkit-transition: 0.5s ease all;
   transition: 0.5s ease all;
+}
+
+#features .feature:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 #features .feature:hover a {
@@ -801,7 +842,7 @@ fieldset input.submit {
 }
 
 #how .steps .step {
-  height: 200px;
+  min-height: 200px;
   margin: 2% 0 2% 0;
   background: rgba(0, 0, 0, 0.05);
 }
@@ -1011,7 +1052,11 @@ fieldset input.submit {
 }
 
 #newsletter form #mc-embedded-subscribe {
-  background: #4D6A50 !important;
+  background: #4D6A50;
+}
+
+#newsletter form #mc-embedded-subscribe:hover {
+  background: #333a40;
 }
 
 /*Cookie box*/
@@ -1638,6 +1683,14 @@ form label {
 @media only screen and (max-width: 1500px) {
   #page-header .links {
     padding-top: 0.5%;
+  }
+
+  .steps {
+    margin: 2% 0 2% 0;
+  }
+
+  .steps .step {
+    min-height: 285px !important;
   }
 }
 

@@ -20,12 +20,20 @@
             </div>
             <!-- content -->
             <div class="content">
-                <div id="filter-results" class="filecontainer files">
-                    <p>Mijn notificaties</p>
+                <div id="filter-results" class="item filecontainer files">
+                    <header><i class="fa fa-bell"></i> Mijn notificaties</header>
+                    <div class="padding">
                     <ul>
-                        <li>Notificatie 1</li>
-                        <li>Notificatie 2</li>
+                        @foreach(Auth::user()->unreadNotifications as $notification)
+                            <li>
+                                <a href="{{ $notification->data['url'] }}"><i class="fa fa-comment"></i>
+                                    <strong>{{ $notification->data['commenter'] }}</strong>  {{ $notification->data['melding'] }}
+                                </a>
+                                markeren als gelezen
+                            </li>
+                        @endforeach
                     </ul>
+                    </div>
                 </div>
             </div>
         </div>
