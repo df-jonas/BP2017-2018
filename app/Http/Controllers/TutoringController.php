@@ -14,17 +14,17 @@ class TutoringController extends Controller
 {
     public function index()
     {
-        $owned_tutee = Tutee::query()
+        $tutee_id = Tutee::query()
             ->where('user_id', '=', Auth::id())
             ->get(['id']);
 
-        $owned_tutor = Tutor::query()
+        $tutor_id = Tutor::query()
             ->where('user_id', '=', Auth::id())
             ->get(['id']);
 
         $sessions = TutoringSession::query()
-            ->whereIn('tutor_id', $owned_tutor)
-            ->orWhereIn('tutee_id', $owned_tutee)
+            ->whereIn('tutor_id', $tutor_id)
+            ->orWhereIn('tutee_id', $tutee_id)
             ->get();
 
         $arr = [
@@ -51,7 +51,7 @@ class TutoringController extends Controller
         $course = Course::query()->where('id', '=', $request->course)->first();
 
         if ($course == null)
-            abort(404);
+            abort(500, "De geselecteerde cursus bestaat niet.");
 
         $existing = Tutor::query()
             ->where('user_id', '=', Auth::id())
@@ -88,12 +88,12 @@ class TutoringController extends Controller
             'description' => 'required'
         ]);
         if (!$request->has('exercises') && !$request->has('explanation') && !$request->has('studying'))
-            abort(500);
+            abort(500, "Er moet minstens een werkpunt aangeduid worden.");
 
         $course = Course::query()->where('id', '=', $request->course)->first();
 
         if ($course == null)
-            abort(404);
+            abort(500, "De geselecteerde cursus bestaat niet.");
 
         $tutee = Tutee::query()
             ->where('user_id', '=', Auth::id())
@@ -120,7 +120,7 @@ class TutoringController extends Controller
     public function accept($tutee_id)
     {
         if (Auth::user()->countIsTutor() >= 3)
-            abort(404);
+            abort(500, "Je mag maximum 3 tutorships tegelijkertijd uitvoeren.");
 
         $tutee = Tutee::query()
             ->where("id", "=", $tutee_id)
@@ -128,7 +128,7 @@ class TutoringController extends Controller
             ->first();
 
         if ($tutee == null)
-            abort(404);
+            abort(500, "Dit verzoek bestaat niet of werd reeds geaccepteerd.");
 
         $tutor = Tutor::query()
             ->where("user_id", "=", Auth::id())
@@ -137,7 +137,7 @@ class TutoringController extends Controller
             ->first();
 
         if ($tutor == null)
-            abort(404);
+            abort(500, "Jij geeft geen tutoring voor het geaccepteerde vak.");
 
         $tutee->active = false;
         $tutee->save();
