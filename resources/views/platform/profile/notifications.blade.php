@@ -24,12 +24,14 @@
                     <header><i class="fa fa-bell"></i> Mijn notificaties</header>
                     <div class="padding">
                     <ul>
+                        <!-- TODO jonas: haal notificaties van user op -->
                         @foreach(Auth::user()->unreadNotifications as $notification)
                             <li>
                                 <a href="{{ $notification->data['url'] }}"><i class="fa fa-comment"></i>
                                     <strong>{{ $notification->data['commenter'] }}</strong>  {{ $notification->data['melding'] }}
                                 </a>
-                                markeren als gelezen
+                                <a href="{{route('notification-read', ['id' => $notification->id] )}}">markeren als gelezen</a>
+                                <a href="{{route('notification-delete', ['id' => $notification->id] )}}">verwijderen</a>
                             </li>
                         @endforeach
                     </ul>

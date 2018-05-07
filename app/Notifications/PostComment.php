@@ -4,8 +4,10 @@ namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
+use App\Notifications\DatabaseNotificationChannel;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Support\Facades\Log;
 
 class PostComment extends Notification
 {
@@ -34,7 +36,8 @@ class PostComment extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        //return ['database'];
+        return [DatabaseNotificationChannel::class];
     }
 
 
@@ -44,7 +47,9 @@ class PostComment extends Notification
      * @param  mixed  $notifiable
      * @return array
      */
-    public function toDatabase($notifiable)
+
+/*
+     public function toDatabase($notifiable)
     {
         return [
             'id' => $this->post->id,
@@ -56,4 +61,18 @@ class PostComment extends Notification
             'melding' => 'heeft een reactie geplaatst.'
         ];
     }
+
+*/
+
+    public function toDatabase($notifiable)
+    {
+        return [
+            'title' => $this->post->title,
+            'commenter' => $this->comment->user->first_name,
+            'comment_title' => $this ->comment->content,
+            'url' => $this->url,
+            'melding' => 'heeft een reactie geplaatst.'
+        ];
+    }
+
 }

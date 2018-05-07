@@ -86,6 +86,11 @@
             Route::get('/profile/downloads', 'ProfileController@downloads')->name('profile-downloads');
             Route::get('/profile/uploads', 'ProfileController@uploads')->name('profile-uploads');
             Route::get('/profile/notifications', 'ProfileController@notifications')->name('profile-notifications');
+
+
+            /** Notifications */
+            Route::get('/notifications/{id}','NotificationController@read')->name('notification-read');
+            Route::get('/notifications/{id}','NotificationController@delete')->name('notification-delete');
         });
     });
 }

@@ -131,7 +131,6 @@ class CommunityController extends Controller
         $comment->user_id = Auth::user()->id;
         //notification
         $comment->save();
-        //$url = route('community-post-detail', ['post' => $post->id]);
         $url = "/p/community/" . $comment->post->group->url . '/' . $comment->post->id;
         $comment->post->user->notify(new PostComment($post, $comment, $url));
 

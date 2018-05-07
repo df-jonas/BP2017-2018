@@ -26,27 +26,14 @@
                             <!-- notifications dropdown -->
                             <ul id="notifications-dropdown" class="dropdown-menu col-xs-12" aria-labelledby="notifications-dropdown">
 
+                                <!-- TODO jonas: haal notificaties van ingelogde user op -->
                                 @foreach(Auth::user()->unreadNotifications as $notification)
                                     <li>
                                         <a href="{{ $notification->data['url'] }}"><i class="fa fa-comment"></i>
-                                           <strong>{{ $notification->data['commenter'] }}</strong>  {{ $notification->data['melding'] }}
+                                           <strong>{{ $notification->data['commenter'] }}</strong>  {{ $notification->data['melding'] }}>
                                         </a>
                                     </li>
                                 @endforeach
-
-                                <!--
-                                <li>
-                                    <a href="{{route('profile-notifications')}}"><i class="fa fa-bell"></i> Notificatie 2 </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('profile-notifications')}}"><i class="fa fa-life-ring"></i> Notificatie 3
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('profile-notifications')}}"><i class="fa fa-smile-o"></i> Notificatie 4
-                                    </a>
-                                </li>
-                                -->
 
                                 <a class="user-info padding" href="{{ route('profile-notifications') }}">
                                     <div class="row no-margin">
