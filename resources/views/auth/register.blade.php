@@ -1,9 +1,8 @@
 @extends('layouts.website')
 @section('pagetitle', 'Registreren')
 @section('content')
-
-    <div class="auth-page">
-        <div class="auth-box col-lg-4 col-lg-push-4 col-md-6 col-md-push-6 col-sm-8 col-sm-push-2  col-xs-12">
+    <main class="auth-page">
+        <section class="auth-box col-lg-4 col-lg-push-4 col-md-6 col-md-push-6 col-sm-8 col-sm-push-2  col-xs-12">
             <a href="{{route('website-index')}}"><img class="logo" src="img/logo/favicon.png"></a>
             <!-- multistep form -->
             <form id="msform" class="register clearfix col-xs-12" method="post" enctype="multipart/form-data" action="{{ route('register') }}">
@@ -162,8 +161,8 @@
                 </div>
                 -->
             </footer>
-        </div>
-    </div>
+        </section>
+    </main>
     <!-- Multistep script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{ URL::asset('js/register.js') }}"></script>

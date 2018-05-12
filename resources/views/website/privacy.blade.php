@@ -31,9 +31,17 @@
             gebruikers op onze website bezoeken, om bij te houden hoe vaak bezoekers terug komen en om te zien welke
             pagina’s het goed doen op de website. Ook houden we bij welke informatie de browser deelt. Meer informatie
             is terug te vinden in onze <a href="{{route('website-cookies')}}">Cookie policy</a>.</p>
-        <strong>Deze privacy policy is gegenereerd door privacypolicygenerator.be.</strong>
         <br/>
     </div>
+    <!-- call to action -->
+    @include('partials.website.call-to-action')
+    <!-- end call to action -->
+
+    <!-- newsletter -->
     @include('partials.website.newsletter')
+    <!-- end newsletter -->
+
+    <!-- footer -->
     @include('partials.footer')
+    <!-- end footer -->
 @endsection

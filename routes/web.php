@@ -22,6 +22,7 @@
     Route::get('/cookie-policy', 'WebsiteController@cookies')->name('website-cookies');
     Route::get('/privacy-policy', 'WebsiteController@privacy')->name('website-privacy');
     Route::get('/algemene-voorwaarden', 'WebsiteController@terms')->name('website-terms');
+    Route::get('/veelgestelde-vragen', 'WebsiteController@faq')->name('website-faq');
 
     // Authentication routes
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -89,8 +90,8 @@
 
 
             /** Notifications */
-            Route::get('/notifications/{id}','NotificationController@read')->name('notification-read');
-            Route::get('/notifications/{id}','NotificationController@delete')->name('notification-delete');
+            Route::get('/notifications/read/{id}', 'NotificationController@read')->name('notification-read');
+            Route::get('/notifications/delete/{id}','NotificationController@delete')->name('notification-delete');
         });
     });
 }

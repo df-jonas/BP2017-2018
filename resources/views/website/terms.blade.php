@@ -25,7 +25,8 @@
             te mogen claimen of te veronderstellen.
             UniHelp streeft naar een zo actueel mogelijke website. Mocht ondanks deze inspanningen de informatie van of
             de inhoud op deze website onvolledig en of onjuist zijn, dan kunnen wij daarvoor geen aansprakelijkheid
-            aanvaarden.
+            aanvaarden.<br><br>
+
             De informatie en/of producten op deze website worden aangeboden zonder enige vorm van garantie en of
             aanspraak op juistheid. Wij behouden ons het recht voor om deze materialen te wijzigen, te verwijderen of
             opnieuw te plaatsen zonder enige voorafgaande mededeling. UniHelp aanvaardt geen aansprakelijkheid voor
@@ -35,8 +36,17 @@
         <h2>Wijzigingen</h2>
         <p>Mocht deze disclaimer wijzigen, dan vindt u de meest recente versie van de disclaimer van www.unihelp.be op
             deze pagina.</p>
-        <strong>Deze disclaimer is gegenereerd op voorbeeldalgemenevoorwaarden.nl.</strong>
         <br/>
     </div>
+    <!-- call to action -->
+    @include('partials.website.call-to-action')
+    <!-- end call to action -->
+
+    <!-- newsletter -->
+    @include('partials.website.newsletter')
+    <!-- end newsletter -->
+
+    <!-- footer -->
     @include('partials.footer')
+    <!-- end footer -->
 @endsection

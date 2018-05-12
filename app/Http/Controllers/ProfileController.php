@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
+use App\File;
+use App\PublicationYear;
 use Illuminate\Http\Request;
 use App\Campus;
 use App\Fos;
 use App\User;
+use App\Download;
 use Auth;
 use Redirect;
 use Session;
@@ -84,7 +88,10 @@ class ProfileController extends Controller
 
     public function downloads()
     {
-        return view("platform.profile.downloads");
+        $arr = [
+            'userdownloads' => Download::query()->where("user_id", "=", Auth::user()->id)->get(),
+        ];
+        return view("platform.profile.downloads", $arr);
     }
 
     public function uploads()

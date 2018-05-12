@@ -1,6 +1,5 @@
 /*Fonts*/
 h1, h2, h3 {
-  font-size: 60px;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
@@ -8,4 +7,164 @@ h1, h2, h3 {
   letter-spacing: normal;
   text-align: left;
   color: $unihelp-black;
+}
+
+.sidebar{
+  .item-title, .item-title a {
+    color: $unihelp-asphalt;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 0;
+    &:hover {
+      color: $theme-color;
+      font-weight: 500;
+    }
+  }
+  .rating{
+    color: $unihelp-brown;
+  }
+}
+
+
+.file{
+  .header-title, .header-title a {
+    i{
+      float: right;
+    }
+  }
+}
+
+/*sidebar + item headers*/
+.header-title, .header-title a {
+    color: $unihelp-white;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 16px;
+    &:hover {
+      color: $unihelp-white;;
+    }
+    i {
+      color: $unihelp-white;
+      font-size: 14px;
+      margin-right: 10px;
+      float: left;
+      margin-top: 5px;
+      &:hover {
+        color: $unihelp-white !important;
+      }
+    }
+
+
+  }
+
+/*overview pages*/
+.overview {
+  /*Sharing pages*/
+  &.sharing, &.community {
+    .item-title, .item-title a {
+      color: $unihelp-asphalt;
+      font-size: 18px;
+      &:hover {
+        color: $theme-color;
+        font-weight: 500;
+      }
+    }
+
+    .item-campus, .item-campus a {
+      color: $unihelp-brown;
+      font-size: 14px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .item-user, .item-user a, .item-count, .item-count a {
+      color: $unihelp-asphalt;
+      font-size: 12px;
+      margin-top: 0;
+    }
+
+    .icons{
+      color: $unihelp-brown;
+    }
+
+  }
+  /*Community pages*/
+  &.community {
+
+  }
+  /*Tutoring pages*/
+  &.tutoring {
+
+  }
+}
+
+/*Detail pages */
+.detail {
+  &.sharing, &.community {
+    h1{
+      font-size: 20px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      color: $unihelp-asphalt;
+      margin-top: 0;
+    }
+    p{
+      font-size: 14px;
+    }
+  }
+  }
+
+/*Profile*/
+.profile{
+
+.settings-title, .user-title{
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: $theme-color;
+}
+
+}
+
+
+.stats {
+  p {
+    font-size: 14px;
+    &.amount {
+      text-align: right;
+    }
+  }
+}
+
+
+.notification-title, .notification-title a{
+    color: $unihelp-asphalt;
+    font-size: 15px;
+    &:hover {
+      color: $theme-color;
+      font-weight: 500;
+    }
+  }
+
+.notification-date{
+  clear: both;
+  font-size: 14px;
+  color: $unihelp-brown;
+  margin-top: 0;
+}
+
+.notification-read{
+  float: right;
+  color: $unihelp-brown;
+  &:hover{
+    color: $theme-color;
+  }
 }

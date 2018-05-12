@@ -78,6 +78,15 @@
         <strong>Deze policy is gebaseerd op: <a href="https://ictrecht.nl/juridisch-advies/cookieverklaring/" target="_blank">ICT recht</a></strong>
         <br>
     </div>
+    <!-- call to action -->
+    @include('partials.website.call-to-action')
+    <!-- end call to action -->
+
+    <!-- newsletter -->
     @include('partials.website.newsletter')
+    <!-- end newsletter -->
+
+    <!-- footer -->
     @include('partials.footer')
+    <!-- end footer -->
 @endsection

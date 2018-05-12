@@ -71,7 +71,7 @@ class PostComment extends Notification
             'commenter' => $this->comment->user->first_name,
             'comment_title' => $this ->comment->content,
             'url' => $this->url,
-            'melding' => 'heeft een reactie geplaatst.'
+            'melding' => 'heeft een reactie geplaatst'
         ];
     }
 

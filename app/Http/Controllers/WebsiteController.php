@@ -45,5 +45,9 @@ class WebsiteController extends Controller
     {
         return view("website.terms");
     }
+    public function faq()
+    {
+        return view("website.faq");
+    }
 
 }

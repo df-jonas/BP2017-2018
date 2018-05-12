@@ -50,7 +50,7 @@
 
                     <!-- filter menu -->
                     <article class="item options clearfix">
-                        <header>Post opties</header>
+                        <header><a class="header-title"><i class="fa fa-info-circle"></i> Informatie</a></header>
                         <div class="padding">
                             <div class="form-group col-xs-12 no-padding">
                                 <div class="selectdiv">

@@ -179,14 +179,28 @@
     height: 100%;
   }
   #welcome {
-    h3, p {
-      text-align: center;
+    h1, h2 {
+      text-align: center!important;
     }
-    p {
+    h1{
+      font-size: 30px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+    }
+    p, h2 {
       font-weight: 400;
-      color: rgba(255, 255, 255, .7);
       color: $unihelp-white;
+      font-size: 20px;
       font-weight: 600;
+      line-height: 1.6em;
+      margin-top: 20px;
+      margin-bottom: 35px;
+      letter-spacing: -.03em;
     }
   }
 }

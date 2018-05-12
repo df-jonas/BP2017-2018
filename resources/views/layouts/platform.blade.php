@@ -18,7 +18,7 @@
     <!-- mailchimp -->
     <link rel="stylesheet" href="{{ asset('css/mailchimp-horizontal-slim-10_7.css') }}">
     <!-- font -->
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <!-- TinyMCE editor -->
     <!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({selector: 'textarea'});</script>-->
@@ -35,6 +35,7 @@
     </script>
 </head>
 <body class="platform">
+<div class="wrap">
 @yield('sidebar')
 @include('partials.platform.beta')
 @yield('content')
@@ -74,5 +75,6 @@
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 @yield('scripts')
+</div>
 </body>
 </html>

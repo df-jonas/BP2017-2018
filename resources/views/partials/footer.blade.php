@@ -1,5 +1,5 @@
 <footer class="row">
-    <div class="top padding clearfix">
+    <section class="top padding clearfix">
         <div class="container">
             <div class="module clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
                 <h4>Navigatie</h4>
@@ -51,18 +51,18 @@
                         <a href="#">Contacteer ons</a>
                     </li>
                     <li>
-                        <a href="#">FAQ</a>
+                        <a href="{{route('website-faq')}}">Veelgestelde vragen</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="bottom padding clearfix">
+    </section>
+    <section class="bottom padding clearfix">
         <div class="container">
             <div class="col-xs-12">
                 <a href=""><h6>Copyright &copy; 2018 UniHelp. Alle rechten voorbehouden. </h6>
                 </a>
             </div>
         </div>
-    </div>
+    </section>
 </footer>

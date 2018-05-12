@@ -392,40 +392,13 @@ form label {
   background: black !important;
 }
 
-.file header a {
-  color: white;
-}
-
-.file header a:visited {
-  color: white;
-}
-
-.file header a:hover {
-  color: white;
-}
-
-.file header a:active,
-.file header a:focus {
-  color: white;
-}
-
-.file header i {
-  float: right;
-  margin-top: 7px;
-}
-
-.file h3 {
-  margin-top: 0;
-  /*margin-bottom: 0;*/
-}
-
-.file .new input {
-  margin-bottom: 2em;
-  padding: 0.5%;
-}
-
 .file .rating {
   font-size: 1.5em !important;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
 }
 
 .file .rating:hover {
@@ -449,6 +422,25 @@ form label {
 
 .file-overview tr td:last-child {
   text-align: right;
+}
+
+.details {
+  margin-top: 2em;
+  opacity: 0.9;
+}
+
+.details .detail {
+  background: black !important;
+  border: 1px solid #ffffff;
+  padding: 5px 5px 5px 10px;
+  color: #ffffff;
+}
+
+.details .detail i span {
+  color: #ffffff;
+  line-height: 1em;
+  padding-left: 12px;
+  font-size: 16px;
 }
 
 /*General css*/
@@ -736,6 +728,11 @@ div.container {
   color: #333a40;
 }
 
+#platform-header .account .user-notifications .user-info {
+  text-align: center;
+  cursor: pointer;
+}
+
 #platform-header #account-dropdown,
 #platform-header #notifications-dropdown {
   width: 200px;
@@ -757,11 +754,12 @@ div.container {
   cursor: pointer;
   height: 50px;
   line-height: 50px;
+  border: 1px solid rgba(181, 212, 183, 0.2);
 }
 
 #platform-header #account-dropdown li:hover,
 #platform-header #notifications-dropdown li:hover {
-  background: black !important !important;
+  background: rgba(181, 212, 183, 0.2);
 }
 
 #platform-header #account-dropdown li a,
@@ -772,8 +770,7 @@ div.container {
 
 #platform-header #account-dropdown li a:hover,
 #platform-header #notifications-dropdown li a:hover {
-  background: black !important !important;
-  color: #ffffff;
+  background: rgba(181, 212, 183, 0.2);
 }
 
 #platform-header #account-dropdown:before,
@@ -800,8 +797,7 @@ div.container {
 
 #platform-header #account-dropdown .user-info:hover,
 #platform-header #notifications-dropdown .user-info:hover {
-  background: #8A7E72;
-  color: #ffffff;
+  background: rgba(181, 212, 183, 0.2);
 }
 
 #platform-header #notifications-dropdown {
@@ -936,6 +932,21 @@ div.container {
   background: lightgray;
 }
 
+.all-notifications {
+  padding-left: 0;
+  list-style: none;
+}
+
+.all-notifications li {
+  margin-bottom: 17.5px;
+  border-bottom: 1px solid rgba(181, 212, 183, 0.2);
+  padding: 5px 10px;
+}
+
+.all-notifications li.unread {
+  background: rgba(181, 212, 183, 0.2);
+}
+
 .vakken,
 .vakken-nieuw {
   padding-left: 0;
@@ -1027,7 +1038,6 @@ div.container {
 h1,
 h2,
 h3 {
-  font-size: 60px;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
@@ -1035,6 +1045,180 @@ h3 {
   letter-spacing: normal;
   text-align: left;
   color: #000000;
+}
+
+.sidebar .item-title,
+.sidebar .item-title a {
+  color: #333a40;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sidebar .item-title:hover,
+.sidebar .item-title a:hover {
+  color: black !important;
+  font-weight: 500;
+}
+
+.sidebar .rating {
+  color: #8A7E72;
+}
+
+.file .header-title i,
+.file .header-title a i {
+  float: right;
+}
+
+/*sidebar + item headers*/
+
+.header-title,
+.header-title a {
+  color: #ffffff;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.header-title:hover,
+.header-title a:hover {
+  color: #ffffff;
+}
+
+.header-title i,
+.header-title a i {
+  color: #ffffff;
+  font-size: 14px;
+  margin-right: 10px;
+  float: left;
+  margin-top: 5px;
+}
+
+.header-title i:hover,
+.header-title a i:hover {
+  color: #ffffff !important;
+}
+
+/*overview pages*/
+
+.overview {
+  /*Sharing pages*/
+  /*Community pages*/
+  /*Tutoring pages*/
+}
+
+.overview.sharing .item-title,
+.overview.sharing .item-title a,
+.overview.community .item-title,
+.overview.community .item-title a {
+  color: #333a40;
+  font-size: 18px;
+}
+
+.overview.sharing .item-title:hover,
+.overview.sharing .item-title a:hover,
+.overview.community .item-title:hover,
+.overview.community .item-title a:hover {
+  color: black !important;
+  font-weight: 500;
+}
+
+.overview.sharing .item-campus,
+.overview.sharing .item-campus a,
+.overview.community .item-campus,
+.overview.community .item-campus a {
+  color: #8A7E72;
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.overview.sharing .item-user,
+.overview.sharing .item-user a,
+.overview.sharing .item-count,
+.overview.sharing .item-count a,
+.overview.community .item-user,
+.overview.community .item-user a,
+.overview.community .item-count,
+.overview.community .item-count a {
+  color: #333a40;
+  font-size: 12px;
+  margin-top: 0;
+}
+
+.overview.sharing .icons,
+.overview.community .icons {
+  color: #8A7E72;
+}
+
+/*Detail pages */
+
+.detail.sharing h1,
+.detail.community h1 {
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #333a40;
+  margin-top: 0;
+}
+
+.detail.sharing p,
+.detail.community p {
+  font-size: 14px;
+}
+
+/*Profile*/
+
+.profile .settings-title,
+.profile .user-title {
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: black !important;
+}
+
+.stats p {
+  font-size: 14px;
+}
+
+.stats p.amount {
+  text-align: right;
+}
+
+.notification-title,
+.notification-title a {
+  color: #333a40;
+  font-size: 15px;
+}
+
+.notification-title:hover,
+.notification-title a:hover {
+  color: black !important;
+  font-weight: 500;
+}
+
+.notification-date {
+  clear: both;
+  font-size: 14px;
+  color: #8A7E72;
+  margin-top: 0;
+}
+
+.notification-read {
+  float: right;
+  color: #8A7E72;
+}
+
+.notification-read:hover {
+  color: black !important;
 }
 
 /*Notices and go-back*/
@@ -1214,12 +1398,8 @@ h3 {
 .item header {
   background: black !important;
   height: 2em;
-  color: #ffffff;
   line-height: 1.75em;
   padding: 2px 10px;
-  font-weight: 300;
-  text-decoration: none;
-  font-size: 16px;
   border-bottom: 1px solid #dfdfdf;
 }
 
@@ -1230,10 +1410,8 @@ h3 {
   float: right;
 }
 
-.item h3,
-.item h4 {
-  color: #000000;
-  margin-top: 20px;
+.item .padding {
+  pading: 20px !important;
 }
 
 .overview.groups,
@@ -1353,26 +1531,7 @@ h3 {
 }
 
 .detail.file p {
-  font-size: 14px;
-}
-
-.detail.file .details {
-  margin-top: 2em;
-  opacity: 0.9;
-}
-
-.detail.file .details .detail {
-  background: black !important;
-  border: 1px solid #ffffff;
-  padding: 5px 5px 5px 10px;
-  color: #ffffff;
-}
-
-.detail.file .details .detail i span {
-  color: #ffffff;
-  line-height: 1em;
-  padding-left: 12px;
-  font-size: 16px;
+  /*font-size: 14px;*/
 }
 
 .detail.group .actions {
@@ -1454,21 +1613,8 @@ h3 {
   margin-left: 5px;
 }
 
-.sidebar .item.user-owned h5 {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
 .sidebar .item.user-owned .row {
   margin-bottom: 20px;
-}
-
-.sidebar .stats p {
-  font-size: 14px;
-}
-
-.sidebar .stats p.amount {
-  text-align: right;
 }
 
 .sidebar .inner-addon {
@@ -1612,16 +1758,6 @@ h3 {
   .container {
     width: 100% !important;
   }
-
-  /*
-    .file .rating {
-      font-size: 1.5em;
-      position: absolute;
-      left: 0%;
-      top: 50%;
-      transform: translate(0, -50%);
-    }
-  */
 
   .headline .right h4 {
     text-align: center;

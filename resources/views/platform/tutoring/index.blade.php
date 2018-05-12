@@ -62,10 +62,7 @@
                         </div>
                     </div>
                     <div class="modal-footer padding">
-                        <div class="form-group col-xs-12 clearfix">
-                            <input type="button" class="download-button next col-lg-2 col-sm-4 col-xs-12"
-                                   data-dismiss="modal" value="Sluiten">
-                        </div>
+
                     </div>
                 </div>
             </div>
