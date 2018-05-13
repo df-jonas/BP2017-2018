@@ -1705,36 +1705,40 @@ form label {
   outline: none;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-
-.active,
-.accordion:hover {
-  background-color: #ccc;
-}
-
-/* Style the accordion panel. Note: hidden by default */
-
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  display: none;
-  overflow: hidden;
+  margin-bottom: 1em;
 }
 
 .accordion:after {
   content: '\2795';
   /* Unicode character for "plus" sign (+) */
   font-size: 13px;
-  color: #777;
+  color: #4D6A50;
   float: right;
   margin-left: 5px;
 }
 
-.active:after {
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.active,
+.accordion:hover {
+  background-color: #4D6A50;
+  color: #ffffff;
+}
+
+.active:after,
+.accordion:hover:after {
   content: "\2796";
   /* Unicode character for "minus" sign (-) */
+  color: #ffffff !important;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+
+.panel {
+  padding: 15px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
 }
 
 .slicknav_menu {

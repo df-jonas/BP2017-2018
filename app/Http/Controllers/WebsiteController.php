@@ -49,5 +49,13 @@ class WebsiteController extends Controller
     {
         return view("website.faq");
     }
+    public function demo()
+    {
+        return view("website.demo");
+    }
+    public function contact()
+    {
+        return view("website.contact");
+    }
 
 }

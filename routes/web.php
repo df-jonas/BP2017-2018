@@ -23,6 +23,8 @@
     Route::get('/privacy-policy', 'WebsiteController@privacy')->name('website-privacy');
     Route::get('/algemene-voorwaarden', 'WebsiteController@terms')->name('website-terms');
     Route::get('/veelgestelde-vragen', 'WebsiteController@faq')->name('website-faq');
+    Route::get('/demo', 'WebsiteController@demo')->name('website-demo');
+    Route::get('/contact', 'WebsiteController@contact')->name('website-contact');
 
     // Authentication routes
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

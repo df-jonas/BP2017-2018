@@ -46,12 +46,13 @@
                 <h4>Help &amp; support</h4>
                 <ul>
                     <li>
-                        <a href="mailto:info@unihelp.be">info@unihelp.be</a>
-                    <li>
-                        <a href="#">Contacteer ons</a>
+                        <a href="{{route('website-contact')}}">Contacteer ons</a>
                     </li>
                     <li>
                         <a href="{{route('website-faq')}}">Veelgestelde vragen</a>
+                    </li>
+                    <li>
+                        <a href="{{route('website-demo')}}">Boek een demo</a>
                     </li>
                 </ul>
             </div>
