@@ -81,7 +81,7 @@
                     <h2 class="settings-title">Profiel instellingen</h2>
                     <form action="{{ route('profile-update') }}" method="POST">
                         {{ csrf_field() }}
-                        <se class="form-group col-xs-12 no-padding clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="selectdiv">
                                 <label for="fos">Welke studierichting volgt u?</label>
                                 <select class="select col-xs-12" id="fos" name="fos" tabindex="1">
@@ -93,7 +93,7 @@
                                     <span class="help-block"><strong>{{ $errors->first('fos') }}</strong></span>
                                 @endif
                             </div>
-                        </se>
+                        </div>
                         <div class="form-group  col-xs-12 no-padding clearfix">
                             <div class="selectdiv">
                                 <label for="campus">Aan welke campus studeert u?</label>

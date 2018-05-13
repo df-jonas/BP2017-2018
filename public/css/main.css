@@ -1710,35 +1710,55 @@ form label {
 
 .accordion:after {
   content: '\2795';
-  /* Unicode character for "plus" sign (+) */
   font-size: 13px;
   color: #4D6A50;
   float: right;
   margin-left: 5px;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-
-.active,
-.accordion:hover {
+.accordion:hover,
+.accordion.active {
   background-color: #4D6A50;
   color: #ffffff;
 }
 
-.active:after,
-.accordion:hover:after {
+.accordion.active:after {
   content: "\2796";
-  /* Unicode character for "minus" sign (-) */
-  color: #ffffff !important;
 }
-
-/* Style the accordion panel. Note: hidden by default */
 
 .panel {
   padding: 15px;
   background-color: white;
   display: none;
   overflow: hidden;
+}
+
+/*Notices and go-back*/
+
+.go-back a,
+.message a {
+  color: #8A7E72;
+}
+
+.go-back i,
+.message i {
+  cursor: pointer;
+}
+
+.go-back i span,
+.message i span {
+  font-family: Raleway;
+}
+
+.go-back .padding,
+.message .padding {
+  padding: 7.5px;
+}
+
+.message {
+  color: #ffffff !important;
+  background: #4D6A50 !important;
+  margin-bottom: 2em;
 }
 
 .slicknav_menu {

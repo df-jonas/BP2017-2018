@@ -9,26 +9,24 @@
   outline: none;
   transition: 0.4s;
   margin-bottom: 1em;
-  &:after{
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
+  &:after {
+    content: '\02795';
     font-size: 13px;
     color: $theme-color;
     float: right;
     margin-left: 5px;
-}
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .accordion:hover {
-  background-color: $theme-color;
-  color: $unihelp-white;
-  &:after{
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
-    color: $unihelp-white!important;
+  }
+  &:hover, &.active {
+    background-color: $theme-color;
+    color: $unihelp-white;
+  }
+  &.active{
+    &:after {
+      content: "\2796";
+    }
   }
 }
 
-/* Style the accordion panel. Note: hidden by default */
 .panel {
   padding: 15px;
   background-color: white;

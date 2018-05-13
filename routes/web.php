@@ -24,7 +24,10 @@
     Route::get('/algemene-voorwaarden', 'WebsiteController@terms')->name('website-terms');
     Route::get('/veelgestelde-vragen', 'WebsiteController@faq')->name('website-faq');
     Route::get('/demo', 'WebsiteController@demo')->name('website-demo');
+    Route::post('demo', 'WebsiteController@demoformpost')->name('demo-form');
     Route::get('/contact', 'WebsiteController@contact')->name('website-contact');
+    Route::post('contact', 'WebsiteController@contactformpost')->name('contact-form');
+
 
     // Authentication routes
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

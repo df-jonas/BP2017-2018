@@ -14,7 +14,6 @@ use Auth;
 use Redirect;
 use Session;
 use Intervention\Image\Facades\Image;
-use App\Notifications\test;
 
 class ProfileController extends Controller
 {
@@ -40,7 +39,6 @@ class ProfileController extends Controller
         $firstname = $request->firstname;
         $lastname = $request->lastname;
 
-        $user->notify(new test($user));
 
         if(!empty($campus)) {
             $user->campusid = $campus;
