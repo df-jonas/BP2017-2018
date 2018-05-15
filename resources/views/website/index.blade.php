@@ -13,7 +13,7 @@
         <div class="container">
             <div class="col-lg-6 col-md-8 col-xs-12 no-padding">
                 <h1>Welkom bij UniHelp voor studenten</h1>
-                <p>UniHelp is een geheel nieuw en gratis <a href="{{ route('website-how')}} }}"> platform</a> om
+                <p>UniHelp is een geheel nieuw en gratis <a href="{{ route('website-how')}}"> platform</a> om
                     studenten te helpen bij hun studies.</p>
                 <div class="buttons col-lg-8 col-md-10 col-sm-10 col-xs-12">
                     <div class="row">

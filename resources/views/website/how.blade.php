@@ -21,43 +21,43 @@
 
 <!-- how it works steps-->
 <section id="how" class="col-xs-12">
-    <section class="container no-padding">
+    <div class="container no-padding">
         <div class="intro col-lg-8 col-lg-push-2">
             <h2>Uniek platform</h2>
             <p>Unihelp is een uniek en gespecialiseerd platform (met mobiele ondersteuning) voor studenten. In deze bachelorproef doen we aan zelfstudie voor ongekende frameworks en technologieën, onderzoeken we vereisten in dergelijk platform, bevragen we studenten en ontwikkelen we een web-platform om studenten te ondersteunen gedurende hun studietraject.</p>
-            <img src="img/mockups/003-MacBook-Space-Gray.png" alt="Macbook mockup">
+            <img id="how-mockup" src="img/mockups/003-MacBook-Space-Gray.png" alt="Macbook mockup">
         </div>
-        <ul class="steps col-lg-10 col-lg-push-1 col-xs-12 no-padding" style="display: table">
-            <li class="col-lg-3 col-xs-12" style="display: table-cell">
-                <div class="step padding col-xs-12">
+        <ul class="steps col-lg-10 col-lg-push-1 col-xs-12 no-padding">
+            <li class="col-lg-3 col-xs-12">
+                <div class="step padding col-xs-12" data-image="tutor">
                     <i class="fa fa-life-ring"></i>
                     <h4>Vind de geknipte tutor</h4>
                     <p>Krijg instant en eenvoudig de hulp die jij nodig hebt. Help anderen door te tutoren.</p>
                 </div>
             </li>
-            <li class="col-lg-3 col-xs-12" style="display: table-cell">
-                <div class="step padding col-xs-12">
+            <li class="col-lg-3 col-xs-12">
+                <div class="step padding col-xs-12" data-image="community">
                     <i class="fa fa-users"></i>
                     <h4>Blijf steeds op de hoogte</h4>
                     <p>Sluit je aan bij een van de vele topics naar keuze. Deel al je vragen en nieuwtjes!</p>
                 </div>
             </li>
-            <li class="col-lg-3 col-xs-12" style="display: table-cell">
-                <div class="step padding col-xs-12">
+            <li class="col-lg-3 col-xs-12">
+                <div class="step padding col-xs-12" data-image="sharing">
                     <i class="fa fa-file"></i>
                     <h4>Wissel samenvattingen uit</h4>
                     <p>Bestanden kunnen op een veilige en snelle manier uitgewisseld worden met medestudenten.</p>
                 </div>
             </li>
-            <li class="col-lg-3 col-xs-12" style="display: table-cell">
-                <div class="step padding col-xs-12">
+            <li class="col-lg-3 col-xs-12">
+                <div class="step padding col-xs-12" data-image="assessment">
                     <i class="fa fa-smile-o"></i>
                     <h4>Geef elkaar een score</h4>
                     <p>Beoordeel al je teamleden en medestudenten op een snelle manier.</p>
                 </div>
             </li>
         </ul>
-    </section>
+    </div>
 </section>
 <!-- end how it works steps -->
 
@@ -72,5 +72,6 @@
 <!-- footer -->
 @include('partials.footer')
 <!-- end footer -->
-
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ URL::asset('js/how.js') }}"></script>

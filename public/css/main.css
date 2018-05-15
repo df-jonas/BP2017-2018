@@ -98,13 +98,21 @@ body {
   margin: 0 auto;
 }
 
-.wrap {
-  max-width: 2200px;
-  margin: 0 auto;
+::-moz-selection {
+  background: #4D6A50;
+}
+
+::selection {
+  background: #4D6A50;
+}
+
+::-moz-selection {
+  background: #4D6A50;
 }
 
 .container {
   width: 85% !important;
+  max-width: 2200px;
 }
 
 /*Links*/
@@ -690,12 +698,17 @@ fieldset input.submit {
 }
 
 .about-person h4 {
-  color: #000000;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333a40;
 }
 
 .about-person p {
-  font-weight: 400;
-  font-size: 16px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #898989;
+  line-height: 1.85em;
+  font-weight: 500;
 }
 
 .about-person .left {
@@ -861,12 +874,18 @@ fieldset input.submit {
   margin: 5% 0 5% 0;
   list-style: none;
   padding: 0;
+  display: table;
+}
+
+#how .steps li {
+  display: table-cell;
 }
 
 #how .steps .step {
   min-height: 200px;
   margin: 2% 0 2% 0;
   background: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
 }
 
 #how .steps .step h4 {
@@ -886,6 +905,11 @@ fieldset input.submit {
 #how .steps .step i {
   color: #4D6A50;
   font-size: 2em;
+}
+
+#how .steps .step:hover,
+#how .steps .step.active {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /*Avout intro*/
@@ -1112,13 +1136,14 @@ fieldset input.submit {
 /*Beta notice box */
 
 .beta-notice {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   background: #8A7E72;
-  padding: 15px;
+  padding: 5px;
   color: #ffffff;
-  z-index: 9999;
+  text-align: center;
 }
 
 /*Quotes*/
@@ -1779,7 +1804,7 @@ form label {
   }
 
   .steps .step {
-    min-height: 285px !important;
+    min-height: 245px !important;
   }
 }
 

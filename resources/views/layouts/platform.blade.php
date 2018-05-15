@@ -37,7 +37,6 @@
 <body class="platform">
 <div class="wrap">
 @yield('sidebar')
-@include('partials.platform.beta')
 @yield('content')
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -48,10 +47,10 @@
 <script src="{{ URL::asset('js/jquery.slicknav.js') }}"></script>
 <script>
     $(function(){
-        $('#account-dropdown').slicknav({
+        $('#platform-header').slicknav({
             label: ' ',
             duration: 200,
-            prependTo:'#account-dropdown'
+            prependTo:'#platform-header'
         });
     });
 </script>

@@ -38,13 +38,6 @@
             deze pagina.</p>
         <br/>
     </div>
-    <!-- call to action -->
-    @include('partials.website.call-to-action')
-    <!-- end call to action -->
-
-    <!-- newsletter -->
-    @include('partials.website.newsletter')
-    <!-- end newsletter -->
 
     <!-- footer -->
     @include('partials.footer')

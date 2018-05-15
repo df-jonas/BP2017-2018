@@ -27,6 +27,7 @@
     Route::post('demo', 'WebsiteController@demoformpost')->name('demo-form');
     Route::get('/contact', 'WebsiteController@contact')->name('website-contact');
     Route::post('contact', 'WebsiteController@contactformpost')->name('contact-form');
+    Route::get('/sitemap', 'WebsiteController@sitemap')->name('website-sitemap');
 
 
     // Authentication routes

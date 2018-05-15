@@ -8,30 +8,14 @@ use Illuminate\Support\Facades\Auth;
 class NotificationController extends Controller
 {
 
-   //TODO JONAS dit eens bekijken
-
-    public function delete($id){
+    //TODO moet met ajax
+    public function readAjax($id)
+    {
         $user = Auth::user();
-        $notification = $user->notifications()->where('id', $id)->first();
-        if ($notification)
-        {
-            $notification->delete();
-            return back();
-        }
-        else
-            return back()->withErrors('Notificatie niet gevonden');
-    }
-
-    public function read($id){
-        $user = Auth::user();
-        $notification = $user->notifications()->where('id', $id)->first();
-        if ($notification)
-        {
+        $notification = $user->notifs->where('id', $id)->first();
+        if (!$notification->isRead()) {
             $notification->markAsRead();
-            return back();
         }
-        else
-            return back()->withErrors('Notificatie niet gevonden');
     }
 
 }

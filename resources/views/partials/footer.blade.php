@@ -61,7 +61,7 @@
     <section class="bottom padding clearfix">
         <div class="container">
             <div class="col-xs-12">
-                <a href=""><h6>Copyright &copy; 2018 UniHelp. Alle rechten voorbehouden. </h6>
+                <a href=""><h6>Copyright &copy; 2018 UniHelp. Alle rechten voorbehouden - <a href="{{route('website-sitemap')}}">Sitemap</a> </h6>
                 </a>
             </div>
         </div>

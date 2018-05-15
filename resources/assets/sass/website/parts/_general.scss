@@ -8,13 +8,17 @@ body {
   overflow-x: hidden;
   margin: 0 auto;
 }
-
-.wrap{
-  max-width: 2200px;
-  margin: 0 auto;
+::selection{
+  background: $theme-color;
 }
+
+::-moz-selection{
+  background: $theme-color;
+}
+
 .container {
   width: 85% !important;
+  max-width: 2200px;
 }
 
 

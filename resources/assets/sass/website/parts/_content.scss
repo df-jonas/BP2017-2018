@@ -43,11 +43,16 @@
     color: $theme-color;
   }
   h4 {
-    color: $unihelp-black;
-  }
-  p{
-    font-weight: 400;
+    margin-top: 20px;
     font-size: 16px;
+    color: $unihelp-asphalt;
+  }
+  p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #898989;
+    line-height: 1.85em;
+    font-weight: 500;
   }
   .left {
     text-align: right;
@@ -186,10 +191,15 @@
     margin: 5% 0 5% 0;
     list-style: none;
     padding: 0;
+    display: table;
+    li{
+      display: table-cell;
+    }
     .step {
       min-height: 200px;
       margin: 2% 0 2% 0;
       background: rgba(0, 0, 0, .05);
+      cursor: pointer;
       h4 {
         margin-top: 20px;
         font-size: 16px;
@@ -205,6 +215,9 @@
       i {
         color: $theme-color;
         font-size: 2em;
+      }
+      &:hover, &.active{
+        background: rgba(0, 0, 0, .1);
       }
     }
   }
@@ -378,13 +391,14 @@
 
 /*Beta notice box */
 .beta-notice {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
   background: $unihelp-brown;
-  padding: 15px;
+  padding: 5px;
   color: $unihelp-white;
-  z-index: 9999;
+  text-align: center;
 }
 
 /*Quotes*/

@@ -61,30 +61,8 @@
                     <div class="padding">
                     <ul class="all-notifications">
                         <!-- TODO jonas: haal ALLE notificaties van user op -->
-                        @foreach(Auth::user()->notifications as $notification)
-                            @if($notification->read_at == NULL)
-                                <li class="unread">
-                                    <a href="{{ $notification->data['url'] }}" class="notification-title"><i class="fa fa-comment"></i>
-                                        <strong>{{ $notification->data['commenter'] }}</strong>  {{ $notification->data['melding'] }} op "{{ $notification->data['title'] }}"
-                                    </a>
-                                    {{--<a href="{{route('notification-read', ['id' => $notification->id] )}}">markeren als gelezen</a>--}}
-                                    <a class="notification-read" href="{{ route('notification-read', ['id' => $notification->id]) }}">Markeer als gelezen</a>
-
-                                    <h4 class="notification-date">2 uur geleden</h4>
-                                </li>
-                            @else
-                                <li>
-                                <a href="{{ $notification->data['url'] }}" class="notification-title"><i class="fa fa-comment"></i>
-                                    <strong>{{ $notification->data['commenter'] }}</strong>  {{ $notification->data['melding'] }} op "{{ $notification->data['title'] }}"
-                                </a>
-                                {{--<a href="{{route('notification-read', ['id' => $notification->id] )}}">markeren als gelezen</a>--}}
-                                <a class="notification-read" href="{{ route('notification-delete', ['id' => $notification->id]) }}">Verwijderen</a>
-
-                                <h4 class="notification-date">2 uur geleden</h4>
-                                </li>
-                            @endif
-
-
+                        @foreach($nots as $notification)
+                            {{ $notification }}
                         @endforeach
                     </ul>
                     </div>

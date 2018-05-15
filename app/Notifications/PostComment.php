@@ -34,6 +34,7 @@ class PostComment extends Notification
      * @param  mixed  $notifiable
      * @return array
      */
+
     public function via($notifiable)
     {
         //return ['database'];
@@ -67,11 +68,13 @@ class PostComment extends Notification
     public function toDatabase($notifiable)
     {
         return [
+            'id' => $this->post->id,
             'title' => $this->post->title,
+            'data' => $this->post->created_at,
             'commenter' => $this->comment->user->first_name,
             'comment_title' => $this ->comment->content,
             'url' => $this->url,
-            'melding' => 'heeft een reactie geplaatst'
+            'melding' => 'heeft een reactie geplaatst.'
         ];
     }
 

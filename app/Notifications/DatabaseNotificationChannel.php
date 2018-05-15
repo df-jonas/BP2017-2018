@@ -10,21 +10,23 @@ namespace App\Notifications;
 
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class DatabaseNotificationChannel
 {
     public function send($notifiable, Notification $notification)
     {
         $data = $notification->toDatabase($notifiable);
-
+        //TODO titel, commenter, url, user id ophalen van post
         return $notifiable->routeNotificationFor('database', $notification)->create([
             'id' => $notification->id,
             'user_id' => $notification->user()->id,
+            'commenter_id' => Auth::id(),
             'type' => get_class($notification),
             'data' => $this->getData($notifiable, $notification),
             'read_at' => null,
+            'title' => 'yooo',
         ]);
+
     }
 
     protected function getData($notifiable, Notification $notification)

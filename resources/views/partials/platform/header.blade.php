@@ -1,5 +1,5 @@
 <header id="platform-header" class="clearfix">
-    <section class="container">
+    <div class="container">
         <div class="row">
             <!-- logo -->
             <section class="logo col-lg-2 col-md-2 col-sm-2 col-xs-4">
@@ -11,17 +11,19 @@
             <section  class="account col-lg-2 col-lg-push-8 col-md- col-md-push-8 col-sm-3 col-sm-push-7 col-xs-1 col-xs-push-6">
                 <div class="row flex">
                     <!-- notifications -->
-                    <section class="col-lg-6 hide-mobile">
-                        <section class="user-notifications">
+                    <div class="col-lg-6 hide-mobile">
+                        <div class="user-notifications">
                             <i class="fa fa-bell dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i>
-                            @if(!(Auth::user()->notifications->count() <= 0))
-                                <span>{{ Auth::user()->unreadNotifications->count() }}</span>
+
+                            @if(!(Auth::user()->notifs->count() <= 0))
+                                <span>{{ Auth::user()->notifs_unread->count() }}</span>
                             @endif
 
 
                         <!-- notifications dropdown -->
                             <ul id="notifications-dropdown" class="dropdown-menu col-xs-12" aria-labelledby="notifications-dropdown">
                                 <!-- TODO jonas: haal notificaties van ingelogde user op -->
+                                {{--
                                 @foreach(Auth::user()->unreadNotifications as $notification)
                                     <li>
                                         <a href="{{ $notification->data['url'] }}"><i class="fa fa-comment"></i>
@@ -29,6 +31,7 @@
                                         </a>
                                     </li>
                                 @endforeach
+                                --}}
 
                                 <a class="user-info" href="{{ route('profile-notifications') }}">
                                     <div class="row no-margin">
@@ -36,9 +39,9 @@
                                     </div>
                                 </a>
                             </ul>
-                        </section>
+                        </div>
                         <!-- end notifications dropdown -->
-                    </section>
+                    </div>
                     <!-- end notifications -->
 
 
@@ -53,7 +56,7 @@
                         <!-- profile dropdown -->
                         <ul id="account-dropdown" class="dropdown-menu col-xs-12" aria-labelledby="account-dropdown">
                             <a class="user-info padding" href="{{ route('profile-index') }}">
-                                <section class="row flex no-margin">
+                                <div class="row flex no-margin">
                                     <div class="col-lg-3">
                                         <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img vertical-center" data-toggle="dropdown">
                                     </div>
@@ -61,7 +64,7 @@
                                         <h6>{{Auth::user()->first_name}} {{Auth::user()->last_name}}</h6>
                                         <h6>Bekijk profiel</h6>
                                     </div>
-                                </section>
+                                </div>
                             </a>
                             <li>
                                 <a href="{{ route('profile-downloads') }}"><i class="fa fa-download"></i> Mijn downloads
@@ -78,7 +81,7 @@
                             </li>
 
                             <li>
-                                <a href=""><i class="fa fa-phone"></i> Contact
+                                <a href="#"><i class="fa fa-cog"></i> Instellingen
                                 </a>
                             </li>
 
@@ -93,5 +96,5 @@
             </section>
             <!-- end user menu -->
         </div>
-    </section>
+    </div>
 </header>

@@ -13,12 +13,14 @@ use App\Download;
 use Auth;
 use Redirect;
 use Session;
+use App\Notification;
 use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
     public function index()
     {
+        // TODO Alle vakken van gebruiker ophalen
         $params = [
             'campuses' => Campus::query()->orderBy("name")->get(),
             'foses' => Fos::query()->orderBy("name")->get(),
@@ -98,6 +100,14 @@ class ProfileController extends Controller
     }
     public function notifications()
     {
-        return view("platform.profile.notifications");
+        $arr = [
+            'nots' => Notification::query()
+                ->where("user_id", "=", 73)
+                ->orderBy("created_at", "desc")
+                ->get(),
+        ];
+
+        //dd($arr);
+        return view("platform.profile.notifications", $arr);
     }
 }

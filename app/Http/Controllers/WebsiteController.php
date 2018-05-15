@@ -68,6 +68,10 @@ class WebsiteController extends Controller
     {
         return view("website.contact");
     }
+    public function sitemap()
+    {
+        return view("website.sitemap");
+    }
 
     public function demoformpost(Request $request)
     {
