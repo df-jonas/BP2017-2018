@@ -181,4 +181,56 @@ class TutoringController extends Controller
     {
         return view("platform.tutoring.planning");
     }
+
+    public function loadUserPanelAjax($sessionid)
+    {
+        $query = TutoringSession::query()->where("id", "=", $sessionid);
+
+        if ($query->count() <= 0)
+            abort(404, "Sessie niet gevonden.");
+
+        $session = $query->first();
+
+        if ($session->tutor->user->id != Auth::id() && $session->tutee->user->id != Auth::id())
+            abort(404, "Unauthorized to see this panel");
+
+        $fullsession = TutoringSession::query()->where("id", "=", $sessionid)->select(["id", "tutor_id", "tutee_id", "active", "updated_at", "created_at"])->with([
+            'tutor' => function ($query) {
+                $query->select("id", "user_id", "course_id", "active", "updated_at", "created_at")->with([
+                    'user' => function ($query) {
+                        $query->select("id", "first_name", "last_name", "email", "image", "campusid", "fosid")->with([
+                            'campus' => function ($query) {
+                                $query->select("id", "name");
+                            },
+                            'field' => function ($query) {
+                                $query->select("id", "name");
+                            }
+                        ]);
+                    },
+                    'course' => function ($query) {
+                        $query->select("id", "name");
+                    }
+                ]);
+            },
+            'tutee' => function ($query) {
+                $query->select("id", "user_id", "course_id", "need_exercises", "need_explanation", "need_studying", "active", "updated_at", "created_at")->with([
+                    'user' => function ($query) {
+                        $query->select("id", "first_name", "last_name", "email", "image", "campusid", "fosid")->with([
+                            'campus' => function ($query) {
+                                $query->select("id", "name");
+                            },
+                            'field' => function ($query) {
+                                $query->select("id", "name");
+                            }
+                        ]);
+                    },
+                    'course' => function ($query) {
+                        $query->select("id", "name");
+                    }
+                ]);
+            }
+        ])->first();
+
+        return $fullsession;
+    }
 }
