@@ -10,7 +10,7 @@ $(document).ready(function () {
                     newhtml = '<span id="filter-details" class="item padding col-xs-12">Er werden ' + json.length + ' resultaten gevonden.</span><br><br>';
                     $.each(json, function (key, value) {
                         newhtml += '<article class="overview file item clearfix">' +
-                            '<a href="{{ $file->detailUrl() }}"><header>' + value.course.name + '<i class="fa fa-download"></i></header></a>' +
+                            '<a href="/p/sharing/' + value.id + '"><header>' + value.course.name + '<i class="fa fa-download"></i></header></a>' +
                             '<div class="padding"><div class="row flex">' +
                             '<div class="col-lg-1 col-md-2 col-sm-2 col-xs-2"><img src="/img/icons/001-file.png" class="account-img"></div>' +
                             '<div class="col-lg-5 col-md-6 col-sm-6 col-xs-10">' +
