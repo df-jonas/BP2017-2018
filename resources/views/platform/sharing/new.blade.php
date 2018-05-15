@@ -260,12 +260,8 @@
 
                                 </table>
 
-
-
-
-
                                 <input id="submitall" type="submit" name="submit" class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Versturen">
-                                <input type="button" class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1 col-xs-12" value="Vorige">2
+                                <input type="button" class="download-button previous col-lg-2 col-lg-pull-1 col-sm-4 col-sm-pull-1 col-xs-12" value="Vorige">
 
                             </div>
                         </article>
