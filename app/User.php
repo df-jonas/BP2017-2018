@@ -55,6 +55,9 @@ class User extends Authenticatable
     public function notifs_unread(){
         return $this->notifs()->where('read_at', "=", null);
     }
+    public function notifs_read(){
+        return $this->notifs()->where('read_at', "!=", null);
+    }
 
     public function countIsTutor()
     {

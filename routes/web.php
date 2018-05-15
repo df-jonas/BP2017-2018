@@ -96,8 +96,7 @@
 
 
             /** Notifications */
-            Route::get('/notifications/read/{id}', 'NotificationController@read')->name('notification-read');
-            Route::get('/notifications/delete/{id}','NotificationController@delete')->name('notification-delete');
+            Route::get('/profile/notifications/read/{id}', 'NotificationController@readAjax')->name('notification-read');
         });
     });
 }

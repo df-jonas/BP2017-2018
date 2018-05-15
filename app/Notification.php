@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DateTime;
 
 class Notification extends Model
 {
@@ -20,10 +21,10 @@ class Notification extends Model
 
     public function markAsRead()
     {
-        $this->read_at = new \DateTime();
+        $this->read_at = new DateTime();
     }
     public function isRead()
     {
-        return $this->read_at = null;
+        return $this->read_at;
     }
 }

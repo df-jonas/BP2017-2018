@@ -15,23 +15,29 @@
                         <div class="user-notifications">
                             <i class="fa fa-bell dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i>
 
-                            @if(!(Auth::user()->notifs->count() <= 0))
+                            @if(!(Auth::user()->notifs_unread->count() <= 0))
                                 <span>{{ Auth::user()->notifs_unread->count() }}</span>
                             @endif
 
 
                         <!-- notifications dropdown -->
                             <ul id="notifications-dropdown" class="dropdown-menu col-xs-12" aria-labelledby="notifications-dropdown">
-                                <!-- TODO jonas: haal notificaties van ingelogde user op -->
-                                {{--
-                                @foreach(Auth::user()->unreadNotifications as $notification)
+                                @if(!(Auth::user()->notifs_unread->count() <= 0))
+                                @foreach(Auth::user()->notifs_unread as $notification)
                                     <li>
-                                        <a href="{{ $notification->data['url'] }}"><i class="fa fa-comment"></i>
-                                            <strong>{{ $notification->data['commenter'] }}</strong> {{ $notification->data['melding'] }}
+                                        <a href="{{ $notification->url }}"><i class="fa fa-comment"></i>
+                                            <strong>{{ $notification->from->first_name}}</strong> {{ $notification->text }}
                                         </a>
                                     </li>
                                 @endforeach
-                                --}}
+                                @else
+                                    <li>
+                                        <a href="">
+                                          Er zijn geen nieuwe meldingen.
+                                        </a>
+                                    </li>
+                                @endif
+
 
                                 <a class="user-info" href="{{ route('profile-notifications') }}">
                                     <div class="row no-margin">

@@ -140,7 +140,7 @@ class CommunityController extends Controller
         $to = $post->user->id;
         $type = "comment";
         $url = "/p/community/" . $comment->post->group->url . '/' . $comment->post->id;
-        $text = "heeft een reactie geplaatst.";
+        $text = "heeft een nieuwe reactie geplaatst.";
         NotificationHelper::create($from, $to, $type, $url, $text);
 
         return response()->json(Comment::query()->where('id', '=', $comment->id)->with(['user' => function ($query) {

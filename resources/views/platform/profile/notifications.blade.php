@@ -17,7 +17,7 @@
                     </div>
                 </section>
 
-                <!-- Community stats -->
+                <!-- nots stats -->
                 <section class="item stats">
                     <header> <a class="header-title"><i class="fa fa-line-chart"></i> Statistieken</a></header>
                     <div class="padding">
@@ -27,7 +27,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p class="amount">33</p>
+                                <p class="amount">{{Auth::user()->notifs->count()}}</p>
                             </div>
                         </div>
                         <div class="row flex">
@@ -36,7 +36,7 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p class="amount">33</p>
+                                <p class="amount">{{Auth::user()->notifs_unread->count()}}</p>
                             </div>
                         </div>
                         <div class="row flex">
@@ -45,13 +45,13 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <p class="amount">0</p>
+                                <p class="amount">{{Auth::user()->notifs_read->count()}}</p>
                             </div>
                         </div>
 
                     </div>
                 </section>
-                <!-- end Community stats -->
+                <!-- end nots stats -->
                 <!-- Search form -->
             </section>
             <!-- content -->
@@ -60,10 +60,29 @@
                     <header>  <a class="header-title"><i class="fa fa-bell"></i> Mijn notificaties</a></header>
                     <div class="padding">
                     <ul class="all-notifications">
-                        <!-- TODO jonas: haal ALLE notificaties van user op -->
-                        @foreach($nots as $notification)
-                            {{ $notification }}
+                        @if(!(Auth::user()->notifs_unread->count() <= 0))
+                        @foreach(Auth::user()->notifs as $notification)
+                            @if($notification->isRead() == NULL)
+                                <li class="unread">
+                                    <a href="{{ $notification->url }}" class="notification-title"><i class="fa fa-comment"></i>
+                                        <strong>{{ $notification->from->first_name }}</strong>  {{ $notification->text }}
+                                    </a>
+                                    <a class="notification-read" href="{{ route('notification-read', ['id' => $notification->id]) }}">Markeer als gelezen</a>
+                                    <h4 class="notification-date">{{ $notification->created_at->diffForHumans() }}</h4>
+                                </li>
+                            @else
+                                <li>
+                                    <a href="{{ $notification->url }}" class="notification-title"><i class="fa fa-comment"></i>
+                                        <strong>{{ $notification->from->first_name }}</strong>  {{ $notification->text }}
+                                    </a>
+                                    <h4 class="notification-date">{{ $notification->created_at->diffForHumans() }}</h4>
+                                </li>
+                            @endif
                         @endforeach
+                            @else
+                            U heeft (nog) geen meldingen ontvangen.
+                        @endif
+
                     </ul>
                     </div>
                 </div>

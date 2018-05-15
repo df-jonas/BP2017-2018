@@ -100,14 +100,6 @@ class ProfileController extends Controller
     }
     public function notifications()
     {
-        $arr = [
-            'nots' => Notification::query()
-                ->where("user_id", "=", 73)
-                ->orderBy("created_at", "desc")
-                ->get(),
-        ];
-
-        //dd($arr);
-        return view("platform.profile.notifications", $arr);
+        return view("platform.profile.notifications");
     }
 }
