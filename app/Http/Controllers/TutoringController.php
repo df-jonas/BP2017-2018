@@ -14,17 +14,17 @@ class TutoringController extends Controller
 {
     public function index()
     {
-        $owned_tutee = Tutee::query()
+        $tutee_id = Tutee::query()
             ->where('user_id', '=', Auth::id())
             ->get(['id']);
 
-        $owned_tutor = Tutor::query()
+        $tutor_id = Tutor::query()
             ->where('user_id', '=', Auth::id())
             ->get(['id']);
 
         $sessions = TutoringSession::query()
-            ->whereIn('tutor_id', $owned_tutor)
-            ->orWhereIn('tutee_id', $owned_tutee)
+            ->whereIn('tutor_id', $tutor_id)
+            ->orWhereIn('tutee_id', $tutee_id)
             ->get();
 
         $arr = [
@@ -51,7 +51,7 @@ class TutoringController extends Controller
         $course = Course::query()->where('id', '=', $request->course)->first();
 
         if ($course == null)
-            abort(404);
+            abort(500, "De geselecteerde cursus bestaat niet.");
 
         $existing = Tutor::query()
             ->where('user_id', '=', Auth::id())
@@ -88,12 +88,12 @@ class TutoringController extends Controller
             'description' => 'required'
         ]);
         if (!$request->has('exercises') && !$request->has('explanation') && !$request->has('studying'))
-            abort(500);
+            abort(500, "Er moet minstens een werkpunt aangeduid worden.");
 
         $course = Course::query()->where('id', '=', $request->course)->first();
 
         if ($course == null)
-            abort(404);
+            abort(500, "De geselecteerde cursus bestaat niet.");
 
         $tutee = Tutee::query()
             ->where('user_id', '=', Auth::id())
@@ -120,7 +120,7 @@ class TutoringController extends Controller
     public function accept($tutee_id)
     {
         if (Auth::user()->countIsTutor() >= 3)
-            abort(404);
+            abort(500, "Je mag maximum 3 tutorships tegelijkertijd uitvoeren.");
 
         $tutee = Tutee::query()
             ->where("id", "=", $tutee_id)
@@ -128,7 +128,7 @@ class TutoringController extends Controller
             ->first();
 
         if ($tutee == null)
-            abort(404);
+            abort(500, "Dit verzoek bestaat niet of werd reeds geaccepteerd.");
 
         $tutor = Tutor::query()
             ->where("user_id", "=", Auth::id())
@@ -137,7 +137,7 @@ class TutoringController extends Controller
             ->first();
 
         if ($tutor == null)
-            abort(404);
+            abort(500, "Jij geeft geen tutoring voor het geaccepteerde vak.");
 
         $tutee->active = false;
         $tutee->save();
@@ -180,5 +180,57 @@ class TutoringController extends Controller
     public function planning()
     {
         return view("platform.tutoring.planning");
+    }
+
+    public function loadUserPanelAjax($sessionid)
+    {
+        $query = TutoringSession::query()->where("id", "=", $sessionid);
+
+        if ($query->count() <= 0)
+            abort(404, "Sessie niet gevonden.");
+
+        $session = $query->first();
+
+        if ($session->tutor->user->id != Auth::id() && $session->tutee->user->id != Auth::id())
+            abort(404, "Unauthorized to see this panel");
+
+        $fullsession = TutoringSession::query()->where("id", "=", $sessionid)->select(["id", "tutor_id", "tutee_id", "active", "updated_at", "created_at"])->with([
+            'tutor' => function ($query) {
+                $query->select("id", "user_id", "course_id", "active", "updated_at", "created_at")->with([
+                    'user' => function ($query) {
+                        $query->select("id", "first_name", "last_name", "email", "image", "campusid", "fosid")->with([
+                            'campus' => function ($query) {
+                                $query->select("id", "name");
+                            },
+                            'field' => function ($query) {
+                                $query->select("id", "name");
+                            }
+                        ]);
+                    },
+                    'course' => function ($query) {
+                        $query->select("id", "name");
+                    }
+                ]);
+            },
+            'tutee' => function ($query) {
+                $query->select("id", "user_id", "course_id", "need_exercises", "need_explanation", "need_studying", "active", "updated_at", "created_at")->with([
+                    'user' => function ($query) {
+                        $query->select("id", "first_name", "last_name", "email", "image", "campusid", "fosid")->with([
+                            'campus' => function ($query) {
+                                $query->select("id", "name");
+                            },
+                            'field' => function ($query) {
+                                $query->select("id", "name");
+                            }
+                        ]);
+                    },
+                    'course' => function ($query) {
+                        $query->select("id", "name");
+                    }
+                ]);
+            }
+        ])->first();
+
+        return $fullsession;
     }
 }

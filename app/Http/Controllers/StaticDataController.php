@@ -20,7 +20,7 @@ class StaticDataController extends Controller
         $file = File::query()->where('public_id', '=', $fileid)->first();
 
         if ($file == null) {
-            abort(404);
+            abort(404, "Deze file kon niet gevonden worden op onze systemen.");
         }
 
         $prefix = Storage::disk('local')->getDriver()->getAdapter()->getPathPrefix();

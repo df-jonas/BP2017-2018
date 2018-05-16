@@ -3,6 +3,7 @@
 @section('pagetitle', 'Sharing')
 @include('partials.platform.header')
 @include('partials.platform.subheader')
+
 <section class="container">
     <!-- begin table -->
     <section class="table">
@@ -11,17 +12,15 @@
             <!-- Upload button -->
             <section class="item button">
                 <a href="{{route('sharing-new')}}">
-                    <button>
-                       Bestand toevoegen
-                    </button>
+                    <button>Bestand toevoegen</button>
                 </a>
             </section>
             <!-- end Upload button -->
 
             <!-- Search form -->
             <section class="item search">
-                <header>
-                    <a class="header-title"> <i class="fa fa-search"></i> Zoeken</a></header>
+                <!-- TODO Arno geen link? -->
+                <header><a class="header-title"><i class="fa fa-search"></i> Zoeken</a></header>
 
                 <div class="inner-addon left-addon">
                     <input type="text" id="search" name="search" class="form-control filterlistener" placeholder="zoekterm" tabindex="1"/>
@@ -31,7 +30,8 @@
 
             <!-- filter menu -->
             <section class="item filter">
-                <header> <a class="header-title"><i class="fa fa-filter"></i> Bestanden filteren</a></header>
+                <!-- TODO Arno geen link? -->
+                <header><a class="header-title"><i class="fa fa-filter"></i> Bestanden filteren</a></header>
                 <section class="padding">
                     <div class="form-group col-xs-12 no-padding clearfix">
                         <div class="selectdiv">
@@ -71,20 +71,12 @@
                     <label>Type bestand</label>
                     <br>
                     <div class="form-group clearfix">
-                        <label class="checkbox-container col-xs-12">Type 1
-                            <input type="checkbox" name="pubyear[]" value="type 1" class="filterlistener" tabindex="5" checked>
-                            <span class="checkmark"></span>
-                        </label>
-
-                        <label class="checkbox-container col-xs-12">Type 2
-                            <input type="checkbox" name="pubyear[]" value="type 1" class="filterlistener" tabindex="6" checked>
-                            <span class="checkmark"></span>
-                        </label>
-
-                        <label class="checkbox-container col-xs-12">Type 3
-                            <input type="checkbox" name="pubyear[]" value="type 1" class="filterlistener" tabindex="7" checked>
-                            <span class="checkmark"></span>
-                        </label>
+                        @foreach($types as $type)
+                            <label class="checkbox-container col-xs-12">{{ $type->name }}
+                                <input type="checkbox" name="type[]" value="{{ $type->id }}" class="filterlistener" checked>
+                                <span class="checkmark"></span>
+                            </label>
+                        @endforeach
                     </div>
                     <input type="hidden" class="filterlistener" name="_token" id="token" value="{{ csrf_token() }}">
                 </section>
@@ -93,7 +85,7 @@
 
             <!-- User items -->
             <section class="item user-owned">
-                <header> <a class="header-title"><i class="fa fa-upload"></i> Mijn uploads</a></header>
+                <header><a class="header-title"><i class="fa fa-upload"></i> Mijn uploads</a></header>
                 <div class="padding">
                     @foreach($userfiles as $file)
                         @php
@@ -105,7 +97,7 @@
                                      class="account-img round-img">
                             </div>
                             <div class="col-lg-8 col-md-8 col-xs-8">
-                                <h2 class="item-title col-xs-12 no-padding"><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h2>
+                                <h2 class="item-title col-xs-12 no-padding"><a href="{{ $file->detailUrl() }}"> {{ str_limit($file->title, 15) }}</a></h2>
                                 <div class="rating col-xs-12 no-padding">
                                     @for ($i = 1; $i <= 5; $i++)
                                         @if($i <= $rating)
@@ -147,16 +139,8 @@
                                     <img src="{{asset('img/icons/001-file.png')}}" class="account-img">
                                 </section>
                                 <section class="col-lg-5 col-md-6 col-sm-6 col-xs-10">
-                                    <h2 class="item-title no-margin"><a href="{{ $file->detailUrl() }}"> {{$file->title}}</a></h2>
+                                    <h2 class="item-title no-margin"><a href="{{ $file->detailUrl() }}"> {{ $file->title }}</a></h2>
                                     <h3 class="item-campus">Erasmushogeschool Brussel</h3>
-                                    {{--
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <h4 class="item-user">
-                                                door {{$file->user->first_name}} {{$file->user->last_name}}</h4>
-                                        </div>
-                                    </div>
-                                    --}}
                                 </section>
                                 <section class="col-lg-6 col-lg-push-0 col-md-4 col-sm-4 col-sm-push-0 col-xs-8 col-xs-push-2">
                                     <div class="rating">
@@ -182,7 +166,8 @@
 
 <!-- footer -->
 @include('partials.footer')
-<!-- end footer -->@endsection
+<!-- end footer -->
+@endsection
 
 @section("scripts")
     <script src="{{ asset("js/sharing-filter.js") }}"></script>

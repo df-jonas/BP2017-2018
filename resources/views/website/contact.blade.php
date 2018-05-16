@@ -18,7 +18,7 @@
     @include('partials.platform.message')
     <!-- end form message -->
 
-        <form action="{{ route('contact-form') }}" method="POST">
+        <form action="{{ route('website-contact') }}" method="POST">
             {{ csrf_field() }}
             <div class="form-group col-xs-6 clearfix">
                 <div class="textdiv clearfix">

@@ -26,7 +26,8 @@ class SharingController extends Controller
             'courses' => Course::query()->orderBy('name')->get(),
             'pubyears' => PublicationYear::query()->orderBy('name')->get(),
             'userfiles' => File::query()->where("user_id", "=", Auth::user()->id)->orderBy('id', 'desc')->take(5)->get(),
-            'files' => File::query()->with('degree')->with('field')->orderBy('id', 'desc')->get()
+            'files' => File::query()->with('degree')->with('field')->orderBy('id', 'desc')->get(),
+            'types' => Doctype::query()->orderBy("name")->get()
         ];
 
         return view("platform.sharing.index", $arr);
@@ -107,6 +108,10 @@ class SharingController extends Controller
 
         if (!empty($request->pubyear) && sizeof($request->pubyear) > 0) {
             $q->whereIn("pubyearid", $request->pubyear);
+        }
+
+        if (!empty($request->type) && sizeof($request->type) > 0) {
+            $q->whereIn("documenttypeid", $request->type);
         }
 
         $returnarr = $q->select(["id", "title", "public_id", "user_id", "courseid", "documenttypeid", "degreeid", "pubyearid", "fosid"])->with([

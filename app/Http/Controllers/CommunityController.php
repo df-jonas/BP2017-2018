@@ -86,7 +86,7 @@ class CommunityController extends Controller
             ->firstOrFail();
 
         if ($post->group->url != $group_id)
-            abort(404);
+            abort(404, "Deze post werd niet gevonden.");
 
         $arr = [
             'myposts' => $myposts,
@@ -103,7 +103,7 @@ class CommunityController extends Controller
             ->firstOrFail();
 
         if ($group->url != $request->url)
-            abort(404);
+            abort(500, "Er ging iets mis bij het opslaan van deze post.");
 
         $post = new Post();
         $post->title = $request->title;
@@ -126,7 +126,7 @@ class CommunityController extends Controller
             ->firstOrFail();
 
         if ($post->group->id != $group->id)
-            abort(404);
+            abort(500, "Er ging iets mis bij het opslaan van deze comment.");
 
         $comment = new Comment();
         $comment->content = $request->comment;
@@ -135,13 +135,16 @@ class CommunityController extends Controller
 
         $comment->save();
 
-        //notification
-        $from = Auth::id();
-        $to = $post->user->id;
+        $from_id = Auth::id();
+        $to_id = $post->user->id;
         $type = "comment";
-        $url = "/p/community/" . $comment->post->group->url . '/' . $comment->post->id;
+        $url = route('community-post-detail', [
+            'group_id' => $comment->post->group->url,
+            'post_id' => $comment->post->id
+        ]);
         $text = "heeft een nieuwe reactie geplaatst.";
-        NotificationHelper::create($from, $to, $type, $url, $text);
+
+        NotificationHelper::create($from_id, $to_id, $type, $url, $text);
 
         return response()->json(Comment::query()->where('id', '=', $comment->id)->with(['user' => function ($query) {
             $query->select('id', 'first_name', 'last_name', 'image');
