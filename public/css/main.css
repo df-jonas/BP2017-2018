@@ -98,8 +98,21 @@ body {
   margin: 0 auto;
 }
 
+::-moz-selection {
+  background: #4D6A50;
+}
+
+::selection {
+  background: #4D6A50;
+}
+
+::-moz-selection {
+  background: #4D6A50;
+}
+
 .container {
   width: 85% !important;
+  max-width: 2200px;
 }
 
 /*Links*/
@@ -508,6 +521,16 @@ fieldset input.submit {
   background-repeat: no-repeat;
 }
 
+#page-banner .overlay,
+#innerpage-banner .overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 #page-banner #welcome,
 #innerpage-banner #welcome {
   color: #ffffff;
@@ -546,6 +569,7 @@ fieldset input.submit {
 #innerpage-banner #welcome .buttons {
   display: block;
   margin: 3.5% 0 auto;
+  padding: 0;
 }
 
 #page-banner #welcome .buttons .register,
@@ -580,18 +604,44 @@ fieldset input.submit {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
 }
 
-#innerpage-banner #welcome h3,
-#innerpage-banner #welcome p {
-  text-align: center;
+#innerpage-banner .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-#innerpage-banner #welcome p {
+#innerpage-banner #welcome h1,
+#innerpage-banner #welcome h2 {
+  text-align: center !important;
+}
+
+#innerpage-banner #welcome h1 {
+  font-size: 30px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+#innerpage-banner #welcome p,
+#innerpage-banner #welcome h2 {
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.7);
-  color: #4D6A50;
+  color: #ffffff;
+  font-size: 20px;
   font-weight: 600;
+  line-height: 1.6em;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  letter-spacing: -.03em;
 }
 
 /*innerpage styling*/
@@ -604,6 +654,7 @@ fieldset input.submit {
 
 .innerpage #main-content {
   background: #ffffff;
+  margin-bottom: 5em;
 }
 
 .innerpage #main-content h1,
@@ -647,12 +698,17 @@ fieldset input.submit {
 }
 
 .about-person h4 {
-  color: #000000;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333a40;
 }
 
 .about-person p {
-  font-weight: 400;
-  font-size: 16px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #898989;
+  line-height: 1.85em;
+  font-weight: 500;
 }
 
 .about-person .left {
@@ -686,6 +742,17 @@ fieldset input.submit {
   position: relative;
 }
 
+#features .feature .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+}
+
 #features .feature img {
   width: 100%;
   height: 100%;
@@ -697,17 +764,22 @@ fieldset input.submit {
 #features .feature p {
   position: absolute;
   left: 25px;
-  top: 37.5%;
+  top: 32.5%;
   color: #ffffff;
 }
 
 #features .feature p {
-  top: 35%;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  text-align: center;
   color: lightgray;
-  color: #4D6A50;
-  font-weight: bold;
+  background: #4D6A50;
+  color: #ffffff;
   text-transform: uppercase;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
 }
 
 #features .feature a.meer {
@@ -740,6 +812,10 @@ fieldset input.submit {
           transform: scale(1.02);
   -webkit-transition: 0.5s ease all;
   transition: 0.5s ease all;
+}
+
+#features .feature:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 #features .feature:hover a {
@@ -798,12 +874,18 @@ fieldset input.submit {
   margin: 5% 0 5% 0;
   list-style: none;
   padding: 0;
+  display: table;
+}
+
+#how .steps li {
+  display: table-cell;
 }
 
 #how .steps .step {
-  height: 200px;
+  min-height: 200px;
   margin: 2% 0 2% 0;
   background: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
 }
 
 #how .steps .step h4 {
@@ -823,6 +905,11 @@ fieldset input.submit {
 #how .steps .step i {
   color: #4D6A50;
   font-size: 2em;
+}
+
+#how .steps .step:hover,
+#how .steps .step.active {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /*Avout intro*/
@@ -940,7 +1027,7 @@ fieldset input.submit {
   padding: 2.5%;
 }
 
-.call-to-action .text h2 {
+.call-to-action .text h3 {
   color: #ffffff;
   font-size: 24px;
   letter-spacing: -.03em;
@@ -1011,7 +1098,11 @@ fieldset input.submit {
 }
 
 #newsletter form #mc-embedded-subscribe {
-  background: #4D6A50 !important;
+  background: #4D6A50;
+}
+
+#newsletter form #mc-embedded-subscribe:hover {
+  background: #333a40;
 }
 
 /*Cookie box*/
@@ -1045,13 +1136,14 @@ fieldset input.submit {
 /*Beta notice box */
 
 .beta-notice {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   background: #8A7E72;
-  padding: 15px;
+  padding: 5px;
   color: #ffffff;
-  z-index: 9999;
+  text-align: center;
 }
 
 /*Quotes*/
@@ -1238,8 +1330,6 @@ footer a:focus {
 /*FONTS*/
 
 /*Mixins*/
-
-/*Variables*/
 
 /*Custom checkboxes*/
 
@@ -1629,6 +1719,73 @@ form label {
   background: #4D6A50;
 }
 
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  margin-bottom: 1em;
+}
+
+.accordion:after {
+  content: '\2795';
+  font-size: 13px;
+  color: #4D6A50;
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion:hover,
+.accordion.active {
+  background-color: #4D6A50;
+  color: #ffffff;
+}
+
+.accordion.active:after {
+  content: "\2796";
+}
+
+.panel {
+  padding: 15px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+/*Notices and go-back*/
+
+.go-back a,
+.message a {
+  color: #8A7E72;
+}
+
+.go-back i,
+.message i {
+  cursor: pointer;
+}
+
+.go-back i span,
+.message i span {
+  font-family: Raleway;
+}
+
+.go-back .padding,
+.message .padding {
+  padding: 7.5px;
+}
+
+.message {
+  color: #ffffff !important;
+  background: #4D6A50 !important;
+  margin-bottom: 2em;
+}
+
 .slicknav_menu {
   display: none;
 }
@@ -1640,6 +1797,14 @@ form label {
 @media only screen and (max-width: 1500px) {
   #page-header .links {
     padding-top: 0.5%;
+  }
+
+  .steps {
+    margin: 2% 0 2% 0;
+  }
+
+  .steps .step {
+    min-height: 245px !important;
   }
 }
 
@@ -1734,6 +1899,10 @@ form label {
 
   .call-to-action .text p {
     width: 100%;
+  }
+
+  .cookie-consent {
+    left: 0;
   }
 
   footer h4,

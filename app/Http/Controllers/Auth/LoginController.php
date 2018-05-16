@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -39,9 +40,9 @@ class LoginController extends Controller
         }
 
         if ($this->attemptLogin($request)) {
+
             if ($request->wantsJson()) {
                 $user = $this->guard()->user();
-
                 return response()->json($user->toArray());
             }
 
@@ -49,7 +50,6 @@ class LoginController extends Controller
         }
 
         $this->incrementLoginAttempts($request);
-
         return $this->sendFailedLoginResponse($request);
     }
 

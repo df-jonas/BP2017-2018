@@ -4,23 +4,26 @@
 @section('pagetitle', 'Profiel')
 @include('partials.platform.header')
     @include('partials.platform.subheader')
-    <div class="container">
+<!-- begin container -->
+    <section class="container profile">
+        <!-- begin profile message -->
     @include('partials.platform.message')
+        <!-- end profile message -->
+
          <!-- Avatar upload modal -->
         <div class="modal fade" id="avatar-modal" role="dialog">
             <form action="{{ route('profile-update') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                <div class="modal-dialog ">
+                <section class="modal-dialog ">
                     <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
+                    <section class="modal-content">
+                        <section class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title">Kies een avatar</h4>
-                        </div>
-                        <div class="modal-body">
+                        </section>
+                        <section class="modal-body">
                             <div class="form-group clearfix col-xs-12">
                                 <br>
-
                                 <div class="form-group clearfix col-xs-12">
                                     <div class="profile-img-container col-xs-12">
                                         <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
@@ -34,53 +37,54 @@
                                 </div>
 
                             </div>
-                        </div>
-                        <div class="modal-footer">
+                        </section>
+                        <section class="modal-footer">
                             <input type="submit" class="download-button col-lg-2" value="Opslaan">
-                        </div>
-                    </div>
-                </div>
+                        </section>
+                    </section>
+                </section>
             </form>
         </div>
         <!-- end Avatar upload modal -->
 
+        <!-- begin profile info -->
         <div class="row">
             <!-- picture -->
-            <article class="col-xs-12">
+            <section class="col-xs-12">
                 <div class="item padding clearfix">
-                    <div class="headline">
+                    <section class="headline">
                         <div class="row flex">
-                            <div class="left col-lg-1 col-sm-2 col-xs-12">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img"
-                                     data-toggle="modal" data-target="#avatar-modal">
+                            <section class="left col-lg-1 col-sm-2 col-xs-12">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img" data-toggle="modal" data-target="#avatar-modal" alt="User profile image">
                                 <br>
-                            </div>
-                            <div class="right col-lg-11 col-sm-10 col-xs-12">
-                                <h4>{{ $user->first_name. " " .$user->last_name }}</h4>
+                            </section>
+                            <section class="right col-lg-11 col-sm-10 col-xs-12">
+                                <h4 class="user-title">{{ $user->first_name. " " .$user->last_name }}</h4>
                                 <h4 style="margin-top: 0">
                                     <small>{{ $email }}</small>
                                 </h4>
-                            </div>
+                            </section>
                         </div>
                         <br>
-                    </div>
+                    </section>
                 </div>
-            </article>
+            </section>
             <!-- end picture -->
         </div>
+        <!-- end profile info -->
 
-
+        <!-- begin settings -->
         <div class="row">
             <!-- instellingen -->
-            <article class="col-lg-6 col-xs-12">
+            <section class="col-lg-6 col-xs-12">
                 <div class="item padding clearfix">
-                    <h4>Profiel instellingen</h4>
+                    <h2 class="settings-title">Profiel instellingen</h2>
                     <form action="{{ route('profile-update') }}" method="POST">
                         {{ csrf_field() }}
-                        <div class="form-group  col-xs-12 no-padding clearfix">
+                        <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="selectdiv">
                                 <label for="fos">Welke studierichting volgt u?</label>
-                                <select class="select col-xs-12" id="fos" name="fos">
+                                <select class="select col-xs-12" id="fos" name="fos" tabindex="1">
                                     @foreach($foses as $fos)
                                         <option value="{{ $fos->id }}" {{ ($user->fosid == $fos->id ? "selected" : " ") }}>{{ $fos->name }}</option>
                                     @endforeach
@@ -93,7 +97,7 @@
                         <div class="form-group  col-xs-12 no-padding clearfix">
                             <div class="selectdiv">
                                 <label for="campus">Aan welke campus studeert u?</label>
-                                <select class="select col-xs-12" id="campus" name="campus">
+                                <select class="select col-xs-12" id="campus" name="campus" tabindex="2">
                                     @foreach($campuses as $campus)
                                         <option value="{{ $campus->id }}" {{ ($user->campus->id == $campus->id ? "selected" : " ") }}>{{ $campus->name }}</option>
                                     @endforeach
@@ -104,9 +108,9 @@
                             </div>
                         </div>
                         <div class="form-group col-xs-12 no-padding clearfix">
-                            <div class="textdiv">
+                            <div class="textdiv clearfix">
                                 <label for="woonplaats">Woonplaats</label>
-                                <input id="woonplaats" name="woonplaats" type="text" class="form-control col-xs-12">
+                                <input id="woonplaats" name="woonplaats" type="text" class="form-control col-xs-12" tabindex="3">
                             </div>
                         </div>
                         <br>
@@ -115,13 +119,13 @@
                         </div>
                     </form>
                 </div>
-            </article>
+            </section>
             <!-- end instellingen -->
 
             <!-- voorkeuren -->
-            <article class="col-lg-6 col-xs-12">
+            <section class="col-lg-6 col-xs-12">
                 <div class="item padding clearfix">
-                    <h4>Thema</h4>
+                    <h2 class="settings-title">Thema</h2>
                     <form>
                         <div class="form-group col-sm-3 col-xs-12 no-padding">
                             <div class="color-choose col-xs-12" style="background: #505457"></div>
@@ -138,7 +142,7 @@
                         </div>
                     </form>
 
-                    <h4>Meldingen</h4>
+                    <h4 class="settings-title">Meldingen</h4>
                     <form>
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="notification-choose col-lg-3 left col-md-3 col-sm-5 col-xs-12">
@@ -168,15 +172,17 @@
                     </form>
                 </div>
 
-            </article>
+            </section>
             <!-- end voorkeuren -->
         </div>
+        <!-- end settings -->
 
+        <!-- begin settings -->
         <div class="row">
             <!-- vakken -->
-            <article class="col-lg-6 left col-xs-12">
+            <section class="col-lg-6 left col-xs-12">
                 <div class="item padding clearfix">
-                    <h4>Mijn vakken</h4>
+                    <h2 class="settings-title">Mijn vakken</h2>
                     <form>
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <ul class="vakken">
@@ -206,28 +212,38 @@
                         </div>
                     </form>
                 </div>
-            </article>
+            </section>
             <!-- end vakken -->
 
             <!-- account -->
-            <article class="col-lg-6 right col-xs-12">
+            <section class="col-lg-6 right col-xs-12">
                 <div class="item padding clearfix">
-                    <h4>Account instellingen</h4>
+                    <h2 class="settings-title">Account instellingen</h2>
                     <form action="{{ route('profile-update') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group col-xs-12 no-padding clearfix">
-                            <div class="textdiv">
+                            <div class="textdiv clearfix">
                                 <label for="gebruikersnaam">Gebruikersnaam</label>
-                                <input id="gebruikersnaam" name="username" type="text" class="form-control col-xs-12"
-                                       value="{{ $username }}">
+                                <input id="gebruikersnaam" name="username" type="text" class="form-control col-xs-12" value="{{ $username }}" tabindex="4">
                             </div>
                         </div>
 
                         <div class="form-group col-xs-12 no-padding clearfix">
-                            <div class="textdiv">
+                            <div class="textdiv clearfix">
+                                <label for="voornaam">Voornaam</label>
+                                <input id="voornaam" name="firstname" type="text" class="form-control col-xs-12" value="{{ $user->first_name }}" tabindex="5">
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-12 no-padding clearfix">
+                            <div class="textdiv clearfix">
+                                <label for="achternaam">Achternaam</label>
+                                <input id="achternaam" name="lastname" type="text" class="form-control col-xs-12" value="{{ $user->last_name }}" tabindex="6">
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-12 no-padding clearfix">
+                            <div class="textdiv clearfix">
                                 <label for="e-mail">E-mailadres</label>
-                                <input id="e-mail" name="email" type="text" class="form-control col-xs-12"
-                                       value="{{ $email }}">
+                                <input id="e-mail" name="email" type="text" class="form-control col-xs-12" value="{{ $email }}" tabindex="7">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 no-padding clearfix">
@@ -235,12 +251,15 @@
                         </div>
                     </form>
                 </div>
-            </article>
+            </section>
             <!-- end account -->
         </div>
-    </div>
-
-    @include('partials.footer')
+        <!-- end settings -->
+    </section>
+<!-- end container -->
+<!-- begin footer -->
+@include('partials.footer')
+<!-- end footer -->
 @endsection
 
 @section("scripts")

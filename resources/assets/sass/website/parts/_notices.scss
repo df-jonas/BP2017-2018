@@ -1,0 +1,22 @@
+/*Notices and go-back*/
+.go-back, .message {
+  a {
+    color: $unihelp-brown;
+  }
+  i {
+    cursor: pointer;
+    span {
+      font-family: Raleway;
+
+    }
+  }
+  .padding {
+    padding: 7.5px;
+  }
+}
+
+.message {
+  color: $unihelp-white !important;
+  background: $theme-color !important;
+  margin-bottom: 2em;
+}

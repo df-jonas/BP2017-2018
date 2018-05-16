@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Comment;
 use App\Group;
 use App\GroupCategory;
+use App\Helpers\NotificationHelper;
+use App\Notifications\PostComment;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,6 +21,8 @@ class CommunityController extends Controller
             ->orderBy("created_at", "desc")
             ->take(5)
             ->get();
+
+
 
         $categories = GroupCategory::all();
 
@@ -128,7 +132,16 @@ class CommunityController extends Controller
         $comment->content = $request->comment;
         $comment->post_id = $post->id;
         $comment->user_id = Auth::user()->id;
+
         $comment->save();
+
+        //notification
+        $from = Auth::id();
+        $to = $post->user->id;
+        $type = "comment";
+        $url = "/p/community/" . $comment->post->group->url . '/' . $comment->post->id;
+        $text = "heeft een nieuwe reactie geplaatst.";
+        NotificationHelper::create($from, $to, $type, $url, $text);
 
         return response()->json(Comment::query()->where('id', '=', $comment->id)->with(['user' => function ($query) {
             $query->select('id', 'first_name', 'last_name', 'image');

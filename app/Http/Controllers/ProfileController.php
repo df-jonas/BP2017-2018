@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
+use App\File;
+use App\PublicationYear;
 use Illuminate\Http\Request;
 use App\Campus;
 use App\Fos;
 use App\User;
+use App\Download;
 use Auth;
 use Redirect;
 use Session;
+use App\Notification;
 use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
     public function index()
     {
+        // TODO Alle vakken van gebruiker ophalen
         $params = [
             'campuses' => Campus::query()->orderBy("name")->get(),
             'foses' => Fos::query()->orderBy("name")->get(),
@@ -32,6 +38,9 @@ class ProfileController extends Controller
         $username = $request->username;
         $email = $request->email;
         $avatar = $request->file('avatar');
+        $firstname = $request->firstname;
+        $lastname = $request->lastname;
+
 
         if(!empty($campus)) {
             $user->campusid = $campus;
@@ -44,6 +53,15 @@ class ProfileController extends Controller
         if(!empty($username)) {
             $user->username = $username;
         }
+
+        if(!empty($firstname)) {
+            $user->first_name = $firstname;
+        }
+
+        if(!empty($lastname)) {
+            $user->last_name = $lastname;
+        }
+
 
         if(!empty($email)) {
             $user->email = $email;
@@ -70,7 +88,10 @@ class ProfileController extends Controller
 
     public function downloads()
     {
-        return view("platform.profile.downloads");
+        $arr = [
+            'userdownloads' => Download::query()->where("user_id", "=", Auth::user()->id)->get(),
+        ];
+        return view("platform.profile.downloads", $arr);
     }
 
     public function uploads()

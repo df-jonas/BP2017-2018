@@ -1,4 +1,4 @@
-<div class="breadcrumb-banner col-xs-12">
+<nav class="breadcrumb-banner col-xs-12">
     <div class="container">
         <div id="breadcrumb">
             <ul class="breadcrumb">
@@ -7,4 +7,4 @@
             </ul>
         </div>
     </div>
-</div>
+</nav>

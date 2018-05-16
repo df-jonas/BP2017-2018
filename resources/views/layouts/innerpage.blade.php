@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/mailchimp-horizontal-slim-10_7.css') }}">
 
     <!-- fontawesome -->
-    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">
 
     <!-- BugHerd script -->
     <script type='text/javascript'>
@@ -40,7 +40,7 @@
 
 </head>
 <body class="innerpage">
-
+<div class="wrap">
 @yield('content')
 @include('cookieConsent::index')
 
@@ -73,7 +73,6 @@
 
     gtag('config', 'UA-47689548-7');
 </script>
-
-
+</div>
 </body>
 </html>

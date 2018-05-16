@@ -18,7 +18,7 @@
     <!-- mailchimp -->
     <link rel="stylesheet" href="{{ URL::asset('css/mailchimp-horizontal-slim-10_7.css') }}">
     <!-- fontawesome -->
-    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">
 
     <!-- BugHerd script -->
     <script type='text/javascript'>
@@ -32,7 +32,7 @@
 
 </head>
 <body>
-
+<div class="wrap">
 @yield('content')
 @include('cookieConsent::index')
 
@@ -74,5 +74,6 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+</div>
 </body>
 </html>

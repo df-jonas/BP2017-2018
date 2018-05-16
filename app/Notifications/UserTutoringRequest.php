@@ -7,18 +7,19 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class PostCommented extends Notification
+class UserTutoringRequest extends Notification
 {
     use Queueable;
+    private $tutoringsession;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($tutoringsession)
     {
-        //
+        $this->tutoringsession = $tutoringsession;
     }
 
     /**
@@ -32,19 +33,6 @@ class PostCommented extends Notification
         return ['database'];
     }
 
-    /**
-     * Get the mail representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
-     */
-    public function toMail($notifiable)
-    {
-        return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
-    }
 
     /**
      * Get the array representation of the notification.
@@ -52,10 +40,14 @@ class PostCommented extends Notification
      * @param  mixed  $notifiable
      * @return array
      */
-    public function toArray($notifiable)
+    public function toDatabase($notifiable)
     {
         return [
-            //
+            'id' => $this->tutoringsession->id,
+            'data' => $this->tutoringsession->created_at,
+            'tutor' => $this->tutoringsession->tutor->user->first_name,
+            'tutee' => $this->tutoringsession->tutee->user->first_name,
+            'melding' => 'Nieuw tutoring verzoek'
         ];
     }
 }

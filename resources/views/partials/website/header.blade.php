@@ -1,6 +1,6 @@
 <header id="page-header" class="large">
     <div class="row">
-        <div class="container">
+        <nav class="container">
             <div class="col-xs-12 no-padding">
                 <div class="col-lg-4 col-md-2 col-sm-2 col-xs-2" style="z-index: 999">
                     <a href="{{ route('website-index') }}"><img class="logo" src="img/logo/favicon.png"></a>
@@ -17,6 +17,6 @@
                     @endif
                 </ul>
             </div>
-        </div>
+        </nav>
     </div>
 </header>

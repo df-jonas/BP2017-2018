@@ -68,6 +68,19 @@
 
 }
 
+.all-notifications{
+  padding-left: 0;
+  list-style: none;
+  li{
+    margin-bottom: 17.5px;
+    border-bottom: 1px solid $background-color;
+    padding: 5px 10px;
+    &.unread{
+      background: $background-color;
+    }
+  }
+}
+
 .vakken, .vakken-nieuw {
   padding-left: 0;
   li {

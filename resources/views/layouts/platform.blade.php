@@ -13,13 +13,12 @@
     <!-- own css -->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/themes/default.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/inputs.css') }}">
     <!-- Slicknav -->
     <link rel="stylesheet" href="{{ URL::asset('css/slicknav.css') }}">
     <!-- mailchimp -->
     <link rel="stylesheet" href="{{ asset('css/mailchimp-horizontal-slim-10_7.css') }}">
     <!-- font -->
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <!-- TinyMCE editor -->
     <!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({selector: 'textarea'});</script>-->
@@ -36,8 +35,8 @@
     </script>
 </head>
 <body class="platform">
+<div class="wrap">
 @yield('sidebar')
-@include('partials.platform.beta')
 @yield('content')
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -48,10 +47,10 @@
 <script src="{{ URL::asset('js/jquery.slicknav.js') }}"></script>
 <script>
     $(function(){
-        $('#account-dropdown').slicknav({
+        $('#platform-header').slicknav({
             label: ' ',
             duration: 200,
-            prependTo:'#account-dropdown'
+            prependTo:'#platform-header'
         });
     });
 </script>
@@ -75,5 +74,6 @@
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 @yield('scripts')
+</div>
 </body>
 </html>

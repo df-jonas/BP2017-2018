@@ -72,7 +72,7 @@ $(document).ready(function () {
 
     //voltooien
     $(".submit").click(function () {
-        return false;
+        $("msform").submit();
     })
 
 });

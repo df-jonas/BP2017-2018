@@ -5,20 +5,22 @@
 @include('partials.website.header')
 
 <!-- page banner -->
-<div id="innerpage-banner" class="col-xs-12">
+<section id="innerpage-banner" class="col-xs-12">
+    <div class="overlay">
     <div id="welcome" class="col-xs-12 no-padding">
         <div class="container">
             <div class="col-md-6 col-md-push-3 col-xs-12 no-padding">
-                <h3>Over UniHelp</h3>
-                <p>UniHelp is een platform dat gemaakt werd door 2 studenten.</p>
+                <h1>Over UniHelp</h1>
+                <h2>UniHelp is een platform dat gemaakt werd door 2 studenten.</h2>
             </div>
         </div>
     </div>
-</div>
+    </div>
+</section>
 <!-- end page banner -->
 
 <!-- begin unihelp intro -->
-<div id="intro" class="col-xs-12">
+<section id="intro" class="col-xs-12">
     <div class="container">
         <div class="col-lg-8 col-lg-push-2">
             <h2>Waarom UniHelp?</h2>
@@ -27,11 +29,11 @@
             </h4>
         </div>
     </div>
-</div>
+</section>
 <!-- end unihelp intro -->
 
 <!-- begin goals block -->
-<div id="goal" class="col-xs-12 padding">
+<section id="goal" class="col-xs-12 padding">
     <div class="container">
         <div class="col-lg-6 col-xs-12">
             <div class="col-lg-10 col-lg-push-1 col-xs-12">
@@ -51,18 +53,18 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 <!-- end goals block -->
 
 <!-- begin person -->
-<div class="container">
+<address class="container">
     <section class="about-person col-xs-12">
         <div class="row flex">
-            <div class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
-                <img src="img/team/arno.png" class="round-img">
-            </div>
+            <figure class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
+                <img src="img/team/arno.png" class="round-img" alt="Arno Stalpaert">
+            </figure>
             <div class="right col-lg-8 col-lg-push-1 col-md-8 col-md-push-2 col-xs-12">
-                <h3>Arno Stalpaert</h3>
+                <figcaption><h3>Arno Stalpaert</h3></figcaption>
                 <h4>Multec student
                     <small>(Mobile App &amp; Web development)</small>
                 </h4>
@@ -77,11 +79,11 @@
             </div>
         </div>
     </section>
-</div>
+</address>
 <!-- end person -->
 
 <!-- begin action block -->
-<div id="action" class="col-xs-12 padding clearfix">
+<section id="action" class="col-xs-12 padding clearfix">
     <div class="container padding">
         <div class="col-lg-6 col-lg-push-3 padding">
             <div class="col-lg-10 col-lg-push-1">
@@ -90,18 +92,18 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 <!-- end action block -->
 
 <!-- begin person -->
-<div class="container">
+<address class="container">
     <section class="about-person col-xs-12">
-        <div class="row flex">
-            <div class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
-                <img src="img/team/jonas.png" class="round-img">
-            </div>
+        <section class="row flex">
+            <figure class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
+                <img src="img/team/jonas.png" class="round-img" alt="Jonas De Frère">
+            </figure>
             <div class="right col-lg-8 col-lg-push-1 col-md-8 col-md-push-2 col-xs-12">
-                <h3>Jonas De Frère</h3>
+                <figcaption><h3>Jonas De Frère</h3></figcaption>
                 <h4>Dig-X student
                     <small>(Network &amp; Security)</small>
                 </h4>
@@ -112,9 +114,9 @@
                     het aspect snelheid, optimalisatie en beveiliging. Deze competenties laat ik zien in in ons eigen
                     platform, UniHelp.</p>
             </div>
-        </div>
+        </section>
     </section>
-</div>
+</address>
 <!-- end person -->
 
 <!-- call to action -->

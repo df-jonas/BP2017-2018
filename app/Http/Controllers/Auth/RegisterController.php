@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Campus;
 use App\Fos;
+use App\Notifications\test;
+use App\Notifications\UserRegister;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -114,7 +116,7 @@ class RegisterController extends Controller
             'fosid' => $data['fos'],
         ]);
         //user mail na register
-        $user->notify(new UserRegistered($user));
+        $user->notify(new UserRegister($user));
         return $user;
     }
 }

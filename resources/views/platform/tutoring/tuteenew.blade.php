@@ -11,7 +11,7 @@
             <!-- Sidebar -->
             <div class="sidebar">
                 <article class="item file new clearfix">
-                    <header>Informatie</header>
+                    <header><a class="header-title"><i class="fa fa-info-circle"></i> Informatie</a></header>
                     <div class="padding">
                         <ul class="highlight">
                             <li class="clearfix"><i class="fa fa-university" aria-hidden="true"><span

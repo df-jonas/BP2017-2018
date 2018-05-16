@@ -1,7 +1,7 @@
 /*Header*/
 #platform-header {
   background-color: $theme-color;
-  padding: 1% 0 1% 0;
+  padding: 15px;
   .account{
     /*User menu*/
     .user-profile {
@@ -84,6 +84,11 @@
           }
         }
       }
+
+      .user-info{
+        text-align: center;
+        cursor: pointer;
+      }
     }
   }
 
@@ -103,15 +108,18 @@
       cursor: pointer;
       height: 50px;
       line-height: 50px;
+      border: 1px solid $background-color;
       &:hover {
-        background: $theme-color !important;
+        //background: $theme-color !important;
+        background: $background-color;
       }
       a {
         line-height: 3em;
         cursor: pointer;
         &:hover {
-          background: $theme-color !important;
-          color: $unihelp-white;
+          //background: $theme-color !important;
+          background: $background-color;
+          //color: $unihelp-white;
         }
       }
 
@@ -134,16 +142,17 @@
       text-decoration: none;
       color: black;
       &:hover{
-        background: $unihelp-brown;
-        color: $unihelp-white;
+        //background: $unihelp-brown;
+        //color: $unihelp-white;
+        background: $background-color;
       }
     }
   }
 
   /*Notification dropdown*/
   #notifications-dropdown{
-    margin-left: -150px;
-
+    width: 300px;
+    margin-left: -215px;
   }
 }
 

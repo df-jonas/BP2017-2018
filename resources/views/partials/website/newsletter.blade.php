@@ -1,4 +1,4 @@
-<div id="newsletter" class="col-xs-12">
+<section id="newsletter" class="col-xs-12">
     <div class="container no-padding">
         <div class="col-sm-6 col-xs-12 left no-padding">
             <h3>Schrijf je nu in!</h3>
@@ -19,4 +19,4 @@
             <!--End mc_embed_signup-->
         </div>
     </div>
-</div>
+</section>

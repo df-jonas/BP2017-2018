@@ -31,6 +31,7 @@
     a {
       color: $theme-color;
     }
+    margin-bottom: 5em;
   }
 
 }
@@ -42,11 +43,16 @@
     color: $theme-color;
   }
   h4 {
-    color: $unihelp-black;
-  }
-  p{
-    font-weight: 400;
+    margin-top: 20px;
     font-size: 16px;
+    color: $unihelp-asphalt;
+  }
+  p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #898989;
+    line-height: 1.85em;
+    font-weight: 500;
   }
   .left {
     text-align: right;
@@ -74,6 +80,15 @@
     margin-bottom: 5%;
     height: 350px;
     position: relative;
+    .overlay{
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s ease all;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -82,16 +97,22 @@
     h3, p {
       position: absolute;
       left: 25px;
-      top: 37.5%;
+      top: 32.5%;
       color: $unihelp-white;
     }
     p {
-      top: 35%;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 5px;
+      text-align: center;
       color: lightgray;
-      color: $theme-color;
-      font-weight: bold;
+      background: $theme-color;
+      color: $unihelp-white;
+      //font-weight: bold;
       text-transform: uppercase;
       text-shadow: 2px 2px 3px rgba(0, 0, 0, .15);
+      font-size: 16px;
     }
     a.meer {
       background: $unihelp-white;
@@ -117,6 +138,9 @@
     &:hover {
       transform: scale(1.02);
       transition: 0.5s ease all;
+      .overlay{
+        background-color: rgba(0, 0, 0, 0.6);
+      }
       a {
         background: $theme-color;
         color: $unihelp-white;
@@ -167,10 +191,15 @@
     margin: 5% 0 5% 0;
     list-style: none;
     padding: 0;
+    display: table;
+    li{
+      display: table-cell;
+    }
     .step {
-      height: 200px;
+      min-height: 200px;
       margin: 2% 0 2% 0;
       background: rgba(0, 0, 0, .05);
+      cursor: pointer;
       h4 {
         margin-top: 20px;
         font-size: 16px;
@@ -187,9 +216,11 @@
         color: $theme-color;
         font-size: 2em;
       }
+      &:hover, &.active{
+        background: rgba(0, 0, 0, .1);
+      }
     }
   }
-
 }
 
 /*Avout intro*/
@@ -266,7 +297,7 @@
   }
   .text {
     padding: 2.5%;
-    h2 {
+    h3 {
       color: $unihelp-white;
       font-size: 24px;
       letter-spacing: -.03em;
@@ -326,7 +357,10 @@
       }
     }
     #mc-embedded-subscribe {
-      background: $theme-color !important;
+      background: $theme-color;
+      &:hover{
+        background: $unihelp-asphalt;
+      }
     }
   }
 }
@@ -357,13 +391,14 @@
 
 /*Beta notice box */
 .beta-notice {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
   background: $unihelp-brown;
-  padding: 15px;
+  padding: 5px;
   color: $unihelp-white;
-  z-index: 9999;
+  text-align: center;
 }
 
 /*Quotes*/

@@ -74,10 +74,9 @@
             <li> Your Online Choices: <a href="http://www.youronlinechoices.eu/" target="_blank">“A guide to online behavioural advertising”</a></li>
         </ul>
         </p>
-
-        <strong>Deze policy is gebaseerd op: <a href="https://ictrecht.nl/juridisch-advies/cookieverklaring/" target="_blank">ICT recht</a></strong>
         <br>
     </div>
-    @include('partials.website.newsletter')
+    <!-- footer -->
     @include('partials.footer')
+    <!-- end footer -->
 @endsection

@@ -11,7 +11,7 @@
             <!-- Sidebar -->
             <div class="sidebar">
                 <article class="item">
-                    <header>Informatie</header>
+                    <header><a class="header-title"><i class="fa fa-info-circle"></i> Informatie</a></header>
                     <div class="padding">
                         <p>Door tutor te worden helpt u anderen leerstof beter te begrijpen. U kan tutor worden voor
                             verschillende vakken en u kan deze keuze ten allen intrekken.</p>

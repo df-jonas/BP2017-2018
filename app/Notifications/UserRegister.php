@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class UserRegistered extends Notification
+class UserRegister extends Notification
 {
     use Queueable;
     private $user;
@@ -25,7 +25,7 @@ class UserRegistered extends Notification
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed  $notifiable
+     * @param  mixed $notifiable
      * @return array
      */
     public function via($notifiable)
@@ -36,24 +36,31 @@ class UserRegistered extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param  mixed $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($notifiable)
     {
+        //view parameters
         $username = $this->user->first_name;
+        //button url
+        $url = 'https://www.unihelp.be';
+        //mail image src
+        $header = 'https://unihelp.be/img/backgrounds/banner.png';
+        $image1 = 'https://www.unihelp.be/img/features/1.jpg';
+        $image2 = 'https://www.unihelp.be/img/features/4.jpg';
+        $image3 = 'https://www.unihelp.be/img/features/5.jpg';
+        $image4 = 'https://unihelp.be/img/backgrounds/wat-1.png';
+        //mail view: notification > register view
         return (new MailMessage)
-                    ->subject('Welkom bij UniHelp')
-                    ->greeting('Hallo, '  .$username )
-                    ->line('The introduction to the notification.')
-                    ->action('Bezoek UniHelp', url('/'))
-                    ->line('Thank you for using our application!');
+            ->markdown('mail.notification.register', ['username' => $username, 'url' => $url, 'header' => $header, 'image1' => $image1, 'image2' => $image2, 'image3' => $image3, 'image4' => $image4])
+            ->subject('Welkom bij UniHelp');
     }
 
     /**
      * Get the array representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param  mixed $notifiable
      * @return array
      */
     public function toArray($notifiable)

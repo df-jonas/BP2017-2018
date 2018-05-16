@@ -56,12 +56,8 @@
   header {
     background: $theme-color;
     height: 2em;
-    color: $unihelp-white;
     line-height: 1.75em;
     padding: 2px 10px;
-    font-weight: 300;
-    text-decoration: none;
-    font-size: 16px;
     border-bottom: 1px solid #dfdfdf;
     header a {
       padding-right: 1%;
@@ -71,9 +67,8 @@
     }
   }
 
-  h3, h4 {
-    color: $unihelp-black;
-    margin-top: 20px;
+  .padding{
+    pading: 20px!important;
   }
 
 }
@@ -157,6 +152,8 @@
   }
 }
 
+
+
 .detail {
   p {
     font-size: 14px;
@@ -175,27 +172,9 @@
       float: right;
     }
     p {
-      font-size: 14px;
+      /*font-size: 14px;*/
     }
-    .details {
-      margin-top: 2em;
-      opacity: 0.9;
-      .detail {
-        background: $theme-color;
-        border: 1px solid $unihelp-white;
-        padding: 5px 5px 5px 10px;
-        color: $unihelp-white;
-        i {
-          //color: $unihelp-brown;
-          span {
-            color: $unihelp-white;
-            line-height: 1em;
-            padding-left: 12px;
-            font-size: 16px;
-          }
-        }
-      }
-    }
+
   }
   &.group {
     .actions {
@@ -275,10 +254,6 @@
     }
 
     &.user-owned {
-      h5 {
-        margin-bottom: 0;
-        margin-top: 0;
-      }
       .row {
         margin-bottom: 20px;
         //margin-top: 15px;
@@ -287,14 +262,7 @@
 
   }
 
-  .stats {
-    p {
-      font-size: 14px;
-      &.amount {
-        text-align: right;
-      }
-    }
-  }
+
 
   /* search input */
   .inner-addon {
@@ -340,8 +308,7 @@
 }
 
 /*Desktop*/
-@media only screen and (max-width: 1200px) {
-}
+@media only screen and (max-width: 1200px) {}
 
 /*Desktop*/
 @media only screen and (max-width: 992px) {
@@ -433,15 +400,7 @@
     width: 100% !important;
   }
 
-  /*
-    .file .rating {
-      font-size: 1.5em;
-      position: absolute;
-      left: 0%;
-      top: 50%;
-      transform: translate(0, -50%);
-    }
-  */
+
   .headline {
     .right {
       h4 {
