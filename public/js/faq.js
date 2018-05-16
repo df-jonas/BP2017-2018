@@ -1,5 +1,4 @@
-
-$( document ).ready(function() {
+$(document).ready(function () {
     //Get all accordion elements
     var accordions = $('.accordion');
     //Loop through elements
@@ -9,13 +8,13 @@ $( document ).ready(function() {
             //Panel parent element
             var panel = $(this).next();
             //Open-close
-            if(panel.css('display') == 'block'){
-                panel.hide( "slow", function() {
+            if (panel.css('display') === 'block') {
+                panel.hide("slow", function () {
 
                 });
             }
-            else{
-                panel.show( "slow", function() {
+            else {
+                panel.show("slow", function () {
 
                 });
             }

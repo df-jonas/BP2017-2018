@@ -89,7 +89,7 @@ class ProfileController extends Controller
     public function downloads()
     {
         $arr = [
-            'userdownloads' => Download::query()->where("user_id", "=", Auth::user()->id)->get(),
+            'userdownloads' => Download::query()->where("user_id", "=", Auth::id())->get(),
         ];
         return view("platform.profile.downloads", $arr);
     }

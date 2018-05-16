@@ -22,9 +22,9 @@ $(document).ready(function () {
                             '<div class="rating">';
                         for (var i = 1; i <= 5; i++) {
                             if (i <= value.averageRating) {
-                                newhtml += '<span class="fa fa-star checked"></span>';
+                                newhtml += '<span class="fa fa-star checked"></span>\n';
                             } else {
-                                newhtml += '<span class="fa fa-star"></span>';
+                                newhtml += '<span class="fa fa-star"></span>\n';
                             }
                         }
                         newhtml += '</div></section></div></div></article>';
