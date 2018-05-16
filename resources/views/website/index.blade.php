@@ -1,6 +1,7 @@
 @extends('layouts.website')
-@section('content')
+
 @section('pagetitle', 'Een studentenplatform om U tegen te zeggen.')
+@section('content')
 
 <!-- header -->
 @include('partials.website.header')

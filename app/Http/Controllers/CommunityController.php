@@ -86,7 +86,7 @@ class CommunityController extends Controller
             ->firstOrFail();
 
         if ($post->group->url != $group_id)
-            abort(404);
+            abort(404, "Deze post werd niet gevonden.");
 
         $arr = [
             'myposts' => $myposts,
@@ -103,7 +103,7 @@ class CommunityController extends Controller
             ->firstOrFail();
 
         if ($group->url != $request->url)
-            abort(404);
+            abort(500, "Er ging iets mis bij het opslaan van deze post.");
 
         $post = new Post();
         $post->title = $request->title;
@@ -126,7 +126,7 @@ class CommunityController extends Controller
             ->firstOrFail();
 
         if ($post->group->id != $group->id)
-            abort(404);
+            abort(500, "Er ging iets mis bij het opslaan van deze comment.");
 
         $comment = new Comment();
         $comment->content = $request->comment;

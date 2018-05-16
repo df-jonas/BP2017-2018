@@ -77,6 +77,7 @@
 
             /** Tutoring */
             Route::get('/tutoring', 'TutoringController@index')->name('tutoring-index');
+            Route::get('/tutoring/panel/{sessionid}', 'TutoringController@loadUserPanelAjax')->name('tutoring-panel-ajax');
             Route::get('/tutoring/tutor/new', 'TutoringController@newtutor')->name('tutoring-tutor-new');
             Route::post('/tutoring/tutor/new', 'TutoringController@newtutorpost');
             Route::get('/tutoring/tutee/new', 'TutoringController@newtutee')->name('tutoring-tutee-new');
