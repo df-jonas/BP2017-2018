@@ -135,13 +135,16 @@ class CommunityController extends Controller
 
         $comment->save();
 
-        //notification
-        $from = Auth::id();
-        $to = $post->user->id;
+        $from_id = Auth::id();
+        $to_id = $post->user->id;
         $type = "comment";
-        $url = "/p/community/" . $comment->post->group->url . '/' . $comment->post->id;
+        $url = route('community-post-detail', [
+            'group_id' => $comment->post->group->url,
+            'post_id' => $comment->post->id
+        ]);
         $text = "heeft een nieuwe reactie geplaatst.";
-        NotificationHelper::create($from, $to, $type, $url, $text);
+
+        NotificationHelper::create($from_id, $to_id, $type, $url, $text);
 
         return response()->json(Comment::query()->where('id', '=', $comment->id)->with(['user' => function ($query) {
             $query->select('id', 'first_name', 'last_name', 'image');

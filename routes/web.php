@@ -24,9 +24,9 @@
     Route::get('/algemene-voorwaarden', 'WebsiteController@terms')->name('website-terms');
     Route::get('/veelgestelde-vragen', 'WebsiteController@faq')->name('website-faq');
     Route::get('/demo', 'WebsiteController@demo')->name('website-demo');
-    Route::post('demo', 'WebsiteController@demoformpost')->name('demo-form');
+    Route::post('/demo', 'WebsiteController@demoformpost');
     Route::get('/contact', 'WebsiteController@contact')->name('website-contact');
-    Route::post('contact', 'WebsiteController@contactformpost')->name('contact-form');
+    Route::post('/contact', 'WebsiteController@contactformpost');
     Route::get('/sitemap', 'WebsiteController@sitemap')->name('website-sitemap');
 
 

@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Mail;
 
 class WebsiteController extends Controller
 {
-    private $name;
-    private $email;
-
     public function index()
     {
         return view("website.index");
@@ -68,6 +65,7 @@ class WebsiteController extends Controller
     {
         return view("website.contact");
     }
+
     public function sitemap()
     {
         return view("website.sitemap");
@@ -80,12 +78,10 @@ class WebsiteController extends Controller
         $company = $request->company;
         $email = $request->email;
         $desc = $request->desc;
+        $name = $firstname . ' ' . $lastname;
 
-        $this->email = $email;
-        $this->name = $firstname . ' ' . $lastname;
-
-        Mail::send('mail.forms.demo', ['firstname' => $firstname, 'lastname' => $lastname, 'company' => $company, 'email' => $email, 'desc' => $desc], function ($message) {
-            $message->from($this->email, $this->name);
+        Mail::send('mail.forms.demo', ['firstname' => $firstname, 'lastname' => $lastname, 'company' => $company, 'email' => $email, 'desc' => $desc], function ($message) use ($name, $email) {
+            $message->from($email, $name);
             $message->subject("Unihelp - demo aanvraag");
             $message->to('info@unihelp.be');
         });
@@ -102,11 +98,10 @@ class WebsiteController extends Controller
         $email = $request->email;
         $desc = $request->desc;
 
-        $this->email = $email;
-        $this->name = $firstname . ' ' . $lastname;
+        $name = $firstname . ' ' . $lastname;
 
-        Mail::send('mail.forms.contact', ['firstname' => $firstname, 'lastname' => $lastname, 'subject' => $subject, 'email' => $email, 'desc' => $desc], function ($message) {
-            $message->from($this->email, $this->name);
+        Mail::send('mail.forms.contact', ['firstname' => $firstname, 'lastname' => $lastname, 'subject' => $subject, 'email' => $email, 'desc' => $desc], function ($message) use ($name, $email) {
+            $message->from($email, $name);
             $message->subject("Unihelp - Contact aanvraag");
             $message->to('info@unihelp.be');
         });
