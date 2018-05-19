@@ -94,17 +94,26 @@
       color: $theme-color;
       font-size: 16px;
       cursor: pointer;
+      i{
+        color: $theme-color;
+        &:hover{
+          color: $unihelp-brown;
+        }
+      }
     }
   }
 }
 
 .vakken-nieuw {
+  h2{
+    margin: 0;
+  }
   span {
     input {
-      width: 85.5px;
+      width: auto;
       height: 26.5px;
       margin-top: 0;
-      line-height: 26px;
+      line-height: 0.45;
     }
   }
 }
