@@ -21,7 +21,16 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        // TODO Alle vakken van gebruiker ophalen
+        $params = [
+            'email' => Auth::user()->email,
+            'username' => Auth::user()->username,
+            'user' => Auth::user(),
+        ];
+        return view('platform.profile.index', $params);
+    }
+
+    public function settings()
+    {
         $params = [
             'campuses' => Campus::query()->orderBy("name")->get(),
             'foses' => Fos::query()->orderBy("name")->get(),
@@ -31,7 +40,7 @@ class ProfileController extends Controller
             'usercourses' => Usercourse::all()->where('user_id', '=', Auth::id()),
             'allcourses' => Course::all(),
         ];
-        return view('platform.profile.index', $params);
+        return view('platform.profile.settings', $params);
     }
 
     public function updateprofilepost(Request $request)
@@ -110,6 +119,7 @@ class ProfileController extends Controller
 
     public function addusercourse($course_id)
     {
+        //TODO kan beter met ajax
         $usercourse = new UserCourse();
         $usercourse->user_id = Auth::id();
         $usercourse->course_id = $course_id;
@@ -120,6 +130,7 @@ class ProfileController extends Controller
 
     public function removeusercourse($id)
     {
+        //TODO kan beter met ajax
         $usercourse = UserCourse::where('id', "=", $id);
         $usercourse->delete();
         Session::flash('message', "Vak verwijderd!");
@@ -128,16 +139,15 @@ class ProfileController extends Controller
 
     public function ajaxFilter(Request $request)
     {
-
-
+        //id's of current user courses
+        $currentUserCoursesIds = Usercourse::all()->where('user_id', '=', Auth::id())->pluck('course_id')->toArray();
+        //only show courses that are not yet added to a user
         if ($request->search != "") {
-            $r = Course::query()->where("name", "LIKE", "%" . $request->search . "%")->get();
+            $r = Course::query()
+                ->where("name", "LIKE", "%" . $request->search . "%")
+                ->whereNotIn('id', $currentUserCoursesIds)
+                ->get();
         }
-
-
-
-
-
         return $r;
     }
 }

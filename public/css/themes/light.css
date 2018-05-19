@@ -969,11 +969,25 @@ div.container {
   cursor: pointer;
 }
 
+.vakken li span i,
+.vakken-nieuw li span i {
+  color: #505457;
+}
+
+.vakken li span i:hover,
+.vakken-nieuw li span i:hover {
+  color: #8A7E72;
+}
+
+.vakken-nieuw h2 {
+  margin: 0;
+}
+
 .vakken-nieuw span input {
-  width: 85.5px;
+  width: auto;
   height: 26.5px;
   margin-top: 0;
-  line-height: 26px;
+  line-height: 0.45;
 }
 
 #vak-zoeken {

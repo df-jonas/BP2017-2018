@@ -87,7 +87,7 @@
                             </li>
 
                             <li>
-                                <a href="#"><i class="fa fa-cog"></i> Instellingen
+                                <a href="{{ route('profile-settings') }}"><i class="fa fa-cog"></i> Instellingen
                                 </a>
                             </li>
 

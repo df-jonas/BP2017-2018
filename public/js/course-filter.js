@@ -8,7 +8,7 @@ $(document).ready(function () {
             success: function (json) {
                 var newhtml = "";
                 if (json.length > 0) {
-                    newhtml = '<ul class="vakken-nieuw"><h2>Zoekresultaten:</h2><br>';
+                    newhtml = '<ul class="vakken-nieuw"><h2 class="settings-title">Zoekresultaten:</h2><br>';
                     $.each(json, function (key, value) {
                         newhtml += '<li>' +
                             '' + value.name + '<span><a href="/p/profile/course/add/' + value.id + '"><input type="button" class="download-button" value="Toevoegen"></a></span>';
