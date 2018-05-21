@@ -27,23 +27,27 @@
     float: right;
     list-style-type: none;
     text-align: right;
-    li {
-      display: inline-block;
-      padding: 2%;
-      padding-left: 4%;
-      padding-right: 4%;
-      line-height: .5em;
-      text-align: center;
-      cursor: pointer;
-      &:hover, &.active-state {
-        background: lightgray;
-        opacity: 0.75;
+    a{
+      &.active-state, &:hover{
+        li{
+          background: lightgray;
+          opacity: 0.75;
+        }
       }
-      &.register {
-        background: $theme-color;
-        color: $unihelp-white;
-        &:hover {
-          opacity: 0.9;
+      li {
+        display: inline-block;
+        padding: 2%;
+        padding-left: 4%;
+        padding-right: 4%;
+        line-height: .5em;
+        text-align: center;
+        cursor: pointer;
+        &.register {
+          background: $theme-color;
+          color: $unihelp-white;
+          &:hover {
+            opacity: 0.9;
+          }
         }
       }
     }

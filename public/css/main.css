@@ -426,7 +426,13 @@ fieldset input.submit {
   text-align: right;
 }
 
-#page-header .links li {
+#page-header .links a.active-state li,
+#page-header .links a:hover li {
+  background: lightgray;
+  opacity: 0.75;
+}
+
+#page-header .links a li {
   display: inline-block;
   padding: 2%;
   padding-left: 4%;
@@ -436,18 +442,12 @@ fieldset input.submit {
   cursor: pointer;
 }
 
-#page-header .links li:hover,
-#page-header .links li.active-state {
-  background: lightgray;
-  opacity: 0.75;
-}
-
-#page-header .links li.register {
+#page-header .links a li.register {
   background: #4D6A50;
   color: #ffffff;
 }
 
-#page-header .links li.register:hover {
+#page-header .links a li.register:hover {
   opacity: 0.9;
 }
 
