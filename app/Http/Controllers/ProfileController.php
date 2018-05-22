@@ -11,10 +11,11 @@ use App\Fos;
 use App\User;
 use App\Download;
 use Auth;
+use Illuminate\Support\Facades\Log;
 use Redirect;
 use Session;
 use App\UserCourse;
-use App\Notification;
+use App\Preference;
 use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
@@ -39,6 +40,7 @@ class ProfileController extends Controller
             'user' => Auth::user(),
             'usercourses' => Usercourse::all()->where('user_id', '=', Auth::id()),
             'allcourses' => Course::all(),
+            'pref' => Auth::user()->preference,
         ];
         return view('platform.profile.settings', $params);
     }
@@ -148,6 +150,34 @@ class ProfileController extends Controller
                 ->whereNotIn('id', $currentUserCoursesIds)
                 ->get();
         }
+
+        if ($request->search == "") {
+            $r = "";
+        }
         return $r;
+    }
+
+    public function updatepreferencepost(Request $request)
+    {
+        $user = Auth::user();
+        //get notification type
+        $type = $request->notification_type;
+        //update type preference
+        if ($user->preference[$type] == true) {
+            $user->preference[$type] = false;
+        } else {
+            $user->preference[$type] = true;
+        }
+        $user->preference->save();
+    }
+
+    public function updatethemepost(Request $request)
+    {
+        $user = Auth::user();
+        //get theme
+        $theme = $request->theme;
+        //update theme
+        $user->preference->theme = $theme;
+        $user->preference->save();
     }
 }

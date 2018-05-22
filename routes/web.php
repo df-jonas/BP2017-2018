@@ -87,10 +87,16 @@
             Route::get('/tutoring/{id}/messages', 'TutoringController@messages')->name('tutoring-messages');
             Route::get('/tutoring/{id}/planning', 'TutoringController@planning')->name('tutoring-planning');
 
+            /** Peer Assessment */
+            Route::get('/assessment', 'AssessmentController@index')->name('assessment-index');
+
+
             /** Profile */
             Route::get('/profile', 'ProfileController@index')->name('profile-index');
             Route::get('/profile/settings', 'ProfileController@settings')->name('profile-settings');
             Route::post('/profile/update', 'ProfileController@updateprofilepost')->name('profile-update');
+            Route::post('/profile/preferences', 'ProfileController@updatepreferencepost');
+            Route::post('/profile/theme', 'ProfileController@updatethemepost');
             Route::get('/profile/ratings', 'ProfileController@ratings')->name('profile-ratings');
             Route::get('/profile/downloads', 'ProfileController@downloads')->name('profile-downloads');
             Route::get('/profile/uploads', 'ProfileController@uploads')->name('profile-uploads');
@@ -101,8 +107,8 @@
             Route::get('/profile/notifications/read/{id}', 'NotificationController@readAjax')->name('notification-read');
 
             /** User Courses */
-            Route::get('/profile/course/add/{id}', 'Profilecontroller@addusercourse')->name('course-add');
-            Route::get('/profile/course/remove/{id}', 'Profilecontroller@removeusercourse')->name('course-remove');
+            Route::get('/profile/course/add/{id}', 'ProfileController@addusercourse')->name('course-add');
+            Route::get('/profile/course/remove/{id}', 'ProfileController@removeusercourse')->name('course-remove');
             Route::post('/profile/filter', 'ProfileController@ajaxFilter');
         });
     });

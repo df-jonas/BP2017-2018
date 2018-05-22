@@ -1,7 +1,7 @@
 @extends('layouts.platform')
 
-@section('content')
 @section('pagetitle', 'Profiel')
+@section('content')
 @include('partials.platform.header')
 @include('partials.platform.subheader')
 <!-- begin container -->
@@ -30,6 +30,9 @@
                         </section>
                     </div>
                     <br>
+                </section>
+                <section>
+                    <h2>Profiel tijdlijn</h2>
                 </section>
             </div>
         </section>

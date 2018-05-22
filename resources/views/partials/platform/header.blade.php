@@ -72,6 +72,12 @@
                                     </div>
                                 </div>
                             </a>
+                            @if(Auth::user()->role == 'admin')
+                                <li>
+                                    <a href="#"><i class="fa fa-dashboard"></i> Admin dashboard
+                                    </a>
+                                </li>
+                            @endif
                             <li>
                                 <a href="{{ route('profile-downloads') }}"><i class="fa fa-download"></i> Mijn downloads
                                 </a>

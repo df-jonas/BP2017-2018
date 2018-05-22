@@ -894,10 +894,12 @@ div.container {
   border: 1px solid white;
   display: inline-block;
   cursor: pointer;
+  opacity: 0.55;
 }
 
-.color-choose:hover {
-  opacity: 0.90;
+.color-choose:hover,
+.color-choose.current {
+  opacity: 1;
 }
 
 .notification-choose {

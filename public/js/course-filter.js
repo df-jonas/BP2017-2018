@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $(".filterlistener").on("change keyup", function () {
-        console.log('change');
         $.ajax({
             type: "POST",
             url: "/p/profile/filter",

@@ -145,6 +145,10 @@
         background: $theme-color;
         color: $unihelp-white;
       }
+      h3{
+        text-decoration: underline;
+        text-decoration-style: dotted;
+      }
     }
   }
   .promo {

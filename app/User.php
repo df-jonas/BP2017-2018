@@ -47,15 +47,23 @@ class User extends Authenticatable
         return $this->belongsTo('App\Role', 'role');
     }
 
+    public function preference()
+    {
+        return $this->belongsTo('App\Preference', 'preference_id');
+    }
+
     public function notifs()
     {
         return $this->hasMany('App\Notification', 'to_user', 'id');
     }
 
-    public function notifs_unread(){
+    public function notifs_unread()
+    {
         return $this->notifs()->where('read_at', "=", null);
     }
-    public function notifs_read(){
+
+    public function notifs_read()
+    {
         return $this->notifs()->where('read_at', "!=", null);
     }
 

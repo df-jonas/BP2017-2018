@@ -823,6 +823,12 @@ fieldset input.submit {
   color: #ffffff;
 }
 
+#features .feature:hover h3 {
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+}
+
 #features .promo {
   margin-top: 2.5%;
 }
