@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Course;
 use App\File;
+use App\Post;
 use App\PublicationYear;
 use Illuminate\Http\Request;
 use App\Campus;
@@ -22,11 +23,24 @@ class ProfileController extends Controller
 {
     public function index()
     {
+
+        $myposts = Post::query()
+            ->where("user_id", "=", Auth::user()->id)
+            ->orderBy("created_at", "desc")
+            ->take(5)
+            ->get();
+
+
         $params = [
             'email' => Auth::user()->email,
             'username' => Auth::user()->username,
             'user' => Auth::user(),
+            'files' => Auth::user()->files,
+            'posts' => $myposts,
         ];
+
+
+
         return view('platform.profile.index', $params);
     }
 

@@ -51,7 +51,7 @@
         <div class="row">
             <!-- picture -->
             <section class="col-xs-12">
-                <div class="item padding clearfix">
+                <div class="item padding left-border clearfix">
                     <section class="headline">
                         <div class="row flex">
                             <section class="left col-lg-1 col-sm-2 col-xs-12">

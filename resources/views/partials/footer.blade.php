@@ -1,7 +1,7 @@
 <footer class="row">
     <section class="top padding clearfix">
         <div class="container">
-            <div class="module clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
+            <div class="module no-padding clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
                 <h4>Navigatie</h4>
                 <ul>
                     <li><a href="{{ route('website-index') }}">Home</a></li>
@@ -18,7 +18,7 @@
                 </ul>
             </div>
             -->
-            <div class="module  clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
+            <div class="module clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
                 <h4>Account</h4>
                 <ul>
                     <li><a href="{{ route('login') }}">Inloggen</a></li>
@@ -58,7 +58,7 @@
             </div>
         </div>
     </section>
-    <section class="bottom padding clearfix">
+    <section class="bottom no-padding clearfix">
         <div class="container">
             <div class="col-xs-12">
                 <a href=""><h6>Copyright &copy; 2018 UniHelp. Alle rechten voorbehouden - <a href="{{route('website-sitemap')}}">Sitemap</a> </h6>

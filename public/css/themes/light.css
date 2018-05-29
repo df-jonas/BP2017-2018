@@ -559,8 +559,10 @@ div.container {
 }
 
 .table.tutoring .content .item {
-  position: absolute;
-  height: 100%;
+  /*
+      position: absolute;
+      height: 100%;
+      */
 }
 
 #tutoringcontent article.col-lg-4:nth-of-type(1) {
@@ -629,6 +631,152 @@ div.container {
 
 .overview-calendar .reminder p {
   color: #ffffff;
+}
+
+table.assessment {
+  width: 100%;
+  /*Input spinner verbergen*/
+}
+
+table.assessment td,
+table.assessment th {
+  padding: 7.5px;
+  text-align: center;
+}
+
+table.assessment th {
+  text-align: left;
+}
+
+table.assessment td {
+  height: 30px;
+  width: 120px;
+  line-height: 3;
+  position: relative;
+  border: solid 0.5px #dfdfdf;
+}
+
+table.assessment td input {
+  height: 30px;
+  width: 120px;
+}
+
+table.assessment td img {
+  width: 32px;
+  height: 32px;
+  float: right;
+  margin: 5px 32px 0px 0px;
+}
+
+table.assessment td input {
+  border: none;
+  background: transparent;
+  text-align: center;
+}
+
+table.assessment td:hover {
+  cursor: pointer;
+}
+
+table.assessment td.left {
+  -webkit-box-shadow: 10px 0 5px -2px #888;
+  box-shadow: 5px 0px 10px -10px #333a40;
+  padding: 0px;
+  margin-right: 10px;
+}
+
+table.assessment td span.more {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 12px solid #505457;
+  border-left: 12px solid transparent;
+}
+
+table.assessment td span.more:hover {
+  border-top: 12px solid #333a40;
+}
+
+table.assessment td.left,
+table.assessment th.left {
+  width: 220px;
+  margin-top: 15px;
+  text-align: left;
+  padding-left: 10px;
+  -webkit-box-shadow: 10px 0 5px -2px #888;
+  box-shadow: 5px 0px 10px -10px #333a40;
+  margin-right: 10px;
+}
+
+table.assessment tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+table.assessment tr.selected,
+table.assessment tr:hover {
+  background: #505457;
+  color: #ffffff;
+}
+
+table.assessment tr.selected span.more,
+table.assessment tr:hover span.more {
+  border-top: 12px solid #333a40;
+}
+
+table.assessment tr.heading {
+  background: #ffffff;
+}
+
+table.assessment input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+table.assessment input::-webkit-outer-spin-button,
+table.assessment input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#assessment-modal textarea {
+  max-width: 95%;
+  min-width: 95%;
+  margin: 2.5%;
+  height: 10em;
+  max-height: 10em;
+}
+
+.large-th,
+.mid-th,
+.skill-th {
+  font-family: Raleway;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.large-th {
+  font-size: 13px;
+  font-weight: 700;
+  font-style: normal;
+  color: #000000;
+  margin: 2% 0 2% 0;
+}
+
+.mid-th {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4d6a50;
+}
+
+.skill-th {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center !important;
+  color: #4d6a50;
 }
 
 /*Header*/
@@ -926,6 +1074,10 @@ section.logo {
 
 .headline .right {
   padding-top: 1%;
+}
+
+.left-border {
+  border-left: 2.5px solid #505457;
 }
 
 .color-choose {
@@ -1297,6 +1449,11 @@ h3 {
 .go-back .padding,
 .message .padding {
   padding: 7.5px;
+}
+
+.go-back:hover a,
+.message:hover a {
+  color: #505457;
 }
 
 .message {
