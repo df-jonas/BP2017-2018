@@ -4,7 +4,7 @@
     @include('partials.platform.header')
     @include('partials.platform.subheader')
     <!-- begin container -->
-    <section class="container profile">
+    <section class="container">
         <!-- begin profile message -->
     @include('partials.platform.message')
     <!-- end profile message -->

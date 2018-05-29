@@ -779,6 +779,16 @@ table.assessment input::-webkit-inner-spin-button {
   color: #4d6a50;
 }
 
+.assessment-overview {
+  width: 100%;
+  background-color: #f4f4f4;
+}
+
+.assessment-overview td {
+  padding: 10px;
+  font-size: 12px;
+}
+
 /*Header*/
 
 #platform-header {

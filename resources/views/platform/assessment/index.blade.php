@@ -4,47 +4,175 @@
     @include('partials.platform.header')
     @include('partials.platform.subheader')
     <!-- begin container -->
-    <section class="container profile">
+    <section class="container">
         <!-- begin profile message -->
     @include('partials.platform.message')
     <!-- end profile message -->
         <!-- begin go back -->
     @include('partials.platform.go-back')
     <!-- end go back-->
-        <!-- begin assessment-->
-        <div class="row">
-            <section class="col-xs-12">
-                <!-- comment modal -->
-                <div class="modal fade assessment" id="assessment-modal" role="dialog">
-                    <section class="modal-dialog">
-                        <!-- Modal content-->
-                        <section class="modal-content">
-                            <section class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4>Toelichting</h4>
+        <!-- begin table -->
+        <section class="table">
+            <!-- begin sidebar -->
+            <aside class="sidebar">
+
+
+                <!-- User items -->
+                <section class="item user-owned hide-mobile">
+                    <header><a class="header-title">Beschikbare assessments</a></header>
+                    <div class="padding">
+                        <div class="row flex">
+                            <section class="icon col-lg-2 col-md-2 col-xs-2">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                     class="account-img round-img" alt="User profile image">
                             </section>
-                            <section class="modal-body padding" style="padding: 10px">
-                                <span class="large-th col-xs-12">Stalpaert Arno</span>
-                                <span class="mid-th col-xs-12">Aanwezigheid</span>
-                                <textarea class="col-xs-12" rows="5"></textarea>
+                            <section class="col-lg-8 col-md-8 col-xs-8">
+                                <h2 class="item-title"><a href="#">Android project</a></h2>
+                                <div class="rating col-xs-12 no-padding clearfix">
+                                    <div class="col-xs-12 no-padding">
+                                        geldig tot 12 juni
+                                    </div>
+                                </div>
                             </section>
-                            <section class="modal-footer">
-                                <input type="submit" class="download-button col-lg-2" value="Opslaan">
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <i class="fa fa-user-plus brown"></i>
+                            </div>
+                        </div>
+                        <div class="row flex">
+                            <section class="icon col-lg-2 col-md-2 col-xs-2">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                     class="account-img round-img" alt="User profile image">
                             </section>
-                        </section>
-                    </section>
-                </div>
-                <!-- end comment modal -->
-                <div class="item padding clearfix" style="padding:0 15px 0 15px">
-                    <div class="row flex">
-                        <!-- begin table -->
-                       assessment overzicht
+                            <section class="col-lg-8 col-md-8 col-xs-8">
+                                <h2 class="item-title"><a href="#">Mijn titel</a></h2>
+                                <div class="rating col-xs-12 no-padding clearfix">
+                                    <div class="col-xs-12 no-padding">
+                                        geldig tot 12 juni
+                                    </div>
+                                </div>
+                            </section>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <i class="fa fa-user-plus brown"></i>
+                            </div>
+                        </div>
+                        <div class="row flex">
+                            <section class="icon col-lg-2 col-md-2 col-xs-2">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                     class="account-img round-img" alt="User profile image">
+                            </section>
+                            <section class="col-lg-8 col-md-8 col-xs-8">
+                                <h2 class="item-title"><a href="#">Mijn titel</a></h2>
+                                <div class="rating col-xs-12 no-padding clearfix">
+                                    <div class="col-xs-12 no-padding">
+                                        geldig tot 12 juni
+                                    </div>
+                                </div>
+                            </section>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <i class="fa fa-user-plus brown"></i>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
+                <!-- end User items -->
+
+                <!-- User items -->
+                <section class="item user-owned hide-mobile">
+                    <header><a class="header-title">Voltooide assessments</a></header>
+                    <div class="padding">
+                        <div class="row flex">
+                            <section class="icon col-lg-2 col-md-2 col-xs-2">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                     class="account-img round-img" alt="User profile image">
+                            </section>
+                            <section class="col-lg-8 col-md-8 col-xs-8">
+                                <h2 class="item-title"><a href="#">Mijn titel</a></h2>
+                                <div class="rating col-xs-12 no-padding clearfix">
+                                    <div class="col-xs-12 no-padding">
+                                        ongeldige deelname
+                                    </div>
+                                </div>
+                            </section>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <i class="fa fa-wrench brown"></i>
+                            </div>
+                        </div>
+                        <div class="row flex">
+                            <section class="icon col-lg-2 col-md-2 col-xs-2">
+                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                     class="account-img round-img" alt="User profile image">
+                            </section>
+                            <section class="col-lg-8 col-md-8 col-xs-8">
+                                <h2 class="item-title"><a href="#">Mijn titel</a></h2>
+                                <div class="rating col-xs-12 no-padding clearfix">
+                                    <div class="col-xs-12 no-padding">
+                                        voltooid op 21 mei
+                                    </div>
+                                </div>
+                            </section>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <i class="fa fa-user-plus brown"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- end User items -->
+            </aside>
+            <!-- end sidebar -->
+            <!-- begin content -->
+            <section class="content assessment overview">
+                <section class="item clearfix">
+                    <header><a class="header-title">Android project</a></header>
+                    <div class="padding">
+                        <table class="assessment-overview">
+
+
+                            <tr>
+                                <td class="bold">Peer assessment</td>
+                                <td class="static-course">Android project assessment</td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td class="bold">Aantal leden</td>
+                                <td class="static-course">12</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="bold">Einddatum</td>
+                                <td class="static-course">21 juni 2018 om 23:59</td>
+                            </tr>
+
+                            <tr>
+                                <td class="bold">Geschatte tijd</td>
+                                <td class="static-title">7 minuten</td>
+                            </tr>
+
+
+
+
+                            <tr>
+                                <td class="bold">Aantal beurten</td>
+                                <td class="static-course">1</td>
+                            </tr>
+
+                            <tr>
+                                <td class="bold">Instructies</td>
+                                <td class="static-course">Geef iedere student een score</td>
+                            </tr>
+
+
+                        </table>
+                        <a href="#"><button class="download-button col-lg-2 col-sm-4 col-xs-12" value="Starten">Starten</button></a>
+
+                    </div>
+                </section>
             </section>
-            <!-- end picture -->
-        </div>
-        <!-- end profile info -->
+            <!-- end content -->
+        </section>
+        <!-- end table -->
     </section>
     <!-- end container -->
     <!-- begin footer -->
