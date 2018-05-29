@@ -2,7 +2,7 @@
 #platform-header {
   background-color: $theme-color;
   padding: 15px;
-  .account{
+  .account {
     /*User menu*/
     .user-profile {
       display: flex;
@@ -30,28 +30,27 @@
         fill: $unihelp-white;
         opacity: 0.5;
       }
-      &:hover{
+      &:hover {
         .account-img {
           border: 0.5px solid $unihelp-white;
           transition: 0.2s ease all;
         }
       }
-
     }
 
     /*Notification menu*/
-    .user-notifications{
+    .user-notifications {
       margin-right: 1em;
       position: relative;
       height: 100%;
       text-align: right;
       cursor: pointer;
-      i{
+      i {
         padding-top: 10px;
         padding-right: 7.5px;
         color: $unihelp-white;
       }
-      span{
+      span {
         font-size: 12px;
         padding: 2px;
         position: absolute;
@@ -66,8 +65,8 @@
         color: $unihelp-white;
         transition: 0.2s ease all;
       }
-      &:hover{
-        span{
+      &:hover {
+        span {
           height: 17px;
           width: 17px;
           font-size: 13px;
@@ -77,15 +76,15 @@
           background: $unihelp-asphalt;
         }
       }
-      #notifications-dropdown{
-        i{
-          &:before{
+      #notifications-dropdown {
+        i {
+          &:before {
             color: $unihelp-asphalt;
           }
         }
       }
 
-      .user-info{
+      .user-info {
         text-align: center;
         cursor: pointer;
       }
@@ -124,8 +123,8 @@
       }
 
     }
-    &:before{
-      content:"";
+    &:before {
+      content: "";
       width: 0;
       height: 0;
       border-style: solid;
@@ -133,15 +132,15 @@
       border-color: transparent transparent #ffffff;
       position: absolute;
       right: 12px;
-      top:-12px;
+      top: -12px;
     }
-    .user-info{
-      display:block;
+    .user-info {
+      display: block;
       height: auto;
       cursor: pointer;
       text-decoration: none;
       color: black;
-      &:hover{
+      &:hover {
         //background: $unihelp-brown;
         //color: $unihelp-white;
         background: $background-color;
@@ -150,7 +149,7 @@
   }
 
   /*Notification dropdown*/
-  #notifications-dropdown{
+  #notifications-dropdown {
     width: 300px;
     margin-left: -215px;
   }
@@ -204,3 +203,41 @@
   }
 }
 
+#mobile-header {
+  display: none;
+}
+
+.slicknav_nav {
+  li, a {
+    color: $unihelp-white !important;
+    padding: 5px;
+    &:hover {
+      background: $unihelp-white !important;
+      color: $theme-color !important;
+    }
+  }
+}
+
+section.logo {
+  position: absolute;
+  top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  #platform-header {
+    section.logo {
+      top: 20px;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .account {
+      display: none;
+    }
+
+    .slicknav_menu {
+      min-height: 2em !important;
+    }
+  }
+}

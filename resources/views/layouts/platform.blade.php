@@ -48,10 +48,10 @@
 <script src="{{ URL::asset('js/jquery.slicknav.js') }}"></script>
 <script>
     $(function(){
-        $('#platform-header').slicknav({
+        $('#mobile-header').slicknav({
             label: ' ',
             duration: 200,
-            prependTo:'#platform-header'
+            prependTo:'#platform-header .container'
         });
     });
 </script>

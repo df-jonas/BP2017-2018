@@ -644,6 +644,16 @@ fieldset input.submit {
   letter-spacing: -.03em;
 }
 
+@media only screen and (max-width: 480px) {
+  #page-banner {
+    max-height: 500px;
+  }
+
+  #page-banner h1 {
+    font-size: 35px;
+  }
+}
+
 /*innerpage styling*/
 
 .innerpage {
@@ -1117,26 +1127,29 @@ fieldset input.submit {
   position: fixed;
   left: 20px;
   bottom: 20px;
-  background: #4D6A50;
+  background: #ffffff;
   padding: 15px;
-  color: #ffffff;
+  color: #4D6A50;
+  -webkit-box-shadow: 2px 2px 10px #4D6A50;
+          box-shadow: 2px 2px 10px #4D6A50;
 }
 
 .cookie-consent button {
-  color: #4D6A50;
+  color: #ffffff;
   border: 1px solid transparent;
   border-radius: 0 !important;
   margin-top: 1em;
   padding: 5px;
+  background: #4D6A50;
 }
 
 .cookie-consent button:hover {
   cursor: pointer;
-  background: #4D6A50;
-  border: 1px solid #ffffff;
+  background: #ffffff;
+  border: 1px solid #4D6A50;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  color: #ffffff;
+  color: #4D6A50;
 }
 
 /*Beta notice box */

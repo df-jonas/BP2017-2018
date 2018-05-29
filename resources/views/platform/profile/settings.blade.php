@@ -188,7 +188,7 @@
         <!-- begin settings -->
         <div class="row">
             <!-- vakken -->
-            <section class="col-lg-6 left col-xs-12">
+            <section class="col-lg-6 col-xs-12">
                 <div class="item padding clearfix">
                     <h2 class="settings-title">Mijn vakken</h2>
                     <form>
@@ -227,7 +227,7 @@
             <!-- end vakken -->
 
             <!-- account -->
-            <section class="col-lg-6 right col-xs-12">
+            <section class="col-lg-6 col-xs-12">
                 <div class="item padding clearfix">
                     <h2 class="settings-title">Account instellingen</h2>
                     <form action="{{ route('profile-update') }}" method="POST">

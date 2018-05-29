@@ -865,6 +865,46 @@ div.container {
   text-align: center;
 }
 
+#mobile-header {
+  display: none;
+}
+
+.slicknav_nav li,
+.slicknav_nav a {
+  color: #ffffff !important;
+  padding: 5px;
+}
+
+.slicknav_nav li:hover,
+.slicknav_nav a:hover {
+  background: #ffffff !important;
+  color: #505457 !important;
+}
+
+section.logo {
+  position: absolute;
+  top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  #platform-header section.logo {
+    top: 20px;
+  }
+
+  #platform-header section.logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  #platform-header .account {
+    display: none;
+  }
+
+  #platform-header .slicknav_menu {
+    min-height: 2em !important;
+  }
+}
+
 /* Profiel */
 
 .headline h4 {

@@ -6,9 +6,8 @@
                 <a href="{{ route('sharing-index') }}"><img class="logo" src="{{ URL::asset('img/logo/favicon_white.png') }}" alt="UniHelp logo"></a>
             </section>
             <!-- end logo -->
-
             <!-- user menu -->
-            <section  class="account col-lg-2 col-lg-push-8 col-md- col-md-push-8 col-sm-3 col-sm-push-7 col-xs-1 col-xs-push-6">
+            <section class="account col-lg-2 col-lg-push-10 col-md-4  col-md-push-10 col-sm-3 col-sm-push-10 col-xs-1 col-xs-push-6">
                 <div class="row flex">
                     <!-- notifications -->
                     <div class="col-lg-6 hide-mobile">
@@ -107,6 +106,18 @@
                 </div>
             </section>
             <!-- end user menu -->
+
+            <!-- Mobile menu-->
+            <ul id="mobile-header" class="col-xs-12">
+                <li><a href="{{ route('profile-index') }}">Profiel</a></li>
+                <li><a href="#">Admin dashboard</a></li>
+                <li><a href="{{ route('profile-notifications') }}">Notificaties</a></li>
+                <li><a href="{{ route('profile-uploads') }}">Uploads</a></li>
+                <li><a href="{{ route('profile-downloads') }}">Downloads</a></li>
+                <li><a href="{{ route('profile-ratings') }}">Beoordelingen</a></li>
+                <li><a href="{{ route('profile-settings') }}">Instellingen</a></li>
+            </ul>
+            <!-- end mobile menu -->
         </div>
     </div>
 </header>
