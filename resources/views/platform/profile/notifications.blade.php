@@ -37,7 +37,3 @@
 </section>
 @include('partials.footer')
 @endsection
-
-@section("scripts")
-    <script src="{{ asset("js/sharing-filter.js") }}"></script>
-@endsection

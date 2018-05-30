@@ -89,6 +89,7 @@
 
             /** Peer Assessment */
             Route::get('/assessment', 'AssessmentController@index')->name('assessment-index');
+            Route::get('/assessment/new', 'AssessmentController@new')->name('assessment-new');
             Route::get('/assessment/{id}', 'AssessmentController@detail')->name('assessment-detail');
 
 

@@ -64,7 +64,3 @@
 @include('partials.footer')
 <!-- end footer -->
 @endsection
-
-@section("scripts")
-    <script src="{{ asset("js/course-filter.js") }}"></script>
-@endsection
