@@ -36,8 +36,6 @@ class CommunityController extends Controller
             ]
         ];
 
-        Log::info($arr['stats']);
-
         return view("platform.community.index", $arr);
     }
 
