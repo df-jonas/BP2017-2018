@@ -22,11 +22,7 @@
                     <header><a class="header-title">Beschikbare assessments</a></header>
                     <div class="padding">
                         <div class="row flex">
-                            <section class="icon col-lg-2 col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                     class="account-img round-img" alt="User profile image">
-                            </section>
-                            <section class="col-lg-8 col-md-8 col-xs-8">
+                            <section class="col-xs-10">
                                 <h2 class="item-title"><a href="#">Android project</a></h2>
                                 <div class="rating col-xs-12 no-padding clearfix">
                                     <div class="col-xs-12 no-padding">
@@ -34,41 +30,33 @@
                                     </div>
                                 </div>
                             </section>
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-xs-2">
                                 <i class="fa fa-user-plus brown"></i>
                             </div>
                         </div>
                         <div class="row flex">
-                            <section class="icon col-lg-2 col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                     class="account-img round-img" alt="User profile image">
-                            </section>
-                            <section class="col-lg-8 col-md-8 col-xs-8">
-                                <h2 class="item-title"><a href="#">Mijn titel</a></h2>
+                            <section class="col-xs-10">
+                                <h2 class="item-title"><a href="#">Android project</a></h2>
                                 <div class="rating col-xs-12 no-padding clearfix">
                                     <div class="col-xs-12 no-padding">
                                         geldig tot 12 juni
                                     </div>
                                 </div>
                             </section>
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-xs-2">
                                 <i class="fa fa-user-plus brown"></i>
                             </div>
                         </div>
                         <div class="row flex">
-                            <section class="icon col-lg-2 col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                     class="account-img round-img" alt="User profile image">
-                            </section>
-                            <section class="col-lg-8 col-md-8 col-xs-8">
-                                <h2 class="item-title"><a href="#">Mijn titel</a></h2>
+                            <section class="col-xs-10">
+                                <h2 class="item-title"><a href="#">Android project</a></h2>
                                 <div class="rating col-xs-12 no-padding clearfix">
                                     <div class="col-xs-12 no-padding">
                                         geldig tot 12 juni
                                     </div>
                                 </div>
                             </section>
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-xs-2">
                                 <i class="fa fa-user-plus brown"></i>
                             </div>
                         </div>
@@ -81,36 +69,28 @@
                     <header><a class="header-title">Voltooide assessments</a></header>
                     <div class="padding">
                         <div class="row flex">
-                            <section class="icon col-lg-2 col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                     class="account-img round-img" alt="User profile image">
-                            </section>
-                            <section class="col-lg-8 col-md-8 col-xs-8">
-                                <h2 class="item-title"><a href="#">Mijn titel</a></h2>
+                            <section class="col-xs-10">
+                                <h2 class="item-title"><a href="#">Android project</a></h2>
                                 <div class="rating col-xs-12 no-padding clearfix">
                                     <div class="col-xs-12 no-padding">
-                                        ongeldige deelname
+                                       ongeldige deelname
                                     </div>
                                 </div>
                             </section>
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-xs-2">
                                 <i class="fa fa-wrench brown"></i>
                             </div>
                         </div>
                         <div class="row flex">
-                            <section class="icon col-lg-2 col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                     class="account-img round-img" alt="User profile image">
-                            </section>
-                            <section class="col-lg-8 col-md-8 col-xs-8">
-                                <h2 class="item-title"><a href="#">Mijn titel</a></h2>
+                            <section class="col-xs-10">
+                                <h2 class="item-title"><a href="#">Android project</a></h2>
                                 <div class="rating col-xs-12 no-padding clearfix">
                                     <div class="col-xs-12 no-padding">
-                                        voltooid op 21 mei
+                                        geldig tot 12 juni
                                     </div>
                                 </div>
                             </section>
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-xs-2">
                                 <i class="fa fa-user-plus brown"></i>
                             </div>
                         </div>

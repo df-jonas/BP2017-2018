@@ -476,6 +476,7 @@ div.container {
 
 .table.tutoring .sidebar {
   display: table-cell;
+  padding-right: 10px;
 }
 
 .table.tutoring .sidebar .people-list {
@@ -556,6 +557,7 @@ div.container {
   display: table-cell;
   padding-left: 0;
   position: relative;
+  left: 0;
 }
 
 .table.tutoring .content .item {
