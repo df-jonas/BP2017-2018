@@ -5,7 +5,7 @@
 @include('partials.platform.header')
 @include('partials.platform.subheader')
 
-<div class="container">
+<div class="container tutoring">
 
     <a href="{{route('tutoring-requests')}}">
         <div class="item message col-xs-12">
@@ -144,12 +144,12 @@
 
 
                         <div class="col-xs-12">
-                            <h4>Introductie</h4>
+                            <h4 class="tutoring-intro-title">Introductie</h4>
                             <p id="introduction"></p>
                         </div>
 
                         <div class="col-xs-12">
-                            <h4>Planning</h4>
+                            <h4 class="tutoring-intro-title">Planning</h4>
 
                             <div class="row planning_container">
 

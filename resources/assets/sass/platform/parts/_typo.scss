@@ -98,6 +98,21 @@ h1, h2, h3 {
   }
 }
 
+
+.tutoring{
+  .tutoring-intro-title{
+    font-family: Raleway;
+    font-size: 16px;
+    font-weight: 550;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+  }
+}
+
 /*Detail pages */
 .detail {
   &.sharing, &.community {

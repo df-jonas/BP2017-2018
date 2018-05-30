@@ -65,7 +65,6 @@
                                 </h4>
                             </section>
                         </div>
-                        <br>
                     </section>
                 </div>
             </section>

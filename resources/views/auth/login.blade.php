@@ -10,16 +10,10 @@
                     <div class="form-group clearfix col-xs-12">
                         <input type="text" class="form-control" id="email" name="email" aria-describedby="usernameHelp"
                                placeholder="Gebruikersnaam">
-                        @if ($errors->has('email'))
-                            <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
-                        @endif
                     </div>
                     <div class="form-group clearfix col-xs-12">
                         <input type="password" class="form-control" id="password" name="password"
                                aria-describedby="passwordHelp" placeholder="Wachtwoord">
-                        @if ($errors->has('password'))
-                            <span class="help-block"><strong>{{ $errors->first('password') }}</strong></span>
-                        @endif
                     </div>
                     <div class="form-group clearfix col-xs-12">
                         <label class="checkbox-container remember col-xs-12">Aangemeld blijven
@@ -31,9 +25,18 @@
                     <div class="form-group clearfix col-xs-12">
                         <input type="submit" class="action-button login col-xs-12" value="INLOGGEN">
                     </div>
+                    <!--
                     <div class="form-group clearfix col-xs-12">
-                        <!-- TODO Jonas: login with canvas -->
                         <input type="submit" class="action-button canvas disabled col-xs-12" value="LOGIN MET CANVAS" disabled readonly title="Inloggen met Canvas is innenkort beschikbaar">
+                    </div>
+                -->
+                    <div class="form-group clearfix col-xs-12">
+                        @if ($errors->has('email'))
+                            <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
+                        @endif
+                        @if ($errors->has('password'))
+                            <span class="help-block"><strong>{{ $errors->first('password') }}</strong></span>
+                        @endif
                     </div>
                 </div>
             </form>
