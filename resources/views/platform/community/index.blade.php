@@ -83,7 +83,7 @@
                         </div>
 
                         <div class="col-xs-2">
-                            <p class="amount">0</p>
+                            <p class="amount">{{ $stats['groups'] }}</p>
                         </div>
                     </div>
                     <div class="row flex">
@@ -92,7 +92,7 @@
                         </div>
 
                         <div class="col-xs-2">
-                            <p class="amount">0</p>
+                            <p class="amount">{{ $stats['posts'] }}</p>
                         </div>
                     </div>
                     <div class="row flex">
@@ -101,7 +101,7 @@
                         </div>
 
                         <div class="col-xs-2">
-                            <p class="amount">0</p>
+                            <p class="amount">{{ $stats['comments'] }}</p>
                         </div>
                     </div>
                     <div class="row flex">
@@ -110,7 +110,7 @@
                         </div>
 
                         <div class="col-xs-2">
-                            <p class="amount">0</p>
+                            <p class="amount">{{ $stats['users'] }}</p>
                         </div>
                     </div>
                 </div>
