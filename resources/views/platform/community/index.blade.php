@@ -166,5 +166,6 @@
 @endsection
 
 @section("scripts")
+    <script src="{{ asset("js/moment.js") }}"></script>
     <script src="{{ asset("js/community-filter.js") }}"></script>
 @endsection
