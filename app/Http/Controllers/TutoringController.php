@@ -213,7 +213,7 @@ class TutoringController extends Controller
                 ]);
             },
             'tutee' => function ($query) {
-                $query->select("id", "user_id", "course_id", "need_exercises", "need_explanation", "need_studying", "active", "updated_at", "created_at")->with([
+                $query->select("id", "user_id", "course_id", "description", "need_exercises", "need_explanation", "need_studying", "active", "updated_at", "created_at")->with([
                     'user' => function ($query) {
                         $query->select("id", "first_name", "last_name", "email", "image", "campusid", "fosid")->with([
                             'campus' => function ($query) {

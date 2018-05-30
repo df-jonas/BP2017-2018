@@ -22,9 +22,9 @@ $(document).ready(function () {
                 var o;
 
                 if (s.tutee.user_id === $('#userid').val())
-                    o = session.tutor;
+                    o = s.tutor;
                 else
-                    o = session.tutee;
+                    o = s.tutee;
 
                 var u = o.user;
 
@@ -34,7 +34,8 @@ $(document).ready(function () {
                 $('#url_chat').attr("href", "");
                 $('#url_planner').attr("href", "");
                 $('#url_stop').attr("href", "");
-                $('#introduction').text("This is placeholder text. TODO add description to tutee request.");
+                $('#introduction').text(s.tutee.description);
+                $('.userpanel').css({"visibility": "visible"});
 
                 // var newhtml = "";
                 // if (json.length > 0) {
@@ -48,8 +49,6 @@ $(document).ready(function () {
                 //     newhtml = '<span id="filter-details" class="item padding col-xs-12">Er werden geen vakken gevonden.</span>';
                 // }
                 // $("#filter-results").html(newhtml);
-
-                $('.userpanel').css({"visibility": "visible"});
             }
         });
     });
