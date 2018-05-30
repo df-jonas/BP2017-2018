@@ -59,59 +59,11 @@
                 </div>
             </section>
             <!-- end User items -->
-            <!-- Community stats -->
-            <section class="item stats">
-                <header> <a class="header-title"><i class="fa fa-line-chart"></i> Statistieken</a></header>
-                <div class="padding">
-                    <div class="row flex">
-                        <div class="col-xs-10">
-                            <p>Groepen</p>
-                        </div>
-
-                        <div class="col-xs-2">
-                            <p class="amount">0</p>
-                        </div>
-                    </div>
-
-                    <div class="row flex">
-                        <div class="col-xs-10">
-                            <p>Posts</p>
-                        </div>
-
-                        <div class="col-xs-2">
-                            <p class="amount">0</p>
-                        </div>
-                    </div>
-
-                    <div class="row flex">
-                        <div class="col-xs-10">
-                            <p>Aantal reacties</p>
-                        </div>
-
-                        <div class="col-xs-2">
-                            <p class="amount">0</p>
-                        </div>
-                    </div>
-
-
-                    <div class="row flex">
-                        <div class="col-xs-10">
-                            <p>Aantal gebruikers</p>
-                        </div>
-
-                        <div class="col-xs-2">
-                            <p class="amount">0</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- end Community stats -->
         </aside>
         <!--end sidebar -->
         <!-- begin content -->
         <section class="content community overview">
             <section id="groupcontainer" class="item groups">
-
                 <section class="group group-type item clearfix">
                     <header><a class="header-title">Posts in "{{ $group->name }}"</a></header>
                     @if(sizeof($group->posts) > 0)
