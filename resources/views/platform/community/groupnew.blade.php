@@ -1,5 +1,5 @@
 @extends('layouts.platform')
-
+@section('pagetitle', 'Nieuwe groep')
 @section('content')
     @include('partials.platform.header')
     @include('partials.platform.subheader')

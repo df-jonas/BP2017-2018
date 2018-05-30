@@ -1,7 +1,6 @@
 @extends('layouts.platform')
-
-@section('content')
 @section('pagetitle', 'Tutoring - Messages')
+@section('content')
 @include('partials.platform.header')
     @include('partials.platform.subheader')
 

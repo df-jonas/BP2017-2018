@@ -1,7 +1,6 @@
 @extends('layouts.platform')
-
-@section('content')
 @section('pagetitle', 'Community - ' . $group->name)
+@section('content')
 @include('partials.platform.header')
 @include('partials.platform.subheader')
 

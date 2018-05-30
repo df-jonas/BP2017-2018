@@ -1,12 +1,11 @@
 @extends('layouts.platform')
-
-@section('pagetitle', 'Beoordelingen')
+@section('pagetitle', 'Mijn beoordelingen')
 @section('content')
     @include('partials.platform.header')
     @include('partials.platform.subheader')
     <section class="container">
         <div id="filter-results" class="item filecontainer files">
-            <header><a class="header-title"><i class="fa fa-star"></i> Mijn ratings</a></header>
+            <header><a class="header-title"><i class="fa fa-star"></i> Mijn beoordelingen</a></header>
             <div class="padding">
                 <ul class="all-ratings">
                     <li>

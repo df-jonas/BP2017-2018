@@ -1,5 +1,4 @@
 @extends('layouts.platform')
-
 @section('pagetitle', 'Profiel')
 @section('content')
 @include('partials.platform.header')

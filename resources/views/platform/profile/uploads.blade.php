@@ -1,8 +1,8 @@
 @extends('layouts.platform')
-@section('pagetitle', 'Uploads')
+@section('pagetitle', 'Mijn uploads')
 @section('content')
 @include('partials.platform.header')
-    @include('partials.platform.subheader')
+@include('partials.platform.subheader')
 <section class="container">
     <div id="filter-results" class="item filecontainer files">
         <header><a class="header-title"><i class="fa fa-download"></i> Mijn uploads</a></header>
