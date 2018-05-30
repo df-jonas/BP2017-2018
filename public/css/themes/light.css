@@ -559,8 +559,10 @@ div.container {
 }
 
 .table.tutoring .content .item {
-  position: absolute;
-  height: 100%;
+  /*
+      position: absolute;
+      height: 100%;
+      */
 }
 
 #tutoringcontent article.col-lg-4:nth-of-type(1) {
@@ -629,6 +631,188 @@ div.container {
 
 .overview-calendar .reminder p {
   color: #ffffff;
+}
+
+.blurry-text {
+  color: transparent;
+  text-shadow: 0 0 5px white;
+}
+
+table.assessment {
+  width: 100%;
+  /*Input spinner verbergen*/
+}
+
+table.assessment td,
+table.assessment th {
+  padding: 7.5px;
+  text-align: center;
+}
+
+table.assessment th {
+  text-align: left;
+}
+
+table.assessment td {
+  height: 30px;
+  width: 120px;
+  line-height: 3;
+  position: relative;
+  border: solid 0.5px #dfdfdf;
+}
+
+table.assessment td input {
+  height: 30px;
+  width: 120px;
+}
+
+table.assessment td img {
+  width: 32px;
+  height: 32px;
+  float: right;
+  margin: 5px 32px 0px 0px;
+}
+
+table.assessment td input {
+  border: none;
+  background: transparent;
+  text-align: center;
+}
+
+table.assessment td:hover {
+  cursor: pointer;
+}
+
+table.assessment td.left {
+  -webkit-box-shadow: 10px 0 5px -2px #888;
+  box-shadow: 5px 0px 10px -10px #333a40;
+  padding: 0px;
+  margin-right: 10px;
+}
+
+table.assessment td span.more {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 12px solid #505457;
+  border-left: 12px solid transparent;
+}
+
+table.assessment td span.more:hover {
+  border-top: 12px solid #333a40;
+}
+
+table.assessment td.left,
+table.assessment th.left {
+  width: 220px;
+  margin-top: 15px;
+  text-align: left;
+  padding-left: 10px;
+  -webkit-box-shadow: 10px 0 5px -2px #888;
+  box-shadow: 5px 0px 10px -10px #333a40;
+  margin-right: 10px;
+}
+
+table.assessment tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+table.assessment tr.selected,
+table.assessment tr:hover {
+  background: #505457;
+  color: #ffffff;
+}
+
+table.assessment tr.selected span.more,
+table.assessment tr:hover span.more {
+  border-top: 12px solid #333a40;
+}
+
+table.assessment tr.heading {
+  background: #ffffff;
+}
+
+table.assessment input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+table.assessment input::-webkit-outer-spin-button,
+table.assessment input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#assessment-modal textarea {
+  max-width: 95%;
+  min-width: 95%;
+  margin: 2.5%;
+  height: 10em;
+  max-height: 10em;
+}
+
+.large-th,
+.mid-th,
+.skill-th {
+  font-family: Raleway;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.large-th {
+  font-size: 13px;
+  font-weight: 700;
+  font-style: normal;
+  color: #000000;
+  margin: 2% 0 2% 0;
+}
+
+.mid-th {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4d6a50;
+}
+
+.skill-th {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center !important;
+  color: #4d6a50;
+}
+
+.assessment-overview {
+  width: 100%;
+  background-color: #f4f4f4;
+}
+
+.assessment-overview td {
+  padding: 10px;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 1500px) {
+  table.assessment td,
+  table.assessment th {
+    width: 10% !important;
+    line-height: 1;
+    padding: 1%;
+  }
+
+  table.assessment td input,
+  table.assessment th input {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  table.assessment td img,
+  table.assessment th img {
+    display: none;
+  }
 }
 
 /*Header*/
@@ -865,6 +1049,46 @@ div.container {
   text-align: center;
 }
 
+#mobile-header {
+  display: none;
+}
+
+.slicknav_nav li,
+.slicknav_nav a {
+  color: #ffffff !important;
+  padding: 5px;
+}
+
+.slicknav_nav li:hover,
+.slicknav_nav a:hover {
+  background: #ffffff !important;
+  color: #505457 !important;
+}
+
+section.logo {
+  position: absolute;
+  top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  #platform-header section.logo {
+    top: 20px;
+  }
+
+  #platform-header section.logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  #platform-header .account {
+    display: none;
+  }
+
+  #platform-header .slicknav_menu {
+    min-height: 2em !important;
+  }
+}
+
 /* Profiel */
 
 .headline h4 {
@@ -888,16 +1112,22 @@ div.container {
   padding-top: 1%;
 }
 
+.left-border {
+  border-left: 2.5px solid #505457;
+}
+
 .color-choose {
   margin-bottom: 0.3%;
   height: 60px;
   border: 1px solid white;
   display: inline-block;
   cursor: pointer;
+  opacity: 0.55;
 }
 
-.color-choose:hover {
-  opacity: 0.90;
+.color-choose:hover,
+.color-choose.current {
+  opacity: 1;
 }
 
 .notification-choose {
@@ -932,18 +1162,24 @@ div.container {
   background: lightgray;
 }
 
-.all-notifications {
+.all-notifications,
+.all-tutoring-requests,
+.all-downloads {
   padding-left: 0;
   list-style: none;
 }
 
-.all-notifications li {
+.all-notifications li,
+.all-tutoring-requests li,
+.all-downloads li {
   margin-bottom: 17.5px;
   border-bottom: 1px solid rgba(181, 212, 183, 0.2);
   padding: 5px 10px;
 }
 
-.all-notifications li.unread {
+.all-notifications li.unread,
+.all-tutoring-requests li.unread,
+.all-downloads li.unread {
   background: rgba(181, 212, 183, 0.2);
 }
 
@@ -1018,11 +1254,13 @@ div.container {
 .modal .keuze {
   text-align: center;
   cursor: pointer;
+  margin: 5% 0 5% 0;
   background: #505457;
 }
 
 .modal .keuze header {
   background: #8A7E72;
+  color: #ffffff;
 }
 
 .modal .keuze img {
@@ -1208,30 +1446,44 @@ h3 {
 }
 
 .notification-title,
-.notification-title a {
+.notification-title a,
+.tutoring-request-title,
+.tutoring-request-title a,
+.download-title,
+.download-title a {
   color: #333a40;
   font-size: 15px;
 }
 
 .notification-title:hover,
-.notification-title a:hover {
+.notification-title a:hover,
+.tutoring-request-title:hover,
+.tutoring-request-title a:hover,
+.download-title:hover,
+.download-title a:hover {
   color: #505457;
   font-weight: 500;
 }
 
-.notification-date {
+.notification-date,
+.tutoring-request-type,
+.download-campus {
   clear: both;
   font-size: 14px;
   color: #8A7E72;
   margin-top: 0;
 }
 
-.notification-read {
+.notification-read,
+.tutoring-request-read,
+.download-read {
   float: right;
   color: #8A7E72;
 }
 
-.notification-read:hover {
+.notification-read:hover,
+.tutoring-request-read:hover,
+.download-read:hover {
   color: #505457;
 }
 
@@ -1255,6 +1507,11 @@ h3 {
 .go-back .padding,
 .message .padding {
   padding: 7.5px;
+}
+
+.go-back:hover a,
+.message:hover a {
+  color: #505457;
 }
 
 .message {

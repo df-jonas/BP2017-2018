@@ -11,7 +11,6 @@
         <div class="container">
             <div class="col-md-6 col-md-push-3 col-xs-12 no-padding">
                 <h1>Over UniHelp</h1>
-                <h2>UniHelp is een platform dat gemaakt werd door 2 studenten.</h2>
             </div>
         </div>
     </div>

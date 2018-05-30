@@ -151,7 +151,7 @@ class TutoringController extends Controller
         return Redirect::to(route("tutoring-index"));
     }
 
-    public function help()
+    public function requests()
     {
         $ids = Tutor::query()
             ->where("active", "=", true)
@@ -169,7 +169,7 @@ class TutoringController extends Controller
             'candidates' => $candidates
         ];
 
-        return view("platform.tutoring.help", $arr);
+        return view("platform.tutoring.requests", $arr);
     }
 
     public function messages()

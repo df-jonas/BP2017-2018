@@ -8,7 +8,6 @@
 
 namespace App\Helpers;
 
-
 use App\Tutee;
 use App\Tutor;
 use App\TutoringSession;
@@ -33,4 +32,25 @@ class GlobalVariableHelper
 
         return $sessions->count();
     }
+
+    public static function isCurrentTheme($actual)
+    {
+        return Auth::user()->preference->theme == $actual;
+    }
+
+    public static function theme($actual)
+    {
+        return self::isCurrentTheme($actual) ? "current" : "disabled";
+    }
+
+    public static function isNotificationTypeActive($type)
+    {
+        return Auth::user()->preference[$type];
+    }
+
+    public static function notif($key)
+    {
+        return self::isNotificationTypeActive($key) ? "active" : "disabled";
+    }
+
 }

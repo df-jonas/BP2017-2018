@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Coduo\PHPHumanizer\DateTimeHumanizer;
 use Illuminate\Database\Eloquent\Model;
 use DateTime;
 
@@ -26,5 +27,9 @@ class Notification extends Model
     public function isRead()
     {
         return $this->read_at;
+    }
+    public function notificationcreated()
+    {
+        return DateTimeHumanizer::difference(new \DateTime(), $this->created_at, "nl");
     }
 }

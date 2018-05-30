@@ -11,7 +11,6 @@
         <div class="container">
             <div class="col-md-6 col-md-push-3 col-xs-12 no-padding">
                 <h1>Hoe het werkt</h1>
-                <h2>UniHelp bevat enkele onmisbare functionaliteiten en is heel eenvoudig in gebruik.</h2>
             </div>
         </div>
     </div>

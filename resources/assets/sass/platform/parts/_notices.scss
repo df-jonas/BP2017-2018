@@ -13,6 +13,11 @@
   .padding {
     padding: 7.5px;
   }
+  &:hover{
+  a{
+    color: $theme-color;
+  }
+}
 }
 
 .message {

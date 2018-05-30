@@ -9,10 +9,10 @@
 
 <div class="container">
 
-    <a href="#">
+    <a href="{{route('tutoring-requests')}}">
         <div class="item message col-xs-12">
             <div class="padding">
-                <div>2 inkomende verzoeken <i class="fa fa-close pull-right"></i></div>
+                    <div>2 inkomende verzoeken <i class="fa fa-close pull-right"></i></div>
             </div>
         </div>
     </a>
@@ -23,39 +23,26 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>Tutoring</h4>
                 </div>
                 <div class="col-xs-12 modal-body clearfix">
-                    <div class="col-sm-4 col-xs-12 clearfix">
+                    <div class="col-sm-6 col-xs-12 clearfix">
                         <a href="{{ route('tutoring-tutee-new') }}">
                             <article class="item keuze no-padding col-xs-12">
                                 <header>Ik wil hulp krijgen</header>
                                 <div class="padding">
                                     <img src="{{ asset('img/icons/001-pen.svg' )}}">
-                                    <!-- <h4>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</h4> -->
                                 </div>
                             </article>
                         </a>
                     </div>
 
-                    <div class="col-sm-4 col-xs-12 c clearfix">
+                    <div class="col-sm-6 col-xs-12 c clearfix">
                         <a href="{{route(('tutoring-tutor-new'))}}">
                             <article class="item keuze no-padding col-xs-12">
                                 <header>Ik wil tutor worden</header>
                                 <div class="padding">
                                     <img src="{{ asset('img/icons/002-book.svg' )}}">
-                                    <!-- <h4>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</h4> -->
-                                </div>
-                            </article>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-4 col-xs-12 clearfix">
-                        <a href="{{route('tutoring-help')}}">
-                            <article class="item keuze no-padding col-xs-12">
-                                <header>Hulpcentrum</header>
-                                <div class="padding">
-                                    <img src="{{ asset('img/icons/003-whiteboard.svg' )}}">
-                                    <!-- <h4>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</h4> -->
                                 </div>
                             </article>
                         </a>
@@ -89,7 +76,19 @@
                         </div>
                     </li>
 
-                    <!-- TODO [JONAS] data-request-id attribute must be equal to the id of the tutoring request in the database. Active people must be tagged with people-list-active-->
+
+                    <!-- TODO [JONAS] Toon hier nieuwe verzoeken bovenaan in de lijst -->
+                    <li class="conversation-handle">
+                        <div class="padding vertical-center">
+                            <div class="table">
+                                <div class="picture"><img src="{{ asset('img/avatars/empty.png')}}" class="group-img round-img"></div>
+                                <div class="info">
+                                    <h6 class="bold blurry-text">Voornaam en Naam</h6>
+                                    <h6 class="blurry-text">Mooi geprobeerd!</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     @foreach($sessions as $session)
                         <li class="conversation-handle tutoringsession" data-id="{{ $session->id }}">
                             @php
@@ -97,9 +96,8 @@
                             @endphp
                             <div class="padding vertical-center">
                                 <div class="table">
-                                    <div class="picture"><img
-                                                src="{{ asset('img/avatars/' . $disp->user->image )}}"
-                                                class="group-img round-img"></div>
+                                    <div class="picture"><img src="{{ asset('img/avatars/' . $disp->user->image )}}"
+                                                              class="group-img round-img"></div>
                                     <div class="info">
                                         <h6 class="bold">{{ $disp->user->first_name }} {{ $disp->user->last_name }}</h6>
                                         <h6>{{ $disp->course->name }}</h6>
@@ -108,14 +106,6 @@
                             </div>
                         </li>
                     @endforeach
-
-                    <li class="load-more">
-                        <div class="padding vertical-center">
-                            <div class="table">
-                                <h6 class="col-xs-12 bold">Toon alle</h6>
-                            </div>
-                        </div>
-                    </li>
                 </ul>
             </article>
             <!-- sidebar -->

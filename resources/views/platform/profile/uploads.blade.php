@@ -1,32 +1,49 @@
 @extends('layouts.platform')
-
-@section('content')
 @section('pagetitle', 'Uploads')
+@section('content')
 @include('partials.platform.header')
     @include('partials.platform.subheader')
-    <div class="container">
-        @include('partials.platform.go-back')
-        <div class="table">
-            <div class="sidebar">
-                <!-- Search form -->
-                <article class="item search">
-                    <header><i class="fa fa-search"></i> Zoeken</header>
-                    <div class="inner-addon left-addon">
-                        <!--<i class="glyphicon glyphicon-search"></i>-->
-                        <input type="text" id="search" name="search" class="form-control filterlistener" placeholder="zoekterm"/>
-                    </div>
-                </article>
-                <!-- Search form -->
-            </div>
-            <!-- content -->
-            <div class="content">
-                <div id="filter-results" class="filecontainer files">
-                    <p>Mijn uploads</p>
-                </div>
-            </div>
+<section class="container">
+    <div id="filter-results" class="item filecontainer files">
+        <header><a class="header-title"><i class="fa fa-download"></i> Mijn uploads</a></header>
+        <div class="padding">
+            <ul class="all-downloads">
+                <li>
+                    <a href="#" class="download-title">
+                        <strong>Bestand titel</strong>
+                    </a>
+                    <a class="download-read"
+                       href="#">Beheren</a>
+                    <h4 class="download-campus">Campus Design & Technologie</h4>
+                </li>
+                <li>
+                    <a href="#" class="download-title">
+                        <strong>Bestand titel</strong>
+                    </a>
+                    <a class="download-read"
+                       href="#">Beheren</a>
+                    <h4 class="download-campus">Campus Design & Technologie</h4>
+                </li>
+                <li>
+                    <a href="#" class="download-title">
+                        <strong>Bestand titel</strong>
+                    </a>
+                    <a class="download-read"
+                       href="#">Beheren</a>
+                    <h4 class="download-campus">Campus Design & Technologie</h4>
+                </li>
+                <li>
+                    <a href="#" class="download-title">
+                        <strong>Bestand titel</strong>
+                    </a>
+                    <a class="download-read"
+                       href="#">Beheren</a>
+                    <h4 class="download-campus">Campus Design & Technologie</h4>
+                </li>
+            </ul>
         </div>
     </div>
-    </div>
+</section>
     @include('partials.footer')
 @endsection
 

@@ -96,7 +96,7 @@ class RegisterController extends Controller
             $img_name = time() . '_' . $img->getClientOriginalName();
             $img_location = public_path('/img/avatars/' . $img_name);
 
-            Image::make($img)->resize(64, 64, function ($image) {
+            Image::make($img)->resize(256, 256, function ($image) {
                 $image->aspectRatio();
                 $image->upsize();
             })->save($img_location);

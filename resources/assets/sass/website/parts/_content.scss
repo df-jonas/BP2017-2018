@@ -145,6 +145,10 @@
         background: $theme-color;
         color: $unihelp-white;
       }
+      h3{
+        text-decoration: underline;
+        text-decoration-style: dotted;
+      }
     }
   }
   .promo {
@@ -370,21 +374,23 @@
   position: fixed;
   left: 20px;
   bottom: 20px;
-  background: $theme-color;
+  background: $unihelp-white;
   padding: 15px;
-  color: $unihelp-white;
+  color: $theme-color;
+  box-shadow: 2px 2px 10px $theme-color;
   button {
-    color: $theme-color;
+    color: $unihelp-white;
     border: 1px solid transparent;
     border-radius: 0 !important;
     margin-top: 1em;
     padding: 5px;
+    background: $theme-color;
     &:hover {
       cursor: pointer;
-      background: $theme-color;
-      border: 1px solid $unihelp-white;
+      background: $unihelp-white;
+      border: 1px solid $theme-color;
       transition: all 0.2s ease;
-      color: $unihelp-white;
+      color: $theme-color;
     }
   }
 }
