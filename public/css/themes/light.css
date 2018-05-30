@@ -633,6 +633,11 @@ div.container {
   color: #ffffff;
 }
 
+.blurry-text {
+  color: transparent;
+  text-shadow: 0 0 5px white;
+}
+
 table.assessment {
   width: 100%;
   /*Input spinner verbergen*/
@@ -787,6 +792,27 @@ table.assessment input::-webkit-inner-spin-button {
 .assessment-overview td {
   padding: 10px;
   font-size: 12px;
+}
+
+@media only screen and (max-width: 1500px) {
+  table.assessment td,
+  table.assessment th {
+    width: 10% !important;
+    line-height: 1;
+    padding: 1%;
+  }
+
+  table.assessment td input,
+  table.assessment th input {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  table.assessment td img,
+  table.assessment th img {
+    display: none;
+  }
 }
 
 /*Header*/
@@ -1136,18 +1162,24 @@ section.logo {
   background: lightgray;
 }
 
-.all-notifications {
+.all-notifications,
+.all-tutoring-requests,
+.all-downloads {
   padding-left: 0;
   list-style: none;
 }
 
-.all-notifications li {
+.all-notifications li,
+.all-tutoring-requests li,
+.all-downloads li {
   margin-bottom: 17.5px;
   border-bottom: 1px solid rgba(181, 212, 183, 0.2);
   padding: 5px 10px;
 }
 
-.all-notifications li.unread {
+.all-notifications li.unread,
+.all-tutoring-requests li.unread,
+.all-downloads li.unread {
   background: rgba(181, 212, 183, 0.2);
 }
 
@@ -1222,11 +1254,13 @@ section.logo {
 .modal .keuze {
   text-align: center;
   cursor: pointer;
+  margin: 5% 0 5% 0;
   background: #505457;
 }
 
 .modal .keuze header {
   background: #8A7E72;
+  color: #ffffff;
 }
 
 .modal .keuze img {
@@ -1412,30 +1446,44 @@ h3 {
 }
 
 .notification-title,
-.notification-title a {
+.notification-title a,
+.tutoring-request-title,
+.tutoring-request-title a,
+.download-title,
+.download-title a {
   color: #333a40;
   font-size: 15px;
 }
 
 .notification-title:hover,
-.notification-title a:hover {
+.notification-title a:hover,
+.tutoring-request-title:hover,
+.tutoring-request-title a:hover,
+.download-title:hover,
+.download-title a:hover {
   color: #505457;
   font-weight: 500;
 }
 
-.notification-date {
+.notification-date,
+.tutoring-request-type,
+.download-campus {
   clear: both;
   font-size: 14px;
   color: #8A7E72;
   margin-top: 0;
 }
 
-.notification-read {
+.notification-read,
+.tutoring-request-read,
+.download-read {
   float: right;
   color: #8A7E72;
 }
 
-.notification-read:hover {
+.notification-read:hover,
+.tutoring-request-read:hover,
+.download-read:hover {
   color: #505457;
 }
 

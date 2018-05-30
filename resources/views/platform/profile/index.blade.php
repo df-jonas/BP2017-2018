@@ -25,7 +25,7 @@
                         <section class="right col-lg-11 col-sm-10 col-xs-12">
                             <h4 class="user-title">{{ $user->first_name. " " .$user->last_name }}</h4>
                             <h4 style="margin-top: 0">
-                                <small>{{ $email }}</small>
+                                <small>{{ $address }}</small>
                             </h4>
                         </section>
                     </div>

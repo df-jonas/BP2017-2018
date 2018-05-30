@@ -55,7 +55,7 @@
                                 <th class="skill-th">Deadlines</th>
                             </tr>
                             <tr>
-                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img" alt="User profile image"></td>
+                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
@@ -65,7 +65,7 @@
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                             </tr>
                             <tr>
-                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img" alt="User profile image"></td>
+                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
@@ -75,7 +75,7 @@
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                             </tr>
                             <tr>
-                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img" alt="User profile image"></td>
+                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
@@ -85,7 +85,7 @@
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                             </tr>
                             <tr>
-                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img" alt="User profile image"></td>
+                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
@@ -95,7 +95,7 @@
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                             </tr>
                             <tr class="selected">
-                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img" alt="User profile image"></td>
+                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
                                 <td><input type="number" value=""></td>
                                 <td><input type="number" value=""></td>
                                 <td><input type="number" value=""></td>
@@ -105,7 +105,7 @@
                                 <td><input type="number" value=""></td>
                             </tr>
                             <tr>
-                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img" alt="User profile image"></td>
+                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
@@ -115,7 +115,7 @@
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                             </tr>
                             <tr>
-                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img" alt="User profile image"></td>
+                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
@@ -125,7 +125,7 @@
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                             </tr>
                             <tr>
-                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img" alt="User profile image"></td>
+                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
@@ -135,14 +135,14 @@
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                             </tr>
                             <tr>
-                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img" alt="User profile image"></td>
+                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
+                                <td><input type="number" value=""></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
                                 <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
+                                <td><input type="number" value=""></td>
                             </tr>
                         </table>
                     </div>

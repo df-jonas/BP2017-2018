@@ -1,5 +1,4 @@
 @extends('layouts.platform')
-
 @section('pagetitle', 'Instellingen')
 @section('content')
     @include('partials.platform.header')
@@ -112,6 +111,7 @@
                             <div class="textdiv clearfix">
                                 <label for="woonplaats">Woonplaats</label>
                                 <input id="woonplaats" name="woonplaats" type="text" class="form-control col-xs-12"
+                                       value="{{ $user->address}}"
                                        tabindex="3">
                             </div>
                         </div>
@@ -234,14 +234,6 @@
                         {{ csrf_field() }}
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="textdiv clearfix">
-                                <label for="gebruikersnaam">Gebruikersnaam</label>
-                                <input id="gebruikersnaam" name="username" type="text" class="form-control col-xs-12"
-                                       value="{{ $username }}" tabindex="4">
-                            </div>
-                        </div>
-
-                        <div class="form-group col-xs-12 no-padding clearfix">
-                            <div class="textdiv clearfix">
                                 <label for="voornaam">Voornaam</label>
                                 <input id="voornaam" name="firstname" type="text" class="form-control col-xs-12"
                                        value="{{ $user->first_name }}" tabindex="5">
@@ -268,6 +260,28 @@
                 </div>
             </section>
             <!-- end account -->
+
+            <!-- close account -->
+            <section class="col-lg-6 col-xs-12">
+                <div class="item padding clearfix">
+                    <h2 class="settings-title">Account sluiten</h2>
+                    <form action="{{route('profile-close')}}" method="POST">
+                        <div class="form-group clearfix col-xs-12">
+                            <label class="checkbox-container remember col-xs-12">
+                                <input type="checkbox" name="account_close">Ik ben er zeker van dat ik mijn account en
+                                alle gegevens wil verwijderen.
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="form-group col-xs-12 no-padding clearfix">
+                            <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                            <input type="submit" class="download-button col-lg-4 col-sm-4 col-xs-12"
+                                   value="Account sluiten">
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- end close account -->
         </div>
         <!-- end settings -->
     </section>

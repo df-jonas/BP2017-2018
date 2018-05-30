@@ -82,7 +82,7 @@
             Route::post('/tutoring/tutor/new', 'TutoringController@newtutorpost');
             Route::get('/tutoring/tutee/new', 'TutoringController@newtutee')->name('tutoring-tutee-new');
             Route::post('/tutoring/tutee/new', 'TutoringController@newtuteepost');
-            Route::get('/tutoring/help', 'TutoringController@help')->name('tutoring-help');
+            Route::get('/tutoring/requests', 'TutoringController@requests')->name('tutoring-requests');
             Route::get('/tutoring/accept/{tutee_id}', 'TutoringController@accept')->name('tutoring-accept');
             Route::get('/tutoring/{id}/messages', 'TutoringController@messages')->name('tutoring-messages');
             Route::get('/tutoring/{id}/planning', 'TutoringController@planning')->name('tutoring-planning');
@@ -96,6 +96,7 @@
             Route::get('/profile', 'ProfileController@index')->name('profile-index');
             Route::get('/profile/settings', 'ProfileController@settings')->name('profile-settings');
             Route::post('/profile/update', 'ProfileController@updateprofilepost')->name('profile-update');
+            Route::post('/profile/close', 'ProfileController@closeprofilepost')->name('profile-close');
             Route::post('/profile/preferences', 'ProfileController@updatepreferencepost');
             Route::post('/profile/theme', 'ProfileController@updatethemepost');
             Route::get('/profile/ratings', 'ProfileController@ratings')->name('profile-ratings');

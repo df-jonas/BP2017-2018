@@ -140,3 +140,26 @@ table.assessment {
     font-size: 12px;
   }
 }
+
+@media only screen and (max-width: 1500px) {
+  table.assessment {
+    td, th {
+      width: 10% !important;
+      line-height: 1;
+      padding: 1%;
+      input{
+        width: 100%!important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  table.assessment {
+    td, th {
+      img{
+        display: none;
+      }
+    }
+  }
+}

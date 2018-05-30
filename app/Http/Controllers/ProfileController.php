@@ -13,6 +13,7 @@ use App\User;
 use App\Download;
 use Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Redirect;
 use Session;
 use App\UserCourse;
@@ -30,16 +31,14 @@ class ProfileController extends Controller
             ->take(5)
             ->get();
 
-
         $params = [
             'email' => Auth::user()->email,
             'username' => Auth::user()->username,
             'user' => Auth::user(),
             'files' => Auth::user()->files,
             'posts' => $myposts,
+            'address' => Auth::user()->address,
         ];
-
-
 
         return view('platform.profile.index', $params);
     }
@@ -65,7 +64,6 @@ class ProfileController extends Controller
         $campus = $request->campus;
         $fos = $request->fos;
         $woonplaats = $request->woonplaats;
-        $username = $request->username;
         $email = $request->email;
         $avatar = $request->file('avatar');
         $firstname = $request->firstname;
@@ -77,10 +75,6 @@ class ProfileController extends Controller
 
         if (!empty($fos)) {
             $user->fosid = $fos;
-        }
-
-        if (!empty($username)) {
-            $user->username = $username;
         }
 
         if (!empty($firstname)) {
@@ -95,11 +89,15 @@ class ProfileController extends Controller
             $user->email = $email;
         }
 
+        if (!empty($woonplaats)) {
+            $user->address = $woonplaats;
+        }
+
         if ($request->hasFile('avatar')) {
             $img = $avatar;
             $img_name = time() . '_' . $img->getClientOriginalName();
             $img_location = public_path('/img/avatars/' . $img_name);
-            Image::make($img)->resize(64, 64, function ($image) {
+            Image::make($img)->resize(256, 256, function ($image) {
                 $image->aspectRatio();
                 $image->upsize();
             })->save($img_location);
@@ -107,6 +105,27 @@ class ProfileController extends Controller
         }
         $user->save();
         Session::flash('message', "Uw profiel werd bijgewerkt!");
+        return Redirect::back();
+    }
+
+    public function closeprofilepost(Request $request)
+    {
+        $firstname = Auth::user()->first_name;
+        $lastname = Auth::user()->last_name;
+        $email = Auth::user()->email;
+        $name = $firstname . " " . $lastname;
+
+
+        if (!empty($request->account_close)) {
+            Mail::send('mail.forms.account-delete', ['firstname' => $firstname, 'lastname' => $lastname, 'email' => $email], function ($message) use ($name, $email) {
+                $message->from($email, $name);
+                $message->subject("Unihelp - aanvraag tot account verwijdering");
+                $message->to('info@unihelp.be');
+            });
+            Session::flash('message', "Aanvraag tot verwijdering werd ingediend!");
+        }
+
+
         return Redirect::back();
     }
 

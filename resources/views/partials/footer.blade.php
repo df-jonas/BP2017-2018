@@ -56,6 +56,17 @@
                     </li>
                 </ul>
             </div>
+            <div class="module  clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                <h4>Updates</h4>
+                <ul>
+                    <li>
+                        <a href="">Changelog</a>
+                    </li>
+                    <li>
+                        <a href="">Geplande updates</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
     <section class="bottom no-padding clearfix">
