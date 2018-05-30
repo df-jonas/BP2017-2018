@@ -6,8 +6,8 @@ use App\Comment;
 use App\Group;
 use App\GroupCategory;
 use App\Helpers\NotificationHelper;
-use App\Notifications\PostComment;
 use App\Post;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -23,12 +23,17 @@ class CommunityController extends Controller
             ->get();
 
 
-
         $categories = GroupCategory::all();
 
         $arr = [
             'categories' => $categories,
-            'myposts' => $myposts
+            'myposts' => $myposts,
+            'stats' => [
+                'groups' => Group::query()->count(),
+                'posts' => Post::query()->count(),
+                'comments' => Comment::query()->count(),
+                'users' => User::query()->count()
+            ]
         ];
 
         return view("platform.community.index", $arr);
@@ -163,12 +168,12 @@ class CommunityController extends Controller
             $q->whereIn("group_id", $request->category);
         }
 
-        $returnarr = $q->select(["title", "user_id", "group_id", "created_at"])->with([
+        $returnarr = $q->select(["id", "title", "user_id", "group_id", "created_at"])->with([
             'user' => function ($query) {
                 $query->select("id", "first_name", "last_name", "image");
             },
             'group' => function ($query) {
-                $query->select("id", "name");
+                $query->select("id", "url", "name");
             },
         ])->orderBy('id', 'desc')->get();
 
