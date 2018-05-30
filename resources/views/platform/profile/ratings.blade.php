@@ -1,32 +1,62 @@
 @extends('layouts.platform')
 
-@section('content')
 @section('pagetitle', 'Beoordelingen')
-@include('partials.platform.header')
+@section('content')
+    @include('partials.platform.header')
     @include('partials.platform.subheader')
-    <div class="container">
-        @include('partials.platform.go-back')
-        <div class="table">
-            <div class="sidebar">
-                <!-- Search form -->
-                <article class="item search">
-                    <header><i class="fa fa-search"></i> Zoeken</header>
-                    <div class="inner-addon left-addon">
-                        <!--<i class="glyphicon glyphicon-search"></i>-->
-                        <input type="text" id="search" name="search" class="form-control filterlistener" placeholder="zoekterm"/>
-                    </div>
-                </article>
-                <!-- Search form -->
-            </div>
-            <!-- content -->
-            <div class="content">
-                <div id="filter-results" class="filecontainer files">
-                    <p>Mijn ratings</p>
-                </div>
+    <section class="container">
+        <div id="filter-results" class="item filecontainer files">
+            <header><a class="header-title"><i class="fa fa-star"></i> Mijn ratings</a></header>
+            <div class="padding">
+                <ul class="all-ratings">
+                    <li>
+                        <a href="#" class="rating-title">
+                            <strong>Bestand titel</strong>
+                        </a>
+                        <a class="rating-read"
+                           href="#">Beheren</a>
+                        <h4 class="rating-stars"><span class="fa fa-star checked"></span> <span
+                                    class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span
+                                    class="fa fa-star checked"> <span class="fa fa-star-half checked"></span></span>
+                        </h4>
+                    </li>
+                    <li>
+                        <a href="#" class="rating-title">
+                            <strong>Bestand titel</strong>
+                        </a>
+                        <a class="rating-read"
+                           href="#">Beheren</a>
+                        <h4 class="rating-stars"><span class="fa fa-star checked"></span> <span
+                                    class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span
+                                    class="fa fa-star checked"> <span class="fa fa-star-half checked"></span></span>
+                        </h4>
+                    </li>
+                    <li>
+                        <a href="#" class="rating-title">
+                            <strong>Bestand titel</strong>
+                        </a>
+                        <a class="rating-read"
+                           href="#">Beheren</a>
+                        <h4 class="rating-stars"><span class="fa fa-star checked"></span> <span
+                                    class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span
+                                    class="fa fa-star checked"> <span class="fa fa-star-half checked"></span></span>
+                        </h4>
+                    </li>
+                    <li>
+                        <a href="#" class="rating-title">
+                            <strong>Bestand titel</strong>
+                        </a>
+                        <a class="rating-read"
+                           href="#">Beheren</a>
+                        <h4 class="rating-stars"><span class="fa fa-star checked"></span> <span
+                                    class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span
+                                    class="fa fa-star checked"> <span class="fa fa-star-half checked"></span></span>
+                        </h4>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-    </div>
+    </section>
     @include('partials.footer')
 @endsection
 

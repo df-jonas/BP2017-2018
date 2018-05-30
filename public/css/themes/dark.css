@@ -1164,14 +1164,16 @@ section.logo {
 
 .all-notifications,
 .all-tutoring-requests,
-.all-downloads {
+.all-downloads,
+.all-ratings {
   padding-left: 0;
   list-style: none;
 }
 
 .all-notifications li,
 .all-tutoring-requests li,
-.all-downloads li {
+.all-downloads li,
+.all-ratings li {
   margin-bottom: 17.5px;
   border-bottom: 1px solid rgba(181, 212, 183, 0.2);
   padding: 5px 10px;
@@ -1179,7 +1181,8 @@ section.logo {
 
 .all-notifications li.unread,
 .all-tutoring-requests li.unread,
-.all-downloads li.unread {
+.all-downloads li.unread,
+.all-ratings li.unread {
   background: rgba(181, 212, 183, 0.2);
 }
 
@@ -1450,7 +1453,9 @@ h3 {
 .tutoring-request-title,
 .tutoring-request-title a,
 .download-title,
-.download-title a {
+.download-title a,
+.rating-title,
+.rating-title a {
   color: #333a40;
   font-size: 15px;
 }
@@ -1460,14 +1465,17 @@ h3 {
 .tutoring-request-title:hover,
 .tutoring-request-title a:hover,
 .download-title:hover,
-.download-title a:hover {
+.download-title a:hover,
+.rating-title:hover,
+.rating-title a:hover {
   color: black !important;
   font-weight: 500;
 }
 
 .notification-date,
 .tutoring-request-type,
-.download-campus {
+.download-campus,
+.rating-stars {
   clear: both;
   font-size: 14px;
   color: #8A7E72;
@@ -1476,14 +1484,16 @@ h3 {
 
 .notification-read,
 .tutoring-request-read,
-.download-read {
+.download-read,
+.rating-read {
   float: right;
   color: #8A7E72;
 }
 
 .notification-read:hover,
 .tutoring-request-read:hover,
-.download-read:hover {
+.download-read:hover,
+.rating-read:hover {
   color: black !important;
 }
 
