@@ -476,6 +476,7 @@ div.container {
 
 .table.tutoring .sidebar {
   display: table-cell;
+  padding-right: 10px;
 }
 
 .table.tutoring .sidebar .people-list {
@@ -556,6 +557,7 @@ div.container {
   display: table-cell;
   padding-left: 0;
   position: relative;
+  left: 0;
 }
 
 .table.tutoring .content .item {
@@ -681,6 +683,12 @@ table.assessment td input {
 
 table.assessment td:hover {
   cursor: pointer;
+  background: #505457;
+  color: #ffffff;
+}
+
+table.assessment td:hover span.more {
+  border-top: 12px solid #333a40;
 }
 
 table.assessment td.left {
@@ -719,14 +727,16 @@ table.assessment tr:nth-child(even) {
   background-color: #f5f5f5;
 }
 
-table.assessment tr.selected,
-table.assessment tr:hover {
+table.assessment tr.selected {
   background: #505457;
   color: #ffffff;
 }
 
-table.assessment tr.selected span.more,
-table.assessment tr:hover span.more {
+table.assessment tr.selected td:hover {
+  color: #ffffff;
+}
+
+table.assessment tr.selected span.more {
   border-top: 12px solid #333a40;
 }
 
@@ -741,6 +751,164 @@ table.assessment input[type='number'] {
 table.assessment input::-webkit-outer-spin-button,
 table.assessment input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+
+.assessment-overview {
+  width: 100%;
+  background-color: #f4f4f4;
+}
+
+.assessment-overview td {
+  padding: 10px;
+  font-size: 12px;
+}
+
+.content.assessment .assessment-group {
+  height: 56px;
+  background-color: #f5f7f5;
+  padding: 15px 0;
+  margin: 2em 0;
+}
+
+.content.assessment .assessment-group .group-title {
+  font-family: Raleway;
+  font-size: 16.5px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #505457;
+  margin: 0;
+}
+
+.content.assessment .assessment-group .info {
+  font-family: Raleway;
+  font-size: 11px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #505457;
+}
+
+.content.assessment .assessment-group i {
+  font-family: FontAwesome;
+  font-size: 12.5px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #8a7e72;
+}
+
+.content.assessment .assessment-group .info {
+  text-align: right;
+}
+
+.content.assessment .assessment-group .info .assessments,
+.content.assessment .assessment-group .info .students {
+  margin: 0 2% 0 2%;
+}
+
+.content.assessment .assessment-group .icons {
+  text-align: center;
+  border-left: 1px solid red;
+}
+
+.content.assessment ul.assessments {
+  list-style-type: none;
+  padding-left: 0;
+  height: auto;
+}
+
+.content.assessment ul.assessments li {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 1.5px 3px 0 #505457;
+          box-shadow: 0 1.5px 3px 0 #505457;
+  clear: both;
+  min-height: 75px;
+}
+
+.content.assessment ul.assessments li .id {
+  height: 100%;
+  background-color: #f5f7f5;
+  font-family: Raleway;
+  font-size: 18.5px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4d6a50;
+  line-height: 4;
+}
+
+.content.assessment ul.assessments li .info {
+  height: 100%;
+}
+
+.content.assessment ul.assessments li .assessment-title {
+  font-family: Raleway;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.18;
+  letter-spacing: normal;
+  text-align: left;
+  color: #505457;
+}
+
+.content.assessment ul.assessments li .assessment-submissions {
+  font-family: Raleway;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4d6a50 !important;
+}
+
+.content.assessment ul.assessments li .assessment-students {
+  line-height: 3;
+  height: 100%;
+}
+
+.content.assessment ul.assessments li .assessment-students h4 {
+  font-family: Raleway;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 4;
+  letter-spacing: normal;
+  text-align: right;
+  color: #4d6a50;
+}
+
+.content.assessment ul.assessments li .icons {
+  text-align: center;
+  height: 100%;
+  border-left: solid 0.5px #4d6a50;
+}
+
+.content.assessment ul.assessments li .icons i {
+  font-family: FontAwesome;
+  font-size: 18.5px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 4;
+  letter-spacing: normal;
+  color: #8a7e72;
+  margin: 0 3% 0 3%;
 }
 
 #assessment-modal textarea {
@@ -782,16 +950,6 @@ table.assessment input::-webkit-inner-spin-button {
   line-height: 1.2;
   text-align: center !important;
   color: #4d6a50;
-}
-
-.assessment-overview {
-  width: 100%;
-  background-color: #f4f4f4;
-}
-
-.assessment-overview td {
-  padding: 10px;
-  font-size: 12px;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -1164,14 +1322,16 @@ section.logo {
 
 .all-notifications,
 .all-tutoring-requests,
-.all-downloads {
+.all-downloads,
+.all-ratings {
   padding-left: 0;
   list-style: none;
 }
 
 .all-notifications li,
 .all-tutoring-requests li,
-.all-downloads li {
+.all-downloads li,
+.all-ratings li {
   margin-bottom: 17.5px;
   border-bottom: 1px solid rgba(181, 212, 183, 0.2);
   padding: 5px 10px;
@@ -1179,17 +1339,20 @@ section.logo {
 
 .all-notifications li.unread,
 .all-tutoring-requests li.unread,
-.all-downloads li.unread {
+.all-downloads li.unread,
+.all-ratings li.unread {
   background: rgba(181, 212, 183, 0.2);
 }
 
 .vakken,
-.vakken-nieuw {
+.vakken-nieuw,
+.profile-list {
   padding-left: 0;
 }
 
 .vakken li,
-.vakken-nieuw li {
+.vakken-nieuw li,
+.profile-list li {
   width: 100%;
   height: 26.5px;
   line-height: 26.5px;
@@ -1198,7 +1361,8 @@ section.logo {
 }
 
 .vakken li span,
-.vakken-nieuw li span {
+.vakken-nieuw li span,
+.profile-list li span {
   float: right;
   color: #505457;
   font-size: 16px;
@@ -1206,13 +1370,27 @@ section.logo {
 }
 
 .vakken li span i,
-.vakken-nieuw li span i {
+.vakken-nieuw li span i,
+.profile-list li span i {
   color: #505457;
 }
 
 .vakken li span i:hover,
-.vakken-nieuw li span i:hover {
+.vakken-nieuw li span i:hover,
+.profile-list li span i:hover {
   color: #8A7E72;
+}
+
+.vakken li a,
+.vakken-nieuw li a,
+.profile-list li a {
+  color: #000000;
+}
+
+.vakken li a:hover,
+.vakken-nieuw li a:hover,
+.profile-list li a:hover {
+  color: #505457;
 }
 
 .vakken-nieuw h2 {
@@ -1403,6 +1581,18 @@ h3 {
   color: #8A7E72;
 }
 
+.tutoring .tutoring-intro-title {
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 550;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
 /*Detail pages */
 
 .detail.sharing h1,
@@ -1450,7 +1640,9 @@ h3 {
 .tutoring-request-title,
 .tutoring-request-title a,
 .download-title,
-.download-title a {
+.download-title a,
+.rating-title,
+.rating-title a {
   color: #333a40;
   font-size: 15px;
 }
@@ -1460,14 +1652,17 @@ h3 {
 .tutoring-request-title:hover,
 .tutoring-request-title a:hover,
 .download-title:hover,
-.download-title a:hover {
+.download-title a:hover,
+.rating-title:hover,
+.rating-title a:hover {
   color: #505457;
   font-weight: 500;
 }
 
 .notification-date,
 .tutoring-request-type,
-.download-campus {
+.download-campus,
+.rating-stars {
   clear: both;
   font-size: 14px;
   color: #8A7E72;
@@ -1476,14 +1671,16 @@ h3 {
 
 .notification-read,
 .tutoring-request-read,
-.download-read {
+.download-read,
+.rating-read {
   float: right;
   color: #8A7E72;
 }
 
 .notification-read:hover,
 .tutoring-request-read:hover,
-.download-read:hover {
+.download-read:hover,
+.rating-read:hover {
   color: #505457;
 }
 

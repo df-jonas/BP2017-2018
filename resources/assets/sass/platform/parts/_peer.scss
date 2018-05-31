@@ -31,6 +31,11 @@ table.assessment {
     }
     &:hover {
       cursor: pointer;
+      background: $theme-color;
+      color: $unihelp-white;
+      span.more {
+        border-top: 12px solid $unihelp-asphalt;
+      }
     }
     &.left {
       -webkit-box-shadow: 10px 0 5px -2px #888;
@@ -67,9 +72,14 @@ table.assessment {
     &:nth-child(even) {
       background-color: #f5f5f5;
     }
-    &.selected, &:hover {
+    &.selected {
       background: $theme-color;
       color: $unihelp-white;
+      td {
+        &:hover {
+          color: $unihelp-white;
+        }
+      }
       span.more {
         border-top: 12px solid $unihelp-asphalt;
       }
@@ -89,6 +99,150 @@ table.assessment {
     -webkit-appearance: none;
   }
 
+}
+
+.assessment-overview {
+  width: 100%;
+  background-color: #f4f4f4;
+  td {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+.content.assessment {
+
+  .assessment-group {
+    height: 56px;
+    background-color: #f5f7f5;
+    padding: 15px 0;
+    margin: 2em 0;
+    .group-title {
+      font-family: Raleway;
+      font-size: 16.5px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #505457;
+      margin: 0;
+    }
+    .info {
+      font-family: Raleway;
+      font-size: 11px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 2.5;
+      letter-spacing: normal;
+      text-align: left;
+      color: #505457;
+    }
+    i {
+      font-family: FontAwesome;
+      font-size: 12.5px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: right;
+      color: #8a7e72;
+    }
+    .info {
+      text-align: right;
+      .assessments, .students {
+        margin: 0 2% 0 2%;
+      }
+    }
+    .icons {
+      text-align: center;
+      border-left: 1px solid red;
+    }
+  }
+  ul.assessments {
+    list-style-type: none;
+    padding-left: 0;
+    height: auto;
+    li {
+      background-color: $unihelp-white;
+      box-shadow: 0 1.5px 3px 0 $theme-color;
+      clear: both;
+      min-height: 75px;
+      .id {
+        height: 100%;
+        background-color: #f5f7f5;
+        font-family: Raleway;
+        font-size: 18.5px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #4d6a50;
+        line-height: 4;
+      }
+
+      .info {
+        height: 100%;
+      }
+      .assessment-title {
+        font-family: Raleway;
+        font-size: 15px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.18;
+        letter-spacing: normal;
+        text-align: left;
+        color: #505457;
+      }
+      .assessment-submissions {
+        font-family: Raleway;
+        font-size: 13px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: left;
+        color: #4d6a50 !important;
+      }
+      .assessment-students {
+        line-height: 3;
+        height: 100%;
+        h4 {
+          font-family: Raleway;
+          font-size: 13px;
+          font-weight: 300;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 4;
+          letter-spacing: normal;
+          text-align: right;
+          color: #4d6a50;
+        }
+      }
+      .icons {
+        text-align: center;
+        height: 100%;
+        border-left: solid 0.5px #4d6a50;
+        i {
+          font-family: FontAwesome;
+          font-size: 18.5px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 4;
+          letter-spacing: normal;
+          color: #8a7e72;
+          margin: 0 3% 0 3%;
+        }
+
+      }
+    }
+  }
 }
 
 #assessment-modal {
@@ -132,23 +286,14 @@ table.assessment {
   color: #4d6a50;
 }
 
-.assessment-overview{
-  width: 100%;
-  background-color: #f4f4f4;
-  td{
-    padding: 10px;
-    font-size: 12px;
-  }
-}
-
 @media only screen and (max-width: 1500px) {
   table.assessment {
     td, th {
       width: 10% !important;
       line-height: 1;
       padding: 1%;
-      input{
-        width: 100%!important;
+      input {
+        width: 100% !important;
       }
     }
   }
@@ -157,7 +302,7 @@ table.assessment {
 @media only screen and (max-width: 1000px) {
   table.assessment {
     td, th {
-      img{
+      img {
         display: none;
       }
     }

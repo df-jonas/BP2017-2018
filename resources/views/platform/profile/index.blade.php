@@ -1,5 +1,4 @@
 @extends('layouts.platform')
-
 @section('pagetitle', 'Profiel')
 @section('content')
 @include('partials.platform.header')
@@ -29,7 +28,6 @@
                             </h4>
                         </section>
                     </div>
-                    <br>
                 </section>
             </div>
         </section>
@@ -41,20 +39,24 @@
         <!-- voorkeuren -->
         <section class="col-xs-12">
             <div class="item padding clearfix">
-                <h3>Recente bestanden</h3>
+                <h2 class="settings-title">Recente bestanden</h2>
+                <ul class="profile-list">
                 @foreach($files as $file)
-                    <h6><a href="{{ $file->detailUrl() }}">{{ $file->title }}</a></h6>
+                    <li><a href="{{ $file->detailUrl() }}">{{ $file->title }}</a></li>
                 @endforeach
+                </ul>
             </div>
         </section>
         <!-- end voorkeuren -->
 
         <section class="col-xs-12">
             <div class="item padding clearfix">
-                <h3>Recente posts</h3>
+                <h2 class="settings-title">Recente posts</h2>
+                <ul class="profile-list">
             @foreach($posts as $post)
-                    <h6><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></h6>
+                    <li><a href="{{ $post->generateurl() }}">{{ $post->title }}</a></li>
                 @endforeach
+                </ul>
             </div>
         </section>
     </div>
@@ -64,8 +66,4 @@
 <!-- begin footer -->
 @include('partials.footer')
 <!-- end footer -->
-@endsection
-
-@section("scripts")
-    <script src="{{ asset("js/course-filter.js") }}"></script>
 @endsection

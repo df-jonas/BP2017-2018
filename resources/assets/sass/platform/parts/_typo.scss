@@ -98,6 +98,21 @@ h1, h2, h3 {
   }
 }
 
+
+.tutoring{
+  .tutoring-intro-title{
+    font-family: Raleway;
+    font-size: 16px;
+    font-weight: 550;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+  }
+}
+
 /*Detail pages */
 .detail {
   &.sharing, &.community {
@@ -145,7 +160,7 @@ h1, h2, h3 {
 }
 
 
-.notification-title, .notification-title a, .tutoring-request-title, .tutoring-request-title a, .download-title, .download-title a{
+.notification-title, .notification-title a, .tutoring-request-title, .tutoring-request-title a, .download-title, .download-title a, .rating-title, .rating-title a{
     color: $unihelp-asphalt;
     font-size: 15px;
     &:hover {
@@ -154,14 +169,14 @@ h1, h2, h3 {
     }
   }
 
-.notification-date, .tutoring-request-type, .download-campus{
+.notification-date, .tutoring-request-type, .download-campus, .rating-stars{
   clear: both;
   font-size: 14px;
   color: $unihelp-brown;
   margin-top: 0;
 }
 
-.notification-read, .tutoring-request-read, .download-read{
+.notification-read, .tutoring-request-read, .download-read, .rating-read{
   float: right;
   color: $unihelp-brown;
   &:hover{

@@ -48,6 +48,14 @@ a:hover, a:visited, a:link, a:active {
   padding: 0 !important;
 }
 
+.no-padding-right{
+  padding-right: 0!important;
+}
+
+.no-padding-left{
+  padding-left: 0!important;
+}
+
 /*Helpers*/
 .padding {
   padding: 15px;

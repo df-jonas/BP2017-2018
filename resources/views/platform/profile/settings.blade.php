@@ -1,14 +1,13 @@
 @extends('layouts.platform')
 @section('pagetitle', 'Instellingen')
 @section('content')
-    @include('partials.platform.header')
-    @include('partials.platform.subheader')
+@include('partials.platform.header')
+@include('partials.platform.subheader')
     <!-- begin container -->
     <section class="container profile">
         <!-- begin profile message -->
     @include('partials.platform.message')
     <!-- end profile message -->
-
         <!-- Avatar upload modal -->
         <div class="modal fade" id="avatar-modal" role="dialog">
             <form action="{{ route('profile-update') }}" method="POST" enctype="multipart/form-data">
@@ -45,11 +44,10 @@
             </form>
         </div>
         <!-- end Avatar upload modal -->
-
         <!-- begin profile info -->
         <div class="row">
             <!-- picture -->
-            <section class="col-xs-12">
+            <section class="col-xs-12 padding">
                 <div class="item padding left-border clearfix">
                     <section class="headline">
                         <div class="row flex">
@@ -65,18 +63,16 @@
                                 </h4>
                             </section>
                         </div>
-                        <br>
                     </section>
                 </div>
             </section>
             <!-- end picture -->
         </div>
         <!-- end profile info -->
-
-        <!-- begin settings -->
-        <div class="row">
+        <!-- left -->
+        <div class="col-md-6 col-xs-12 no-padding">
             <!-- instellingen -->
-            <section class="col-lg-6 col-xs-12">
+            <section class="col-xs-12 no-padding-left">
                 <div class="item padding clearfix">
                     <h2 class="settings-title">Profiel instellingen</h2>
                     <form action="{{ route('profile-update') }}" method="POST">
@@ -123,9 +119,50 @@
                 </div>
             </section>
             <!-- end instellingen -->
+            <!-- vakken -->
+            <section class="col-xs-12 no-padding-left">
+                <div class="item padding clearfix">
+                    <h2 class="settings-title">Mijn vakken</h2>
+                    <form>
+                        <div class="form-group col-xs-12 no-padding clearfix">
+                            <ul class="vakken">
+                                @foreach($usercourses as $usercourse)
+                                    <li>{{ $usercourse->course->name }}<span>
+                                            <a href="{{ route('course-remove', ['id' => $usercourse->id]) }}"><i
+                                                        class="fa fa-trash"></i></a></span></li>
+                                @endforeach
+                            </ul>
+                        </div>
 
+
+                        <h4 class="settings-title">Vak toevoegen</h4>
+                        <div class="form-group col-xs-12 no-padding clearfix">
+                            <div class="inner-addon left-addon">
+                                <input type="text" id="search" name="search" class="form-control filterlistener"
+                                       placeholder="zoekterm"/>
+                                <input type="hidden" class="filterlistener" name="_token" id="token"
+                                       value="{{ csrf_token() }}">
+                                <!-- <i class="glyphicon glyphicon-search"></i> -->
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-12 no-padding clearfix">
+                            <section id="filter-results" class="col-xs-12">
+
+                            </section>
+                        </div>
+
+
+                    </form>
+
+                </div>
+            </section>
+            <!-- end vakken -->
+        </div>
+        <!-- end left -->
+        <!-- right -->
+        <div class="col-md-6 col-xs-12 no-padding">
             <!-- voorkeuren -->
-            <section class="col-lg-6 col-xs-12">
+            <section class="col-xs-12 no-padding-right">
                 <div class="item padding clearfix">
                     <h2 class="settings-title">Thema</h2>
                     <form>
@@ -182,52 +219,8 @@
 
             </section>
             <!-- end voorkeuren -->
-        </div>
-        <!-- end settings -->
-
-        <!-- begin settings -->
-        <div class="row">
-            <!-- vakken -->
-            <section class="col-lg-6 col-xs-12">
-                <div class="item padding clearfix">
-                    <h2 class="settings-title">Mijn vakken</h2>
-                    <form>
-                        <div class="form-group col-xs-12 no-padding clearfix">
-                            <ul class="vakken">
-                                @foreach($usercourses as $usercourse)
-                                    <li>{{ $usercourse->course->name }}<span>
-                                            <a href="{{ route('course-remove', ['id' => $usercourse->id]) }}"><i
-                                                        class="fa fa-trash"></i></a></span></li>
-                                @endforeach
-                            </ul>
-                        </div>
-
-
-                        <h4 class="settings-title">Vak toevoegen</h4>
-                        <div class="form-group col-xs-12 no-padding clearfix">
-                            <div class="inner-addon left-addon">
-                                <input type="text" id="search" name="search" class="form-control filterlistener"
-                                       placeholder="zoekterm"/>
-                                <input type="hidden" class="filterlistener" name="_token" id="token"
-                                       value="{{ csrf_token() }}">
-                                <!-- <i class="glyphicon glyphicon-search"></i> -->
-                            </div>
-                        </div>
-                        <div class="form-group col-xs-12 no-padding clearfix">
-                            <section id="filter-results" class="col-xs-12">
-
-                            </section>
-                        </div>
-
-
-                    </form>
-
-                </div>
-            </section>
-            <!-- end vakken -->
-
             <!-- account -->
-            <section class="col-lg-6 col-xs-12">
+            <section class="col-xs-12 no-padding-right">
                 <div class="item padding clearfix">
                     <h2 class="settings-title">Account instellingen</h2>
                     <form action="{{ route('profile-update') }}" method="POST">
@@ -260,9 +253,8 @@
                 </div>
             </section>
             <!-- end account -->
-
             <!-- close account -->
-            <section class="col-lg-6 col-xs-12">
+            <section class="col-xs-12 no-padding-right">
                 <div class="item padding clearfix">
                     <h2 class="settings-title">Account sluiten</h2>
                     <form action="{{route('profile-close')}}" method="POST">
@@ -283,7 +275,7 @@
             </section>
             <!-- end close account -->
         </div>
-        <!-- end settings -->
+        <!-- end right -->
     </section>
     <!-- end container -->
     <!-- begin footer -->

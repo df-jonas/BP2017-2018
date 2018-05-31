@@ -3,6 +3,7 @@
   display: table;
   .sidebar {
     display: table-cell;
+    padding-right: 10px;
     .people-list {
       list-style-type: none;
       padding-left: 0;
@@ -73,6 +74,7 @@
     display: table-cell;
     padding-left: 0;
     position: relative;
+    left: 0;
     .item {
       /*
       position: absolute;

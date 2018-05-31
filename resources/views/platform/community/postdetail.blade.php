@@ -1,7 +1,6 @@
 @extends('layouts.platform')
-
-@section('content')
 @section('pagetitle', 'Community - '. $post->title )
+@section('content')
 @include('partials.platform.header')
 @include('partials.platform.subheader')
 <!-- begin container -->
@@ -85,7 +84,7 @@
                             <section class="info" style="margin-top: 5%">
                                 <ul>
                                     <li>Reacties: 0</li>
-                                    <li>Upvotes: 0</li>
+                                    <li>Likes: 0</li>
                                 </ul>
                             </section>
 
