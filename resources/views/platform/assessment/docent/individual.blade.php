@@ -8,10 +8,7 @@
         <!-- begin profile message -->
     @include('partials.platform.message')
     <!-- end profile message -->
-        <!-- begin go back -->
-    @include('partials.platform.go-back')
-    <!-- end go back-->
-
+       assessment score per lid van groep
     </section>
     <!-- end container -->
     <!-- begin footer -->

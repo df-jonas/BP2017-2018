@@ -90,7 +90,13 @@
             /** Peer Assessment */
             Route::get('/assessment', 'AssessmentController@index')->name('assessment-index');
             Route::get('/assessment/new', 'AssessmentController@new')->name('assessment-new');
+            Route::get('/assessment/docent', 'AssessmentController@docentIndex')->name('assessment-docent-index');
+            Route::get('/assessment/docent/new', 'AssessmentController@docentNew')->name('assessment-docent-new');
+            Route::get('/assessment/docent/assessment', 'AssessmentController@docenAssessment')->name('assessment-docent-assessment');
+            Route::get('/assessment/docent/group', 'AssessmentController@docentGroup')->name('assessment-docent-group');
+            Route::get('/assessment/docent/individual', 'AssessmentController@docentIndividual')->name('assessment-docent-individual');
             Route::get('/assessment/{id}', 'AssessmentController@detail')->name('assessment-detail');
+
 
 
             /** Profile */

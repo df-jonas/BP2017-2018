@@ -15,8 +15,6 @@
         <section class="table">
             <!-- begin sidebar -->
             <aside class="sidebar">
-
-
                 <!-- User items -->
                 <section class="item user-owned hide-mobile">
                     <header><a class="header-title">Beschikbare assessments</a></header>
