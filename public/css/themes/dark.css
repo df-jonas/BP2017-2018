@@ -668,6 +668,30 @@ table.assessment td input {
   width: 120px;
 }
 
+table.assessment td a {
+  color: #333a40;
+}
+
+table.assessment td a i {
+  font-family: FontAwesome;
+  font-size: 14.5px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #8a7e72;
+}
+
+table.assessment td a:hover {
+  color: black !important;
+}
+
+table.assessment td a:hover i {
+  color: black !important;
+}
+
 table.assessment td img {
   width: 32px;
   height: 32px;
@@ -751,6 +775,16 @@ table.assessment input[type='number'] {
 table.assessment input::-webkit-outer-spin-button,
 table.assessment input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+
+table.assessment.group tr:hover,
+table.assessment.group td:hover {
+  background: inherit;
+  color: black !important;
+}
+
+table.assessment.group td {
+  width: 50px;
 }
 
 .assessment-overview {

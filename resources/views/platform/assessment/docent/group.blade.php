@@ -30,12 +30,12 @@
 
                     <div class="row flex padding">
                         <!-- begin table -->
-                        <table class="assessment">
-                            <tr>
-                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td>5</td>
-                                <td><a>Bekijk uitgedeelde scores <i class="fas fa-arrow-right"></i></a></td>
-                                <td><a>Bekijk ontvangen scores <i class="fas fa-arrow-right"></i></a></td>
+                        <table class="assessment group">
+                            <tr class="heading">
+                                <th class="left top"><span class="large-th">Groep overzicht</span></th>
+                                <th class="skill-th">Gemiddelde score</th>
+                                <th class="skill-th">Uitgedeelde scores</th>
+                                <th class="skill-th">Ontvangen scores</th>
                             </tr>
                             <tr>
                                 <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
@@ -44,14 +44,20 @@
                                 <td><a>Bekijk ontvangen scores <i class="fas fa-arrow-right"></i></a></td>
                             </tr>
                             <tr>
-                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td>5</td>
+                                <td class="left">De Frère, Jonas <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
+                                <td>4</td>
                                 <td><a>Bekijk uitgedeelde scores <i class="fas fa-arrow-right"></i></a></td>
                                 <td><a>Bekijk ontvangen scores <i class="fas fa-arrow-right"></i></a></td>
                             </tr>
                             <tr>
-                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td>5</td>
+                                <td class="left">Goeman, Sam <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
+                                <td>2</td>
+                                <td><a>Bekijk uitgedeelde scores <i class="fas fa-arrow-right"></i></a></td>
+                                <td><a>Bekijk ontvangen scores <i class="fas fa-arrow-right"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td class="left">Janssens, Brent <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
+                                <td>4</td>
                                 <td><a>Bekijk uitgedeelde scores <i class="fas fa-arrow-right"></i></a></td>
                                 <td><a>Bekijk ontvangen scores <i class="fas fa-arrow-right"></i></a></td>
                             </tr>

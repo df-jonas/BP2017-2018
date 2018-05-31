@@ -38,7 +38,6 @@
                             <div class="icons col-lg-1">
                                 <a href="#"><i class="fas fa-eye"></i></a>
                                 <a href="#"><i class="fas fa-trash"></i></a>
-                                <a href="#"><i class="fas fa-copy"></i></a>
                                 <a href="#"><i class="fas fa-edit"></i></a>
                             </div>
                         </li>
@@ -54,12 +53,11 @@
                             <div class="icons col-lg-1">
                                 <a href="#"><i class="fas fa-eye"></i></a>
                                 <a href="#"><i class="fas fa-trash"></i></a>
-                                <a href="#"><i class="fas fa-copy"></i></a>
                                 <a href="#"><i class="fas fa-edit"></i></a>
                             </div>
                         </li>
                         <li>
-                            <span class="id col-lg-1">3</span>
+                            <span class="id col-lg-1">2</span>
                             <div class="info col-lg-7">
                                 <h2 class="assessment-title">Assessment titel 1</h2>
                                 <h4 class="assessment-submissions">22 inzendingen</h4>
@@ -70,7 +68,6 @@
                             <div class="icons col-lg-1">
                                 <a href="#"><i class="fas fa-eye"></i></a>
                                 <a href="#"><i class="fas fa-trash"></i></a>
-                                <a href="#"><i class="fas fa-copy"></i></a>
                                 <a href="#"><i class="fas fa-edit"></i></a>
                             </div>
                         </li>
@@ -80,7 +77,7 @@
                             <a href="#"><h2 class="group-title">Project management</h2></a>
                         </div>
                         <div class="info col-lg-8">
-                            <span class="assessments">2 assessments</span>
+                            <span class="assessments">3 assessments</span>
                             <span class="students">29 studenten</span>
                         </div>
                         <div class="icons col-lg-1">
@@ -100,7 +97,6 @@
                             <div class="icons col-lg-1">
                                 <a href="#"><i class="fas fa-eye"></i></a>
                                 <a href="#"><i class="fas fa-trash"></i></a>
-                                <a href="#"><i class="fas fa-copy"></i></a>
                                 <a href="#"><i class="fas fa-edit"></i></a>
                             </div>
                         </li>
@@ -116,7 +112,6 @@
                             <div class="icons col-lg-1">
                                 <a href="#"><i class="fas fa-eye"></i></a>
                                 <a href="#"><i class="fas fa-trash"></i></a>
-                                <a href="#"><i class="fas fa-copy"></i></a>
                                 <a href="#"><i class="fas fa-edit"></i></a>
                             </div>
                         </li>

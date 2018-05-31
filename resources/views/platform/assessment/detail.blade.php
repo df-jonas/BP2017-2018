@@ -8,6 +8,7 @@
         <!-- begin profile message -->
     @include('partials.platform.message')
     <!-- end profile message -->
+
         <!-- begin go back -->
     @include('partials.platform.go-back')
     <!-- end go back-->
@@ -49,7 +50,7 @@
                                 <th class="skill-th">Inzet en motivatie</th>
                                 <th class="skill-th">Vaardigheden</th>
                                 <th class="skill-th">Kwaliteit</th>
-                                <th class="skill-th">Stoptheid</th>
+                                <th class="skill-th">Stiptheid</th>
                                 <th class="skill-th">Verzorging</th>
                                 <th class="skill-th">Deadlines</th>
                             </tr>
