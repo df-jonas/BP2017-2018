@@ -24,18 +24,23 @@ class ProfileController extends Controller
 {
     public function index()
     {
-
         $myposts = Post::query()
             ->where("user_id", "=", Auth::user()->id)
             ->orderBy("created_at", "desc")
-            ->take(5)
+            ->take(10)
+            ->get();
+
+        $myfiles = File::query()
+            ->where("user_id", "=", Auth::user()->id)
+            ->orderBy("created_at", "desc")
+            ->take(10)
             ->get();
 
         $params = [
             'email' => Auth::user()->email,
             'username' => Auth::user()->username,
             'user' => Auth::user(),
-            'files' => Auth::user()->files,
+            'files' => $myfiles,
             'posts' => $myposts,
             'address' => Auth::user()->address,
         ];
@@ -115,7 +120,6 @@ class ProfileController extends Controller
         $email = Auth::user()->email;
         $name = $firstname . " " . $lastname;
 
-
         if (!empty($request->account_close)) {
             Mail::send('mail.forms.account-delete', ['firstname' => $firstname, 'lastname' => $lastname, 'email' => $email], function ($message) use ($name, $email) {
                 $message->from($email, $name);
@@ -124,7 +128,6 @@ class ProfileController extends Controller
             });
             Session::flash('message', "Aanvraag tot verwijdering werd ingediend!");
         }
-
 
         return Redirect::back();
     }

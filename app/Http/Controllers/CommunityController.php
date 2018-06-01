@@ -51,6 +51,8 @@ class CommunityController extends Controller
             ->where("url", "=", $group_id)
             ->firstOrFail();
 
+        $posts = $group->posts()->paginate(10);
+
         $myposts = Post::query()
             ->where("user_id", "=", Auth::user()->id)
             ->orderBy("created_at", "desc")
@@ -59,9 +61,9 @@ class CommunityController extends Controller
 
         $arr = [
             'group' => $group,
-            'myposts' => $myposts
+            'myposts' => $myposts,
+            'posts' => $posts
         ];
-
         return view("platform.community.groupdetail", $arr);
     }
 

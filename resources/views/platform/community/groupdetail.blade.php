@@ -66,7 +66,7 @@
                 <section class="group group-type item clearfix">
                     <header><a class="header-title">Posts in "{{ $group->name }}"</a></header>
                     @if(sizeof($group->posts) > 0)
-                        @foreach($group->posts as $post)
+                        @foreach($posts as $post)
                             <article class="group">
                                 <div class="padding">
                                     <div class="row flex">
@@ -98,6 +98,7 @@
                     @else
                         <span class="item padding">Er zijn geen posts in deze groep. Ga van start door een nieuwe post toe te voegen.</span>
                     @endif
+                    {{ $posts->links() }}
                 </section>
             </section>
         </section>

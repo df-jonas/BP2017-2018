@@ -26,7 +26,7 @@ class SharingController extends Controller
             'courses' => Course::query()->orderBy('name')->get(),
             'pubyears' => PublicationYear::query()->orderBy('name')->get(),
             'userfiles' => File::query()->where("user_id", "=", Auth::user()->id)->orderBy('id', 'desc')->take(5)->get(),
-            'files' => File::query()->with('degree')->with('field')->orderBy('id', 'desc')->get(),
+            'files' => File::query()->with('degree')->with('field')->orderBy('id', 'desc')->paginate(12),
             'types' => Doctype::query()->orderBy("name")->get()
         ];
 
