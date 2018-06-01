@@ -1746,6 +1746,36 @@ form label {
   background: #4D6A50;
 }
 
+/*Select2*/
+
+.select2-selection {
+  border-radius: 0 !important;
+  height: auto;
+  padding: 10px 10px 0 10px !important;
+}
+
+.select2-selection__choice {
+  background-color: #4D6A50 !important;
+  text-align: center;
+  padding: 5px !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0 !important;
+  height: 30px;
+}
+
+.select2-selection__choice span {
+  margin-right: 5px !important;
+}
+
+.select2-dropdown {
+  border-radius: 0 !important;
+}
+
+.select2-results__option--highlighted {
+  background: #4D6A50 !important;
+}
+
 .accordion {
   background-color: #eee;
   color: #444;

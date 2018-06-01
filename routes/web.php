@@ -119,6 +119,9 @@
             Route::get('/profile/course/add/{id}', 'ProfileController@addusercourse')->name('course-add');
             Route::get('/profile/course/remove/{id}', 'ProfileController@removeusercourse')->name('course-remove');
             Route::post('/profile/filter', 'ProfileController@ajaxFilter');
+
+            /** Admin dashboard */
+            Route::get('/admin', 'AdminController@index')->name('admin-index');
         });
     });
 }

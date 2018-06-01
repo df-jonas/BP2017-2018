@@ -49,7 +49,7 @@
                                 <th class="skill-th">Inzet en motivatie</th>
                                 <th class="skill-th">Vaardigheden</th>
                                 <th class="skill-th">Kwaliteit</th>
-                                <th class="skill-th">Stoptheid</th>
+                                <th class="skill-th">Stiptheid</th>
                                 <th class="skill-th">Verzorging</th>
                                 <th class="skill-th">Deadlines</th>
                             </tr>
@@ -144,6 +144,9 @@
                                 <td><input type="number" value=""></td>
                             </tr>
                         </table>
+                        <div class="col-xs-12">
+                            <a class="download-button col-lg-2 col-sm-4 col-xs-12" href="#">Indienen</a>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -26,7 +26,7 @@
                         <li>
                             <span class="id col-lg-1">1</span>
                             <div class="info col-lg-7">
-                                <h2 class="assessment-title">Groep Moleskine</h2>
+                                <a href="#"><h2 class="assessment-title">Groep Moleskine</h2></a>
                                 <h4 class="assessment-submissions">22 inzendingen</h4>
                             </div>
                             <div class="assessment-students col-lg-3">
@@ -39,7 +39,7 @@
                         <li>
                             <span class="id col-lg-1">2</span>
                             <div class="info col-lg-7">
-                                <h2 class="assessment-title">Groep No-Lifers</h2>
+                                <a href="#"><h2 class="assessment-title">Groep No-Lifers</h2></a>
                                 <h4 class="assessment-submissions">22 inzendingen</h4>
                             </div>
                             <div class="assessment-students col-lg-3">
@@ -52,7 +52,7 @@
                         <li>
                             <span class="id col-lg-1">3</span>
                             <div class="info col-lg-7">
-                                <h2 class="assessment-title">Groep Sumo</h2>
+                                <a href="#"><h2 class="assessment-title">Groep Sumo</h2></a>
                                 <h4 class="assessment-submissions">22 inzendingen</h4>
                             </div>
                             <div class="assessment-students col-lg-3">
@@ -64,6 +64,7 @@
                         </li>
                     </ul>
 
+        </section>
         </section>
         <!-- end content -->
     </section>
