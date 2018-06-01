@@ -67,7 +67,7 @@
                             </label>
                         @endforeach
                     </div>
-                    <!-- TODO [JONAS] Getting file types asynchronous -->
+
                     <label>Type bestand</label>
                     <br>
                     <div class="form-group clearfix">
@@ -88,9 +88,6 @@
                 <header><a class="header-title"><i class="fa fa-upload"></i> Mijn uploads</a></header>
                 <div class="padding">
                     @foreach($userfiles as $file)
-                        @php
-                            $rating = $file->averageRating()
-                        @endphp
                         <div class="row flex">
                             <div class="icon col-lg-2 col-md-2 col-xs-2">
                                 <img src="{{ asset('img/avatars/' . $file->user->image )}}"
@@ -100,7 +97,7 @@
                                 <h2 class="item-title col-xs-12 no-padding"><a href="{{ $file->detailUrl() }}"> {{ str_limit($file->title, 15) }}</a></h2>
                                 <div class="rating col-xs-12 no-padding">
                                     @for ($i = 1; $i <= 5; $i++)
-                                        @if($i <= $rating)
+                                        @if($i <= $file->averageRating())
                                             <span class="fa fa-star checked"></span>
                                         @else
                                             <span class="fa fa-star"></span>
@@ -121,12 +118,7 @@
         <!-- begin content -->
         <section class="content sharing overview">
             <section id="filter-results" class="filecontainer files">
-                <span id="filter-details" class="item padding col-xs-12">Er werden {{ $files->count() }} resultaten gevonden.</span><br><br>
-                <!-- TODO Jonas: kan je deze berekening in controller doen? -->
                 @foreach($files as $file)
-                    @php
-                        $rating = $file->averageRating()
-                    @endphp
                     <article class="file item clearfix">
                         <a href="{{ $file->detailUrl() }}" class="header-title">
                             <header>
@@ -145,7 +137,7 @@
                                 <section class="col-lg-6 col-lg-push-0 col-md-4 col-sm-4 col-sm-push-0 col-xs-8 col-xs-push-2">
                                     <div class="rating">
                                         @for ($i = 1; $i <= 5; $i++)
-                                            @if($i <= $rating)
+                                            @if($i <= $file->averageRating())
                                                 <span class="fa fa-star checked"></span>
                                             @else
                                                 <span class="fa fa-star"></span>
