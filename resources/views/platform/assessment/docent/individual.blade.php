@@ -30,7 +30,7 @@
 
                     <div class="row flex padding">
                         <!-- begin table -->
-                        <table class="assessment group">
+                        <table class="assessment individual">
                             <tr class="heading">
                                 <th class="left top"><span class="large-th">Uitgedeelde scores</span> <br> <span class="mid-th">Stalpaert Arno</span></th>
                                 <th class="skill-th">Aanwezigheid</th>
@@ -53,13 +53,13 @@
                                 <td>5</td>
                             </tr>
                             <tr>
-                                <td>Dit is een tekst Dit is een tekst Dit is een tekst Dit is een tekst</td>
-                                <td>Dit is een tekst</td>
-                                <td>Dit is een tekst</td>
-                                <td>Dit is een tekst</td>
-                                <td>Dit is een tekst</td>
-                                <td>Dit is een tekst</td>
-                                <td>Dit is een tekst</td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
                             </tr>
                             <tr>
                                 <td class="left" rowspan="2">Goeman, Sam <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
@@ -72,13 +72,13 @@
                                 <td>5</td>
                             </tr>
                             <tr>
-                                <td>Dit is een tekst</td>
-                                <td>Dit is een tekst</td>
-                                <td>Dit is een tekst</td>
-                                <td>Dit is een tekst</td>
-                                <td>Dit is een tekst</td>
-                                <td>Dit is een tekst</td>
-                                <td>Dit is een tekst</td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
+                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
                             </tr>
                         </table>
                     </div>

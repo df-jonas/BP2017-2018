@@ -15,7 +15,7 @@
                 <div class="padding">
                     <section class="assessment-group">
                         <div class="title col-lg-3">
-                            <a href="#"><h2 class="group-title">Project management</h2></a>
+                            <h2 class="group-title">Project management</h2>
                         </div>
                         <div class="info col-lg-8">
                             <span class="assessments">3 assessments</span>
@@ -29,7 +29,7 @@
                         <li>
                             <span class="id col-lg-1">1</span>
                             <div class="info col-lg-7">
-                                <h2 class="assessment-title">Assessment titel 1</h2>
+                                <a href="#"><h2 class="assessment-title">Assessment titel 1</h2></a>
                                 <h4 class="assessment-submissions">22 inzendingen</h4>
                             </div>
                             <div class="assessment-students col-lg-3">
@@ -44,7 +44,7 @@
                         <li>
                             <span class="id col-lg-1">2</span>
                             <div class="info col-lg-7">
-                                <h2 class="assessment-title">Assessment titel 1</h2>
+                                <a href="#"><h2 class="assessment-title">Assessment titel 2</h2></a>
                                 <h4 class="assessment-submissions">22 inzendingen</h4>
                             </div>
                             <div class="assessment-students col-lg-3">
@@ -57,9 +57,9 @@
                             </div>
                         </li>
                         <li>
-                            <span class="id col-lg-1">2</span>
+                            <span class="id col-lg-1">3</span>
                             <div class="info col-lg-7">
-                                <h2 class="assessment-title">Assessment titel 1</h2>
+                                <a href="#"><h2 class="assessment-title">Assessment titel 3</h2></a>
                                 <h4 class="assessment-submissions">22 inzendingen</h4>
                             </div>
                             <div class="assessment-students col-lg-3">
@@ -74,7 +74,7 @@
                     </ul>
                     <section class="assessment-group">
                         <div class="title col-lg-3">
-                            <a href="#"><h2 class="group-title">Project management</h2></a>
+                            <a href="#"><h2 class="group-title">Data structures</h2></a>
                         </div>
                         <div class="info col-lg-8">
                             <span class="assessments">3 assessments</span>
@@ -88,7 +88,7 @@
                         <li>
                             <span class="id col-lg-1">1</span>
                             <div class="info col-lg-7">
-                                <h2 class="assessment-title">Assessment titel 1</h2>
+                                <a href="#"><h2 class="assessment-title">Assessment titel 1</h2></a>
                                 <h4 class="assessment-submissions">22 inzendingen</h4>
                             </div>
                             <div class="assessment-students col-lg-3">
@@ -103,7 +103,7 @@
                         <li>
                             <span class="id col-lg-1">2</span>
                             <div class="info col-lg-7">
-                                <h2 class="assessment-title">Assessment titel 1</h2>
+                                <a href="#"><h2 class="assessment-title">Assessment titel 2</h2></a>
                                 <h4 class="assessment-submissions">22 inzendingen</h4>
                             </div>
                             <div class="assessment-students col-lg-3">

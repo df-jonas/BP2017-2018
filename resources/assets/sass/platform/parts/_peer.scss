@@ -57,6 +57,9 @@ table.assessment {
       span.more {
         border-top: 12px solid $unihelp-asphalt;
       }
+      a, i{
+        color: $unihelp-white;
+      }
     }
     &.left {
       -webkit-box-shadow: 10px 0 5px -2px #888;
@@ -120,13 +123,24 @@ table.assessment {
     -webkit-appearance: none;
   }
 
-  &.group{
-    tr:hover, td:hover{
-      background: inherit;
-      color: $theme-color;
-    }
+  &.group, &.individual{
     td{
       width: 50px;
+      &:hover{
+        opacity:1.0;
+        background: none;
+        box-shadow:none;
+        color: $unihelp-asphalt;
+        a{
+          color: $theme-color;
+        }
+      }
+      &.comment{
+        line-height: 1.75;
+      }
+    }
+    td.left, th.left{
+      width: 100px;
     }
   }
 }
@@ -188,8 +202,18 @@ table.assessment {
     }
     .icons {
       text-align: center;
-      border-left: 1px solid red;
+      border-left: 1px solid $theme-color;
     }
+  }
+  i{
+    font-family: FontAwesome;
+    font-size: 14.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #8a7e72;
+    margin: 0 10px 0 0;
   }
   ul.assessments {
     list-style-type: none;
@@ -260,11 +284,11 @@ table.assessment {
         border-left: solid 0.5px #4d6a50;
         i {
           font-family: FontAwesome;
-          font-size: 18.5px;
+          font-size: 14.5px;
           font-weight: normal;
           font-style: normal;
           font-stretch: normal;
-          line-height: 4;
+          line-height: 5;
           letter-spacing: normal;
           color: #8a7e72;
           margin: 0 3% 0 3%;

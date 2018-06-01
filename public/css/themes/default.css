@@ -392,6 +392,36 @@ form label {
   background: #4D6A50;
 }
 
+/*Select2*/
+
+.select2-selection {
+  border-radius: 0 !important;
+  height: auto;
+  padding: 10px 10px 0 10px !important;
+}
+
+.select2-selection__choice {
+  background-color: #4D6A50 !important;
+  text-align: center;
+  padding: 5px !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0 !important;
+  height: 30px;
+}
+
+.select2-selection__choice span {
+  margin-right: 5px !important;
+}
+
+.select2-dropdown {
+  border-radius: 0 !important;
+}
+
+.select2-results__option--highlighted {
+  background: #4D6A50 !important;
+}
+
 .file .rating {
   font-size: 1.5em !important;
   position: absolute;
@@ -715,6 +745,11 @@ table.assessment td:hover span.more {
   border-top: 12px solid #333a40;
 }
 
+table.assessment td:hover a,
+table.assessment td:hover i {
+  color: #ffffff;
+}
+
 table.assessment td.left {
   -webkit-box-shadow: 10px 0 5px -2px #888;
   box-shadow: 5px 0px 10px -10px #333a40;
@@ -777,14 +812,35 @@ table.assessment input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-table.assessment.group tr:hover,
-table.assessment.group td:hover {
-  background: inherit;
+table.assessment.group td,
+table.assessment.individual td {
+  width: 50px;
+}
+
+table.assessment.group td:hover,
+table.assessment.individual td:hover {
+  opacity: 1.0;
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #333a40;
+}
+
+table.assessment.group td:hover a,
+table.assessment.individual td:hover a {
   color: #4D6A50;
 }
 
-table.assessment.group td {
-  width: 50px;
+table.assessment.group td.comment,
+table.assessment.individual td.comment {
+  line-height: 1.75;
+}
+
+table.assessment.group td.left,
+table.assessment.group th.left,
+table.assessment.individual td.left,
+table.assessment.individual th.left {
+  width: 100px;
 }
 
 .assessment-overview {
@@ -851,7 +907,18 @@ table.assessment.group td {
 
 .content.assessment .assessment-group .icons {
   text-align: center;
-  border-left: 1px solid red;
+  border-left: 1px solid #4D6A50;
+}
+
+.content.assessment i {
+  font-family: FontAwesome;
+  font-size: 14.5px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: #8a7e72;
+  margin: 0 10px 0 0;
 }
 
 .content.assessment ul.assessments {
@@ -935,11 +1002,11 @@ table.assessment.group td {
 
 .content.assessment ul.assessments li .icons i {
   font-family: FontAwesome;
-  font-size: 18.5px;
+  font-size: 14.5px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  line-height: 4;
+  line-height: 5;
   letter-spacing: normal;
   color: #8a7e72;
   margin: 0 3% 0 3%;

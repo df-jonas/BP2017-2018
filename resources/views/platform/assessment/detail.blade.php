@@ -8,7 +8,6 @@
         <!-- begin profile message -->
     @include('partials.platform.message')
     <!-- end profile message -->
-
         <!-- begin go back -->
     @include('partials.platform.go-back')
     <!-- end go back-->
@@ -145,6 +144,9 @@
                                 <td><input type="number" value=""></td>
                             </tr>
                         </table>
+                        <div class="col-xs-12">
+                            <a class="download-button col-lg-2 col-sm-4 col-xs-12" href="#">Indienen</a>
+                        </div>
                     </div>
                 </div>
             </section>

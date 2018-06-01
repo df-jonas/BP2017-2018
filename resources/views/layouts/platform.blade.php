@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('css/mailchimp-horizontal-slim-10_7.css') }}">
     <!-- font -->
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
     <!-- TinyMCE editor -->
     <!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({selector: 'textarea'});</script>-->
