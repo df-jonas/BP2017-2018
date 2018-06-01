@@ -149,6 +149,7 @@
                         </div>
                     </article>
                 @endforeach
+                {{ $files->links() }}
             </section>
         </section>
         <!-- end content -->

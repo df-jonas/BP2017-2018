@@ -73,7 +73,7 @@
                             </a>
                             @if(Auth::user()->role == 'admin')
                                 <li>
-                                    <a href="#"><i class="fa fa-dashboard"></i> Admin dashboard
+                                    <a href="{{ route('admin-index') }}"><i class="fa fa-dashboard"></i> Admin dashboard
                                     </a>
                                 </li>
                             @endif
