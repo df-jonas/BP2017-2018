@@ -18,3 +18,23 @@ div.container {
 }
 
 
+/* Pagination */
+ul.pagination{
+  border-radius: 0!important;
+  text-align: center;
+  width: 100%!important;
+  li{
+    display: inline-block;
+    .page-link{
+      border-radius: 0!important;
+      color: $theme-color;
+      cursor: pointer;
+    }
+    &.active{
+      .page-link{
+        background: $theme-color!important;
+        color: $unihelp-white;
+      }
+    }
+  }
+}
