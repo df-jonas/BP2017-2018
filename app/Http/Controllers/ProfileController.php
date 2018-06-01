@@ -6,7 +6,6 @@ use App\Course;
 use App\File;
 use App\Post;
 use App\Rating;
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use App\Campus;
 use App\Fos;
@@ -15,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\UserCourse;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller

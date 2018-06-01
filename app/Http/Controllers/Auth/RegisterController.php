@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Campus;
 use App\Fos;
 use App\Notifications\UserRegister;
+use App\Preference;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -102,16 +103,27 @@ class RegisterController extends Controller
             })->save($img_location);
         }
 
-        $user = User::create([
-            'image' => $img_name,
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
-            'email' => $data['email'],
-            'api_token' => SecurityFactory::generateApiToken(),
-            'password' => bcrypt($data['password']),
-            'campusid' => $data['campus'],
-            'fosid' => $data['fos'],
-        ]);
+        $pref = new Preference();
+        $pref->theme = "default";
+        $pref->lang = "nl";
+        $pref->comment = true;
+        $pref->likes = true;
+        $pref->tutoring = true;
+        $pref->account = true;
+        $pref->save();
+
+        $user = new User();
+        $user->image= $img_name;
+        $user->first_name= $data['first_name'];
+        $user->last_name= $data['last_name'];
+        $user->email= $data['email'];
+        $user->api_token=SecurityFactory::generateApiToken();
+        $user->password= bcrypt($data['password']);
+        $user->campusid= $data['campus'];
+        $user->fosid=  $data['fos'];
+        $user->preference_id = $pref->id;
+        $user->save();
+
         //user mail na register
         $user->notify(new UserRegister($user));
         return $user;
