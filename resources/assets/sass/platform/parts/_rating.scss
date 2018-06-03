@@ -1,0 +1,40 @@
+.sharing {
+  &.overview, &.detail {
+    .rating {
+      font-size: 1.5em !important;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      .checked {
+        color: $secondary-color;
+      }
+    }
+  }
+  &.detail {
+    .rating {
+      top: 0;
+      right: 0;
+      -webkit-transform: translate(0, -0%);
+      transform: translate(0, -0%);
+      text-align: right;
+      float: right;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+.sidebar {
+  .rating {
+    .checked {
+      color: $secondary-color;
+    }
+  }
+}
+.all-ratings {
+  .checked {
+    color: $secondary-color;
+  }
+}

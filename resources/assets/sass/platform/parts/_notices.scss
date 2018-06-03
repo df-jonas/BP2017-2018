@@ -1,26 +1,25 @@
 /*Notices and go-back*/
 .go-back, .message {
   a {
-    color: $unihelp-brown;
+    color: $theme-color;
+    &:hover {
+      color: $secondary-color;
+    }
   }
   i {
     cursor: pointer;
     span {
       font-family: Raleway;
-
     }
   }
-  .padding {
-    padding: 7.5px;
-  }
-  &:hover{
-  a{
-    color: $theme-color;
-  }
-}
 }
 
 .message {
-  color: $unihelp-white !important;
-  background: $theme-color !important;
+  color: $unihelp-white;
+  background: $theme-color;
+  p {
+    color: $unihelp-white;
+    font-size: 14px;
+    margin: 0;
+  }
 }

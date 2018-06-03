@@ -9,6 +9,10 @@ h1, h2, h3 {
   color: $unihelp-black;
 }
 
+i{
+  font-family: FontAwesome;
+}
+
 .sidebar{
   .item-title, .item-title a {
     color: $unihelp-asphalt;
@@ -19,9 +23,6 @@ h1, h2, h3 {
       color: $theme-color;
       font-weight: 500;
     }
-  }
-  .rating{
-    color: $unihelp-brown;
   }
 }
 
@@ -53,8 +54,6 @@ h1, h2, h3 {
         color: $unihelp-white !important;
       }
     }
-
-
   }
 
 /*overview pages*/
@@ -71,7 +70,7 @@ h1, h2, h3 {
     }
 
     .item-campus, .item-campus a {
-      color: $unihelp-brown;
+      color: $secondary-color;
       font-size: 14px;
       margin-top: 0;
       margin-bottom: 0;
@@ -84,7 +83,7 @@ h1, h2, h3 {
     }
 
     .icons{
-      color: $unihelp-brown;
+      color: $secondary-color;
     }
 
   }
@@ -103,7 +102,7 @@ h1, h2, h3 {
   .tutoring-intro-title{
     font-family: Raleway;
     font-size: 16px;
-    font-weight: 550;
+    font-weight: 800;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.17;
@@ -135,7 +134,6 @@ h1, h2, h3 {
 
 /*Profile*/
 .profile{
-
 .settings-title, .user-title{
   font-size: 20px;
   font-weight: normal;
@@ -146,10 +144,7 @@ h1, h2, h3 {
   text-align: left;
   color: $theme-color;
 }
-
 }
-
-
 .stats {
   p {
     font-size: 14px;
@@ -158,8 +153,6 @@ h1, h2, h3 {
     }
   }
 }
-
-
 .notification-title, .notification-title a, .tutoring-request-title, .tutoring-request-title a, .download-title, .download-title a, .rating-title, .rating-title a{
     color: $unihelp-asphalt;
     font-size: 15px;
@@ -172,13 +165,13 @@ h1, h2, h3 {
 .notification-date, .tutoring-request-type, .download-campus, .rating-stars{
   clear: both;
   font-size: 14px;
-  color: $unihelp-brown;
+  color: $secondary-color;
   margin-top: 0;
 }
 
 .notification-read, .tutoring-request-read, .download-read, .rating-read{
   float: right;
-  color: $unihelp-brown;
+  color: $secondary-color;
   &:hover{
     color: $theme-color;
   }

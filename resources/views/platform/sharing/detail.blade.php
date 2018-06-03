@@ -90,7 +90,7 @@
                         </section>
 
                         <div class="col-xs-12">
-                            <a class="download-button col-lg-2 col-sm-4 col-xs-12" href="{{ $file->downloadUrl() }}">Download</a>
+                            <a class="download-button col-lg-2 col-sm-4 col-xs-12" href="{{ $file->downloadUrl() }}" target="_blank">Download</a>
                         </div>
                     </section>
                 </article>

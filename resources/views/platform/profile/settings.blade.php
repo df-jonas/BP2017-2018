@@ -33,7 +33,6 @@
                                         @endif
                                     </div>
                                 </div>
-
                             </div>
                         </section>
                         <section class="modal-footer">
@@ -166,20 +165,20 @@
                 <div class="item padding clearfix">
                     <h2 class="settings-title">Thema</h2>
                     <form>
-                        <div class="form-group col-sm-3 col-xs-12 no-padding">
-                            <div class="color-choose col-xs-12 {{ Variable::theme("default") }}" data-theme="default"
-                                 style="background: #505457"></div>
+                        <div class="form-group col-sm-4 col-xs-12 no-padding">
+                            <div id="default" class="color-choose col-xs-12 {{ Variable::theme("default") }}" data-theme="default">
+                                <label>Primary</label>
+                            </div>
                         </div>
-                        <div class="form-group col-sm-3 col-xs-12 no-padding">
-                            <div class="color-choose col-xs-12 {{ Variable::theme("light") }}" data-theme="light"
-                                 style="background: #62868e"></div>
+                        <div class="form-group col-sm-4 col-xs-12 no-padding">
+                            <div id="light" class="color-choose col-xs-12 {{ Variable::theme("light") }}" data-theme="light">
+                                <label>Light</label>
+                            </div>
                         </div>
-                        <div class="form-group col-sm-3 col-xs-12 no-padding">
-                            <div class="color-choose col-xs-12 {{ Variable::theme("dark") }}" data-theme="dark"
-                                 style="background: #d6b83a"></div>
-                        </div>
-                        <div class="form-group col-sm-3 col-xs-12 no-padding">
-                            <div class="color-choose col-xs-12" data-theme="default" style="background: #d6b83a"></div>
+                        <div class="form-group col-sm-4 col-xs-12 no-padding">
+                            <div id="dark" class="color-choose col-xs-12 {{ Variable::theme("dark") }}" data-theme="dark">
+                                <label>Dark</label>
+                            </div>
                         </div>
                         <input type="hidden" name="_token" id="csrf_token" value="{{ csrf_token() }}">
                     </form>
@@ -188,32 +187,16 @@
                     <h4 class="settings-title">Meldingen</h4>
                     <form>
                         <div class="form-group col-xs-12 no-padding clearfix">
-                            <div class="notification-choose col-lg-3 left col-md-3 col-sm-5 col-xs-12 {{ Variable::notif("comment") }}"
-                                 data-notification="comment">
-                                <header></header>
-                                <p><i class="fa fa-bell-o"></i></p>
-                                <label>Test</label>
+                            <div class="notification-choose col-lg-4 left col-md-4 col-sm-5 col-xs-12 {{ Variable::notif("comment") }}" data-notification="comment">
+                                <label>Reacties</label>
                             </div>
-                            <div class="notification-choose col-lg-3 right col-md-3 col-md-push-0 col-sm-5 col-sm-push-2 col-xs-12 {{ Variable::notif("likes") }}"
-                                 data-notification="likes">
-                                <header></header>
-                                <p><i class="fa fa-bell-slash-o"></i></p>
-                                <label>Test</label>
+                            <div class="notification-choose col-lg-4 right col-md-4 col-md-push-0 col-sm-5 col-sm-push-2 col-xs-12 {{ Variable::notif("likes") }}" data-notification="likes">
+                                <label>Likes</label>
                             </div>
-                            <div class="notification-choose col-lg-3 left col-md-3 col-sm-5 col-xs-12  {{ Variable::notif("tutoring") }}"
-                                 data-notification="tutoring">
-                                <header></header>
-                                <p><i class="fa fa-bell-slash-o"></i></p>
-                                <label>Test</label>
-                            </div>
-                            <div class="notification-choose col-lg-3 right col-md-3 col-md-push-0 col-sm-5 col-sm-push-2 col-xs-12 {{ Variable::notif("account") }}"
-                                 data-notification="account">
-                                <header></header>
-                                <p><i class="fa fa-bell-o"></i></p>
-                                <label>Test</label>
+                            <div class="notification-choose col-lg-4 left col-md-4 col-sm-5 col-xs-12  {{ Variable::notif("tutoring") }}" data-notification="tutoring">
+                                <label>Tutoring</label>
                             </div>
                         </div>
-
                     </form>
                 </div>
 

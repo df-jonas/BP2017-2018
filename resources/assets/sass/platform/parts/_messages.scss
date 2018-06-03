@@ -3,7 +3,7 @@
   .msg {
     margin-bottom: 2.5em;
     .txt {
-      background: $unihelp-brown;
+      background: $secondary-color;
       color: $unihelp-white;
       padding: 1.5%;
       p {
@@ -28,9 +28,8 @@
   margin-top: 1.5em;
   //padding-top: 1.5em;
   //margin-bottom: 1.5em;
-  border-top: 1px solid $unihelp-brown;
+  border-top: 1px solid $secondary-color;
   line-height: 32px;
-
   input, button {
     border: none;
     padding: 0;

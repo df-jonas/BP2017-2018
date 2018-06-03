@@ -141,7 +141,7 @@
       text-decoration: none;
       color: black;
       &:hover {
-        //background: $unihelp-brown;
+        //background: $secondary-color;
         //color: $unihelp-white;
         background: $background-color;
       }
@@ -171,18 +171,18 @@
       margin-right: 3%;
       line-height: 3em;
       cursor: pointer;
-      color: $unihelp-brown;
+      color: $secondary-color;
       &:hover, &.uh-active {
-        border-bottom: 3px solid $unihelp-brown;
+        border-bottom: 3px solid $secondary-color;
         a {
-          color: $unihelp-brown;
+          color: $secondary-color;
         }
       }
       a {
         display: block;
         color: $unihelp-asphalt;
         &:hover {
-          color: $unihelp-brown;
+          color: $secondary-color;
         }
       }
       span {
@@ -190,7 +190,7 @@
         padding-right: 0.85em;
       }
       .badge {
-        background: $unihelp-brown;
+        background: $secondary-color;
         padding: 5px;
         width: 20px;
         height: 20px;

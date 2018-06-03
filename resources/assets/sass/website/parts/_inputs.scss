@@ -164,11 +164,11 @@ label {
 }
 
 /*steps bar*/
+/*
 #progressbar {
   overflow: hidden;
   padding: 8px 15px;
   padding-bottom: 0;
-  /*CSS counters to number the steps*/
   counter-reset: step;
   padding-left: 0;
   li {
@@ -178,10 +178,8 @@ label {
     float: left;
     position: relative;
     text-align: center;
-    //box with title*/
     &:before {
       position: relative;
-      /*html data-title*/
       content: attr(data-title);
       counter-increment: step;
       line-height: 50px;
@@ -193,7 +191,6 @@ label {
       width: 75%;
       z-index: 10;
     }
-    /*lijn tussen boxes*/
     &:after {
       content: '';
       width: 100%;
@@ -204,14 +201,13 @@ label {
       top: 35%;
       z-index: 1;
     }
-    /*Geen connector nodig voor stap 1*/
     &:first-child:after {
       content: none;
     }
 
   }
 }
-
+*/
 /*Actieve en voltooide stappen groen kleuren*/
 #progressbar li.active:before, #progressbar li.active:after {
   background: $theme-color;
