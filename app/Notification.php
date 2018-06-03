@@ -26,8 +26,9 @@ class Notification extends Model
     }
     public function isRead()
     {
-        return $this->read_at;
+        return $this->read_at != null ? true : false;
     }
+
     public function notificationcreated()
     {
         return DateTimeHumanizer::difference(new \DateTime(), $this->created_at, "nl");

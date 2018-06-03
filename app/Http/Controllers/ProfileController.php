@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Course;
 use App\File;
+use App\Notification;
 use App\Post;
 use App\Rating;
 use Illuminate\Http\Request;
@@ -11,6 +12,7 @@ use App\Campus;
 use App\Fos;
 use App\Download;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\UserCourse;
 use Illuminate\Support\Facades\Redirect;
@@ -160,9 +162,24 @@ class ProfileController extends Controller
         return view("platform.profile.uploads", $arr);
     }
 
-    public function notifications()
+    public function notifications(Request $request)
     {
-        return view("platform.profile.notifications");
+        $q = Notification::query()->where("to_user", "=", Auth::id());
+        $all = true;
+
+        if (isset($request['all']) == false || $request['all'] == "false") {
+            $all = false;
+            $q = $q->where("read_at", "=", null);
+        }
+
+        $notifications = $q->orderBy("created_at", "desc")->paginate(10);
+
+        $arr = [
+            'notifications' => $notifications,
+            'all' => $all
+        ];
+
+        return view("platform.profile.notifications", $arr);
     }
 
     public function addusercourse($course_id)
