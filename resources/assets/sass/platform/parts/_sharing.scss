@@ -1,32 +1,6 @@
-
-.file {
-  header {
-
-  }
-
-  .rating {
-    font-size: 1.5em !important;
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    -webkit-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    &:hover {
-      cursor: pointer;
-    }
-
-    .checked {
-      color: $unihelp-brown;
-    }
-  }
-
-}
-
 .filecontainer {
   display: inline;
 }
-
-
 /*file overview*/
 .file-overview {
   text-align: left;

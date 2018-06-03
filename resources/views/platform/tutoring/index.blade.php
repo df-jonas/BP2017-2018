@@ -4,20 +4,19 @@
 @section('content')
     @include('partials.platform.header')
     @include('partials.platform.subheader')
-
     <div class="container tutoring">
 
         <a href="{{route('tutoring-requests')}}">
             <div class="item message col-xs-12">
                 <div class="padding">
                     @if($validcount > 0)
-                        <div>
+                        <p>
                             <b>{{ $validcount }} {{ ($validcount == 1) ? "inkomend verzoek" : "inkomende verzoeken" }}</b>
                             {{ ($validcount == 1) ? "matcht" : "matchen" }} met uw profiel.
                             <i class="fa fa-close pull-right"></i>
-                        </div>
+                        </p>
                     @else
-                        <div>Er zijn op dit moment geen verzoeken voor jou.</div>
+                        <p>Er zijn op dit moment geen verzoeken voor jou.</p>
                     @endif
                 </div>
             </div>

@@ -11,7 +11,6 @@ use App\Campus;
 use App\Fos;
 use App\Download;
 use Illuminate\Support\Facades\Auth;
-use Auth;
 use Illuminate\Support\Facades\Mail;
 use App\UserCourse;
 use Illuminate\Support\Facades\Redirect;

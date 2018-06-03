@@ -3,7 +3,7 @@
         <div id="breadcrumb">
             <ul class="breadcrumb">
                 <li><a href="/">Home</a> <span class="divider">-></span></li>
-                <li>Pagina titel</li>
+                <li>@yield('pagetitle')</li>
             </ul>
         </div>
     </div>

@@ -1354,6 +1354,84 @@ footer a:focus {
   text-align: center !important;
 }
 
+.auth-page .progress-box,
+.message-page .progress-box {
+  background: #4D6A50;
+  padding: 0;
+  width: 100%;
+  position: inherit;
+  left: 0;
+  top: 0;
+  /*steps bar*/
+}
+
+.auth-page .progress-box ul#progressbar,
+.message-page .progress-box ul#progressbar {
+  overflow: hidden;
+  padding: 10px;
+  margin-bottom: 0;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+  padding-left: 0;
+  width: 100%;
+}
+
+.auth-page .progress-box ul#progressbar li,
+.message-page .progress-box ul#progressbar li {
+  list-style-type: none;
+  width: 33%;
+  height: 50px;
+  float: left;
+  position: relative;
+  text-align: center;
+  /*lijn tussen boxes*/
+  /*Geen connector nodig voor stap 1*/
+}
+
+.auth-page .progress-box ul#progressbar li:before,
+.message-page .progress-box ul#progressbar li:before {
+  position: relative;
+  /*html data-title*/
+  content: attr(data-title);
+  counter-increment: step;
+  line-height: 50px;
+  display: block;
+  color: white;
+  margin: 0 auto 5px auto;
+  background: #f3f3f3;
+  height: 50px;
+  width: 75%;
+  z-index: 10;
+}
+
+.auth-page .progress-box ul#progressbar li:after,
+.message-page .progress-box ul#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background: #333a40;
+  position: absolute;
+  left: -50%;
+  top: 55%;
+  z-index: 1;
+}
+
+.auth-page .progress-box ul#progressbar li span,
+.message-page .progress-box ul#progressbar li span {
+  z-index: 999;
+  color: red;
+}
+
+.auth-page .progress-box ul#progressbar li:first-child:after,
+.message-page .progress-box ul#progressbar li:first-child:after {
+  content: none;
+}
+
+.auth-page .progress-box ul#progressbar li.active:before,
+.message-page .progress-box ul#progressbar li.active:before {
+  background: #333a40;
+}
+
 /*FONTS*/
 
 /*Mixins*/
@@ -1533,55 +1611,50 @@ label {
 
 /*steps bar*/
 
+/*
 #progressbar {
   overflow: hidden;
   padding: 8px 15px;
   padding-bottom: 0;
-  /*CSS counters to number the steps*/
   counter-reset: step;
   padding-left: 0;
-}
+  li {
+    list-style-type: none;
+    width: 25%;
+    height: 50px;
+    float: left;
+    position: relative;
+    text-align: center;
+    &:before {
+      position: relative;
+      content: attr(data-title);
+      counter-increment: step;
+      line-height: 50px;
+      display: block;
+      color: white;
+      margin: 0 auto 5px auto;
+      background: $grey;
+      height: 50px;
+      width: 75%;
+      z-index: 10;
+    }
+    &:after {
+      content: '';
+      width: 100%;
+      height: 10px;
+      background: $grey;
+      position: absolute;
+      left: -50%;
+      top: 35%;
+      z-index: 1;
+    }
+    &:first-child:after {
+      content: none;
+    }
 
-#progressbar li {
-  list-style-type: none;
-  width: 25%;
-  height: 50px;
-  float: left;
-  position: relative;
-  text-align: center;
-  /*lijn tussen boxes*/
-  /*Geen connector nodig voor stap 1*/
+  }
 }
-
-#progressbar li:before {
-  position: relative;
-  /*html data-title*/
-  content: attr(data-title);
-  counter-increment: step;
-  line-height: 50px;
-  display: block;
-  color: white;
-  margin: 0 auto 5px auto;
-  background: #505457;
-  height: 50px;
-  width: 75%;
-  z-index: 10;
-}
-
-#progressbar li:after {
-  content: '';
-  width: 100%;
-  height: 10px;
-  background: #505457;
-  position: absolute;
-  left: -50%;
-  top: 35%;
-  z-index: 1;
-}
-
-#progressbar li:first-child:after {
-  content: none;
-}
+*/
 
 /*Actieve en voltooide stappen groen kleuren*/
 
@@ -1813,34 +1886,6 @@ form label {
   background-color: white;
   display: none;
   overflow: hidden;
-}
-
-/*Notices and go-back*/
-
-.go-back a,
-.message a {
-  color: #8A7E72;
-}
-
-.go-back i,
-.message i {
-  cursor: pointer;
-}
-
-.go-back i span,
-.message i span {
-  font-family: Raleway;
-}
-
-.go-back .padding,
-.message .padding {
-  padding: 7.5px;
-}
-
-.message {
-  color: #ffffff !important;
-  background: #4D6A50 !important;
-  margin-bottom: 2em;
 }
 
 .slicknav_menu {

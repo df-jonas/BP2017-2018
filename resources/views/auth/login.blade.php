@@ -9,7 +9,7 @@
                 <div class="col-xs-12 padding">
                     <div class="form-group clearfix col-xs-12">
                         <input type="text" class="form-control" id="email" name="email" aria-describedby="usernameHelp"
-                               placeholder="Gebruikersnaam">
+                               placeholder="E-mail adres">
                     </div>
                     <div class="form-group clearfix col-xs-12">
                         <input type="password" class="form-control" id="password" name="password"
