@@ -211,6 +211,9 @@ class ProfileController extends Controller
     {
         //id's of current user courses
         $currentUserCoursesIds = Usercourse::all()->where('user_id', '=', Auth::id())->pluck('course_id')->toArray();
+
+        $r = array();
+        
         //only show courses that are not yet added to a user
         if ($request->search != "") {
             $r = Course::query()
@@ -219,9 +222,6 @@ class ProfileController extends Controller
                 ->get();
         }
 
-        if ($request->search == "") {
-            $r = "";
-        }
         return $r;
     }
 
