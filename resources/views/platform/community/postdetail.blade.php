@@ -50,7 +50,7 @@
                                 <section class="info  col-lg-6 left col-md-4 col-sm-6 col-xs-12">
                                     <div class="table">
                                         <div style="display: table-cell; width: 32px">
-                                            <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                            <img src="{{ asset('img/avatars/' . $post->user->image )}}"
                                                  class="account-img round-img">
                                         </div>
                                         <section
@@ -83,8 +83,8 @@
 
                             <section class="info" style="margin-top: 5%">
                                 <ul>
-                                    <li>Reacties: 0</li>
-                                    <li>Likes: 0</li>
+                                    <li>Reacties: {{ $post->commentcount() }}</li>
+                                    <li>Likes: {{ $post->votesum() }}</li>
                                 </ul>
                             </section>
 
