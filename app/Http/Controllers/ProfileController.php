@@ -147,8 +147,13 @@ class ProfileController extends Controller
 
     public function downloads()
     {
+        $downloads = Download::query()
+            ->where("user_id", "=", Auth::id())
+            ->orderBy("updated_at", "desc")
+            ->get();
+
         $arr = [
-            'downloads' => Download::query()->where("user_id", "=", Auth::id())->get(),
+            'downloads' => $downloads
         ];
 
         return view("platform.profile.downloads", $arr);
