@@ -8,9 +8,6 @@
         <!-- begin profile message -->
     @include('partials.platform.message')
     <!-- end profile message -->
-        <!-- begin go back -->
-    @include('partials.platform.go-back')
-    <!-- end go back-->
         <!-- begin table -->
         <section class="table">
             <!-- begin sidebar -->

@@ -29,9 +29,9 @@
             <div class="module  clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
                 <h4>Sociaal</h4>
                 <ul>
-                    <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
-                    <li><a href="#"><i class="fa fa-globe"></i> Blog</a></li>
+                    <li><a href="https://www.facebook.com/unihelp.be/" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://twitter.com/UniHelp_BE" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://blog.unihelp.be/" target="_blank"><i class="fa fa-globe"></i> Blog</a></li>
                 </ul>
             </div>
             <div class="module clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
@@ -71,7 +71,7 @@
     </section>
     <section class="bottom no-padding clearfix">
         <div class="container">
-            <div class="col-xs-12">
+            <div class="col-xs-12 no-padding-left">
                 <a href=""><h6>Copyright &copy; 2018 UniHelp. Alle rechten voorbehouden - <a href="{{route('website-sitemap')}}">Sitemap</a> </h6>
                 </a>
             </div>

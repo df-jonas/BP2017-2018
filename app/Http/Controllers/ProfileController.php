@@ -11,6 +11,7 @@ use App\Campus;
 use App\Fos;
 use App\Download;
 use Illuminate\Support\Facades\Auth;
+use Auth;
 use Illuminate\Support\Facades\Mail;
 use App\UserCourse;
 use Illuminate\Support\Facades\Redirect;
@@ -22,15 +23,21 @@ class ProfileController extends Controller
     public function index()
     {
         $myposts = Post::query()
-            ->where("user_id", "=", Auth::user()->id)
+            ->where("user_id", "=", Auth::id())
             ->orderBy("created_at", "desc")
-            ->take(10)
+            ->take(15)
             ->get();
 
         $myfiles = File::query()
-            ->where("user_id", "=", Auth::user()->id)
+            ->where("user_id", "=", Auth::id())
             ->orderBy("created_at", "desc")
-            ->take(10)
+            ->take(15)
+            ->get();
+
+        $mycourses = UserCourse::query()
+            ->where("user_id", "=", Auth::id())
+            ->orderBy("created_at", "desc")
+            ->take(15)
             ->get();
 
         $params = [
@@ -40,8 +47,8 @@ class ProfileController extends Controller
             'files' => $myfiles,
             'posts' => $myposts,
             'address' => Auth::user()->address,
+            'mycourses' => $mycourses,
         ];
-
         return view('platform.profile.index', $params);
     }
 

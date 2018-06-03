@@ -11,10 +11,14 @@
         <!-- begin assessment-->
         <div class="row">
             <section class="col-xs-12">
-
-
-
-                <div class="item padding clearfix" style="padding:0 15px 0 15px">
+                <!-- begin go back -->
+            @include('partials.platform.go-back')
+            <!-- end go back-->
+            </section>
+            <section class="col-xs-12">
+                <div class="item clearfix">
+                    <header><a class="header-title">Assessment individueel</a></header>
+                    <div class="padding">
                     <section class="content assessment">
                         <section class="assessment-group">
                             <div class="title col-lg-3">
@@ -82,6 +86,7 @@
                             </tr>
                         </table>
                     </div>
+                </div>
                 </div>
             </section>
             <!-- end picture -->
