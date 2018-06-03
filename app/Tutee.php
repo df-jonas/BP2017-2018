@@ -23,15 +23,15 @@ class Tutee extends Model
         return [
             [
                 "string" => "Oefeningen",
-                "value" => $this->needs_exercises
+                "value" => $this->need_exercises
             ],
             [
                 "string" => "Uitleg",
-                "value" => $this->needs_explanation
+                "value" => $this->need_explanation
             ],
             [
                 "string" => "Studeren",
-                "value" => $this->needs_studying
+                "value" => $this->need_studying
             ]
         ];
     }
@@ -42,14 +42,16 @@ class Tutee extends Model
         $str = "";
 
         foreach ($this->needs() as $need) {
-            if ($need->value == true) {
+            if ($need['value'] == true) {
                 if (!$first) {
                     $str .= ", ";
                 } else {
                     $first = false;
                 }
-                $str .= $need->string;
+                $str .= $need['string'];
             }
         }
+
+        return $str;
     }
 }
