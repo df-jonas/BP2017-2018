@@ -53,7 +53,7 @@ class WebsiteController extends Controller
 
     public function faq()
     {
-        return view("website.faq");
+        return view("website.FAQ");
     }
 
     public function demo()

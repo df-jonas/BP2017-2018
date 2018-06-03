@@ -1342,15 +1342,15 @@ footer a:focus {
   color: #333a40;
 }
 
-.auth-page .auth-box.message,
-.message-page .auth-box.message {
+.auth-page .auth-box.error,
+.message-page .auth-box.error {
   min-height: 200px;
 }
 
-.auth-page .auth-box.message h4,
-.auth-page .auth-box.message a,
-.message-page .auth-box.message h4,
-.message-page .auth-box.message a {
+.auth-page .auth-box.error h4,
+.auth-page .auth-box.error a,
+.message-page .auth-box.error h4,
+.message-page .auth-box.error a {
   text-align: center !important;
 }
 

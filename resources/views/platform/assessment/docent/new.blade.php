@@ -8,9 +8,15 @@
         <!-- begin profile message -->
     @include('partials.platform.message')
     <!-- end profile message -->
+        <section class="col-xs-12">
+            <!-- begin go back -->
+        @include('partials.platform.go-back')
+        <!-- end go back-->
+        </section>
 
-        <section class="content assessment">
+        <section class="col-xs-12 content assessment">
             <section class="item clearfix">
+                <header><a class="header-title">Nieuwe assessment</a></header>
                 <div class="padding">
                     <section class="assessment-group">
                         <div class="title col-xs-12">

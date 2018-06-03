@@ -391,9 +391,6 @@
 
     }</style></head>
 <body>
-<!--*|IF:MC_PREVIEW_TEXT|*-->
-<!--[if !gte mso 9]><!----><span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">*|MC_PREVIEW_TEXT|*</span><!--<![endif]-->
-<!--*|END:IF|*-->
 <center>
     <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
         <tr>
@@ -516,7 +513,7 @@
 
                                                                 <p><strong>Dag {{ $username }}!</strong><br>
                                                                     &nbsp;</p>
-                                                                Bedankt om u aan te melden op <strong>UniHelp.</strong> Dit is een nieuw en krachtig studentenplatform dat het leven van de student een pak aangenamer zal maken!<br>
+                                                                Bedankt om je aan te melden op <strong>UniHelp</strong>. Dit is een nieuw en krachtig studentenplatform dat het leven van de student een pak aangenamer zal maken!<br>
                                                                 <br>
                                                                 Om aan de slag te gaan, kan je op onderstaande knop drukken. Bekijk zeker en vast eens welke <strong>functionaliteiten</strong> UniHelp voor jou te bieden heeft!<br>
                                                                 &nbsp;
@@ -740,7 +737,7 @@
                                                                                                                     <tbody><tr>
 
                                                                                                                         <td class="mcnFollowIconContent" width="24" valign="middle" align="center">
-                                                                                                                            <a href="http://www.facebook.com" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-light-facebook-48.png" style="display:block;" class="" width="24" height="24"></a>
+                                                                                                                            <a href="https://www.facebook.com/unihelp.be/" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-light-facebook-48.png" style="display:block;" class="" width="24" height="24"></a>
                                                                                                                         </td>
 
 
@@ -772,7 +769,7 @@
                                                                                                                     <tbody><tr>
 
                                                                                                                         <td class="mcnFollowIconContent" width="24" valign="middle" align="center">
-                                                                                                                            <a href="http://www.twitter.com/" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-light-twitter-48.png" style="display:block;" class="" width="24" height="24"></a>
+                                                                                                                            <a href="https://twitter.com/UniHelp_BE" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-light-twitter-48.png" style="display:block;" class="" width="24" height="24"></a>
                                                                                                                         </td>
 
 
@@ -878,8 +875,7 @@
                                                                 <strong>Ons e-mail adres is:</strong><br>
                                                                 info@unihelp.ne<br>
                                                                 <br>
-                                                                Wenst u deze e-mails niet meer te ontvangen?<br>
-                                                                <a href="*|UPDATE_PROFILE|*">update uw voorkeuren</a> of <a href="*|UNSUB|*">uitschrijven</a><br>
+                                                                Dit is een eenmalig verstuurde e-mail. U zal verder geen communicatie meer van ons ontvangen.<br>
                                                                 <br>
                                                             </td>
                                                         </tr>

@@ -5,19 +5,15 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\File;
 use App\Post;
-use App\PublicationYear;
 use Illuminate\Http\Request;
 use App\Campus;
 use App\Fos;
-use App\User;
 use App\Download;
 use Auth;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Redirect;
 use Session;
 use App\UserCourse;
-use App\Preference;
 use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
@@ -25,15 +21,21 @@ class ProfileController extends Controller
     public function index()
     {
         $myposts = Post::query()
-            ->where("user_id", "=", Auth::user()->id)
+            ->where("user_id", "=", Auth::id())
             ->orderBy("created_at", "desc")
-            ->take(10)
+            ->take(15)
             ->get();
 
         $myfiles = File::query()
-            ->where("user_id", "=", Auth::user()->id)
+            ->where("user_id", "=", Auth::id())
             ->orderBy("created_at", "desc")
-            ->take(10)
+            ->take(15)
+            ->get();
+
+        $mycourses = UserCourse::query()
+            ->where("user_id", "=", Auth::id())
+            ->orderBy("created_at", "desc")
+            ->take(15)
             ->get();
 
         $params = [
@@ -43,8 +45,8 @@ class ProfileController extends Controller
             'files' => $myfiles,
             'posts' => $myposts,
             'address' => Auth::user()->address,
+            'mycourses' => $mycourses,
         ];
-
         return view('platform.profile.index', $params);
     }
 

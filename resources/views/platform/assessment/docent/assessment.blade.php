@@ -9,6 +9,13 @@
     @include('partials.platform.message')
     <!-- end profile message -->
         <!-- begin content -->
+        <section class="col-xs-12">
+            <!-- begin go back -->
+        @include('partials.platform.go-back')
+        <!-- end go back-->
+        </section>
+
+        <section class="col-xs-12">
         <section class="content assessment">
             <section class="item clearfix">
                 <header><a class="header-title">Assessment overzicht</a></header>
@@ -67,6 +74,7 @@
         </section>
         </section>
         <!-- end content -->
+        </section>
     </section>
     <!-- end container -->
     <!-- begin footer -->
