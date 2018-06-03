@@ -12,7 +12,6 @@ use App\Campus;
 use App\Fos;
 use App\Download;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\UserCourse;
 use Illuminate\Support\Facades\Redirect;
@@ -213,7 +212,7 @@ class ProfileController extends Controller
         $currentUserCoursesIds = Usercourse::all()->where('user_id', '=', Auth::id())->pluck('course_id')->toArray();
 
         $r = array();
-        
+
         //only show courses that are not yet added to a user
         if ($request->search != "") {
             $r = Course::query()
