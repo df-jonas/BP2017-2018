@@ -71,7 +71,7 @@ class ProfileController extends Controller
         $user = Auth::user();
         $campus = $request->campus;
         $fos = $request->fos;
-        $woonplaats = $request->woonplaats;
+        $address = $request->address;
         $email = $request->email;
         $avatar = $request->file('avatar');
         $firstname = $request->firstname;
@@ -97,8 +97,8 @@ class ProfileController extends Controller
             $user->email = $email;
         }
 
-        if (!empty($woonplaats)) {
-            $user->address = $woonplaats;
+        if (!empty($address)) {
+            $user->address = $address;
         }
 
         if ($request->hasFile('avatar')) {

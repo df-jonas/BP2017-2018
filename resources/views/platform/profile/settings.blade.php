@@ -104,8 +104,8 @@
                         </div>
                         <div class="form-group col-xs-12 no-padding clearfix">
                             <div class="textdiv clearfix">
-                                <label for="woonplaats">Woonplaats</label>
-                                <input id="woonplaats" name="woonplaats" type="text" class="form-control col-xs-12"
+                                <label for="address">Woonplaats</label>
+                                <input id="address" name="address" type="text" class="form-control col-xs-12"
                                        value="{{ $user->address}}"
                                        tabindex="3">
                             </div>
@@ -156,6 +156,35 @@
                 </div>
             </section>
             <!-- end vakken -->
+            <!-- canvas -->
+            <section class="col-xs-12 no-padding-left">
+                <div class="item padding clearfix">
+                    <h2 class="settings-title">Koppel Canvas</h2>
+                            Als student aan de Erasmushogeschool Brussel kan je inloggen met je Canvas account (Bèta). Opgelet: dit werkt enkel met onze lokale Canvas omgeving.-
+                        <div class="form-group col-xs-12 no-padding clearfix">
+                            <input type="submit" class="download-button col-lg-4 col-sm-4 col-xs-12" value="Koppelen">
+                        </div>
+                    <table class="info-table">
+                        <tr>
+                            <th>Col 1</th>
+                            <th>Col 2</th>
+                        </tr>
+                        <tr>
+                            <td>Cel 1</td>
+                            <td>Cel 2</td>
+                        </tr>
+                        <tr>
+                            <td>Cel 1</td>
+                            <td>Cel 2</td>
+                        </tr>
+                        <tr>
+                            <td>Cel 1</td>
+                            <td>Cel 2</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <!-- canvas-->
         </div>
         <!-- end left -->
         <!-- right -->

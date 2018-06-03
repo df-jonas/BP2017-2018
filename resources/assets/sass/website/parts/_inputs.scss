@@ -164,7 +164,7 @@ label {
 }
 
 /*steps bar*/
-/*
+
 #progressbar {
   overflow: hidden;
   padding: 8px 15px;
@@ -207,7 +207,7 @@ label {
 
   }
 }
-*/
+
 /*Actieve en voltooide stappen groen kleuren*/
 #progressbar li.active:before, #progressbar li.active:after {
   background: $theme-color;

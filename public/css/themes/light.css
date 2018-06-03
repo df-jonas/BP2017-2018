@@ -179,50 +179,51 @@ label {
 
 /*steps bar*/
 
-/*
 #progressbar {
   overflow: hidden;
   padding: 8px 15px;
   padding-bottom: 0;
   counter-reset: step;
   padding-left: 0;
-  li {
-    list-style-type: none;
-    width: 25%;
-    height: 50px;
-    float: left;
-    position: relative;
-    text-align: center;
-    &:before {
-      position: relative;
-      content: attr(data-title);
-      counter-increment: step;
-      line-height: 50px;
-      display: block;
-      color: white;
-      margin: 0 auto 5px auto;
-      background: $grey;
-      height: 50px;
-      width: 75%;
-      z-index: 10;
-    }
-    &:after {
-      content: '';
-      width: 100%;
-      height: 10px;
-      background: $grey;
-      position: absolute;
-      left: -50%;
-      top: 35%;
-      z-index: 1;
-    }
-    &:first-child:after {
-      content: none;
-    }
-
-  }
 }
-*/
+
+#progressbar li {
+  list-style-type: none;
+  width: 25%;
+  height: 50px;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+
+#progressbar li:before {
+  position: relative;
+  content: attr(data-title);
+  counter-increment: step;
+  line-height: 50px;
+  display: block;
+  color: white;
+  margin: 0 auto 5px auto;
+  background: #505457;
+  height: 50px;
+  width: 75%;
+  z-index: 10;
+}
+
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 10px;
+  background: #505457;
+  position: absolute;
+  left: -50%;
+  top: 35%;
+  z-index: 1;
+}
+
+#progressbar li:first-child:after {
+  content: none;
+}
 
 /*Actieve en voltooide stappen groen kleuren*/
 
@@ -1877,6 +1878,18 @@ section.logo {
   padding: 15px;
   margin: 0 0 20px 0;
   border: solid 0.5px #4d6a50;
+}
+
+.info-table {
+  width: 100%;
+  background: rgba(181, 212, 183, 0.2);
+}
+
+.info-table td,
+.info-table th {
+  width: 50%;
+  padding: 10px;
+  border: 0.2px solid #ffffff;
 }
 
 /*Bootstrap modals*/
