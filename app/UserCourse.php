@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserCourse extends Model
 {
     protected $table = 'usercourses';
+
     public function user()
     {
         return $this->hasOne('App\User', 'id', 'user_id');

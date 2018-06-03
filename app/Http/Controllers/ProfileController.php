@@ -11,7 +11,6 @@ use App\Campus;
 use App\Fos;
 use App\Download;
 use Illuminate\Support\Facades\Auth;
-use Auth;
 use Illuminate\Support\Facades\Mail;
 use App\UserCourse;
 use Illuminate\Support\Facades\Redirect;
@@ -128,7 +127,7 @@ class ProfileController extends Controller
             Mail::send('mail.forms.account-delete', ['firstname' => $firstname, 'lastname' => $lastname, 'email' => $email], function ($message) use ($name, $email) {
                 $message->from($email, $name);
                 $message->subject("Unihelp - aanvraag tot account verwijdering");
-                $message->to('info@unihelp.be');
+                $message->to('dt.unihelp@ehb.be');
             });
             Session::flash('message', "Aanvraag tot verwijdering werd ingediend!");
         }
