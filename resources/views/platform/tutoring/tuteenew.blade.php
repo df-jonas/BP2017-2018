@@ -1,31 +1,21 @@
 @extends('layouts.platform')
 @section('pagetitle', 'Word tutee')
 @section('content')
-@section('pagetitle', 'Tutoring')
 @include('partials.platform.header')
     @include('partials.platform.subheader')
     <div class="container">
         <div class="table">
             <!-- Sidebar -->
             <div class="sidebar">
-                <article class="item file new clearfix">
+                <article class="item">
                     <header><a class="header-title"><i class="fa fa-info-circle"></i> Informatie</a></header>
                     <div class="padding">
                         <ul class="highlight">
-                            <li class="clearfix"><i class="fa fa-university" aria-hidden="true"><span
-                                            class="static-campus">t</span></i></li>
-                            <li class="clearfix"><i class="fa fa-graduation-cap" aria-hidden="true"><span
-                                            class="static-fos">t</span></i></li>
-                            <li class="clearfix"><i class="fa fa-graduation-cap" aria-hidden="true"><span
-                                            class="static-course">Vak</span></i></li>
-                            <li class="clearfix"><i class="fa fa-graduation-cap" aria-hidden="true"><span
-                                            class="static-type">Type</span></i></li>
-                            <li class="clearfix"><i class="fa fa-graduation-cap" aria-hidden="true"><span
-                                            class="static-degree">Graad</span></i></li>
-                            <li class="clearfix"><i class="fa fa-graduation-cap" aria-hidden="true"><span
-                                            class="static-publicationyear">Jaar</span></i></li>
-                            <li class="clearfix"><i class="fa fa-graduation-cap" aria-hidden="true"><span
-                                            class="static-book">Boek</span></i></li>
+                            <li class="clearfix"><i class="fa fa-university" aria-hidden="true"><span class="static-course">Vak</span></i></li>
+                            <li class="clearfix"><i class="fa fa-graduation-cap" aria-hidden="true"><span class="static-description">Beschrijving</span></i></li>
+                            <li class="clearfix static-exercises" style="display: none"><i class="fa fa-graduation-cap" aria-hidden="true"><span>Oefeningen</span></i></li>
+                            <li class="clearfix static-explanation" style="display: none"><i class="fa fa-graduation-cap" aria-hidden="true"><span>Uitleg</span></i></li>
+                            <li class="clearfix static-studying" style="display: none"><i class="fa fa-graduation-cap" aria-hidden="true"><span>Studiehulp</span></i></li>
                         </ul>
                     </div>
                 </article>
@@ -99,15 +89,15 @@
                                     <div class="form-group clearfix">
                                         <label>Kies uw persoonlijke voorkeuren</label>
                                         <label class="checkbox-container col-xs-12">Extra oefeningen
-                                            <input type="checkbox" name="exercises">
+                                            <input type="checkbox" name="exercises" id="exercises" value="oefeningen">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="checkbox-container col-xs-12">Nood aan extra uitleg
-                                            <input type="checkbox" name="explanation">
+                                            <input type="checkbox" name="explanation" id="explanation" value="uitleg">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="checkbox-container col-xs-12">Studiehulp
-                                            <input type="checkbox" name="studying">
+                                            <input type="checkbox" name="studying" id="studying" value="studiehulp">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -139,7 +129,7 @@
                                         </tr>
                                         <tr>
                                             <td class="bold">Beschrijvingen</td>
-                                            <td class="static-title">Lorem ipsum</td>
+                                            <td class="static-description">Lorem ipsum</td>
                                             <td class="small">Bewerken</td>
                                         </tr>
                                         <tr class="spacer">
@@ -147,7 +137,7 @@
                                         </tr>
                                         <tr>
                                             <td class="bold">Voorkeuren</td>
-                                            <td class="static-book">Extra oefeningen</td>
+                                            <td class="static-preference">Extra oefeningen</td>
                                             <td class="small">Bewerken</td>
                                         </tr>
                                         <tr class="spacer">
@@ -176,5 +166,5 @@
 @endsection
 
 @section("scripts")
-    <script src="{{asset("js/sharing-new.js")}}"></script>
+    <script src="{{asset("js/tutee-new.js")}}"></script>
 @endsection

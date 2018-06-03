@@ -3,12 +3,10 @@
 @section('content')
     @include('partials.platform.header')
     @include('partials.platform.subheader')
-
-    <div class="container">
+    <div class="container new">
         <div class="table">
         <!-- Sidebar -->
         <div class="sidebar">
-
             <article class="item">
                 <header><a class="header-title"><i class="fa fa-info-circle"></i> Informatie</a></header>
                 <div class="padding">
