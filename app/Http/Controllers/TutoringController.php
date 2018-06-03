@@ -27,8 +27,19 @@ class TutoringController extends Controller
             ->orWhereIn('tutee_id', $tutee_id)
             ->get();
 
+        $ids = Tutor::query()
+            ->where("active", "=", true)
+            ->where("user_id", "=", Auth::id())
+            ->get(['course_id']);
+
+        $validcount = Tutee::query()
+            ->where("active", "=", true)
+            ->whereIn("course_id", $ids)
+            ->count();
+
         $arr = [
-            'sessions' => $sessions
+            'sessions' => $sessions,
+            'validcount' => $validcount
         ];
 
         return view("platform.tutoring.index", $arr);

@@ -22,7 +22,6 @@ class CommunityController extends Controller
             ->take(5)
             ->get();
 
-
         $categories = GroupCategory::all();
 
         $arr = [

@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\File;
 use App\Post;
+use App\Rating;
 use Illuminate\Http\Request;
 use App\Campus;
 use App\Fos;
 use App\Download;
+use Illuminate\Support\Facades\Auth;
 use Auth;
 use Illuminate\Support\Facades\Mail;
-use Redirect;
-use Session;
 use App\UserCourse;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
@@ -136,20 +138,27 @@ class ProfileController extends Controller
 
     public function ratings()
     {
-        return view("platform.profile.ratings");
+        $arr = [
+            "ratings" => Rating::query()->where("userid", "=", Auth::id())->get()
+        ];
+        return view("platform.profile.ratings", $arr);
     }
 
     public function downloads()
     {
         $arr = [
-            'userdownloads' => Download::query()->where("user_id", "=", Auth::id())->get(),
+            'downloads' => Download::query()->where("user_id", "=", Auth::id())->get(),
         ];
+
         return view("platform.profile.downloads", $arr);
     }
 
     public function uploads()
     {
-        return view("platform.profile.uploads");
+        $arr = [
+            'uploads' => File::query()->where("user_id", "=", Auth::id())->get()
+        ];
+        return view("platform.profile.uploads", $arr);
     }
 
     public function notifications()
@@ -171,7 +180,7 @@ class ProfileController extends Controller
     public function removeusercourse($id)
     {
         //TODO kan beter met ajax
-        $usercourse = UserCourse::where('id', "=", $id);
+        $usercourse = UserCourse::query()->where('id', "=", $id);
         $usercourse->delete();
         Session::flash('message', "Vak verwijderd!");
         return Redirect::back();

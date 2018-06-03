@@ -29,7 +29,7 @@
                         @endif
                     @endforeach
                 @else
-                    U heeft (nog) geen meldingen ontvangen.
+                    U heeft nog geen meldingen ontvangen.
                 @endif
             </ul>
         </div>
