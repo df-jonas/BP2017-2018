@@ -22,7 +22,7 @@
                 <div class="padding">
                     <section class="assessment-group">
                         <div class="title col-lg-3">
-                            <a href="#"><h2 class="group-title">Project management</h2></a>
+                            <a href="#"><h2 class="group-title">Assessment 1</h2></a>
                         </div>
                         <div class="info col-lg-9">
                             <span class="assessments">3 groepen</span>

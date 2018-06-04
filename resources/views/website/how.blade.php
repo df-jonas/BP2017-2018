@@ -24,7 +24,7 @@
         <div class="intro col-lg-8 col-lg-push-2">
             <h2>Uniek platform</h2>
             <p>Unihelp is een uniek en gespecialiseerd platform (met mobiele ondersteuning) voor studenten. In deze bachelorproef doen we aan zelfstudie voor ongekende frameworks en technologieën, onderzoeken we vereisten in dergelijk platform, bevragen we studenten en ontwikkelen we een web-platform om studenten te ondersteunen gedurende hun studietraject.</p>
-            <img id="how-mockup" src="img/mockups/003-MacBook-Space-Gray.png" alt="Macbook mockup">
+            <img id="how-mockup" src="img/how-it-works/tutor.png" alt="Macbook mockup">
         </div>
         <ul class="steps col-lg-10 col-lg-push-1 col-xs-12 no-padding">
             <li class="col-lg-3 col-xs-12">

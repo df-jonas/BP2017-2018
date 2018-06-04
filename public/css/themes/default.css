@@ -179,50 +179,51 @@ label {
 
 /*steps bar*/
 
-/*
 #progressbar {
   overflow: hidden;
   padding: 8px 15px;
   padding-bottom: 0;
   counter-reset: step;
   padding-left: 0;
-  li {
-    list-style-type: none;
-    width: 25%;
-    height: 50px;
-    float: left;
-    position: relative;
-    text-align: center;
-    &:before {
-      position: relative;
-      content: attr(data-title);
-      counter-increment: step;
-      line-height: 50px;
-      display: block;
-      color: white;
-      margin: 0 auto 5px auto;
-      background: $grey;
-      height: 50px;
-      width: 75%;
-      z-index: 10;
-    }
-    &:after {
-      content: '';
-      width: 100%;
-      height: 10px;
-      background: $grey;
-      position: absolute;
-      left: -50%;
-      top: 35%;
-      z-index: 1;
-    }
-    &:first-child:after {
-      content: none;
-    }
-
-  }
 }
-*/
+
+#progressbar li {
+  list-style-type: none;
+  width: 25%;
+  height: 50px;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+
+#progressbar li:before {
+  position: relative;
+  content: attr(data-title);
+  counter-increment: step;
+  line-height: 50px;
+  display: block;
+  color: white;
+  margin: 0 auto 5px auto;
+  background: #505457;
+  height: 50px;
+  width: 75%;
+  z-index: 10;
+}
+
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 10px;
+  background: #505457;
+  position: absolute;
+  left: -50%;
+  top: 35%;
+  z-index: 1;
+}
+
+#progressbar li:first-child:after {
+  content: none;
+}
 
 /*Actieve en voltooide stappen groen kleuren*/
 
@@ -1646,6 +1647,43 @@ section.logo {
   }
 }
 
+.community-actions {
+  float: right;
+}
+
+.community-actions a {
+  border: solid 0.5px #8A7E72;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  color: #505457;
+  width: 50%;
+  padding: 5px;
+}
+
+.community-actions a:hover {
+  background: #8A7E72;
+  color: #ffffff;
+}
+
+.community-actions a:hover i {
+  color: #ffffff;
+}
+
+.community-actions i {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #505457;
+}
+
 /* Profiel */
 
 .headline h4 {
@@ -1879,6 +1917,18 @@ section.logo {
   border: solid 0.5px #4d6a50;
 }
 
+.info-table {
+  width: 100%;
+  background: rgba(181, 212, 183, 0.2);
+}
+
+.info-table td,
+.info-table th {
+  width: 50%;
+  padding: 10px;
+  border: 0.2px solid #ffffff;
+}
+
 /*Bootstrap modals*/
 
 .modal .modal-content {
@@ -2081,10 +2131,8 @@ i {
   font-size: 14px;
 }
 
-/*Profile*/
-
-.profile .settings-title,
-.profile .user-title {
+.settings-title,
+.user-title {
   font-size: 20px;
   font-weight: normal;
   font-style: normal;
@@ -2150,6 +2198,17 @@ i {
 .download-read:hover,
 .rating-read:hover {
   color: #4D6A50;
+}
+
+form p {
+  font-size: 14.5px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #505457;
 }
 
 /*Notices and go-back*/
@@ -2270,6 +2329,14 @@ i {
   clear: both;
   color: white;
   padding-top: 2em;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
 }
 
 /*Images*/

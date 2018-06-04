@@ -50,7 +50,9 @@
         text-align: center !important;
       }
     }
-
+fieldset{
+  padding: 50px 0;
+}
   }
   .progress-box {
     background: $theme-color;
@@ -70,7 +72,7 @@
       width: 100%;
       li {
         list-style-type: none;
-        width: 33%;
+        width: 25%;
         height: 50px;
         float: left;
         position: relative;
@@ -83,33 +85,42 @@
           counter-increment: step;
           line-height: 50px;
           display: block;
-          color: white;
           margin: 0 auto 5px auto;
           background: #f3f3f3;
           height: 50px;
-          width: 75%;
+          width: 50px;
           z-index: 10;
+          border-radius: 100%;
         }
         /*lijn tussen boxes*/
         &:after {
           content: '';
           width: 100%;
           height: 4px;
-          background: $unihelp-asphalt;
+          background: $unihelp-white;
           position: absolute;
           left: -50%;
           top: 55%;
           z-index: 1;
         }
-        span{
+        span {
           z-index: 999;
-          color: red;
+          color: $theme-color;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          line-height: 25px;
         }
         /*Geen connector nodig voor stap 1*/
         &:first-child:after {
           content: none;
         }
         &.active {
+          span {
+            color: $unihelp-white;
+          }
           &:before {
             background: $unihelp-asphalt;
           }

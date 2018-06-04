@@ -1,0 +1,32 @@
+.community-actions{
+  float: right;
+  a{
+    border: solid 0.5px $secondary-color;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: #505457;
+    width: 50%;
+    padding: 5px;
+    &:hover{
+      background: $secondary-color;
+      color: $unihelp-white;
+      i{
+        color: $unihelp-white;
+      }
+    }
+  }
+  i{
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #505457;
+  }
+}
