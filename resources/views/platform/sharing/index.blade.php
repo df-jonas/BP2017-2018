@@ -19,9 +19,7 @@
 
             <!-- Search form -->
             <section class="item search">
-                <!-- TODO Arno geen link? -->
                 <header><a class="header-title"><i class="fa fa-search"></i> Zoeken</a></header>
-
                 <div class="inner-addon left-addon">
                     <input type="text" id="search" name="search" class="form-control filterlistener" placeholder="zoekterm" tabindex="1"/>
                 </div>
@@ -30,7 +28,6 @@
 
             <!-- filter menu -->
             <section class="item filter">
-                <!-- TODO Arno geen link? -->
                 <header><a class="header-title"><i class="fa fa-filter"></i> Bestanden filteren</a></header>
                 <section class="padding">
                     <div class="form-group col-xs-12 no-padding clearfix">
@@ -134,7 +131,7 @@
                                     <h2 class="item-title no-margin"><a href="{{ $file->detailUrl() }}"> {{ $file->title }}</a></h2>
                                     <h3 class="item-campus">Erasmushogeschool Brussel</h3>
                                 </section>
-                                <section class="col-lg-6 col-lg-push-0 col-md-4 col-sm-4 col-sm-push-0 col-xs-8 col-xs-push-2">
+                                <section class="col-lg-6 col-lg-push-0 col-md-4 col-sm-4 col-sm-push-0 col-xs-4 hide-mobile">
                                     <div class="rating">
                                         @for ($i = 1; $i <= 5; $i++)
                                             @if($i <= $file->averageRating())

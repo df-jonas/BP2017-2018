@@ -414,10 +414,15 @@ fieldset input.submit {
   text-decoration: none;
 }
 
+#page-header .logo {
+  margin-top: 5px;
+}
+
 #page-header .links {
   float: right;
   list-style-type: none;
   text-align: right;
+  margin-bottom: 0;
 }
 
 #page-header .links a.active-state li,
@@ -450,10 +455,13 @@ fieldset input.submit {
 }
 
 #page-header.small {
-  height: 4.5em !important;
   padding: 5px !important;
   -webkit-box-shadow: 0px 1px 0px 0.25px #4D6A50;
           box-shadow: 0px 1px 0px 0.25px #4D6A50;
+}
+
+#page-header.small .logo {
+  margin-top: 0;
 }
 
 /*Breadcrumb module*/
@@ -920,6 +928,7 @@ fieldset input.submit {
 #how .steps .step:hover,
 #how .steps .step.active {
   background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 /*Avout intro*/

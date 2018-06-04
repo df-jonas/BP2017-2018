@@ -1,7 +1,7 @@
 <footer class="row">
     <section class="top padding clearfix">
         <div class="container">
-            <div class="module no-padding clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
+            <div class="module  clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
                 <h4>Navigatie</h4>
                 <ul>
                     <li><a href="{{ route('website-index') }}">Home</a></li>
@@ -9,15 +9,7 @@
                     <li><a href="{{ route('website-how') }}">Hoe het werkt</a></li>
                 </ul>
             </div>
-            <!--
-            <div class="module clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
-                <h4>Bedrijven</h4>
-                <ul>
-                    <li><a href="#">Word lid</a></li>
-                    <li><a href="#">Boek een demonstratie</a></li>
-                </ul>
-            </div>
-            -->
+
             <div class="module clearfix col-lg-2 col-md-2 col-sm-6 col-xs-12">
                 <h4>Account</h4>
                 <ul>

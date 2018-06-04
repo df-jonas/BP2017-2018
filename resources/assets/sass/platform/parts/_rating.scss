@@ -20,6 +20,7 @@
       transform: translate(0, -0%);
       text-align: right;
       float: right;
+      position: relative;
       &:hover {
         cursor: pointer;
       }
@@ -36,5 +37,15 @@
 .all-ratings {
   .checked {
     color: $secondary-color;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  &.detail {
+    .rating {
+      i{
+        font-size: 14px;
+      }
+    }
   }
 }
