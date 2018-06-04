@@ -2,26 +2,35 @@
 @section('pagetitle', 'Tutoring')
 
 @section('content')
+
     @include('partials.platform.header')
     @include('partials.platform.subheader')
     <div class="container tutoring">
 
-        <a href="{{route('tutoring-requests')}}">
-            <div class="item message col-xs-12">
-                <div class="padding">
-                    @if($validcount > 0)
-                        <p>
-                            <b>{{ $validcount }} {{ ($validcount == 1) ? "inkomend verzoek" : "inkomende verzoeken" }}</b>
-                            {{ ($validcount == 1) ? "matcht" : "matchen" }} met uw profiel.
-                            <i class="fa fa-close pull-right"></i>
-                        </p>
-                    @else
-                        <p>Er zijn op dit moment geen verzoeken voor jou.</p>
-                    @endif
+        @if(Variable::tutoringCount() < 3)
+            <a href="{{route('tutoring-requests')}}">
+                <div class="item message col-xs-12">
+                    <div class="padding">
+                        @if($validcount > 0)
+                            <p>
+                                <b>{{ $validcount }} {{ ($validcount == 1) ? "inkomend verzoek" : "inkomende verzoeken" }}</b>
+                                {{ ($validcount == 1) ? "matcht" : "matchen" }} met uw profiel.
+                                <i class="fa fa-close pull-right"></i>
+                            </p>
+                        @else
+                            <p>Er zijn op dit moment geen verzoeken voor jou.</p>
+                        @endif
+                    </div>
                 </div>
-            </div>
-        </a>
-        <!-- Modal -->
+            </a>
+            @else
+                <div class="item message col-xs-12">
+                    <div class="padding">
+                        <p>Je hebt reeds 3 actieve sessies. Beëindig eerst een van je huidige sessies om een nieuwe te starten.</p>
+                    </div>
+                </div>
+    @endif
+    <!-- Modal -->
         <div class="modal fade" id="verzoek-modal" role="dialog">
             <div id="tutoring-modal" class="modal-dialog  modal-lg">
                 <!-- Modal content-->
@@ -81,7 +90,7 @@
                             </div>
                         </li>
 
-                        @if($validcount > 0)
+                        @if($validcount > 0 && Variable::tutoringCount() < 3)
                             <li>
                                 <a href="{{route('tutoring-requests')}}">
                                     <div class="padding vertical-center">

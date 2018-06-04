@@ -83,7 +83,7 @@ class WebsiteController extends Controller
         Mail::send('mail.forms.demo', ['firstname' => $firstname, 'lastname' => $lastname, 'company' => $company, 'email' => $email, 'desc' => $desc], function ($message) use ($name, $email) {
             $message->from($email, $name);
             $message->subject("Unihelp - demo aanvraag");
-            $message->to('info@unihelp.be');
+            $message->to('dt.unihelp@ehb.be');
         });
 
         Session::flash('message', 'Uw aanvraag werd verstuurd!');
@@ -103,7 +103,7 @@ class WebsiteController extends Controller
         Mail::send('mail.forms.contact', ['firstname' => $firstname, 'lastname' => $lastname, 'subject' => $subject, 'email' => $email, 'desc' => $desc], function ($message) use ($name, $email) {
             $message->from($email, $name);
             $message->subject("Unihelp - Contact aanvraag");
-            $message->to('info@unihelp.be');
+            $message->to('dt.unihelp@ehb.be');
         });
 
         Session::flash('message', 'Uw aanvraag werd verstuurd!');

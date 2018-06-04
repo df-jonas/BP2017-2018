@@ -38,7 +38,7 @@
         <!-- begin content -->
         <section class="content sharing detail">
                 <article class="file item clearfix">
-                    <header>  <a class="header-title">{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}</a><a href="{{ $file->downloadUrl() }}" class="header-title"><i class="fa fa-download"></i></a></header>
+                    <header><a class="header-title">{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}</a><a href="{{ $file->downloadUrl() }}" class="header-title"><i class="fa fa-download"></i></a></header>
                     <section class="padding clearfix">
                         <div class="row">
                         <div class="col-xs-12">

@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Notification;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class NotificationController extends Controller
 {
-    //TODO moet met ajax
     public function readAjax($id)
     {
-        $user = Auth::user();
-        $notification = $user->notifs->where('id', "=", $id)->first();
+        $notification = Notification::query()
+            ->where("to_user", "=", Auth::id())
+            ->where('id', "=", $id)
+            ->first();
+
         if (!$notification->isRead()) {
             $notification->markAsRead();
             $notification->save();
         }
+
+        return Redirect::back();
     }
 }
