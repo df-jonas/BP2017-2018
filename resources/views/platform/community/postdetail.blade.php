@@ -47,48 +47,40 @@
                     <article class="detail group col-xs-12">
                         <div class="padding clearfix">
                             <div class="row">
-                                <section class="info  col-lg-6 left col-md-4 col-sm-6 col-xs-12">
+                                <section class="info col-lg-8 col-md-4 col-sm-6 col-xs-12">
                                     <div class="table">
                                         <div style="display: table-cell; width: 32px">
-                                            <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                 class="account-img round-img">
+                                            <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="account-img round-img">
                                         </div>
-                                        <section
-                                                style="display: table-cell; padding-left: 16px; vertical-align: middle">
+                                        <section style="display: table-cell; padding-left: 16px; vertical-align: middle">
                                             <h6 style="margin: 0">{{ $post->user->first_name }} {{ $post->user->last_name }}</h6>
                                             <h6 style="margin: 5px 0">{{ $post->postcreated() }}</h6>
                                         </section>
                                     </div>
                                 </section>
-
-                                <section class="actions col-lg-6 right col-md-8 col-sm-6 col-xs-12">
-                                    <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                        <a class="action col-lg-12 col-xs-12" href="#">Like</a>
-                                    </section>
-
-                                    <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                        <a class="action col-lg-12 col-xs-12" href="#">Volgen</a>
-                                    </section>
-
-                                    <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                        <a class="action col-lg-12 col-xs-12" href="#">Rapporteer</a>
-                                    </section>
+                                <!-- buttons -->
+                                <section class="community-actions col-lg-4 col-md-8 col-sm-6 col-xs-12">
+                                        <a class="action like col-lg-12 col-xs-12" href="#"><i class="far fa-thumbs-up"></i> Like</a>
+                                        <a class="action report col-lg-12 col-xs-12" href="#"><i class="fas fa-comment"></i> Comment</a>
                                 </section>
+                                <!-- buttons -->
                             </div>
-
+                            <!-- main content -->
                             <section class="col-xs-12 no-padding">
-                                <h1>{{ $post->title }}</h1>
+                                <h2 class="settings-title">{{ $post->title }}</h2>
                                 <p>{{ $post->content }}</p>
                             </section>
-
+                            <!-- main content -->
+                            <!-- count box -->
                             <section class="info" style="margin-top: 5%">
                                 <ul>
                                     <li>Reacties: 0</li>
                                     <li>Likes: 0</li>
                                 </ul>
                             </section>
-
+                            <!-- count box -->
                         </div>
+                        <!-- comment -->
                         <section id="comment-box" class="row flex padding">
                             <section class="picture hide-mobile col-lg-1 col-sm-2 col-xs-0">
                                 <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="account-img round-img" alt="User profile image">
@@ -103,6 +95,7 @@
                                 </section>
                             </form>
                         </section>
+                        <!-- comment -->
                     </article>
                 </section>
             </section>
@@ -110,7 +103,7 @@
             <section class="item clearfix" style="margin-top: 3em">
                 <section class="group">
                     <div class="padding">
-                        <h4>Reacties</h4>
+                        <h2 class="settings-title">Reacties</h2>
                     </div>
                     <section id="messages" class="col-lg-12" style="border-bottom: none">
                         @foreach($post->comments as $comment)
@@ -141,12 +134,10 @@
     <!-- end table -->
 </section>
 <!-- end container -->
-
 <!-- begin footer -->
 @include('partials.footer')
 <!-- end footer -->
 @endsection
-
 @section("scripts")
     <script src="{{ asset("js/community-detail.js") }}"></script>
 @endsection

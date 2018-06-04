@@ -6,7 +6,7 @@
     <div class="container">
         <div class="table">
             <!-- Sidebar -->
-            <div class="sidebar">
+            <aside class="sidebar">
                 <section class="item">
                     <header><a class="header-title"><i class="fa fa-info-circle"></i> Informatie</a></header>
                     <div class="padding">
@@ -21,7 +21,7 @@
                     </div>
                 </section>
                 <!-- sidebar -->
-            </div>
+            </aside>
             <!-- content -->
             <div class="content">
                 <!-- files -->

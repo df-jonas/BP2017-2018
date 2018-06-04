@@ -88,9 +88,8 @@
                                 <i class="fa fa-book"><span>{{ $file->course->name }}</span></i>
                             </div>
                         </section>
-
-                        <div class="col-xs-12">
-                            <a class="download-button col-lg-2 col-sm-4 col-xs-12" href="{{ $file->downloadUrl() }}" target="_blank">Download</a>
+                        <div class="form-group col-xs-12" style="margin-top: 2em">
+                            <a href="{{ $file->downloadUrl() }}" target="_blank"><input type="button" class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Download"></a>
                         </div>
                     </section>
                 </article>

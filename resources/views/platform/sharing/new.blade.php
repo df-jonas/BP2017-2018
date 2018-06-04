@@ -7,7 +7,7 @@
         <!-- table -->
         <div class="table">
             <!-- Sidebar -->
-            <div class="sidebar">
+            <aside class="sidebar">
                 <section class="item">
                     <header><a class="header-title"><i class="fa fa-info-circle"></i> Informatie</a></header>
                     <div class="padding">
@@ -29,10 +29,10 @@
                         </ul>
                     </div>
                 </section>
-            </div>
+            </aside>
             <!-- sidebar -->
             <!-- content -->
-            <div class="content">
+            <section class="content">
                     <!-- multistep form -->
                     <form id="msform" class="col-xs-12 no-padding clearfix" method="post" enctype="multipart/form-data" action="{{route('sharing-new')}}">
                     {{ csrf_field() }}
@@ -226,7 +226,7 @@
                         <!-- step 4 -->
                         <!-- multistep form -->
                     </form>
-            </div>
+            </section>
             <!-- content -->
             <!-- table -->
         </div>

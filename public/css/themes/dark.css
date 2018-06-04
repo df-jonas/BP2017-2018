@@ -1647,6 +1647,43 @@ section.logo {
   }
 }
 
+.community-actions {
+  float: right;
+}
+
+.community-actions a {
+  border: solid 0.5px #333a40;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  color: #505457;
+  width: 50%;
+  padding: 5px;
+}
+
+.community-actions a:hover {
+  background: #333a40;
+  color: #ffffff;
+}
+
+.community-actions a:hover i {
+  color: #ffffff;
+}
+
+.community-actions i {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #505457;
+}
+
 /* Profiel */
 
 .headline h4 {
@@ -2094,10 +2131,8 @@ i {
   font-size: 14px;
 }
 
-/*Profile*/
-
-.profile .settings-title,
-.profile .user-title {
+.settings-title,
+.user-title {
   font-size: 20px;
   font-weight: normal;
   font-style: normal;
