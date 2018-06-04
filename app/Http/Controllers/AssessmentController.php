@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Assessment;
 use App\AssessmentGroupUser;
+use App\Skill;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,6 +46,7 @@ class AssessmentController extends Controller
 
     public function new()
     {
+
         return view('platform.assessment.new');
     }
 
@@ -53,7 +57,13 @@ class AssessmentController extends Controller
 
     public function docentNew()
     {
-        return view('platform.assessment.docent.new');
+        $skills = Skill::all();
+        $users = User::all();
+        $arr = [
+            'skills' => $skills,
+            'users' => $users,
+        ];
+        return view('platform.assessment.docent.new', $arr);
     }
 
     public function docentAssessment()
