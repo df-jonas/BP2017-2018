@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Course;
 use App\File;
+use App\Notification;
 use App\Post;
 use App\Rating;
 use Illuminate\Http\Request;
@@ -127,7 +128,7 @@ class ProfileController extends Controller
             Mail::send('mail.forms.account-delete', ['firstname' => $firstname, 'lastname' => $lastname, 'email' => $email], function ($message) use ($name, $email) {
                 $message->from($email, $name);
                 $message->subject("Unihelp - aanvraag tot account verwijdering");
-                $message->to('info@unihelp.be');
+                $message->to('dt.unihelp@ehb.be');
             });
             Session::flash('message', "Aanvraag tot verwijdering werd ingediend!");
         }
@@ -145,8 +146,13 @@ class ProfileController extends Controller
 
     public function downloads()
     {
+        $downloads = Download::query()
+            ->where("user_id", "=", Auth::id())
+            ->orderBy("updated_at", "desc")
+            ->get();
+
         $arr = [
-            'downloads' => Download::query()->where("user_id", "=", Auth::id())->get(),
+            'downloads' => $downloads
         ];
 
         return view("platform.profile.downloads", $arr);
@@ -160,9 +166,24 @@ class ProfileController extends Controller
         return view("platform.profile.uploads", $arr);
     }
 
-    public function notifications()
+    public function notifications(Request $request)
     {
-        return view("platform.profile.notifications");
+        $q = Notification::query()->where("to_user", "=", Auth::id());
+        $all = true;
+
+        if (isset($request['all']) == false || $request['all'] == "false") {
+            $all = false;
+            $q = $q->where("read_at", "=", null);
+        }
+
+        $notifications = $q->orderBy("created_at", "desc")->paginate(10);
+
+        $arr = [
+            'notifications' => $notifications,
+            'all' => $all
+        ];
+
+        return view("platform.profile.notifications", $arr);
     }
 
     public function addusercourse($course_id)
@@ -189,6 +210,9 @@ class ProfileController extends Controller
     {
         //id's of current user courses
         $currentUserCoursesIds = Usercourse::all()->where('user_id', '=', Auth::id())->pluck('course_id')->toArray();
+
+        $r = array();
+
         //only show courses that are not yet added to a user
         if ($request->search != "") {
             $r = Course::query()
@@ -197,9 +221,6 @@ class ProfileController extends Controller
                 ->get();
         }
 
-        if ($request->search == "") {
-            $r = "";
-        }
         return $r;
     }
 

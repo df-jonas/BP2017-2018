@@ -17,4 +17,41 @@ class Tutee extends Model
     {
         return $this->hasOne('App\Course', 'id', 'course_id');
     }
+
+    public function needs()
+    {
+        return [
+            [
+                "string" => "Oefeningen",
+                "value" => $this->need_exercises
+            ],
+            [
+                "string" => "Uitleg",
+                "value" => $this->need_explanation
+            ],
+            [
+                "string" => "Studeren",
+                "value" => $this->need_studying
+            ]
+        ];
+    }
+
+    public function needsStr()
+    {
+        $first = true;
+        $str = "";
+
+        foreach ($this->needs() as $need) {
+            if ($need['value'] == true) {
+                if (!$first) {
+                    $str .= ", ";
+                } else {
+                    $first = false;
+                }
+                $str .= $need['string'];
+            }
+        }
+
+        return $str;
+    }
 }

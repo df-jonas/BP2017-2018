@@ -22,7 +22,8 @@
                                         <a class="tutoring-request-title"><strong>{{ $candidate->course->name }}</strong></a>
                                         <a class="tutoring-request-read"
                                            href="{{ route("tutoring-accept", ['tutee_id' => $candidate->id]) }}"><i class="fas fa-check"></i> Accepteren</a>
-                                        <h4 class="tutoring-request-type">Oefeningen</h4>
+                                        <h4 class="tutoring-request-type">{{ $candidate->needsStr() }}</h4>
+                                        <p>{{ $candidate->description }}</p>
                                     </div>
                                 </li>
                             @endforeach

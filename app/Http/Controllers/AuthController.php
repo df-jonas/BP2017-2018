@@ -8,15 +8,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Campus;
-use App\Fos;
 use App\Helpers\HttpHelper;
-use App\Notifications\UserRegistered;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
-use Image;
 
 class AuthController extends Controller
 {
@@ -53,9 +49,19 @@ class AuthController extends Controller
         $headers = ['Authorization' => 'Bearer ' . $access_token];
         $client = HttpHelper::canvasRequest("/api/v1/users/self", "GET", $headers, null);
         $client = json_decode($client->getBody(), true);
+        $clientid = $client['id'];
 
-        // Decide whether or not a user is new and/or has completed registration & reroute
-        if (isset($client['id'])) {
+        Log::info($client);
+
+        Auth::user()->canvas_key = $access_token;
+        Auth::user()->canvas_refresh = $refresh_token;
+        Auth::user()->canvas_id = $clientid;
+
+        return Redirect::to(route('profile-settings'));
+
+        /*
+            // Decide whether or not a user is new and/or has completed registration & reroute
+            if (isset($client['id'])) {
             $user = User::query()
                 ->where("canvas_id", "=", $client['id'])
                 ->first();
@@ -85,9 +91,10 @@ class AuthController extends Controller
         } else {
             return Redirect::to("/");
         }
+        */
     }
 
-    public function register()
+    /*public function register()
     {
         if (Auth::check() && Auth::user()->isValid())
             return Redirect::to(route('sharing-index'));
@@ -98,28 +105,28 @@ class AuthController extends Controller
             'foses' => Fos::query()->orderBy("name")->get(),
         ];
         return view("website.register", $params);
-    }
+    }*/
 
-    public function login()
+    /*public function login()
     {
         if (Auth::check() && Auth::user()->isValid()) {
             return Redirect::to(route('sharing-index'));
 
         }
         return view("website.login");
-    }
+    }*/
 
-    public function logout()
+    /*public function logout()
     {
         Auth::logout();
         return Redirect::to(route('website-index'));
-    }
+    }*/
 
-    public function registerPost(Request $request)
+    /*public function registerPost(Request $request)
     {
         if (isset($request->username) && isset($request->tnc)) {
 
-            //TODO validation
+            // to do validation
             $user = Auth::user();
             $user->fosid = $request->fos;
             $user->campusid = $request->campus;
@@ -146,5 +153,5 @@ class AuthController extends Controller
             return Redirect::to(route('sharing-index'));
         }
         return Redirect::to(route('register'));
-    }
+    }*/
 }
