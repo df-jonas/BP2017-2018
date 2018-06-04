@@ -27,7 +27,7 @@
                     <!-- heading -->
                     <form method="POST" action="#">
                         <!-- title -->
-                        <div class="form-group col-xs-12 no-padding clearfix">
+                        <div class="form-group col-xs-12 clearfix">
                             <div class="textdiv">
                                 <label for="title">Assessment titel</label>
                                 <input id="title" name="title" type="text" class="form-control col-xs-12">
@@ -35,15 +35,16 @@
                         </div>
                         <!-- end title -->
                         <!-- time -->
-                        <div class="form-group col-lg-6 col-xs-12 no-padding-left clearfix">
+                        <div class="form-group col-lg-6 col-xs-12  clearfix">
                             <div class="textdiv">
                                 <label for="time">Benodigde tijd</label>
-                                <input id="time" name="time" type="number" placeholder="7 minuten" class="form-control col-xs-12">
+                                <input id="time" name="time" type="number" placeholder="7 minuten"
+                                       class="form-control col-xs-12">
                             </div>
                         </div>
                         <!-- time -->
                         <!-- date -->
-                        <div class="form-group col-lg-6 col-xs-12 no-padding-right clearfix">
+                        <div class="form-group col-lg-6 col-xs-12  clearfix">
                             <div class="textdiv">
                                 <label for="date">Einddatum</label>
                                 <input id="date" name="date" type="date" class="form-control col-xs-12">
@@ -51,17 +52,18 @@
                         </div>
                         <!-- date -->
                         <!-- explanation -->
-                        <div class="form-group col-xs-12 no-padding">
+                        <div class="form-group col-xs-12 ">
                             <label for="explanation">Uitleg</label>
                             <textarea class="form-control" rows="2" id="explanation" name="explanation"></textarea>
                         </div>
                         <!-- explanation -->
                         <div class="groups">
                             <!-- begin group -->
-                            <div class="form-group col-xs-12 no-padding clearfix">
+                            <div class="form-group col-xs-12 clearfix">
                                 <div class="selectdiv">
                                     <label for="group">Groep 1</label>
-                                    <select class="select form-control group-dropdown col-xs-12" name="group1[]" multiple="multiple">
+                                    <select id="firstgroup" class="select form-control group-dropdown col-xs-12"
+                                            name="group1[]" multiple="multiple">
                                         @foreach($users as $user)
                                             <option value="{{ $user->first_name . " " . $user->last_name }}">{{ $user->first_name . " " . $user->last_name}}</option>
                                         @endforeach
@@ -70,7 +72,7 @@
                             </div>
                             <!-- end group -->
                             <!-- begin group -->
-                            <div class="form-group col-xs-12 no-padding clearfix">
+                            <div class="form-group col-xs-12 clearfix">
                                 <div class="selectdiv">
                                     <label for="group">Groep 2</label>
                                     <select class="select form-control group-dropdown col-xs-12" name="group2[]"
@@ -84,12 +86,12 @@
                             <!-- end group -->
                         </div>
                         <!-- new group -->
-                        <div class="form-group col-xs-12 no-padding clearfix">
+                        <div class="form-group col-xs-12  clearfix">
                             <a id="new-assessment-group"><i class="fas fa-plus"></i> Nieuwe groep</a>
                         </div>
                         <!-- new group -->
                         <!-- begin skills-->
-                        <div class="form-group col-xs-12 no-padding clearfix">
+                        <div class="form-group col-xs-12 clearfix">
                             <div class="textdiv">
                                 <label for="skills">Attitudes (max 7)</label>
                                 <select class="vaardigheden-dropdown col-xs-12" name="skills[]" multiple="multiple">
