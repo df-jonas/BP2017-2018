@@ -5,13 +5,14 @@
 @include('partials.platform.subheader')
 <div class="container">
     <div class="content">
-        <div class="files">
-            <form id="form" class="col-xs-12 no-padding clearfix" method="post"
-                  action="{{route('tutoring-tutor-new')}}">
+            <form id="tutor-form" class="col-xs-12 no-padding clearfix" method="post" action="{{route('tutoring-tutor-new')}}">
                 {{ csrf_field() }}
-                <article class="item">
+                <section class="item">
                     <header><a class="header-title"><i class="fa fa-life-bouy"></i> Word tutor</a></header>
                     <div class="padding">
+                        <div class="form-group clearfix">
+                            <p>Door je kandidaat te stellen als tutor voor een bepaald vak, kan je gematcht worden met studenten die hulp nodig hebben voor dit zelfde vak. Als je tutor wil zijn voor meerdere vakken, kan je je voor elk van deze vakkan kandidaat stellen.</p>
+                        </div>
                         <div class="form-group clearfix">
                             <div class="selectdiv">
                                 <label for="course">Voor welk vak wil je graag tutoring geven?</label>
@@ -23,17 +24,13 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="form-group padding clearfix">
-                        <input type="submit" class="download-button col-lg-2 col-sm-4 col-xs-12" value="Wordt tutor!">
+                        <input type="submit" class="download-button col-lg-2 col-sm-4 col-xs-12" value="Word tutor!">
                     </div>
-                </article>
+                </section>
             </form>
         </div>
-    </div>
 </div>
 @include('partials.footer')
-@endsection
-
-@section("scripts")
-    <script src="{{asset("js/sharing-new.js")}}"></script>
 @endsection

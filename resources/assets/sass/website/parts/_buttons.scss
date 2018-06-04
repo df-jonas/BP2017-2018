@@ -33,12 +33,6 @@
     */
   }
 
-  &.previous{
-    background: $unihelp-grey;
-    &:hover{
-      background: $theme-color;
-    }
-  }
 
 }
 
@@ -53,9 +47,8 @@
   color: $unihelp-white;
   border: none;
   text-align: center;
-  line-height: 40px;
   float: right;
-  margin: 3% 0 3% 0;
+  //margin: 3% 0 3% 0;
   @include link(white, white, white, white);
   a, a:hover {
     cursor: pointer;
@@ -74,6 +67,6 @@
 /* Multistep navigation buttons */
 fieldset {
   input.next, input.previous, input.submit {
-    margin: 0 0 2% 0;
+    margin: 2% 0 2% 0;
   }
 }

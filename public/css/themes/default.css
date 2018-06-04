@@ -2165,6 +2165,17 @@ i {
   color: #4D6A50;
 }
 
+form p {
+  font-size: 14.5px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #505457;
+}
+
 /*Notices and go-back*/
 
 .go-back a,
@@ -2283,6 +2294,14 @@ i {
   clear: both;
   color: white;
   padding-top: 2em;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
 }
 
 /*Images*/

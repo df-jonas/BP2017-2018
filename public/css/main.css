@@ -309,18 +309,6 @@ a:active {
     */
 }
 
-.action-button.previous,
-.previous.form-button,
-.previous.download-button {
-  background: #2b2f33;
-}
-
-.action-button.previous:hover,
-.previous.form-button:hover,
-.previous.download-button:hover {
-  background: #4D6A50;
-}
-
 .form-button {
   background: #4D6A50;
 }
@@ -330,9 +318,7 @@ a:active {
   color: #ffffff;
   border: none;
   text-align: center;
-  line-height: 40px;
   float: right;
-  margin: 3% 0 3% 0;
 }
 
 .download-button {
@@ -390,7 +376,7 @@ a:active {
 fieldset input.next,
 fieldset input.previous,
 fieldset input.submit {
-  margin: 0 0 2% 0;
+  margin: 2% 0 2% 0;
 }
 
 /*Navigation*/

@@ -3,28 +3,35 @@ $(document).ready(function () {
         $(".static-course").text($("#course").find(":selected").text());
     }
 
-    function updateDescription(){
+    function updateDescription() {
         $(".static-description").text($("#description").val());
     }
 
     function updatePreference() {
-        if($("#studying").is(':checked')){
-            $(".static-studying").css('display', 'block');
+        if ($("#studying").is(':checked')) {
+            $(".static-studying").show();
+        }
+        else {
+            $(".static-studying").hide();
         }
 
-        if($("#exercises").is(':checked')){
-            $(".static-exercises").css('display', 'block')
+        if ($("#exercises").is(':checked')) {
+            $(".static-exercises").show();
         }
-        if($("#explanation").is(':checked')){
-            $(".static-explanation").css('display', 'block')
+        else {
+            $(".static-exercises").hide();
+        }
+        if ($("#explanation").is(':checked')) {
+            $(".static-explanation").show();
+        }
+        else {
+            $(".static-explanation").hide();
         }
     }
 
     $("#course").on("change", updateCourse);
     $("#description").on("change", updateDescription);
-    $("#studying").on("change", updatePreference);
-    $("#explanation").on("change", updatePreference);
-    $("#exercises").on("change", updatePreference);
+    $("#studying, #explanation, #exercises").on("change", updatePreference);
 
 
     var current = 0;
