@@ -116,7 +116,7 @@ class AuthController extends Controller
         return view("website.login");
     }*/
 
-    /*public function logout()
+    public function logout()
     {
         Auth::logout();
         return Redirect::to(route('website-index'));
