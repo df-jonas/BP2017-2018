@@ -8,6 +8,7 @@ use App\GroupCategory;
 use App\Helpers\NotificationHelper;
 use App\Post;
 use App\User;
+use App\Vote;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -184,5 +185,26 @@ class CommunityController extends Controller
         }
 
         return $returnarr;
+    }
+
+    public function postLikepost(Request $request)
+    {
+        if (!empty($request->post_id)) {
+            $post_id = $request->post_id;
+            $vote = Vote::query()
+                ->where("user_id", "=", Auth::id())
+                ->where("post_id", "=", $post_id)
+                ->get()
+                ->first();
+            if ($vote != null) {
+                $vote->delete();
+            } else {
+                $vote = new Vote();
+                $vote->value = true;
+                $vote->post_id = $post_id;
+                $vote->user_id = Auth::id();
+                $vote->save();
+            }
+        }
     }
 }

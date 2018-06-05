@@ -72,6 +72,7 @@
             Route::post('/community/{group_id}/{post_id}/comment', 'CommunityController@addcommentasync')->name('community-add-comment');
             //Route::get('/community/new', 'CommunityController@newgroup')->name('community-group-new');
             //Route::post('/community/new', 'CommunityController@newgrouppost');
+            Route::post('/community/like', 'CommunityController@postLikepost');
 
             /** Tutoring */
             Route::get('/tutoring', 'TutoringController@index')->name('tutoring-index');

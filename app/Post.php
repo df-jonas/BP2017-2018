@@ -8,7 +8,6 @@
 
 namespace App;
 
-
 use Coduo\PHPHumanizer\DateTimeHumanizer;
 use Illuminate\Database\Eloquent\Model;
 
@@ -60,4 +59,5 @@ class Post extends Model
     {
         return route('community-post-detail', ['group_id' => $this->group->url, 'post_id' => $this->id]);
     }
+
 }

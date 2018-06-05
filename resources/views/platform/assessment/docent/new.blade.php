@@ -117,4 +117,7 @@
     <script src="{{asset("js/select2.full.min.js")}}"></script>
     <script src="{{asset("js/i18n/nl.js")}}"></script>
     <script src="{{asset("js/assessment.js")}}"></script>
+    <script>
+        var users = $users;
+    </script>
 @endsection

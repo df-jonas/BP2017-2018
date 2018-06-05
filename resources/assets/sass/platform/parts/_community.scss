@@ -1,22 +1,25 @@
 .community-actions{
   float: right;
   a{
-    border: solid 0.5px $secondary-color;
+    border: solid 0.5px $unihelp-white;
+    background: $secondary-color;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.25;
     letter-spacing: normal;
     text-align: center;
-    color: #505457;
-    width: 50%;
+    color: $unihelp-white;
+    width: 47.5%;
     padding: 5px;
+    height: 100%;
+    &.delete{
+      width: auto;
+      width: 5%;
+    }
     &:hover{
-      background: $secondary-color;
-      color: $unihelp-white;
-      i{
-        color: $unihelp-white;
-      }
+      background: $theme-color;
+      cursor: pointer;
     }
   }
   i{
@@ -27,6 +30,53 @@
     line-height: 1.2;
     letter-spacing: normal;
     text-align: left;
-    color: #505457;
+    color: $unihelp-white;
+  }
+}
+
+/*Dropdowns*/
+#actions-dropdown{
+  top: 3em;
+  width: auto;
+  position: absolute;
+  box-shadow: 2px $unihelp-asphalt;
+  border-radius: 3px;
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  transition: 0.5s ease all;
+  left: auto;
+  right: 0!important;
+  li {
+    cursor: pointer;
+
+    border: 1px solid $background-color;
+    padding: 5px;
+    &:hover {
+      background: $background-color;
+    }
+
+
+  }
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 12px 6px;
+    border-color: transparent transparent $theme-color;
+    position: absolute;
+    right: 12px;
+    top: -12px;
+  }
+  .user-info {
+    display: block;
+    height: auto;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    &:hover {
+      background: $background-color;
+    }
   }
 }

@@ -120,7 +120,7 @@ class AuthController extends Controller
     {
         Auth::logout();
         return Redirect::to(route('website-index'));
-    }*/
+    }
 
     /*public function registerPost(Request $request)
     {
