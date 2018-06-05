@@ -40,8 +40,9 @@
                 <article class="file item clearfix">
                     <header><a class="header-title">{{$file->field->name}} > {{$file->degree->name}} > {{$file->course->name}}</a><a href="{{ $file->downloadUrl() }}" class="header-title"><i class="fa fa-download"></i></a></header>
                     <section class="padding clearfix">
+                        <div class="row">
                         <div class="col-xs-12">
-                            <section class="col-lg-10 col-md-9 col-sm-9 col-xs-12 no-padding">
+                            <section class="col-lg-10 col-md-9 col-sm-9 col-xs-7 no-padding">
                                 <div class="table">
                                     <div style="display: table-cell; width: 32px"><img src="{{ asset('img/avatars/' . $file->user->image) }}" class="account-img round-img" alt="User profile image"></div>
                                     <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
@@ -50,8 +51,7 @@
                                     </div>
                                 </div>
                             </section>
-
-                            <section class="col-lg-2 col-md-3 col-sm-3 col-sm-push-0 col-xs-8 col-xs-push-1">
+                            <section class="col-lg-2 col-md-3 col-sm-3 col-sm-push-0 col-xs-5">
                                 <section class="rating">
                                     <input hidden type="hidden" id="csrftoken" value="{{csrf_token()}}">
                                     <input type="hidden" id="fileid" hidden name="fileid" value="{{ $file->id }}">
@@ -67,13 +67,13 @@
                                 </section>
                             </section>
                         </div>
-
-
+                        </div>
+                        <div class="row">
                         <section class="col-xs-12">
                             <h1>{{ $file->title }}</h1>
                             <p>{{ $file->filedescription }}</p>
                         </section>
-
+                        </div>
                         <section class="details col-xs-12">
                             <div class="detail col-sm-3 col-xs-12">
                                 <i class="fa fa-file"><span>{{ $file->doctype->name }}</span></i>

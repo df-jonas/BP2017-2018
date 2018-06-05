@@ -1,7 +1,6 @@
 $(document).ready(function () {
     $('#comment-form').on('submit', function (e) {
         e.preventDefault();
-
         if ($('#commentfield').val().length >= 3) {
             $.ajax({
                 type: $(this).attr('method'),
@@ -20,5 +19,22 @@ $(document).ready(function () {
                 }
             });
         }
+    });
+    /*Post like */
+    $(".like").on("click", function () {
+        $post_id = $(this).attr('data-post-id');
+        $.ajax({
+            method: 'POST',
+            url: "/p/community/like",
+            data: {
+                'post_id': $post_id,
+                '_token': $('#csrf_token').val()
+            }
+        });
+    });
+    /* Scroll down comments */
+    $(".comment").on("click", function () {
+        $('html,body').animate({scrollTop: $(".comment").offset().top},'slow');
+        $("#commentfield").focus();
     });
 });

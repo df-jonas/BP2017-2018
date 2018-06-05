@@ -94,15 +94,15 @@
   /*Dropdowns*/
   #account-dropdown, #notifications-dropdown {
     width: 200px;
-    margin-left: -100px;
-    top: 3.5em;
-    padding-top: 0;
+    top: 3em;
     position: absolute;
     box-shadow: 2px $unihelp-asphalt;
     border-radius: 3px;
     padding-bottom: 0;
     margin-bottom: 0;
-    transition: 0.5s ease all linear;
+    transition: 0.5s ease all;
+    left: auto;
+    right: 0!important;
     li {
       cursor: pointer;
       height: 50px;
@@ -141,8 +141,6 @@
       text-decoration: none;
       color: black;
       &:hover {
-        //background: $secondary-color;
-        //color: $unihelp-white;
         background: $background-color;
       }
     }
@@ -150,8 +148,7 @@
 
   /*Notification dropdown*/
   #notifications-dropdown {
-    width: 300px;
-    margin-left: -215px;
+    width: 400px;
   }
 }
 
