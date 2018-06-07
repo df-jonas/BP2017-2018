@@ -54,6 +54,11 @@ class ProfileController extends Controller
 
     public function settings()
     {
+        $u = Auth::user();
+        $isInit = ($u->canvas_key != "" && $u->canvas_key != null && !empty($u->canvas_key))
+            && ($u->canvas_refresh != "" && $u->canvas_refresh != null && !empty($u->canvas_refresh))
+            && ($u->canvas_id != "" && $u->canvas_id != null && !empty($u->canvas_id));
+
         $params = [
             'campuses' => Campus::query()->orderBy("name")->get(),
             'foses' => Fos::query()->orderBy("name")->get(),
@@ -63,6 +68,9 @@ class ProfileController extends Controller
             'usercourses' => Usercourse::all()->where('user_id', '=', Auth::id()),
             'allcourses' => Course::all(),
             'pref' => Auth::user()->preference,
+            'canvas' => [
+                'isInit' => $isInit
+            ]
         ];
         return view('platform.profile.settings', $params);
     }

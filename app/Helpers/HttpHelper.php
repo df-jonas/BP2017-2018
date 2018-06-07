@@ -19,6 +19,7 @@ class HttpHelper
             $requesttype,
             $url,
             [
+                '_conditional' => [],
                 'form_params' => $params,
                 'headers' => $headers,
                 'verify' => $verify_ssl,

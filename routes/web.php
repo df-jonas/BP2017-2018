@@ -41,14 +41,13 @@
     // Route::get('/register', 'AuthController@register')->name('register');
     // Route::post('/register', 'AuthController@registerPost');
     // Canvas routes
-    // Route::get('/canvas/me', 'CanvasController@me')->name('canvas-me');
 }
 
 /** PRIVATE */
 {
     Route::group(['middleware' => ['auth']], function () {
 
-        Route::get('/logout', 'AuthController@logout')->name('logout');
+        Route::get('/logout', 'Auth\LogoutController@logout')->name('logout');
 
         /** Platform routes */
         Route::group(['prefix' => 'p'], function () {
@@ -96,8 +95,6 @@
             Route::get('/assessment/docent/individual', 'AssessmentController@docentIndividual')->name('assessment-docent-individual');
             Route::get('/assessment/{id}', 'AssessmentController@detail')->name('assessment-detail');
 
-
-
             /** Profile */
             Route::get('/profile', 'ProfileController@index')->name('profile-index');
             Route::get('/profile/settings', 'ProfileController@settings')->name('profile-settings');
@@ -111,8 +108,10 @@
             Route::get('/profile/notifications', 'ProfileController@notifications')->name('profile-notifications');
 
             /** Canvas routes */
-            Route::get('/canvas/connect', 'AuthController@index')->name('canvas-login');
-            Route::get('/canvas/oauth_complete', 'AuthController@oauth_complete')->name('canvas-oauth-complete');
+            Route::get('/canvas/connect', 'CanvasController@connect')->name('canvas-login');
+            Route::get('/canvas/oauth_complete', 'CanvasController@completed')->name('canvas-oauth-complete');
+            Route::get('/canvas/me', 'CanvasController@me')->name('canvas-me');
+
 
             /** Notifications */
             Route::get('/profile/notifications/read/{id}', 'NotificationController@readAjax')->name('notification-read');
