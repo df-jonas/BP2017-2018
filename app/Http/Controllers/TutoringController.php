@@ -26,7 +26,9 @@ class TutoringController extends Controller
 
         $sessions = TutoringSession::query()
             ->whereIn('tutor_id', $tutor_id)
+            ->where('active', '=', true)
             ->orWhereIn('tutee_id', $tutee_id)
+            ->where('active', '=', true)
             ->get();
 
         $ids = Tutor::query()
@@ -160,6 +162,14 @@ class TutoringController extends Controller
         $session->tutor_id = $tutor->id;
         $session->active = true;
         $session->save();
+
+        $from_id = Auth::id();
+        $to_id = $tutee->user->id;
+        $type = "tutoring";
+        $url = route('tutoring-index');
+        $text = "heeft jouw tutoring verzoek anvaard!";
+
+        NotificationHelper::create($from_id, $to_id, $type, $url, $text);
 
         return Redirect::to(route("tutoring-index"));
     }
