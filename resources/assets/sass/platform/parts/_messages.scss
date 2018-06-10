@@ -1,5 +1,6 @@
 /*Messages*/
-#messages {
+.messages {
+  padding-top: 2em;
   .msg {
     margin-bottom: 2.5em;
     .txt {
@@ -24,7 +25,7 @@
   }
 }
 
-#comment-box {
+.comment-box {
   margin-top: 1.5em;
   border-top: 1px solid $secondary-color;
   line-height: 32px;
@@ -34,6 +35,9 @@
     background: none;
     color: inherit;
   }
-
 }
-
+#chat-box{
+  border-top: 0px;
+  margin-top: 0;
+  border-bottom: 1px solid $secondary-color;
+}

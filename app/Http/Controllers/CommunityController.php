@@ -92,6 +92,7 @@ class CommunityController extends Controller
             ->where("id", "=", $post_id)
             ->firstOrFail();
 
+
         if ($post->group->url != $group_id)
             abort(404, "Deze post werd niet gevonden.");
 
@@ -212,7 +213,7 @@ class CommunityController extends Controller
                 $url = $post->generateurl();
                 $text = "likete jouw post";
 
-                dd(NotificationHelper::create($from_id, $to_id, $type, $url, $text));
+                NotificationHelper::create($from_id, $to_id, $type, $url, $text);
             }
         }
     }

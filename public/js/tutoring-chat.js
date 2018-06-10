@@ -1,21 +1,25 @@
 $(document).ready(function () {
-    $('#comment-form').on('submit', function (e) {
+    $('#chat-form').on('submit', function (e) {
         e.preventDefault();
-        if ($('#commentfield').val().length >= 3) {
+        if ($('#chat-field').val().length >= 3) {
             $.ajax({
                 type: $(this).attr('method'),
                 url: $(this).attr('action'),
                 data: $(this).serialize(),
                 success: function (json) {
-                    $('#comment-field').val("");
-                    var value = '<div class="msg col-lg-12">' +
-                        '<div class="picture col-lg-1"><img src="/img/avatars/' + json.user.image + '" class="group-img round-img"></div>' +
-                        '<div class="txt col-lg-11"><div class="table"><div style="display: table-cell;  float: left">' +
-                        '<span>' + json.user.first_name + ' ' + json.user.last_name + '</span></div>' +
+                    $('#chat-field').val("");
+                    var value = '<div class="msg own clearfix col-lg-12">' +
+                        '<div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">' +
+                        '<div class="table">' +
+                        '<div style="display: table-cell;  float: left">' +
+                        '<span>now</span></div>' +
                         '<div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">' +
-                        '<span>now</span></div></div>' +
-                        '<p>' + json.content + '</p></div></div>';
-                    $('#messages').prepend(value);
+                        '<span>ik</span> </div> </div>' +
+                        '<p>' + json.message + '</p> </div>' +
+                        '<div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">' +
+                        '<img src="/img/avatars/' + json.user.image + '" class="group-img round-img">' +
+                        '</div></div>';
+                    $('#chats').prepend(value);
                 }
             });
         }

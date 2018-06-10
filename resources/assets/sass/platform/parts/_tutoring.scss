@@ -16,7 +16,7 @@
         position: relative;
         &:hover, &.people-list-active {
           cursor: pointer;
-          background: $unihelp-white;
+          background: $unihelp-white!important;
           color: $theme-color;
         }
         &.load-more {

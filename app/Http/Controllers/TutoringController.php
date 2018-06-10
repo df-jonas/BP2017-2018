@@ -201,8 +201,8 @@ class TutoringController extends Controller
 
         $chats = Chat::query()
             ->where('tutoringsession_id', '=', $id)
-            ->orderBy('created_at', 'ASC')
-            ->paginate(20);
+            ->orderBy('created_at', 'DESC')
+            ->paginate(25);
 
         if (Auth::id() == $tutor->user->id || Auth::id() == $tutee->user->id) {
             //dd($chats);
@@ -221,29 +221,34 @@ class TutoringController extends Controller
 
     public function addchatasync($tutoringsession_id, Request $request)
     {
-        $tutoringsession = TutoringSession::query()
-            ->where("id", "=", $tutoringsession_id)
-            ->firstOrFail();
+        if (!empty($tutoringsession_id)) {
 
-        $chat = new Chat();
-        $chat->message = $request->comment;
-        $chat->tutoringsession_id = $tutoringsession_id;
-        $chat->user_id = Auth::user()->id;
-        $chat->save();
+            $tutoringsession = TutoringSession::query()
+                ->where("id", "=", $tutoringsession_id)
+                ->firstOrFail();
 
-        $subject = ($tutoringsession->tutee->user->id == Auth::id()) ? $tutoringsession->tutor : $tutoringsession->tutee;
+            $chat = new Chat();
+            $chat->message = $request->comment;
+            $chat->tutoringsession_id = $tutoringsession_id;
+            $chat->user_id = Auth::user()->id;
+            $chat->save();
 
-        $from_id = Auth::id();
-        $to_id = $subject->user->id;
-        $type = "tutoring";
-        $url = route('tutoring-messages', [
-            'id' => $tutoringsession_id
-        ]);
-        $text = "heeft een nieuw chat bericht verstuurd.";
+            $subject = ($tutoringsession->tutee->user->id == Auth::id()) ? $tutoringsession->tutor : $tutoringsession->tutee;
 
-        NotificationHelper::create($from_id, $to_id, $type, $url, $text);
+            $from_id = Auth::id();
+            $to_id = $subject->user->id;
+            $type = "tutoring";
+            $url = route('tutoring-messages', [
+                'id' => $tutoringsession_id
+            ]);
+            $text = "heeft een nieuw chat bericht verstuurd.";
 
-        return Redirect::back();
+            NotificationHelper::create($from_id, $to_id, $type, $url, $text);
+        }
+
+        return response()->json(Chat::query()->where('id', '=', $chat->id)->with(['user' => function ($query) {
+            $query->select('id', 'first_name', 'last_name', 'image');
+        }])->firstOrFail());
     }
 
     public function planning()

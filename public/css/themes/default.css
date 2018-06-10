@@ -711,6 +711,10 @@ div.container {
   color: #ffffff;
 }
 
+.sidebar .button button:hover {
+  background: #4D6A50;
+}
+
 .sidebar .item {
   /*mijn bestanden ul*/
 }
@@ -825,7 +829,7 @@ ul.pagination li.active .page-link {
 .table.tutoring .sidebar .people-list li:hover,
 .table.tutoring .sidebar .people-list li.people-list-active {
   cursor: pointer;
-  background: #ffffff;
+  background: #ffffff !important;
   color: #4D6A50;
 }
 
@@ -995,6 +999,8 @@ table.assessment td {
 table.assessment td input {
   height: 30px;
   width: 120px;
+  padding: 0;
+  text-align: center;
 }
 
 table.assessment td a {
@@ -1024,8 +1030,8 @@ table.assessment td a:hover i {
 table.assessment td img {
   width: 32px;
   height: 32px;
-  float: right;
   margin: 5px 32px 0px 0px;
+  float: left;
 }
 
 table.assessment td input {
@@ -2300,43 +2306,53 @@ form p {
 
 /*Messages*/
 
-#messages .msg {
+.messages {
+  padding-top: 2em;
+}
+
+.messages .msg {
   margin-bottom: 2.5em;
 }
 
-#messages .msg .txt {
+.messages .msg .txt {
   background: #8A7E72;
   color: #ffffff;
   padding: 1.5%;
 }
 
-#messages .msg .txt p {
+.messages .msg .txt p {
   color: #ffffff;
   font-size: 14px;
   clear: both;
 }
 
-#messages .msg .txt span {
+.messages .msg .txt span {
   font-size: .75em;
   font-weight: 300;
 }
 
-#messages .msg.own .txt {
+.messages .msg.own .txt {
   background: #4D6A50;
 }
 
-#comment-box {
+.comment-box {
   margin-top: 1.5em;
   border-top: 1px solid #8A7E72;
   line-height: 32px;
 }
 
-#comment-box input,
-#comment-box button {
+.comment-box input,
+.comment-box button {
   border: none;
   padding: 0;
   background: none;
   color: inherit;
+}
+
+#chat-box {
+  border-top: 0px;
+  margin-top: 0;
+  border-bottom: 1px solid #8A7E72;
 }
 
 /*dropzone*/

@@ -92,7 +92,7 @@
                                 <!-- count box -->
                             </div>
                             <!-- comment -->
-                            <section id="comment-box" class="row flex padding">
+                            <section id="comment-box" class="comment-box row flex padding">
                                 <section class="picture hide-mobile col-lg-1 col-sm-2 col-xs-0">
                                     <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="account-img round-img" alt="User profile image">
                                 </section>
@@ -112,7 +112,7 @@
                         <div class="padding">
                             <h2 class="settings-title">Reacties</h2>
                             <br>
-                            <section id="messages" class="col-lg-12" style="border-bottom: none">
+                            <section id="messages" class="messages col-lg-12" style="border-bottom: none">
                                 @foreach($post->comments as $comment)
                                     <section class="msg clearfix col-lg-12">
                                         <section class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">

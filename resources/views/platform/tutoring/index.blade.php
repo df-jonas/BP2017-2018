@@ -167,7 +167,7 @@
                                 <div class="actions col-lg-6 right col-md-8 col-sm-6 col-xs-12"
                                      style="text-align: center">
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                        <a class="action col-lg-12 col-xs-12" id="url_chat" href="">Chatten</a>
+                                        <a class="action col-lg-12 col-xs-12" id="url_chat" href="{{route('tutoring-messages', ['id' => $first->id])}}">Chatten</a>
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">

@@ -31,7 +31,7 @@ $(document).ready(function () {
                 $('#image').attr("src", "/img/avatars/" + u.image);
                 $('#name').text(u.first_name + " " + u.last_name);
                 $('#course').text(o.course.name);
-                $('#url_chat').attr("href", "");
+                $('#url_chat').attr("href", "/p/tutoring/" + o.id + "/messages");
                 $('#url_planner').attr("href", "");
                 $('#url_stop').attr("href", "");
                 $('#introduction').text(s.tutee.description);

@@ -494,7 +494,7 @@ div.container {
 }
 
 .brown {
-  color: lightgrey;
+  color: #4D6A50;
 }
 
 /*table layout*/
@@ -582,7 +582,7 @@ div.container {
 .overview.group .icons i,
 .overview.file .icons i,
 .overview.user-owned .icons i {
-  color: lightgrey;
+  color: #4D6A50;
 }
 
 .overview.groups .icons span,
@@ -606,7 +606,7 @@ div.container {
 }
 
 .overview .group {
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid #4D6A50;
 }
 
 .overview .group .info span {
@@ -677,7 +677,7 @@ div.container {
 
 .content .actions .action {
   padding: 8px 15px;
-  background: lightgrey;
+  background: #4D6A50;
   color: #ffffff;
   margin-bottom: 7px;
 }
@@ -699,16 +699,20 @@ div.container {
 }
 
 .sidebar .button {
-  background: lightgrey;
+  background: #4D6A50;
   padding: 0;
 }
 
 .sidebar .button button {
   width: 100%;
   padding: 2%;
-  background: lightgrey;
+  background: #4D6A50;
   border: none;
   color: #ffffff;
+}
+
+.sidebar .button button:hover {
+  background: #505457;
 }
 
 .sidebar .item {
@@ -771,7 +775,7 @@ div.container {
 }
 
 #filter-details small {
-  color: lightgrey;
+  color: #4D6A50;
 }
 
 /* Pagination */
@@ -825,7 +829,7 @@ ul.pagination li.active .page-link {
 .table.tutoring .sidebar .people-list li:hover,
 .table.tutoring .sidebar .people-list li.people-list-active {
   cursor: pointer;
-  background: #ffffff;
+  background: #ffffff !important;
   color: #505457;
 }
 
@@ -870,7 +874,7 @@ ul.pagination li.active .page-link {
 
 .table.tutoring .sidebar .people-list li.load-more:hover,
 .table.tutoring .sidebar .people-list li.new:hover {
-  background: lightgrey;
+  background: #4D6A50;
   color: #ffffff;
 }
 
@@ -911,7 +915,7 @@ ul.pagination li.active .page-link {
 }
 
 #tutoringcontent .item header {
-  background: lightgrey;
+  background: #4D6A50;
   text-align: center;
 }
 
@@ -953,7 +957,7 @@ ul.pagination li.active .page-link {
 .overview-calendar .reminder {
   height: 45px;
   color: #ffffff;
-  background: lightgrey;
+  background: #4D6A50;
 }
 
 .overview-calendar .reminder h5 {
@@ -995,6 +999,8 @@ table.assessment td {
 table.assessment td input {
   height: 30px;
   width: 120px;
+  padding: 0;
+  text-align: center;
 }
 
 table.assessment td a {
@@ -1024,8 +1030,8 @@ table.assessment td a:hover i {
 table.assessment td img {
   width: 32px;
   height: 32px;
-  float: right;
   margin: 5px 32px 0px 0px;
+  float: left;
 }
 
 table.assessment td input {
@@ -1568,17 +1574,17 @@ table.assessment.individual th.left {
   margin-right: 3%;
   line-height: 3em;
   cursor: pointer;
-  color: lightgrey;
+  color: #4D6A50;
 }
 
 .subheader ul li:hover,
 .subheader ul li.uh-active {
-  border-bottom: 3px solid lightgrey;
+  border-bottom: 3px solid #4D6A50;
 }
 
 .subheader ul li:hover a,
 .subheader ul li.uh-active a {
-  color: lightgrey;
+  color: #4D6A50;
 }
 
 .subheader ul li a {
@@ -1587,7 +1593,7 @@ table.assessment.individual th.left {
 }
 
 .subheader ul li a:hover {
-  color: lightgrey;
+  color: #4D6A50;
 }
 
 .subheader ul li span {
@@ -1596,7 +1602,7 @@ table.assessment.individual th.left {
 }
 
 .subheader ul li .badge {
-  background: lightgrey;
+  background: #4D6A50;
   padding: 5px;
   width: 20px;
   height: 20px;
@@ -1652,7 +1658,7 @@ section.logo {
 
 .community-actions a {
   border: solid 0.5px #ffffff;
-  background: lightgrey;
+  background: #4D6A50;
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
@@ -1938,7 +1944,7 @@ section.logo {
 .vakken li span i:hover,
 .vakken-nieuw li span i:hover,
 .profile-list li span i:hover {
-  color: lightgrey;
+  color: #4D6A50;
 }
 
 .vakken li a,
@@ -2009,7 +2015,7 @@ section.logo {
 }
 
 .modal .keuze header {
-  background: lightgrey;
+  background: #4D6A50;
   color: #ffffff;
 }
 
@@ -2027,7 +2033,7 @@ section.logo {
 }
 
 .modal .keuze:hover {
-  background-color: lightgrey;
+  background-color: #4D6A50;
 }
 
 .modal.in .modal-dialog {
@@ -2129,7 +2135,7 @@ i {
 .overview.sharing .item-campus a,
 .overview.community .item-campus,
 .overview.community .item-campus a {
-  color: lightgrey;
+  color: #4D6A50;
   font-size: 14px;
   margin-top: 0;
   margin-bottom: 0;
@@ -2150,7 +2156,7 @@ i {
 
 .overview.sharing .icons,
 .overview.community .icons {
-  color: lightgrey;
+  color: #4D6A50;
 }
 
 .tutoring .tutoring-intro-title {
@@ -2235,7 +2241,7 @@ i {
 .rating-stars {
   clear: both;
   font-size: 14px;
-  color: lightgrey;
+  color: #4D6A50;
   margin-top: 0;
 }
 
@@ -2244,7 +2250,7 @@ i {
 .download-read,
 .rating-read {
   float: right;
-  color: lightgrey;
+  color: #4D6A50;
 }
 
 .notification-read:hover,
@@ -2274,7 +2280,7 @@ form p {
 
 .go-back a:hover,
 .message a:hover {
-  color: lightgrey;
+  color: #4D6A50;
 }
 
 .go-back i,
@@ -2300,43 +2306,53 @@ form p {
 
 /*Messages*/
 
-#messages .msg {
+.messages {
+  padding-top: 2em;
+}
+
+.messages .msg {
   margin-bottom: 2.5em;
 }
 
-#messages .msg .txt {
-  background: lightgrey;
+.messages .msg .txt {
+  background: #4D6A50;
   color: #ffffff;
   padding: 1.5%;
 }
 
-#messages .msg .txt p {
+.messages .msg .txt p {
   color: #ffffff;
   font-size: 14px;
   clear: both;
 }
 
-#messages .msg .txt span {
+.messages .msg .txt span {
   font-size: .75em;
   font-weight: 300;
 }
 
-#messages .msg.own .txt {
+.messages .msg.own .txt {
   background: #505457;
 }
 
-#comment-box {
+.comment-box {
   margin-top: 1.5em;
-  border-top: 1px solid lightgrey;
+  border-top: 1px solid #4D6A50;
   line-height: 32px;
 }
 
-#comment-box input,
-#comment-box button {
+.comment-box input,
+.comment-box button {
   border: none;
   padding: 0;
   background: none;
   color: inherit;
+}
+
+#chat-box {
+  border-top: 0px;
+  margin-top: 0;
+  border-bottom: 1px solid #4D6A50;
 }
 
 /*dropzone*/
@@ -2422,7 +2438,7 @@ form p {
 
 .sharing.overview .rating .checked,
 .sharing.detail .rating .checked {
-  color: lightgrey;
+  color: #4D6A50;
 }
 
 .sharing.detail .rating {
@@ -2440,11 +2456,11 @@ form p {
 }
 
 .sidebar .rating .checked {
-  color: lightgrey;
+  color: #4D6A50;
 }
 
 .all-ratings .checked {
-  color: lightgrey;
+  color: #4D6A50;
 }
 
 @media only screen and (max-width: 480px) {

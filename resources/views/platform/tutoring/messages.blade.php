@@ -46,11 +46,9 @@
                 <!-- Search form -->
                 <div class="item col-xs-12">
                     <div class="padding clearfix">
-
                         @php
                             $subject = ($tutoringsession->tutee->user->id == Auth::id()) ? $tutoringsession->tutor : $tutoringsession->tutee;
                         @endphp
-
                         <div class="row">
                             <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
                                 <div class="table">
@@ -63,7 +61,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="actions col-lg-6 col-md-8 col-sm-6 col-xs-12" style="text-align: center">
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <a class="action col-lg-12 col-xs-12"
@@ -79,18 +76,41 @@
                                 </div>
                             </div>
 
-                            <div id="messages" class="item col-lg-12">
 
-                                <h4>Berichten</h4>
+                            </div>
+
+                    </div>
+                </div>
+                <div class="item col-xs-12">
+                    <div class="padding clearfix">
+                        <div class="row">
+                            <!-- comment -->
+                            <div id="chat-box" class="comment-box col-lg-12 flex padding">
+                                <div class="picture hide-mobile col-sm-1 col-xs-0">
+                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                         class="account-img round-img">
+                                </div>
+                                <form id="chat-form" class="col-sm-11 col-xs-12" method="POST"
+                                      action="{{ route('tutoring-add-chat', ['session_id' => $tutoringsession->id]) }}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <div class="txt col-sm-11 col-xs-10">
+                                        <input type="text" name="comment" id="chat-field" class="col-xs-11"
+                                               placeholder="reactie toevoegen">
+                                    </div>
+                                    <div class="icon col-sm-1 col-xs-2">
+                                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- comment -->
+                            <div id="chats" class="item messages col-lg-12">
                                 <br>
                                 @foreach ($chats as $chat)
                                     @php
                                         $own = ($chat->user->id == Auth::id()) ? "own" : "";
                                     @endphp
-
                                     @if($own)
                                         <div class="msg own clearfix col-lg-12">
-
                                             <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
                                                 <div class="table">
                                                     <div style="display: table-cell;  float: left">
@@ -108,10 +128,8 @@
                                                      class="group-img round-img">
                                             </div>
                                         </div>
-
-
                                     @else
-                                        <div class="msg clearfix {{ $own }} col-lg-12">
+                                        <div class="msg clearfix col-lg-12">
                                             <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
                                                 <img src="{{ asset('img/avatars/' . $chat->user->image )}}"
                                                      class="group-img round-img">
@@ -132,26 +150,6 @@
                                 @endforeach
                                 {{ $chats->links() }}
                             </div>
-
-                            <!-- comment -->
-                            <div id="comment-box" class="row flex padding">
-                                <div class="picture hide-mobile col-sm-1 col-xs-0">
-                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                         class="account-img round-img">
-                                </div>
-                                <form id="comment-field" class="col-sm-11 col-xs-12" method="POST"
-                                      action="{{ route('tutoring-add-chat', ['session_id' => $tutoringsession->id]) }}">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <div class="txt col-sm-11 col-xs-10">
-                                        <input type="text" name="comment" id="commentfield" class="col-xs-11"
-                                               placeholder="reactie toevoegen">
-                                    </div>
-                                    <div class="icon col-sm-1 col-xs-2">
-                                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- comment -->
                         </div>
                     </div>
                 </div>
@@ -159,73 +157,73 @@
         </div>
         <!-- container -->
     </div>
-        @include('partials.footer')
-        @endsection
-        @section("scripts")
-            <script src="{{ asset("js/tutoring-chat.js") }}"></script>
-            <script src="{{asset("js/zabuto_calendar.min.js")}}"></script>
-            <script type="application/javascript">
-                $(document).ready(function () {
+    @include('partials.footer')
+@endsection
+@section("scripts")
+    <script src="{{ asset("js/tutoring-chat.js") }}"></script>
+    <script src="{{asset("js/zabuto_calendar.min.js")}}"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
 
 
-                    var eventData = [
-                        {"date": "2018-03-10", "body": "test 1", "title": "test 1", "classname": "item-herinnering"},
-                        {"date": "2018-03-20", "body": "Test 2", "title": "Test 2", "classname": "item-taak"}
-                    ];
+            var eventData = [
+                {"date": "2018-03-10", "body": "test 1", "title": "test 1", "classname": "item-herinnering"},
+                {"date": "2018-03-20", "body": "Test 2", "title": "Test 2", "classname": "item-taak"}
+            ];
 
 
-                    $("#date-calendar").zabuto_calendar({
-                        language: "nl",
-                        show_previous: false,
-                        show_next: 3,
-                        today: true,
-                        action: function () {
-                            return myDateFunction(this.id, false);
-                        },
-                        action_nav: function () {
-                            return myNavFunction(this.id);
-                        },
-                        ajax: {
-                            url: "show_data.php?action=1",
-                            modal: true
-                        },
-                        legend: [
-                            {type: "block", label: "Herinnering", classname: "cal-herinnering"},
-                            {type: "spacer"},
-                            {type: "block", label: "Taak", classname: "cal-taak"},
-                            {type: "spacer"},
-                        ],
-                        data: eventData
-                    });
-                });
+            $("#date-calendar").zabuto_calendar({
+                language: "nl",
+                show_previous: false,
+                show_next: 3,
+                today: true,
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "block", label: "Herinnering", classname: "cal-herinnering"},
+                    {type: "spacer"},
+                    {type: "block", label: "Taak", classname: "cal-taak"},
+                    {type: "spacer"},
+                ],
+                data: eventData
+            });
+        });
 
-                function myDateFunction(id, fromModal) {
-                    $("#date-modal").hide();
-                    if (fromModal) {
-                        $("#" + id + "_modal").modal("hide");
-                    }
-                    var date = $("#" + id).data("date");
-                    var title = $("#" + id).data("header");
+        function myDateFunction(id, fromModal) {
+            $("#date-modal").hide();
+            if (fromModal) {
+                $("#" + id + "_modal").modal("hide");
+            }
+            var date = $("#" + id).data("date");
+            var title = $("#" + id).data("header");
 
-                    //console.log(parms);
+            //console.log(parms);
 
-                    var hasEvent = $("#" + id).data("hasEvent");
-                    if (!hasEvent && !fromModal) {
-                        return false;
-                    }
-                    //$("#date-popup-content").html('You clicked on date ' + date);
-                    $('#date-modal #date').html(title);
-                    console.log(id);
-                    console.log(date);
-                    console.log($("#" + id));
-                    $("#date-modal").modal();
-                    return true;
-                }
+            var hasEvent = $("#" + id).data("hasEvent");
+            if (!hasEvent && !fromModal) {
+                return false;
+            }
+            //$("#date-popup-content").html('You clicked on date ' + date);
+            $('#date-modal #date').html(title);
+            console.log(id);
+            console.log(date);
+            console.log($("#" + id));
+            $("#date-modal").modal();
+            return true;
+        }
 
-                function myNavFunction(id) {
-                    $("#date-modal").hide();
-                    var nav = $("#" + id).data("navigation");
-                    var to = $("#" + id).data("to");
-                }
-            </script>
+        function myNavFunction(id) {
+            $("#date-modal").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+        }
+    </script>
 @endsection
