@@ -101,7 +101,6 @@
 
 
             /** Profile */
-            Route::get('/profile', 'ProfileController@index')->name('profile-index');
             Route::get('/profile/settings', 'ProfileController@settings')->name('profile-settings');
             Route::post('/profile/update', 'ProfileController@updateprofilepost')->name('profile-update');
             Route::post('/profile/close', 'ProfileController@closeprofilepost')->name('profile-close');
@@ -111,6 +110,7 @@
             Route::get('/profile/downloads', 'ProfileController@downloads')->name('profile-downloads');
             Route::get('/profile/uploads', 'ProfileController@uploads')->name('profile-uploads');
             Route::get('/profile/notifications', 'ProfileController@notifications')->name('profile-notifications');
+            Route::get('/profile/{id}', 'ProfileController@index')->name('profile-index');
 
             /** Canvas routes */
             Route::get('/canvas/connect', 'AuthController@index')->name('canvas-login');

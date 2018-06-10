@@ -22,7 +22,7 @@
                         <!-- notifications dropdown -->
                             <ul id="notifications-dropdown" class="dropdown-menu col-xs-12" aria-labelledby="notifications-dropdown">
                                 @if(!(Auth::user()->notifs_unread->count() <= 0))
-                                @foreach(Auth::user()->notifs_unread as $notification)
+                                @foreach(Auth::user()->notifs_unread->slice(0, 10) as $notification)
                                     <li>
                                         <a href="{{ $notification->url }}"><i class="fa fa-comment"></i>
                                             <strong>{{ $notification->from->first_name}}</strong> {{ $notification->text }}
@@ -60,7 +60,7 @@
                         </div>
                         <!-- profile dropdown -->
                         <ul id="account-dropdown" class="dropdown-menu col-xs-12" aria-labelledby="account-dropdown">
-                            <a class="user-info padding" href="{{ route('profile-index') }}">
+                            <a class="user-info padding" href="{{ route('profile-index', ['id' => Auth::id()]) }}">
                                 <div class="row flex no-margin">
                                     <div class="col-lg-3">
                                         <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img vertical-center" data-toggle="dropdown">
@@ -109,7 +109,7 @@
 
             <!-- Mobile menu-->
             <ul id="mobile-header" class="col-xs-12">
-                <li><a href="{{ route('profile-index') }}">Profiel</a></li>
+                <li><a href="{{ route('profile-index', ['id' => Auth::id()]) }}">Profiel</a></li>
                 <li><a href="#">Admin dashboard</a></li>
                 <li><a href="{{ route('profile-notifications') }}">Notificaties</a></li>
                 <li><a href="{{ route('profile-uploads') }}">Uploads</a></li>

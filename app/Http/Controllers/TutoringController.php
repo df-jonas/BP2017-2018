@@ -187,9 +187,10 @@ class TutoringController extends Controller
 
     public function messages($id)
     {
-        $tutoringsession = TutoringSession::query()
-            ->where('id', '=', $id)
-            ->first();
+        $tutoringsession = TutoringSession::query()->find($id);
+
+        if ($tutoringsession == null)
+            abort(404, 'Sessie niet gevonden');
 
         $tutor = Tutor::query()
             ->where('id', '=', $tutoringsession->tutor_id)

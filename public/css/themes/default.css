@@ -1989,6 +1989,14 @@ section.logo {
   border: 0.2px solid #ffffff;
 }
 
+.profile-url {
+  color: inherit;
+}
+
+.profile-url:hover {
+  color: #4D6A50;
+}
+
 /*Bootstrap modals*/
 
 .modal .modal-content {

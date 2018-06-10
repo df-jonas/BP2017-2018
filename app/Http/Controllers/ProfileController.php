@@ -7,6 +7,7 @@ use App\File;
 use App\Notification;
 use App\Post;
 use App\Rating;
+use App\User;
 use Illuminate\Http\Request;
 use App\Campus;
 use App\Fos;
@@ -20,33 +21,39 @@ use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function index($id)
     {
+        $user = User::query()
+            ->find($id);
+
+        if ($user == null)
+            abort(404, "Gebruiker niet gevonden");
+
         $myposts = Post::query()
-            ->where("user_id", "=", Auth::id())
+            ->where("user_id", "=", $user->id)
             ->orderBy("created_at", "desc")
             ->take(15)
             ->get();
 
         $myfiles = File::query()
-            ->where("user_id", "=", Auth::id())
+            ->where("user_id", "=", $user->id)
             ->orderBy("created_at", "desc")
             ->take(15)
             ->get();
 
         $mycourses = UserCourse::query()
-            ->where("user_id", "=", Auth::id())
+            ->where("user_id", "=", $user->id)
             ->orderBy("created_at", "desc")
             ->take(15)
             ->get();
 
         $params = [
-            'email' => Auth::user()->email,
-            'username' => Auth::user()->username,
-            'user' => Auth::user(),
+            'email' => $user->email,
+            'username' => $user->username,
+            'user' => $user,
             'files' => $myfiles,
             'posts' => $myposts,
-            'address' => Auth::user()->address,
+            'address' => $user->address,
             'mycourses' => $mycourses,
         ];
         return view('platform.profile.index', $params);

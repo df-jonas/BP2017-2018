@@ -87,8 +87,7 @@
                     @foreach($userfiles as $file)
                         <div class="row flex">
                             <div class="icon col-lg-2 col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . $file->user->image )}}"
-                                     class="account-img round-img">
+                               <a href="{{ $file->user->url() }}" class="profile-url"><img src="{{ asset('img/avatars/' . $file->user->image )}}" class="account-img round-img"></a>
                             </div>
                             <div class="col-lg-8 col-md-8 col-xs-8">
                                 <h2 class="item-title col-xs-12 no-padding"><a href="{{ $file->detailUrl() }}"> {{ str_limit($file->title, 15) }}</a></h2>

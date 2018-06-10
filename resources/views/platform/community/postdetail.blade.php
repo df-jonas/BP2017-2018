@@ -20,12 +20,10 @@
                         @foreach($myposts as $mypost)
                             <div class="row flex">
                                 <section class="icon col-lg-2 col-md-2 col-xs-2">
-                                    <img src="{{ asset('img/avatars/' . $mypost->user->image )}}"
-                                         class="account-img round-img" alt="User profile image">
+                                    <a href="{{ $post->user->url() }}" class="profile-url"><img src="{{ asset('img/avatars/' . $mypost->user->image )}}" class="account-img round-img" alt="User profile image"></a>
                                 </section>
                                 <section class="col-lg-8 col-md-8 col-xs-8">
-                                    <h2 class="item-title no-margin"><a
-                                                href="{{ $mypost->generateurl() }}">{{ $mypost->title }}</a></h2>
+                                    <h2 class="item-title no-margin"><a href="{{ $mypost->generateurl() }}">{{ $mypost->title }}</a></h2>
                                     <section class="rating col-xs-12 no-padding clearfix">
                                         <section class="col-xs-12 no-padding">
                                             <span class="fa fa-thumbs-up"></span> {{ $mypost->votesum() }} likes
@@ -53,10 +51,10 @@
                                     <section class="info col-lg-8 col-md-4 col-sm-6 col-xs-12">
                                         <div class="table">
                                             <div style="display: table-cell; width: 32px">
-                                                <img src="{{ asset('img/avatars/' . $post->user->image )}}" class="account-img round-img">
+                                                <a href="{{$post->user->url()}}" class="profile-url"><img src="{{ asset('img/avatars/' . $post->user->image )}}" class="account-img round-img"></a>
                                             </div>
                                             <section style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                                <h6 style="margin: 0">{{ $post->user->first_name }} {{ $post->user->last_name }}</h6>
+                                                <a href="{{$post->user->url()}}" class="profile-url" class=""><h6 style="margin: 0">{{ $post->user->first_name }} {{ $post->user->last_name }}</h6></a>
                                                 <h6 style="margin: 5px 0">{{ $post->postcreated() }}</h6>
                                             </section>
                                         </div>
@@ -116,12 +114,12 @@
                                 @foreach($post->comments as $comment)
                                     <section class="msg clearfix col-lg-12">
                                         <section class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
-                                            <img src="{{ asset('img/avatars/' . $comment->user->image )}}" class="group-img round-img" alt="User profile image">
+                                            <a href="{{$post->user->url()}}"><img src="{{ asset('img/avatars/' . $comment->user->image )}}" class="group-img round-img" alt="User profile image"></a>
                                         </section>
                                         <section class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
                                             <div class="table">
                                                 <div style="display: table-cell;  float: left">
-                                                    <span>{{ $comment->user->first_name }} {{ $comment->user->last_name }}</span>
+                                                    <a href="{{ $post->user->url() }}" class="profile-url"><span>{{ $comment->user->first_name }} {{ $comment->user->last_name }}</span></a>
                                                 </div>
                                                 <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
                                                     <span>{{ $comment->commentcreated() }}</span>

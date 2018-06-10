@@ -8,12 +8,11 @@
         @include('partials.platform.go-back')
         <div class="table">
             <!-- Sidebar -->
-            <div class="sidebar">
-                <!--
+            <aside class="sidebar">
                 <div id="date-popup" class="modal col-lg-4 col-lg-push-4" style="">
                     <div id="date-popup-content" class="modal-content"></div>
                 </div>
-                -->
+
                 <!-- Modal -->
                 <div class="modal fade" id="date-modal" role="dialog">
                     <div class="modal-dialog  ">
@@ -34,17 +33,16 @@
                     </div>
                 </div>
 
-                <article class="item">
+                <section class="item">
                     <header><a class="header-title"><i class="fa fa-calendar"></i> Kalender</a></header>
-                    <div id="date-calendar">
-                    </div>
-                </article>
+                    <div id="date-calendar"></div>
+                </section>
                 <!-- sidebar -->
-            </div>
+            </aside>
             <!-- content -->
-            <div class="content clearfix">
+            <section class="content clearfix">
                 <!-- Search form -->
-                <div class="item col-xs-12">
+                <section class="item col-xs-12">
                     <div class="padding clearfix">
                         @php
                             $subject = ($tutoringsession->tutee->user->id == Auth::id()) ? $tutoringsession->tutor : $tutoringsession->tutee;
@@ -52,11 +50,11 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
                                 <div class="table">
-                                    <div style="display: table-cell; width: 42px"><img
-                                                src="{{ asset('img/avatars/' . $subject->user->image )}}"
-                                                class="group-img round-img"></div>
+                                    <div style="display: table-cell; width: 42px">
+                                        <a href="{{ $subject->user->url() }}" class="profile-url"><img src="{{ asset('img/avatars/' . $subject->user->image )}}" class="group-img round-img"></a>
+                                    </div>
                                     <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 style="margin: 0">{{ $subject->user->first_name . ' ' . $subject->user->last_name }}</h6>
+                                        <a href="{{ $subject->user->url() }}" class="profile-url"><h6 style="margin: 0">{{ $subject->user->first_name . ' ' . $subject->user->last_name }}</h6></a>
                                         <h6 style="margin: 5px 0">{{ $tutor->course->name }}</h6>
                                     </div>
                                 </div>
@@ -75,20 +73,16 @@
                                     <a class="action col-lg-12 col-xs-12" href="#">Stopzetten</a>
                                 </div>
                             </div>
-
-
-                            </div>
-
+                        </div>
                     </div>
-                </div>
-                <div class="item col-xs-12">
+                </section>
+                <section class="item col-xs-12">
                     <div class="padding clearfix">
                         <div class="row">
                             <!-- comment -->
-                            <div id="chat-box" class="comment-box col-lg-12 flex padding">
+                            <section id="chat-box" class="comment-box col-lg-12 flex padding">
                                 <div class="picture hide-mobile col-sm-1 col-xs-0">
-                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                         class="account-img round-img">
+                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="account-img round-img">
                                 </div>
                                 <form id="chat-form" class="col-sm-11 col-xs-12" method="POST"
                                       action="{{ route('tutoring-add-chat', ['session_id' => $tutoringsession->id]) }}">
@@ -101,9 +95,9 @@
                                         <button type="submit"><i class="fa fa-paper-plane"></i></button>
                                     </div>
                                 </form>
-                            </div>
+                            </section>
                             <!-- comment -->
-                            <div id="chats" class="item messages col-lg-12">
+                            <section id="chats" class="item messages col-lg-12">
                                 <br>
                                 @foreach ($chats as $chat)
                                     @php
@@ -124,20 +118,20 @@
                                             </div>
 
                                             <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
-                                                <img src="{{ asset('img/avatars/' . $chat->user->image  )}}"
-                                                     class="group-img round-img">
+                                                <a href="{{ $subject->user->url() }}" class="profile-url"><img src="{{ asset('img/avatars/' . $chat->user->image  )}}"
+                                                                                           class="group-img round-img"></a>
                                             </div>
                                         </div>
                                     @else
                                         <div class="msg clearfix col-lg-12">
                                             <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
-                                                <img src="{{ asset('img/avatars/' . $chat->user->image )}}"
-                                                     class="group-img round-img">
+                                                <a href="{{ $subject->user->url() }}" class="profile-url"><img src="{{ asset('img/avatars/' . $chat->user->image )}}"
+                                                                                           class="group-img round-img"></a>
                                             </div>
                                             <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
                                                 <div class="table">
                                                     <div style="display: table-cell;  float: left">
-                                                        <span>{{ $chat->user->first_name . ' ' . $chat->user->last_name }}</span>
+                                                        <span><a href="{{ $subject->user->url() }}" class="profile-url">{{ $chat->user->first_name . ' ' . $chat->user->last_name }}</a></span>
                                                     </div>
                                                     <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
                                                         <span>{{ $chat->chatcreated() }}</span>
@@ -149,11 +143,11 @@
                                     @endif
                                 @endforeach
                                 {{ $chats->links() }}
-                            </div>
+                            </section>
                         </div>
                     </div>
-                </div>
-            </div>
+                </section>
+            </section>
         </div>
         <!-- container -->
     </div>
@@ -164,13 +158,10 @@
     <script src="{{asset("js/zabuto_calendar.min.js")}}"></script>
     <script type="application/javascript">
         $(document).ready(function () {
-
-
             var eventData = [
                 {"date": "2018-03-10", "body": "test 1", "title": "test 1", "classname": "item-herinnering"},
                 {"date": "2018-03-20", "body": "Test 2", "title": "Test 2", "classname": "item-taak"}
             ];
-
 
             $("#date-calendar").zabuto_calendar({
                 language: "nl",

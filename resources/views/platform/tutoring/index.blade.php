@@ -152,12 +152,10 @@
                                 <div class="col-lg-6 left col-md-4 col-sm-6 col-xs-12">
                                     <div class="table">
                                         <div style="display: table-cell; width: 42px">
-                                            <img id="image" src="/img/avatars/{{ $subject->user->image }}"
-                                                 class="group-img round-img round-img"/>
+                                            <a href="{{ $subject->user->url() }}" class="profile-url"><img id="image" src="/img/avatars/{{ $subject->user->image }}" class="group-img round-img round-img"/></a>
                                         </div>
                                         <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                            <h6 id="name"
-                                                style="margin: 0">{{ $subject->user->first_name }} {{ $subject->user->last_name }}</h6>
+                                            <a href="{{ $subject->user->url() }}" class="profile-url"><h6 id="name" style="margin: 0">{{ $subject->user->first_name }} {{ $subject->user->last_name }}</h6></a>
                                             <h6 id="course" style="margin: 5px 0">{{ $subject->course->name }}</h6>
                                         </div>
                                     </div>

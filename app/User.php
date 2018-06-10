@@ -98,4 +98,9 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public function url()
+    {
+        return route('profile-index', ['id' => $this->id]);
+    }
 }
