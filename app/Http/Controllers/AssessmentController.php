@@ -209,11 +209,11 @@ class AssessmentController extends Controller
                 $grade_proc = $grade['grade'];
                 $grade_comment = $grade['comment'];
 
-                if ($grade_proc > 5)
-                    $grade_proc = 5;
+                if ($grade_proc > 3)
+                    $grade_proc = 3;
 
-                if ($grade_proc < 0)
-                    $grade_proc = 0;
+                if ($grade_proc < -1)
+                    $grade_proc = -1;
 
                 if (!isset($grade_comment) || empty($grade_comment))
                     $grade_comment = "";
@@ -235,7 +235,7 @@ class AssessmentController extends Controller
     {
         if (Auth::user()->role == "docent") {
 
-            $group = AssessmentGroup::query()->find($group_id);
+            $group = AssessmentGroup::query()->where('id', '=', $group_id)->first();
             if ($group == null)
                 abort(404, "Groep niet gevonden.");
 
@@ -259,8 +259,6 @@ class AssessmentController extends Controller
     public function individualdetail($assessment_id, $group_id, $user_id)
     {
         $groupuser = AssessmentGroupUser::query()->find($user_id);
-
-        $groupuser->lastgivenscores();
 
         if (Auth::user()->role == "docent") {
             return view('platform.assessment.docent.individual');

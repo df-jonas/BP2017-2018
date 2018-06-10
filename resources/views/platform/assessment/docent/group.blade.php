@@ -42,7 +42,7 @@
                             <table class="assessment group">
                                 <tr class="heading">
                                     <th class="left top"><span class="large-th">Groep overzicht</span></th>
-                                    <th class="skill-th">Gemiddelde score</th>
+                                    <th class="skill-th">Factor</th>
                                     <th class="skill-th">Uitgedeelde scores</th>
                                     <!--<th class="skill-th">Ontvangen scores</th>-->
                                 </tr>
@@ -50,7 +50,7 @@
                                     <tr>
                                         <td class="left"><a href="{{ $groupuser->url() }}">{{ $groupuser->user->last_name }}, {{ $groupuser->user->first_name }}</a>
                                             <img src="{{ asset('img/avatars/' . $groupuser->user->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                        <td>SCORE</td>
+                                        <td>{{ $groupuser->calcScore() }}</td>
                                         <td><a href="{{ $groupuser->url() }}">Bekijk uitgedeelde scores <i class="fas fa-arrow-right"></i></a>
                                         </td>
                                         <!--<td><a href="#">Bekijk ontvangen scores <i class="fas fa-arrow-right"></i></a></td>-->

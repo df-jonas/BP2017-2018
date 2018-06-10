@@ -59,7 +59,7 @@
                                         <td class="left"><img src="{{ asset('/img/avatars/' . $groupuser->user->image )}}" class="group-img round-img hide-tablet" alt="User profile image">{{ $groupuser->user->last_name }}, {{ $groupuser->user->first_name }}</td>
                                         @foreach($groupuser->assessmentgroup->assessment->assessmentskills as $assessmentskill)
                                             <td>
-                                                <input type="number" name="score[{{ $groupuser->id }}][{{ $assessmentskill->id }}][grade]" placeholder="0" min="0" max="5" style="padding: 0; text-align: center">
+                                                <input type="number" name="score[{{ $groupuser->id }}][{{ $assessmentskill->id }}][grade]" placeholder="0" min="-1" max="3" style="padding: 0; text-align: center">
                                                 <input type="hidden" name="score[{{ $groupuser->id }}][{{ $assessmentskill->id }}][comment]">
                                                 <span class="more" data-toggle="modal" data-target="#assessment-modal"></span>
                                             </td>
