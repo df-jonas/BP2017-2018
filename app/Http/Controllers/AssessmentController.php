@@ -146,6 +146,9 @@ class AssessmentController extends Controller
 
         if (Auth::user()->role != "docent") {
 
+            if ($assessment->end->lte(new Carbon()))
+                abort(404, "De geledigheidsdatum van dit peer assessment is verstreken.");
+
             $_tAssessmentgroup = (new AssessmentGroup)->getTable();
             $_tAssessmentgroupuser = (new AssessmentGroupUser())->getTable();
 
@@ -187,6 +190,9 @@ class AssessmentController extends Controller
         $assessment = $groupuser->assessmentgroup->assessment;
         $user_ids = array_column($groupuser->assessmentgroup->assessmentgroupusers->toArray(), 'id');
         $skill_ids = array_column($assessment->assessmentskills->toArray(), 'id');
+
+        if ($assessment->end->lte(new Carbon()))
+            abort(404, "De geledigheidsdatum van dit peer assessment is verstreken.");
 
         if ($groupuser->assessmentgroup->assessmentgroupusers->count() != sizeof($request->score))
             abort(500, 'Je aantal ingevulde leden komt niet overeen met onze gegevens.');
@@ -258,10 +264,31 @@ class AssessmentController extends Controller
 
     public function individualdetail($assessment_id, $group_id, $user_id)
     {
-        $groupuser = AssessmentGroupUser::query()->find($user_id);
-
         if (Auth::user()->role == "docent") {
-            return view('platform.assessment.docent.individual');
+
+            $user = AssessmentGroupUser::query()->where('id', '=', $user_id)->first();
+
+            if ($user == null)
+                abort(404, "Gebruiker niet gevonden");
+
+            $groupuser = $user->assessmentgroup;
+            if ($groupuser == null || $groupuser->id != $group_id)
+                abort(404, "Groep niet gevonden");
+
+            $assessment = $groupuser->assessment;
+            if ($assessment == null || $assessment->id != $assessment_id)
+                abort(404, "Assessment niet gevonden");
+
+            $arr = [
+                'assessment' => $assessment,
+                'user' => $user,
+                'group' => $groupuser,
+                'scores' => $user->lastgivenscores(),
+                'assessmentskills' => $assessment->assessmentskills,
+                'users' => $groupuser->assessmentgroupusers
+            ];
+
+            return view('platform.assessment.docent.individual', $arr);
         } else {
             abort(500, "Je kan deze pagina niet bekijken.");
         }

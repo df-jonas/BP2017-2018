@@ -31,8 +31,11 @@ class AssessmentGroupUser extends Model
 
     public function lastgivenscores()
     {
-        $ids = array_column(Score::query()->select(DB::raw('max(id) as id'))->groupBy(['assessmentgroupuser_to_id', 'assessmentskill_id'])->get()->toArray(), 'id');
-        $resultset = $this->givenscores()->whereIn('id', $ids)->get();
+        $ids = array_column(Score::query()->select(DB::raw('max(id) as id'))
+            ->where('assessmentgroupuser_from_id', '=', $this->id)
+            ->groupBy(['assessmentgroupuser_to_id', 'assessmentskill_id'])->get()->toArray(), 'id');
+        $resultset = Score::query()
+            ->whereIn('id', $ids)->get();
         $arr = [];
         foreach ($resultset as $row) {
             $arr[$row->assessmentgroupuser_to_id][$row->assessmentskill_id] = [
