@@ -30,8 +30,6 @@
                         </section>
                     </section>
 
-
-
                     <div class="row flex padding">
                         <!-- begin table -->
                         <table class="assessment individual">

@@ -1,12 +1,17 @@
 @extends('layouts.platform')
-@section('pagetitle', 'Peer Assessment')
+
+@section('pagetitle', 'Nieuw peer assessment')
+
 @section('content')
     @include('partials.platform.header')
     @include('partials.platform.subheader')
+
     <!-- begin container -->
     <section class="container">
         <!-- begin profile message -->
+
     @include('partials.platform.message')
+
     <!-- end profile message -->
         <section class="col-xs-12">
             <!-- begin go back -->
@@ -18,15 +23,19 @@
             <section class="item clearfix">
                 <header><a class="header-title">Nieuwe assessment</a></header>
                 <div class="padding">
-                    <!-- heading -->
-                    <section class="assessment-group">
-                        <div class="title col-xs-12">
-                            <a href=""><h2 class="group-title">Project management</h2></a>
+                    <form method="POST" action="{{ route('assessment-docent-new') }}">
+                    {{ csrf_field() }}
+                    <!-- title -->
+                        <div class="form-group col-xs-12 clearfix">
+                            <div class="selectdiv">
+                                <label for="course">Vak</label>
+                                <select id="course" name="course_id" class="form-control col-xs-12">
+                                    @foreach($usercourses as $usercourse)
+                                        <option value="{{ $usercourse->course->id }}">{{ $usercourse->course->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                    </section>
-                    <!-- heading -->
-                    <form method="POST" action="#">
-                        <!-- title -->
                         <div class="form-group col-xs-12 clearfix">
                             <div class="textdiv">
                                 <label for="title">Assessment titel</label>
@@ -47,7 +56,7 @@
                         <div class="form-group col-lg-6 col-xs-12  clearfix">
                             <div class="textdiv">
                                 <label for="date">Einddatum</label>
-                                <input id="date" name="date" type="date" class="form-control col-xs-12">
+                                <input id="date" name="enddate" type="date" class="form-control col-xs-12">
                             </div>
                         </div>
                         <!-- date -->
@@ -61,11 +70,11 @@
                             <!-- begin group -->
                             <div class="form-group col-xs-12 clearfix">
                                 <div class="selectdiv">
-                                    <label for="group">Groep 1</label>
+                                    <label for="firstgroup">Groep 1</label>
                                     <select id="firstgroup" class="select form-control group-dropdown col-xs-12"
-                                            name="group1[]" multiple="multiple">
+                                            name="group[0][]" multiple="multiple">
                                         @foreach($users as $user)
-                                            <option value="{{ $user->first_name . " " . $user->last_name }}">{{ $user->first_name . " " . $user->last_name}}</option>
+                                            <option value="{{ $user->id }}">{{ $user->first_name . " " . $user->last_name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -74,11 +83,11 @@
                             <!-- begin group -->
                             <div class="form-group col-xs-12 clearfix">
                                 <div class="selectdiv">
-                                    <label for="group">Groep 2</label>
-                                    <select class="select form-control group-dropdown col-xs-12" name="group2[]"
+                                    <label>Groep 2</label>
+                                    <select class="select form-control group-dropdown col-xs-12" name="group[1][]"
                                             multiple="multiple">
                                         @foreach($users as $user)
-                                            <option value="{{ $user->first_name . " " . $user->last_name }}">{{ $user->first_name . " " . $user->last_name}}</option>
+                                            <option value="{{ $user->id }}">{{ $user->first_name . " " . $user->last_name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -96,13 +105,14 @@
                                 <label for="skills">Attitudes (max 7)</label>
                                 <select class="vaardigheden-dropdown col-xs-12" name="skills[]" multiple="multiple">
                                     @foreach ($skills as $skill)
-                                        <option value="{{ $skill->name }}">{{ $skill->name }}</option>
+                                        <option value="{{ $skill->id }}">{{ $skill->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                         <!-- end skills -->
-                        <input id="submitall" type="submit" name="submit" class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Voltooien">
+                        <input id="submitall" type="submit" name="submit"
+                               class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Voltooien">
                     </form>
                 </div>
             </section>

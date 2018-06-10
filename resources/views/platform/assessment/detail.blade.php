@@ -12,6 +12,7 @@
     @include('partials.platform.go-back')
     <!-- end go back-->
         <!-- begin assessment-->
+
         <div class="row">
             <section class="col-xs-12">
                 <!-- comment modal -->
@@ -24,7 +25,7 @@
                                 <h4>Toelichting</h4>
                             </section>
                             <section class="modal-body padding" style="padding: 10px">
-                                <span class="large-th col-xs-12">Stalpaert Arno</span>
+                                <span class="large-th col-xs-12">Arno Stalpaert</span>
                                 <span class="mid-th col-xs-12">Aanwezigheid</span>
                                 <textarea class="col-xs-12" rows="5"></textarea>
                             </section>
@@ -39,116 +40,37 @@
                     <header><a class="header-title">Peer Assessment</a></header>
                     <div class="padding">
                     <div class="row flex">
-                        <!-- begin table -->
-                        <table class="assessment">
-                            <tr class="heading">
-                                <th class="left top"><span class="large-th">Integration: Android</span> <br> <span class="mid-th">Team "Moleskine"</span></th>
-                                <th colspan="7"><span class="large-th">Attitudes</span> <br><span class="mid-th">Gelieve een eerlijke score in te vullen</span></th>
-                            </tr>
-                            <tr class="heading">
-                                <th class="left top"></th>
-                                <th class="skill-th">Aanwezigheid</th>
-                                <th class="skill-th">Inzet en motivatie</th>
-                                <th class="skill-th">Vaardigheden</th>
-                                <th class="skill-th">Kwaliteit</th>
-                                <th class="skill-th">Stiptheid</th>
-                                <th class="skill-th">Verzorging</th>
-                                <th class="skill-th">Deadlines</th>
-                            </tr>
-                            <tr>
-                                <td class="left">Stalpaert, Arno <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="left">Jannsens, Brent <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="left">Goeman, Sam <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="left">De Frère, Jonas <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                            </tr>
-                            <tr class="selected">
-                                <td class="left">De Bauw, Axel <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td><input type="number" value=""></td>
-                                <td><input type="number" value=""></td>
-                                <td><input type="number" value=""></td>
-                                <td><input type="number" value=""></td>
-                                <td><input type="number" value=""></td>
-                                <td><input type="number" value=""></td>
-                                <td><input type="number" value=""></td>
-                            </tr>
-                            <tr>
-                                <td class="left">Stalpaert, Jelle <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="left">Janssens, Dirk <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="left">Dehenau, Peter <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="left">Fritssen, Mark <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value=""></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value="5"> <span class="more" data-toggle="modal" data-target="#assessment-modal"></span></td>
-                                <td><input type="number" value=""></td>
-                            </tr>
-                        </table>
-                        <div class="col-xs-12">
-                            <a class="download-button col-lg-2 col-sm-4 col-xs-12" href="#">Indienen</a>
-                        </div>
+                        <form method="POST" action="{{ route('assessment-detail', ['assessment_id' => $id ]) }}" style="width: 100%;">
+                            {{ csrf_field() }}
+                            <!-- begin table -->
+                            <table class="assessment">
+                                <tr class="heading">
+                                    <th class="left top"><span class="large-th">{{ $groupuser->assessmentgroup->assessment->course->name }}</span> <br> <span class="mid-th">{{ $groupuser->assessmentgroup->name }}</span></th>
+                                    <th colspan="{{ sizeof($groupuser->assessmentgroup->assessment->assessmentskills) }}"><span class="large-th">Attitudes</span> <br><span class="mid-th">Gelieve een eerlijke score in te vullen</span></th>
+                                </tr>
+                                <tr class="heading">
+                                    <th class="left top"></th>
+                                    @foreach($groupuser->assessmentgroup->assessment->assessmentskills as $assessmentskill)
+                                        <th class="skill-th">{{ $assessmentskill->skill->name }}</th>
+                                    @endforeach
+                                </tr>
+                                @foreach($groupuser->assessmentgroup->assessmentgroupusers as $groupuser)
+                                    <tr>
+                                        <td class="left"><img src="{{ asset('/img/avatars/' . $groupuser->user->image )}}" class="group-img round-img hide-tablet" alt="User profile image">{{ $groupuser->user->last_name }}, {{ $groupuser->user->first_name }}</td>
+                                        @foreach($groupuser->assessmentgroup->assessment->assessmentskills as $assessmentskill)
+                                            <td>
+                                                <input type="number" name="score[{{ $groupuser->id }}][{{ $assessmentskill->id }}][grade]" placeholder="0" min="0" max="5" style="padding: 0; text-align: center">
+                                                <input type="hidden" name="score[{{ $groupuser->id }}][{{ $assessmentskill->id }}][comment]">
+                                                <span class="more" data-toggle="modal" data-target="#assessment-modal"></span>
+                                            </td>
+                                        @endforeach
+                                    </tr>
+                                @endforeach
+                            </table>
+                            <div class="col-xs-12">
+                                <button type="submit" class="download-button col-lg-2 col-sm-4 col-xs-12">Indienen</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 </div>

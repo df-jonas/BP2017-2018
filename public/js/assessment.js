@@ -11,6 +11,7 @@ $(document).ready(function () {
         language: "nl",
         width: "100%"
     });
+
     $('#new-assessment-group').on('click', function () {
         var groupcount = $('.group-dropdown').length;
         var firstgroupoptions = $("#firstgroup option");
@@ -18,9 +19,10 @@ $(document).ready(function () {
         var newhtml = '<div class="form-group col-xs-12 clearfix">' +
             '<div class="selectdiv">' +
             '<label for="group">Groep ' + currentgroupcount + '</label>' +
-            '<select class="select form-control group-dropdown col-xs-12" name="group2[]" multiple="multiple">';
+            '<select class="select form-control group-dropdown col-xs-12" name="group[' + groupcount + '][]" multiple="multiple">';
         firstgroupoptions.each(function () {
-            newhtml += '<option value="AL">' + $(this).val() + '</option>'
+            console.log($(this));
+            newhtml += '<option value="' + $(this).val() + '">' + $(this).text() + '</option>'
         });
         newhtml += '</select>' +
             '</div>' +

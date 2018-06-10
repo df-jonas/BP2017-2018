@@ -5,6 +5,7 @@ namespace App;
 use Carbon\Carbon;
 use Coduo\PHPHumanizer\DateTimeHumanizer;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 
 class Assessment extends Model
 {
@@ -14,7 +15,7 @@ class Assessment extends Model
 
     public function assessmentskills()
     {
-        return $this->hasMany('App\AssessmentSkill', 'assessmentskill_id', 'id');
+        return $this->hasMany('App\AssessmentSkill', 'assessment_id', 'id');
     }
 
     public function assessmentgroups()
@@ -35,18 +36,37 @@ class Assessment extends Model
     public function memberCount()
     {
         $amount = 0;
-        $groups = $this->assessmentgroups()->withCount('assessmentgroupusers')->get();
-        foreach ($groups as $group) {
-            $amount += $group->assessmentgroupusers_count;
+        foreach ($this->assessmentgroups()->get() as $group) {
+            $amount += $group->memberCount();
         }
         return $amount;
     }
 
-    public function timeToEnd() {
+    public function submitCount(){
+        $amount = 0;
+        foreach ($this->assessmentgroups()->get() as $assessmentgroup) {
+            $amount += $assessmentgroup->submitCount();
+        }
+        return $amount;
+    }
+
+    public function groupCount()
+    {
+        return $this->assessmentgroups()->count();
+    }
+
+    public function timeToEnd()
+    {
         return DateTimeHumanizer::difference(new \DateTime(), $this->end, 'nl');
     }
 
-    public function humanEnd(){
+    public function humanEnd()
+    {
         return $this->end->format(('d/m/Y \o\m H:i'));
+    }
+
+    public function url()
+    {
+        return route('assessment-detail', ['assessment_id' => $this->id]);
     }
 }

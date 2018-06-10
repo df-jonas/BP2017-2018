@@ -27,11 +27,12 @@
                     <div class="padding">
                         <section class="content assessment">
                             <section class="assessment-group">
-                                <div class="title col-lg-3">
-                                    <a href="#"><h2 class="group-title">Assessment titel 1</h2></a>
+                                <div class="title col-lg-6">
+                                    <a><h2 class="group-title">{{ $group->assessment->name }}
+                                            ({{ $group->assessment->course->name }})</h2></a>
                                 </div>
-                                <div class="info col-lg-9">
-                                    <span class="assessments">Groep Moleskine</span>
+                                <div class="info col-lg-6">
+                                    <span class="assessments">{{ $group->name }}</span>
                                 </div>
                             </section>
                         </section>
@@ -45,42 +46,16 @@
                                     <th class="skill-th">Uitgedeelde scores</th>
                                     <!--<th class="skill-th">Ontvangen scores</th>-->
                                 </tr>
-                                <tr>
-                                    <td class="left"><a href="#">Stalpaert, Arno</a><img
-                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                    <td>5</td>
-                                    <td><a href="#">Bekijk uitgedeelde scores <i class="fas fa-arrow-right"></i></a>
-                                    </td>
-                                    <!--<td><a href="#">Bekijk ontvangen scores <i class="fas fa-arrow-right"></i></a></td>-->
-                                </tr>
-                                <tr>
-                                    <td class="left"><a href="#">De Frère, Jonas</a> <img
-                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                    <td>4</td>
-                                    <td><a href="#">Bekijk uitgedeelde scores <i class="fas fa-arrow-right"></i></a>
-                                    </td>
-                                    <!--<td><a href="#">Bekijk ontvangen scores <i class="fas fa-arrow-right"></i></a></td>-->
-                                </tr>
-                                <tr>
-                                    <td class="left"><a href="#">Goeman, Sam </a><img
-                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                    <td>2</td>
-                                    <td><a href="#">Bekijk uitgedeelde scores <i class="fas fa-arrow-right"></i></a>
-                                    </td>
-                                    <!--<td><a href="#">Bekijk ontvangen scores <i class="fas fa-arrow-right"></i></a></td>-->
-                                </tr>
-                                <tr>
-                                    <td class="left"><a href="#">Janssens, Brent </a><img
-                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                    <td>4</td>
-                                    <td><a href="#">Bekijk uitgedeelde scores <i class="fas fa-arrow-right"></i></a>
-                                    </td>
-                                    <!--<td><a href="#">Bekijk ontvangen scores <i class="fas fa-arrow-right"></i></a></td>-->
-                                </tr>
+                                @foreach($group->assessmentgroupusers as $groupuser)
+                                    <tr>
+                                        <td class="left"><a href="{{ $groupuser->url() }}">{{ $groupuser->user->last_name }}, {{ $groupuser->user->first_name }}</a>
+                                            <img src="{{ asset('img/avatars/' . $groupuser->user->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
+                                        <td>SCORE</td>
+                                        <td><a href="{{ $groupuser->url() }}">Bekijk uitgedeelde scores <i class="fas fa-arrow-right"></i></a>
+                                        </td>
+                                        <!--<td><a href="#">Bekijk ontvangen scores <i class="fas fa-arrow-right"></i></a></td>-->
+                                    </tr>
+                                @endforeach
                             </table>
                             <!-- end table -->
                         </div>
