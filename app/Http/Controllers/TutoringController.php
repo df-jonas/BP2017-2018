@@ -174,6 +174,23 @@ class TutoringController extends Controller
         return Redirect::to(route("tutoring-index"));
     }
 
+    public function stop($session_id)
+    {
+        $tutoringsession = TutoringSession::query()->find($session_id);
+
+        if ($tutoringsession == null)
+            abort(404, 'Sessie niet gevonden');
+
+        if((Auth::id() == $tutoringsession->tutee->user->id) || (Auth::id() == $tutoringsession->tutor->user->id )){
+            $tutoringsession->active = false;
+            $tutoringsession->save();
+        }
+        else{
+            abort(404, 'Geen toegang');
+        }
+        return Redirect::back();
+    }
+
     public function requests()
     {
         $ids = Tutor::query()

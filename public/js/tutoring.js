@@ -33,7 +33,7 @@ $(document).ready(function () {
                 $('#course').text(o.course.name);
                 $('#url_chat').attr("href", "/p/tutoring/" + o.id + "/messages");
                 $('#url_planner').attr("href", "");
-                $('#url_stop').attr("href", "");
+                $('#url_stop').attr("href", "/p/tutoring/stop/" + o.id);
                 $('#introduction').text(s.tutee.description);
                 $('.userpanel').css({"visibility": "visible"});
 

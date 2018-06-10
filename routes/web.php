@@ -83,6 +83,7 @@
             Route::post('/tutoring/tutee/new', 'TutoringController@newtuteepost');
             Route::get('/tutoring/requests', 'TutoringController@requests')->name('tutoring-requests');
             Route::get('/tutoring/accept/{tutee_id}', 'TutoringController@accept')->name('tutoring-accept');
+            Route::get('/tutoring/stop/{session_id}', 'TutoringController@stop')->name('tutoring-stop');
             Route::get('/tutoring/{id}/messages', 'TutoringController@messages')->name('tutoring-messages');
             Route::get('/tutoring/{id}/planning', 'TutoringController@planning')->name('tutoring-planning');
             Route::post('/tutoring/{tutoringsession_id}/chat', 'TutoringController@addchatasync')->name('tutoring-add-chat');

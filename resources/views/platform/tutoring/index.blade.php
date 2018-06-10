@@ -174,7 +174,7 @@
 
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                         <!-- TODO [JONAS] Tutoring stopzetten -->
-                                        <a class="action col-lg-12 col-xs-12" id="url_stop" href="">Stopzetten</a>
+                                        <a class="action col-lg-12 col-xs-12" id="url_stop" href="{{ route('tutoring-stop', ['session_id' => $first->id])}}">Stopzetten</a>
                                     </div>
                                 </div>
 
