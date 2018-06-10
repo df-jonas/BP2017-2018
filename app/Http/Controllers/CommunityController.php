@@ -191,6 +191,7 @@ class CommunityController extends Controller
     {
         if (!empty($request->post_id)) {
             $post_id = $request->post_id;
+            $post = Post::where('id', '=', $post_id)->first();
             $vote = Vote::query()
                 ->where("user_id", "=", Auth::id())
                 ->where("post_id", "=", $post_id)
@@ -204,6 +205,14 @@ class CommunityController extends Controller
                 $vote->post_id = $post_id;
                 $vote->user_id = Auth::id();
                 $vote->save();
+
+                $from_id = Auth::id();
+                $to_id = $post->user_id;
+                $type = "likes";
+                $url = $post->generateurl();
+                $text = "likete jouw post";
+
+                dd(NotificationHelper::create($from_id, $to_id, $type, $url, $text));
             }
         }
     }

@@ -85,6 +85,8 @@
             Route::get('/tutoring/accept/{tutee_id}', 'TutoringController@accept')->name('tutoring-accept');
             Route::get('/tutoring/{id}/messages', 'TutoringController@messages')->name('tutoring-messages');
             Route::get('/tutoring/{id}/planning', 'TutoringController@planning')->name('tutoring-planning');
+            Route::post('/tutoring/{tutoringsession_id}/chat', 'TutoringController@addchatasync')->name('tutoring-add-chat');
+
 
             /** Peer Assessment */
             Route::get('/assessment', 'AssessmentController@index')->name('assessment-index');

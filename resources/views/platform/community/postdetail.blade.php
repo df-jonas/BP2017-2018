@@ -116,8 +116,7 @@
                                 @foreach($post->comments as $comment)
                                     <section class="msg clearfix col-lg-12">
                                         <section class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
-                                            <img src="{{ asset('img/avatars/' . $comment->user->image )}}"
-                                                 class="group-img round-img" alt="User profile image">
+                                            <img src="{{ asset('img/avatars/' . $comment->user->image )}}" class="group-img round-img" alt="User profile image">
                                         </section>
                                         <section class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
                                             <div class="table">

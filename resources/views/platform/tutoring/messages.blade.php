@@ -1,7 +1,7 @@
 @extends('layouts.platform')
-@section('pagetitle', 'Tutoring - Messages')
+@section('pagetitle', 'Tutoring - Chat')
 @section('content')
-@include('partials.platform.header')
+    @include('partials.platform.header')
     @include('partials.platform.subheader')
 
     <div class="container">
@@ -17,7 +17,6 @@
                 <!-- Modal -->
                 <div class="modal fade" id="date-modal" role="dialog">
                     <div class="modal-dialog  ">
-
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
@@ -32,30 +31,12 @@
                                 <button type="button" class="download-button" data-dismiss="modal">Sluit</button>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-
                 <article class="item">
-                    <header><i class="fa fa-calendar"></i> Planning</header>
+                    <header><a class="header-title"><i class="fa fa-calendar"></i> Kalender</a></header>
                     <div id="date-calendar">
-                    </div>
-                </article>
-                <article class="overview item user-owned">
-                    <header><i class="fa fa-upload"></i> Gedeelde bestanden</header>
-                    <div class="padding">
-                        <div class="row flex">
-                            <div class="icon col-lg-2 col-md-2 col-xs-2">
-                                <img src="" class="account-img round-img">
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-xs-8">
-                                <h5 class="title col-xs-12 no-padding"><a href="#"> Test</a></h5>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-xs-2">
-                                <i class="fa fa-download brown"></i>
-                            </div>
-                        </div>
                     </div>
                 </article>
                 <!-- sidebar -->
@@ -63,30 +44,34 @@
             <!-- content -->
             <div class="content clearfix">
                 <!-- Search form -->
-                <article class="item col-xs-12">
+                <div class="item col-xs-12">
                     <div class="padding clearfix">
+
+                        @php
+                            $subject = ($tutoringsession->tutee->user->id == Auth::id()) ? $tutoringsession->tutor : $tutoringsession->tutee;
+                        @endphp
 
                         <div class="row">
                             <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
                                 <div class="table">
                                     <div style="display: table-cell; width: 42px"><img
-                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img round-img"></div>
+                                                src="{{ asset('img/avatars/' . $subject->user->image )}}"
+                                                class="group-img round-img"></div>
                                     <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 style="margin: 0">Jonas De Frère</h6>
-                                        <h6 style="margin: 5px 0">Data Visualisatie</h6>
+                                        <h6 style="margin: 0">{{ $subject->user->first_name . ' ' . $subject->user->last_name }}</h6>
+                                        <h6 style="margin: 5px 0">{{ $tutor->course->name }}</h6>
                                     </div>
                                 </div>
                             </div>
 
-
                             <div class="actions col-lg-6 col-md-8 col-sm-6 col-xs-12" style="text-align: center">
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <a class="action col-lg-12 col-xs-12" href="{{route('tutoring-messages', ['id' => '1']) }}">Chatten</a>
+                                    <a class="action col-lg-12 col-xs-12"
+                                       href="{{route('tutoring-index')}}">Overzicht</a>
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <a class="action col-lg-12 col-xs-12" href="{{route('tutoring-planning', ['id' => '1']) }}">Agenda</a>
+                                    <a class="action col-lg-12 col-xs-12" href="#">Agenda</a>
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -94,105 +79,90 @@
                                 </div>
                             </div>
 
-                        <div id="messages" class="item col-lg-12">
+                            <div id="messages" class="item col-lg-12">
 
-                            <h4>Berichten</h4>
-                            <br>
+                                <h4>Berichten</h4>
+                                <br>
+                                @foreach ($chats as $chat)
+                                    @php
+                                        $own = ($chat->user->id == Auth::id()) ? "own" : "";
+                                    @endphp
 
-                            <div class="msg clearfix col-lg-12">
-                                <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
-                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img">
-                                </div>
-                                <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
-                                    <div class="table">
-                                        <div style="display: table-cell;  float: left">
-                                            <span>Jeffrey Thor</span>
+                                    @if($own)
+                                        <div class="msg own clearfix col-lg-12">
+
+                                            <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
+                                                <div class="table">
+                                                    <div style="display: table-cell;  float: left">
+                                                        <span>{{ $chat->chatcreated() }}</span>
+                                                    </div>
+                                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                        <span>ik</span>
+                                                    </div>
+                                                </div>
+                                                <p>{{ $chat->message }}</p>
+                                            </div>
+
+                                            <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
+                                                <img src="{{ asset('img/avatars/' . $chat->user->image  )}}"
+                                                     class="group-img round-img">
+                                            </div>
                                         </div>
-                                        <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
-                                            <span>Donderdag om 14:43</span>
+
+
+                                    @else
+                                        <div class="msg clearfix {{ $own }} col-lg-12">
+                                            <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
+                                                <img src="{{ asset('img/avatars/' . $chat->user->image )}}"
+                                                     class="group-img round-img">
+                                            </div>
+                                            <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
+                                                <div class="table">
+                                                    <div style="display: table-cell;  float: left">
+                                                        <span>{{ $chat->user->first_name . ' ' . $chat->user->last_name }}</span>
+                                                    </div>
+                                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                        <span>{{ $chat->chatcreated() }}</span>
+                                                    </div>
+                                                </div>
+                                                <p>{{ $chat->message }}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                        turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
-                                        tempor sit amet, ante. </p>
-                                </div>
+                                    @endif
+                                @endforeach
+                                {{ $chats->links() }}
                             </div>
 
-                            <div class="msg own clearfix col-lg-12">
-
-                                <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
-                                    <div class="table">
-                                        <div style="display: table-cell;  float: left">
-                                            <span>Donderdag om 14:43</span>
-                                        </div>
-                                        <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
-                                            <span>ik</span>
-                                        </div>
+                            <!-- comment -->
+                            <div id="comment-box" class="row flex padding">
+                                <div class="picture hide-mobile col-sm-1 col-xs-0">
+                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
+                                         class="account-img round-img">
+                                </div>
+                                <form id="comment-field" class="col-sm-11 col-xs-12" method="POST"
+                                      action="{{ route('tutoring-add-chat', ['session_id' => $tutoringsession->id]) }}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <div class="txt col-sm-11 col-xs-10">
+                                        <input type="text" name="comment" id="commentfield" class="col-xs-11"
+                                               placeholder="reactie toevoegen">
                                     </div>
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                        turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
-                                        tempor sit amet, ante. </p>
-                                </div>
-
-                                <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
-                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img">
-                                </div>
-                            </div>
-
-                            <div class="msg clearfix col-lg-12">
-                                <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
-                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img">
-                                </div>
-                                <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
-                                    <div class="table">
-                                        <div style="display: table-cell;  float: left">
-                                            <span>Jeffrey Thor</span>
-                                        </div>
-                                        <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
-                                            <span>Donderdag om 14:43</span>
-                                        </div>
+                                    <div class="icon col-sm-1 col-xs-2">
+                                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
                                     </div>
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                        turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
-                                        tempor sit amet, ante. </p>
-                                </div>
+                                </form>
                             </div>
-
+                            <!-- comment -->
                         </div>
-
-
-
                     </div>
-
-                    <div id="comment-box" class="row flex padding">
-                        <div class="picture hide-mobile col-sm-1 col-xs-0">
-                            <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                 class="account-img round-img">
-                        </div>
-                        <form id="comment-form" class="col-sm-11 col-xs-12" method="POST"
-                              action="#">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <div class="txt col-sm-11 col-xs-10">
-                                <input type="text" name="comment" id="commentfield" class="col-xs-11"
-                                       placeholder="reactie toevoegen">
-                            </div>
-                            <div class="icon col-sm-1 col-xs-2">
-                                <button type="submit"><i class="fa fa-paper-plane"></i></button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- content -->
-                </article>
+                </div>
             </div>
-            </div>
-            <!-- container -->
         </div>
-
+        <!-- container -->
+    </div>
         @include('partials.footer')
         @endsection
-
         @section("scripts")
+            <script src="{{ asset("js/tutoring-chat.js") }}"></script>
             <script src="{{asset("js/zabuto_calendar.min.js")}}"></script>
             <script type="application/javascript">
                 $(document).ready(function () {
