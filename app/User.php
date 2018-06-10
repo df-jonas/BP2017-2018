@@ -59,12 +59,12 @@ class User extends Authenticatable
 
     public function notifs_unread()
     {
-        return $this->notifs()->where('read_at', "=", null);
+        return $this->notifs()->where('read_at', "=", null)->orderBy('created_at', 'desc');
     }
 
     public function notifs_read()
     {
-        return $this->notifs()->where('read_at', "!=", null);
+        return $this->notifs()->where('read_at', "!=", null)->orderBy('created_at', 'desc');
     }
 
     public function countIsTutor()
@@ -97,5 +97,10 @@ class User extends Authenticatable
             return true;
         }
         return false;
+    }
+
+    public function url()
+    {
+        return route('profile-index', ['id' => $this->id]);
     }
 }

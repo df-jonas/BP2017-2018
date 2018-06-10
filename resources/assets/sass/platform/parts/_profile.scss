@@ -194,3 +194,10 @@
     border: 0.2px solid $unihelp-white;
   }
 }
+
+.profile-url{
+  color: inherit;
+  &:hover{
+    color: $theme-color;
+  }
+}

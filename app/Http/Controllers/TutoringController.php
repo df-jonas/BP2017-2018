@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Chat;
 use App\Course;
+use App\Helpers\NotificationHelper;
 use App\Tutee;
 use App\Tutor;
 use App\TutoringSession;
@@ -24,7 +26,9 @@ class TutoringController extends Controller
 
         $sessions = TutoringSession::query()
             ->whereIn('tutor_id', $tutor_id)
+            ->where('active', '=', true)
             ->orWhereIn('tutee_id', $tutee_id)
+            ->where('active', '=', true)
             ->get();
 
         $ids = Tutor::query()
@@ -159,7 +163,32 @@ class TutoringController extends Controller
         $session->active = true;
         $session->save();
 
+        $from_id = Auth::id();
+        $to_id = $tutee->user->id;
+        $type = "tutoring";
+        $url = route('tutoring-index');
+        $text = "heeft jouw tutoring verzoek anvaard!";
+
+        NotificationHelper::create($from_id, $to_id, $type, $url, $text);
+
         return Redirect::to(route("tutoring-index"));
+    }
+
+    public function stop($session_id)
+    {
+        $tutoringsession = TutoringSession::query()->find($session_id);
+
+        if ($tutoringsession == null)
+            abort(404, 'Sessie niet gevonden');
+
+        if((Auth::id() == $tutoringsession->tutee->user->id) || (Auth::id() == $tutoringsession->tutor->user->id )){
+            $tutoringsession->active = false;
+            $tutoringsession->save();
+        }
+        else{
+            abort(404, 'Geen toegang');
+        }
+        return Redirect::back();
     }
 
     public function requests()
@@ -183,9 +212,71 @@ class TutoringController extends Controller
         return view("platform.tutoring.requests", $arr);
     }
 
-    public function messages()
+    public function messages($id)
     {
-        return view("platform.tutoring.messages");
+        $tutoringsession = TutoringSession::query()->find($id);
+
+        if ($tutoringsession == null)
+            abort(404, 'Sessie niet gevonden');
+
+        $tutor = Tutor::query()
+            ->where('id', '=', $tutoringsession->tutor_id)
+            ->first();
+
+        $tutee = Tutee::query()
+            ->where('id', '=', $tutoringsession->tutee_id)
+            ->first();
+
+        $chats = Chat::query()
+            ->where('tutoringsession_id', '=', $id)
+            ->orderBy('created_at', 'DESC')
+            ->paginate(25);
+
+        if (Auth::id() == $tutor->user->id || Auth::id() == $tutee->user->id) {
+            //dd($chats);
+            $arr = [
+                'tutoringsession' => $tutoringsession,
+                'tutor' => $tutor,
+                'tutee' => $tutee,
+                'chats' => $chats,
+            ];
+
+            return view("platform.tutoring.messages", $arr);
+        } else {
+            abort(404, "Geen toegang om dit te zien.");
+        }
+    }
+
+    public function addchatasync($tutoringsession_id, Request $request)
+    {
+        if (!empty($tutoringsession_id)) {
+
+            $tutoringsession = TutoringSession::query()
+                ->where("id", "=", $tutoringsession_id)
+                ->firstOrFail();
+
+            $chat = new Chat();
+            $chat->message = $request->comment;
+            $chat->tutoringsession_id = $tutoringsession_id;
+            $chat->user_id = Auth::user()->id;
+            $chat->save();
+
+            $subject = ($tutoringsession->tutee->user->id == Auth::id()) ? $tutoringsession->tutor : $tutoringsession->tutee;
+
+            $from_id = Auth::id();
+            $to_id = $subject->user->id;
+            $type = "tutoring";
+            $url = route('tutoring-messages', [
+                'id' => $tutoringsession_id
+            ]);
+            $text = "heeft een nieuw chat bericht verstuurd.";
+
+            NotificationHelper::create($from_id, $to_id, $type, $url, $text);
+        }
+
+        return response()->json(Chat::query()->where('id', '=', $chat->id)->with(['user' => function ($query) {
+            $query->select('id', 'first_name', 'last_name', 'image');
+        }])->firstOrFail());
     }
 
     public function planning()

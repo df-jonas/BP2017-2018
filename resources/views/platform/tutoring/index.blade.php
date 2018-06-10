@@ -152,12 +152,10 @@
                                 <div class="col-lg-6 left col-md-4 col-sm-6 col-xs-12">
                                     <div class="table">
                                         <div style="display: table-cell; width: 42px">
-                                            <img id="image" src="/img/avatars/{{ $subject->user->image }}"
-                                                 class="group-img round-img round-img"/>
+                                            <a href="{{ $subject->user->url() }}" class="profile-url"><img id="image" src="/img/avatars/{{ $subject->user->image }}" class="group-img round-img round-img"/></a>
                                         </div>
                                         <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                            <h6 id="name"
-                                                style="margin: 0">{{ $subject->user->first_name }} {{ $subject->user->last_name }}</h6>
+                                            <a href="{{ $subject->user->url() }}" class="profile-url"><h6 id="name" style="margin: 0">{{ $subject->user->first_name }} {{ $subject->user->last_name }}</h6></a>
                                             <h6 id="course" style="margin: 5px 0">{{ $subject->course->name }}</h6>
                                         </div>
                                     </div>
@@ -167,7 +165,7 @@
                                 <div class="actions col-lg-6 right col-md-8 col-sm-6 col-xs-12"
                                      style="text-align: center">
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                        <a class="action col-lg-12 col-xs-12" id="url_chat" href="">Chatten</a>
+                                        <a class="action col-lg-12 col-xs-12" id="url_chat" href="{{route('tutoring-messages', ['id' => $first->id])}}">Chatten</a>
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -175,8 +173,7 @@
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                        <!-- TODO [JONAS] Tutoring stopzetten -->
-                                        <a class="action col-lg-12 col-xs-12" id="url_stop" href="">Stopzetten</a>
+                                        <a class="action col-lg-12 col-xs-12" id="url_stop" href="{{ route('tutoring-stop', ['session_id' => $first->id])}}">Stopzetten</a>
                                     </div>
                                 </div>
 

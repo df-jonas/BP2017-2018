@@ -27,7 +27,9 @@ class GlobalVariableHelper
 
         $sessions = TutoringSession::query()
             ->whereIn('tutor_id', $owned_tutor)
+            ->where('active', '=', true)
             ->orWhereIn('tutee_id', $owned_tutee)
+            ->where('active', '=', true)
             ->get();
 
         return $sessions->count();

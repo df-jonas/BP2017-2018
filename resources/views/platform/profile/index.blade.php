@@ -15,7 +15,7 @@
                     <section class="headline">
                         <div class="row flex">
                             <section class="left col-lg-1 col-sm-2 col-xs-12">
-                                <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img"
+                                <img src="{{ asset('img/avatars/' . $user->image )}}" class="group-img round-img"
                                      alt="User profile image">
                                 <br>
                             </section>

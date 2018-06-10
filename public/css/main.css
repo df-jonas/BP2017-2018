@@ -369,8 +369,6 @@ a:active {
   background: #4D6A50;
 }
 
-/* Sidebar add button */
-
 /* Multistep navigation buttons */
 
 fieldset input.next,
@@ -436,7 +434,6 @@ fieldset input.submit {
   padding: 2%;
   padding-left: 4%;
   padding-right: 4%;
-  line-height: .5em;
   text-align: center;
   cursor: pointer;
 }

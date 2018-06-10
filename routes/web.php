@@ -82,8 +82,11 @@
             Route::post('/tutoring/tutee/new', 'TutoringController@newtuteepost');
             Route::get('/tutoring/requests', 'TutoringController@requests')->name('tutoring-requests');
             Route::get('/tutoring/accept/{tutee_id}', 'TutoringController@accept')->name('tutoring-accept');
+            Route::get('/tutoring/stop/{session_id}', 'TutoringController@stop')->name('tutoring-stop');
             Route::get('/tutoring/{id}/messages', 'TutoringController@messages')->name('tutoring-messages');
             Route::get('/tutoring/{id}/planning', 'TutoringController@planning')->name('tutoring-planning');
+            Route::post('/tutoring/{tutoringsession_id}/chat', 'TutoringController@addchatasync')->name('tutoring-add-chat');
+
 
             /** Peer Assessment */
             Route::get('/assessment', 'AssessmentController@index')->name('assessment-index');
@@ -95,7 +98,6 @@
             Route::get('/assessment/{assessment_id}/{group_id}/{user_id}', 'AssessmentController@individualdetail')->name('assessment-docent-individual');
 
             /** Profile */
-            Route::get('/profile', 'ProfileController@index')->name('profile-index');
             Route::get('/profile/settings', 'ProfileController@settings')->name('profile-settings');
             Route::post('/profile/update', 'ProfileController@updateprofilepost')->name('profile-update');
             Route::post('/profile/close', 'ProfileController@closeprofilepost')->name('profile-close');
@@ -105,6 +107,7 @@
             Route::get('/profile/downloads', 'ProfileController@downloads')->name('profile-downloads');
             Route::get('/profile/uploads', 'ProfileController@uploads')->name('profile-uploads');
             Route::get('/profile/notifications', 'ProfileController@notifications')->name('profile-notifications');
+            Route::get('/profile/{id}', 'ProfileController@index')->name('profile-index');
 
             /** Canvas routes */
             Route::get('/canvas/connect', 'CanvasController@connect')->name('canvas-login');
@@ -122,6 +125,9 @@
 
             /** Admin dashboard */
             Route::get('/admin', 'AdminController@index')->name('admin-index');
+            Route::get('/admin/courses', 'AdminController@courses')->name('admin-courses');
+            Route::get('/admin/groups', 'AdminController@groups')->name('admin-groups');
+            Route::get('/admin/stats', 'AdminController@stats')->name('admin-stats');
         });
     });
 }

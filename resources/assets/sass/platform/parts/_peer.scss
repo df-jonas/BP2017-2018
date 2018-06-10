@@ -16,6 +16,8 @@ table.assessment {
     input {
       height: 30px;
       width: 120px;
+      padding: 0;
+      text-align: center;
     }
 
     a{
@@ -41,9 +43,8 @@ table.assessment {
     img {
       width: 32px;
       height: 32px;
-      float: right;
       margin: 5px 32px 0px 0px;
-
+      float: left;
     }
     input {
       border: none;

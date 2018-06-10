@@ -28,8 +28,7 @@
                 <header><a class="header-title"><i class="fa fa-search"></i> Zoeken</a></header>
                 <div class="inner-addon left-addon">
                     <!--<i class="glyphicon glyphicon-search"></i>-->
-                    <input type="text" id="search" name="search" class="form-control filterlistener"
-                           placeholder="zoekterm"/>
+                    <input type="text" id="search" name="search" class="form-control filterlistener" placeholder="zoekterm"/>
                 </div>
             </section>
             <!-- end Search form -->
@@ -40,7 +39,8 @@
                     @foreach($myposts as $mypost)
                         <div class="row flex">
                             <section class="icon col-lg-2 col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . $mypost->user->image )}}" class="account-img round-img" alt="User profile image">
+                                <a href="{{$mypost->user->url()}}" class="profile-url"></a>
+                                <a href="{{ $mypost->user->url() }}" class="profile-url"><img src="{{ asset('img/avatars/' . $mypost->user->image )}}" class="account-img round-img" alt="User profile image"></a>
                             </section>
                             <section class="col-lg-8 col-md-8 col-xs-8">
                                 <h2 class="item-title no-margin"><a href="{{ $mypost->generateurl() }}">{{ $mypost->title }}</a></h2>
@@ -71,7 +71,7 @@
                                 <div class="padding">
                                     <div class="row flex">
                                         <section class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
-                                            <img src="{{ asset('img/avatars/' . $post->user->image) }}" class="group-img round-img" alt="User profile picture">
+                                            <a href="{{ $post->user->url() }}" class="profile-url"><img src="{{ asset('img/avatars/' . $post->user->image) }}" class="group-img round-img" alt="User profile picture"></a>
                                         </section>
                                         <section class="col-lg-5 col-md-5 col-sm-7 col-xs-10">
                                             <h2 class="item-title no-margin"><a href="{{ $post->generateurl() }}">{{ $post->title }}</a>
@@ -88,7 +88,7 @@
                                         <section class="info hide-mobile col-lg-6 col-md-6 col-sm-4 col-xs-12" style="text-align: right;">
                                             <h6>{{ $post->postcreated() }}</h6>
                                             <h6>door
-                                                <span>{{ $post->user->first_name }} {{ $post->user->last_name }}</span>
+                                                <span> <a href="{{ $post->user->url() }}" class="profile-url">{{ $post->user->first_name }} {{ $post->user->last_name }}</a></span>
                                             </h6>
                                         </section>
                                     </div>

@@ -18,7 +18,7 @@
                     @foreach($userdownloads as $userdownload)
                         <div class="row flex">
                             <div class="icon col-lg-2 col-md-2 col-xs-2">
-                                <img src="{{ asset('img/avatars/' . $userdownload->user->image )}}" class="account-img round-img" alt="User profile image">
+                                <a href="{{ $userdownload->user->url() }}"><img src="{{ asset('img/avatars/' . $userdownload->user->image )}}" class="account-img round-img" alt="User profile image"></a>
                             </div>
                             <div class="col-lg-10 col-md-8 col-xs-8">
                                 <h2 class="item-title col-xs-12 no-padding">
@@ -44,9 +44,11 @@
                         <div class="col-xs-12">
                             <section class="col-lg-10 col-md-9 col-sm-9 col-xs-7 no-padding">
                                 <div class="table">
-                                    <div style="display: table-cell; width: 32px"><img src="{{ asset('img/avatars/' . $file->user->image) }}" class="account-img round-img" alt="User profile image"></div>
+                                    <div style="display: table-cell; width: 32px">
+                                        <a href="{{ $file->user->url() }}" class="profile-url"><img src="{{ asset('img/avatars/' . $file->user->image) }}" class="account-img round-img" alt="User profile image"></a>
+                                    </div>
                                     <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 style="margin: 0">{{ $file->user->first_name }} {{ $file->user->last_name }}</h6>
+                                        <a href="{{ $file->user->url() }}" class="profile-url"><h6 style="margin: 0">{{ $file->user->first_name }} {{ $file->user->last_name }}</h6></a>
                                         <h6 style="margin: 5px 0">{{ $file->humantimestamp() }}</h6>
                                     </div>
                                 </div>
@@ -89,7 +91,7 @@
                             </div>
                         </section>
                         <div class="form-group col-xs-12" style="margin-top: 2em">
-                            <a href="{{ $file->downloadUrl() }}" target="_blank"><input type="button" class="download-button next col-lg-2  col-sm-4 col-xs-12" value="Download"></a>
+                            <a href="{{ $file->downloadUrl() }}" target="_blank"><input type="button" class="download-button col-lg-2  col-sm-4 col-xs-12" value="Download"></a>
                         </div>
                     </section>
                 </article>

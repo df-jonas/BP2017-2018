@@ -109,23 +109,21 @@
 
                     <div class="form-group clearfix col-xs-12">
                         <label for="password_confirmation">Wachtwoord bevestigen</label>
-                        <input type="password" class="form-control col-lg-6" id="password_confirmation"
-                               name="password_confirmation" aria-describedby="last_nameHelp" required>
+                        <input type="password" class="form-control col-lg-6" id="password_confirmation" name="password_confirmation" aria-describedby="last_nameHelp" required>
                     </div>
 
 
                     <div class="form-group clearfix col-xs-12">
                         <label class="checkbox-container remember col-xs-12">
                             <input type="checkbox" name="tnc" value="{{ old('tnc', 'on') }}">Ik aanvaard de
-                            <a href="{{route('website-terms')}}" target="_blank" class="form-check-input">algemene
-                                voorwaarden</a>
+                            <a href="{{route('website-terms')}}" target="_blank" class="form-check-input">algemene voorwaarden</a>
                             <span class="checkmark"></span>
                         </label>
                     </div>
 
 
                     <div class="col-xs-12">
-                        <input class="action-button login next col-xs-12" name="next" type="button" value="Volgende">
+                        <input class="action-button login prev col-xs-12" name="prev" type="button" value="Vorige">
                         <input class="action-button login submit col-xs-12" type="submit" value="Voltooien">
                     </div>
 
