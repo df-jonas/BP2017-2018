@@ -16,7 +16,7 @@ $(document).ready(function () {
                         '<span>now</span></div></div>' +
                         '<p>' + json.comment.content + '</p></div></div>';
                     $('#messages').prepend(value);
-                    $('#comment_count').text(json.comments);
+                    $('#comment_count').text(json.count);
                 }
             });
         }

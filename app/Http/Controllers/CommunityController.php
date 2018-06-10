@@ -155,7 +155,7 @@ class CommunityController extends Controller
 
         return response()->json(['comment' => Comment::query()->where('id', '=', $comment->id)->with(['user' => function ($query) {
             $query->select('id', 'first_name', 'last_name', 'image');
-        }])->firstOrFail(), 'comments' => Comment::query()->where('post_id', '=', $post_id)->count()]);
+        }])->firstOrFail(), 'count' => Comment::query()->where('post_id', '=', $post_id)->count()]);
     }
 
     public function ajaxFilter(Request $request)

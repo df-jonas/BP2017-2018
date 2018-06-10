@@ -127,6 +127,9 @@
 
             /** Admin dashboard */
             Route::get('/admin', 'AdminController@index')->name('admin-index');
+            Route::get('/admin/courses', 'AdminController@courses')->name('admin-courses');
+            Route::get('/admin/groups', 'AdminController@groups')->name('admin-groups');
+            Route::get('/admin/stats', 'AdminController@stats')->name('admin-stats');
         });
     });
 }
