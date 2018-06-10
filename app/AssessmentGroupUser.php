@@ -80,6 +80,9 @@ class AssessmentGroupUser extends Model
             }
         }
 
+        if ($skillcount < 1)
+            return "-";
+
         $size = sizeof($temp);
         $PA_totalscore = ($size > 2) ? (array_sum($temp) - min($temp) - max($temp)) : (array_sum($temp));
         $PA_factorscore = ($size > 2) ? ($PA_totalscore / ($size - 2)) : ($PA_totalscore);

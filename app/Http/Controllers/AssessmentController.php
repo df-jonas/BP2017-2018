@@ -103,6 +103,7 @@ class AssessmentController extends Controller
             $assessment->name = $request->title;
             $assessment->end = $request->end;
             $assessment->retry = 1;
+            $assessment->instructions = $request->explanation;
             $assessment->expected_time = $request->time;
             $assessment->docent_id = Auth::id();
             $assessment->course_id = $request->course_id;

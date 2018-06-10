@@ -10,7 +10,7 @@ $(document).ready(function () {
                     newhtml = '<ul class="vakken-nieuw"><h2 class="settings-title">Zoekresultaten:</h2><br>';
                     $.each(json, function (key, value) {
                         newhtml += '<li>' +
-                            '' + value.name + '<span><a href="/p/profile/course/add/' + value.id + '"><input type="button" class="download-button" value="Toevoegen"></a></span>';
+                            '' + value.name + '<span><a href="/p/profile/course/add/' + value.id + '"><button class="download-button">Toevoegen</button></a></span>';
                         newhtml += '</li>';
                     });
                 } else {

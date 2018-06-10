@@ -141,7 +141,7 @@ class ProfileController extends Controller
 
         if (!empty($request->account_close)) {
             Mail::send('mail.forms.account-delete', ['firstname' => $firstname, 'lastname' => $lastname, 'email' => $email], function ($message) use ($name, $email) {
-                $message->from($email, $name);
+                $message->replyTo($email, $name);
                 $message->subject("Unihelp - aanvraag tot account verwijdering");
                 $message->to('dt.unihelp@ehb.be');
             });
