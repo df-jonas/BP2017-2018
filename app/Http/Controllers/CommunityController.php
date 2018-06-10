@@ -92,7 +92,6 @@ class CommunityController extends Controller
             ->where("id", "=", $post_id)
             ->firstOrFail();
 
-
         if ($post->group->url != $group_id)
             abort(404, "Deze post werd niet gevonden.");
 
@@ -154,9 +153,9 @@ class CommunityController extends Controller
 
         NotificationHelper::create($from_id, $to_id, $type, $url, $text);
 
-        return response()->json(Comment::query()->where('id', '=', $comment->id)->with(['user' => function ($query) {
+        return response()->json(['comment' => Comment::query()->where('id', '=', $comment->id)->with(['user' => function ($query) {
             $query->select('id', 'first_name', 'last_name', 'image');
-        }])->firstOrFail());
+        }])->firstOrFail(), 'comments' => Comment::query()->where('post_id', '=', $post_id)->count()]);
     }
 
     public function ajaxFilter(Request $request)
@@ -200,6 +199,7 @@ class CommunityController extends Controller
                 ->first();
             if ($vote != null) {
                 $vote->delete();
+
             } else {
                 $vote = new Vote();
                 $vote->value = true;
@@ -215,6 +215,8 @@ class CommunityController extends Controller
 
                 NotificationHelper::create($from_id, $to_id, $type, $url, $text);
             }
+            return response()->json(['votes' => Vote::query()->where('post_id', '=', $post_id)->count()]);
+
         }
     }
 }

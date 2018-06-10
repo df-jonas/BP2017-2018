@@ -83,8 +83,8 @@
                                 <!-- count box -->
                                 <section class="info" style="margin-top: 5%">
                                     <ul>
-                                        <li>Reacties: {{ $post->commentcount() }} </li>
-                                        <li>Likes: {{ $post->votesum() }}</li>
+                                        <li>Reacties: <span id="comment_count">{{ $post->commentcount() }}</span></li>
+                                        <li>Likes: <span id="vote_count">{{ $post->votesum() }}</span></li>
                                     </ul>
                                 </section>
                                 <!-- count box -->
