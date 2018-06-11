@@ -21,15 +21,10 @@ footer {
     }
   }
   .module {
+    padding-left: 0;
     ul {
       padding-left: 0;
       list-style: none;
-      li {
-        height: 24px;
-        a {
-          font-size: 13px;
-        }
-      }
     }
   }
   a {

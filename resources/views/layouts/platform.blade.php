@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.css') }}">
     <!-- own css -->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-<!--<link rel="stylesheet" href="{{ asset('css/themes/default.css') }}">-->
+    <!--<link rel="stylesheet" href="{{ asset('css/themes/default.css') }}">-->
     <link rel="stylesheet" href="{{ asset('css/themes/' .  Auth::user()->preference->theme . '.css' ) }}">
     <!-- Slicknav -->
     <link rel="stylesheet" href="{{ URL::asset('css/slicknav.css') }}">
@@ -21,9 +21,6 @@
     <!-- font -->
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
-    <!-- TinyMCE editor -->
-    <!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({selector: 'textarea'});</script>-->
     <!-- calendar -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/zabuto_calendar.min.css') }}"/>
     <!-- BugHerd script -->
@@ -60,11 +57,9 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47689548-7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
-
         gtag('js', new Date());
         gtag('config', 'UA-47689548-7');
     </script>

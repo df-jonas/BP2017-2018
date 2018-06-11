@@ -1,19 +1,18 @@
 @extends('layouts.website')
-
+@section('pagetitle', 'Over UniHelp')
 @section('content')
-@section('pagetitle', 'Over')
 @include('partials.website.header')
 
 <!-- page banner -->
 <section id="innerpage-banner" class="col-xs-12">
     <div class="overlay">
-    <div id="welcome" class="col-xs-12 no-padding">
+    <section id="welcome" class="col-xs-12 no-padding">
         <div class="container">
             <div class="col-md-6 col-md-push-3 col-xs-12 no-padding">
                 <h1>Over UniHelp</h1>
             </div>
         </div>
-    </div>
+    </section>
     </div>
 </section>
 <!-- end page banner -->

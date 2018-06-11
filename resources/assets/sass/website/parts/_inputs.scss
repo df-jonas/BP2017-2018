@@ -1,9 +1,12 @@
 /*FONTS*/
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+
 /*Mixins*/
 @import "../../mixin/link";
 
-/*Custom checkboxes*/
+//geïnspireerd op: https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
+
+/* checkboxes */
 .checkbox-label {
   margin-bottom: 2%;
 }
@@ -30,7 +33,7 @@
   color: $download-button;
 }
 
-/*custom select box*/
+/* select boxes */
 .textdiv {
   input {
     background: transparent;
@@ -67,7 +70,6 @@
 }
 
 label, select {
-  /*font-family: HelveticaNeue;*/
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
@@ -78,12 +80,9 @@ label, select {
   color: #505457;
 }
 
-label {
-  margin-bottom: 5px;
-}
 
-/*Custom checkboxes*/
-/*https://www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
+
+/* Checkboxes */
 
 .checkbox-container {
   display: block;
@@ -97,14 +96,14 @@ label {
   -ms-user-select: none;
   user-select: none;
   text-align: left;
-  /* Hide the browser's default checkbox */
+  /* Checkbox verbergen */
   input {
     position: absolute;
     opacity: 0;
   }
 }
 
-/* Create a custom checkbox */
+/* Nieuwe checkbox */
 .checkmark {
   position: absolute;
   top: 0;
@@ -114,29 +113,26 @@ label {
   background-color: #eee;
 }
 
-/* On mouse-over, add a grey background color */
 .checkbox-container:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
-/* When the checkbox is checked, add a blue background */
 .checkbox-container input:checked ~ .checkmark {
   background-color: $theme-color;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when checked */
+/* Vinke tonen */
 .checkbox-container input:checked ~ .checkmark:after {
   display: block;
 }
 
-/* Style the checkmark/indicator */
+/* Vinkje stylen */
 .checkbox-container .checkmark:after {
   left: 7px;
   top: 3px;
@@ -149,21 +145,23 @@ label {
   transform: rotate(45deg);
 }
 
-/*Multistep form*/
+/* Multistep form */
+
 #msform fieldset {
   border: 0 none;
   border-radius: 3px;
   box-sizing: border-box;
-  /*fieldsets op elkaar stacken*/
+  //fieldsets op elkaar stacken
   position: relative;
 }
 
-/*Alle steps hiden, behalve de eerste*/
+/* Alle steps hiden, behalve de eerste */
+
 #msform fieldset:not(:first-of-type) {
   display: none;
 }
 
-/*steps bar*/
+/* Voortgang */
 
 #progressbar {
   overflow: hidden;
@@ -204,17 +202,16 @@ label {
     &:first-child:after {
       content: none;
     }
-
   }
 }
 
-/*Actieve en voltooide stappen groen kleuren*/
+/* Actieve en voltooide stappen groen kleuren */
 #progressbar li.active:before, #progressbar li.active:after {
   background: $theme-color;
   color: white;
 }
 
-/*Forms*/
+/* Forms */
 .form-group {
   margin-bottom: 20px !important;
   display: block;
@@ -233,11 +230,6 @@ form textarea {
   min-width: 100%;
 }
 
-form.register .form-group {
-  //margin-bottom: 7.5%;
-}
-
-/*Forms*/
 form input, form textarea {
   padding: 15px;
   border: 1px solid #ccc;
@@ -253,17 +245,17 @@ form input[type=submit] {
 
 form label {
   float: left;
+  margin-bottom: 5px;
 }
 
-form .form-group {
-  // margin: 2.5% 0 2.5% 0;
-}
+
+/* Slider balk input */
 
 .sliderdiv {
   input[type=range] {
-    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-    width: 100%; /* Specific width is required for Firefox. */
-    background: transparent; /* Otherwise white in Chrome */
+    -webkit-appearance: none; /* Standaard lider verbergen */
+    width: 100%;
+    background: transparent;
   }
 
   input[type=range]::-webkit-slider-thumb {
@@ -275,7 +267,7 @@ form .form-group {
     border-radius: 0px;
     background: #ffffff;
     cursor: pointer;
-    margin-top: -10px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    margin-top: -10px;
   }
 
   input[type=range]::-moz-range-thumb {
@@ -299,13 +291,13 @@ form .form-group {
   }
 
   input[type=range]:focus {
-    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+    outline: none; /* Doet border weg */
   }
 
   input[type=range]::-ms-track {
     width: 100%;
     cursor: pointer;
-    /* Hides the slider so custom styles can be added */
+    /* Hide standaard slider */
     background: transparent;
     border-color: transparent;
     color: transparent;
@@ -361,12 +353,13 @@ form .form-group {
   }
 }
 
-/*Select2*/
+/* Select2 overrides*/
 .select2-selection {
   border-radius: 0 !important;
   height: auto;
-  padding: 10px 10px 0 10px!important;
+  padding: 10px 10px 0 10px !important;
 }
+
 .select2-selection__choice {
   background-color: $theme-color !important;
   text-align: center;

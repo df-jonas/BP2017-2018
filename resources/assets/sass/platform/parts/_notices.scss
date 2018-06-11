@@ -1,4 +1,4 @@
-/*Notices and go-back*/
+/* Meldingen + go-back */
 .go-back, .message {
   a {
     color: $theme-color;
@@ -14,6 +14,7 @@
   }
 }
 
+/* melding */
 .message {
   color: $unihelp-white;
   background: $theme-color;

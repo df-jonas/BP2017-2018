@@ -102,23 +102,17 @@
     margin-bottom: 0;
     transition: 0.5s ease all;
     left: auto;
-    right: 0!important;
+    right: 0 !important;
     li {
       cursor: pointer;
       height: 50px;
       line-height: 50px;
       border: 1px solid $background-color;
-      &:hover {
-        //background: $theme-color !important;
-        background: $background-color;
-      }
       a {
         line-height: 3em;
         cursor: pointer;
         &:hover {
-          //background: $theme-color !important;
           background: $background-color;
-          //color: $unihelp-white;
         }
       }
 
@@ -149,6 +143,9 @@
   /*Notification dropdown*/
   #notifications-dropdown {
     width: 400px;
+  }
+  .logo {
+    position: absolute;
   }
 }
 
@@ -213,11 +210,6 @@
       color: $theme-color !important;
     }
   }
-}
-
-section.logo {
-  position: absolute;
-  top: 10px;
 }
 
 @media only screen and (max-width: 768px) {

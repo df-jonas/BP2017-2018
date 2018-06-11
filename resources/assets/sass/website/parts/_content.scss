@@ -11,11 +11,7 @@
       font-weight: bold;
       padding-bottom: 0.4em;
     }
-    h1 {
-
-    }
     h2 {
-      text-transform: uppercase;
       color: $theme-color;
       font-size: 20px;
     }
@@ -33,7 +29,6 @@
     }
     margin-bottom: 5em;
   }
-
 }
 
 /*unihelp team member*/
@@ -54,9 +49,6 @@
     line-height: 1.85em;
     font-weight: 500;
   }
-  .left {
-    text-align: right;
-  }
   img {
     position: relative;
     width: 10em;
@@ -73,14 +65,13 @@
 
 /*Home 3 features block*/
 #features {
-  height: auto;
+  //height: auto;
   margin: 5% 0 5% 0;
   .feature {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin: 5% 0 5% 0;
     height: 350px;
     position: relative;
-    .overlay{
+    .overlay {
       background-color: rgba(0, 0, 0, 0.5);
       position: absolute;
       top: 0;
@@ -106,12 +97,9 @@
       right: 0;
       padding: 5px;
       text-align: center;
-      color: lightgray;
       background: $theme-color;
       color: $unihelp-white;
-      //font-weight: bold;
       text-transform: uppercase;
-      text-shadow: 2px 2px 3px rgba(0, 0, 0, .15);
       font-size: 16px;
     }
     a.meer {
@@ -137,22 +125,21 @@
     }
     &:hover {
       transform: scale(1.02);
-      transition: 0.5s ease all;
-      .overlay{
-        background-color: rgba(0, 0, 0, 0.6);
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.7);
       }
       a {
         background: $theme-color;
         color: $unihelp-white;
       }
-      h3{
+      h3 {
         text-decoration: underline;
         text-decoration-style: dotted;
       }
     }
   }
   .promo {
-    margin-top: 2.5%;
+    margin: 3.5% 0 3.5% 0;
     h2 {
       color: #7f8fab;
       margin: 0 auto;
@@ -196,40 +183,39 @@
     list-style: none;
     padding: 0;
     display: table;
-    li{
+    li {
       display: table-cell;
-    }
-    .step {
-      min-height: 200px;
-      margin: 2% 0 2% 0;
-      background: rgba(0, 0, 0, .05);
-      cursor: pointer;
-      h4 {
-        margin-top: 20px;
-        font-size: 16px;
-        color: $theme-color;
-      }
-      p {
-        margin-top: 10px;
-        font-size: 14px;
-        color: #898989;
-        line-height: 1.85em;
-        font-weight: 500;
-      }
-      i {
-        color: $theme-color;
-        font-size: 2em;
-      }
-      &:hover, &.active{
-        background: rgba(0, 0, 0, .1);
+      .step {
+        min-height: 250px;
+        margin: 2% 0 2% 0;
+        background: rgba(0, 0, 0, .05);
         cursor: pointer;
-        //background: red;
+        h4 {
+          margin-top: 20px;
+          font-size: 16px;
+          color: $theme-color;
+        }
+        p {
+          margin-top: 10px;
+          font-size: 14px;
+          color: #898989;
+          line-height: 1.85em;
+          font-weight: 500;
+        }
+        i {
+          color: $theme-color;
+          font-size: 2em;
+        }
+        &:hover, &.active {
+          background: rgba(0, 0, 0, .1);
+          cursor: pointer;
+        }
       }
     }
   }
 }
 
-/*Avout intro*/
+/*About intro*/
 #intro {
   margin: 5% 0 5% 0;
   h2, h4 {
@@ -238,6 +224,31 @@
   h2 {
     font-size: 28px;
     font-weight: 500;
+  }
+}
+
+/*Quotes*/
+.quote {
+  font-family: Georgia, sans-serif;
+  font-size: 22px;
+  color: #727a87;
+  margin: 0 auto;
+  display: inline-block;
+  max-width: 900px;
+  line-height: 2.2em;
+  font-weight: 300;
+  position: relative;
+  &:before {
+    content: '\f10d';
+    font-family: FontAwesome;
+    font-size: 2em;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: -50px;
+    top: 10px;
+    opacity: .7;
+    color: $theme-color;
   }
 }
 
@@ -273,8 +284,8 @@
       height: 25px;
       margin-left: 5px;
     }
-    &:hover{
-      &:after{
+    &:hover {
+      &:after {
         color: $theme-color;
         font-weight: 800;
       }
@@ -286,8 +297,8 @@
 .call-to-action {
   background: $theme-color;
   color: $unihelp-white;
-  height: auto;
   position: relative;
+  padding: 2%;
   .image {
     padding: 2.5%;
     img {
@@ -295,11 +306,10 @@
       right: 125px;
       top: -35px;
       object-fit: contain;
-      -webkit-transform: rotate(-5deg);
-      transform: rotate(-3.5deg);
+      -webkit-transform: rotate(-7deg);
+      transform: rotate(-7deg);
       height: 400px;
     }
-
   }
   .text {
     padding: 2.5%;
@@ -311,19 +321,13 @@
       margin-top: 0;
     }
     p {
-      color: $unihelp-white;
+      color: inherit;
       font-size: 18px;
-      line-height: 24px;
-      margin-top: 16px;
-      margin-bottom: 20px;
-      width: calc(100% - 150px);
     }
   }
-
   button {
     background-color: $unihelp-white !important;
     color: $theme-color !important;
-    margin-bottom: 1em;
     &:hover {
       background: lightgray !important;
       color: $theme-color !important;
@@ -334,7 +338,7 @@
 /*Newletter block*/
 #newsletter {
   background: $unihelp-white;
-  padding: 2%;
+  padding: 5%;
   h3 {
     color: $theme-color;
     font-weight: 600;
@@ -342,7 +346,6 @@
     margin-bottom: 5px;
     letter-spacing: -.02em;
   }
-
   p {
     font-size: 18px;
     font-weight: 600;
@@ -364,7 +367,7 @@
     }
     #mc-embedded-subscribe {
       background: $theme-color;
-      &:hover{
+      &:hover {
         background: $unihelp-asphalt;
       }
     }
@@ -397,39 +400,3 @@
   }
 }
 
-/*Beta notice box */
-.beta-notice {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top:0;
-  background: $secondary-color;
-  padding: 5px;
-  color: $unihelp-white;
-  text-align: center;
-}
-
-/*Quotes*/
-.quote {
-  font-family: Georgia, sans-serif;
-  font-size: 22px;
-  color: #727a87;
-  margin: 0 auto;
-  display: inline-block;
-  max-width: 900px;
-  line-height: 2.2em;
-  font-weight: 300;
-  position: relative;
-  &:before {
-    content: '\f10d';
-    font-family: FontAwesome;
-    font-size: 2em;
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    left: -50px;
-    top: 10px;
-    opacity: .7;
-    color: $theme-color;
-  }
-}

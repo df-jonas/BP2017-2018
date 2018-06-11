@@ -1,5 +1,4 @@
 @extends('layouts.website')
-
 @section('pagetitle', 'Een studentenplatform om U tegen te zeggen.')
 @section('content')
 
@@ -42,47 +41,47 @@
 
 <!-- features -->
 <section id="features" class="padding clearfix col-xs-12">
-    <section class="container no-padding">
+    <div class="container no-padding">
         <a href="{{route('website-how')}}">
             <div class="col-md-4 col-xs-12">
-                <div class="feature no-padding col-xs-12">
+                <section class="feature no-padding col-xs-12">
                     <div class="overlay clearfix">
                     </div>
                     <img src="img/features/1.jpg" alt="Tutoring">
                     <p>Tutoring</p>
                     <h3>Vind een geschikte <br> tutor.</h3>
                     <a class="meer" href="{{route('website-how')}}">Ga van start</a>
-                </div>
+                </section>
             </div>
         </a>
         <a href="{{route('website-how')}}">
-            <section class="col-md-4 col-xs-12">
-                <div class="feature no-padding col-xs-12">
+            <div class="col-md-4 col-xs-12">
+                <section class="feature no-padding col-xs-12">
                     <div class="overlay clearfix">
                     </div>
                     <img src="img/features/5.jpg" alt="Bestanden delen">
                     <p>Bestanden delen</p>
                     <h3>Download de perfecte <br> samenvattingen.</h3>
                     <a class="meer" href="{{route('website-how')}}">Ga van start</a>
-                </div>
-            </section>
+                </section>
+            </div>
         </a>
         <a href="{{route('website-how')}}">
-            <section class="col-md-4 col-xs-12">
-                <div class="feature no-padding col-xs-12">
+            <div class="col-md-4 col-xs-12">
+                <section class="feature no-padding col-xs-12">
                     <div class="overlay clearfix">
                     </div>
                     <img src="img/features/4.jpg" alt="Community">
                     <p>Community</p>
                     <h3>Blijf altijd op de<br> hoogte.</h3>
                     <a class="meer" href="{{route('website-how')}}">Ga van start</a>
-                </div>
-            </section>
+                </section>
+            </div>
         </a>
-    </section>
-    <div class="promo">
-        <h2>Bezoek nu ons platform en maak als student gebruik van alle <strong>gratis functionaliteiten.</strong></h2>
     </div>
+    <section class="promo">
+        <h2>Bezoek nu ons platform en maak als student gebruik van alle <strong>gratis functionaliteiten.</strong></h2>
+    </section>
 </section>
 <!-- end features -->
 

@@ -15,7 +15,7 @@
                     <li><span>4</span></li>
                 </ul>
             </section>
-            <a href="{{route('website-index')}}"><img class="logo" src="img/logo/favicon.png"></a>
+
             <!-- multistep form -->
             <form id="msform" class="register clearfix col-xs-12" method="post" enctype="multipart/form-data"
                   action="{{ route('register') }}">

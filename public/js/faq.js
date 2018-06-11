@@ -1,13 +1,13 @@
 $(document).ready(function () {
-    //Get all accordion elements
+    //accs
     var accordions = $('.accordion');
-    //Loop through elements
+    //accordion loop
     $.each(accordions, function (i) {
         $(this).click(function () {
             $(this).toggleClass('active');
-            //Panel parent element
+            //parent element
             var panel = $(this).next();
-            //Open-close
+            //Open-sluit
             if (panel.css('display') === 'block') {
                 panel.hide("slow", function () {
 
@@ -21,5 +21,6 @@ $(document).ready(function () {
         });
     });
 });
+//geïnspireerd op: https://codepen.io/jonhyleo/pen/zjmRqQ?page=3
 
 

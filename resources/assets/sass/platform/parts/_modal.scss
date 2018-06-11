@@ -1,19 +1,17 @@
-
-/*Bootstrap modals*/
-.modal{
+/* Bootstrap modals override + modal*/
+.modal {
   .modal-content {
     border-radius: 0;
   }
   .modal-header {
     border-bottom: none !important;
   }
-  .modal-body{
-    padding: 0!important;
+  .modal-body {
+    padding: 0 !important;
   }
   h4 {
     color: $theme-color;
   }
-
   .keuze {
     text-align: center;
     cursor: pointer;
@@ -37,7 +35,6 @@
       background-color: $secondary-color;
     }
   }
-
 }
 
 .modal.in .modal-dialog {

@@ -42,6 +42,7 @@
 <body class="innerpage">
 <div class="wrap">
 @yield('content')
+
 @include('cookieConsent::index')
 
 <!-- jquery -->
@@ -73,6 +74,7 @@
 
     gtag('config', 'UA-47689548-7');
 </script>
+    @yield('scripts')
 </div>
 </body>
 </html>

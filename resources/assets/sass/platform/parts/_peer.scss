@@ -156,13 +156,12 @@ table.assessment {
 }
 
 .content.assessment {
-
   .assessment-group {
     height: 56px;
     background-color: #f5f7f5;
     padding: 15px 0;
     margin: 2em 0;
-    .group-title {
+    .group-title, .info {
       font-family: Raleway;
       font-size: 16.5px;
       font-weight: 500;
@@ -174,14 +173,9 @@ table.assessment {
       margin: 0;
     }
     .info {
-      font-family: Raleway;
       font-size: 11px;
       font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
       line-height: 2.5;
-      letter-spacing: normal;
-      text-align: left;
       color: #505457;
     }
     i {
@@ -228,7 +222,6 @@ table.assessment {
       .id {
         height: 100%;
         background-color: #f5f7f5;
-        font-family: Raleway;
         font-size: 18.5px;
         font-weight: 500;
         font-style: normal;
@@ -243,7 +236,6 @@ table.assessment {
         height: 100%;
       }
       .assessment-title {
-        font-family: Raleway;
         font-size: 15px;
         font-weight: normal;
         font-style: normal;
@@ -254,7 +246,6 @@ table.assessment {
         color: #505457;
       }
       .assessment-submissions {
-        font-family: Raleway;
         font-size: 13px;
         font-weight: 300;
         font-style: normal;
@@ -268,7 +259,6 @@ table.assessment {
         line-height: 3;
         height: 100%;
         h4 {
-          font-family: Raleway;
           font-size: 13px;
           font-weight: 300;
           font-style: normal;
@@ -284,7 +274,6 @@ table.assessment {
         height: 100%;
         border-left: solid 0.5px #4d6a50;
         i {
-          font-family: FontAwesome;
           font-size: 14.5px;
           font-weight: normal;
           font-style: normal;
@@ -294,7 +283,6 @@ table.assessment {
           color: #8a7e72;
           margin: 0 3% 0 3%;
         }
-
       }
     }
   }
