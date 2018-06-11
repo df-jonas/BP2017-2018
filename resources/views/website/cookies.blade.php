@@ -1,9 +1,9 @@
 @extends('layouts.innerpage')
-@section('pagetitle', 'Cookie policy')
+@section('pagetitle', 'Cookie beleid')
 @section('content')
     @include('partials.website.header')
     @include('partials.website.breadcrumb')
-    <div id="main-content" class="padding col-md-8 col-md-push-2 col-sm-10 col-sm-push-1 col-xs-12">
+    <section id="main-content" class="padding col-md-8 col-md-push-2 col-sm-10 col-sm-push-1 col-xs-12">
         <br>
         <h1>Cookie policy</h1>
         <p>Cookie policy voor UniHelp, eigenaar van www.unihelp.be</p>
@@ -47,6 +47,8 @@
             Staten. Google stelt zich te houden aan de Privacy Shield principles en is aangesloten bij het Privacy
             Shield-programma van het Amerikaanse Ministerie van Handel. Dit houdt in dat er sprake is van een passend
             beschermingsniveau voor de verwerking van eventuele persoonsgegevens.</p>
+        <h2>HotJar</h2>
+        <p>HotJar wordt enkel gebruikt in de bèta omgeving om analyses te maken van gebruikers. Hiermee worden anonieme heatmaps gegenereerd. Het gebruik van adblockers zal HotJar niet toelaten om deze data te verzamelen.</p>
         <h2>Recht op inzage en correctie</h2>
         <p>Recht op inzage en correctie of verwijdering van jouw gegevens
             Je hebt het recht om te vragen om inzage in en correctie of verwijdering van jouw gegevens. Zie hiervoor
@@ -75,7 +77,7 @@
         </ul>
         </p>
         <br>
-    </div>
+    </section>
     <!-- footer -->
     @include('partials.footer')
     <!-- end footer -->

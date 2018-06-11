@@ -15,25 +15,21 @@
     &:hover {
       background: $unihelp-grey;
       color: $unihelp-white;
-
     }
   }
-
-  &.canvas {
-    background: $unihelp-grey;
-    color: $unihelp-white;
-    /*
-    &:hover {
-      background: $theme-color;
+  /*
+    &.canvas {
+      background: $unihelp-grey;
       color: $unihelp-white;
-      -webkit-transition: background-color 100ms linear;
-      -ms-transition: background-color 100ms linear;
-      transition: background-color 100ms linear;
-    }
-    */
+      &:hover {
+        background: $theme-color;
+        color: $unihelp-white;
+        -webkit-transition: background-color 100ms linear;
+        -ms-transition: background-color 100ms linear;
+        transition: background-color 100ms linear;
+      }
   }
-
-
+    */
 }
 
 .form-button {

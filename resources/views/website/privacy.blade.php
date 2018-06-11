@@ -1,10 +1,10 @@
 @extends('layouts.innerpage')
-@section('pagetitle', 'Privacy policy')
+@section('pagetitle', 'Privacy beleid')
 @section('content')
     @include('partials.website.header')
     @include('partials.website.breadcrumb')
 
-    <div id="main-content" class="padding col-md-8 col-md-push-2 col-sm-10 col-sm-push-1 col-xs-12">
+    <section id="main-content" class="padding col-md-8 col-md-push-2 col-sm-10 col-sm-push-1 col-xs-12">
         <h1>Privacy policy </h1>
         <p>Privacy policy voor UniHelp, eigenaar van www.unihelp.be</p>
         <h2>Waarborgen Privacy</h2>
@@ -32,7 +32,7 @@
             pagina’s het goed doen op de website. Ook houden we bij welke informatie de browser deelt. Meer informatie
             is terug te vinden in onze <a href="{{route('website-cookies')}}">Cookie policy</a>.</p>
         <br/>
-    </div>
+    </section>
 
     <!-- footer -->
     @include('partials.footer')

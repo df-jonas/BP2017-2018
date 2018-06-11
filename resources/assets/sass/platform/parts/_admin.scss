@@ -13,6 +13,7 @@
     }
   }
 }
+
 .user-list, .course-list, .group-list {
   list-style-type: none;
   padding-left: 0;
@@ -39,14 +40,14 @@
         color: $theme-color;
       }
     }
-    span.delete{
+    span.delete {
       background: $unihelp-asphalt;
     }
-    &.new{
+    &.new {
       text-align: center;
-      a{
+      a {
         color: $theme-color;
-        &:hover{
+        &:hover {
           color: $unihelp-asphalt;
         }
       }

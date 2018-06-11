@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.website.header')
     @include('partials.website.breadcrumb')
-    <div id="main-content" class="padding col-md-8 col-md-push-2 col-sm-10 col-sm-push-1 col-xs-12">
+    <section id="main-content" class="padding col-md-8 col-md-push-2 col-sm-10 col-sm-push-1 col-xs-12">
         <h1>Algemene voorwaarden</h1>
         <p>Op deze pagina vindt u de disclaimer van www.unihelp.be , zoals deze beschikbaar is gesteld door UniHelp. In
             deze disclaimer geven wij aan onder welk voorbehoud wij de informatie op onze website aan u aanbieden.
@@ -37,7 +37,7 @@
         <p>Mocht deze disclaimer wijzigen, dan vindt u de meest recente versie van de disclaimer van www.unihelp.be op
             deze pagina.</p>
         <br/>
-    </div>
+    </section>
 
     <!-- footer -->
     @include('partials.footer')

@@ -4,7 +4,7 @@
 
 /*Mixins*/
 
-/*Custom checkboxes*/
+/* checkboxes */
 
 .checkbox-label {
   margin-bottom: 2%;
@@ -32,7 +32,7 @@
   color: #505457;
 }
 
-/*custom select box*/
+/* select boxes */
 
 .textdiv input {
   background: transparent;
@@ -71,7 +71,6 @@
 
 label,
 select {
-  /*font-family: HelveticaNeue;*/
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
@@ -82,13 +81,7 @@ select {
   color: #505457;
 }
 
-label {
-  margin-bottom: 5px;
-}
-
-/*Custom checkboxes*/
-
-/*https://www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
+/* Checkboxes */
 
 .checkbox-container {
   display: block;
@@ -102,7 +95,7 @@ label {
   -ms-user-select: none;
   user-select: none;
   text-align: left;
-  /* Hide the browser's default checkbox */
+  /* Checkbox verbergen */
 }
 
 .checkbox-container input {
@@ -110,7 +103,7 @@ label {
   opacity: 0;
 }
 
-/* Create a custom checkbox */
+/* Nieuwe checkbox */
 
 .checkmark {
   position: absolute;
@@ -121,19 +114,13 @@ label {
   background-color: #eee;
 }
 
-/* On mouse-over, add a grey background color */
-
 .checkbox-container:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
-/* When the checkbox is checked, add a blue background */
-
 .checkbox-container input:checked ~ .checkmark {
   background-color: #505457;
 }
-
-/* Create the checkmark/indicator (hidden when not checked) */
 
 .checkmark:after {
   content: "";
@@ -141,13 +128,13 @@ label {
   display: none;
 }
 
-/* Show the checkmark when checked */
+/* Vinke tonen */
 
 .checkbox-container input:checked ~ .checkmark:after {
   display: block;
 }
 
-/* Style the checkmark/indicator */
+/* Vinkje stylen */
 
 .checkbox-container .checkmark:after {
   left: 7px;
@@ -160,24 +147,23 @@ label {
   transform: rotate(45deg);
 }
 
-/*Multistep form*/
+/* Multistep form */
 
 #msform fieldset {
   border: 0 none;
   border-radius: 3px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  /*fieldsets op elkaar stacken*/
   position: relative;
 }
 
-/*Alle steps hiden, behalve de eerste*/
+/* Alle steps hiden, behalve de eerste */
 
 #msform fieldset:not(:first-of-type) {
   display: none;
 }
 
-/*steps bar*/
+/* Voortgang */
 
 #progressbar {
   overflow: hidden;
@@ -225,7 +211,7 @@ label {
   content: none;
 }
 
-/*Actieve en voltooide stappen groen kleuren*/
+/* Actieve en voltooide stappen groen kleuren */
 
 #progressbar li.active:before,
 #progressbar li.active:after {
@@ -233,7 +219,7 @@ label {
   color: white;
 }
 
-/*Forms*/
+/* Forms */
 
 .form-group {
   margin-bottom: 20px !important;
@@ -256,8 +242,6 @@ form textarea {
   min-width: 100%;
 }
 
-/*Forms*/
-
 form input,
 form textarea {
   padding: 15px;
@@ -275,15 +259,16 @@ form input[type=submit] {
 
 form label {
   float: left;
+  margin-bottom: 5px;
 }
+
+/* Slider balk input */
 
 .sliderdiv input[type=range] {
   -webkit-appearance: none;
-  /* Hides the slider so that custom slider can be made */
+  /* Standaard lider verbergen */
   width: 100%;
-  /* Specific width is required for Firefox. */
   background: transparent;
-  /* Otherwise white in Chrome */
 }
 
 .sliderdiv input[type=range]::-webkit-slider-thumb {
@@ -297,7 +282,6 @@ form label {
   background: #ffffff;
   cursor: pointer;
   margin-top: -10px;
-  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
 }
 
 .sliderdiv input[type=range]::-moz-range-thumb {
@@ -322,13 +306,13 @@ form label {
 
 .sliderdiv input[type=range]:focus {
   outline: none;
-  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  /* Doet border weg */
 }
 
 .sliderdiv input[type=range]::-ms-track {
   width: 100%;
   cursor: pointer;
-  /* Hides the slider so custom styles can be added */
+  /* Hide standaard slider */
   background: transparent;
   border-color: transparent;
   color: transparent;
@@ -388,7 +372,7 @@ form label {
   background: #505457;
 }
 
-/*Select2*/
+/* Select2 overrides*/
 
 .select2-selection {
   border-radius: 0 !important;
@@ -801,10 +785,11 @@ ul.pagination li.active .page-link {
   color: #ffffff;
 }
 
-/*Tutoring*/
+/* Tutoring */
 
 .table.tutoring {
   display: table;
+  margin-bottom: 0;
 }
 
 .table.tutoring .sidebar {
@@ -829,14 +814,8 @@ ul.pagination li.active .page-link {
 .table.tutoring .sidebar .people-list li:hover,
 .table.tutoring .sidebar .people-list li.people-list-active {
   cursor: pointer;
-  background: #ffffff !important;
+  background: #ffffff;
   color: #505457;
-}
-
-.table.tutoring .sidebar .people-list li.load-more {
-  text-align: center;
-  height: 55px;
-  line-height: 85px;
 }
 
 .table.tutoring .sidebar .people-list li .picture {
@@ -872,7 +851,6 @@ ul.pagination li.active .page-link {
   color: #ffffff;
 }
 
-.table.tutoring .sidebar .people-list li.load-more:hover,
 .table.tutoring .sidebar .people-list li.new:hover {
   background: #4D6A50;
   color: #ffffff;
@@ -891,13 +869,6 @@ ul.pagination li.active .page-link {
   padding-left: 0;
   position: relative;
   left: 0;
-}
-
-.table.tutoring .content .item {
-  /*
-      position: absolute;
-      height: 100%;
-      */
 }
 
 #tutoringcontent article.col-lg-4:nth-of-type(1) {
@@ -966,11 +937,6 @@ ul.pagination li.active .page-link {
 
 .overview-calendar .reminder p {
   color: #ffffff;
-}
-
-.blurry-text {
-  color: transparent;
-  text-shadow: 0 0 5px white;
 }
 
 table.assessment {
@@ -1165,7 +1131,8 @@ table.assessment.individual th.left {
   margin: 2em 0;
 }
 
-.content.assessment .assessment-group .group-title {
+.content.assessment .assessment-group .group-title,
+.content.assessment .assessment-group .info {
   font-family: Raleway;
   font-size: 16.5px;
   font-weight: 500;
@@ -1178,14 +1145,9 @@ table.assessment.individual th.left {
 }
 
 .content.assessment .assessment-group .info {
-  font-family: Raleway;
   font-size: 11px;
   font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
   line-height: 2.5;
-  letter-spacing: normal;
-  text-align: left;
   color: #505457;
 }
 
@@ -1243,7 +1205,6 @@ table.assessment.individual th.left {
 .content.assessment ul.assessments li .id {
   height: 100%;
   background-color: #f5f7f5;
-  font-family: Raleway;
   font-size: 18.5px;
   font-weight: 500;
   font-style: normal;
@@ -1259,7 +1220,6 @@ table.assessment.individual th.left {
 }
 
 .content.assessment ul.assessments li .assessment-title {
-  font-family: Raleway;
   font-size: 15px;
   font-weight: normal;
   font-style: normal;
@@ -1271,7 +1231,6 @@ table.assessment.individual th.left {
 }
 
 .content.assessment ul.assessments li .assessment-submissions {
-  font-family: Raleway;
   font-size: 13px;
   font-weight: 300;
   font-style: normal;
@@ -1288,7 +1247,6 @@ table.assessment.individual th.left {
 }
 
 .content.assessment ul.assessments li .assessment-students h4 {
-  font-family: Raleway;
   font-size: 13px;
   font-weight: 300;
   font-style: normal;
@@ -1306,7 +1264,6 @@ table.assessment.individual th.left {
 }
 
 .content.assessment ul.assessments li .icons i {
-  font-family: FontAwesome;
   font-size: 14.5px;
   font-weight: normal;
   font-style: normal;
@@ -1505,11 +1462,6 @@ table.assessment.individual th.left {
   border: 1px solid rgba(181, 212, 183, 0.2);
 }
 
-#platform-header #account-dropdown li:hover,
-#platform-header #notifications-dropdown li:hover {
-  background: rgba(181, 212, 183, 0.2);
-}
-
 #platform-header #account-dropdown li a,
 #platform-header #notifications-dropdown li a {
   line-height: 3em;
@@ -1550,6 +1502,10 @@ table.assessment.individual th.left {
 
 #platform-header #notifications-dropdown {
   width: 400px;
+}
+
+#platform-header .logo {
+  position: absolute;
 }
 
 /*Subheader navigation*/
@@ -1626,11 +1582,6 @@ table.assessment.individual th.left {
 .slicknav_nav a:hover {
   background: #ffffff !important;
   color: #505457 !important;
-}
-
-section.logo {
-  position: absolute;
-  top: 10px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1746,10 +1697,6 @@ section.logo {
 
 /* Profiel */
 
-.headline h4 {
-  margin-bottom: 0;
-}
-
 .headline img {
   position: relative;
   width: 64px;
@@ -1771,8 +1718,9 @@ section.logo {
   border-left: 2.5px solid #505457;
 }
 
-.color-choose {
-  margin-bottom: 0.3%;
+.color-choose,
+.notification-choose {
+  margin-bottom: 20%;
   height: 80px;
   border: 1px solid #ffffff;
   display: inline-block;
@@ -1783,7 +1731,8 @@ section.logo {
   transition: 0.5s ease all;
 }
 
-.color-choose label {
+.color-choose label,
+.notification-choose label {
   position: absolute;
   bottom: -30px;
   left: 0;
@@ -1791,11 +1740,11 @@ section.logo {
   text-align: center;
 }
 
-.color-choose:after {
+.color-choose:after,
+.notification-choose:after {
   font-size: 1.5em;
   color: #ffffff;
   font-family: FontAwesome;
-  content: '\F070';
   text-align: center;
   display: block;
   margin: auto;
@@ -1803,6 +1752,12 @@ section.logo {
   left: 0;
   right: 0;
   top: 30%;
+}
+
+/* thema settings */
+
+.color-choose:after {
+  content: '\F070';
 }
 
 .color-choose#default {
@@ -1827,39 +1782,15 @@ section.logo {
   content: '\F06E';
 }
 
+/* notificatie settiggs */
+
 .notification-choose {
-  margin-bottom: 1%;
-  height: 80px;
-  display: inline-block;
-  border: 1px solid #ffffff;
-  position: relative;
-  cursor: pointer;
   background: #505457;
   opacity: 1;
-  -webkit-transition: 0.5s ease all;
-  transition: 0.5s ease all;
-}
-
-.notification-choose label {
-  position: absolute;
-  bottom: -30px;
-  left: 0;
-  width: 100%;
-  text-align: center;
 }
 
 .notification-choose:after {
-  font-size: 1.5em;
-  color: #ffffff;
-  font-family: FontAwesome;
   content: '\F0F3';
-  text-align: center;
-  display: block;
-  margin: auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 30%;
 }
 
 .notification-choose:hover {
@@ -1886,6 +1817,8 @@ section.logo {
   content: '\F0F3';
 }
 
+/* alle nots, request, downloads, ratings */
+
 .all-notifications,
 .all-tutoring-requests,
 .all-downloads,
@@ -1909,6 +1842,8 @@ section.logo {
 .all-ratings li.unread {
   background: rgba(181, 212, 183, 0.2);
 }
+
+/* vakken lijst */
 
 .vakken,
 .vakken-nieuw,
@@ -1959,35 +1894,30 @@ section.logo {
   color: #505457;
 }
 
+/* nieuwe vakken lijst */
+
 .vakken-nieuw h2 {
   margin: 0;
 }
 
-.vakken-nieuw span input {
+.vakken-nieuw span input,
+.vakken-nieuw span button {
   width: auto;
   height: 26.5px;
   margin-top: 0;
   line-height: 0.45;
 }
 
+/*
 #vak-zoeken {
-  height: 30px;
+  height: 50px;
   padding: 15px;
   margin: 0 0 20px 0;
   border: solid 0.5px #4d6a50;
 }
+*/
 
-.info-table {
-  width: 100%;
-  background: rgba(181, 212, 183, 0.2);
-}
-
-.info-table td,
-.info-table th {
-  width: 50%;
-  padding: 10px;
-  border: 0.2px solid #ffffff;
-}
+/* Link naar profiel pagina*/
 
 .profile-url {
   color: inherit;
@@ -1997,7 +1927,21 @@ section.logo {
   color: #505457;
 }
 
-/*Bootstrap modals*/
+/* info tabel */
+
+/*
+.info-table {
+  width: 100%;
+  background: $background-color;
+  td, th {
+    width: 50%;
+    padding: 10px;
+    border: 0.2px solid $unihelp-white;
+  }
+}
+ */
+
+/* Bootstrap modals override + modal*/
 
 .modal .modal-content {
   border-radius: 0;
@@ -2268,7 +2212,8 @@ i {
   color: #505457;
 }
 
-form p {
+form p,
+sidebar p {
   font-size: 14.5px;
   font-weight: normal;
   font-style: normal;
@@ -2279,7 +2224,12 @@ form p {
   color: #505457;
 }
 
-/*Notices and go-back*/
+.blurry-text {
+  color: transparent;
+  text-shadow: 0 0 5px white;
+}
+
+/* Meldingen + go-back */
 
 .go-back a,
 .message a {
@@ -2300,6 +2250,8 @@ form p {
 .message i span {
   font-family: Raleway;
 }
+
+/* melding */
 
 .message {
   color: #ffffff;
@@ -2363,7 +2315,7 @@ form p {
   border-bottom: 1px solid #4D6A50;
 }
 
-/*dropzone*/
+/* dropzone */
 
 .inputFile {
   width: 100%;
@@ -2434,6 +2386,12 @@ form p {
      object-fit: cover;
 }
 
+/* ster rating sharing*/
+
+.sharing {
+  /* file detail */
+}
+
 .sharing.overview .rating,
 .sharing.detail .rating {
   font-size: 1.5em !important;
@@ -2463,9 +2421,13 @@ form p {
   cursor: pointer;
 }
 
+/* sidebar ster */
+
 .sidebar .rating .checked {
   color: #4D6A50;
 }
+
+/* lijst alle ratings */
 
 .all-ratings .checked {
   color: #4D6A50;

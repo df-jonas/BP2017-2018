@@ -8,63 +8,34 @@
         <section class="widget-accordion">
             <button class="accordion">Wie kan UniHelp gebruiken?</button>
             <section class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest?
-                    Tanta vis admonitionis inest in locis; Quis non odit sordidos, vanos, leves, futtiles? Duo Reges:
-                    constructio interrete. Aliter autem vobis placet. Sed ad haec, nisi molestum est, habeo quae velim.
-                    Venit ad extremum; </p>
+                <p>UniHelp kan gebruikt worden door elke student. Het platform is momenteel in bèta testfase, waardoor
+                    enkel studenten van Erasmushogeschool Brussel hiervan gebruik kunnen maken. </p>
             </section>
-
-            <button class="accordion">Wie kan UniHelp gebruiken?</button>
+            <button class="accordion">Is UniHelp gratis?</button>
             <section class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest?
-                    Tanta vis admonitionis inest in locis; Quis non odit sordidos, vanos, leves, futtiles? Duo Reges:
-                    constructio interrete. Aliter autem vobis placet. Sed ad haec, nisi molestum est, habeo quae velim.
-                    Venit ad extremum; </p>
+                <p>Ja, UniHelp is 100% gratis voor elke student!</p>
             </section>
-            <button class="accordion">Wie kan UniHelp gebruiken?</button>
+            <button class="accordion">Wat kan ik allemaal?</button>
             <section class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest?
-                    Tanta vis admonitionis inest in locis; Quis non odit sordidos, vanos, leves, futtiles? Duo Reges:
-                    constructio interrete. Aliter autem vobis placet. Sed ad haec, nisi molestum est, habeo quae velim.
-                    Venit ad extremum; </p>
+                <p>Als student kan je gebruik maken van onze online community, file share, tutoring en peer assessment
+                    functionaliteiten.</p>
             </section>
-            <button class="accordion">Wie kan UniHelp gebruiken?</button>
+            <button class="accordion">Wie heeft dit platform gemaakt?</button>
             <section class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest?
-                    Tanta vis admonitionis inest in locis; Quis non odit sordidos, vanos, leves, futtiles? Duo Reges:
-                    constructio interrete. Aliter autem vobis placet. Sed ad haec, nisi molestum est, habeo quae velim.
-                    Venit ad extremum; </p>
+                <p>Dit platform is gemaakt door 2 laatstejaarsstudenten, door De Frère Jonas (Dig-X) en Stalpaert Arno
+                    (Multec)</p>
             </section>
-            <button class="accordion">Wie kan UniHelp gebruiken?</button>
+            <button class="accordion">Wat gebeurt er met mijn gegevens?</button>
             <section class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest?
-                    Tanta vis admonitionis inest in locis; Quis non odit sordidos, vanos, leves, futtiles? Duo Reges:
-                    constructio interrete. Aliter autem vobis placet. Sed ad haec, nisi molestum est, habeo quae velim.
-                    Venit ad extremum; </p>
+                <p>UniHelp verzamelt enkel de gegevens die nodig zijn om van dit platform gebruik te kunnen maken. Er
+                    wordt zeer veilig omgegaan met uw gegevens en daarom zullen deze nooit gedeeld worden met
+                    derden.</p>
             </section>
-            <button class="accordion">Wie kan UniHelp gebruiken?</button>
+            <button class="accordion">Wat te doen bij problemen of bugs?</button>
             <section class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest?
-                    Tanta vis admonitionis inest in locis; Quis non odit sordidos, vanos, leves, futtiles? Duo Reges:
-                    constructio interrete. Aliter autem vobis placet. Sed ad haec, nisi molestum est, habeo quae velim.
-                    Venit ad extremum; </p>
-            </section>
-            <button class="accordion">Wie kan UniHelp gebruiken?</button>
-            <section class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest?
-                    Tanta vis admonitionis inest in locis; Quis non odit sordidos, vanos, leves, futtiles? Duo Reges:
-                    constructio interrete. Aliter autem vobis placet. Sed ad haec, nisi molestum est, habeo quae velim.
-                    Venit ad extremum; </p>
-            </section>
-            <button class="accordion">Wie kan UniHelp gebruiken?</button>
-            <section class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest?
-                    Tanta vis admonitionis inest in locis; Quis non odit sordidos, vanos, leves, futtiles? Duo Reges:
-                    constructio interrete. Aliter autem vobis placet. Sed ad haec, nisi molestum est, habeo quae velim.
-                    Venit ad extremum; </p>
+                <p>Bij problemen, vragen of bugs kan je terecht op onze <a href="{{ route('website-contact') }}">contact</a> pagina. HEt melden van bugs en problemen wordt erg geapprecieerd!</p>
             </section>
         </section>
-
     </section>
     <!-- call to action -->
     @include('partials.website.call-to-action')
@@ -78,6 +49,6 @@
     @include('partials.footer')
     <!-- end footer -->
 @endsection
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="{{ URL::asset('js/faq.js') }}"></script>
+@section('scripts')
+    <script src="{{ URL::asset('js/faq.js') }}"></script>
+@endsection

@@ -1,6 +1,7 @@
-/*Tutoring*/
+/* Tutoring */
 .table.tutoring {
   display: table;
+  margin-bottom: 0;
   .sidebar {
     display: table-cell;
     padding-right: 10px;
@@ -16,13 +17,8 @@
         position: relative;
         &:hover, &.people-list-active {
           cursor: pointer;
-          background: $unihelp-white!important;
+          background: $unihelp-white;
           color: $theme-color;
-        }
-        &.load-more {
-          text-align: center;
-          height: 55px;
-          line-height: 85px;
         }
         .picture {
           display: table-cell;
@@ -36,7 +32,6 @@
           h6 {
             margin: 5px 0;
           }
-
           h6.bold {
             margin: 0;
           }
@@ -54,12 +49,10 @@
             }
           }
         }
-
-        &.load-more:hover, &.new:hover {
+        &.new:hover {
           background: $secondary-color;
           color: $unihelp-white;
         }
-
       }
     }
     .table {
@@ -75,12 +68,6 @@
     padding-left: 0;
     position: relative;
     left: 0;
-    .item {
-      /*
-      position: absolute;
-      height: 100%;
-      */
-    }
   }
 }
 
@@ -95,7 +82,6 @@
     padding: 0;
     border-top: 0;
     text-align: center;
-
     header {
       background: $secondary-color;
       text-align: center;
@@ -104,16 +90,14 @@
       border: 5px solid transparent;
       border-top: 0;
     }
-
     img {
       width: 60px;
       height: 60px;
       margin: 5%;
     }
-
   }
-
 }
+
 
 .overview-calendar {
   height: 45px;
@@ -148,7 +132,3 @@
 
 }
 
-.blurry-text{
-  color: transparent;
-  text-shadow: 0 0 5px rgba(255,255,255,1);
-}

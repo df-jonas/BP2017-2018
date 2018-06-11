@@ -1,9 +1,5 @@
 /* Profiel */
 .headline {
-  //height: 150px;
-  h4 {
-    margin-bottom: 0;
-  }
   img {
     position: relative;
     width: 64px;
@@ -12,11 +8,8 @@
     margin: 5.5% auto;
     display: block;
     top: 30%;
-    //-webkit-transform: translateY(-50%);
-    //-ms-transform: translateY(-50%);
     transform: translateY(-30%);
   }
-
   .right {
     padding-top: 1%;
   }
@@ -26,8 +19,8 @@
   border-left: 2.5px solid $theme-color;
 }
 
-.color-choose {
-  margin-bottom: 0.3%;
+.color-choose, .notification-choose{
+  margin-bottom: 20%;
   height: 80px;
   border: 1px solid $unihelp-white;
   display: inline-block;
@@ -46,7 +39,6 @@
     font-size: 1.5em;
     color: $unihelp-white;
     font-family: FontAwesome;
-    content: '\f070';
     text-align: center;
     display: block;
     margin: auto;
@@ -54,6 +46,13 @@
     left: 0;
     right: 0;
     top: 30%;
+  }
+}
+
+/* thema settings */
+.color-choose {
+  &:after {
+    content: '\f070';
   }
   &#default {
     background: #4D6A50;
@@ -72,35 +71,12 @@
   }
 }
 
+/* notificatie settiggs */
 .notification-choose {
-  margin-bottom: 1%;
-  height: 80px;
-  display: inline-block;
-  border: 1px solid $unihelp-white;
-  position: relative;
-  cursor: pointer;
   background: $theme-color;
   opacity: 1;
-  transition: 0.5s ease all;
-  label {
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-  }
   &:after {
-    font-size: 1.5em;
-    color: $unihelp-white;
-    font-family: FontAwesome;
     content: '\f0f3';
-    text-align: center;
-    display: block;
-    margin: auto;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 30%;
   }
   &:hover {
     background: lightgray;
@@ -122,6 +98,7 @@
   }
 }
 
+/* alle nots, request, downloads, ratings */
 .all-notifications, .all-tutoring-requests, .all-downloads, .all-ratings {
   padding-left: 0;
   list-style: none;
@@ -135,6 +112,7 @@
   }
 }
 
+/* vakken lijst */
 .vakken, .vakken-nieuw, .profile-list {
   padding-left: 0;
   li {
@@ -164,12 +142,13 @@
   }
 }
 
+/* nieuwe vakken lijst */
 .vakken-nieuw {
   h2 {
     margin: 0;
   }
   span {
-    input {
+    input, button {
       width: auto;
       height: 26.5px;
       margin-top: 0;
@@ -178,26 +157,32 @@
   }
 }
 
+/*
 #vak-zoeken {
-  height: 30px;
+  height: 50px;
   padding: 15px;
   margin: 0 0 20px 0;
   border: solid 0.5px #4d6a50;
 }
+*/
+/* Link naar profiel pagina*/
 
-.info-table{
+.profile-url {
+  color: inherit;
+  &:hover {
+    color: $theme-color;
+  }
+}
+
+/* info tabel */
+/*
+.info-table {
   width: 100%;
   background: $background-color;
-  td, th{
+  td, th {
     width: 50%;
     padding: 10px;
     border: 0.2px solid $unihelp-white;
   }
 }
-
-.profile-url{
-  color: inherit;
-  &:hover{
-    color: $theme-color;
-  }
-}
+ */

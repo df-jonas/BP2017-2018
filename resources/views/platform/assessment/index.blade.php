@@ -115,6 +115,7 @@
                                     <td class="static-course">{{ $assessment->instructions }}</td>
                                 </tr>
                             </table>
+                            <br>
                             <a href="#">
                                 <button class="download-button col-lg-2 col-sm-4 col-xs-12" value="Starten">Starten
                                 </button>

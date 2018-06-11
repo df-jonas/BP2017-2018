@@ -1,3 +1,4 @@
+/* ster rating sharing*/
 .sharing {
   &.overview, &.detail {
     .rating {
@@ -12,6 +13,7 @@
       }
     }
   }
+  /* file detail */
   &.detail {
     .rating {
       top: 0;
@@ -27,6 +29,7 @@
     }
   }
 }
+/* sidebar ster */
 .sidebar {
   .rating {
     .checked {
@@ -34,6 +37,8 @@
     }
   }
 }
+
+/* lijst alle ratings */
 .all-ratings {
   .checked {
     color: $secondary-color;
