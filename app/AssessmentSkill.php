@@ -10,7 +10,7 @@ class AssessmentSkill extends Model
 
     public function skill()
     {
-        return $this->hasOne('App\Skill', 'skill_id', 'id');
+        return $this->belongsTo('App\Skill', 'skill_id', 'id');
     }
 
     public function assessment(){

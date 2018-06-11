@@ -9,9 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-
     public function index()
     {
+        if (Auth::user()->role != "admin")
+            abort(500, "Je hebt geen toelating om deze pagina te bezoeken.");
 
         $arr = [
             'users' => User::paginate(15, ['*'], 'up'),
@@ -24,6 +25,9 @@ class AdminController extends Controller
 
     public function courses()
     {
+        if (Auth::user()->role != "admin")
+            abort(500, "Je hebt geen toelating om deze pagina te bezoeken.");
+
         $arr = [
             'users' => User::paginate(15, ['*'], 'up'),
             'courses' => Course::paginate(15, ['*'], 'cp'),
@@ -34,6 +38,9 @@ class AdminController extends Controller
 
     public function groups()
     {
+        if (Auth::user()->role != "admin")
+            abort(500, "Je hebt geen toelating om deze pagina te bezoeken.");
+
         $arr = [
             'users' => User::paginate(15, ['*'], 'up'),
             'courses' => Course::paginate(15, ['*'], 'cp'),
@@ -45,6 +52,9 @@ class AdminController extends Controller
 
     public function stats()
     {
+        if (Auth::user()->role != "admin")
+            abort(500, "Je hebt geen toelating om deze pagina te bezoeken.");
+
         $arr = [
             'users' => User::paginate(15, ['*'], 'up'),
             'courses' => Course::paginate(15, ['*'], 'cp'),

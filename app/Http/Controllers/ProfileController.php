@@ -61,6 +61,11 @@ class ProfileController extends Controller
 
     public function settings()
     {
+        $u = Auth::user();
+        $isInit = ($u->canvas_key != "" && $u->canvas_key != null && !empty($u->canvas_key))
+            && ($u->canvas_refresh != "" && $u->canvas_refresh != null && !empty($u->canvas_refresh))
+            && ($u->canvas_id != "" && $u->canvas_id != null && !empty($u->canvas_id));
+
         $params = [
             'campuses' => Campus::query()->orderBy("name")->get(),
             'foses' => Fos::query()->orderBy("name")->get(),
@@ -70,6 +75,9 @@ class ProfileController extends Controller
             'usercourses' => Usercourse::all()->where('user_id', '=', Auth::id()),
             'allcourses' => Course::all(),
             'pref' => Auth::user()->preference,
+            'canvas' => [
+                'isInit' => $isInit
+            ]
         ];
         return view('platform.profile.settings', $params);
     }
@@ -133,7 +141,7 @@ class ProfileController extends Controller
 
         if (!empty($request->account_close)) {
             Mail::send('mail.forms.account-delete', ['firstname' => $firstname, 'lastname' => $lastname, 'email' => $email], function ($message) use ($name, $email) {
-                $message->from($email, $name);
+                $message->replyTo($email, $name);
                 $message->subject("Unihelp - aanvraag tot account verwijdering");
                 $message->to('dt.unihelp@ehb.be');
             });

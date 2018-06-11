@@ -19,74 +19,43 @@
                 <div class="item clearfix">
                     <header><a class="header-title">Assessment individueel</a></header>
                     <div class="padding">
-                    <section class="content assessment">
-                        <section class="assessment-group">
-                            <div class="title col-lg-3">
-                                <a href="#"><h2 class="group-title">Assessment titel 1</h2></a>
-                            </div>
-                            <div class="info col-lg-9">
-                                <span class="assessments">Groep Moleskine</span>
-                            </div>
+                        <section class="content assessment">
+                            <section class="assessment-group">
+                                <div class="title col-lg-6">
+                                    <a href="{{ $assessment->url() }}"><h2 class="group-title">{{ $assessment->name }} ({{ $assessment->course->name }})</h2></a>
+                                </div>
+                                <div class="info col-lg-6">
+                                    <span class="assessments">{{ $group->name }}</span>
+                                </div>
+                            </section>
                         </section>
-                    </section>
-
-
-
-                    <div class="row flex padding">
-                        <!-- begin table -->
-                        <table class="assessment individual">
-                            <tr class="heading">
-                                <th class="left top"><span class="large-th">Uitgedeelde scores</span> <br> <span class="mid-th">Stalpaert Arno</span></th>
-                                <th class="skill-th">Aanwezigheid</th>
-                                <th class="skill-th">Inzet en motivatie</th>
-                                <th class="skill-th">Vaardigheden</th>
-                                <th class="skill-th">Kwaliteit</th>
-                                <th class="skill-th">Stoptheid</th>
-                                <th class="skill-th">Verzorging</th>
-                                <th class="skill-th">Deadlines</th>
-                            </tr>
-
-                            <tr>
-                                <td class="left" rowspan="2">Janssens, Brent <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                            </tr>
-                            <tr>
-                                <td class="left" rowspan="2">Goeman, Sam <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                                <td class="comment">Duo Reges: constructio interrete. Suo genere perveniant ad extremum; Et nemo nimium beatus est. </td>
-                            </tr>
-                        </table>
+                        <div class="row flex padding">
+                            <!-- begin table -->
+                            <table class="assessment individual">
+                                <tr class="heading">
+                                    <th class="left top"><span class="large-th">Uitgedeelde scores</span> <br> <span
+                                                class="mid-th">{{ $user->user->last_name }}, {{ $user->user->first_name }}</span></th>
+                                    @foreach($assessmentskills as $assessmentskill)
+                                        <th class="skill-th">{{ $assessmentskill->skill->name }}</th>
+                                    @endforeach
+                                </tr>
+                                @foreach($users as $assessmentuser)
+                                    <tr>
+                                        <td class="left" rowspan="2">{{ $assessmentuser->user->last_name }}, {{ $assessmentuser->user->first_name }}
+                                            <img src="{{ asset('img/avatars/' . $assessmentuser->user->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
+                                        @foreach($assessmentskills as $assessmentskill)
+                                            <td>{{ $scores[$assessmentuser->id][$assessmentskill->id]['grade'] }}</td>
+                                        @endforeach
+                                    </tr>
+                                    <tr>
+                                        @foreach($assessmentskills as $assessmentskill)
+                                            <td class="comment">{{ $scores[$assessmentuser->id][$assessmentskill->id]['comment'] }}</td>
+                                        @endforeach
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
                     </div>
-                </div>
                 </div>
             </section>
             <!-- end picture -->
