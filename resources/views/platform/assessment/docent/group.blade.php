@@ -50,8 +50,13 @@
                                     <tr>
                                         <td class="left"><a href="{{ $groupuser->url() }}">{{ $groupuser->user->last_name }}, {{ $groupuser->user->first_name }}</a>
                                             <img src="{{ asset('img/avatars/' . $groupuser->user->image )}}" class="group-img round-img hide-tablet" alt="User profile image"></td>
-                                        <td>{{ $groupuser->calcScore() }}</td>
-                                        <td><a href="{{ $groupuser->url() }}">Bekijk uitgedeelde scores <i class="fas fa-arrow-right"></i></a>
+                                        <td>{{ round($groupuser->calcScore(), 2) }}</td>
+                                        <td>
+                                            @if($groupuser->hasSubmitted())
+                                                <a href="{{ $groupuser->url() }}">Bekijk uitgedeelde scores <i class="fas fa-arrow-right"></i></a>
+                                            @else
+                                                Onvoltooid.
+                                            @endif
                                         </td>
                                         <!--<td><a href="#">Bekijk ontvangen scores <i class="fas fa-arrow-right"></i></a></td>-->
                                     </tr>

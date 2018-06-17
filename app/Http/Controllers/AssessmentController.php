@@ -272,6 +272,9 @@ class AssessmentController extends Controller
             if ($user == null)
                 abort(404, "Gebruiker niet gevonden");
 
+            if (!$user->hasSubmitted())
+                abort(404, "Deze user heeft nog geen scores uitgedeeld.");
+
             $groupuser = $user->assessmentgroup;
             if ($groupuser == null || $groupuser->id != $group_id)
                 abort(404, "Groep niet gevonden");
