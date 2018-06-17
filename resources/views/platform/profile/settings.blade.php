@@ -1,8 +1,8 @@
 @extends('layouts.platform')
 @section('pagetitle', 'Instellingen')
 @section('content')
-@include('partials.platform.header')
-@include('partials.platform.subheader')
+    @include('partials.platform.header')
+    @include('partials.platform.subheader')
     <!-- begin container -->
     <section class="container profile">
         <!-- begin profile message -->
@@ -160,11 +160,23 @@
             <section class="col-xs-12 no-padding-left">
                 <div class="item padding clearfix">
                     <h2 class="settings-title">Koppel Canvas</h2>
-                            Als student aan de Erasmushogeschool Brussel kan je inloggen met je Canvas account (Bèta). Opgelet: dit werkt enkel met onze lokale Canvas omgeving.-
+                    @if($canvas['isInit'] == true)
+                        Bedankt om je UniHelp account te koppelen met canvas!
+                        (<a href="{{ route('canvas-me') }}">weergeven</a>)
+                    @else
+                        Als student aan de Erasmushogeschool Brussel kan je inloggen met je Canvas account (Bèta).
+                        <br/><br/>
+                        <b>Opgelet:</b> dit werkt door een beperking van onze school ENKEL op onze lokale Canvas testomgeving.
+                        <br/><br/>
                         <div class="form-group col-xs-12 no-padding clearfix">
-                            <input type="submit" class="download-button col-lg-4 col-sm-4 col-xs-12" value="Koppelen">
+                            <a href="{{ route('canvas-login') }}">
+                                <button class="download-button col-lg-4 col-sm-4 col-xs-12">
+                                    Koppelen
+                                </button>
+                            </a>
                         </div>
-                    <table class="info-table">
+                    @endif
+                    {{--<table class="info-table">
                         <tr>
                             <th>Col 1</th>
                             <th>Col 2</th>
@@ -181,7 +193,7 @@
                             <td>Cel 1</td>
                             <td>Cel 2</td>
                         </tr>
-                    </table>
+                    </table>--}}
                 </div>
             </section>
             <!-- canvas-->
@@ -195,17 +207,20 @@
                     <h2 class="settings-title">Thema</h2>
                     <form>
                         <div class="form-group col-sm-4 col-xs-12 no-padding">
-                            <div id="default" class="color-choose col-xs-12 {{ Variable::theme("default") }}" data-theme="default">
+                            <div id="default" class="color-choose col-xs-12 {{ Variable::theme("default") }}"
+                                 data-theme="default">
                                 <label>Primary</label>
                             </div>
                         </div>
                         <div class="form-group col-sm-4 col-xs-12 no-padding">
-                            <div id="light" class="color-choose col-xs-12 {{ Variable::theme("light") }}" data-theme="light">
+                            <div id="light" class="color-choose col-xs-12 {{ Variable::theme("light") }}"
+                                 data-theme="light">
                                 <label>Light</label>
                             </div>
                         </div>
                         <div class="form-group col-sm-4 col-xs-12 no-padding">
-                            <div id="dark" class="color-choose col-xs-12 {{ Variable::theme("dark") }}" data-theme="dark">
+                            <div id="dark" class="color-choose col-xs-12 {{ Variable::theme("dark") }}"
+                                 data-theme="dark">
                                 <label>Dark</label>
                             </div>
                         </div>
@@ -216,13 +231,16 @@
                     <h4 class="settings-title">Meldingen</h4>
                     <form>
                         <div class="form-group col-xs-12 no-padding clearfix">
-                            <div class="notification-choose col-lg-4 left col-md-4 col-sm-5 col-xs-12 {{ Variable::notif("comment") }}" data-notification="comment">
+                            <div class="notification-choose col-lg-4 left col-md-4 col-sm-5 col-xs-12 {{ Variable::notif("comment") }}"
+                                 data-notification="comment">
                                 <label>Reacties</label>
                             </div>
-                            <div class="notification-choose col-lg-4 right col-md-4 col-md-push-0 col-sm-5 col-sm-push-2 col-xs-12 {{ Variable::notif("likes") }}" data-notification="likes">
+                            <div class="notification-choose col-lg-4 right col-md-4 col-md-push-0 col-sm-5 col-sm-push-2 col-xs-12 {{ Variable::notif("likes") }}"
+                                 data-notification="likes">
                                 <label>Likes</label>
                             </div>
-                            <div class="notification-choose col-lg-4 left col-md-4 col-sm-5 col-xs-12  {{ Variable::notif("tutoring") }}" data-notification="tutoring">
+                            <div class="notification-choose col-lg-4 left col-md-4 col-sm-5 col-xs-12  {{ Variable::notif("tutoring") }}"
+                                 data-notification="tutoring">
                                 <label>Tutoring</label>
                             </div>
                         </div>

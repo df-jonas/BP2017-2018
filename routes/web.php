@@ -41,14 +41,13 @@
     // Route::get('/register', 'AuthController@register')->name('register');
     // Route::post('/register', 'AuthController@registerPost');
     // Canvas routes
-    // Route::get('/canvas/me', 'CanvasController@me')->name('canvas-me');
 }
 
 /** PRIVATE */
 {
     Route::group(['middleware' => ['auth']], function () {
 
-        Route::get('/logout', 'AuthController@logout')->name('logout');
+        Route::get('/logout', 'Auth\LogoutController@logout')->name('logout');
 
         /** Platform routes */
         Route::group(['prefix' => 'p'], function () {
@@ -91,15 +90,12 @@
 
             /** Peer Assessment */
             Route::get('/assessment', 'AssessmentController@index')->name('assessment-index');
-            Route::get('/assessment/new', 'AssessmentController@new')->name('assessment-new');
-            Route::get('/assessment/docent', 'AssessmentController@docentIndex')->name('assessment-docent-index');
-            Route::get('/assessment/docent/new', 'AssessmentController@docentNew')->name('assessment-docent-new');
-            Route::get('/assessment/docent/assessment', 'AssessmentController@docentAssessment')->name('assessment-docent-assessment');
-            Route::get('/assessment/docent/group', 'AssessmentController@docentGroup')->name('assessment-docent-group');
-            Route::get('/assessment/docent/individual', 'AssessmentController@docentIndividual')->name('assessment-docent-individual');
-            Route::get('/assessment/{id}', 'AssessmentController@detail')->name('assessment-detail');
-
-
+            Route::get('/assessment/new', 'AssessmentController@newassessment')->name('assessment-docent-new');
+            Route::post('/assessment/new', 'AssessmentController@newassessmentpost');
+            Route::get('/assessment/{assessment_id}', 'AssessmentController@assessmentdetail')->name('assessment-detail');
+            Route::post('/assessment/{assessment_id}', 'AssessmentController@submitscores');
+            Route::get('/assessment/{assessment_id}/{group_id}', 'AssessmentController@groupdetail')->name('assessment-docent-group');
+            Route::get('/assessment/{assessment_id}/{group_id}/{user_id}', 'AssessmentController@individualdetail')->name('assessment-docent-individual');
 
             /** Profile */
             Route::get('/profile/settings', 'ProfileController@settings')->name('profile-settings');
@@ -114,8 +110,10 @@
             Route::get('/profile/{id}', 'ProfileController@index')->name('profile-index');
 
             /** Canvas routes */
-            Route::get('/canvas/connect', 'AuthController@index')->name('canvas-login');
-            Route::get('/canvas/oauth_complete', 'AuthController@oauth_complete')->name('canvas-oauth-complete');
+            Route::get('/canvas/connect', 'CanvasController@connect')->name('canvas-login');
+            Route::get('/canvas/oauth_complete', 'CanvasController@completed')->name('canvas-oauth-complete');
+            Route::get('/canvas/me', 'CanvasController@me')->name('canvas-me');
+
 
             /** Notifications */
             Route::get('/profile/notifications/read/{id}', 'NotificationController@readAjax')->name('notification-read');

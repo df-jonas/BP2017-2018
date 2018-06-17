@@ -81,7 +81,7 @@ class WebsiteController extends Controller
         $name = $firstname . ' ' . $lastname;
 
         Mail::send('mail.forms.demo', ['firstname' => $firstname, 'lastname' => $lastname, 'company' => $company, 'email' => $email, 'desc' => $desc], function ($message) use ($name, $email) {
-            $message->from($email, $name);
+            $message->replyTo($email, $name);
             $message->subject("Unihelp - demo aanvraag");
             $message->to('dt.unihelp@ehb.be');
         });
@@ -101,7 +101,7 @@ class WebsiteController extends Controller
         $name = $firstname . ' ' . $lastname;
 
         Mail::send('mail.forms.contact', ['firstname' => $firstname, 'lastname' => $lastname, 'subject' => $subject, 'email' => $email, 'desc' => $desc], function ($message) use ($name, $email) {
-            $message->from($email, $name);
+            $message->replyTo($email, $name);
             $message->subject("Unihelp - Contact aanvraag");
             $message->to('dt.unihelp@ehb.be');
         });

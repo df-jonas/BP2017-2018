@@ -16,64 +16,40 @@
         </section>
 
         <section class="col-xs-12">
-        <section class="content assessment">
-            <section class="item clearfix">
-                <header><a class="header-title">Assessment overzicht</a></header>
-                <div class="padding">
-                    <section class="assessment-group">
-                        <div class="title col-lg-3">
-                            <a href="#"><h2 class="group-title">Assessment 1</h2></a>
-                        </div>
-                        <div class="info col-lg-9">
-                            <span class="assessments">3 groepen</span>
-                            <span class="students">29 studenten</span>
-                        </div>
-                    </section>
-                    <ul class="assessments">
-                        <li>
-                            <span class="id col-lg-1">1</span>
-                            <div class="info col-lg-7">
-                                <a href="#"><h2 class="assessment-title">Groep Moleskine</h2></a>
-                                <h4 class="assessment-submissions">22 inzendingen</h4>
+            <section class="content assessment">
+                <section class="item clearfix">
+                    <header><a class="header-title">Assessment overzicht</a></header>
+                    <div class="padding">
+                        <section class="assessment-group">
+                            <div class="title col-lg-3">
+                                <a><h2 class="group-title">{{ $assessment->name }}</h2></a>
                             </div>
-                            <div class="assessment-students col-lg-3">
-                                <h4>39 studenten</h4>
+                            <div class="info col-lg-9">
+                                <span class="assessments">{{ $assessment->groupCount() }} groepen</span>
+                                <span class="students">{{ $assessment->memberCount() }} studenten</span>
                             </div>
-                            <div class="icons col-lg-1">
-                                <a href="#"><i class="fas fa-eye"></i></a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="id col-lg-1">2</span>
-                            <div class="info col-lg-7">
-                                <a href="#"><h2 class="assessment-title">Groep No-Lifers</h2></a>
-                                <h4 class="assessment-submissions">22 inzendingen</h4>
-                            </div>
-                            <div class="assessment-students col-lg-3">
-                                <h4>39 studenten</h4>
-                            </div>
-                            <div class="icons col-lg-1">
-                                <a href="#"><i class="fas fa-eye"></i></a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="id col-lg-1">3</span>
-                            <div class="info col-lg-7">
-                                <a href="#"><h2 class="assessment-title">Groep Sumo</h2></a>
-                                <h4 class="assessment-submissions">22 inzendingen</h4>
-                            </div>
-                            <div class="assessment-students col-lg-3">
-                                <h4>39 studenten</h4>
-                            </div>
-                            <div class="icons col-lg-1">
-                                <a href="#"><i class="fas fa-eye"></i></a>
-                            </div>
-                        </li>
-                    </ul>
+                        </section>
+                        <ul class="assessments">
+                            @foreach($assessment->assessmentgroups as $group)
+                                <li>
+                                    <span class="id col-lg-1">1</span>
+                                    <div class="info col-lg-7">
+                                        <a href="{{ $group->url() }}"><h2 class="assessment-title">{{ $group->name }}</h2></a>
+                                        <h4 class="assessment-submissions">{{ $group->submitCount() }} van {{ $group->memberCount() }} inzendingen</h4>
+                                    </div>
+                                    <div class="assessment-students col-lg-3">
+                                        <h4>{{ $group->memberCount() }} studenten</h4>
+                                    </div>
+                                    <div class="icons col-lg-1">
+                                        <a href="{{ $group->url() }}"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
 
-        </section>
-        </section>
-        <!-- end content -->
+                </section>
+            </section>
+            <!-- end content -->
         </section>
     </section>
     <!-- end container -->
