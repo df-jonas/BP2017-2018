@@ -1,0 +1,202 @@
+/*Header*/
+#page-header, #platform-header {
+  height: auto;
+  width: 100%;
+  background-color: $unihelp-white;
+  padding: .85%;
+  position: sticky;
+  z-index: 100;
+  img.logo {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/*page header*/
+#page-header {
+  transition: 0.5s ease all;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  a, a:hover {
+    color: $unihelp-black;
+    text-decoration: none;
+  }
+  .logo {
+    margin-top: 5px;
+  }
+  .links {
+    float: right;
+    list-style-type: none;
+    text-align: right;
+    margin-bottom: 0;
+    a {
+      &.active-state, &:hover {
+        li {
+          background: lightgray;
+          opacity: 0.75;
+        }
+      }
+      li {
+        display: inline-block;
+        padding: 2% 4% 2% 4%;
+        text-align: center;
+        &.register {
+          background: $theme-color;
+          color: $unihelp-white;
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
+  &.small {
+    padding: 0.25% !important;
+    box-shadow: 0px 1px 0px 0.25px $theme-color;
+    .logo {
+      margin-top: 7.5px;
+    }
+  }
+}
+
+/*Breadcrumb module*/
+.breadcrumb-banner {
+  background: #f7f7f7;
+  text-align: right;
+  #breadcrumb {
+    float: right;
+    padding: 5px 0 5px 0;
+    max-width: 400px;
+    ul.breadcrumb {
+      padding-left: 21px;
+      padding-right: 0;
+      position: relative;
+      margin-bottom: 0;
+      &:before {
+        content: "\f015";
+        font-family: FontAwesome;
+        font-size: 1.2em;
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 0;
+      }
+      li {
+        display: inline-block;
+        margin: 7px 7px 7px 0px;
+        color: $unihelp-black;
+        &:nth-of-type(1) {
+          a {
+            color: $theme-color;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*Home page banner*/
+#page-banner, #innerpage-banner {
+  height: 60vh;
+  margin-bottom: 5x;
+  background-image: url("/img/backgrounds/banner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0px 1px 3px 0px $unihelp-black;
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #welcome {
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    h1, p {
+      text-align: left;
+      color: $unihelp-white;
+      font-weight: bold;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.6em;
+      margin-top: 20px;
+      margin-bottom: 35px;
+      letter-spacing: -.03em;
+    }
+    a {
+      color: $theme-color;
+      text-decoration: underline;
+    }
+    .buttons {
+      display: block;
+      margin: 3.5% 0 auto;
+      padding: 0;
+      .register {
+        margin-bottom: 2em;
+        &:hover {
+          background: $unihelp-white;
+          color: $theme-color;
+        }
+      }
+      .login {
+        background: $unihelp-white;
+        color: $theme-color;
+        margin-bottom: 2em;
+        &:hover {
+          background: $theme-color;
+          color: $unihelp-white;
+        }
+      }
+    }
+  }
+}
+
+/*Other pages banners*/
+#innerpage-banner {
+  height: 300px;
+  background-image: url("/img/features/4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #welcome {
+    h1, h2 {
+      text-align: center !important;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+    }
+    p, h2 {
+      color: $unihelp-white;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.6em;
+      margin-top: 20px;
+      margin-bottom: 35px;
+      letter-spacing: -.03em;
+    }
+  }
+}

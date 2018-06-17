@@ -1,0 +1,44 @@
+/*Messages*/
+.messages {
+  padding-top: 2em;
+  .msg {
+    margin-bottom: 2.5em;
+    .txt {
+      background: $secondary-color;
+      color: $unihelp-white;
+      padding: 1.5%;
+      p {
+        color: $unihelp-white;
+        font-size: 14px;
+        clear: both;
+      }
+      span {
+        font-size: .75em;
+        font-weight: 300;
+      }
+    }
+    &.own {
+      .txt {
+        background: $theme-color;
+      }
+    }
+  }
+}
+
+.comment-box {
+  margin-top: 1.5em;
+  border-top: 1px solid $secondary-color;
+  line-height: 32px;
+  input, button {
+    border: none;
+    padding: 0;
+    background: none;
+    color: inherit;
+  }
+}
+
+#chat-box{
+  border-top: 0px;
+  margin-top: 0;
+  border-bottom: 1px solid $secondary-color;
+}

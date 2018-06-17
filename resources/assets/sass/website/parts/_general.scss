@@ -1,0 +1,129 @@
+/*General css*/
+* {
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+
+/* selector */
+::selection {
+  background: $theme-color;
+}
+
+::-moz-selection {
+  background: $theme-color;
+}
+
+.container {
+  width: 85% !important;
+  max-width: 2200px;
+}
+
+/*Links*/
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
+/*Helpers*/
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.padding {
+  padding: 15px;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-padding-right {
+  padding-right: 0 !important;
+}
+
+.no-padding-left {
+  padding-left: 0 !important;
+}
+
+.row.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.vertical-center {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.round-img {
+  border-radius: 100%;
+}
+
+.account-img {
+  width: 10rem;
+  height: 10rem;
+  background-color: $unihelp-white;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+/* Profiel foto upload*/
+.profile-img-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  img {
+    width: 128px;
+    height: 128px;
+    display: block;
+    margin: 0 auto;
+  }
+  a, #picture-input {
+    display: block;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    margin: 0 auto;
+    color: $unihelp-white;
+    font-size: 0.5em;
+    cursor: pointer;
+  }
+  &:hover a {
+    opacity: 1;
+    top: 0;
+    z-index: 500;
+    span {
+      top: 45%;
+      left: 47%;
+      position: absolute;
+      transform: translateY(-50%);
+      margin: auto;
+    }
+  }
+  #picture-input {
+    z-index: 999;
+    width: 30rem;
+  }
+}

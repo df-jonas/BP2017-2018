@@ -32,16 +32,52 @@ class User extends Authenticatable
         return $this->hasMany('App\File');
     }
 
-    public function field() {
+    public function field()
+    {
         return $this->belongsTo('App\Fos', 'fosid');
     }
 
-    public function campus() {
+    public function campus()
+    {
         return $this->belongsTo('App\Campus', 'campusid');
     }
 
-    public function role() {
+    public function role()
+    {
         return $this->belongsTo('App\Role', 'role');
+    }
+
+    public function preference()
+    {
+        return $this->belongsTo('App\Preference', 'preference_id');
+    }
+
+    public function notifs()
+    {
+        return $this->hasMany('App\Notification', 'to_user', 'id');
+    }
+
+    public function notifs_unread()
+    {
+        return $this->notifs()->where('read_at', "=", null)->orderBy('created_at', 'desc');
+    }
+
+    public function notifs_read()
+    {
+        return $this->notifs()->where('read_at', "!=", null)->orderBy('created_at', 'desc');
+    }
+
+    public function countIsTutor()
+    {
+        $ids = Tutor::query()
+            ->where("user_id", "=", $this->id)
+            ->where("active", "=", true)
+            ->get(['id']);
+
+        return TutoringSession::query()
+            ->whereIn("tutor_id", $ids)
+            ->where("active", "=", true)
+            ->count();
     }
 
     public function isValid()
@@ -61,5 +97,10 @@ class User extends Authenticatable
             return true;
         }
         return false;
+    }
+
+    public function url()
+    {
+        return route('profile-index', ['id' => $this->id]);
     }
 }

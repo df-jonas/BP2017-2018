@@ -1,0 +1,191 @@
+/*Fonts*/
+h1, h2, h3 {
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.18;
+  letter-spacing: normal;
+  text-align: left;
+  color: $unihelp-black;
+}
+
+i {
+  font-family: FontAwesome;
+}
+
+.sidebar {
+  .item-title, .item-title a {
+    color: $unihelp-asphalt;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 0;
+    &:hover {
+      color: $theme-color;
+      font-weight: 500;
+    }
+  }
+}
+
+.file {
+  .header-title, .header-title a {
+    i {
+      float: right;
+    }
+  }
+}
+
+/*sidebar + item headers*/
+.header-title, .header-title a {
+  color: $unihelp-white;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 16px;
+  &:hover {
+    color: $unihelp-white;;
+  }
+  i {
+    color: $unihelp-white;
+    font-size: 14px;
+    margin-right: 10px;
+    float: left;
+    margin-top: 5px;
+    &:hover {
+      color: $unihelp-white !important;
+    }
+  }
+}
+
+/*overview pages*/
+.overview {
+  /*Sharing pages*/
+  &.sharing, &.community {
+    .item-title, .item-title a {
+      color: $unihelp-asphalt;
+      font-size: 18px;
+      &:hover {
+        color: $theme-color;
+        font-weight: 500;
+      }
+    }
+
+    .item-campus, .item-campus a {
+      color: $secondary-color;
+      font-size: 14px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .item-user, .item-user a, .item-count, .item-count a {
+      color: $unihelp-asphalt;
+      font-size: 12px;
+      margin-top: 0;
+    }
+
+    .icons {
+      color: $secondary-color;
+    }
+
+  }
+  /*Community pages*/
+  &.community {
+
+  }
+  /*Tutoring pages*/
+  &.tutoring {
+
+  }
+}
+
+.tutoring {
+  .tutoring-intro-title {
+    font-family: Raleway;
+    font-size: 16px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+  }
+}
+
+/*Detail pages */
+.detail {
+  &.sharing, &.community {
+    h1 {
+      font-size: 20px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      color: $unihelp-asphalt;
+      margin-top: 0;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+.settings-title, .user-title {
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: $theme-color;
+}
+
+.stats {
+  p {
+    font-size: 14px;
+    &.amount {
+      text-align: right;
+    }
+  }
+}
+
+.notification-title, .notification-title a, .tutoring-request-title, .tutoring-request-title a, .download-title, .download-title a, .rating-title, .rating-title a {
+  color: $unihelp-asphalt;
+  font-size: 15px;
+  &:hover {
+    color: $theme-color;
+    font-weight: 500;
+  }
+}
+
+.notification-date, .tutoring-request-type, .download-campus, .rating-stars {
+  clear: both;
+  font-size: 14px;
+  color: $secondary-color;
+  margin-top: 0;
+}
+
+.notification-read, .tutoring-request-read, .download-read, .rating-read {
+  float: right;
+  color: $secondary-color;
+  &:hover {
+    color: $theme-color;
+  }
+}
+
+form p, sidebar p {
+  font-size: 14.5px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #505457;
+}
+
+.blurry-text {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+}

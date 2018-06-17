@@ -1,0 +1,345 @@
+table.assessment {
+  width: 100%;
+  td, th {
+    padding: 7.5px;
+    text-align: center;
+  }
+  th {
+    text-align: left;
+  }
+  td {
+    height: 30px;
+    width: 120px;
+    line-height: 3;
+    position: relative;
+    border: solid 0.5px #dfdfdf;
+    input {
+      height: 30px;
+      width: 120px;
+      padding: 0;
+      text-align: center;
+    }
+
+    a{
+      color: $unihelp-asphalt;
+      i{
+        font-family: FontAwesome;
+        font-size: 14.5px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: right;
+        color: #8a7e72;
+      }
+      &:hover{
+        color: $theme-color;
+        i{
+          color: $theme-color;
+        }
+      }
+    }
+    img {
+      width: 32px;
+      height: 32px;
+      margin: 5px 32px 0px 0px;
+      float: left;
+    }
+    input {
+      border: none;
+      background: transparent;
+      text-align: center;
+    }
+    &:hover {
+      //cursor: pointer;
+      background: $theme-color;
+      color: $unihelp-white;
+      span.more {
+        border-top: 12px solid $unihelp-asphalt;
+      }
+      a, i{
+        color: $unihelp-white;
+      }
+    }
+    &.left {
+      -webkit-box-shadow: 10px 0 5px -2px #888;
+      box-shadow: 5px 0px 10px -10px $unihelp-asphalt;
+      padding: 0px;
+      margin-right: 10px;
+    }
+    span.more {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-top: 12px solid $theme-color;
+      border-left: 12px solid transparent;
+      &:hover {
+        border-top: 12px solid $unihelp-asphalt;
+      }
+    }
+  }
+
+  td.left, th.left {
+    width: 220px;
+    margin-top: 15px;
+    text-align: left;
+    padding-left: 10px;
+    -webkit-box-shadow: 10px 0 5px -2px #888;
+    box-shadow: 5px 0px 10px -10px $unihelp-asphalt;
+    margin-right: 10px;
+  }
+
+  tr {
+    &:nth-child(even) {
+      background-color: #f5f5f5;
+    }
+    &.selected {
+      background: $theme-color;
+      color: $unihelp-white;
+      td {
+        &:hover {
+          color: $unihelp-white;
+        }
+      }
+      span.more {
+        border-top: 12px solid $unihelp-asphalt;
+      }
+    }
+    &.heading {
+      background: $unihelp-white;
+    }
+  }
+
+  /*Input spinner verbergen*/
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  &.group, &.individual{
+    td{
+      width: 50px;
+      &:hover{
+        opacity:1.0;
+        background: none;
+        box-shadow:none;
+        color: $unihelp-asphalt;
+        a{
+          color: $theme-color;
+        }
+      }
+      &.comment{
+        line-height: 1.75;
+      }
+    }
+    td.left, th.left{
+      width: 100px;
+    }
+  }
+}
+
+.assessment-overview {
+  width: 100%;
+  background-color: #f4f4f4;
+  td {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+.content.assessment {
+  .assessment-group {
+    height: 56px;
+    background-color: #f5f7f5;
+    padding: 15px 0;
+    margin: 2em 0;
+    .group-title, .info {
+      font-family: Raleway;
+      font-size: 16.5px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #505457;
+      margin: 0;
+    }
+    .info {
+      font-size: 11px;
+      font-weight: normal;
+      line-height: 2.5;
+      color: #505457;
+    }
+    i {
+      font-family: FontAwesome;
+      font-size: 12.5px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: right;
+      color: #8a7e72;
+    }
+    .info {
+      text-align: right;
+      .assessments, .students {
+        margin: 0 2% 0 2%;
+      }
+    }
+    .icons {
+      text-align: center;
+      border-left: 1px solid $theme-color;
+    }
+  }
+  i{
+    font-family: FontAwesome;
+    font-size: 14.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #8a7e72;
+    margin: 0 10px 0 0;
+  }
+  ul.assessments {
+    list-style-type: none;
+    padding-left: 0;
+    height: auto;
+    li {
+      background-color: $unihelp-white;
+      box-shadow: 0 1.5px 3px 0 $theme-color;
+      clear: both;
+      min-height: 75px;
+      .id {
+        height: 100%;
+        background-color: #f5f7f5;
+        font-size: 18.5px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #4d6a50;
+        line-height: 4;
+      }
+
+      .info {
+        height: 100%;
+      }
+      .assessment-title {
+        font-size: 15px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.18;
+        letter-spacing: normal;
+        text-align: left;
+        color: #505457;
+      }
+      .assessment-submissions {
+        font-size: 13px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: left;
+        color: #4d6a50 !important;
+      }
+      .assessment-students {
+        line-height: 3;
+        height: 100%;
+        h4 {
+          font-size: 13px;
+          font-weight: 300;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 4;
+          letter-spacing: normal;
+          text-align: right;
+          color: #4d6a50;
+        }
+      }
+      .icons {
+        text-align: center;
+        height: 100%;
+        border-left: solid 0.5px #4d6a50;
+        i {
+          font-size: 14.5px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 5;
+          letter-spacing: normal;
+          color: #8a7e72;
+          margin: 0 3% 0 3%;
+        }
+      }
+    }
+  }
+}
+
+#assessment-modal {
+  textarea {
+    max-width: 95%;
+    min-width: 95%;
+    margin: 2.5%;
+    height: 10em;
+    max-height: 10em;
+  }
+}
+
+.large-th, .mid-th, .skill-th {
+  font-family: Raleway;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.large-th {
+  font-size: 13px;
+  font-weight: 700;
+  font-style: normal;
+  color: #000000;
+  margin: 2% 0 2% 0;
+}
+
+.mid-th {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4d6a50;
+}
+
+.skill-th {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center !important;
+  color: #4d6a50;
+}
+
+@media only screen and (max-width: 1500px) {
+  table.assessment {
+    td, th {
+      width: 10% !important;
+      line-height: 1;
+      padding: 1%;
+      input {
+        width: 100% !important;
+      }
+      img{
+        display: none;
+      }
+    }
+  }
+}

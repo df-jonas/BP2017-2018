@@ -1,5 +1,5 @@
 @extends('layouts.platform')
-
+@section('pagetitle', 'Tutoring - Chat')
 @section('content')
     @include('partials.platform.header')
     @include('partials.platform.subheader')
@@ -8,20 +8,14 @@
         @include('partials.platform.go-back')
         <div class="table">
             <!-- Sidebar -->
-            <div class="sidebar">
-
-
-                <!--
+            <aside class="sidebar">
                 <div id="date-popup" class="modal col-lg-4 col-lg-push-4" style="">
                     <div id="date-popup-content" class="modal-content"></div>
                 </div>
-                -->
-
 
                 <!-- Modal -->
                 <div class="modal fade" id="date-modal" role="dialog">
                     <div class="modal-dialog  ">
-
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
@@ -36,216 +30,191 @@
                                 <button type="button" class="download-button" data-dismiss="modal">Sluit</button>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-
-                <article class="item">
-                    <header>Planning</header>
-                    <div id="date-calendar">
-
-                    </div>
-
-                </article>
+                <section class="item">
+                    <header><a class="header-title"><i class="fa fa-calendar"></i> Kalender</a></header>
+                    <div id="date-calendar"></div>
+                </section>
                 <!-- sidebar -->
-            </div>
+            </aside>
             <!-- content -->
-            <div class="content clearfix">
+            <section class="content clearfix">
                 <!-- Search form -->
-                <article class="item col-xs-12">
+                <section class="item col-xs-12">
                     <div class="padding clearfix">
-
+                        @php
+                            $subject = ($tutoringsession->tutee->user->id == Auth::id()) ? $tutoringsession->tutor : $tutoringsession->tutee;
+                        @endphp
                         <div class="row">
                             <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
                                 <div class="table">
-                                    <div style="display: table-cell; width: 42px"><img
-                                                src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                                class="group-img round-img round-img"></div>
+                                    <div style="display: table-cell; width: 42px">
+                                        <a href="{{ $subject->user->url() }}" class="profile-url"><img src="{{ asset('img/avatars/' . $subject->user->image )}}" class="group-img round-img"></a>
+                                    </div>
                                     <div style="display: table-cell; padding-left: 16px; vertical-align: middle">
-                                        <h6 style="margin: 0">Jonas De Frère</h6>
-                                        <h6 style="margin: 5px 0">Data Visualisatie</h6>
+                                        <a href="{{ $subject->user->url() }}" class="profile-url"><h6 style="margin: 0">{{ $subject->user->first_name . ' ' . $subject->user->last_name }}</h6></a>
+                                        <h6 style="margin: 5px 0">{{ $tutor->course->name }}</h6>
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="actions col-lg-6 col-md-8 col-sm-6 col-xs-12" style="text-align: center">
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <a class="action col-lg-12 col-xs-12" href="{{route('tutoring-messages', ['id' => '1']) }}">Chatten</a>
+                                    <a class="action col-lg-12 col-xs-12"
+                                       href="{{route('tutoring-index')}}">Overzicht</a>
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <a class="action col-lg-12 col-xs-12" href="{{route('tutoring-planning', ['id' => '1']) }}">Agenda</a>
+                                    <a class="action col-lg-12 col-xs-12" href="#">Agenda</a>
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <a class="action col-lg-12 col-xs-12" href="#">Stopzetten</a>
+                                    <a class="action col-lg-12 col-xs-12" id="url_stop" href="{{ route('tutoring-stop', ['session_id' => $tutoringsession->id])}}">Stopzetten</a>
                                 </div>
                             </div>
-
-                        <div id="messages" class="item col-lg-12">
-
-                            <h4>Berichten</h4>
-                            <br>
-
-                            <div class="msg clearfix col-lg-12">
-                                <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
-                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img">
-                                </div>
-                                <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
-                                    <div class="table">
-                                        <div style="display: table-cell;  float: left">
-                                            <span>Jeffrey Thor</span>
-                                        </div>
-                                        <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
-                                            <span>Donderdag om 14:43</span>
-                                        </div>
-                                    </div>
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                        turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
-                                        tempor sit amet, ante. </p>
-                                </div>
-                            </div>
-
-                            <div class="msg own clearfix col-lg-12">
-
-                                <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
-                                    <div class="table">
-                                        <div style="display: table-cell;  float: left">
-                                            <span>Donderdag om 14:43</span>
-                                        </div>
-                                        <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
-                                            <span>ik</span>
-                                        </div>
-                                    </div>
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                        turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
-                                        tempor sit amet, ante. </p>
-                                </div>
-
-                                <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
-                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img">
-                                </div>
-                            </div>
-
-                            <div class="msg clearfix col-lg-12">
-                                <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
-                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="group-img round-img">
-                                </div>
-                                <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
-                                    <div class="table">
-                                        <div style="display: table-cell;  float: left">
-                                            <span>Jeffrey Thor</span>
-                                        </div>
-                                        <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
-                                            <span>Donderdag om 14:43</span>
-                                        </div>
-                                    </div>
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                        turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
-                                        tempor sit amet, ante. </p>
-                                </div>
-                            </div>
-
                         </div>
-
-
-
                     </div>
+                </section>
+                <section class="item col-xs-12">
+                    <div class="padding clearfix">
+                        <div class="row">
+                            <!-- comment -->
+                            <section id="chat-box" class="comment-box col-lg-12 flex padding">
+                                <div class="picture hide-mobile col-sm-1 col-xs-0">
+                                    <img src="{{ asset('img/avatars/' . Auth::user()->image )}}" class="account-img round-img">
+                                </div>
+                                <form id="chat-form" class="col-sm-11 col-xs-12" method="POST"
+                                      action="{{ route('tutoring-add-chat', ['session_id' => $tutoringsession->id]) }}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <div class="txt col-sm-11 col-xs-10">
+                                        <input type="text" name="comment" id="chat-field" class="col-xs-11"
+                                               placeholder="reactie toevoegen">
+                                    </div>
+                                    <div class="icon col-sm-1 col-xs-2">
+                                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                                    </div>
+                                </form>
+                            </section>
+                            <!-- comment -->
+                            <section id="chats" class="item messages col-lg-12">
+                                <br>
+                                @foreach ($chats as $chat)
+                                    @php
+                                        $own = ($chat->user->id == Auth::id()) ? "own" : "";
+                                    @endphp
+                                    @if($own)
+                                        <div class="msg own clearfix col-lg-12">
+                                            <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
+                                                <div class="table">
+                                                    <div style="display: table-cell;  float: left">
+                                                        <span>{{ $chat->chatcreated() }}</span>
+                                                    </div>
+                                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                        <span>ik</span>
+                                                    </div>
+                                                </div>
+                                                <p>{{ $chat->message }}</p>
+                                            </div>
 
-                    <div id="comment-box" class="row flex padding">
-                        <div class="picture hide-mobile col-sm-1 col-xs-0">
-                            <img src="{{ asset('img/avatars/' . Auth::user()->image )}}"
-                                 class="account-img round-img">
+                                            <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
+                                                <a href="{{ $subject->user->url() }}" class="profile-url"><img src="{{ asset('img/avatars/' . $chat->user->image  )}}"
+                                                                                           class="group-img round-img"></a>
+                                            </div>
+                                        </div>
+                                    @else
+                                        <div class="msg clearfix col-lg-12">
+                                            <div class="picture hide-mobile col-lg-1 col-md-1 col-sm-2 col-xs-0">
+                                                <a href="{{ $subject->user->url() }}" class="profile-url"><img src="{{ asset('img/avatars/' . $chat->user->image )}}"
+                                                                                           class="group-img round-img"></a>
+                                            </div>
+                                            <div class="txt col-lg-11 col-md-11 col-sm-10 col-xs-12">
+                                                <div class="table">
+                                                    <div style="display: table-cell;  float: left">
+                                                        <span><a href="{{ $subject->user->url() }}" class="profile-url">{{ $chat->user->first_name . ' ' . $chat->user->last_name }}</a></span>
+                                                    </div>
+                                                    <div style="display: table-cell; padding-left: 16px; vertical-align: middle; float: right;">
+                                                        <span>{{ $chat->chatcreated() }}</span>
+                                                    </div>
+                                                </div>
+                                                <p>{{ $chat->message }}</p>
+                                            </div>
+                                        </div>
+                                    @endif
+                                @endforeach
+                                {{ $chats->links() }}
+                            </section>
                         </div>
-                        <form id="comment-form" class="col-sm-11 col-xs-12" method="POST"
-                              action="#">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <div class="txt col-sm-11 col-xs-10">
-                                <input type="text" name="comment" id="commentfield" class="col-xs-11"
-                                       placeholder="reactie toevoegen">
-                            </div>
-                            <div class="icon col-sm-1 col-xs-2">
-                                <button type="submit"><i class="fa fa-paper-plane"></i></button>
-                            </div>
-                        </form>
                     </div>
-
-                    <!-- content -->
-                </article>
-            </div>
-            </div>
-            <!-- container -->
+                </section>
+            </section>
         </div>
+        <!-- container -->
+    </div>
+    @include('partials.footer')
+@endsection
+@section("scripts")
+    <script src="{{ asset("js/tutoring-chat.js") }}"></script>
+    <script src="{{asset("js/zabuto_calendar.min.js")}}"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            var eventData = [
+                {"date": "2018-03-10", "body": "test 1", "title": "test 1", "classname": "item-herinnering"},
+                {"date": "2018-03-20", "body": "Test 2", "title": "Test 2", "classname": "item-taak"}
+            ];
 
-        @include('partials.footer')
-        @endsection
+            $("#date-calendar").zabuto_calendar({
+                language: "nl",
+                show_previous: false,
+                show_next: 3,
+                today: true,
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "block", label: "Herinnering", classname: "cal-herinnering"},
+                    {type: "spacer"},
+                    {type: "block", label: "Taak", classname: "cal-taak"},
+                    {type: "spacer"},
+                ],
+                data: eventData
+            });
+        });
 
-        @section("scripts")
-            <script src="{{asset("js/zabuto_calendar.min.js")}}"></script>
-            <script type="application/javascript">
-                $(document).ready(function () {
+        function myDateFunction(id, fromModal) {
+            $("#date-modal").hide();
+            if (fromModal) {
+                $("#" + id + "_modal").modal("hide");
+            }
+            var date = $("#" + id).data("date");
+            var title = $("#" + id).data("header");
 
+            //console.log(parms);
 
-                    var eventData = [
-                        {"date": "2018-03-10", "body": "test 1", "title": "test 1", "classname": "item-herinnering"},
-                        {"date": "2018-03-20", "body": "Test 2", "title": "Test 2", "classname": "item-taak"}
-                    ];
+            var hasEvent = $("#" + id).data("hasEvent");
+            if (!hasEvent && !fromModal) {
+                return false;
+            }
+            //$("#date-popup-content").html('You clicked on date ' + date);
+            $('#date-modal #date').html(title);
+            console.log(id);
+            console.log(date);
+            console.log($("#" + id));
+            $("#date-modal").modal();
+            return true;
+        }
 
-
-                    $("#date-calendar").zabuto_calendar({
-                        language: "nl",
-                        show_previous: false,
-                        show_next: 3,
-                        today: true,
-                        action: function () {
-                            return myDateFunction(this.id, false);
-                        },
-                        action_nav: function () {
-                            return myNavFunction(this.id);
-                        },
-                        ajax: {
-                            url: "show_data.php?action=1",
-                            modal: true
-                        },
-                        legend: [
-                            {type: "block", label: "Herinnering", classname: "cal-herinnering"},
-                            {type: "spacer"},
-                            {type: "block", label: "Taak", classname: "cal-taak"},
-                            {type: "spacer"},
-                        ],
-                        data: eventData
-                    });
-                });
-
-                function myDateFunction(id, fromModal) {
-                    $("#date-modal").hide();
-                    if (fromModal) {
-                        $("#" + id + "_modal").modal("hide");
-                    }
-                    var date = $("#" + id).data("date");
-                    var title = $("#" + id).data("header");
-
-                    //console.log(parms);
-
-                    var hasEvent = $("#" + id).data("hasEvent");
-                    if (!hasEvent && !fromModal) {
-                        return false;
-                    }
-                    //$("#date-popup-content").html('You clicked on date ' + date);
-                    $('#date-modal #date').html(title);
-                    console.log(id);
-                    console.log(date);
-                    console.log($("#" + id));
-                    $("#date-modal").modal();
-                    return true;
-                }
-
-                function myNavFunction(id) {
-                    $("#date-modal").hide();
-                    var nav = $("#" + id).data("navigation");
-                    var to = $("#" + id).data("to");
-                }
-            </script>
+        function myNavFunction(id) {
+            $("#date-modal").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+        }
+    </script>
 @endsection

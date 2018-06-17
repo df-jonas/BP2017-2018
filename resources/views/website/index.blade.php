@@ -1,143 +1,99 @@
 @extends('layouts.website')
-
+@section('pagetitle', 'Een studentenplatform om U tegen te zeggen.')
 @section('content')
 
-    <!-- header -->
-    @include('partials.website.header')
-    <!-- banner -->
-    <div id="page-banner" class="col-xs-12">
-        <div id="welcome" class="col-lg-6 col-lg-push-3 col-xs-12">
-            <h1>Welkom bij UniHelp</h1>
-            <h3>Het slimme leerplatform om studenten altijd en overal te helpen.</h3>
+<!-- header -->
+@include('partials.website.header')
+<!-- end header -->
 
-            <section class="buttons col-sm-8 col-sm-push-2">
-                <div class="row">
-                    <a href="{{ route('login')}}">
-                        <button type="button"
-                                class="action-button  left register col-lg-6 col-sm-6 col-xs-12 col-xs-push-0">
-                            Registreren
-                        </button>
-                    </a>
-                    <a href="{{ route('login')}}">
-                        <button type="button"
-                                class="action-button right login col-lg-6 col-sm-6  col-xs-12 col-xs-push-0">Inloggen
-                        </button>
-                    </a>
-                </div>
-            </section>
-
-        </div>
-
-        <!-- scroll down -->
-        <div class="scroll">
-            <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-        </div>
-
-    </div>
-
-    <!-- how it works -->
-    <section id="how-it-works" class="what col-xs-12">
+<!-- page banner -->
+<section id="page-banner" class="col-xs-12">
+    <div class="overlay"></div>
+    <section id="welcome" class="col-xs-12 no-padding">
         <div class="container">
-
-            <section class="title col-xs-12">
-                <h1>Hoe werkt <span>UniHelp?</span></h1>
-            </section>
-
-            <section class="items col-xs-12">
-
-                <article class="item clearfix">
-                    <div class="row row-fluid">
-                        <div class="right col-lg-6 col-lg-push-6 col-xs-12">
-                            <h2>Met UniHelp kan je eenvoudig een
-                                tutor vinden
-                            </h2>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                egestas.
-                                Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
-                                libero
-                                sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-                                leo.</p>
-                        </div>
-
-                        <div class="left col-lg-6 col-lg-pull-6 col-xs-12">
-                            <img src="img/backgrounds/wat-1.png">
-                        </div>
-
-                    </div>
-                </article>
-
-
-                <article class="item clearfix">
+            <div class="col-lg-6 col-md-8 col-xs-12 no-padding">
+                <h1>Welkom bij UniHelp voor studenten</h1>
+                <p>UniHelp is een geheel nieuw en gratis <a href="{{ route('website-how')}}"> platform</a> om
+                    studenten te helpen bij hun studies.</p>
+                <div class="buttons col-lg-8 col-md-10 col-sm-10 col-xs-12">
                     <div class="row">
-                        <div class="left col-lg-6 col-xs-12">
-                            <h2>Deel samenvattingen met andere studenten.</h2>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                egestas.
-                                Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
-                                libero
-                                sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-                                leo.</p>
+                        <div class="col-sm-6 col-xs-12">
+                            <a href="{{ route('register')}}">
+                                <button type="button" class="action-button left register col-xs-12">
+                                    Registreren
+                                </button>
+                            </a>
                         </div>
-
-                        <div class="right col-lg-6 col-xs-12">
-                            <img src="img/backgrounds/wat-2.png">
-                        </div>
-                    </div>
-                </article>
-
-
-                <article class="item clearfix">
-                    <div class="row">
-                        <div class="right col-lg-6 col-lg-push-6 col-xs-12">
-                            <h2>Volg interessante groepen, blijf op de hoogte.</h2>
-
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                egestas.
-                                Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
-                                libero
-                                sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-                                leo.</p>
-                        </div>
-                        <div class="left col-lg-6 col-lg-pull-6 col-xs-12">
-                            <img src="img/backgrounds/wat-3.png">
+                        <div class="col-sm-6 col-xs-12">
+                            <a href="{{ route('login')}}">
+                                <button type="button" class="action-button right login col-xs-12">
+                                    Inloggen
+                                </button>
+                            </a>
                         </div>
                     </div>
-                </article>
-
-
-            </section>
+                </div>
+            </div>
         </div>
     </section>
+</section>
+<!-- end page banner -->
 
-
-
-
-    <!-- call to action slogan -->
-    <div class="row">
-        <section class="call-to-action col-xs-12">
-            <h2>Word nu lid, geniet als student van tal van voordelen!</h2>
-            <div class="col-lg-6 col-lg-push-3 col-xs-12">
-                <section class="buttons col-sm-8 col-sm-push-2">
-                    <div class="row">
-                        <a href="{{ route('login')}}">
-                            <button type="button"
-                                    class="action-button  left login col-lg-6 col-sm-6 col-xs-12 col-xs-push-0">
-                                Registreren
-                            </button>
-                        </a>
-                        <a href="{{ route('login')}}">
-                            <button type="button"
-                                    class="action-button right login col-lg-6 col-sm-6  col-xs-12 col-xs-push-0">
-                                Inloggen
-                            </button>
-                        </a>
+<!-- features -->
+<section id="features" class="padding clearfix col-xs-12">
+    <div class="container no-padding">
+        <a href="{{route('website-how')}}">
+            <div class="col-md-4 col-xs-12">
+                <section class="feature no-padding col-xs-12">
+                    <div class="overlay clearfix">
                     </div>
+                    <img src="img/features/1.jpg" alt="Tutoring">
+                    <p>Tutoring</p>
+                    <h3>Vind een geschikte <br> tutor.</h3>
+                    <a class="meer" href="{{route('website-how')}}">Ga van start</a>
                 </section>
             </div>
-        </section>
+        </a>
+        <a href="{{route('website-how')}}">
+            <div class="col-md-4 col-xs-12">
+                <section class="feature no-padding col-xs-12">
+                    <div class="overlay clearfix">
+                    </div>
+                    <img src="img/features/5.jpg" alt="Bestanden delen">
+                    <p>Bestanden delen</p>
+                    <h3>Download de perfecte <br> samenvattingen.</h3>
+                    <a class="meer" href="{{route('website-how')}}">Ga van start</a>
+                </section>
+            </div>
+        </a>
+        <a href="{{route('website-how')}}">
+            <div class="col-md-4 col-xs-12">
+                <section class="feature no-padding col-xs-12">
+                    <div class="overlay clearfix">
+                    </div>
+                    <img src="img/features/4.jpg" alt="Community">
+                    <p>Community</p>
+                    <h3>Blijf altijd op de<br> hoogte.</h3>
+                    <a class="meer" href="{{route('website-how')}}">Ga van start</a>
+                </section>
+            </div>
+        </a>
     </div>
+    <section class="promo">
+        <h2>Bezoek nu ons platform en maak als student gebruik van alle <strong>gratis functionaliteiten.</strong></h2>
+    </section>
+</section>
+<!-- end features -->
 
+<!-- call to action -->
+@include('partials.website.call-to-action')
+<!-- end call to action -->
 
-    <!-- footer -->
-    @include('partials.footer')
+<!-- newsletter -->
+@include('partials.website.newsletter')
+<!-- end newsletter -->
+
+<!-- footer -->
+@include('partials.footer')
+<!-- end footer -->
 @endsection

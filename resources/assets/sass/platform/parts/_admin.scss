@@ -1,0 +1,60 @@
+.admin-nav {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      padding: 10px;
+      box-shadow: 0px 0px 1px 0px $theme-color;
+      cursor: pointer;
+      &:hover {
+        background: $theme-color;
+        color: $unihelp-white;
+      }
+    }
+    a {
+      color: $theme-color;
+    }
+  }
+}
+
+.admin-list {
+  list-style-type: none;
+  padding-left: 0;
+  li {
+    padding: 10px;
+    box-shadow: 0px 0px 1px 0px $theme-color;
+    cursor: pointer;
+    height: auto;
+    span {
+      float: right;
+      margin-left: 10px;
+    }
+    span.user-id {
+      float: left;
+      margin-right: 10px;
+      padding-right: 20px;
+    }
+    span.action {
+      background: $theme-color;
+      color: $unihelp-white;
+      padding: 7.5px;
+      &:hover {
+        background: $background-color;
+        color: $theme-color;
+      }
+    }
+    span.delete {
+      background: $unihelp-asphalt;
+    }
+    &.new {
+      text-align: right;
+      height: 40px;
+      a {
+        color: $theme-color;
+        &:hover {
+          color: $unihelp-asphalt;
+        }
+      }
+    }
+  }
+}

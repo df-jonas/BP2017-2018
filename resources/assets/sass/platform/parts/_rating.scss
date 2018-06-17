@@ -1,0 +1,56 @@
+/* ster rating sharing*/
+.sharing {
+  &.overview, &.detail {
+    .rating {
+      font-size: 1.5em !important;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      .checked {
+        color: $secondary-color;
+      }
+    }
+  }
+  /* file detail */
+  &.detail {
+    .rating {
+      top: 0;
+      right: 0;
+      -webkit-transform: translate(0, -0%);
+      transform: translate(0, -0%);
+      text-align: right;
+      float: right;
+      position: relative;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+/* sidebar ster */
+.sidebar {
+  .rating {
+    .checked {
+      color: $secondary-color;
+    }
+  }
+}
+
+/* lijst alle ratings */
+.all-ratings {
+  .checked {
+    color: $secondary-color;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  &.detail {
+    .rating {
+      i{
+        font-size: 14px;
+      }
+    }
+  }
+}

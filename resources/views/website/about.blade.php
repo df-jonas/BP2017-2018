@@ -1,109 +1,131 @@
 @extends('layouts.website')
-
+@section('pagetitle', 'Over UniHelp')
 @section('content')
-    @include('partials.website.header')
-    <div class="breadcrumb-banner col-xs-12">
-        <div class="background-image"></div>
-        <div class="inner-content vertical-center col-lg-12">
-            <h1>Over Unihelp</h1>
-        </div>
-    </div>
-    <section id="about-banner" class="col-xs-12">
-        <div class="left col-lg-4 col-lg-push-2 col-xs-12">
-            <p>Studenten hebben al wel vaker gemerkt: vragen over leerstof die net niet belangrijk genoeg zijn om ermee
-                naar de docent te trekken, informatie over een opdracht die je niet zo duidelijk lijkt, een buddy zoeken
-                bij een project, samenvattingen zoeken, etc. Het zijn maar enkele voorbeelden van situaties die elke
-                student wel eens meemaakt, maar soms niet aan gepaste hulp geraakt.
-                In de huidige maatschappij is zo goed als iedereen continu beschikbaar, hetzij mobiel, hetzij via de
-                computer. We kunnen hiervan gebruik maken door een uniek en gespecialiseerd platform (met mobiele
-                ondersteuning) aan te bieden voor studenten.</p>
+@include('partials.website.header')
 
-            <p>In deze bachelorproef doen we aan zelfstudie voor ongekende frameworks en technologieën, onderzoeken we
-                vereisten in dergelijk platform, bevragen we studenten en ontwikkelen we een web-platform om studenten
-                te ondersteunen gedurende hun studietraject. De bedoeling is om een gecentraliseerd punt te voorzien
-                waarop studenten hulp en informatie kunnen krijgen, contact kunnen zoeken met medestudenten en
-                school-gerelateerd materiaal kunnen aanbieden.
-            </p>
-
-
-        </div>
-
-        <div class="right col-lg-4 col-lg-push-2 col-xs-12">
-            <p>Een samenwerking tussen studenten van de richtingen Dig-X en Multec opent vele luiken. Wij willen hiervan
-                optimaal gebruik maken door het beste van beide richtingen te combineren. Bij het ontwikkelen van het
-                platform houden we daar in alle opzichten rekening mee. Dit door onder andere een gebruiksvriendelijke
-                front-end, performante back-end en server-side optimalisatie met caching/veiligheid te voorzien. Hierbij
-                gebruiken we onder meer Laravel, Redis, API authentication, rate-limiting en meer, veelal frameworks en
-                technologieën die door ons nog niet gekend zijn. Hiervoor zullen we dus zelfstudie uitvoeren.</p>
-
-            <p>De Dig-X student zal zich verdiepen in de back-end ontwikkeling (PHP). Ook zal hij zorgen voor snelle
-                responses door gebruik te maken van Redis in het Laravel platform. Aangezien Jonas De Frère zich
-                specialiseert in netwerken en beveiliging spreekt het voor zich dat hij de beveiliging van het platform
-                onder handen zal nemen door middel van rate-limiting en functionele middleware.
-                Anderzijds zal de student Multec andere aspecten op zich nemen zoals de front-end ontwikkeling van het
-                platform. Arno Stalpaert specialiseert zich in mobile app & web development en zal de gehele branding
-                (ontwerp logo, kleuren, design,..) voor zich nemen. Ook de ontwikkeling in PHP en Laravel maken hiervan
-                deel uit. Om dit front-end gedeelte zo optimaal mogelijk af te stemmen op de gebruiker zal er ook een
-                Usability en User experience onderzoek worden opgestart.
-            </p>
+<!-- page banner -->
+<section id="innerpage-banner" class="col-xs-12">
+    <div class="overlay">
+    <section id="welcome" class="col-xs-12 no-padding">
+        <div class="container">
+            <div class="col-md-6 col-md-push-3 col-xs-12 no-padding">
+                <h1>Over UniHelp</h1>
+            </div>
         </div>
     </section>
+    </div>
+</section>
+<!-- end page banner -->
 
-
+<!-- begin unihelp intro -->
+<section id="intro" class="col-xs-12">
     <div class="container">
+        <div class="col-lg-8 col-lg-push-2">
+            <h2>Waarom UniHelp?</h2>
+            <h4 class="quote">
+                Ik was al een tijdje op zoek naar een geschikt platform dat de beste functionaliteiten van Canvas, Desiderius, Facebook en WeTransfer kon bundelen tot één geheel.
+            </h4>
+        </div>
+    </div>
+</section>
+<!-- end unihelp intro -->
 
+<!-- begin goals block -->
+<section id="goal" class="col-xs-12 padding">
+    <div class="container">
+        <div class="col-lg-6 col-xs-12">
+            <div class="col-lg-10 col-lg-push-1 col-xs-12">
+                <h3>Helemaal gratis</h3>
+                <p>
+                    Dit platform is bedoeld om het leven van een hardwerkende student heel wat draaglijker en aangenamer te maken.
+                    Hiervoor moeten studenten niets betalen, het is geheel gratis.
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-6 col-xs-12">
+            <div class="col-lg-10 col-lg-push-1 col-xs-12">
+                <h3>Gebruiksvriendelijk</h3>
+                <p>
+                    Er zijn heel wat bevragingen gebeurd om de noden van alle studenten te analyseren. Op basis van deze analyses en testen hebben wij UniHelp opgebouwd.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end goals block -->
+
+<!-- begin person -->
+<address class="container">
     <section class="about-person col-xs-12">
         <div class="row flex">
-            <div class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
-                <img src="img/team/arno.png" class="round-img">
-            </div>
-
-
-            <div class="right col-lg-6 col-lg-push-1 col-md-8 col-md-push-2 col-xs-12">
-                <h3>Arno Stalpaert</h3>
+            <figure class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
+                <img src="img/team/arno.png" class="round-img" alt="Arno Stalpaert">
+            </figure>
+            <div class="right col-lg-8 col-lg-push-1 col-md-8 col-md-push-2 col-xs-12">
+                <figcaption><h3>Arno Stalpaert</h3></figcaption>
                 <h4>Multec student
                     <small>(Mobile App &amp; Web development)</small>
                 </h4>
-                <p>Hallo, ik ben Arno en ik zit in mijn laatste jaar Multimedia- en communicatie technologie aan de Erasmushogeschool Brussel. Vorig jaar koos ik er voor om mij te specialiseren in Mobile App en Web development.
-                Hier leerde ik onder andere veel over design, front-end, back-end, User Experience, website development, enzovoort. Om deze reden koos ik voor een veelzijdig project waar al deze zaken aan bod zouden komen. Tijdens dit project zal
+                <p>Hallo, ik ben Arno en ik zit in mijn laatste jaar Multimedia- en communicatie technologie aan de
+                    Erasmushogeschool Brussel. Vorig jaar koos ik er voor om mij te specialiseren in Mobile App en Web
+                    development.
+                    Hier leerde ik onder andere veel over design, front-end, back-end, User Experience, website
+                    development, enzovoort. Om deze reden koos ik voor een veelzijdig project waar al deze zaken aan bod
+                    zouden komen. Tijdens dit project zal
                     ik mij vooral focussen op het front-end, design en UX gedeelte.
                 </p>
-
             </div>
         </div>
-
     </section>
+</address>
+<!-- end person -->
 
+<!-- begin action block -->
+<section id="action" class="col-xs-12 padding clearfix">
+    <div class="container padding">
+        <div class="col-lg-6 col-lg-push-3 padding">
+            <div class="col-lg-10 col-lg-push-1">
+                <h3>Probeer het gratis!</h3>
+                <a href="{{ route('register') }}" class="col-xs-12">Als IT studenten zagen wij in studentenplatformen ruimte voor verbetering.</a>
+            </div>
+        </div>
     </div>
+</section>
+<!-- end action block -->
 
-    <section id="about-quote" class="col-xs-12 clearfix">
-        <div class="quote col-lg-6 col-lg-push-3 col-xs-12">
-            <h1>“Als IT studenten zagen wij in studentenplatformen ruimte voor verbetering.”</h1>
-        </div>
-    </section>
-
-
-    <div class="container">
+<!-- begin person -->
+<address class="container">
     <section class="about-person col-xs-12">
-        <div class="row flex">
-            <div class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
-                <img src="img/team/jonas.png" class="round-img">
-            </div>
-
-
-            <div class="right col-lg-6 col-lg-push-1 col-md-8 col-md-push-2 col-xs-12">
-                <h3>Jonas De Frère</h3>
+        <section class="row flex">
+            <figure class="left col-lg-2 col-lg-push-1 col-md-2 col-md-push-1 col-xs-12">
+                <img src="img/team/jonas.png" class="round-img" alt="Jonas De Frère">
+            </figure>
+            <div class="right col-lg-8 col-lg-push-1 col-md-8 col-md-push-2 col-xs-12">
+                <figcaption><h3>Jonas De Frère</h3></figcaption>
                 <h4>Dig-X student
                     <small>(Network &amp; Security)</small>
                 </h4>
-                <p>Hallo, mijn naam is Jonas De Frère, laatstejaarsstudent Dig-X (toegepaste informatica) aan de Erasmushogeschool Brussel. Ik volg de specialisatie Netwerken & Security, waardoor ik een grote kennis heb over servers, beveiliging en back-end.
-                    Tijdens mijn opleiding leerde ik aan de slag gaan met back-end development. Belangrijk hierbij is het aspect snelheid, optimalisatie en beveiliging. Deze competenties laat ik zien in in ons eigen platform, UniHelp.</p>
-
+                <p>Hallo, mijn naam is Jonas De Frère, laatstejaarsstudent Dig-X (toegepaste informatica) aan de
+                    Erasmushogeschool Brussel. Ik volg de specialisatie Netwerken & Security, waardoor ik een grote
+                    kennis heb over servers, beveiliging en back-end.
+                    Tijdens mijn opleiding leerde ik aan de slag gaan met back-end development. Belangrijk hierbij is
+                    het aspect snelheid, optimalisatie en beveiliging. Deze competenties laat ik zien in in ons eigen
+                    platform, UniHelp.</p>
             </div>
-        </div>
-
+        </section>
     </section>
+</address>
+<!-- end person -->
 
-    </div>
-    @include('partials.footer')
+<!-- call to action -->
+@include('partials.website.call-to-action')
+<!-- end call to action -->
+
+<!-- newsletter -->
+@include('partials.website.newsletter')
+<!-- end newsletter -->
+
+<!-- footer -->
+@include('partials.footer')
+<!-- end footer -->
 @endsection

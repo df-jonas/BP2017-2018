@@ -1,0 +1,31 @@
+.filecontainer {
+  display: inline;
+}
+/*file overview*/
+.file-overview {
+  text-align: left;
+  width: 100%;
+}
+
+.file-overview tr td:last-child {
+  text-align: right;
+}
+
+.details {
+  margin-top: 2em;
+  opacity: 0.9;
+  .detail {
+    background: $theme-color;
+    border: 1px solid $unihelp-white;
+    padding: 5px 5px 5px 10px;
+    color: $unihelp-white;
+    i {
+      span {
+        color: $unihelp-white;
+        line-height: 1em;
+        padding-left: 12px;
+        font-size: 16px;
+      }
+    }
+  }
+}

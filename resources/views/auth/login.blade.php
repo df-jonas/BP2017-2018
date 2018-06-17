@@ -1,70 +1,48 @@
 @extends('layouts.website')
-
+@section('pagetitle', 'Inloggen')
 @section('content')
-    <div id="login-page">
-        <div class="login-box">
-
-
-
-            <header class="col-xs-12">
-                <h3>Inloggen</h3>
-                <p>Vul je gegevens in om in te loggen met je UniHelp account.</p>
-            </header>
-
-            <div class="box col-xs-12 clearfix">
-                <form method="POST" action="{{ route('login') }}">
-
-                    {{ csrf_field() }}
-
+    <main class="auth-page">
+        <section class="auth-box col-lg-4 col-lg-push-4 col-md-6 col-md-push-6 col-sm-8 col-sm-push-2  col-xs-12">
+            <a href="{{route('website-index')}}"><img class="logo" src="img/logo/favicon.png"></a>
+            <form method="POST" action="{{ route('login') }}">
+                {{ csrf_field() }}
+                <div class="col-xs-12 padding">
                     <div class="form-group clearfix col-xs-12">
-                        <label for="email">E-mailadres</label>
-                        <input type="text" class="form-control" id="email" name="email"
-                               aria-describedby="usernameHelp">
+                        <input type="text" class="form-control" id="email" name="email" aria-describedby="usernameHelp"
+                               placeholder="E-mail adres">
+                    </div>
+                    <div class="form-group clearfix col-xs-12">
+                        <input type="password" class="form-control" id="password" name="password"
+                               aria-describedby="passwordHelp" placeholder="Wachtwoord">
+                    </div>
+                    <div class="form-group clearfix col-xs-12">
+                        <label class="checkbox-container remember col-xs-12">Aangemeld blijven
+                            <input type="checkbox" name="remember" value="Aangemeld blijven" class="form-check-input"
+                                   checked>
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="form-group clearfix col-xs-12">
+                        <input type="submit" class="action-button login col-xs-12" value="INLOGGEN">
+                    </div>
+                    <!--
+                    <div class="form-group clearfix col-xs-12">
+                        <input type="submit" class="action-button canvas disabled col-xs-12" value="LOGIN MET CANVAS" disabled readonly title="Inloggen met Canvas is innenkort beschikbaar">
+                    </div>
+                -->
+                    <div class="form-group clearfix col-xs-12">
                         @if ($errors->has('email'))
                             <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
                         @endif
-                    </div>
-
-                    <div class="form-group clearfix col-xs-12">
-                        <label for="password">Wachtwoord</label>
-                        <input type="password" class="form-control" id="password" name="password"
-                               aria-describedby="usernameHelp">
                         @if ($errors->has('password'))
                             <span class="help-block"><strong>{{ $errors->first('password') }}</strong></span>
                         @endif
                     </div>
-
-                    <!-- TODO aangemeld blijven
-                    <div class="form-group clearfix col-xs-12">
-                        <label class="form-check-label">
-                            <input type="checkbox" name="remember" class="form-check-input">Aangemeld blijven
-                        </label>
-                    </div>
-                    -->
-
-                    <div class="form-group clearfix col-xs-12">
-                        <label for="password"></label>
-                        <input type="submit" class="action-button login" value="Inloggen">
-                    </div>
-
-                </form>
-                <a class="login-problem" href="#"><p>Wachtwoord vergeten?</p></a>
-            </div>
-
-
-
-
-            <footer class="col-xs-12 clearfix">
-                <h5>Heb je nog geen UniHelp account?</h5>
-                <br/>
-
-                    <a href="{{ route('register') }}">
-                        <input type="button" class="action-button register" value="Registreer nu">
-                    </a>
-
+                </div>
+            </form>
+            <footer class="row">
+                <a class="text-muted">Wachtwoord vergeten?</a>
             </footer>
-
-
-        </div>
-    </div>
+        </section>
+    </main>
 @endsection

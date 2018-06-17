@@ -1,0 +1,188 @@
+/* Profiel */
+.headline {
+  img {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    margin: 5.5% auto;
+    display: block;
+    top: 30%;
+    transform: translateY(-30%);
+  }
+  .right {
+    padding-top: 1%;
+  }
+}
+
+.left-border {
+  border-left: 2.5px solid $theme-color;
+}
+
+.color-choose, .notification-choose{
+  margin-bottom: 20%;
+  height: 80px;
+  border: 1px solid $unihelp-white;
+  display: inline-block;
+  cursor: pointer;
+  opacity: .85;
+  position: relative;
+  transition: 0.5s ease all;
+  label {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  &:after {
+    font-size: 1.5em;
+    color: $unihelp-white;
+    font-family: FontAwesome;
+    text-align: center;
+    display: block;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
+  }
+}
+
+/* thema settings */
+.color-choose {
+  &:after {
+    content: '\f070';
+  }
+  &#default {
+    background: #4D6A50;
+  }
+  &#light {
+    background: #505457;
+  }
+  &#dark {
+    background: #000000;
+  }
+  &:hover, &.current {
+    opacity: 1;
+    &:after {
+      content: '\f06e';
+    }
+  }
+}
+
+/* notificatie settiggs */
+.notification-choose {
+  background: $theme-color;
+  opacity: 1;
+  &:after {
+    content: '\f0f3';
+  }
+  &:hover {
+    background: lightgray;
+    &:after {
+      content: '\f1f6';
+    }
+  }
+  &.disabled {
+    background: lightgray;
+    &:after {
+      content: '\f1f6';
+    }
+    &:hover {
+      background: $theme-color;
+      &:after {
+        content: '\f0f3';
+      }
+    }
+  }
+}
+
+/* alle nots, request, downloads, ratings */
+.all-notifications, .all-tutoring-requests, .all-downloads, .all-ratings {
+  padding-left: 0;
+  list-style: none;
+  li {
+    margin-bottom: 17.5px;
+    border-bottom: 1px solid $background-color;
+    padding: 5px 10px;
+    &.unread {
+      background: $background-color;
+    }
+  }
+}
+
+/* vakken lijst */
+.vakken, .vakken-nieuw, .profile-list {
+  padding-left: 0;
+  li {
+    width: 100%;
+    height: 26.5px;
+    line-height: 26.5px;
+    list-style-type: none;
+    margin-bottom: 16px;
+    span {
+      float: right;
+      color: $theme-color;
+      font-size: 16px;
+      cursor: pointer;
+      i {
+        color: $theme-color;
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+    a {
+      color: $unihelp-black;
+      &:hover {
+        color: $theme-color;
+      }
+    }
+  }
+}
+
+/* nieuwe vakken lijst */
+.vakken-nieuw {
+  h2 {
+    margin: 0;
+  }
+  span {
+    input, button {
+      width: auto;
+      height: 26.5px;
+      margin-top: 0;
+      line-height: 0.45;
+    }
+  }
+}
+
+/*
+#vak-zoeken {
+  height: 50px;
+  padding: 15px;
+  margin: 0 0 20px 0;
+  border: solid 0.5px #4d6a50;
+}
+*/
+/* Link naar profiel pagina*/
+
+.profile-url {
+  color: inherit;
+  &:hover {
+    color: $theme-color;
+  }
+}
+
+/* info tabel */
+/*
+.info-table {
+  width: 100%;
+  background: $background-color;
+  td, th {
+    width: 50%;
+    padding: 10px;
+    border: 0.2px solid $unihelp-white;
+  }
+}
+ */

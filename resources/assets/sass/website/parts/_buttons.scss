@@ -1,0 +1,65 @@
+/*Buttons*/
+.action-button {
+  height: 40px;
+  line-height: 1em;
+  background-color: $unihelp-white;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
+  &.register, &.login, &.submit {
+    background: $theme-color;
+    color: $unihelp-white;
+    &:hover {
+      background: $unihelp-grey;
+      color: $unihelp-white;
+    }
+  }
+  /*
+    &.canvas {
+      background: $unihelp-grey;
+      color: $unihelp-white;
+      &:hover {
+        background: $theme-color;
+        color: $unihelp-white;
+        -webkit-transition: background-color 100ms linear;
+        -ms-transition: background-color 100ms linear;
+        transition: background-color 100ms linear;
+      }
+  }
+    */
+}
+
+.form-button {
+  @extend .action-button;
+  background: $theme-color;
+}
+
+.download-button {
+  @extend .action-button;
+  background: $secondary-color;
+  color: $unihelp-white;
+  border: none;
+  text-align: center;
+  float: right;
+  //margin: 3% 0 3% 0;
+  @include link(white, white, white, white);
+  a, a:hover {
+    cursor: pointer;
+    @include link(white, white, white, white);
+  }
+
+  &:hover {
+    background: $theme-color;
+  }
+}
+
+
+/* Multistep navigation buttons */
+fieldset {
+  input.next, input.previous, input.submit {
+    margin: 2% 0 2% 0;
+  }
+}

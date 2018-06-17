@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Campus;
 use App\Fos;
+use App\Notifications\UserRegister;
+use App\Preference;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -55,7 +57,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -83,7 +85,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \App\User
      */
     protected function create(array $data)
@@ -95,21 +97,35 @@ class RegisterController extends Controller
             $img_name = time() . '_' . $img->getClientOriginalName();
             $img_location = public_path('/img/avatars/' . $img_name);
 
-            Image::make($img)->resize(64, 64, function ($image) {
+            Image::make($img)->resize(256, 256, function ($image) {
                 $image->aspectRatio();
                 $image->upsize();
             })->save($img_location);
         }
 
-        return User::create([
-            'image' => $img_name,
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
-            'email' => $data['email'],
-            'api_token' => SecurityFactory::generateApiToken(),
-            'password' => bcrypt($data['password']),
-            'campusid' => $data['campus'],
-            'fosid' => $data['fos'],
-        ]);
+        $pref = new Preference();
+        $pref->theme = "default";
+        $pref->lang = "nl";
+        $pref->comment = true;
+        $pref->likes = true;
+        $pref->tutoring = true;
+        $pref->account = true;
+        $pref->save();
+
+        $user = new User();
+        $user->image= $img_name;
+        $user->first_name= $data['first_name'];
+        $user->last_name= $data['last_name'];
+        $user->email= $data['email'];
+        $user->api_token=SecurityFactory::generateApiToken();
+        $user->password= bcrypt($data['password']);
+        $user->campusid= $data['campus'];
+        $user->fosid=  $data['fos'];
+        $user->preference_id = $pref->id;
+        $user->save();
+
+        //user mail na register
+        $user->notify(new UserRegister($user));
+        return $user;
     }
 }

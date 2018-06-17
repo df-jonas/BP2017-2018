@@ -1,0 +1,124 @@
+/* Auth page, error page */
+.auth-page, .message-page {
+  background-image: url("/img/backgrounds/doodles.png");
+  background-repeat: repeat;
+  height: 100vh;
+  .logo {
+    width: 48px;
+    display: block;
+    margin: 5% auto;
+  }
+
+  /* Login - register */
+  .auth-box {
+    background: $unihelp-white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    fieldset {
+      padding: 50px 0;
+    }
+    input[type=text], input[type=password] {
+      height: 50px !important;
+    }
+    h3, h4, a, p {
+      text-align: left !important;
+    }
+    h4 {
+      color: $unihelp-asphalt;
+      text-align: center
+    }
+    label.remember {
+      font-size: 12px !important;
+      line-height: 18px;
+    }
+    footer {
+      height: 60px;
+      line-height: 60px;
+      background: #f3f3f3;
+      text-align: center;
+      a {
+        color: $theme-color !important;
+      }
+    }
+    &.error {
+      padding: 5%;
+      h4, a {
+        text-align: center !important;
+      }
+    }
+  }
+
+  /* Voortgang stappen */
+  .progress-box {
+    background: $theme-color;
+    padding: 0;
+    width: 100%;
+    left: 0;
+    top: 0;
+    ul#progressbar {
+      overflow: hidden;
+      padding: 10px;
+      margin-bottom: 0;
+      padding-left: 0;
+      width: 100%;
+      li {
+        list-style-type: none;
+        width: 25%;
+        height: 50px;
+        float: left;
+        position: relative;
+        text-align: center;
+        /* box */
+        &:before {
+          position: relative;
+          line-height: 50px;
+          display: block;
+          margin: 0 auto 5px auto;
+          background: #f3f3f3;
+          height: 50px;
+          width: 50px;
+          z-index: 10;
+          border-radius: 100%;
+        }
+        /* lijn tussen boxes */
+        &:after {
+          content: '';
+          width: 100%;
+          height: 4px;
+          background: $unihelp-white;
+          position: absolute;
+          left: -50%;
+          top: 55%;
+          z-index: 1;
+        }
+        span {
+          z-index: 999;
+          color: $theme-color;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          line-height: 25px;
+        }
+        /* Lijn stap 1*/
+        &:first-child:after {
+          content: none;
+        }
+        &.active {
+          span {
+            color: $unihelp-white;
+          }
+          &:before {
+            background: $unihelp-asphalt;
+          }
+        }
+      }
+    }
+  }
+}

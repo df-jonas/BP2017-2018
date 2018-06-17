@@ -9,22 +9,29 @@
 namespace App\Helpers;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Support\Facades\Log;
 
 class HttpHelper
 {
     static public function request($url, $requesttype, $headers, $params, $verify_ssl)
     {
         $client = new Client();
-        $response = $client->request(
-            $requesttype,
-            $url,
-            [
-                'form_params' => $params,
-                'headers' => $headers,
-                'verify' => $verify_ssl,
-                'exceptions' => false
-            ]
-        );
+        try {
+            $response = $client->request(
+                $requesttype,
+                $url,
+                [
+                    '_conditional' => [],
+                    'form_params' => $params,
+                    'headers' => $headers,
+                    'verify' => $verify_ssl,
+                    'exceptions' => false
+                ]
+            );
+        } catch (GuzzleException $e) {
+            Log::info($e);
+        }
 
         return $response;
     }

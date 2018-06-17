@@ -16,12 +16,16 @@ class ActiveRouteHelper
 {
     public static function isActive($q)
     {
-        Log::info($q);
-        return Request::is(substr($q, 1) . '*') ? true : false;
+        $pattern = substr($q, 1) . '*';
+
+        if ($q == "/")
+            $pattern = $q;
+
+        return Request::is($pattern) ? true : false;
     }
 
-    public static function getState($route_prefix)
+    public static function getState($route_prefix, $active_class = 'uh-active', $normal_class = 'uh-notactive')
     {
-        return self::isActive($route_prefix) ? 'uh-active' : 'uh-notactive';
+        return self::isActive($route_prefix) ? $active_class : $normal_class;
     }
 }

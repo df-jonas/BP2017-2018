@@ -1,0 +1,26 @@
+/* Meldingen + go-back */
+.go-back, .message {
+  a {
+    color: $theme-color;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+  i {
+    cursor: pointer;
+    span {
+      font-family: Raleway;
+    }
+  }
+}
+
+/* melding */
+.message {
+  color: $unihelp-white;
+  background: $theme-color;
+  p {
+    color: $unihelp-white;
+    font-size: 14px;
+    margin: 0;
+  }
+}

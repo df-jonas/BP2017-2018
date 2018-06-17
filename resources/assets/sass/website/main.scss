@@ -1,0 +1,138 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+/* Mixins */
+@import "../mixin/link";
+/* Default theme kleuren */
+@import "../colors/default";
+/* Thema partials */
+@import "/parts/typo";
+@import "/parts/general";
+@import "/parts/buttons";
+@import "/parts/navigation";
+@import "/parts/content";
+@import "/parts/footer";
+@import "/parts/auth";
+@import "/parts/inputs";
+@import "/parts/accordion";
+
+/* Hamburger verbergen */
+.slicknav_menu {
+  display: none;
+}
+
+/* Desktop  */
+@media only screen and (max-width: 1500px) {
+  #page-header .links {
+    padding-top: 0.5%;
+  }
+  .steps {
+    margin: 2% 0 2% 0;
+    .step {
+      min-height: 245px !important;
+    }
+  }
+}
+
+/* Tablet */
+@media only screen and (max-width: 768px) {
+  .hide-tablet {
+    display: none;
+  }
+  /*responsive menu*/
+  #page-header {
+    .hamburger {
+      display: block;
+    }
+    .links {
+      margin-top: -2.85em;
+      padding-left: 0;
+      background: white;
+      li {
+        width: 100%;
+        height: 3em;
+        margin: 0 !important;
+        text-align: center;
+        line-height: 2em;
+      }
+    }
+  }
+
+  #page-banner {
+    height: 50vh;
+    text-align: center;
+  }
+
+  /* slicknav menu */
+  #menu > li, #menu > a {
+    display: none;
+  }
+  /* responsive menu tonen */
+  .slicknav_nav {
+    width: 100%;
+    a {
+      color: $theme-color !important;
+      padding: 0 !important;
+      &:hover {
+        border-radius: 0px !important;
+        -webkit-border-radius: 0px !important;
+        -moz-border-radius: 0px !important;
+        background: $theme-color !important;
+        color: $unihelp-white !important;
+      }
+    }
+  }
+
+  .slicknav_menu {
+    display: block;
+    min-height: 3em;
+  }
+
+  .about-person {
+    h3, h4, p {
+      text-align: center;
+    }
+  }
+
+  #page-banner, .call-to-action, #newsletter {
+    padding: 10%;
+    h1, h2, h3, p {
+      text-align: center !important;
+      width: 100%;
+    }
+  }
+
+  .call-to-action .text {
+    p {
+      width: 100%;
+    }
+  }
+
+  .cookie-consent {
+    left: 0;
+  }
+
+  footer {
+    h4, h6, .module {
+      text-align: center;
+    }
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+  .hide-mobile {
+    display: none;
+  }
+  .container {
+    width: 95% !important;
+    margin: 0 auto;
+  }
+  #page-banner {
+    max-height: 500px;
+    h1 {
+      font-size: 35px;
+    }
+  }
+
+}
+

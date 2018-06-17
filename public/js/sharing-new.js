@@ -24,10 +24,14 @@ $(document).ready(function () {
         var temptext = "";
         if ($("#book").find(":selected").val() == "0") {
             temptext = "Geen boek";
+            $("#booktitle").val(" ");
+            $("#booktitle").attr('disabled', 'true');
         } else {
             temptext = $("#booktitle").val();
+            $("#booktitle").removeAttr('disabled');
         }
         $(".static-book").text(temptext);
+        console.log($("#book").val());
     }
 
     $("#course").on("change", updateCourse);
