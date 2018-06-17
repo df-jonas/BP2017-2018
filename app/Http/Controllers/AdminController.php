@@ -15,8 +15,6 @@ use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
 {
-    /* TODO AUTH van jonas erin zetten, staat online, maar niet in mijn versie */
-
     public function index()
     {
 
