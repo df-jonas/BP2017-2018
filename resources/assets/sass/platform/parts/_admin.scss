@@ -11,10 +11,13 @@
         color: $unihelp-white;
       }
     }
+    a {
+      color: $theme-color;
+    }
   }
 }
 
-.user-list, .course-list, .group-list {
+.admin-list {
   list-style-type: none;
   padding-left: 0;
   li {
@@ -44,7 +47,8 @@
       background: $unihelp-asphalt;
     }
     &.new {
-      text-align: center;
+      text-align: right;
+      height: 40px;
       a {
         color: $theme-color;
         &:hover {

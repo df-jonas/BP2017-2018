@@ -19,21 +19,15 @@
             <!-- begin content -->
             <section class="content">
                 <section class="item clearfix">
-                    <header><a class="header-title">Groepen</a></header>
-                    <ul id="group-list" class="admin-list">
-                        <li class="new clear">
-                            <div class="col-xs-12">
-                                <a href="{{ route('admin-groups-new') }}"><i class="fa fa-plus"></i> Nieuwe groep</a>
-                            </div>
-                        </li>
-                        @foreach($groups as $group)
+                    <header><a class="header-title">Tutors</a></header>
+                    <ul id="tutors-list" class="admin-list">
+                        @foreach($tutors as $tutor)
                             <li class="clearfix">
                                 <div class="col-lg-8 col-xs-12">
-                                    <span class="user-id">{{$group->id}}</span>{{$group->name}}</div>
-                                <div class="col-lg-4 col-xs-12">
-                                    <span class="action delete">Verwijderen</span>
-                                    <a href="{{ route('admin-groups-update', ['id' => $group->id]) }}"><span class="action">Bewerken</span></a>
+                                    <span class="user-id">{{$tutor->id}}</span>
+                                    {{$tutor->user->first_name . " " . $tutor->user->last_name . " - " . $tutor->course->name}}
                                 </div>
+                                <a href="{{ $tutor->user->url() }}" class="profile-url"><span class="action">Bekijk profiel</span></a>
                             </li>
                         @endforeach
                     </ul>

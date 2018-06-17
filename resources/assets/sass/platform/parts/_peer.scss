@@ -52,7 +52,7 @@ table.assessment {
       text-align: center;
     }
     &:hover {
-      cursor: pointer;
+      //cursor: pointer;
       background: $theme-color;
       color: $unihelp-white;
       span.more {
@@ -83,7 +83,6 @@ table.assessment {
   }
 
   td.left, th.left {
-    //background: red;
     width: 220px;
     margin-top: 15px;
     text-align: left;
@@ -338,14 +337,7 @@ table.assessment {
       input {
         width: 100% !important;
       }
-    }
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  table.assessment {
-    td, th {
-      img {
+      img{
         display: none;
       }
     }

@@ -19,20 +19,15 @@
             <!-- begin content -->
             <section class="content">
                 <section class="item clearfix">
-                    <header><a class="header-title">Groepen</a></header>
-                    <ul id="group-list" class="admin-list">
-                        <li class="new clear">
-                            <div class="col-xs-12">
-                                <a href="{{ route('admin-groups-new') }}"><i class="fa fa-plus"></i> Nieuwe groep</a>
-                            </div>
-                        </li>
-                        @foreach($groups as $group)
+                    <header><a class="header-title">Files</a></header>
+                    <ul id="files-list" class="admin-list">
+                        @foreach($files as $file)
                             <li class="clearfix">
                                 <div class="col-lg-8 col-xs-12">
-                                    <span class="user-id">{{$group->id}}</span>{{$group->name}}</div>
+                                    <span class="user-id">{{$file->id}}</span>{{$file->title}}</div>
                                 <div class="col-lg-4 col-xs-12">
                                     <span class="action delete">Verwijderen</span>
-                                    <a href="{{ route('admin-groups-update', ['id' => $group->id]) }}"><span class="action">Bewerken</span></a>
+                                    <a href="{{ $file->detailUrl() }}"><span class="action">Bekijken</span></a>
                                 </div>
                             </li>
                         @endforeach

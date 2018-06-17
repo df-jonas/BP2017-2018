@@ -126,8 +126,22 @@
             /** Admin dashboard */
             Route::get('/admin', 'AdminController@index')->name('admin-index');
             Route::get('/admin/courses', 'AdminController@courses')->name('admin-courses');
+            Route::get('/admin/courses/new', 'AdminController@coursenew')->name('admin-course-new');
+            Route::post('/admin/courses/new', 'AdminController@coursenewpost');
+            Route::get('/admin/courses/update/{id}', 'AdminController@courseupdate')->name('admin-course-update');
+            Route::post('/admin/courses/update', 'AdminController@courseupdatepost')->name('admin-course-update-post');
+            Route::get('/admin/courses/delete/{id}', 'AdminController@coursedelete')->name('admin-course-delete');
             Route::get('/admin/groups', 'AdminController@groups')->name('admin-groups');
+            Route::get('/admin/groups/new', 'AdminController@groupnew')->name('admin-groups-new');
+            Route::post('/admin/groups/new', 'AdminController@groupnewpost');
+            Route::get('/admin/groups/update/{id}', 'AdminController@groupupdate')->name('admin-groups-update');
+            Route::post('/admin/groups/update', 'AdminController@groupupdatepost')->name('admin-groups-update-post');
+            Route::get('/admin/posts', 'AdminController@posts')->name('admin-posts');
+            Route::get('/admin/files', 'AdminController@files')->name('admin-files');
+            Route::get('/admin/tutors', 'AdminController@tutors')->name('admin-tutors');
             Route::get('/admin/stats', 'AdminController@stats')->name('admin-stats');
+
+
         });
     });
 }
