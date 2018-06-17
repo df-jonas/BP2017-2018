@@ -1007,7 +1007,6 @@ table.assessment td input {
 }
 
 table.assessment td:hover {
-  cursor: pointer;
   background: #4D6A50;
   color: #ffffff;
 }
@@ -1327,9 +1326,7 @@ table.assessment.individual th.left {
   table.assessment th input {
     width: 100% !important;
   }
-}
 
-@media only screen and (max-width: 1000px) {
   table.assessment td img,
   table.assessment th img {
     display: none;
@@ -2456,16 +2453,16 @@ sidebar p {
   color: #ffffff;
 }
 
-.user-list,
-.course-list,
-.group-list {
+.admin-nav ul a {
+  color: #4D6A50;
+}
+
+.admin-list {
   list-style-type: none;
   padding-left: 0;
 }
 
-.user-list li,
-.course-list li,
-.group-list li {
+.admin-list li {
   padding: 10px;
   -webkit-box-shadow: 0px 0px 1px 0px #4D6A50;
           box-shadow: 0px 0px 1px 0px #4D6A50;
@@ -2473,57 +2470,42 @@ sidebar p {
   height: auto;
 }
 
-.user-list li span,
-.course-list li span,
-.group-list li span {
+.admin-list li span {
   float: right;
   margin-left: 10px;
 }
 
-.user-list li span.user-id,
-.course-list li span.user-id,
-.group-list li span.user-id {
+.admin-list li span.user-id {
   float: left;
   margin-right: 10px;
   padding-right: 20px;
 }
 
-.user-list li span.action,
-.course-list li span.action,
-.group-list li span.action {
+.admin-list li span.action {
   background: #4D6A50;
   color: #ffffff;
   padding: 7.5px;
 }
 
-.user-list li span.action:hover,
-.course-list li span.action:hover,
-.group-list li span.action:hover {
+.admin-list li span.action:hover {
   background: rgba(181, 212, 183, 0.2);
   color: #4D6A50;
 }
 
-.user-list li span.delete,
-.course-list li span.delete,
-.group-list li span.delete {
+.admin-list li span.delete {
   background: #333a40;
 }
 
-.user-list li.new,
-.course-list li.new,
-.group-list li.new {
-  text-align: center;
+.admin-list li.new {
+  text-align: right;
+  height: 40px;
 }
 
-.user-list li.new a,
-.course-list li.new a,
-.group-list li.new a {
+.admin-list li.new a {
   color: #4D6A50;
 }
 
-.user-list li.new a:hover,
-.course-list li.new a:hover,
-.group-list li.new a:hover {
+.admin-list li.new a:hover {
   color: #333a40;
 }
 
