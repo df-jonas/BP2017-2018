@@ -126,7 +126,7 @@
                                     </tr>
                                 </table>
                                 <br/>
-                                <a href="{{ $assessment->url() }}">
+                                <a href="{{ $assessment->url() }}" class="clearfix">
                                     <button class="download-button col-lg-2 col-sm-4 col-xs-12" value="Starten">Starten
                                     </button>
                                 </a>

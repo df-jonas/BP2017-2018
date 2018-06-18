@@ -82,9 +82,9 @@
                                         </tr>
                                     @endforeach
                                 </table>
-                                <div class="col-xs-12">
-                                    <button type="submit" class="download-button col-lg-2 col-sm-4 col-xs-12">Indienen
-                                    </button>
+                                <br/>
+                                <div class="col-xs-12 clearfix">
+                                    <button type="submit" class="download-button col-lg-2 col-sm-4 col-xs-12">Indienen</button>
                                 </div>
                             </form>
                         </div>
