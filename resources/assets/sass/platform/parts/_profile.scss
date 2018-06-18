@@ -20,7 +20,6 @@
 }
 
 .color-choose, .notification-choose{
-  margin-bottom: 20%;
   height: 80px;
   border: 1px solid $unihelp-white;
   display: inline-block;
@@ -51,6 +50,7 @@
 
 /* thema settings */
 .color-choose {
+  margin-bottom: 20%;
   &:after {
     content: '\f070';
   }
@@ -75,6 +75,7 @@
 .notification-choose {
   background: $theme-color;
   opacity: 1;
+  margin-bottom: 5%;
   &:after {
     content: '\f0f3';
   }
@@ -85,12 +86,12 @@
     }
   }
   &.disabled {
-    background: lightgray;
+    background: lightgray!important;
     &:after {
       content: '\f1f6';
     }
     &:hover {
-      background: $theme-color;
+      background: $theme-color!important;
       &:after {
         content: '\f0f3';
       }

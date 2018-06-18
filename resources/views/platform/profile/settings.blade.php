@@ -290,8 +290,8 @@
                     <form action="{{route('profile-close')}}" method="POST">
                         <div class="form-group clearfix col-xs-12">
                             <label class="checkbox-container remember col-xs-12">
-                                <input type="checkbox" name="account_close">Ik ben er zeker van dat ik mijn account en
-                                alle gegevens wil verwijderen.
+                                <input type="checkbox" name="account_close">Ik ben er zeker van dat ik een aanvraag wil indienen om mijn account en
+                                alle gegevens te verwijderen.
                                 <span class="checkmark"></span>
                             </label>
                         </div>

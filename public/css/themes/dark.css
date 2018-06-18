@@ -1717,7 +1717,6 @@ table.assessment.individual th.left {
 
 .color-choose,
 .notification-choose {
-  margin-bottom: 20%;
   height: 80px;
   border: 1px solid #ffffff;
   display: inline-block;
@@ -1753,6 +1752,10 @@ table.assessment.individual th.left {
 
 /* thema settings */
 
+.color-choose {
+  margin-bottom: 20%;
+}
+
 .color-choose:after {
   content: '\F070';
 }
@@ -1784,6 +1787,7 @@ table.assessment.individual th.left {
 .notification-choose {
   background: black !important;
   opacity: 1;
+  margin-bottom: 5%;
 }
 
 .notification-choose:after {
@@ -1799,7 +1803,7 @@ table.assessment.individual th.left {
 }
 
 .notification-choose.disabled {
-  background: lightgray;
+  background: lightgray !important;
 }
 
 .notification-choose.disabled:after {
@@ -1807,7 +1811,7 @@ table.assessment.individual th.left {
 }
 
 .notification-choose.disabled:hover {
-  background: black !important;
+  background: black !important !important;
 }
 
 .notification-choose.disabled:hover:after {
@@ -2210,8 +2214,8 @@ i {
 }
 
 form p,
-sidebar p {
-  font-size: 14.5px;
+.sidebar p {
+  font-size: 14.5px !important;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
