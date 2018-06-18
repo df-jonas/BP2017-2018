@@ -114,7 +114,6 @@
             Route::get('/canvas/oauth_complete', 'CanvasController@completed')->name('canvas-oauth-complete');
             Route::get('/canvas/me', 'CanvasController@me')->name('canvas-me');
 
-
             /** Notifications */
             Route::get('/profile/notifications/read/{id}', 'NotificationController@readAjax')->name('notification-read');
 
@@ -141,6 +140,7 @@
                 Route::get('/admin/files', 'AdminController@files')->name('admin-files');
                 Route::get('/admin/tutors', 'AdminController@tutors')->name('admin-tutors');
                 Route::get('/admin/stats', 'AdminController@stats')->name('admin-stats');
+
             });
         });
     });
