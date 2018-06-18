@@ -30,9 +30,12 @@
                             </div>
                         </section>
                         <ul class="assessments">
+                            @php
+                                $tick = 1;
+                            @endphp
                             @foreach($assessment->assessmentgroups as $group)
                                 <li>
-                                    <span class="id col-lg-1">1</span>
+                                    <span class="id col-lg-1">{{ $tick }}</span>
                                     <div class="info col-lg-7">
                                         <a href="{{ $group->url() }}"><h2 class="assessment-title">{{ $group->name }}</h2></a>
                                         <h4 class="assessment-submissions">{{ $group->submitCount() }} van {{ $group->memberCount() }} inzendingen</h4>
@@ -44,6 +47,9 @@
                                         <a href="{{ $group->url() }}"><i class="fas fa-eye"></i></a>
                                     </div>
                                 </li>
+                                @php
+                                    $tick++;
+                                @endphp
                             @endforeach
                         </ul>
 

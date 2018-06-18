@@ -46,11 +46,11 @@ class AssessmentController extends Controller
 
             return view('platform.assessment.index', $arr);
         } else {
-            $courses = Course::query()->has('assessments')->with([
+            $courses = Course::query()->with([
                 'assessments' => function ($q) {
                     $q->where("docent_id", "=", Auth::id());
                 }
-            ])->get();
+            ])->has('assessments')->get();
 
             $arr = [
                 'courses' => $courses
