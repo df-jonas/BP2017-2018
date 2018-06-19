@@ -101,7 +101,7 @@ class AssessmentController extends Controller
 
             $assessment = new Assessment();
             $assessment->name = $request->title;
-            $assessment->end = $request->end;
+            $assessment->end = $request->enddate;
             $assessment->retry = 1;
             $assessment->instructions = $request->explanation;
             $assessment->expected_time = $request->time;
