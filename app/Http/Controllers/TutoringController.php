@@ -167,7 +167,7 @@ class TutoringController extends Controller
         $to_id = $tutee->user->id;
         $type = "tutoring";
         $url = route('tutoring-index');
-        $text = "heeft jouw tutoring verzoek anvaard!";
+        $text = "heeft jouw tutoring verzoek aanvaard!";
 
         NotificationHelper::create($from_id, $to_id, $type, $url, $text);
 
